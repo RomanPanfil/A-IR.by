@@ -1,0 +1,33 @@
+// Breadcrumbs example
+[class*="-breadcrumbs"] {
+  text-align: left;
+  a {
+    font-size: rem(14px);
+    font-weight: 400;
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  :last-child {
+    opacity: 0.5;
+    text-decoration: none;
+    i {
+      display: none;
+    }
+  }
+  i {
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 10px;
+  }
+}
+
+.page-breadcrumbs {
+  margin-bottom: 28px;
+  @media (max-width: 400px) {
+    margin-bottom: 24px;
+  }
+}

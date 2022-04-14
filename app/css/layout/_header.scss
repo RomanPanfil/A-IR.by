@@ -1,0 +1,7 @@
+.header {
+  background: violet;
+  margin-bottom: 33px;
+  @media (max-width: 992px) {
+    margin-bottom: 25px;
+  }
+}

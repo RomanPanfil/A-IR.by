@@ -1,0 +1,73 @@
+@import "./abstracts/var";
+@import "./abstracts/mixin";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  height: 100%;
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  height: 100%;
+  min-height: 100%;
+  font-family: $ffOpenSans;
+  font-weight: 400;
+  font-size: rem(16px);
+  line-height: 1.42;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  min-width: 100%;
+  padding-bottom: 88px;
+}
+#middle {
+  -webkit-box-flex: 1;
+  flex: 1 0 auto;
+}
+
+#footer {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  @media (max-width: 768px) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+// Layout
+@import "./layout/grid";
+@import "./layout/header";
+@import "./layout/form";
+// Base
+@import "./base/typography";
+@import "./base/default";
+// Component
+@import "./components/buttons";
+@import "./components/stickers";
+@import "./components/breadcrumbs";
+@import "./components/input";
+// Pages
+@import "./pages/pages";
+// Vendors
+@import "./vendors/swiper-slider";

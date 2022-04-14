@@ -1,0 +1,66 @@
+p {
+  margin: 0px;
+}
+
+ul,
+ol,
+li {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: $ffOpenSans;
+  color: #000;
+  text-transform: none;
+  line-height: 1.42;
+  font-weight: 700;
+}
+
+h1,
+.h1 {
+  font-size: rem(40px);
+}
+
+h2,
+.h2 {
+  font-size: rem(32px);
+}
+
+h3,
+.h3 {
+  font-size: rem(22px);
+}
+
+h4,
+.h4 {
+  font-size: rem(18px);
+}
+h5,
+.h5 {
+  font-size: rem(16px);
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  outline: none;
+}
+
+b,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
