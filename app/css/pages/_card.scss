@@ -1,14 +1,14 @@
 .card-item {
     &-txt {
       margin-bottom: 22px;
-    }
 
-    &-title {
-      font-family: $ffOpenSans;
-      font-weight: 700;
-      font-size: rem(40);
-      color: #000000;
-      margin-bottom: 12px;
+      &-title {
+        font-family: $ffOpenSans;
+        font-weight: 700;
+        font-size: rem(40);
+        color: #000000;
+        margin-bottom: 12px;
+      }
     }
 
     &-links {
