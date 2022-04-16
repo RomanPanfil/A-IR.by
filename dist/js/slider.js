@@ -1,4 +1,4 @@
-const slider1 = new Swiper('.mySwiper', {
+const slider1 = new Swiper('.el', {
   slidesPerView: 4,
   spaceBetween: 0,
   width: 372,
@@ -7,5 +7,12 @@ const slider1 = new Swiper('.mySwiper', {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+});
+
+const slider2 = new Swiper('.preview', {
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
   },
 });

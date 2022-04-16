@@ -70,10 +70,11 @@ body {
 @import "./components/input";
 @import "./components/rating";
 @import "./components/download-link";
-@import "./components/popups";
-@import "./components/product";
 // Pages
 @import "./pages/pages";
 @import "./pages/nazz";
 // Vendors
 @import "./vendors/swiper-slider";
+// Popups
+@import "./popups/preview";
+@import "./popups/sert";
