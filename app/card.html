@@ -27,11 +27,20 @@
           <div class="card-item-wrapper">
             <div class="card-item-counter">
               <div class="card-item-counter-txt">Количество</div>
-              <div class="card-item-counter-btn">
-                <div class="card-item-minus"></div>
+              <div class="card-item-counter-btn btn-minus">
+                <!-- <div class="card-item-minus"></div> -->
+                <img
+                  src="./images/icons/btn-minus.svg"
+                  alt="alt"
+                  class="card-item-minus"
+                />
               </div>
-              <input class="card-item-counter-input" />
-              <div class="card-item-counter-btn"></div>
+              <input class="card-item-counter-input" value="1" />
+              <div class="card-item-counter-btn btn-plus">
+                <!-- <div class="card-item-minus"></div>
+                <div class="card-item-plus"></div> -->
+                <img src="./images/icons/btn-plus.svg" alt="alt" />
+              </div>
             </div>
             <div class="card-item-price">
               <div class="card-item-price-txt">Цена</div>
@@ -51,7 +60,7 @@
               </a>
             </div>
           </div>
-          <div class="card-item-wrapper">
+          <div class="card-item-wrapper card-item-radio">
             <div class="card-item-title">Соберите свою комплектацию</div>
             <div class="card-item-features">
               <div class="card-item-features-title">Давление</div>
@@ -167,20 +176,116 @@
             </div>
             <a href="#" class="card-item-link">Собрать</a>
           </div>
-
+          <a
+            class="mfp-link"
+            href="javascript:void(0)"
+            data-href="./popups/query.html"
+            >11111</a
+          >
           <a href="#" class="card-item-options">
             <div class="card-item-options-txt">
               Закажите коммерческое предложение
             </div>
             <div class="card-item-options-img">
-              <img src="./images/card-item-options.png" alt="alt" />
+              <img src="./images/icons/card-item-document.svg" alt="alt" />
+            </div>
+          </a>
+          <a href="#" class="card-item-options">
+            <div class="card-item-options-txt">
+              Закажите звонок!
+              <span class="card-item-options-span">
+                Функция заказа обратного звонка
+              </span>
+            </div>
+            <div class="card-item-options-img">
+              <img src="./images/icons/card-item-phone.svg" alt="alt" />
+            </div>
+          </a>
+          <a href="#" class="card-item-options">
+            <div class="card-item-options-txt">
+              +375 (33) 398-18-18
+              <span class="card-item-options-span">
+                Поможем по всем вопросам
+              </span>
+            </div>
+            <div class="card-item-options-img">
+              <img src="./images/icons/card-item-info.svg" alt="alt" />
+            </div>
+          </a>
+          <a href="#" class="card-item-options">
+            <div class="card-item-options-txt">
+              tech@irand.by
+              <span class="card-item-options-span">
+                Не стесняйтесь написать нам письмо
+              </span>
+            </div>
+            <div class="card-item-options-img">
+              <img src="./images/icons/card-item-mail.svg" alt="alt" />
             </div>
           </a>
         </div>
       </div>
     </div>
     <!-- end card-item -->
+    <div class="card-interest">
+      <div class="card-interest-title">Должно пригодиться</div>
+      <div class="row">
+        <div class="col-4">
+          <a href="#" class="card-interest-item">
+            <div class="card-interest-item-img">
+              <img src="./images/card-interest-img.png" alt="alt" />
+            </div>
+            <div class="card-interest-item-txt">Масло для компрессоров</div>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="#" class="card-interest-item">
+            <div class="card-interest-item-img">
+              <img src="./images/card-interest-img.png" alt="alt" />
+            </div>
+            <div class="card-interest-item-txt">
+              Шланги воздушные для компрессора
+            </div>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="#" class="card-interest-item">
+            <div class="card-interest-item-img">
+              <img src="./images/card-interest-img.png" alt="alt" />
+            </div>
+            <div class="card-interest-item-txt">
+              Фильтры для сжатого воздуха
+            </div>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="#" class="card-interest-item">
+            <div class="card-interest-item-img">
+              <img src="./images/card-interest-img.png" alt="alt" />
+            </div>
+            <div class="card-interest-item-txt">Осушители сжатого воздуха</div>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="#" class="card-interest-item">
+            <div class="card-interest-item-img">
+              <img src="./images/card-interest-img.png" alt="alt" />
+            </div>
+            <div class="card-interest-item-txt">Конденсатоотводчики</div>
+          </a>
+        </div>
+        <div class="col-4">
+          <a href="#" class="card-interest-item">
+            <div class="card-interest-item-img">
+              <img src="./images/card-interest-img.png" alt="alt" />
+            </div>
+            <div class="card-interest-item-txt">Шаровые краны</div>
+          </a>
+        </div>
+      </div>
+    </div>
 
+    <!--#include file="inc-product.html"-->
     <!-- card-usefull -->
     <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
     <!-- end card-usefull -->
@@ -190,6 +295,7 @@
 
     <!-- card-recommended -->
     <!-- end card-recommended -->
+    <script src="./js/nazz.js"></script>
   </div>
 </div>
 <!--#include file="inc-footer.html"-->
