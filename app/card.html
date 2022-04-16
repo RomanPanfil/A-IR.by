@@ -26,9 +26,10 @@
                         Винтовой компрессор A1R BB-4FC, 10 бар
                      </div>
                      
-                     <div class="card-item-statistics">
+                     <div class="card-item-links">
                         <div class="card-item-rating">
                            <div class="card-item-rating-body">
+                              <div class="card-item-rating-active"></div>
                               <div class="card-item-rating-items">
                                  <input type="radio" class="card-item-rating-item" value="1" name="rating">
                                  <input type="radio" class="card-item-rating-item" value="2" name="rating">
@@ -37,22 +38,20 @@
                                  <input type="radio" class="card-item-rating-item" value="5" name="rating">
                               </div>
                            </div>
-                           <div class="card-item-rating-value">3.6</div>
+                           <div class="card-item-rating-value">5.0</div>
                         </div>
 
-                        <div class="card-item-reviews">
-                           <a href="#">64 отзыва</a>
-                        </div>
-                        
-                        <div class="card-item-fav">
+                        <a class="card-item-reviews" href="#">64 отзыва</a>
+
+                        <a href="#" class="card-item-fav">
                            <img src="./images/icons/fav.svg" alt="alt">
                            В избранное
-                        </div>
+                        </a>
 
-                        <div class="card-item-comparison">
+                        <a href="#" class="card-item-comparison">
                            <img src="./images/icons/btn-plus.svg" alt="alt">
                            В сравнении
-                        </div>
+                        </a>
                      </div>
                   </div>
 
@@ -63,11 +62,34 @@
                               <div class="card-item-preview">
                                  <img src="./images/item-L.png" alt="alt">
                               </div>
-                              <div class="card-item-element">
-                                 <img src="./images/item.png" alt="alt">
-                                 <img src="./images/item.png" alt="alt">
-                                 <img src="./images/item.png" alt="alt">
+                              
+                              <div class="swiper mySwiper">
+                                 <div class="swiper-wrapper">
+                                 <div class="swiper-slide">                                 
+                                    <img src="./images/item.png" alt="alt">
+                                 </div>
+                                 <div class="swiper-slide">                                 
+                                    <img src="./images/item.png" alt="alt">
+                                 </div>
+                                 <div class="swiper-slide">                                 
+                                    <img src="./images/item.png" alt="alt">
+                                 </div>
+                                 <div class="swiper-slide">                                 
+                                    <img src="./images/item.png" alt="alt">
+                                 </div>
+                                 <div class="swiper-slide">                                 
+                                    <img src="./images/item.png" alt="alt">
+                                 </div>
+                                 <div class="swiper-slide">                                 
+                                    <img src="./images/item.png" alt="alt">
+                                 </div>
+                                 <div class="swiper-slide">                                 
+                                    <img src="./images/item.png" alt="alt">
+                                 </div>
+                                 </div>
                               </div>
+                              <div class="swiper-button-next"></div>
+                              <div class="swiper-button-prev"></div>
                            </div>
                         </div>
 
@@ -76,79 +98,279 @@
                               <div class="card-item-caption">
                                  Характеристики
                               </div>
+                                 
+                              <div class="card-item-specifications">
+                                 <div class="card-item-specifications-desc">
+                                    <div class="card-item-specifications-txt">
+                                       <div class="card-item-specifications-caption">Код товара</div>
+                                       <div class="card-item-specifications-subtitle">01020304</div>
+                                    </div>
+                                    <div class="card-item-specifications-txt">
+                                       <div class="card-item-specifications-caption">Производительность</div>
+                                       <div class="card-item-specifications-subtitle">0.49 м3/мин</div>
+                                    </div>
+                                    <div class="card-item-specifications-txt">
+                                       <div class="card-item-specifications-caption">Максимальное давление</div>
+                                       <div class="card-item-specifications-subtitle">10 Бар</div>
+                                    </div>
+                                    <div class="card-item-specifications-txt">
+                                       <div class="card-item-specifications-caption">Мощность двигателя</div>
+                                       <div class="card-item-specifications-subtitle">4 кВт</div>
+                                    </div>
    
-                              <div class="card-item-desc-section">
-                                 <div class="card-item-desc">
-                                    <div class="card-item-desc-caption">Код товара</div>
-                                    <div class="card-item-desc-subtitle">01020304</div>
-                                 </div>
-                                 <div class="card-item-desc">
-                                    <div class="card-item-desc-caption">Производительность</div>
-                                    <div class="card-item-desc-subtitle">0.49 м3/мин</div>
-                                 </div>
-                                 <div class="card-item-desc">
-                                    <div class="card-item-desc-caption">Максимальное давление</div>
-                                    <div class="card-item-desc-subtitle">10 Бар</div>
-                                 </div>
-                                 <div class="card-item-desc">
-                                    <div class="card-item-desc-caption">Мощность двигателя</div>
-                                    <div class="card-item-desc-subtitle">4 кВт</div>
-                                 </div>
-
-                                 <button class="ui-btn">Перейти к описанию</button>
-                              </div>
-
-                              <div class="card-item-services-content">
-                                 <div class="card-item-warranty">
-                                    <div class="txt">
-                                       <img src="./images/icons/warranty.png" alt="alt">
-                                       <span>Гарантия 12 месяцев</span>
-                                    </div>
-                                    <div class="pic">
-                                       <img src="./images/icons/air.png" alt="alt">
-                                    </div>
-                                 </div>
-                                 <div class="card-item-services">
-                                    <button class="ui-btn">
-                                       <img src="./images/icons/payment.svg" alt="">
-                                       Оплата
-                                    </button>
-                                    <button class="ui-btn">
-                                       <img src="./images/icons/delivery.svg" alt="">
-                                       Доставка
-                                    </button>
-                                    <button class="ui-btn">
-                                       <img src="./images/icons/services.svg" alt="">
-                                       Сервис
-                                    </button>
+                                    <button class="ui-btn">Перейти к описанию</button>
                                  </div>
                               </div>
 
-                              <div class="card-item-desc-section">
-                                 <div class="card-item-desc">
-                                    <div class="card-item-desc-caption">Статус</div>
-                                    <div class="card-item-desc-subtitle">в наличии</div>
+                              <div class="card-item-services">
+                                 <div class="card-item-services-content">
+                                    <div class="card-item-services-warranty">
+                                       <div class="txt">
+                                          <img src="./images/icons/warranty.png" alt="alt">
+                                          <span>Гарантия</span>
+                                          <span>12 месяцев</span>
+                                       </div>
+                                       <div class="pic">
+                                          <img src="./images/icons/air.png" alt="alt">
+                                       </div>
+                                    </div>
+                                    <div class="card-item-services-btn">
+                                       <button class="ui-btn">
+                                          <img src="./images/icons/payment.svg" alt="alt">
+                                          Оплата
+                                       </button>
+                                       <button class="ui-btn">
+                                          <img src="./images/icons/delivery.svg" alt="alt">
+                                          Доставка
+                                       </button>
+                                       <button class="ui-btn">
+                                          <img src="./images/icons/services.svg" alt="alt">
+                                          Сервис
+                                       </button>
+                                    </div>
                                  </div>
-                                 <div class="card-item-desc">
-                                    <div class="card-item-desc-caption">Доставка</div>
-                                    <div class="card-item-desc-subtitle">бесплатно</div>
-                                 </div>
-                                 <div class="card-item-desc">
-                                    <div class="card-item-desc-caption">Срок доставкие</div>
-                                    <div class="card-item-desc-subtitle">1 день</div>
+   
+                                 <div class="card-item-services-desc">
+                                    <div class="card-item-services-txt">
+                                       <div class="card-item-services-caption">Статус</div>
+                                       <div class="card-item-services-subtitle">в наличии</div>
+                                    </div>
+                                    <div class="card-item-services-txt">
+                                       <div class="card-item-services-caption">Доставка</div>
+                                       <div class="card-item-services-subtitle">бесплатно</div>
+                                    </div>
+                                    <div class="card-item-services-txt">
+                                       <div class="card-item-services-caption">Срок доставки</div>
+                                       <div class="card-item-services-subtitle">1 день</div>
+                                    </div>
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
+                  </div>
+                  <div class="card-item-more-info">
+                     <div id="tabs">
+                        <!-- Кнопки -->
+                        <ul class="tabs-nav">
+                           <li class="col-3"><a href="#tab-1">Описание</a></li>
+                           <li class="col-3"><a href="#tab-2">Характеристики</a></li>
+                           <li class="col-3"><a href="#tab-3">Видео</a></li>
+                           <li class="col-3"><a href="#tab-4">Документация</a></li>
+                        </ul>	
+                        
+                        <!-- Контент -->
+                        <div class="tabs-items">
+                           <div class="tabs-item" id="tab-1">
+                              <p class="tabs-item-text">
+                                 Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет энергосберегающий режим - переходит в холостой ход и затем останавливается при отсутствии разбора сжатого воздуха. Компрессор поставляется с установленной микропроцессорной системой управления, которая обеспечивает контроль времени наработки, электронный контроль параметров, эффективную защиту и энергосберегающий режим работы. Винтовой компрессор A1R BB-4FC подходит для промышленного применения. 
+                              </p> 
 
-                     <div class="card-item-more-info"></div>
+                              <p class="tabs-item-title">Главные особенности A1R BB-4FC:</p>
+                              <ul class="tabs-item-list">
+                                 <li><span>простой и быстрый монтаж;</span></li>
+                                 <li><span>микропроцессорная система управления;</span></li>
+                                 <li><span>высокое качество и отличная производительность, которая обеспечит вам стабильную работу;</span></li>
+                                 <li><span>гарантийный срок составляет 24 месяца;</span></li>
+                                 <li><span>использование ременной передачи в компрессоре A1R BB-4FC позволяет максимально обезопасить работу компрессора.</span></li>
+                              </ul>
+                           </div>
+                           <div class="tabs-item table" id="tab-2">
+                              <table class="table top">
+                                 <thead>
+                                    <tr>
+                                       <th>Основные характеристики</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>Производительность</td>
+                                       <td>0.49 м3/мин</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Максимальное давление</td>
+                                       <td>10 бар</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Мощность двигателя</td>
+                                       <td>4 кВт</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                              <table class="table bottom">
+                                 <thead>
+                                    <tr>
+                                       <th>Дополнительные характеристики</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr>
+                                       <td>Гарантийный срок</td>
+                                       <td>24 месяца</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Диаметр выходной трубы (дюйм)</td>
+                                       <td>3/4 "</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Объем охлаждающей жидкости</td>
+                                       <td>3.7 л</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Подшипники винтового блока</td>
+                                       <td>Подшипники винтового блока SKF/NSK/FAG (Швеция, Япония, Германия)</td>
+                                    </tr>
+                                    <tr>
+                                       <td>Тип винтового блока</td>
+                                       <td>Маслосмазываемый</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <div class="tabs-item video" id="tab-3">
+                           </div>		
+                           <div class="tabs-item" id="tab-4">
+                              <div class="doc">
+                                 <div class="doc-picture col-5">
+                                    <a class="mfp-link" href="javascript:void(0)" data-href="./popups/sert.html">
+                                       <img src="./images/sertificate.png" alt="alt">
+                                    </a>
+                                 </div>
+                                 <div class="doc-link col-7">
+                                    <a href="#" class="doc-link-download" download>
+                                       <div class="doc-link-download-title">
+                                          Инструкция по эксплуатации
+                                       </div>
+                                       <div class="doc-link-download-format">
+                                          <div class="doc-link-download-format-info">
+                                             <span>.PDF</span>
+                                             <span>1.06 МБ</span>
+                                          </div>
+                                          <div class="doc-link-download-format-icon">
+                                             <img src="./images/icons/PDF.png" alt="alt">
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <a href="#" class="doc-link-download" download>
+                                       <div class="doc-link-download-title">
+                                          Руководство по эксплуатации данного оборудования
+                                       </div>
+                                       <div class="doc-link-download-format">
+                                          <div class="doc-link-download-format-info">
+                                             <span>.XLS</span>
+                                             <span>1.06 МБ</span>
+                                          </div>
+                                          <div class="doc-link-download-format-icon">
+                                             <img src="./images/icons/XLS.png" alt="alt">
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <a href="#" class="doc-link-download" download>
+                                       <div class="doc-link-download-title">
+                                          Сертификат таможенного союза
+                                       </div>
+                                       <div class="doc-link-download-format">
+                                          <div class="doc-link-download-format-info">
+                                             <span>.DOC</span>
+                                             <span>1.06 МБ</span>
+                                          </div>
+                                          <div class="doc-link-download-format-icon">
+                                             <img src="./images/icons/DOC.png" alt="alt">
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <a href="#" class="doc-link-download" download>
+                                       <div class="doc-link-download-title">
+                                          Сертификат официального продавца
+                                       </div>
+                                       <div class="doc-link-download-format">
+                                          <div class="doc-link-download-format-info">
+                                             <span>.JPG</span>
+                                             <span>1.06 МБ</span>
+                                          </div>
+                                          <div class="doc-link-download-format-icon">
+                                             <img src="./images/icons/JPG.png" alt="alt">
+                                          </div>
+                                       </div>
+                                    </a>
+                                    <a href="#" class="doc-link-download" download>
+                                       <div class="doc-link-download-title">
+                                          Сертификат официального продавца
+                                       </div>
+                                       <div class="doc-link-download-format">
+                                          <div class="doc-link-download-format-info">
+                                             <span>.PNG</span>
+                                             <span>1.06 МБ</span>
+                                          </div>
+                                          <div class="doc-link-download-format-icon">
+                                             <img src="./images/icons/PNG.png" alt="alt">
+                                          </div>
+                                       </div>
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>		
+                        </div>
+                     </div>  
                   </div>
                </div>
             </div>
             <div class="col-4">
-               <div class="card-item-container">
-
+               <div class="card-item-wrapper">
+                  <div class="card-item-counter">
+                  <div class="card-item-counter-txt">Количество</div>
+                  <div class="card-item-counter-btn btn-minus">
+                     <!-- <div class="card-item-minus"></div> -->
+                     <img
+                        src="./images/icons/btn-minus.svg"
+                        alt="alt"
+                        class="card-item-minus"
+                     />
+                  </div>
+                  <input class="card-item-counter-input" value="1" />
+                  <div class="card-item-counter-btn btn-plus">
+                     <!-- <div class="card-item-minus"></div>
+                     <div class="card-item-plus"></div> -->
+                     <img src="./images/icons/btn-plus.svg" alt="alt" />
+                  </div>
+                  </div>
+                  <div class="card-item-price">
+                  <div class="card-item-price-txt">Цена</div>
+                  <div class="card-item-price-old"><s>10 762</s></div>
+                  <div class="card-item-price-new">-5 381</div>
+                  <div class="card-item-price-current">5 381 BYN</div>
+                  <div class="card-item-price-currency">2 500$ / 2 300€</div>
+                  </div>
+                  <div class="card-item-line"></div>
+                  <a href="#" class="card-item-btn ui-btn">Добавить в корзину</a>
+                  <a href="#" class="card-item-btn ui-btn">Быстрый заказ</a>
+                  <div class="card-item-line"></div>
+                  <div class="card-item-question">
+                  <img src="./images/icons/card-item-speaker.svg" alt="alt" />
+                  <a href="#" class="card-item-question-link"
+                     >Нашли дешевле? Сообщите!
+                  </a>
+                  </div>
                </div>
             </div>
          </div>

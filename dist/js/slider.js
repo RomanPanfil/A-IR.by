@@ -1,17 +1,11 @@
-// const swiper = new Swiper('.swiper', {
-//   // Optional parameters
-//   direction: 'vertical',
-//   slidesPerView: 3,
-//   loop: true,
+const slider1 = new Swiper('.mySwiper', {
+  slidesPerView: 4,
+  spaceBetween: 0,
+  width: 372,
+  slideToClickedSlide: true,
 
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: '.swiper-button-next',
-//     prevEl: '.swiper-button-prev',
-//   },
-
-//   // And if we need scrollbar
-//   scrollbar: {
-//     el: '.swiper-scrollbar',
-//   },
-// });
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
