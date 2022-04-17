@@ -8,3 +8,10 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+const slider2 = new Swiper(".preview", {
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
+  },
+});
