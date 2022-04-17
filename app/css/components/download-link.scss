@@ -12,11 +12,14 @@
     transition: 0.3s ease;
 
     &-title {
-      width: 275px;
-      font-family: $ffOpenSans;
+      width: 72%;
       font-weight: 600;
       font-size: rem(14);
       color: #000;
+
+      @media (max-width: 1355px) {
+        width: 213px;
+      }
     }
 
     &-format {
@@ -30,7 +33,6 @@
         margin-right: 16px;
 
         span {
-          font-family: $ffOpenSans;
           font-weight: 400;
           font-size: rem(12);
           color: rgba(0, 0, 0, 0.5);
