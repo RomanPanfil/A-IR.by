@@ -68,12 +68,6 @@
     &-slider {
       position: relative;
   
-      &-preview {
-        .swiper-slide img {
-          width: 100%;
-        }
-      }
-  
       &-el {
         .swiper-button-next, .swiper-button-prev {
           top: 92%;
@@ -96,7 +90,7 @@
         }
   
         .swiper-slide {
-          width: 50px;
+          text-align: center;
         }
   
         .swiper-slide {
