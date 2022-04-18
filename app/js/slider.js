@@ -26,3 +26,15 @@ const slider2 = new Swiper(".preview", {
     prevEl: ".swiper-button-prev",
   },
 });
+<<<<<<< HEAD
+=======
+
+// const slider3 = new Swiper('.reviews', {
+//   slidesPerView: 3,
+
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
+>>>>>>> main
