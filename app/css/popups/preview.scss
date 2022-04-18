@@ -1,7 +1,30 @@
-// .popup {
-//   &-preview-slider {
-//     height: 776px;
-//     width: auto;
-//     background: #fff;
-//   }
-// }
+.popup-preview-slider {
+  width: 1224px;
+  height: 776px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 48px 64px;
+
+  .swiper {
+    margin: 0;
+
+    &.vertical-slider {
+      height: 700px;
+
+      .swiper-slide {
+
+        img {
+          border: 2px solid #fff;
+        }
+
+        &-active {
+          img {
+            border: 2px solid #FFC100;
+          }
+        }
+      }
+    }
+  }
+}

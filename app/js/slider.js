@@ -21,6 +21,7 @@ const slider2 = new Swiper('.preview', {
 
 const slider3 = new Swiper('.reviews', {
   slidesPerView: 3,
+  spaceBetween: 24,
   loop: true,
 
   navigation: {

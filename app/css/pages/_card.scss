@@ -307,6 +307,10 @@
               border-bottom: 2px solid #2A4455;
               color: #2A4455;
             }
+
+            @media (max-width: 1172px) {
+              padding: 15px 5px;
+            }
           }
         }
   

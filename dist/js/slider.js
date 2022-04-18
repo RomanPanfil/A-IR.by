@@ -21,6 +21,7 @@ const slider2 = new Swiper('.preview', {
 
 const slider3 = new Swiper('.reviews', {
   slidesPerView: 3,
+  spaceBetween: 24,
   loop: true,
 
   navigation: {
@@ -28,7 +29,3 @@ const slider3 = new Swiper('.reviews', {
     prevEl: ".swiper-prev",
   },
 });
-
-
-console.log(slider2.navigation.nextEl)
-console.log(slider3.navigation.nextEl)
