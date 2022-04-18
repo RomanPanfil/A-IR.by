@@ -1,8 +1,10 @@
 .product {
   &-item {
+    display: inline-block;
     position: relative;
     padding: 16px 20px;
     margin-right: 16px;
+    min-width: 264px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     &-installments {
