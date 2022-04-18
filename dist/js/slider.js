@@ -1,4 +1,4 @@
-const swiper = new Swiper(".product-slider", {
+const swiper = new Swiper(".nazz-swiper", {
   // Optional parameters
   loop: true,
   slidesPerView: 4,
