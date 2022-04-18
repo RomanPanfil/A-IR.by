@@ -1,4 +1,4 @@
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".product-slider", {
   // Optional parameters
   loop: true,
   slidesPerView: 4,
@@ -9,9 +9,20 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
+const slider1 = new Swiper(".el", {
+  slidesPerView: 4,
+  spaceBetween: 0,
+  slideToClickedSlide: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 const slider2 = new Swiper(".preview", {
   navigation: {
-    nextEl: ".next",
-    prevEl: ".prev",
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
