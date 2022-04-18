@@ -1,20 +1,9 @@
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
+let arrow = document.querySelector(".main-contacts-tel-arrow");
+let numbers = document.querySelector(".main-contacts-tel-numbers");
+arrow.addEventListener("click", function () {
+  if (numbers.classList.contains("numbers-open")) {
+    numbers.classList.toggle("numbers-open");
+  } else {
+    numbers.classList.add("numbers-open");
+  }
 });
