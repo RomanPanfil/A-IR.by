@@ -1,0 +1,26 @@
+.footer {
+  padding: 40px 60px;
+  background: #1d262c;
+}
+
+// GRID
+.item1 {
+  grid-area: myArea;
+}
+
+.grid-container {
+  display: grid;
+  grid-template:
+    "myArea myArea . . ."
+    "myArea myArea . . .";
+  grid-gap: 10px;
+  background-color: #2196f3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
