@@ -1,16 +1,37 @@
 <div class="popup">
-  <div class="popup-title">Запрос коммерческого</div>
-  <div class="popup-product">
-    Товар:
-    <a href="#" class="popup-product-link"
-      >Винтовой компрессор A1R BB-4FC, 10 бар</a
-    >
+  <div class="popup-title">Быстрый заказ</div>
+  <div class="popup-line"></div>
+  <div class="popup-item">
+    <div class="popup-item-img">
+      <img src="./images/popup-item-img.png" alt="alt" />
+    </div>
+    <div class="popup-item-info">
+      <a href="#" class="popup-product-link">Винтовой компрессор A1R BB-4FC </a>
+      <div class="popup-item-info-counter">
+        <div class="card-item-counter">
+          <div class="card-item-counter-btn btn-minus">
+            <!-- <div class="card-item-minus"></div> -->
+            <img
+              src="./images/icons/btn-minus.svg"
+              alt="alt"
+              class="card-item-minus"
+            />
+          </div>
+          <input class="card-item-counter-input" value="1" />
+          <div class="card-item-counter-btn btn-plus">
+            <img src="./images/icons/counter-plus.svg" alt="alt" />
+          </div>
+        </div>
+        <div class="card-item-price">
+          <div class="card-item-price-old"><s>10 762</s></div>
+          <div class="card-item-price-new">-5 381</div>
+          <div class="card-item-price-current">5 381 BYN</div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="popup-line"></div>
-  <div class="popup-txt">
-    Заполните форму быстрого заказа, наши менеджеры скоро свяжутся с вами!
-  </div>
-  <form action="" class="popup-query">
+  <form action="" class="popup-fastOder">
     <label class="popup-label" for="name">Ваше имя <span>*</span></label>
     <input
       type="text"
@@ -25,7 +46,7 @@
       name="telephone"
       id="telephone"
       class="popup-input"
-      placeholder="+"
+      placeholder="+375 (33) 398-18-18"
     />
     <label class="popup-label" for="email">Email <span>*</span></label>
     <input
@@ -35,24 +56,7 @@
       class="popup-input"
       placeholder="123@gmail.com"
     />
-    <label class="popup-label" for="person"
-      >Наименование юр. лица <span>*</span></label
-    >
-    <input
-      type="text"
-      name="person"
-      id="person"
-      class="popup-input"
-      placeholder="Наименование юр. лица"
-    />
-    <label class="popup-label" for="number">УНП <span>*</span></label>
-    <input
-      type="text"
-      name="number"
-      id="number"
-      class="popup-input"
-      placeholder="123456778"
-    />
+
     <div class="popup-agreement">
       <div class="checkbox">
         <input
@@ -74,7 +78,7 @@
   </form>
   <script>
     $(document).ready(function () {
-      $(".popup-query").validate({
+      $(".popup-fastOder").validate({
         errorElement: "span",
         rules: {
           email: {
@@ -87,14 +91,6 @@
             telephone: true,
           },
           name: {
-            required: true,
-            lettersonly: true,
-          },
-          number: {
-            required: true,
-            number: true,
-          },
-          person: {
             required: true,
             lettersonly: true,
           },
@@ -124,12 +120,5 @@
       },
       "Incorrect format"
     );
-    // jQuery.validator.addMethod(
-    //   "number",
-    //   function (value, element) {
-    //     return this.optional(element) || /[^\d]/g.test(value);
-    //   },
-    //   "Incorrect format 1111111111"
-    // );
   </script>
 </div>

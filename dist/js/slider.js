@@ -1,14 +1,31 @@
-const swiper = new Swiper(".nazz-swiper", {
-  // Optional parameters
-  loop: true,
-  slidesPerView: 4,
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+// const swiper = new Swiper(".product-swiper", {
+//   // Optional parameters
+//   loop: true,
+//   slidesPerView: 4,
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
+// let mql = window.matchMedia("(min-width: 992px)");
 
+// window.addEventListener("resize", () => {
+//   if (mql.matches) {
+//     const swiper = new Swiper(".product-swiper", {
+//       // Optional parameters
+//       loop: true,
+//       slidesPerView: 4,
+//       // Navigation arrows
+//       navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//       },
+//     });
+//   } else {
+//     swiper.destroy();
+//   }
+// });
 const slider1 = new Swiper(".el", {
   slidesPerView: 4,
   spaceBetween: 0,
