@@ -2,66 +2,62 @@ $(document).on("click", ".mfp-link", function () {
   $(document).ready(function () {
     const ratings = document.querySelectorAll('.card-item-rating');
 
+    let ratingActive;
+    let ratingValue;
+
     if (ratings.length > 0) {
       initRatings();
     }
 
     function initRatings() {
-      let ratingActive;
-      let ratingValue;
-
       for (let i = 0; i < ratings.length; i++) {
         const rating = ratings[i];
-        initRating(rating);
-      }
-
-      function initRating(rating) {
-        initRatingVars(rating);
-        setRatingActiveWidth();
 
         if (rating.classList.contains('rating-set')) {
           setRating(rating);
         }
+
+        initRatingVars(rating);
+        setRatingActiveWidth();
       }
+    }
 
-      function initRatingVars(rating) {
-        ratingActive = rating.querySelector('.card-item-rating-active');
-        ratingValue = rating.querySelector('.card-item-rating-value');
+    function initRatingVars(rating) {
+      ratingActive = rating.querySelector('.card-item-rating-active');
+      ratingValue = rating.querySelector('.card-item-rating-value');
+    }
+
+    function setRatingActiveWidth(index = ratingValue.innerHTML) {
+      const ratingActiveWidth = index / 0.05;
+
+      if (index === 'Нет оценки') {
+        ratingActive.style.width = '0%';
+      } else {
+        ratingActive.style.width = `${ratingActiveWidth}%`;
       }
+    }
 
-      function setRatingActiveWidth(index = ratingValue.innerHTML) {
-        const ratingActiveWidth = index / 0.05;
+    function setRating(rating) {
+      const ratingItems = rating.querySelectorAll('.card-item-rating-item');
 
-        if(index === 'Нет оценки') {
-          ratingActive.style.width = '0%';
-        } else {
-          ratingActive.style.width = `${ratingActiveWidth}%`;
-        }
+      for (let i = 0; i < ratingItems.length; i++) {
+        const ratingItem = ratingItems[i];
 
-      }
+        ratingItem.addEventListener('mouseenter', function (e) {
+          initRatingVars(rating);
+          setRatingActiveWidth(ratingItem.value);
+        });
 
-      function setRating(rating) {
-        const ratingItems = rating.querySelectorAll('.card-item-rating-item');
+        ratingItem.addEventListener('mouseleave', function (e) {
+          setRatingActiveWidth();
+        });
 
-        for (let i = 0; i < ratingItems.length; i++) {
-          const ratingItem = ratingItems[i];
+        ratingItem.addEventListener('click', function (e) {
+          initRatingVars(rating);
 
-          ratingItem.addEventListener('mouseenter', function(e) {
-            initRatingVars(rating);
-            setRatingActiveWidth(ratingItem.value);
-          });
-
-          ratingItem.addEventListener('mouseleave', function(e) {
-            setRatingActiveWidth();
-          });
-
-          ratingItem.addEventListener('click', function(e) {
-            initRatingVars(rating);
-
-            ratingValue.innerHTML = ratingItem.value;
-            setRatingActiveWidth();
-          })
-        }
+          ratingValue.innerHTML = ratingItem.value;
+          setRatingActiveWidth();
+        })
       }
     }
   });
