@@ -4,6 +4,20 @@
   overflow-x: auto;
   white-space: nowrap;
 }
+/* хром, сафари */
+.page-stickers::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ie 10+ */
+.page-stickers {
+  -ms-overflow-style: none;
+}
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.page-stickers {
+  overflow: -moz-scrollbars-none;
+}
 .ui-sticker {
   display: inline-block;
   height: 32px;
