@@ -52,7 +52,7 @@
       <div class="card-item">
          <div class="row">
             <!-- col-8 -->
-            <div class="col-8">
+            <div class="col-sm-6 col-us-12 col-md-8">
                <div class="card-item-container">
                   <div class="card-item-about">
                      <div class="card-item-info">
@@ -384,7 +384,7 @@
             </div>
 
             <!-- col-4 -->
-            <div class="col-4">
+            <div class="col-sm-6 col-us-12 col-md-4">
                <div class="card-item-wrapper">
                   <div class="card-item-counter">
                   <div class="card-item-counter-txt">Количество</div>
@@ -398,9 +398,7 @@
                   </div>
                   <input class="card-item-counter-input" value="1" />
                   <div class="card-item-counter-btn btn-plus">
-                     <!-- <div class="card-item-minus"></div>
-                     <div class="card-item-plus"></div> -->
-                     <img src="./images/icons/btn-plus.svg" alt="alt" />
+                     <img src="./images/icons/counter-plus.svg" alt="alt" />
                   </div>
                   </div>
                   <div class="card-item-price">
@@ -412,11 +410,11 @@
                   </div>
                   <div class="card-item-line"></div>
                   <a href="#" class="card-item-btn ui-btn">Добавить в корзину</a>
-                  <a href="#" class="card-item-btn ui-btn">Быстрый заказ</a>
+                  <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/fastOder.html">Быстрый заказ</a>
                   <div class="card-item-line"></div>
                   <div class="card-item-question">
                   <img src="./images/icons/card-item-speaker.svg" alt="alt" />
-                  <a href="#" class="card-item-question-link"
+                  <a href="javascript:void(0)" class="card-item-question-link mfp-link" data-href="./popups/anotherPrice.html"
                      >Нашли дешевле? Сообщите!
                   </a>
                   </div>
@@ -543,10 +541,10 @@
                   Закажите коммерческое предложение
                   </div>
                   <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-document.svg" alt="alt" />
+                  <img src="./images/icons/card-item-document.svg" alt="alt" >
                   </div>
                </a>
-               <a href="#" class="card-item-options">
+               <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
                   <div class="card-item-options-txt">
                   Закажите звонок!
                   <span class="card-item-options-span">
@@ -641,10 +639,30 @@
          </div>
          </div>
       </div>
+
+      <div class="swiper product-swiper">
+         <!-- Additional required wrapper -->
+         <div class="swiper-wrapper">
+           <!-- Slides -->
+           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
+          
+         </div>
+         <!-- If we need pagination -->
+         <div class="swiper-pagination"></div>
+       
+         <!-- If we need navigation buttons -->
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-button-next"></div>
+       
+         <!-- If we need scrollbar -->
+         <div class="swiper-scrollbar"></div>
+       </div>
     </div>
-    <!--#include file="inc-product.html"-->
     
 
+    
     <!-- card-usefull -->
     <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
     <!-- end card-usefull -->
