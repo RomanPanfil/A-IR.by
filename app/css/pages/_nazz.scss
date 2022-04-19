@@ -295,3 +295,34 @@
 // .swiper {
 //   height: 568px;
 // }
+.card-interest-mob {
+  @media (max-width: 992px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    // white-space: nowrap;
+    .col-4 {
+      max-width: 100%;
+      flex: 0 0 0;
+    }
+    .card-interest-item-img {
+      display: none;
+    }
+    .card-interest-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      // margin-right: 20px;
+      // background-color: #ebebeb;
+      // overflow: hidden;
+      width: 200px;
+      // flex: 0 0 200px;
+    }
+    // .card-interest-item-txt {
+    //   height: 100%;
+    //   display: inline-block;
+    //   vertical-align: middle;
+    // }
+  }
+}

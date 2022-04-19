@@ -18,9 +18,6 @@ inputBtn.oninput = function () {
 let productOpen = document.querySelectorAll(".product-item-open");
 let productItem = document.querySelector(".product-item");
 let isOpen = false;
-// productOpen.onclick = () => {
-//   console.log(productOpen);
-// };
 
 productOpen.forEach((el) => {
   el.onclick = () => {
