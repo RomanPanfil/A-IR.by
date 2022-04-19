@@ -29,6 +29,7 @@
       width: 36px;
       vertical-align: top;
       border-radius: 5px;
+      white-space: nowrap;
       &:hover {
         opacity: 0.5;
       }
@@ -63,6 +64,7 @@
     &-code {
       opacity: 0.5;
       font-size: rem(14);
+      white-space: nowrap;
       &-number {
         font-weight: 600;
       }
@@ -215,4 +217,12 @@
 .product-cyan {
   color: #83dbe4;
   border: 1px solid #83dbe4;
+}
+
+.product-swiper {
+  height: 575px;
+  padding: 2px 2px;
+  .swiper-scrollbar {
+    display: none;
+  }
 }
