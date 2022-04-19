@@ -1,0 +1,124 @@
+<div class="popup">
+  <div class="popup-title">Быстрый заказ</div>
+  <div class="popup-line"></div>
+  <div class="popup-item">
+    <div class="popup-item-img">
+      <img src="./images/popup-item-img.png" alt="alt" />
+    </div>
+    <div class="popup-item-info">
+      <a href="#" class="popup-product-link">Винтовой компрессор A1R BB-4FC </a>
+      <div class="popup-item-info-counter">
+        <div class="card-item-counter">
+          <div class="card-item-counter-btn btn-minus">
+            <!-- <div class="card-item-minus"></div> -->
+            <img
+              src="./images/icons/btn-minus.svg"
+              alt="alt"
+              class="card-item-minus"
+            />
+          </div>
+          <input class="card-item-counter-input" value="1" />
+          <div class="card-item-counter-btn btn-plus">
+            <img src="./images/icons/counter-plus.svg" alt="alt" />
+          </div>
+        </div>
+        <div class="card-item-price">
+          <div class="card-item-price-old"><s>10 762</s></div>
+          <div class="card-item-price-new">-5 381</div>
+          <div class="card-item-price-current">5 381 BYN</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup-line"></div>
+  <form action="" class="popup-fastOder">
+    <label class="popup-label" for="name">Ваше имя <span>*</span></label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="popup-input"
+      placeholder="Иванов Иван Иванович"
+    />
+    <label class="popup-label" for="telephone">Телефон <span>*</span></label>
+    <input
+      type="text"
+      name="telephone"
+      id="telephone"
+      class="popup-input"
+      placeholder="+375 (33) 398-18-18"
+    />
+    <label class="popup-label" for="email">Email <span>*</span></label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      class="popup-input"
+      placeholder="123@gmail.com"
+    />
+
+    <div class="popup-agreement">
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          id="chheckbox"
+          name="chheckbox"
+          class="checkbox-input"
+        />
+        <label for="chheckbox" class="checkbox-label"></label>
+      </div>
+      <div class="popup-agreement-txt">
+        Нажимая кнопку «Отправить запрос» вы соглашаетесь
+        <a href="#" class="popup-agreement-link"
+          >с политикой обработки персональных данных.</a
+        >
+      </div>
+    </div>
+    <button type="submit" class="popup-btn">Отправить запрос</button>
+  </form>
+  <script>
+    $(document).ready(function () {
+      $(".popup-fastOder").validate({
+        errorElement: "span",
+        rules: {
+          email: {
+            required: true,
+            email: true,
+          },
+          telephone: {
+            required: true,
+            minlength: 12,
+            telephone: true,
+          },
+          name: {
+            required: true,
+            lettersonly: true,
+          },
+        },
+      });
+    });
+    var element = document.getElementById("telephone");
+    var maskOptions = {
+      placeholder: "+{000}(00)000-00-00",
+      mask: "+{000}(00)000-00-00",
+    };
+    var mask = IMask(element, maskOptions);
+    jQuery.validator.addMethod(
+      "telephone",
+      function (value, element) {
+        return (
+          this.optional(element) ||
+          /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+        );
+      },
+      "Incorrect format"
+    );
+    jQuery.validator.addMethod(
+      "lettersonly",
+      function (value, element) {
+        return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
+      },
+      "Incorrect format"
+    );
+  </script>
+</div>

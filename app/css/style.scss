@@ -21,6 +21,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+  background-color: #ffffff;
 }
 
 #wrapper {
@@ -54,6 +55,7 @@ body {
     padding-left: 20px;
   }
 }
+
 // Layout
 @import "./layout/grid";
 @import "./layout/header";
@@ -67,8 +69,16 @@ body {
 @import "./components/stickers";
 @import "./components/breadcrumbs";
 @import "./components/input";
+@import "./components/rating";
+@import "./components/download-link";
+@import "./components/product";
 // Pages
 @import "./pages/pages";
 @import "./pages/nazz";
 // Vendors
 @import "./vendors/swiper-slider";
+// Popups
+@import "./popups/preview";
+@import "./popups/sert";
+@import "./popups/form-reviews";
+@import "./popups/ofer.scss";

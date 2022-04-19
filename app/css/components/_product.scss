@@ -1,0 +1,228 @@
+.product {
+  &-item {
+    display: inline-block;
+    position: relative;
+    padding: 16px 20px;
+    margin-right: 16px;
+    min-width: 264px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    &-installments {
+      display: inline-block;
+      height: 24px;
+      line-height: 24px;
+      background-color: $colorDark;
+      padding: 0 16px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      color: #ffffff;
+      border-radius: 5px;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &-open {
+      display: inline-block;
+      position: relative;
+      height: 24px;
+      border: 1px solid #d3d3d3;
+      width: 36px;
+      vertical-align: top;
+      border-radius: 5px;
+      white-space: nowrap;
+      &:hover {
+        opacity: 0.5;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &-img {
+      display: block;
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    &-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    &-rating {
+      text-align: center;
+      width: 64px;
+      height: 24px;
+      border: 1px solid #ffc100;
+      border-radius: 5px;
+      &-span {
+        font-weight: 600;
+        font-size: rem(14);
+      }
+    }
+    &-code {
+      opacity: 0.5;
+      font-size: rem(14);
+      white-space: nowrap;
+      &-number {
+        font-weight: 600;
+      }
+    }
+    &-title {
+      margin-bottom: 13px;
+      line-height: 1.3;
+      font-weight: 600;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-price {
+      margin-bottom: 12px;
+      font-size: rem(22);
+      font-weight: 700;
+
+      &-span {
+        font-size: rem(16);
+        font-weight: 400;
+      }
+      &-old {
+        display: none;
+        font-size: rem(16);
+        font-family: $ffPoppins;
+        color: #808080;
+        font-weight: 500;
+      }
+    }
+    &-buttons {
+      display: flex;
+      align-items: center;
+    }
+    &-btn {
+      width: calc(100% - 98px);
+      height: 40px;
+      line-height: 40px;
+      margin-right: 8px;
+      text-align: center;
+      color: #ffffff;
+      background-color: $colorRed;
+      border-radius: 5px;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &-like {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &-add {
+      display: inline-block;
+      margin-top: 5px;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &-show {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      ul li {
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      &-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        height: 24px;
+        line-height: 22px;
+        padding: 0 16px;
+        text-align: center;
+        background-color: #ffffff;
+        border-radius: 5px;
+      }
+    }
+    &-description {
+      display: none;
+    }
+    &-info {
+      margin-bottom: 5px;
+      font-size: rem(14);
+      &-span {
+        font-weight: 600;
+      }
+    }
+  }
+  &-open {
+    .product-item-like {
+      box-shadow: none;
+    }
+    .product-item-show {
+      display: block;
+    }
+    .product-item-img {
+      opacity: 0.5;
+    }
+    .product-item-btn {
+      background-color: $colorDark;
+    }
+    // .product-item-installments {
+    //   margin-bottom: 10px;
+    // }
+    .product-item-price-old {
+      display: inline;
+    }
+    .product-item-buttons {
+      margin-bottom: 17px;
+    }
+    .product-item-description {
+      display: block;
+    }
+  }
+}
+.product-blue {
+  color: #1a66ae;
+  border: 1px solid #1a66ae;
+}
+.product-green {
+  color: #559e53;
+  border: 1px solid #559e53;
+}
+.product-purple {
+  color: #7d3e8c;
+  border: 1px solid #7d3e8c;
+}
+.product-red {
+  color: #bc0000;
+  border: 1px solid #bc0000;
+}
+.product-orange {
+  color: #f28705;
+  border: 1px solid #f28705;
+}
+.product-cyan {
+  color: #83dbe4;
+  border: 1px solid #83dbe4;
+}
+
+.product-swiper {
+  height: 575px;
+  padding: 2px 2px;
+  .swiper-scrollbar {
+    display: none;
+  }
+}

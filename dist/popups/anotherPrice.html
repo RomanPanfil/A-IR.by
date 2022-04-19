@@ -1,0 +1,119 @@
+<div class="popup">
+  <div class="popup-title">
+    В другом магазине цена ниже, чем у нас? Сообщите!
+  </div>
+  <div class="popup-product">
+    Товар:
+    <a href="#" class="popup-product-link"
+      >Винтовой компрессор A1R BB-4FC, 10 бар</a
+    >
+  </div>
+  <div class="popup-line"></div>
+
+  <form action="" class="popup-price">
+    <label class="popup-label" for="email"
+      >Ссылка на товар в другом магазине <span>*</span></label
+    >
+    <input
+      type="text"
+      name="email"
+      id="email"
+      class="popup-input"
+      placeholder="123@gmail.com"
+    />
+    <label class="popup-label" for="price"
+      >Цена в другом магазине, BYN <span>*</span></label
+    >
+    <input
+      type="text"
+      name="price"
+      id="price"
+      class="popup-input"
+      placeholder="1 200"
+    />
+    <label class="popup-label" for="name">Ваше имя <span>*</span></label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="popup-input"
+      placeholder="Иванов Иван Иванович"
+    />
+    <label class="popup-label" for="telephone">Телефон <span>*</span></label>
+    <input
+      type="text"
+      name="telephone"
+      id="telephone"
+      class="popup-input"
+      placeholder="+375 (33) 398-18-18"
+    />
+
+    <div class="popup-agreement">
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          id="chheckbox"
+          name="chheckbox"
+          class="checkbox-input"
+        />
+        <label for="chheckbox" class="checkbox-label"></label>
+      </div>
+      <div class="popup-agreement-txt">
+        Нажимая кнопку «Отправить запрос» вы соглашаетесь
+        <a href="#" class="popup-agreement-link"
+          >с политикой обработки персональных данных.</a
+        >
+      </div>
+    </div>
+    <a class="popup-btn">Отправить запрос</a>
+  </form>
+  <script>
+    $(document).ready(function () {
+      $(".popup-price").validate({
+        errorElement: "span",
+        rules: {
+          email: {
+            required: true,
+            email: true,
+          },
+          telephone: {
+            required: true,
+            minlength: 12,
+            telephone: true,
+          },
+          name: {
+            required: true,
+            lettersonly: true,
+          },
+          price: {
+            number: true,
+            required: true,
+          },
+        },
+      });
+    });
+    var element = document.getElementById("telephone");
+    var maskOptions = {
+      placeholder: "+{000}(00)000-00-00",
+      mask: "+{000}(00)000-00-00",
+    };
+    var mask = IMask(element, maskOptions);
+    jQuery.validator.addMethod(
+      "telephone",
+      function (value, element) {
+        return (
+          this.optional(element) ||
+          /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+        );
+      },
+      "Incorrect format"
+    );
+    jQuery.validator.addMethod(
+      "lettersonly",
+      function (value, element) {
+        return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
+      },
+      "Incorrect format"
+    );
+  </script>
+</div>
