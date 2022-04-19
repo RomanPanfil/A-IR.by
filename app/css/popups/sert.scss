@@ -1,12 +1,14 @@
 .popup {
+  &-sert{
     background: transparent;
     position: relative;
     margin: 20px auto;
     max-width: 616px;
     border-radius: 20px;
 
-  .mfp-close {
-    color: #fff;
-    font-size: 42px;
+    .mfp-close {
+      color: #fff;
+      font-size: 42px;
+    }
   }
 }
