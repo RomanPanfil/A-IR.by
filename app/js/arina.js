@@ -1,7 +1,5 @@
 const ratings = document.querySelectorAll('.card-item-rating');
 
-
-
 // tabs on page card.html
 $(function () {
   let tab = $('#tabs .tabs-items > div');
