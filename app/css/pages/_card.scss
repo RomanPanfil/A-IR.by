@@ -67,13 +67,6 @@
 
     &-slider {
       position: relative;
-
-      &-preview {
-        .swiper-slide img {
-          width: 100%;
-        }
-      }
-
       &-el {
         .swiper-button-next,
         .swiper-button-prev {
@@ -97,7 +90,7 @@
         }
 
         .swiper-slide {
-          width: 50px;
+          text-align: center;
         }
 
         .swiper-slide {
@@ -313,6 +306,10 @@
             &.active {
               border-bottom: 2px solid #2a4455;
               color: #2a4455;
+            }
+
+            @media (max-width: 1172px) {
+              padding: 15px 5px;
             }
           }
         }
