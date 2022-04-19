@@ -1,5 +1,7 @@
 <div class="popup">
-  <div class="popup-title">Запрос коммерческого</div>
+  <div class="popup-title">
+    В другом магазине цена ниже, чем у нас? Сообщите!
+  </div>
   <div class="popup-product">
     Товар:
     <a href="#" class="popup-product-link"
@@ -7,10 +9,28 @@
     >
   </div>
   <div class="popup-line"></div>
-  <div class="popup-txt">
-    Заполните форму быстрого заказа, наши менеджеры скоро свяжутся с вами!
-  </div>
-  <form action="" class="popup-query">
+
+  <form action="" class="popup-price">
+    <label class="popup-label" for="email"
+      >Ссылка на товар в другом магазине <span>*</span></label
+    >
+    <input
+      type="text"
+      name="email"
+      id="email"
+      class="popup-input"
+      placeholder="123@gmail.com"
+    />
+    <label class="popup-label" for="price"
+      >Цена в другом магазине, BYN <span>*</span></label
+    >
+    <input
+      type="text"
+      name="price"
+      id="price"
+      class="popup-input"
+      placeholder="1 200"
+    />
     <label class="popup-label" for="name">Ваше имя <span>*</span></label>
     <input
       type="text"
@@ -25,34 +45,9 @@
       name="telephone"
       id="telephone"
       class="popup-input"
-      placeholder="+"
+      placeholder="+375 (33) 398-18-18"
     />
-    <label class="popup-label" for="email">Email <span>*</span></label>
-    <input
-      type="text"
-      name="email"
-      id="email"
-      class="popup-input"
-      placeholder="123@gmail.com"
-    />
-    <label class="popup-label" for="person"
-      >Наименование юр. лица <span>*</span></label
-    >
-    <input
-      type="text"
-      name="person"
-      id="person"
-      class="popup-input"
-      placeholder="Наименование юр. лица"
-    />
-    <label class="popup-label" for="number">УНП <span>*</span></label>
-    <input
-      type="text"
-      name="number"
-      id="number"
-      class="popup-input"
-      placeholder="123456778"
-    />
+
     <div class="popup-agreement">
       <div class="checkbox">
         <input
@@ -70,11 +65,11 @@
         >
       </div>
     </div>
-    <button type="submit" class="popup-btn">Отправить запрос</button>
+    <a class="popup-btn">Отправить запрос</a>
   </form>
   <script>
     $(document).ready(function () {
-      $(".popup-query").validate({
+      $(".popup-price").validate({
         errorElement: "span",
         rules: {
           email: {
@@ -90,13 +85,9 @@
             required: true,
             lettersonly: true,
           },
-          number: {
-            required: true,
+          price: {
             number: true,
-          },
-          person: {
             required: true,
-            lettersonly: true,
           },
         },
       });
@@ -124,12 +115,5 @@
       },
       "Incorrect format"
     );
-    // jQuery.validator.addMethod(
-    //   "number",
-    //   function (value, element) {
-    //     return this.optional(element) || /[^\d]/g.test(value);
-    //   },
-    //   "Incorrect format 1111111111"
-    // );
   </script>
 </div>

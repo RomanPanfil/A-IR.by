@@ -9,6 +9,7 @@
     &-counter {
       display: inline-block;
       margin-right: 55px;
+      margin-bottom: 10px;
       @media (max-width: 1340px) {
         margin-right: 16px;
       }
@@ -19,6 +20,7 @@
       &-btn {
         position: relative;
         display: inline-block;
+        vertical-align: top;
         width: 50px;
         height: 40px;
         background-color: #d3d3d3;
@@ -27,6 +29,10 @@
         &:last-child {
           margin-left: -10px;
           background-color: $colorDark;
+          img {
+            top: 48%;
+            left: 54%;
+          }
         }
         img {
           position: relative;
@@ -41,7 +47,7 @@
         vertical-align: top;
         text-align: center;
         margin-left: -10px;
-        width: 70px;
+        width: 55px;
         height: 40px;
         font-size: rem(18);
         border: none;
@@ -115,7 +121,8 @@
       }
     }
     &-question {
-      text-align: center;
+      display: flex;
+      justify-content: center;
       img {
         margin-right: 6px;
       }
@@ -161,7 +168,7 @@
         margin-right: 8px;
         margin-bottom: 8px;
         width: 100%;
-        max-width: 84px;
+        max-width: 82px;
         height: 32px;
         line-height: 30px;
         font-size: rem(14);
@@ -236,7 +243,7 @@
       top: 12% !important;
     }
     &-radio {
-      @media (max-width: 834px) {
+      @media (max-width: 992px) {
         &:last-child {
           display: none;
         }
@@ -285,3 +292,6 @@
 .card-item-features input[type="radio"]:checked + label {
   border: 2px solid $colorDark;
 }
+// .swiper {
+//   height: 568px;
+// }

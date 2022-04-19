@@ -52,7 +52,7 @@
       <div class="card-item">
          <div class="row">
             <!-- col-8 -->
-            <div class="col-8">
+            <div class="col-sm-6 col-us-12 col-md-8">
                <div class="card-item-container">
                   <div class="card-item-about">
                      <div class="card-item-info">
@@ -384,7 +384,7 @@
             </div>
 
             <!-- col-4 -->
-            <div class="col-4">
+            <div class="col-sm-6 col-us-12 col-md-4">
                <div class="card-item-wrapper">
                   <div class="card-item-counter">
                   <div class="card-item-counter-txt">Количество</div>
@@ -398,9 +398,7 @@
                   </div>
                   <input class="card-item-counter-input" value="1" />
                   <div class="card-item-counter-btn btn-plus">
-                     <!-- <div class="card-item-minus"></div>
-                     <div class="card-item-plus"></div> -->
-                     <img src="./images/icons/btn-plus.svg" alt="alt" />
+                     <img src="./images/icons/counter-plus.svg" alt="alt" />
                   </div>
                   </div>
                   <div class="card-item-price">
@@ -412,11 +410,11 @@
                   </div>
                   <div class="card-item-line"></div>
                   <a href="#" class="card-item-btn ui-btn">Добавить в корзину</a>
-                  <a href="#" class="card-item-btn ui-btn">Быстрый заказ</a>
+                  <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/fastOder.html">Быстрый заказ</a>
                   <div class="card-item-line"></div>
                   <div class="card-item-question">
                   <img src="./images/icons/card-item-speaker.svg" alt="alt" />
-                  <a href="#" class="card-item-question-link"
+                  <a href="javascript:void(0)" class="card-item-question-link mfp-link" data-href="./popups/anotherPrice.html"
                      >Нашли дешевле? Сообщите!
                   </a>
                   </div>
@@ -537,16 +535,16 @@
                   </div>
                   <a href="#" class="card-item-link">Собрать</a>
                </div>
-               <a class="mfp-link" href="javascript:void(0)" data-href="./popups/query.html">11111</a>
-               <a href="#" class="card-item-options">
+               
+               <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/query.html">
                   <div class="card-item-options-txt">
                   Закажите коммерческое предложение
                   </div>
                   <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-document.svg" alt="alt" />
+                  <img src="./images/icons/card-item-document.svg" alt="alt" >
                   </div>
                </a>
-               <a href="#" class="card-item-options">
+               <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
                   <div class="card-item-options-txt">
                   Закажите звонок!
                   <span class="card-item-options-span">
@@ -642,307 +640,325 @@
          </div>
       </div>
 
-    <!--#include file="inc-product.html"-->
-    <!-- card-usefull -->
-    <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
-    <!-- end card-usefull -->
-
-    <!-- card-reviews -->
-      <div class="card-reviews">
-         <div class="card-reviews-headline">
-            <div class="card-reviews-txt">
-               <div class="card-reviews-txt-title">
-                  Отзывы <span>235</span>
-               </div>
-               <div class="card-item-rating">
-                  <div class="card-item-rating-body">
-                     <div class="card-item-rating-active"></div>
-                     <div class="card-item-rating-items">
-                        <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                     </div>
+      <div class="swiper product-swiper">
+         <!-- Additional required wrapper -->
+         <div class="swiper-wrapper">
+           <!-- Slides -->
+           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
+          
+         </div>
+         <!-- If we need pagination -->
+         <div class="swiper-pagination"></div>
+       
+         <!-- If we need navigation buttons -->
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-button-next"></div>
+       
+         <!-- If we need scrollbar -->
+         <div class="swiper-scrollbar"></div>
+       </div>
+       <!-- card-usefull -->
+       <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
+       <!-- end card-usefull -->
+   
+       <!-- card-reviews -->
+         <div class="card-reviews">
+            <div class="card-reviews-headline">
+               <div class="card-reviews-txt">
+                  <div class="card-reviews-txt-title">
+                     Отзывы <span>235</span>
                   </div>
-                  <div class="card-item-rating-value">4.5</div>
+                  <div class="card-item-rating">
+                     <div class="card-item-rating-body">
+                        <div class="card-item-rating-active"></div>
+                        <div class="card-item-rating-items">
+                           <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                           <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                           <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                           <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                           <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                        </div>
+                     </div>
+                     <div class="card-item-rating-value">4.5</div>
+                  </div>
+               </div>
+               <div class="card-reviews-btn">
+                  <button class="reviews ui-btn all">Все отзывы</button>
+                  
+                  <button class="reviews ui-btn">
+                     <a class="mfp-link" href="javascript:void(0)" data-href="./popups/form-reviews.html">
+                        Оставить отзыв    
+                     </a>
+                  </button>
                </div>
             </div>
-            <div class="card-reviews-btn">
-               <button class="reviews ui-btn all">Все отзывы</button>
-               
-               <button class="reviews ui-btn">
-                  <a class="mfp-link" href="javascript:void(0)" data-href="./popups/form-reviews.html">
-                     Оставить отзыв    
-                  </a>
-               </button>
+   
+            <div class="row">
+               <div class="swiper reviews">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="card-reviews-content">
+                           <div class="card-reviews-content-header">
+                              <div class="card-reviews-content-txt">
+                                 <div class="name">Андрей</div>
+                                 <div class="data">16.12.2021</div>
+                              </div>
+                              <div class="card-item-rating">
+                                 <div class="card-item-rating-body">
+                                    <div class="card-item-rating-active"></div>
+                                    <div class="card-item-rating-items">
+                                       <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="card-item-rating-value">5.0</div>
+                              </div>
+                           </div>
+                           <div class="card-reviews-content-body">
+                              <div class="text">
+                                 <p class="title">Достоинства</p>
+                                 <p class="desc">
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает.
+                                 </p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Недостатки</p>
+                                 <p class="desc">Их нет.</p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Комментарий</p>
+                                 <p class="desc">
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
+                                 </p>
+                              </div>
+                              <a href="#" class="excerpt-link">
+                                 Читать далее 
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="card-reviews-content">
+                           <div class="card-reviews-content-header">
+                              <div class="card-reviews-content-txt">
+                                 <div class="name">Мария</div>
+                                 <div class="data">27.11.2021</div>
+                              </div>
+                              <div class="card-item-rating">
+                                 <div class="card-item-rating-body">
+                                    <div class="card-item-rating-active"></div>
+                                    <div class="card-item-rating-items">
+                                       <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="card-item-rating-value">4.5</div>
+                              </div>
+                           </div>
+                           <div class="card-reviews-content-body">
+                              <div class="text">
+                                 <p class="title">Достоинства</p>
+                                 <p class="desc">
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
+                                 </p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Комментарий</p>
+                                 <p class="desc">
+                                    Компрессор поставляется с установленной микропроцессорной системой управления,
+                                    которая обеспечивает контроль времени наработки.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="card-reviews-content">
+                           <div class="card-reviews-content-header">
+                              <div class="card-reviews-content-txt">
+                                 <div class="name">Кирилл</div>
+                                 <div class="data">09.10.2021</div>
+                              </div>
+                              <div class="card-item-rating">
+                                 <div class="card-item-rating-body">
+                                    <div class="card-item-rating-active"></div>
+                                    <div class="card-item-rating-items">
+                                       <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="card-item-rating-value">5.0</div>
+                              </div>
+                           </div>
+                           <div class="card-reviews-content-body">
+                              <div class="text">
+                                 <p class="title">Достоинства</p>
+                                 <p class="desc">Винтовой компрессор.</p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Недостатки</p>
+                                 <p class="desc">
+                                    Компрессор поставляется с установленной микропроцессорной системой управления,
+                                    которая обеспечивает контроль времени наработки.
+                                 </p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Комментарий</p>
+                                 <p class="desc">
+                                    Компрессор поставляется с установленной микропроцессорной системой управления,
+                                    которая обеспечивает контроль времени наработки.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="card-reviews-content">
+                           <div class="card-reviews-content-header">
+                              <div class="card-reviews-content-txt">
+                                 <div class="name">Андрей</div>
+                                 <div class="data">16.12.2021</div>
+                              </div>
+                              <div class="card-item-rating">
+                                 <div class="card-item-rating-body">
+                                    <div class="card-item-rating-active"></div>
+                                    <div class="card-item-rating-items">
+                                       <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="card-item-rating-value">5.0</div>
+                              </div>
+                           </div>
+                           <div class="card-reviews-content-body">
+                              <div class="text">
+                                 <p class="title">Достоинства</p>
+                                 <p class="desc">
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает.
+                                 </p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Недостатки</p>
+                                 <p class="desc">Их нет.</p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Комментарий</p>
+                                 <p class="desc">
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
+                                 </p>
+                              </div>
+                              <a href="#" class="excerpt-link">
+                                 Читать далее 
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="card-reviews-content">
+                           <div class="card-reviews-content-header">
+                              <div class="card-reviews-content-txt">
+                                 <div class="name">Мария</div>
+                                 <div class="data">27.11.2021</div>
+                              </div>
+                              <div class="card-item-rating">
+                                 <div class="card-item-rating-body">
+                                    <div class="card-item-rating-active"></div>
+                                    <div class="card-item-rating-items">
+                                       <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="card-item-rating-value">4.5</div>
+                              </div>
+                           </div>
+                           <div class="card-reviews-content-body">
+                              <div class="text">
+                                 <p class="title">Достоинства</p>
+                                 <p class="desc">
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
+                                 </p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Комментарий</p>
+                                 <p class="desc">
+                                    Компрессор поставляется с установленной микропроцессорной системой управления,
+                                    которая обеспечивает контроль времени наработки.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="card-reviews-content">
+                           <div class="card-reviews-content-header">
+                              <div class="card-reviews-content-txt">
+                                 <div class="name">Кирилл</div>
+                                 <div class="data">09.10.2021</div>
+                              </div>
+                              <div class="card-item-rating">
+                                 <div class="card-item-rating-body">
+                                    <div class="card-item-rating-active"></div>
+                                    <div class="card-item-rating-items">
+                                       <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                                       <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                                    </div>
+                                 </div>
+                                 <div class="card-item-rating-value">5.0</div>
+                              </div>
+                           </div>
+                           <div class="card-reviews-content-body">
+                              <div class="text">
+                                 <p class="title">Достоинства</p>
+                                 <p class="desc">Винтовой компрессор.</p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Недостатки</p>
+                                 <p class="desc">
+                                    Компрессор поставляется с установленной микропроцессорной системой управления,
+                                    которая обеспечивает контроль времени наработки.
+                                 </p>
+                              </div>
+                              <div class="text">
+                                 <p class="title">Комментарий</p>
+                                 <p class="desc">
+                                    Компрессор поставляется с установленной микропроцессорной системой управления,
+                                    которая обеспечивает контроль времени наработки.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="swiper-next">ываываыа</div>
+               <div class="swiper-prev">ываываываыва</div>
             </div>
          </div>
-
-         <div class="row">
-            <div class="swiper reviews">
-               <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                     <div class="card-reviews-content">
-                        <div class="card-reviews-content-header">
-                           <div class="card-reviews-content-txt">
-                              <div class="name">Андрей</div>
-                              <div class="data">16.12.2021</div>
-                           </div>
-                           <div class="card-item-rating">
-                              <div class="card-item-rating-body">
-                                 <div class="card-item-rating-active"></div>
-                                 <div class="card-item-rating-items">
-                                    <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                                 </div>
-                              </div>
-                              <div class="card-item-rating-value">5.0</div>
-                           </div>
-                        </div>
-                        <div class="card-reviews-content-body">
-                           <div class="text">
-                              <p class="title">Достоинства</p>
-                              <p class="desc">
-                                 Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает.
-                              </p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Недостатки</p>
-                              <p class="desc">Их нет.</p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Комментарий</p>
-                              <p class="desc">
-                                 Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
-                              </p>
-                           </div>
-                           <a href="#" class="excerpt-link">
-                              Читать далее 
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                     <div class="card-reviews-content">
-                        <div class="card-reviews-content-header">
-                           <div class="card-reviews-content-txt">
-                              <div class="name">Мария</div>
-                              <div class="data">27.11.2021</div>
-                           </div>
-                           <div class="card-item-rating">
-                              <div class="card-item-rating-body">
-                                 <div class="card-item-rating-active"></div>
-                                 <div class="card-item-rating-items">
-                                    <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                                 </div>
-                              </div>
-                              <div class="card-item-rating-value">4.5</div>
-                           </div>
-                        </div>
-                        <div class="card-reviews-content-body">
-                           <div class="text">
-                              <p class="title">Достоинства</p>
-                              <p class="desc">
-                                 Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
-                              </p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Комментарий</p>
-                              <p class="desc">
-                                 Компрессор поставляется с установленной микропроцессорной системой управления,
-                                 которая обеспечивает контроль времени наработки.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                     <div class="card-reviews-content">
-                        <div class="card-reviews-content-header">
-                           <div class="card-reviews-content-txt">
-                              <div class="name">Кирилл</div>
-                              <div class="data">09.10.2021</div>
-                           </div>
-                           <div class="card-item-rating">
-                              <div class="card-item-rating-body">
-                                 <div class="card-item-rating-active"></div>
-                                 <div class="card-item-rating-items">
-                                    <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                                 </div>
-                              </div>
-                              <div class="card-item-rating-value">5.0</div>
-                           </div>
-                        </div>
-                        <div class="card-reviews-content-body">
-                           <div class="text">
-                              <p class="title">Достоинства</p>
-                              <p class="desc">Винтовой компрессор.</p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Недостатки</p>
-                              <p class="desc">
-                                 Компрессор поставляется с установленной микропроцессорной системой управления,
-                                 которая обеспечивает контроль времени наработки.
-                              </p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Комментарий</p>
-                              <p class="desc">
-                                 Компрессор поставляется с установленной микропроцессорной системой управления,
-                                 которая обеспечивает контроль времени наработки.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                     <div class="card-reviews-content">
-                        <div class="card-reviews-content-header">
-                           <div class="card-reviews-content-txt">
-                              <div class="name">Андрей</div>
-                              <div class="data">16.12.2021</div>
-                           </div>
-                           <div class="card-item-rating">
-                              <div class="card-item-rating-body">
-                                 <div class="card-item-rating-active"></div>
-                                 <div class="card-item-rating-items">
-                                    <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                                 </div>
-                              </div>
-                              <div class="card-item-rating-value">5.0</div>
-                           </div>
-                        </div>
-                        <div class="card-reviews-content-body">
-                           <div class="text">
-                              <p class="title">Достоинства</p>
-                              <p class="desc">
-                                 Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает.
-                              </p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Недостатки</p>
-                              <p class="desc">Их нет.</p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Комментарий</p>
-                              <p class="desc">
-                                 Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
-                              </p>
-                           </div>
-                           <a href="#" class="excerpt-link">
-                              Читать далее 
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                     <div class="card-reviews-content">
-                        <div class="card-reviews-content-header">
-                           <div class="card-reviews-content-txt">
-                              <div class="name">Мария</div>
-                              <div class="data">27.11.2021</div>
-                           </div>
-                           <div class="card-item-rating">
-                              <div class="card-item-rating-body">
-                                 <div class="card-item-rating-active"></div>
-                                 <div class="card-item-rating-items">
-                                    <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                                 </div>
-                              </div>
-                              <div class="card-item-rating-value">4.5</div>
-                           </div>
-                        </div>
-                        <div class="card-reviews-content-body">
-                           <div class="text">
-                              <p class="title">Достоинства</p>
-                              <p class="desc">
-                                 Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
-                              </p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Комментарий</p>
-                              <p class="desc">
-                                 Компрессор поставляется с установленной микропроцессорной системой управления,
-                                 которая обеспечивает контроль времени наработки.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="swiper-slide">
-                     <div class="card-reviews-content">
-                        <div class="card-reviews-content-header">
-                           <div class="card-reviews-content-txt">
-                              <div class="name">Кирилл</div>
-                              <div class="data">09.10.2021</div>
-                           </div>
-                           <div class="card-item-rating">
-                              <div class="card-item-rating-body">
-                                 <div class="card-item-rating-active"></div>
-                                 <div class="card-item-rating-items">
-                                    <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                                    <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                                 </div>
-                              </div>
-                              <div class="card-item-rating-value">5.0</div>
-                           </div>
-                        </div>
-                        <div class="card-reviews-content-body">
-                           <div class="text">
-                              <p class="title">Достоинства</p>
-                              <p class="desc">Винтовой компрессор.</p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Недостатки</p>
-                              <p class="desc">
-                                 Компрессор поставляется с установленной микропроцессорной системой управления,
-                                 которая обеспечивает контроль времени наработки.
-                              </p>
-                           </div>
-                           <div class="text">
-                              <p class="title">Комментарий</p>
-                              <p class="desc">
-                                 Компрессор поставляется с установленной микропроцессорной системой управления,
-                                 которая обеспечивает контроль времени наработки.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="swiper-next">ываываыа</div>
-            <div class="swiper-prev">ываываываыва</div>
-         </div>
-      </div>
-    <!-- end card-reviews -->
-
-    <!-- card-recommended -->
-    <!-- end card-recommended -->
-    <script src="./js/nazz.js"></script>
+       <!-- end card-reviews -->
+   
+       <!-- card-recommended -->
+       <!-- end card-recommended -->
+    </div>
   </div>
 </div>
 <!--#include file="inc-footer.html"-->

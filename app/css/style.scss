@@ -56,6 +56,7 @@ body {
     padding-left: 20px;
   }
 }
+
 // Layout
 @import "./layout/grid";
 @import "./layout/header";
@@ -80,3 +81,4 @@ body {
 @import "./popups/preview";
 @import "./popups/sert";
 @import "./popups/form-reviews";
+@import "./popups/ofer.scss";
