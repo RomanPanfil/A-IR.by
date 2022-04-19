@@ -43,6 +43,11 @@ const slider2 = new Swiper(".preview", {
     prevEl: ".swiper-button-prev",
   },
 });
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> main
 
 // const slider3 = new Swiper('.reviews', {
 //   slidesPerView: 3,
@@ -52,3 +57,7 @@ const slider2 = new Swiper(".preview", {
 //     prevEl: ".swiper-button-prev",
 //   },
 // });
+<<<<<<< HEAD
+=======
+>>>>>>> main
+>>>>>>> main
