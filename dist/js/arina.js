@@ -1,11 +1,14 @@
 const ratings = document.querySelectorAll('.card-item-rating');
+const btnAccordion = document.querySelector('.accordion-items-title');
+const contentAccordion = document.querySelector('.accordion-content');
 
 let ratingActive;
 let ratingValue;
 
 // tabs on page card.html
 $(function () {
-  let tab = $('#tabs .tabs-items > div');
+  let tab = $('#tabs .tabs-items > div.tabs-item');
+
   tab.hide().filter(':first').show();
 
   // Клики по вкладкам.
@@ -15,11 +18,11 @@ $(function () {
     $('#tabs .tabs-nav a').removeClass('active');
     $(this).addClass('active');
     return false;
-  }).filter(':first').click();
+  }).filter(':eq(1)').click();
 
   // Клики по якорным ссылкам.
   $('.tabs-target').click(function () {
-    $('#tabs .tabs-nav a[href=' + $(this).attr('href') + ']').click();
+    $("#tabs .tabs-nav * a[href*='#tab-1']").click();
   });
 });
 
@@ -77,5 +80,26 @@ function setRating(rating) {
       ratingValue.innerHTML = ratingItem.value;
       setRatingActiveWidth();
     })
+  }
+}
+
+btnAccordion.addEventListener('click', function() {
+  console.log(contentAccordion)
+  contentAccordion.classList.toggle('active');
+})
+
+if (matchMedia) {
+  var screen1170 = window.matchMedia("(max-width:1170px)");
+  screen1170.addListener(changes);
+  changes(screen1170);
+}
+
+console.log($('.tabs-item .content'))
+
+function changes(screen768) {
+  if (screen768.matches) {
+    $('.accordion-content').appendTo($(".tabs-items"));
+  } else {
+    $('.accordion-content').appendTo($(".tabs-item"));
   }
 }

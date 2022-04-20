@@ -2,62 +2,66 @@ $(document).on("click", ".mfp-link", function () {
   $(document).ready(function () {
     const ratings = document.querySelectorAll('.card-item-rating');
 
-    let ratingActive;
-    let ratingValue;
-
     if (ratings.length > 0) {
       initRatings();
     }
 
     function initRatings() {
+      let ratingActive;
+      let ratingValue;
+
       for (let i = 0; i < ratings.length; i++) {
         const rating = ratings[i];
+        initRating(rating);
+      }
+
+      function initRating(rating) {
+        initRatingVars(rating);
+        setRatingActiveWidth();
 
         if (rating.classList.contains('rating-set')) {
           setRating(rating);
         }
-
-        initRatingVars(rating);
-        setRatingActiveWidth();
       }
-    }
 
-    function initRatingVars(rating) {
-      ratingActive = rating.querySelector('.card-item-rating-active');
-      ratingValue = rating.querySelector('.card-item-rating-value');
-    }
-
-    function setRatingActiveWidth(index = ratingValue.innerHTML) {
-      const ratingActiveWidth = index / 0.05;
-
-      if (index === 'Нет оценки') {
-        ratingActive.style.width = '0%';
-      } else {
-        ratingActive.style.width = `${ratingActiveWidth}%`;
+      function initRatingVars(rating) {
+        ratingActive = rating.querySelector('.card-item-rating-active');
+        ratingValue = rating.querySelector('.card-item-rating-value');
       }
-    }
 
-    function setRating(rating) {
-      const ratingItems = rating.querySelectorAll('.card-item-rating-item');
+      function setRatingActiveWidth(index = ratingValue.innerHTML) {
+        const ratingActiveWidth = index / 0.05;
 
-      for (let i = 0; i < ratingItems.length; i++) {
-        const ratingItem = ratingItems[i];
+        if(index === 'Нет оценки') {
+          ratingActive.style.width = '0%';
+        } else {
+          ratingActive.style.width = `${ratingActiveWidth}%`;
+        }
 
-        ratingItem.addEventListener('mouseenter', function (e) {
-          initRatingVars(rating);
-          setRatingActiveWidth(ratingItem.value);
-        });
+      }
 
-        ratingItem.addEventListener('mouseleave', function (e) {
-          setRatingActiveWidth();
-        });
+      function setRating(rating) {
+        const ratingItems = rating.querySelectorAll('.card-item-rating-item');
 
-        ratingItem.addEventListener('click', function (e) {
-          initRatingVars(rating);
+        for (let i = 0; i < ratingItems.length; i++) {
+          const ratingItem = ratingItems[i];
 
-          ratingValue.innerHTML = ratingItem.value;
-          setRatingActiveWidth();
-        })
+          ratingItem.addEventListener('mouseenter', function(e) {
+            initRatingVars(rating);
+            setRatingActiveWidth(ratingItem.value);
+          });
+
+          ratingItem.addEventListener('mouseleave', function(e) {
+            setRatingActiveWidth();
+          });
+
+          ratingItem.addEventListener('click', function(e) {
+            initRatingVars(rating);
+
+            ratingValue.innerHTML = ratingItem.value;
+            setRatingActiveWidth();
+          })
+        }
       }
     }
   });
