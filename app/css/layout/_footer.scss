@@ -1,0 +1,129 @@
+.footer {
+  padding: 40px 60px;
+  background: #1d262c;
+  color: #fff;
+  ul li a {
+    color: #fff;
+    opacity: 0.5;
+    font-size: rem(14);
+    margin-bottom: 5px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &-top {
+    padding-bottom: 27px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    &-title {
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    &-pay {
+      margin-bottom: 27px;
+    }
+    &-logo {
+      margin-bottom: 7px;
+      max-width: 150px;
+      img {
+        max-height: 48px;
+      }
+    }
+    &-wrapper {
+      margin-bottom: 27px;
+    }
+    &-resource {
+      &-sub {
+        margin-bottom: 34px;
+      }
+      &-wrapper {
+        font-size: rem(14);
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &-contacts {
+    margin-bottom: 25px;
+    &-link {
+      display: block;
+      color: #fff;
+      font-size: rem(22);
+      font-weight: 600;
+      margin-bottom: 12px;
+      &:hover {
+        text-decoration: underline;
+      }
+      &-img {
+        display: inline-block;
+        position: relative;
+        bottom: -2px;
+        margin-right: 10px;
+        max-width: 20px;
+      }
+    }
+  }
+  &-street {
+    max-width: 215px;
+    opacity: 0.5;
+    margin-bottom: 20px;
+  }
+  &-clock {
+    opacity: 0.5;
+  }
+
+  &-bottom {
+    padding-top: 31px;
+    &-links {
+      &-title {
+        font-weight: 700;
+        margin-bottom: 11px;
+      }
+      &-link {
+        max-width: 40px;
+        margin-right: 8px;
+        img {
+          max-height: 40px;
+        }
+      }
+    }
+    &-socials {
+      &-title {
+        font-weight: 700;
+        margin-bottom: 11px;
+      }
+      &-link {
+        max-width: 40px;
+        margin-right: 8px;
+        &:hover {
+          opacity: 0.5;
+        }
+        img {
+          max-height: 40px;
+        }
+      }
+    }
+    &-reit {
+      &-title {
+        font-weight: 700;
+        margin-bottom: 11px;
+      }
+      &-link {
+        display: block;
+        max-width: 152px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        padding: 12px 12px;
+        margin-bottom: 8px;
+      }
+    }
+    &-info {
+      opacity: 0.5;
+      &-subtitle {
+        margin-bottom: 60px;
+      }
+      &-coopyright {
+        font-size: rem(12);
+      }
+    }
+  }
+}

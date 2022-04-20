@@ -312,12 +312,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-
-      // margin-right: 20px;
-      // background-color: #ebebeb;
-      // overflow: hidden;
       width: 200px;
-      // flex: 0 0 200px;
     }
     // .card-interest-item-txt {
     //   height: 100%;
@@ -325,4 +320,18 @@
     //   vertical-align: middle;
     // }
   }
+}
+
+.card-interest-mob::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ie 10+ */
+.card-interest-mob {
+  -ms-overflow-style: none;
+}
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.card-interest-mob {
+  overflow: -moz-scrollbars-none;
 }
