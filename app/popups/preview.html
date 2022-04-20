@@ -39,4 +39,23 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            const popupSliderEl = new Swiper('.vertical-slider', {
+                slidesPerView: 4,
+                slideToClickedSlide: true,
+                loop: true,
+                direction: 'vertical',
+
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            const slider2 = new Swiper('.main-slider', {
+                loop: true,
+            });
+        });
+    </script>
 </div>
