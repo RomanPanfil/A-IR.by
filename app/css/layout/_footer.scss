@@ -1,22 +1,101 @@
 .footer {
-  padding: 40px 60px;
+  padding: 40px 0px;
   background: #1d262c;
   color: #fff;
+  ul li {
+    // margin-bottom: 5px;
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
+    }
+  }
   ul li a {
     color: #fff;
     opacity: 0.5;
     font-size: rem(14);
-    margin-bottom: 5px;
+
     &:hover {
       text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
     }
   }
   &-top {
     padding-bottom: 27px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    @media (max-width: 768px) {
+      border-bottom: none;
+    }
     &-title {
       font-weight: 700;
       margin-bottom: 12px;
+      position: relative;
+      @media (max-width: 768px) {
+        margin-bottom: 0;
+        &.footer-open {
+          margin-bottom: 22px;
+        }
+        &:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          border-top: 2px solid #fff;
+          border-right: 2px solid #fff;
+          transform: rotate(135deg);
+          width: 8px;
+          height: 8px;
+          right: 0;
+          top: 5px;
+        }
+        &.footer-open:after {
+          transform: rotate(-45deg);
+        }
+        & + ul {
+          display: none;
+        }
+        &.footer-open + ul {
+          display: block;
+        }
+      }
+    }
+    &-services {
+      @media (max-width: 768px) {
+        .footer-top-wrap {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+    &-wrap {
+      @media (max-width: 768px) {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 15px;
+        margin: 0px -20px;
+      }
+    }
+    &-about {
+      @media (max-width: 1170px) {
+        &-wrapper {
+          margin-bottom: 19px;
+          @media (max-width: 768px) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &-info {
+      @media (max-width: 1170px) {
+        &-wrapper {
+          margin-bottom: 16px;
+          @media (max-width: 768px) {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &-contact {
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
     &-pay {
       margin-bottom: 27px;
@@ -30,8 +109,29 @@
     }
     &-wrapper {
       margin-bottom: 27px;
+      @media (max-width: 768px) {
+        margin-bottom: 0;
+      }
     }
     &-resource {
+      .footer-top-title {
+        display: none;
+      }
+      @media (max-width: 768px) {
+        .footer-top-title {
+          display: block;
+          & + .footer-top-media-wrapper {
+            display: none;
+          }
+          &.footer-open + .footer-top-media-wrapper {
+            display: inline-block;
+          }
+        }
+      }
+
+      @media (max-width: 1170px) {
+        margin-bottom: 20px;
+      }
       &-sub {
         margin-bottom: 34px;
       }
@@ -50,6 +150,9 @@
       font-size: rem(22);
       font-weight: 600;
       margin-bottom: 12px;
+      @media (max-width: 1240px) and (min-width: 1170px) {
+        font-size: rem(20);
+      }
       &:hover {
         text-decoration: underline;
       }
@@ -66,14 +169,23 @@
     max-width: 215px;
     opacity: 0.5;
     margin-bottom: 20px;
+    @media (max-width: 768px) {
+      max-width: initial;
+    }
   }
   &-clock {
     opacity: 0.5;
+    @media (max-width: 1170px) {
+      margin-bottom: 26px;
+    }
   }
 
   &-bottom {
     padding-top: 31px;
     &-links {
+      @media (max-width: 768px) {
+        margin-bottom: 40px;
+      }
       &-title {
         font-weight: 700;
         margin-bottom: 11px;
@@ -87,6 +199,14 @@
       }
     }
     &-socials {
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+      &-wrapper {
+        @media (max-width: 1170px) {
+          margin-bottom: 20px;
+        }
+      }
       &-title {
         font-weight: 700;
         margin-bottom: 11px;
@@ -114,12 +234,18 @@
         border-radius: 4px;
         padding: 12px 12px;
         margin-bottom: 8px;
+        @media (max-width: 1170px) {
+          display: inline-block;
+        }
       }
     }
     &-info {
       opacity: 0.5;
       &-subtitle {
         margin-bottom: 60px;
+        @media (max-width: 1170px) {
+          margin-bottom: 20px;
+        }
       }
       &-coopyright {
         font-size: rem(12);
