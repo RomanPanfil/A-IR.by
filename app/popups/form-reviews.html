@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="form-reviews-body">
-        <form action="#" method="POST">
+        <form action="#" method="POST" class="form-reviews-valid">
           <div class="form-cell">
             <div class="txt">
               <label for="name">Ваше имя<span>*</span></label> <br>
@@ -41,11 +41,11 @@
                 <div class="card-item-rating-body">
                   <div class="card-item-rating-active"></div>
                   <div class="card-item-rating-items">
-                      <input type="radio" class="card-item-rating-item" value="1.0" name="rating">
-                      <input type="radio" class="card-item-rating-item" value="2.0" name="rating">
-                      <input type="radio" class="card-item-rating-item" value="3.0" name="rating">
-                      <input type="radio" class="card-item-rating-item" value="4.0" name="rating">
-                      <input type="radio" class="card-item-rating-item" value="5.0" name="rating">
+                    <input type="radio" class="card-item-rating-item" value="1.0" name="rating">
+                    <input type="radio" class="card-item-rating-item" value="2.0" name="rating">
+                    <input type="radio" class="card-item-rating-item" value="3.0" name="rating">
+                    <input type="radio" class="card-item-rating-item" value="4.0" name="rating">
+                    <input type="radio" class="card-item-rating-item" value="5.0" name="rating">
                   </div>
                 </div>
               <div class="card-item-rating-value"></div>
@@ -54,8 +54,8 @@
           </div>
           <div class="form-cell">
             <div class="form-cell-text-box">
-                <label for="text-box">Текстовое поле<span>*</span></label> <br>
-                <textarea id="text-box" name="text-box" placeholder="Текст"></textarea>
+                <label for="textbox">Текстовое поле<span>*</span></label> <br>
+                <textarea id="textbox" name="textbox" placeholder="Текст"></textarea>
 
                 <div class="quality">
                   <input type="text"  id="plus" name="plus" class="plus" placeholder="Пара слов о преимуществах">
@@ -93,4 +93,110 @@
       </div>
     </div>
   </div>
+  <script>
+    $(document).ready(function () {
+      const ratings = document.querySelectorAll('.card-item-rating');
+
+      if (ratings.length > 0) {
+        initRatings();
+      }
+
+      function initRatings() {
+        let ratingActive;
+        let ratingValue;
+
+        for (let i = 0; i < ratings.length; i++) {
+          const rating = ratings[i];
+          initRating(rating);
+        }
+
+        function initRating(rating) {
+          initRatingVars(rating);
+          setRatingActiveWidth();
+
+          if (rating.classList.contains('rating-set')) {
+            setRating(rating);
+          }
+        }
+
+        function initRatingVars(rating) {
+          ratingActive = rating.querySelector('.card-item-rating-active');
+          ratingValue = rating.querySelector('.card-item-rating-value');
+        }
+
+        function setRatingActiveWidth(index = ratingValue.innerHTML) {
+          const ratingActiveWidth = index / 0.05;
+
+          if (index === 'Нет оценки') {
+            ratingActive.style.width = '0%';
+          } else {
+            ratingActive.style.width = `${ratingActiveWidth}%`;
+          }
+        }
+
+        function setRating(rating) {
+          const ratingItems = rating.querySelectorAll('.card-item-rating-item');
+
+          for (let i = 0; i < ratingItems.length; i++) {
+            const ratingItem = ratingItems[i];
+
+            ratingItem.addEventListener('mouseenter', function(e) {
+              initRatingVars(rating);
+              setRatingActiveWidth(ratingItem.value);
+            });
+
+            ratingItem.addEventListener('mouseleave', function(e) {
+              setRatingActiveWidth();
+            });
+
+            ratingItem.addEventListener('click', function(e) {
+              initRatingVars(rating);
+
+              ratingValue.innerHTML = ratingItem.value;
+              setRatingActiveWidth();
+            })
+          }
+        }
+      }
+  
+      $(".form-reviews-valid").validate({
+          errorElement: "span",
+          rules: {
+            email: {
+              required: true,
+              email: true,
+            },
+            name: {
+              required: true,
+              lettersonly: true,
+            },
+            textbox: {
+              required: true,
+              maxlength: 500,
+            },
+          },
+
+          messages: {
+            email: {
+              required: "Пожалуйста, введите ваш Email",
+              email: "Пожалуйста введите корректный Email"
+            },
+            name: {
+              required: "Пожалуйста, введите ваше Имя",
+              name: "Ваше имя не может состоять из цифр",
+            },
+          }
+        });
+        
+        jQuery.validator.addMethod(
+          "lettersonly",
+          function (value, element) {
+            return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
+          },
+          "Ваше имя не может состоять из цифр"
+        );
+        
+        // @todo сделать вывод на ошибку textbox на ограничение в 500 символах (как в name или email)
+    });
+  </script>
 </div>
