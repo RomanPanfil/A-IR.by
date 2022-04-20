@@ -101,17 +101,25 @@
       }
     }
     &-logo {
+      flex: 0 0 192px;
+      max-width: 192px;
       @media (max-width: 1024px) {
         display: flex;
         flex: 0 0 80%;
         max-width: 80%;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: 768px) {
+          flex: 0 0 70%;
+          max-width: 70%;
+          @media (max-width: 450px) {
+            flex: 0 0 60%;
+            max-width: 60%;
+          }
+        }
       }
       &-img {
         height: 40px;
-        flex: 0 0 192px;
-        max-width: 192px;
       }
       img {
         max-height: 40px;
@@ -140,6 +148,14 @@
           max-width: 20%;
           justify-content: space-between;
           padding-left: 24px;
+          @media (max-width: 768px) {
+            flex: 0 0 30%;
+            max-width: 30%;
+            @media (max-width: 450px) {
+              flex: 0 0 40%;
+              max-width: 40%;
+            }
+          }
         }
       }
       &-text {
