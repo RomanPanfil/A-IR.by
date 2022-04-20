@@ -330,6 +330,12 @@
 
             @media (max-width: 1024px) {
               display: block;
+              width: 100%;
+              text-align: center;
+              height: 56px;
+              padding: 16px 0;
+              border: 1px solid #D3D3D3;
+              border-radius: 10px;
             }
           }
 
@@ -340,6 +346,7 @@
             
             &.active {
               display: block;
+              padding: 24px;
             }
           }
         }
