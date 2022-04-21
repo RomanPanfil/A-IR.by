@@ -17,23 +17,19 @@ inputBtn.oninput = function () {
 
 let productOpen = document.querySelectorAll(".product-item-open");
 let productItem = document.querySelector(".product-item");
-let isOpen = false;
-// productOpen.onclick = () => {
-//   console.log(productOpen);
-// };
 
 productOpen.forEach((el) => {
   el.onclick = () => {
-    isOpen = !isOpen;
+    productItem.classList.toggle("product-open");
 
     if (isOpen === true) {
-      productItem.classList.add("product-open");
+      // productItem.classList.add("product-open");
       productLike.src = "./images/icons/product-like-shadow.svg";
       productAdd.src = "./images/icons/product-add-shadow.svg";
       productArrow.src = "./images/icons/product-arrow-left.svg";
       productCart.innerHTML = "Оформить";
     } else {
-      productItem.classList.remove("product-open");
+      // productItem.classList.remove("product-open");
       productLike.src = "./images/icons/product-like.svg";
       productAdd.src = "./images/icons/product-add.svg";
       productArrow.src = "./images/icons/product-arrow.svg";
@@ -41,3 +37,19 @@ productOpen.forEach((el) => {
     }
   };
 });
+
+// let mql = window.matchMedia("(min-width: 1260px)");
+
+// window.addEventListener("resize", () => {
+//   if (mql.matches) {
+//   } else {
+//     console.log("done");
+
+//     document.querySelector(".zxc").classList.remove("swiper");
+//     document.querySelector(".zxc-wrap").classList.remove("swiper-wrapper");
+//     let arr = document.querySelectorAll(".zxc-slide");
+//     arr.forEach((el) => {
+//       el.classList.remove("swiper-slide");
+//     });
+//   }
+// });

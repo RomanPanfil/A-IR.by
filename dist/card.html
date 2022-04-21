@@ -389,7 +389,7 @@
 
             <!-- col-4 -->
             <div class="col-sm-6 col-us-12 col-md-4">
-               <div class="card-item-wrapper">
+               <div class="card-item-wrapper dpn">
                   <div class="card-item-counter">
                   <div class="card-item-counter-txt">Количество</div>
                   <div class="card-item-counter-btn btn-minus">
@@ -423,7 +423,7 @@
                   </a>
                   </div>
                </div>
-               <div class="card-item-wrapper card-item-radio">
+               <div class="card-item-wrapper card-item-radio dpn">
                   <div class="card-item-title">Соберите свою комплектацию</div>
                   <div class="card-item-features">
                   <div class="card-item-features-title">Давление</div>
@@ -539,48 +539,137 @@
                   </div>
                   <a href="#" class="card-item-link">Собрать</a>
                </div>
-               
-               <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/query.html">
-                  <div class="card-item-options-txt">
-                  Закажите коммерческое предложение
+               <div class="card-item-wrapper card-item-wrapper-missing dpn">
+                  <div class="card-item-title">
+                     Снят с производства
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-document.svg" alt="alt" >
+                  <a href="#" class ="card-item-btn ui-btn">Подобрать аналог</a>
+               </div>
+               <div class="card-item-wrapper card-item-wrapper-dark dpn">
+                  <div class="card-item-counter">
+                  <div class="card-item-counter-txt">Количество</div>
+                  <div class="card-item-counter-btn btn-minus">
+                     <!-- <div class="card-item-minus"></div> -->
+                     <img
+                        src="./images/icons/btn-minus.svg"
+                        alt="alt"
+                        class="card-item-minus"
+                     />
                   </div>
-               </a>
-               <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
-                  <div class="card-item-options-txt">
-                  Закажите звонок!
-                  <span class="card-item-options-span">
-                     Функция заказа обратного звонка
-                  </span>
+                  <input class="card-item-counter-input" value="1" />
+                  <div class="card-item-counter-btn btn-plus">
+                     <img src="./images/icons/counter-plus.svg" alt="alt" />
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-phone.svg" alt="alt" />
                   </div>
-               </a>
-               <a href="#" class="card-item-options">
-                  <div class="card-item-options-txt">
-                  +375 (33) 398-18-18
-                  <span class="card-item-options-span">
-                     Поможем по всем вопросам
-                  </span>
+                  <div class="card-item-price">
+                  <div class="card-item-price-txt">Цена</div>
+
+                  <div class="card-item-price-current">5 381 BYN</div>
+                  <div class="card-item-price-currency">2 500$ / 2 300€</div>
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-info.svg" alt="alt" />
+                  <div class="card-item-line"></div>
+                  <a href="#" class="card-item-btn ui-btn card-btn-dark">Перейти в корзину</a>
+                  <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/fastOder.html">Быстрый заказ</a>
+                  <div class="card-item-line"></div>
+                  <div class="card-item-question">
+                  <img src="./images/icons/card-item-speaker.svg" alt="alt" />
+                  <a href="javascript:void(0)" class="card-item-question-link mfp-link" data-href="./popups/anotherPrice.html"
+                     >Нашли дешевле? Сообщите!
+                  </a>
                   </div>
-               </a>
-               <a href="#" class="card-item-options">
-                  <div class="card-item-options-txt">
-                  tech@irand.by
-                  <span class="card-item-options-span">
-                     Не стесняйтесь написать нам письмо
-                  </span>
+               </div>
+               <div class="card-item-wrapper card-item-wrapper-dark">
+                  <div class="card-item-counter">
+                  <div class="card-item-counter-txt">Количество</div>
+                  <div class="card-item-counter-btn btn-minus">
+                     <img
+                        src="./images/icons/btn-minus.svg"
+                        alt="alt"
+                        class="card-item-minus"
+                     />
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-mail.svg" alt="alt" />
+                  <input class="card-item-counter-input" value="1" />
+                  <div class="card-item-counter-btn btn-plus">
+                     <img src="./images/icons/counter-plus.svg" alt="alt" />
                   </div>
-               </a>
+                  </div>
+                  <div class="card-item-price">
+                  <div class="card-item-price-txt">Цена</div>
+
+                  <div class="card-item-price-current">5 381 BYN</div>
+                  <div class="card-item-price-currency">2 500$ / 2 300€</div>
+                  </div>
+                  <div class="card-item-line"></div>
+                  <div class="card-item-status">
+                     Под заказ
+                  </div>
+                  <div class="card-item-delivery">
+                     <img src="./images/icons/card-item-delivery.svg" alt="alt">
+                     
+                     <div class="card-item-delivery-span">Доставка – 14 дней</div>
+                  </div>
+                  <a href="#" class="card-item-btn ui-btn card-btn-dark">Добавить в корзину</a>
+                  <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/fastOder.html">Быстрый заказ</a>
+                  <div class="card-item-line"></div>
+                  <div class="card-item-question">
+                  <img src="./images/icons/card-item-speaker.svg" alt="alt" />
+                  <a href="javascript:void(0)" class="card-item-question-link mfp-link" data-href="./popups/anotherPrice.html"
+                     >Нашли дешевле? Сообщите!
+                  </a>
+                  </div>
+               </div>
+               <div class="card-item-container">
+                  <div class="row">
+                     <div class="col-6 col-us-12 col-sm-12"><a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/query.html">
+                        <div class="card-item-options-txt">
+                        Закажите коммерческое предложение
+                        </div>
+                        <div class="card-item-options-img">
+                        <img src="./images/icons/card-item-document.svg" alt="alt" >
+                        </div>
+                     </a></div>
+                     <div class="col-6 col-us-12 col-sm-12"> <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
+                        <div class="card-item-options-txt">
+                        Закажите звонок!
+                        <span class="card-item-options-span">
+                           Функция заказа обратного звонка
+                        </span>
+                        </div>
+                        <div class="card-item-options-img">
+                        <img src="./images/icons/card-item-phone.svg" alt="alt" />
+                        </div>
+                     </a></div>
+                     <div class="col-6 col-us-12 col-sm-12"><a href="tel:+375333981818" class="card-item-options">
+                        <div class="card-item-options-txt">
+                        +375 (33) 398-18-18
+                        <span class="card-item-options-span">
+                           Поможем по всем вопросам
+                        </span>
+                        </div>
+                        <div class="card-item-options-img">
+                        <img src="./images/icons/card-item-info.svg" alt="alt" />
+                        </div>
+                     </a></div>
+                     <div class="col-6 col-us-12 col-sm-12">
+                        <a href="mailto:tech@irand.by" class="card-item-options">
+                           <div class="card-item-options-txt">
+                           tech@irand.by
+                           <span class="card-item-options-span">
+                              Не стесняйтесь написать нам письмо
+                           </span>
+                           </div>
+                           <div class="card-item-options-img">
+                           <img src="./images/icons/card-item-mail.svg" alt="alt" />
+                           </div>
+                        </a>
+                     </div>
+
+                  </div>
+                  
+                 
+                  
+                 
+               </div>
             </div>
         </div>
       </div>
@@ -588,7 +677,7 @@
       <!-- card-interest -->
       <div class="card-interest">
          <div class="card-interest-title">Должно пригодиться</div>
-         <div class="row">
+         <div class="row card-interest-mob">
          <div class="col-4">
             <a href="#" class="card-interest-item">
                <div class="card-interest-item-img">
@@ -644,24 +733,23 @@
          </div>
       </div>
 
-      <div class="swiper product-swiper">
+      <div class="swiper product-swiper zxc">
          <!-- Additional required wrapper -->
-         <div class="swiper-wrapper">
+         <div class="swiper-wrapper zxc-wrap">
            <!-- Slides -->
-           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
-           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
-           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide zxc-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide zxc-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide zxc-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide zxc-slide" ><!--#include file="inc-product.html"--></div>
+           
           
          </div>
-         <!-- If we need pagination -->
-         <div class="swiper-pagination"></div>
+        
        
          <!-- If we need navigation buttons -->
          <div class="swiper-button-prev"></div>
          <div class="swiper-button-next"></div>
        
-         <!-- If we need scrollbar -->
-         <div class="swiper-scrollbar"></div>
        </div>
        <!-- card-usefull -->
        <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
@@ -961,6 +1049,172 @@
        <!-- card-recommended -->
        <!-- end card-recommended -->
     </div>
+    
+
+    
+    <!-- card-usefull -->
+    <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
+    <!-- end card-usefull -->
+
+    <!-- card-reviews -->
+      <div class="card-reviews">
+         <div class="card-reviews-headline">
+            <div class="card-reviews-txt">
+               <div class="card-reviews-txt-title">
+                  Отзывы <span>235</span>
+               </div>
+               <div class="card-item-rating">
+                  <div class="card-item-rating-body">
+                     <div class="card-item-rating-active"></div>
+                     <div class="card-item-rating-items">
+                        <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                        <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                        <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                        <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                        <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                     </div>
+                  </div>
+                  <div class="card-item-rating-value">4.5</div>
+               </div>
+            </div>
+            <div class="card-reviews-btn">
+               <button class="reviews ui-btn all">Все отзывы</button>
+               <button class="reviews ui-btn">Оставить отзыв</button>
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="col-4">
+               <div class="card-reviews-content">
+                  <div class="card-reviews-content-header">
+                     <div class="card-reviews-content-txt">
+                        <div class="name">Андрей</div>
+                        <div class="data">16.12.2021</div>
+                     </div>
+                     <div class="card-item-rating">
+                        <div class="card-item-rating-body">
+                           <div class="card-item-rating-active"></div>
+                           <div class="card-item-rating-items">
+                              <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                           </div>
+                        </div>
+                        <div class="card-item-rating-value">5.0</div>
+                     </div>
+                  </div>
+                  <div class="card-reviews-content-body">
+                     <div class="text">
+                        <p class="title">Достоинства</p>
+                        <p class="desc">
+                           Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает.
+                        </p>
+                     </div>
+                     <div class="text">
+                        <p class="title">Недостатки</p>
+                        <p class="desc">Их нет.</p>
+                     </div>
+                     <div class="text">
+                        <p class="title">Комментарий</p>
+                        <p class="desc">
+                           Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
+                        </p>
+                     </div>
+                     <a href="#" class="excerpt-link">
+                        Читать далее 
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-4">
+               <div class="card-reviews-content">
+                  <div class="card-reviews-content-header">
+                     <div class="card-reviews-content-txt">
+                        <div class="name">Мария</div>
+                        <div class="data">27.11.2021</div>
+                     </div>
+                     <div class="card-item-rating">
+                        <div class="card-item-rating-body">
+                           <div class="card-item-rating-active"></div>
+                           <div class="card-item-rating-items">
+                              <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                           </div>
+                        </div>
+                        <div class="card-item-rating-value">4.5</div>
+                     </div>
+                  </div>
+                  <div class="card-reviews-content-body">
+                     <div class="text">
+                        <p class="title">Достоинства</p>
+                        <p class="desc">
+                           Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
+                        </p>
+                     </div>
+                     <div class="text">
+                        <p class="title">Комментарий</p>
+                        <p class="desc">
+                           Компрессор поставляется с установленной микропроцессорной системой управления,
+                           которая обеспечивает контроль времени наработки.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-4">
+               <div class="card-reviews-content">
+                  <div class="card-reviews-content-header">
+                     <div class="card-reviews-content-txt">
+                        <div class="name">Кирилл</div>
+                        <div class="data">09.10.2021</div>
+                     </div>
+                     <div class="card-item-rating">
+                        <div class="card-item-rating-body">
+                           <div class="card-item-rating-active"></div>
+                           <div class="card-item-rating-items">
+                              <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                              <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                           </div>
+                        </div>
+                        <div class="card-item-rating-value">5.0</div>
+                     </div>
+                  </div>
+                  <div class="card-reviews-content-body">
+                     <div class="text">
+                        <p class="title">Достоинства</p>
+                        <p class="desc">Винтовой компрессор.</p>
+                     </div>
+                     <div class="text">
+                        <p class="title">Недостатки</p>
+                        <p class="desc">
+                           Компрессор поставляется с установленной микропроцессорной системой управления,
+                           которая обеспечивает контроль времени наработки.
+                        </p>
+                     </div>
+                     <div class="text">
+                        <p class="title">Комментарий</p>
+                        <p class="desc">
+                           Компрессор поставляется с установленной микропроцессорной системой управления,
+                           которая обеспечивает контроль времени наработки.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    <!-- end card-reviews -->
+
+    <!-- card-recommended -->
+    <!-- end card-recommended -->
   </div>
 </div>
 <!--#include file="inc-footer.html"-->

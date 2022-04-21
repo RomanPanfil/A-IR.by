@@ -10,7 +10,6 @@
       <div class="popup-item-info-counter">
         <div class="card-item-counter">
           <div class="card-item-counter-btn btn-minus">
-            <!-- <div class="card-item-minus"></div> -->
             <img
               src="./images/icons/btn-minus.svg"
               alt="alt"
@@ -120,5 +119,21 @@
       },
       "Incorrect format"
     );
+    let minusBtn = document.querySelectorAll(".btn-minus");
+    let plusBtn = document.querySelectorAll(".btn-plus");
+    let inputBtn = document.querySelectorAll(".card-item-counter-input");
+    let reg = /[^\d]/g;
+    plusBtn.onclick = () => {
+      console.log("plus");
+      inputBtn.value++;
+    };
+
+    minusBtn.onclick = () => {
+      inputBtn.value == 1 ? false : inputBtn.value--;
+    };
+
+    inputBtn.oninput = function () {
+      this.value = this.value.replace(reg, "");
+    };
   </script>
 </div>
