@@ -1,4 +1,13 @@
 .form-reviews {
+  &-valid {
+    span.error {
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      font-size: 11px;
+      color: red;
+    }
+  }
   &-content {
     background: #fff;
     // margin: 0 312px;
@@ -9,7 +18,7 @@
   }
   &-header {
     padding: 34px 48px;
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid #d3d3d3;
     &-title {
       font-weight: 700;
       font-size: 28px;
@@ -25,7 +34,7 @@
       span {
         font-weight: 700;
         font-size: 16px;
-        color: #1A66AE;
+        color: #1a66ae;
       }
     }
   }
@@ -37,21 +46,23 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 17px;
-
+      &-error {
+        position: relative;
+      }
       label {
         font-weight: 400;
         font-size: 14px;
         color: #000;
 
         span {
-          color: #BC0000;
+          color: #bc0000;
         }
       }
 
       input {
         width: 288px;
         height: 40px;
-        border: 1px solid #D3D3D3;
+        border: 1px solid #d3d3d3;
         padding: 10px 16px;
         border-radius: 5px;
         margin-top: 5px;
@@ -66,13 +77,22 @@
       }
 
       &-text-box {
+        span.error {
+          position: absolute;
+          display: inline-block;
+          top: -19px;
+          left: 127px;
+          height: min-content;
+          color: red;
+          font-size: 0.75rem;
+        }
         textarea {
           padding: 10px 16px;
           width: 600px;
           height: 104px;
-          border: 1px solid #D3D3D3;
+          border: 1px solid #d3d3d3;
           border-radius: 5px;
-          resize: none; 
+          resize: none;
           margin-top: 5px;
 
           &:focus {
@@ -85,14 +105,13 @@
           justify-content: space-between;
 
           .plus {
-            border: 1px solid #559E53;
+            border: 1px solid #559e53;
           }
-  
+
           .minus {
-            border: 1px solid #BC0000;
+            border: 1px solid #bc0000;
           }
         }
-
       }
 
       &-rating {
@@ -105,7 +124,7 @@
             font-size: rem(50);
 
             &::before {
-              color: #F9DE8E;
+              color: #f9de8e;
             }
           }
 
@@ -152,7 +171,7 @@
           padding-left: 66px;
 
           &::placeholder {
-            color: #BC0000;
+            color: #bc0000;
             font-size: 16px;
           }
         }
@@ -176,7 +195,7 @@
 
       .btn-submit {
         padding: 14px 30px;
-        background-color: #2A4455;
+        background-color: #2a4455;
         color: #fff;
         font-weight: 700;
         border: none;
@@ -185,4 +204,8 @@
       }
     }
   }
+}
+
+.form-cell-textarea-wrap {
+  position: relative;
 }
