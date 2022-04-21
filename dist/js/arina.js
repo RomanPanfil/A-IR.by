@@ -1,6 +1,7 @@
 const ratings = document.querySelectorAll('.card-item-rating');
 const btnAccordion = document.querySelector('.accordion-items-title');
 const contentAccordion = document.querySelector('.accordion-content');
+const acc = document.getElementsByClassName("accordion-items-title");
 
 let ratingActive;
 let ratingValue;
@@ -83,40 +84,44 @@ function setRating(rating) {
   }
 }
 
-// btnAccordion.addEventListener('click', function() {
-//   console.log(contentAccordion)
-//   contentAccordion.classList.toggle('active');
-// })
-
-var acc = document.getElementsByClassName("accordion-items-title");
-var i;
-
-for (i = 0; i < acc.length; i++) {
+for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
+    let panel = this.nextElementSibling;
+
+    panel.classList.toggle('active')
+
     this.classList.toggle("active");
 
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
+    // if (panel.style.display === "block") {
+    //   panel.style.display = "none";
+    // } else {
+    //   panel.style.display = "block";
+    // }
   });
 }
 
 if (matchMedia) {
-  var screen1024 = window.matchMedia("(max-width:1024px)");
-  screen1024.addListener(changes);
-  changes(screen1024);
+  let screen1024 = window.matchMedia("(max-width:1024px)");
+  screen1024.addListener(accordionChanges);
+  accordionChanges(screen1024);
 }
 
-function changes(screen768) {
-  if (screen768.matches) {
-    $('.accordion-content').appendTo($(".accordion"));
+function accordionChanges(screen1024) {
+  if (screen1024.matches) {
+    $('.accordion-content.tab1').appendTo($(".accordion.tab1"));
+    $('.accordion-content.tab2').appendTo($(".accordion.tab2"));
+    $('.accordion-content.tab3').appendTo($(".accordion.tab3"));
+    $('.accordion-content.tab4').appendTo($(".accordion.tab4"));
+    $('#tabs').appendTo($(".card-info-media"));
+    $('.reviews.ui-btn.all').appendTo($(".card-reviews"));
+    $('.card-item-services').appendTo($(".card-item-wrapper.card-item-radio"));
   } else {
-    $('.accordion-content').appendTo($(".tabs-items #tab-1"));
+    $('.accordion-content.tab1').appendTo($(".tabs-items #tab-1"));
+    $('.accordion-content.tab2').appendTo($(".tabs-items #tab-2"));
+    $('.accordion-content.tab3').appendTo($(".tabs-items #tab-3"));
+    $('.accordion-content.tab4').appendTo($(".tabs-items #tab-4"));
+    $('#tabs').appendTo($(".card-item-more-info"));
+    $('.reviews.ui-btn.all').prependTo($(".card-reviews-btn"));
+    $('.card-item-services').appendTo($(".card-item-specifications"));
   }
 }

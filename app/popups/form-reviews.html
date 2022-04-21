@@ -1,15 +1,16 @@
 <div class="container">
-  <div class="form-reviews">
-    <div class="form-reviews-content">
-      <div class="form-reviews-header">
-        <div class="form-reviews-header-title">
-          Оставить отзыв
-        </div>
-        <div class="form-reviews-header-item">
-          Товар: <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
-        </div>
-        <div class="card-item-rating">
-          <div class="card-item-rating-body">
+  <div class="row">
+    <div class="form-reviews">
+      <div class="form-reviews-content">
+        <div class="form-reviews-header">
+          <div class="form-reviews-header-title">
+            Оставить отзыв
+          </div>
+          <div class="form-reviews-header-item">
+            Товар: <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
+          </div>
+          <div class="card-item-rating">
+            <div class="card-item-rating-body">
               <div class="card-item-rating-active" style="width: 100%;"></div>
               <div class="card-item-rating-items">
                 <input type="radio" class="card-item-rating-item" value="1" name="rating">
@@ -18,54 +19,55 @@
                 <input type="radio" class="card-item-rating-item" value="4" name="rating">
                 <input type="radio" class="card-item-rating-item" value="5" name="rating">
               </div>
+            </div>
+            <div class="card-item-rating-value">Нет оценки</div>
           </div>
-          <div class="card-item-rating-value">Нет оценки</div>
         </div>
-      </div>
-      <div class="form-reviews-body">
-        <form action="#" method="POST" class="form-reviews-valid">
-          <div class="form-cell">
-            <div class="txt">
-              <label for="name">Ваше имя<span>*</span></label> <br>
-              <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
+        <div class="form-reviews-body">
+          <form action="#" method="POST" class="form-reviews-valid">
+            <div class="form-cell">
+              <div class="txt form-cell-error">
+                <label for="name">Ваше имя<span>*</span></label> <br>
+                <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
+              </div>
+              <div class="txt form-cell-error">
+                <label for="email">Ваш Email<span>*</span></label> <br>
+                <input type="email" id="email" name="email" placeholder="123@gmail.com">
+              </div>
             </div>
-            <div class="txt">
-              <label for="email">Ваш Email<span>*</span></label> <br>
-              <input type="email" id="email" name="email" placeholder="123@gmail.com">
-            </div>
-          </div>
-          <div class="form-cell">
-            <div class="form-cell-rating">
-              <label for="rating">Ваша оценка<span>*</span></label>
-              <div class="card-item-rating rating-set">
-                <div class="card-item-rating-body">
-                  <div class="card-item-rating-active"></div>
-                  <div class="card-item-rating-items">
-                    <input type="radio" class="card-item-rating-item" value="1.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="2.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="3.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="4.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="5.0" name="rating">
+            <div class="form-cell">
+              <div class="form-cell-rating">
+                <label for="rating">Ваша оценка<span>*</span></label>
+                <div class="card-item-rating rating-set">
+                  <div class="card-item-rating-body">
+                    <div class="card-item-rating-active"></div>
+                    <div class="card-item-rating-items">
+                      <input type="radio" class="card-item-rating-item" value="1.0" name="rating" id="rating">
+                      <input type="radio" class="card-item-rating-item" value="2.0" name="rating">
+                      <input type="radio" class="card-item-rating-item" value="3.0" name="rating">
+                      <input type="radio" class="card-item-rating-item" value="4.0" name="rating">
+                      <input type="radio" class="card-item-rating-item" value="5.0" name="rating">
+                    </div>
                   </div>
+                  <div class="card-item-rating-value"></div>
                 </div>
-              <div class="card-item-rating-value"></div>
-           </div>
+              </div>
             </div>
-          </div>
-          <div class="form-cell">
-            <div class="form-cell-text-box">
-                <label for="textbox">Текстовое поле<span>*</span></label> <br>
-                <textarea id="textbox" name="textbox" placeholder="Текст"></textarea>
-
+            <div class="form-cell">
+              <div class="form-cell-text-box">
+                <label for="textbox">Текстовое поле<span>*</span></label>
+                <div class="form-cell-textarea-wrap">
+                  <textarea id="textbox" name="textbox" placeholder="Текст"></textarea>
+                </div>
                 <div class="quality">
-                  <input type="text"  id="plus" name="plus" class="plus" placeholder="Пара слов о преимуществах">
+                  <input type="text" id="plus" name="plus" class="plus" placeholder="Пара слов о преимуществах">
                   <input type="text" id="minus" name="minus" class="minus" placeholder="Пара слов о недостатках">
                 </div>
+              </div>
             </div>
-          </div>
-          <div class="form-cell">
+            <div class="form-cell">
               <div class="upload-file">
-                <label for="file" class="label-file">
+                <label for="file" class="label-file" id="fileItem" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi">
                   <img src="../images/icons/file.svg" alt="alt">
                   <span>Добавить фото или видео</span>
                 </label>
@@ -75,21 +77,22 @@
                 <img src="../images/icons/url-video.svg" alt="alt">
                 <input type="text" id="youtube" name="youtube" class="youtube" placeholder="Добавить URL на видео">
               </div>
-          </div>
-          <div class="send">
-            <div class="popup-agreement">
-              <div class="checkbox">
-                <input type="checkbox" id="chheckbox" name="chheckbox" class="checkbox-input">
-                <label for="chheckbox" class="checkbox-label"></label>
-              </div>
-              <div class="popup-agreement-txt">
-                Нажимая кнопку «Отправить отзыв» вы соглашаетесь
-                <a href="#" class="popup-agreement-link">с политикой обработки персональных данных.</a>
-              </div>
             </div>
-            <input type="submit" value="Отправить отзыв" class="btn-submit">
-          </div>
-        </form>
+            <div class="send">
+              <div class="popup-agreement">
+                <div class="checkbox">
+                  <input type="checkbox" id="chheckbox" name="chheckbox" class="checkbox-input">
+                  <label for="chheckbox" class="checkbox-label"></label>
+                </div>
+                <div class="popup-agreement-txt">
+                  Нажимая кнопку «Отправить отзыв» вы соглашаетесь
+                  <a href="#" class="popup-agreement-link">с политикой обработки персональных данных.</a>
+                </div>
+              </div>
+              <input type="submit" value="Отправить отзыв" class="btn-submit">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -140,16 +143,16 @@
           for (let i = 0; i < ratingItems.length; i++) {
             const ratingItem = ratingItems[i];
 
-            ratingItem.addEventListener('mouseenter', function(e) {
+            ratingItem.addEventListener('mouseenter', function (e) {
               initRatingVars(rating);
               setRatingActiveWidth(ratingItem.value);
             });
 
-            ratingItem.addEventListener('mouseleave', function(e) {
+            ratingItem.addEventListener('mouseleave', function (e) {
               setRatingActiveWidth();
             });
 
-            ratingItem.addEventListener('click', function(e) {
+            ratingItem.addEventListener('click', function (e) {
               initRatingVars(rating);
 
               ratingValue.innerHTML = ratingItem.value;
@@ -158,45 +161,76 @@
           }
         }
       }
-  
-      $(".form-reviews-valid").validate({
-          errorElement: "span",
-          rules: {
-            email: {
-              required: true,
-              email: true,
-            },
-            name: {
-              required: true,
-              lettersonly: true,
-            },
-            textbox: {
-              required: true,
-              maxlength: 500,
-            },
-          },
 
-          messages: {
-            email: {
-              required: "Пожалуйста, введите ваш Email",
-              email: "Пожалуйста введите корректный Email"
-            },
-            name: {
-              required: "Пожалуйста, введите ваше Имя",
-              name: "Ваше имя не может состоять из цифр",
-            },
-          }
-        });
-        
-        jQuery.validator.addMethod(
-          "lettersonly",
-          function (value, element) {
-            return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
+      $(".form-reviews-valid").validate({
+        errorElement: "span",
+        rules: {
+          email: {
+            required: true,
+            email: true,
           },
-          "Ваше имя не может состоять из цифр"
-        );
-        
-        // @todo сделать вывод на ошибку textbox на ограничение в 500 символах (как в name или email)
+          name: {
+            required: true,
+            lettersonly: true,
+          },
+          textbox: {
+            required: true,
+            maxlength: 500,
+          },
+          youtube: {
+            url: true,
+          },
+        },
+
+        messages: {
+          email: {
+            required: "Пожалуйста, введите ваш Email",
+            email: "Пожалуйста введите корректный Email"
+          },
+          name: {
+            required: "Пожалуйста, введите ваше Имя",
+            name: "Ваше имя не может состоять из цифр",
+          },
+          textbox: {
+            required: "Пожалуйста, оставьте свой комментарий",
+            maxlength: "Комментарий не должен превышать 500 символов",
+          },
+        }
+      });
+
+      jQuery.validator.addMethod(
+        "lettersonly",
+        function (value, element) {
+          return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
+        },
+        "Ваше имя не может состоять из цифр"
+      );
+
+      jQuery.validator.addMethod("youtube", function (value, element) {
+        return this.optional(element) || /^https:\/\/www.youtube.com/.test(value);
+      }, "Пожалуйста введите корректный url адрес");
+    });
+
+    
+    const input = document.getElementById('file');
+    const uploadFile = document.querySelector('.upload-file');
+    const errFile = document.createElement('span');
+
+    input.addEventListener('change', (event) => {
+      for (const file of event.target.files) {
+        const size = file.size;
+
+        console.log(file.type)
+
+        if (size > 104857600) {
+          errFile.classList.add('error-file')
+          errFile.innerHTML = 'Превышен максимально допустимый размер файла: 100 мб';
+          uploadFile.append(errFile)
+        } else {
+          errFile.remove();
+        }
+      }
     });
   </script>
 </div>
+

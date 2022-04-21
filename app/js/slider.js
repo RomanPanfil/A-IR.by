@@ -36,6 +36,16 @@ const slider1 = new Swiper(".el", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 4,
+    },
+
+    620: {
+      slidesPerView: 3,
+    }
+  }
 });
 
 const slider2 = new Swiper('.preview', {
@@ -56,4 +66,18 @@ const slider3 = new Swiper('.reviews', {
     nextEl: ".swiper-next",
     prevEl: ".swiper-prev",
   },
+
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+    },
+
+    620: {
+      slidesPerView: 2,
+    },
+
+    300: {
+      slidesPerView: 1,
+    },
+  }
 });
