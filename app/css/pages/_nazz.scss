@@ -5,6 +5,9 @@
       margin-bottom: 24px;
       border-radius: 8px;
       background-color: #f5f5f5;
+      &-missing {
+        text-align: center;
+      }
     }
     &-counter {
       display: inline-block;
@@ -119,6 +122,12 @@
           opacity: 0.5;
         }
       }
+      @media (max-width: 400px) {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 8px;
+      }
     }
     &-question {
       display: flex;
@@ -206,6 +215,7 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      height: calc(100% - 16px);
       padding: 16px 32px;
       margin-bottom: 16px;
       border: 1px solid #d3d3d3;
@@ -254,6 +264,27 @@
         .card-item-link {
           background-color: #f5f5f5;
         }
+      }
+    }
+    &-status {
+      display: block;
+      margin-bottom: 17px;
+      text-align: center;
+      font-size: rem(22);
+      font-weight: 700;
+      opacity: 0.7;
+    }
+    &-delivery {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 27px;
+      &-span {
+        opacity: 0.7;
+      }
+      img {
+        display: inline-block;
+        margin-right: 9px;
       }
     }
   }
@@ -334,4 +365,36 @@
 /* фф (свойство больше не работает, других способов тоже нет)*/
 .card-interest-mob {
   overflow: -moz-scrollbars-none;
+}
+.card-item-wrapper-dark {
+  .card-item-price-current {
+    line-height: 1;
+    color: #000000;
+  }
+  .card-btn-dark {
+    background-color: $colorDark;
+  }
+}
+.dpn {
+  display: none;
+}
+.zxc {
+  // display: block;
+  @media (max-width: 1260px) {
+    &-wrap {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+  @media (max-width: 1260px) {
+    &-slide {
+      display: inline-block;
+      vertical-align: top;
+      width: 264px;
+      margin-right: 24px;
+    }
+    .product-item {
+      width: 264px !important;
+    }
+  }
 }
