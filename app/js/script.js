@@ -73,12 +73,22 @@ inputMask.forEach((element) => {
 });
 // Sticker hidden catalog.html
 
-let stickerHideBtn = document.querySelector(".sticker-hide");
-let stickerHiden = document.querySelector(".sticker-hidden");
+let stickerHideBtn = document.querySelector(".sticker-hide"),
+  stickerHiden = document.querySelector(".sticker-hidden"),
+  catalogText = document.querySelector(".catalog-stickers-btn-text"),
+  imgChange = document.querySelector(".img-change");
+// imgChange.src = "./images/icons/red-cross.svg";
 
 stickerHideBtn.onclick = () => {
   stickerHiden.classList.toggle("sticker-hidden-open");
-  stickerHideBtn.innerHTML = "Скрыть";
+
+  if (catalogText.innerHTML === "Скрыть") {
+    catalogText.innerHTML = "Ещё подборки";
+    imgChange.src = "./images/icons/green-cross.svg";
+  } else {
+    catalogText.innerHTML = "Скрыть";
+    imgChange.src = "./images/icons/red-cross.svg";
+  }
 };
 
 // Input range
@@ -124,3 +134,23 @@ rangeInput.forEach((input) => {
     }
   });
 });
+
+// checkbox hide on click
+
+let checkboxBtn = document.querySelector(".catalog-products-field-btn"),
+  catalogbtnText = document.querySelector(".catalog-products-field-text"),
+  catalogbtnImg = document.querySelector(".catalog-products-field-img img"),
+  checkboxHiden = document.querySelectorAll(".checkbox-hide");
+console.log(catalogbtnImg.src);
+checkboxBtn.onclick = () => {
+  if (catalogbtnText.innerHTML === "Показать еще 4") {
+    catalogbtnText.innerHTML = "Скрыть";
+    catalogbtnImg.src = "./images/icons/red-cross.svg";
+  } else {
+    catalogbtnText.innerHTML = "Показать еще 4";
+    catalogbtnImg.src = "./images/icons/green-cross.svg";
+  }
+  checkboxHiden.forEach((el) => {
+    el.classList.toggle("checkbox-on");
+  });
+};
