@@ -353,18 +353,20 @@
   }
 }
 
-.card-interest-mob::-webkit-scrollbar {
+.card-interest-mob::-webkit-scrollbar .zxc-wrap::-webkit-scrollbar {
   width: 0;
 }
 
 /* ie 10+ */
-.card-interest-mob {
+.card-interest-mob .zxc-wrap {
   -ms-overflow-style: none;
 }
 
 /* фф (свойство больше не работает, других способов тоже нет)*/
-.card-interest-mob {
+.card-interest-mob .zxc-wrap {
   overflow: -moz-scrollbars-none;
+}
+.product-swiper {
 }
 .card-item-wrapper-dark {
   .card-item-price-current {
@@ -390,11 +392,21 @@
     &-slide {
       display: inline-block;
       vertical-align: top;
-      width: 264px;
+      width: 264px !important;
       margin-right: 24px;
     }
     .product-item {
       width: 264px !important;
+    }
+    .swiper-button-prev {
+      display: none;
+    }
+    .swiper-button-next {
+      display: none;
+    }
+    .product-item-installments {
+      max-width: 180px;
+      font-size: rem(14);
     }
   }
 }
