@@ -382,13 +382,13 @@
 }
 .zxc {
   // display: block;
-  @media (max-width: 1260px) {
+  @media (max-width: 1024px) {
     &-wrap {
       overflow-x: auto;
       white-space: nowrap;
     }
   }
-  @media (max-width: 1260px) {
+  @media (max-width: 1024px) {
     &-slide {
       display: inline-block;
       vertical-align: top;
@@ -408,5 +408,16 @@
       max-width: 180px;
       font-size: rem(14);
     }
+  }
+}
+
+.product-swiper-mob {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+.product-swiper-desc {
+  @media (max-width: 1024px) {
+    display: none;
   }
 }
