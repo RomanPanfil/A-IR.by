@@ -231,6 +231,7 @@
     const errFile = document.createElement('span');
     const allFiles = document.createElement('div');
     const btnOpen = document.createElement('div');
+    const arr = [];
     
     errFile.classList.add('error-file');
     allFiles.classList.add('all-files');
@@ -242,7 +243,7 @@
     input.addEventListener('change', btnUploadFile);
     input.insertAdjacentElement('afterend', allFiles);
     btnOpen.addEventListener('click', triggerInput);
-    allFiles.addEventListener('click', removeHeandler);
+    // allFiles.addEventListener('click', removeHeandler);
 
     // клик по диву, но триггер идет по инпут
     function triggerInput() {
@@ -253,11 +254,21 @@
     // @todo: при загрузке трех картинок убирать кнопку добавить
     function btnUploadFile(e) {
       const files = Array.from(event.target.files);
+
+      console.log(files.length)
       
-      files.forEach(file => {
+      files.forEach((file, index) => {
         const size = file.size;
         const maxSize = 104857600;
         const reader = new FileReader();
+
+        console.log(index)
+
+        // console.log(file)
+
+        // console.log(arr.push(file))
+
+        // console.log(arr)
         
         // скрывает инпут и добавляет кнопку после загрузки img
         if (allFiles.children.length === 1 || size < maxSize) {
@@ -343,7 +354,7 @@
       const {name} = event.target.dataset;
       const block = allFiles.querySelector(`[data-name="${name}"]`).closest('.all-files-item');
 
-      if (!event.target.dataset.name) {
+      if (!block && !event.target.dataset) {
         return
       }
 
@@ -355,6 +366,14 @@
         btnOpen.style.display = 'none';
       }
     };
+
+    $(document).on('click', '.remove-file', function(e) {
+      e.preventDefault();
+
+      const parent = $(this).closest('.all-files-item');
+
+      parent.remove();
+    });
 
   </script>
 </div>
