@@ -4,6 +4,7 @@
     position: relative;
     padding: 16px 20px;
     margin-right: 16px;
+    width: 100%;
     min-width: 264px;
     max-width: 312px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -142,10 +143,9 @@
       display: none;
       position: absolute;
       z-index: 2;
-      ul li {
-        &:hover {
-          opacity: 0.5;
-        }
+      ul {
+        position: relative;
+        z-index: 11;
       }
       &-link {
         display: inline-block;
@@ -182,9 +182,7 @@
     .product-item-btn {
       background-color: $colorDark;
     }
-    // .product-item-installments {
-    //   margin-bottom: 10px;
-    // }
+
     .product-item-price-old {
       display: inline;
     }
@@ -199,32 +197,48 @@
 .product-blue {
   color: #1a66ae;
   border: 1px solid #1a66ae;
+  &:hover {
+    color: #ffffff;
+    background-color: #1a66ae;
+  }
 }
 .product-green {
   color: #559e53;
   border: 1px solid #559e53;
+  &:hover {
+    color: #ffffff;
+    background-color: #559e53;
+  }
 }
 .product-purple {
   color: #7d3e8c;
   border: 1px solid #7d3e8c;
+  &:hover {
+    color: #ffffff;
+    background-color: #7d3e8c;
+  }
 }
 .product-red {
   color: #bc0000;
   border: 1px solid #bc0000;
+  &:hover {
+    color: #ffffff;
+    background-color: #bc0000;
+  }
 }
 .product-orange {
   color: #f28705;
   border: 1px solid #f28705;
+  &:hover {
+    color: #ffffff;
+    background-color: #f28705;
+  }
 }
 .product-cyan {
   color: #83dbe4;
   border: 1px solid #83dbe4;
-}
-
-.product-swiper {
-  height: 575px;
-  padding: 2px 2px;
-  .swiper-scrollbar {
-    display: none;
+  &:hover {
+    color: #ffffff;
+    background-color: #83dbe4;
   }
 }
