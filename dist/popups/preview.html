@@ -1,6 +1,6 @@
 <div class="container">
     <div class="popup-preview-slider">
-        <div class="col-3">
+        <div class="top">
             <div class="slider-previes-container">
                 <div class="swiper vertical-slider">
                     <div class="swiper-wrapper">
@@ -17,7 +17,6 @@
                             <img src="./images/popup-el.png" alt="">
                         </div>
                     </div>
-
                 </div>
                 <div class="swiper-button-next preview-btn-next"></div>
                 <div class="swiper-button-prev preview-btn-prev"></div>
@@ -25,7 +24,7 @@
 
         </div>
 
-        <div class="col-8">
+        <div class="bottom">
             <div class="main-silder-container">
                 <div class="swiper main-slider">
                     <div class="swiper-wrapper">
@@ -39,7 +38,7 @@
                             <img src="./images/popup-el-l.png" alt="">
                         </div>
                     </div>
-
+                    <div class="swiper-pagination"></div>
                 </div>
                 <div class="main-button-next"></div>
                 <div class="main-button-prev"></div>
@@ -71,10 +70,14 @@
             });
 
             const slider2 = new Swiper('.main-slider', {
-                loop: true,
+                // loop: true,
                 navigation: {
                     nextEl: ".main-button-next",
                     prevEl: ".main-button-prev",
+                },
+
+                pagination: {
+                    el: '.swiper-pagination',
                 },
             });
         });

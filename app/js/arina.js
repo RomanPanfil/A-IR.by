@@ -1,6 +1,4 @@
 const ratings = document.querySelectorAll('.card-item-rating');
-const btnAccordion = document.querySelector('.accordion-items-title');
-const contentAccordion = document.querySelector('.accordion-content');
 const acc = document.getElementsByClassName("accordion-items-title");
 
 let ratingActive;
@@ -88,15 +86,14 @@ for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
     let panel = this.nextElementSibling;
 
-    panel.classList.toggle('active')
-
+    panel.classList.toggle('active');
     this.classList.toggle("active");
 
-    // if (panel.style.display === "block") {
-    //   panel.style.display = "none";
-    // } else {
-    //   panel.style.display = "block";
-    // }
+    if (this.classList[1] === "active") {
+      acc[i].children[0].style.transform = "rotate(-180deg)";
+    } else {
+      acc[i].children[0].style.transform = "rotate(0deg)";
+    }
   });
 }
 

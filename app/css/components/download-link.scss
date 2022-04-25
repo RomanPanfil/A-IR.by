@@ -32,6 +32,10 @@
         align-items: flex-end;
         margin-right: 16px;
 
+        @media (max-width: 1024px) {
+          display: none;
+        }
+
         span {
           font-weight: 400;
           font-size: rem(12);

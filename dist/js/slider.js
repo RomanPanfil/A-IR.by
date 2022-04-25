@@ -26,11 +26,12 @@
 //     swiper.destroy();
 //   }
 // });
+
 const slider1 = new Swiper(".el", {
   slidesPerView: 4,
   spaceBetween: 0,
   slideToClickedSlide: true,
-  loop: true,
+
 
   navigation: {
     nextEl: ".swiper-button-next",
@@ -42,42 +43,49 @@ const slider1 = new Swiper(".el", {
       slidesPerView: 4,
     },
 
-    620: {
+    300: {
       slidesPerView: 3,
-    }
+    },
   }
 });
 
 const slider2 = new Swiper('.preview', {
-  loop: true,
   
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
 });
 
 const slider3 = new Swiper('.reviews', {
+  loop: false,
   slidesPerView: 3,
   spaceBetween: 24,
-  loop: true,
 
   navigation: {
     nextEl: ".swiper-next",
     prevEl: ".swiper-prev",
   },
 
-  breakpoints: {
+  breakpoints: {   
     1024: {
       slidesPerView: 3,
+      init: true,
     },
 
-    620: {
+    580: {
       slidesPerView: 2,
+      init: false,
     },
 
     300: {
       slidesPerView: 1,
+      init: false,
+      spaceBetween: 16,
     },
   }
 });
