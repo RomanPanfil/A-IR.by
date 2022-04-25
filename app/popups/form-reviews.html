@@ -1,99 +1,105 @@
-<div class="container">
-  <div class="form-reviews">
-    <div class="form-reviews-content">
-      <div class="form-reviews-header">
-        <div class="form-reviews-header-title">
-          Оставить отзыв
-        </div>
-        <div class="form-reviews-header-item">
-          Товар: <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
-        </div>
-        <div class="card-item-rating">
-          <div class="card-item-rating-body">
-            <div class="card-item-rating-active" style="width: 100%;"></div>
-            <div class="card-item-rating-items">
-              <input type="radio" class="card-item-rating-item" value="1" name="rating">
-              <input type="radio" class="card-item-rating-item" value="2" name="rating">
-              <input type="radio" class="card-item-rating-item" value="3" name="rating">
-              <input type="radio" class="card-item-rating-item" value="4" name="rating">
-              <input type="radio" class="card-item-rating-item" value="5" name="rating">
+<div class="popup-form-reviews">
+  <div class="container">
+    <div class="row">
+      <div class="form-reviews">
+        <div class="form-reviews-content">
+          <div class="form-reviews-header">
+            <div class="form-reviews-header-title">
+              Оставить отзыв
+            </div>
+            <div class="form-reviews-header-item">
+              <span>Товар:</span> <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
+            </div>
+            <div class="card-item-rating">
+              <div class="card-item-rating-body">
+                <div class="card-item-rating-active" style="width: 100%;"></div>
+                <div class="card-item-rating-items">
+                  <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                </div>
+              </div>
+              <div class="card-item-rating-value">Нет оценки</div>
             </div>
           </div>
-          <div class="card-item-rating-value">Нет оценки</div>
-        </div>
-      </div>
-      <div class="form-reviews-body">
-        <form action="#" method="POST" class="form-reviews-valid">
-          <div class="form-cell">
-            <div class="txt form-cell-error">
-              <label for="name">Ваше имя<span>*</span></label> <br>
-              <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
-            </div>
-            <div class="txt form-cell-error">
-              <label for="email">Ваш Email<span>*</span></label> <br>
-              <input type="email" id="email" name="email" placeholder="123@gmail.com">
-            </div>
-          </div>
-          <div class="form-cell">
-            <div class="form-cell-rating">
-              <label for="rating">Ваша оценка<span>*</span></label>
-              <div class="card-item-rating rating-set">
-                <div class="card-item-rating-body">
-                  <div class="card-item-rating-active"></div>
-                  <div class="card-item-rating-items">
-                    <input type="radio" class="card-item-rating-item" value="1.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="2.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="3.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="4.0" name="rating">
-                    <input type="radio" class="card-item-rating-item" value="5.0" name="rating">
+          <div class="form-reviews-body">
+            <form action="#" method="POST" class="form-reviews-valid">
+              <div class="form-cell">
+                <div class="form-cell-info form-cell-error">
+                  <label for="name">Ваше имя<span>*</span></label> <br>
+                  <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
+                </div>
+                <div class="form-cell-info form-cell-error">
+                  <label for="email">Ваш Email<span>*</span></label> <br>
+                  <input type="email" id="email" name="email" placeholder="123@gmail.com">
+                </div>
+              </div>
+              <div class="form-cell">
+                <div class="form-cell-rating">
+                  <label for="rating">Ваша оценка<span>*</span></label>
+                  <div class="card-item-rating rating-set">
+                    <div class="card-item-rating-body" id="rating">
+                      <div class="card-item-rating-active"></div>
+                      <div class="card-item-rating-items">
+                        <label for="rating"></label>
+                        <input type="radio" id="rating_1" class="card-item-rating-item" value="1.0" name="rating">
+                        <input type="radio" id="rating_2" class="card-item-rating-item" value="2.0" name="rating">
+                        <input type="radio" id="rating_3" class="card-item-rating-item" value="3.0" name="rating">
+                        <input type="radio" id="rating_4" class="card-item-rating-item" value="4.0" name="rating">
+                        <input type="radio" id="rating_5" class="card-item-rating-item" value="5.0" name="rating">
+                      </div>
+                    </div>
+                    <div class="card-item-rating-value"></div>
                   </div>
                 </div>
-                <div class="card-item-rating-value"></div>
               </div>
-            </div>
+              <div class="form-cell">
+                <div class="form-cell-info">
+                  <label for="textbox">Текстовое поле<span>*</span></label>
+                  <div class="form-cell-field-textarea">
+                    <textarea id="textbox" name="textbox" placeholder="Текст"></textarea>
+                  </div>
+                  <div class="form-cell-field-quality">
+                    <input type="text" id="plus" name="plus" class="plus" placeholder="Пара слов о преимуществах">
+                    <input type="text" id="minus" name="minus" class="minus" placeholder="Пара слов о недостатках">
+                  </div>
+                </div>
+              </div>
+              <div class="form-cell">
+                <div class="form-cell-field-load">
+                  <label for="file" class="load-file" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi">
+                    <img src="../images/icons/file.svg" alt="alt">
+                    <span>Добавить фото или видео</span>
+                  </label>
+                  <input type="file" id="file" name="file" class="file" multiple>
+                </div>
+                <div class="form-cell-field-url">
+                  <img src="../images/icons/url-video.svg" alt="alt">
+                  <input type="text" id="url" name="url" class="url" placeholder="Добавить URL на видео">
+                </div>
+              </div>
+              <div class="form-cell">
+                <div class="form-cell-field-send">
+                  <div class="checkbox">
+                    <input type="checkbox" id="checkbox" name="checkbox" class="checkbox-input">
+                    <label for="checkbox" class="checkbox-label"></label>
+                  </div>
+                  <div class="popup-agreement-txt">
+                    Нажимая кнопку «Отправить отзыв» вы соглашаетесь
+                    <a href="#" class="popup-agreement-link">с политикой обработки персональных данных.</a>
+                  </div>
+                </div>
+                <input type="submit" value="Отправить отзыв" class="btn-submit">
+              </div>
+            </form>
           </div>
-          <div class="form-cell">
-            <div class="form-cell-text-box">
-              <label for="textbox">Текстовое поле<span>*</span></label> <br>
-              <div class="form-cell-textarea-wrap">
-                <textarea id="textbox" name="textbox" placeholder="Текст"></textarea>
-              </div>
-              <div class="quality">
-                <input type="text" id="plus" name="plus" class="plus" placeholder="Пара слов о преимуществах">
-                <input type="text" id="minus" name="minus" class="minus" placeholder="Пара слов о недостатках">
-              </div>
-            </div>
-          </div>
-          <div class="form-cell">
-            <div class="upload-file">
-              <label for="file" class="label-file">
-                <img src="../images/icons/file.svg" alt="alt">
-                <span>Добавить фото или видео</span>
-              </label>
-              <input type="file" id="file" name="file" class="file">
-            </div>
-            <div class="video-url">
-              <img src="../images/icons/url-video.svg" alt="alt">
-              <input type="text" id="youtube" name="youtube" class="youtube" placeholder="Добавить URL на видео">
-            </div>
-          </div>
-          <div class="send">
-            <div class="popup-agreement">
-              <div class="checkbox">
-                <input type="checkbox" id="chheckbox" name="chheckbox" class="checkbox-input">
-                <label for="chheckbox" class="checkbox-label"></label>
-              </div>
-              <div class="popup-agreement-txt">
-                Нажимая кнопку «Отправить отзыв» вы соглашаетесь
-                <a href="#" class="popup-agreement-link">с политикой обработки персональных данных.</a>
-              </div>
-            </div>
-            <input type="submit" value="Отправить отзыв" class="btn-submit">
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
+
   <script>
     $(document).ready(function () {
       const ratings = document.querySelectorAll('.card-item-rating');
@@ -103,60 +109,54 @@
       }
 
       function initRatings() {
-        let ratingActive;
-        let ratingValue;
-
         for (let i = 0; i < ratings.length; i++) {
           const rating = ratings[i];
-          initRating(rating);
-        }
-
-        function initRating(rating) {
-          initRatingVars(rating);
-          setRatingActiveWidth();
 
           if (rating.classList.contains('rating-set')) {
             setRating(rating);
           }
+
+          initRatingVars(rating);
+          setRatingActiveWidth();
         }
+      }
 
-        function initRatingVars(rating) {
-          ratingActive = rating.querySelector('.card-item-rating-active');
-          ratingValue = rating.querySelector('.card-item-rating-value');
+      function initRatingVars(rating) {
+        ratingActive = rating.querySelector('.card-item-rating-active');
+        ratingValue = rating.querySelector('.card-item-rating-value');
+      }
+
+      function setRatingActiveWidth(index = ratingValue.innerHTML) {
+        const ratingActiveWidth = index / 0.05;
+
+        if (index === 'Нет оценки') {
+          ratingActive.style.width = '0%';
+        } else {
+          ratingActive.style.width = `${ratingActiveWidth}%`;
         }
+      }
 
-        function setRatingActiveWidth(index = ratingValue.innerHTML) {
-          const ratingActiveWidth = index / 0.05;
+      function setRating(rating) {
+        const ratingItems = rating.querySelectorAll('.card-item-rating-item');
 
-          if (index === 'Нет оценки') {
-            ratingActive.style.width = '0%';
-          } else {
-            ratingActive.style.width = `${ratingActiveWidth}%`;
-          }
-        }
+        for (let i = 0; i < ratingItems.length; i++) {
+          const ratingItem = ratingItems[i];
 
-        function setRating(rating) {
-          const ratingItems = rating.querySelectorAll('.card-item-rating-item');
+          ratingItem.addEventListener('mouseenter', function(e) {
+            initRatingVars(rating);
+            setRatingActiveWidth(ratingItem.value);
+          });
 
-          for (let i = 0; i < ratingItems.length; i++) {
-            const ratingItem = ratingItems[i];
+          ratingItem.addEventListener('mouseleave', function(e) {
+            setRatingActiveWidth();
+          });
 
-            ratingItem.addEventListener('mouseenter', function (e) {
-              initRatingVars(rating);
-              setRatingActiveWidth(ratingItem.value);
-            });
+          ratingItem.addEventListener('click', function(e) {
+            initRatingVars(rating);
 
-            ratingItem.addEventListener('mouseleave', function (e) {
-              setRatingActiveWidth();
-            });
-
-            ratingItem.addEventListener('click', function (e) {
-              initRatingVars(rating);
-
-              ratingValue.innerHTML = ratingItem.value;
-              setRatingActiveWidth();
-            })
-          }
+            ratingValue.innerHTML = ratingItem.value;
+            setRatingActiveWidth();
+          })
         }
       }
 
@@ -167,13 +167,27 @@
             required: true,
             email: true,
           },
+
           name: {
             required: true,
             lettersonly: true,
           },
+
           textbox: {
             required: true,
             maxlength: 500,
+          },
+
+          url: {
+            url: true,
+          },
+
+          checkbox: {
+            required: true,
+          },
+
+          rating: {
+            required: true,
           },
         },
 
@@ -182,10 +196,12 @@
             required: "Пожалуйста, введите ваш Email",
             email: "Пожалуйста введите корректный Email"
           },
+
           name: {
             required: "Пожалуйста, введите ваше Имя",
             name: "Ваше имя не может состоять из цифр",
           },
+
           textbox: {
             required: "Пожалуйста, оставьте свой комментарий",
             maxlength: "Комментарий не должен превышать 500 символов",
@@ -195,13 +211,170 @@
 
       jQuery.validator.addMethod(
         "lettersonly",
-        function (value, element) {
+        function(value, element) {
           return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
         },
+
         "Ваше имя не может состоять из цифр"
       );
 
-      // @todo сделать вывод на ошибку textbox на ограничение в 500 символах (как в name или email)
+      jQuery.validator.addMethod("url", function(value, element) {
+        return this.optional(element) || /^https:\/\/www.youtube.com/.test(value);
+      }, 
+      
+      "Пожалуйста введите корректный url адрес");
     });
+
+    const input = document.getElementById('file');
+    const uploadFile = document.querySelector('.form-cell-field-load');
+    const load = document.querySelector('.load-file');
+    const errFile = document.createElement('span');
+    const allFiles = document.createElement('div');
+    const btnOpen = document.createElement('div');
+    const arr = [];
+    
+    errFile.classList.add('error-file');
+    allFiles.classList.add('all-files');
+    btnOpen.classList.add('open-files');
+
+    errFile.innerHTML = 'Превышен максимально допустимый размер файла: 100 мб';
+    btnOpen.innerHTML = '<img src="../images/icons/btn-plus.svg" />';
+
+    input.addEventListener('change', btnUploadFile);
+    input.insertAdjacentElement('afterend', allFiles);
+    btnOpen.addEventListener('click', triggerInput);
+    // allFiles.addEventListener('click', removeHeandler);
+
+    // клик по диву, но триггер идет по инпут
+    function triggerInput() {
+      input.click()
+    }
+
+    // обработка клика по добавленной кнопке
+    // @todo: при загрузке трех картинок убирать кнопку добавить
+    function btnUploadFile(e) {
+      const files = Array.from(event.target.files);
+
+      console.log(files.length)
+      
+      files.forEach((file, index) => {
+        const size = file.size;
+        const maxSize = 104857600;
+        const reader = new FileReader();
+
+        console.log(index)
+
+        // console.log(file)
+
+        // console.log(arr.push(file))
+
+        // console.log(arr)
+        
+        // скрывает инпут и добавляет кнопку после загрузки img
+        if (allFiles.children.length === 1 || size < maxSize) {
+          btnOpen.style.display = 'block';
+          load.style.display = 'none';
+          
+          allFiles.insertAdjacentElement('beforeend', btnOpen);
+        }
+        
+        // вывод видео\картинки, если файл превысил ограничение, то выводит ошибку 
+        reader.onload = ev => {
+          const src = ev.target.result;
+          const type = file.type.split('/')[1];
+          
+          if (size < maxSize) {
+            innerFile(file, src, type);
+          } else {
+            uploadFile.append(errFile);
+          }
+        }
+
+        reader.readAsDataURL(file);
+      })
+    };
+
+    // создание блока и определение формата файла, который будет выведен
+    function innerFile(file, src, type) {
+      const allFilesSection = document.createElement('div');
+      const removeFile = document.createElement('div');
+      const typeFile = document.createElement('div');
+
+      allFilesSection.classList.add('all-files-item');
+      removeFile.classList.add('remove-file');
+      typeFile.classList.add('type-file');
+
+      allFiles.prepend(allFilesSection);
+
+      allFilesSection.append(removeFile);
+      allFilesSection.append(typeFile);
+
+      removeFile.innerHTML = '&times;';
+      typeFile.innerHTML = `.${file.type.split('/')[1]}`;
+      
+      removeFile.dataset.name = file.name;
+
+      if (file.type.match('image')) {
+        imgFile(removeFile, src)
+
+        errFile.remove();
+      } else if (file.type.match('video')) {
+        videoFile(removeFile, src)
+
+        errFile.remove();
+      }
+    };
+
+    // создание блока картинки
+    function imgFile(removeFile, src) {
+      const imgFile = document.createElement('img');
+
+      imgFile.classList.add('img-file');
+
+      imgFile.src = src;
+
+      removeFile.insertAdjacentElement('afterend', imgFile)
+    };
+
+    // создание блока видео
+    function videoFile(removeFile, src) {
+      const videoFile = document.createElement('video');
+
+      videoFile.classList.add('video-file');
+
+      videoFile.src = src;
+      videoFile.height = 64;
+      videoFile.width = 88;
+
+      removeFile.insertAdjacentElement('afterend', videoFile)
+    };
+
+    // обработка по нажатию крестика и удаление файла
+    function removeHeandler(event) {
+      const {name} = event.target.dataset;
+      const block = allFiles.querySelector(`[data-name="${name}"]`).closest('.all-files-item');
+
+      if (!block && !event.target.dataset) {
+        return
+      }
+
+      block.remove();
+
+      // удаляет кнопку и возвращает инпут
+      if (document.querySelector('.all-files').children.length === 1) {
+        load.style.display = 'block';
+        btnOpen.style.display = 'none';
+      }
+    };
+
+    $(document).on('click', '.remove-file', function(e) {
+      e.preventDefault();
+
+      const parent = $(this).closest('.all-files-item');
+
+      parent.remove();
+    });
+
   </script>
 </div>
+
