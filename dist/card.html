@@ -16,12 +16,16 @@
       <a href="#" class="ui-sticker sticker-orange">Купи сейчас, плати потом</a>
       <a href="#" class="ui-sticker sticker-cyan">Воздушный фильтр В ПОДАРОК!</a>
     </div>
-   <div class="card-item-txt">
-      <div class="card-item-txt-title">
+   <div class="card-item-headline">
+      <div class="card-item-headline-title">
          Винтовой компрессор A1R BB-4FC, 10 бар
       </div>
+
+      <div class="card-item-headline-code">
+         Код: <span>01020304</span>
+      </div>
       
-      <div class="card-item-links">
+      <div class="card-item-headline-links">
          <div class="card-item-rating">
             <div class="card-item-rating-body">
                <div class="card-item-rating-active"></div>
@@ -34,19 +38,21 @@
                </div>
             </div>
             <div class="card-item-rating-value">5.0</div>
+            <a class="card-item-reviews" href="#">64 отзыва</a>
          </div>
 
-         <a class="card-item-reviews" href="#">64 отзыва</a>
+         <div class="card-item-controller">
 
-         <a href="#" class="card-item-fav">
-            <img src="./images/icons/fav.svg" alt="alt">
-            В избранное
-         </a>
+            <a href="#" class="card-item-fav">
+               <img src="./images/icons/fav.svg" alt="alt">
+               <span>В избранное</span>
+            </a>
+            <a href="#" class="card-item-comparison">
+               <img src="./images/icons/btn-plus.svg" alt="alt">
+               <span>В сравнении</span>
+            </a>
+         </div>
 
-         <a href="#" class="card-item-comparison">
-            <img src="./images/icons/btn-plus.svg" alt="alt">
-            В сравнении
-         </a>
       </div>
    </div>
     <!-- card-item -->
@@ -54,7 +60,7 @@
          <div class="row">
             <!-- col-8 -->
             <div class="col-sm-6 col-us-12 col-md-8">
-               <div class="card-item-container">
+               <div class="card-item-section">
                   <div class="card-item-about">
                      <div class="card-item-info">
                         <div class="col-xl-5">
@@ -62,25 +68,31 @@
                               <div class="card-item-slider-preview">
                                  <div class="swiper preview">
                                     <div class="swiper-wrapper">
-                                    <div class="swiper-slide">  
-                                       <a class="mfp-link" href="javascript:void(0)" data-href="./popups/preview.html">
-                                          <img src="./images/item-L.png" alt="alt">
-                                       </a>                               
+                                       <div class="swiper-slide">  
+                                          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/preview.html">
+                                             <img src="./images/item-L.png" alt="alt">
+                                          </a>                               
+                                       </div>
+                                       <div class="swiper-slide">  
+                                          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/preview.html">
+                                             <img src="./images/item-L.png" alt="alt">
+                                          </a>                               
+                                       </div>
+                                       <div class="swiper-slide">  
+                                          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/preview.html">
+                                             <img src="./images/item-L.png" alt="alt">
+                                          </a>                               
+                                       </div>
+                                       <div class="swiper-slide">  
+                                          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/preview.html">
+                                             <img src="./images/item-L.png" alt="alt">
+                                          </a>                               
+                                       </div>
                                     </div>
-                                    <div class="swiper-slide">  
-                                       <a class="mfp-link" href="javascript:void(0)" data-href="./popups/preview.html">
-                                          <img src="./images/item-L.png" alt="alt">
-                                       </a>                               
-                                    </div>
-                                    <div class="swiper-slide">  
-                                       <a class="mfp-link" href="javascript:void(0)" data-href="./popups/preview.html">
-                                          <img src="./images/item-L.png" alt="alt">
-                                       </a>                               
-                                    </div>
-                                 </div>
-                                 </div>
-                                 <div class="swiper-button-next"></div>
-                                 <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                              </div>
+                              <div class="swiper-button-next"></div>
+                              <div class="swiper-button-prev"></div>
                               </div>
                               
                               <div class="card-item-slider-el">
@@ -203,9 +215,32 @@
                         
                         <!-- Контент -->
                         <div class="tabs-items">
-                           <div class="accordion-items-title">Описание</div>
+                           <div class="accordion tab1">
+                              <div class="accordion-items-title">
+                                 Описание
+                                 <img src="./images/icons/accordion.svg" class="btn-acc" alt="">
+                              </div>
+                           </div>
+                           <div class="accordion tab2">
+                              <div class="accordion-items-title">
+                                 Характеристики
+                                 <img src="./images/icons/accordion.svg" class="btn-acc" alt="">
+                              </div>
+                           </div>
+                           <div class="accordion tab3">
+                              <div class="accordion-items-title">
+                                 Видео
+                                 <img src="./images/icons/accordion.svg" class="btn-acc" alt="">
+                              </div>
+                           </div>
+                           <div class="accordion tab4">
+                              <div class="accordion-items-title">
+                                 Документация
+                                 <img src="./images/icons/accordion.svg" class="btn-acc" alt="">
+                              </div>
+                           </div>
                            <div class="tabs-item" id="tab-1">
-                              <div class="accordion-content">
+                              <div class="accordion-content tab1">
                                  <p class="tabs-item-text">
                                     Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет энергосберегающий режим - переходит в холостой ход и затем останавливается при отсутствии разбора сжатого воздуха. Компрессор поставляется с установленной микропроцессорной системой управления, которая обеспечивает контроль времени наработки, электронный контроль параметров, эффективную защиту и энергосберегающий режим работы. Винтовой компрессор A1R BB-4FC подходит для промышленного применения. 
                                  </p> 
@@ -221,163 +256,169 @@
                               </div>
                            </div>
                            <div class="tabs-item table" id="tab-2">
-                              <table class="table top">
-                                 <thead>
-                                    <tr>
-                                       <th>Основные характеристики</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr>
-                                       <td>
-                                          <div class="tooltip-box">
-                                             Производительность 
-                                             <div class="tooltip">
-                                                <img src="./images/icons/tooltip.png" alt="">
-                                                <span class="tooltiptext">
-                                                   Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет энергосберегающий режим - переходит в холостой ход и затем останавливается при отсутствии разбора сжатого воздуха.
-                                                </span>
+                              <div class="accordion-content tab2">
+                                 <table class="table top">
+                                    <thead>
+                                       <tr>
+                                          <th>Основные характеристики</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td>
+                                             <div class="tooltip-box">
+                                                Производительность 
+                                                <div class="tooltip">
+                                                   <img src="./images/icons/tooltip.png" alt="">
+                                                   <span class="tooltiptext">
+                                                      Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет энергосберегающий режим - переходит в холостой ход и затем останавливается при отсутствии разбора сжатого воздуха.
+                                                   </span>
+                                                </div>
                                              </div>
-                                          </div>
-                                       </td>
-                                       <td>0.49 м3/мин</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Максимальное давление</td>
-                                       <td>10 бар</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Мощность двигателя</td>
-                                       <td>4 кВт</td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                              <table class="table bottom">
-                                 <thead>
-                                    <tr>
-                                       <th>Дополнительные характеристики</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr>
-                                       <td>
-                                          <div class="tooltip-box">
-                                             Гарантийный срок 
-                                             <div class="tooltip">
-                                                <img src="./images/icons/tooltip.png" alt="">
-                                                <span class="tooltiptext">
-                                                   Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет энергосберегающий режим - переходит в холостой ход и затем останавливается при отсутствии разбора сжатого воздуха.
-                                                </span>
+                                          </td>
+                                          <td>0.49 м3/мин</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Максимальное давление</td>
+                                          <td>10 бар</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Мощность двигателя</td>
+                                          <td>4 кВт</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                                 <table class="table bottom">
+                                    <thead>
+                                       <tr>
+                                          <th>Дополнительные характеристики</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <td>
+                                             <div class="tooltip-box">
+                                                Гарантийный срок 
+                                                <div class="tooltip">
+                                                   <img src="./images/icons/tooltip.png" alt="">
+                                                   <span class="tooltiptext">
+                                                      Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет энергосберегающий режим - переходит в холостой ход и затем останавливается при отсутствии разбора сжатого воздуха.
+                                                   </span>
+                                                </div>
                                              </div>
-                                          </div>
-                                       </td>
-                                       <td>24 месяца</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Диаметр выходной трубы (дюйм)</td>
-                                       <td>3/4 "</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Объем охлаждающей жидкости</td>
-                                       <td>3.7 л</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Подшипники винтового блока</td>
-                                       <td>Подшипники винтового блока SKF/NSK/FAG (Швеция, Япония, Германия)</td>
-                                    </tr>
-                                    <tr>
-                                       <td>Тип винтового блока</td>
-                                       <td>Маслосмазываемый</td>
-                                    </tr>
-                                 </tbody>
-                              </table>
+                                          </td>
+                                          <td>24 месяца</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Диаметр выходной трубы (дюйм)</td>
+                                          <td>3/4 "</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Объем охлаждающей жидкости</td>
+                                          <td>3.7 л</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Подшипники винтового блока</td>
+                                          <td>Подшипники винтового блока SKF/NSK/FAG (Швеция, Япония, Германия)</td>
+                                       </tr>
+                                       <tr>
+                                          <td>Тип винтового блока</td>
+                                          <td>Маслосмазываемый</td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
                            </div>
                            <div class="tabs-item video" id="tab-3">
-                              <div class="video-content-box">
-                                 <div class="video-content">
-                                    <img src="./images/video.png" alt="alt">
-                                    <p>Винтовой компрессор A1R BB-4FC, 10 бар</p>
+                              <div class="accordion-content tab3">
+                                 <div class="video-content-box">
+                                    <div class="video-content">
+                                       <img src="./images/video.png" alt="alt">
+                                       <p>Винтовой компрессор A1R BB-4FC, 10 бар</p>
+                                    </div>
                                  </div>
                               </div>
                            </div>		
                            <div class="tabs-item doc" id="tab-4">
-                              <div class="doc">
-                                 <div class="doc-picture col-5">
-                                    <a class="mfp-link" href="javascript:void(0)" data-href="./popups/sert.html">
-                                       <img src="./images/sertificate.png" alt="alt">
-                                    </a>
-                                 </div>
-                                 <div class="doc-link col-7">
-                                    <a href="#" class="doc-link-download" download>
-                                       <div class="doc-link-download-title">
-                                          Инструкция по эксплуатации
-                                       </div>
-                                       <div class="doc-link-download-format">
-                                          <div class="doc-link-download-format-info">
-                                             <span>.PDF</span>
-                                             <span>1.06 МБ</span>
+                              <div class="accordion-content tab4">
+                                 <div class="doc">
+                                    <div class="doc-picture col-5">
+                                       <a class="mfp-link" href="javascript:void(0)" data-href="./popups/sert.html">
+                                          <img src="./images/sertificate.png" alt="alt">
+                                       </a>
+                                    </div>
+                                    <div class="doc-link col-lg-7">
+                                       <a href="#" class="doc-link-download" download>
+                                          <div class="doc-link-download-title">
+                                             Инструкция по эксплуатации
                                           </div>
-                                          <div class="doc-link-download-format-icon">
-                                             <img src="./images/icons/PDF.png" alt="alt">
+                                          <div class="doc-link-download-format">
+                                             <div class="doc-link-download-format-info">
+                                                <span>.PDF</span>
+                                                <span>1.06 МБ</span>
+                                             </div>
+                                             <div class="doc-link-download-format-icon">
+                                                <img src="./images/icons/PDF.png" alt="alt">
+                                             </div>
                                           </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="doc-link-download" download>
-                                       <div class="doc-link-download-title">
-                                          Руководство по эксплуатации данного оборудования
-                                       </div>
-                                       <div class="doc-link-download-format">
-                                          <div class="doc-link-download-format-info">
-                                             <span>.XLS</span>
-                                             <span>1.06 МБ</span>
+                                       </a>
+                                       <a href="#" class="doc-link-download" download>
+                                          <div class="doc-link-download-title">
+                                             Руководство по эксплуатации данного оборудования
                                           </div>
-                                          <div class="doc-link-download-format-icon">
-                                             <img src="./images/icons/XLS.png" alt="alt">
+                                          <div class="doc-link-download-format">
+                                             <div class="doc-link-download-format-info">
+                                                <span>.XLS</span>
+                                                <span>1.06 МБ</span>
+                                             </div>
+                                             <div class="doc-link-download-format-icon">
+                                                <img src="./images/icons/XLS.png" alt="alt">
+                                             </div>
                                           </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="doc-link-download" download>
-                                       <div class="doc-link-download-title">
-                                          Сертификат таможенного союза
-                                       </div>
-                                       <div class="doc-link-download-format">
-                                          <div class="doc-link-download-format-info">
-                                             <span>.DOC</span>
-                                             <span>1.06 МБ</span>
+                                       </a>
+                                       <a href="#" class="doc-link-download" download>
+                                          <div class="doc-link-download-title">
+                                             Сертификат таможенного союза
                                           </div>
-                                          <div class="doc-link-download-format-icon">
-                                             <img src="./images/icons/DOC.png" alt="alt">
+                                          <div class="doc-link-download-format">
+                                             <div class="doc-link-download-format-info">
+                                                <span>.DOC</span>
+                                                <span>1.06 МБ</span>
+                                             </div>
+                                             <div class="doc-link-download-format-icon">
+                                                <img src="./images/icons/DOC.png" alt="alt">
+                                             </div>
                                           </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="doc-link-download" download>
-                                       <div class="doc-link-download-title">
-                                          Сертификат официального продавца
-                                       </div>
-                                       <div class="doc-link-download-format">
-                                          <div class="doc-link-download-format-info">
-                                             <span>.JPG</span>
-                                             <span>1.06 МБ</span>
+                                       </a>
+                                       <a href="#" class="doc-link-download" download>
+                                          <div class="doc-link-download-title">
+                                             Сертификат официального продавца
                                           </div>
-                                          <div class="doc-link-download-format-icon">
-                                             <img src="./images/icons/JPG.png" alt="alt">
+                                          <div class="doc-link-download-format">
+                                             <div class="doc-link-download-format-info">
+                                                <span>.JPG</span>
+                                                <span>1.06 МБ</span>
+                                             </div>
+                                             <div class="doc-link-download-format-icon">
+                                                <img src="./images/icons/JPG.png" alt="alt">
+                                             </div>
                                           </div>
-                                       </div>
-                                    </a>
-                                    <a href="#" class="doc-link-download" download>
-                                       <div class="doc-link-download-title">
-                                          Сертификат официального продавца
-                                       </div>
-                                       <div class="doc-link-download-format">
-                                          <div class="doc-link-download-format-info">
-                                             <span>.PNG</span>
-                                             <span>1.06 МБ</span>
+                                       </a>
+                                       <a href="#" class="doc-link-download" download>
+                                          <div class="doc-link-download-title">
+                                             Сертификат официального продавца
                                           </div>
-                                          <div class="doc-link-download-format-icon">
-                                             <img src="./images/icons/PNG.png" alt="alt">
+                                          <div class="doc-link-download-format">
+                                             <div class="doc-link-download-format-info">
+                                                <span>.PNG</span>
+                                                <span>1.06 МБ</span>
+                                             </div>
+                                             <div class="doc-link-download-format-icon">
+                                                <img src="./images/icons/PNG.png" alt="alt">
+                                             </div>
                                           </div>
-                                       </div>
-                                    </a>
+                                       </a>
+                                    </div>
                                  </div>
                               </div>
                            </div>		
@@ -676,6 +717,10 @@
         </div>
       </div>
 
+      <div class="card-info-media">
+
+      </div>
+
       <!-- card-interest -->
       <div class="card-interest">
          <div class="card-interest-title">Должно пригодиться</div>
@@ -787,16 +832,18 @@
                </div>
                <div class="card-reviews-btn">
                   <a class="reviews ui-btn all">Все отзывы</a>
-                  
-                  <a class="reviews ui-btn mfp-link"  href="javascript:void(0)" data-href="./popups/form-reviews.html" >
+         
+                  <a class="reviews ui-btn mfp-link" href="javascript:void(0)" data-href="./popups/form-reviews.html">
                      Оставить отзыв
                   </a>
                </div>
             </div>
-   
+            
             <div class="row">
                <div class="swiper reviews">
+                  <!-- Additional required wrapper -->
                   <div class="swiper-wrapper">
+                     <!-- Slides -->
                      <div class="swiper-slide">
                         <div class="card-reviews-content">
                            <div class="card-reviews-content-header">
@@ -832,11 +879,13 @@
                               <div class="text">
                                  <p class="title">Комментарий</p>
                                  <p class="desc">
-                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает
+                                    пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные
+                                    показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
                                  </p>
                               </div>
                               <a href="#" class="excerpt-link">
-                                 Читать далее 
+                                 Читать далее
                               </a>
                            </div>
                         </div>
@@ -866,7 +915,8 @@
                               <div class="text">
                                  <p class="title">Достоинства</p>
                                  <p class="desc">
-                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает
+                                    пневмоинструменты и пневматические системы сжатым воздухом..
                                  </p>
                               </div>
                               <div class="text">
@@ -875,6 +925,16 @@
                                     Компрессор поставляется с установленной микропроцессорной системой управления,
                                     которая обеспечивает контроль времени наработки.
                                  </p>
+                              </div>
+                              <div class="text">
+                                 <div class="popups-file">
+                                    <a class="mfp-link" href="javascript:void(0)" data-href="./popups/rev-img.html">
+                                       <img src="./images/rev-img.png" alt="alt">
+                                    </a>
+                                    <a class="mfp-link" href="javascript:void(0)" data-href="./popups/rev-video.html">
+                                       <img src="./images/rev-video.png" alt="alt">
+                                    </a>
+                                 </div>
                               </div>
                            </div>
                         </div>
@@ -957,11 +1017,13 @@
                               <div class="text">
                                  <p class="title">Комментарий</p>
                                  <p class="desc">
-                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает
+                                    пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные
+                                    показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
                                  </p>
                               </div>
                               <a href="#" class="excerpt-link">
-                                 Читать далее 
+                                 Читать далее
                               </a>
                            </div>
                         </div>
@@ -991,7 +1053,8 @@
                               <div class="text">
                                  <p class="title">Достоинства</p>
                                  <p class="desc">
-                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
+                                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает
+                                    пневмоинструменты и пневматические системы сжатым воздухом..
                                  </p>
                               </div>
                               <div class="text">
@@ -1048,8 +1111,17 @@
                         </div>
                      </div>
                   </div>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
+
+                  <div class="swiper-pagination"></div>
+               
+                  <!-- If we need navigation buttons -->
+                  <div class="swiper-next">
+                     <img src="./images/icons/arrow-slider-preview-next.svg" alt="alt">
+                  </div>
+                  
+                  <div class="swiper-prev">
+                     <img src="./images/icons/arrow-slider-preview-next.svg" alt="alt">
+                  </div>
                </div>
             </div>
          </div>
@@ -1060,170 +1132,6 @@
     </div>
     
 
-    
-    <!-- card-usefull -->
-    <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
-    <!-- end card-usefull -->
-
-    <!-- card-reviews -->
-      <div class="card-reviews">
-         <div class="card-reviews-headline">
-            <div class="card-reviews-txt">
-               <div class="card-reviews-txt-title">
-                  Отзывы <span>235</span>
-               </div>
-               <div class="card-item-rating">
-                  <div class="card-item-rating-body">
-                     <div class="card-item-rating-active"></div>
-                     <div class="card-item-rating-items">
-                        <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                        <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                     </div>
-                  </div>
-                  <div class="card-item-rating-value">4.5</div>
-               </div>
-            </div>
-            <div class="card-reviews-btn">
-               <button class="reviews ui-btn all">Все отзывы</button>
-               <button class="reviews ui-btn">Оставить отзыв</button>
-            </div>
-         </div>
-
-         <div class="row">
-            <div class="col-4">
-               <div class="card-reviews-content">
-                  <div class="card-reviews-content-header">
-                     <div class="card-reviews-content-txt">
-                        <div class="name">Андрей</div>
-                        <div class="data">16.12.2021</div>
-                     </div>
-                     <div class="card-item-rating">
-                        <div class="card-item-rating-body">
-                           <div class="card-item-rating-active"></div>
-                           <div class="card-item-rating-items">
-                              <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                           </div>
-                        </div>
-                        <div class="card-item-rating-value">5.0</div>
-                     </div>
-                  </div>
-                  <div class="card-reviews-content-body">
-                     <div class="text">
-                        <p class="title">Достоинства</p>
-                        <p class="desc">
-                           Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает.
-                        </p>
-                     </div>
-                     <div class="text">
-                        <p class="title">Недостатки</p>
-                        <p class="desc">Их нет.</p>
-                     </div>
-                     <div class="text">
-                        <p class="title">Комментарий</p>
-                        <p class="desc">
-                           Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет
-                        </p>
-                     </div>
-                     <a href="#" class="excerpt-link">
-                        Читать далее 
-                     </a>
-                  </div>
-               </div>
-            </div>
-            <div class="col-4">
-               <div class="card-reviews-content">
-                  <div class="card-reviews-content-header">
-                     <div class="card-reviews-content-txt">
-                        <div class="name">Мария</div>
-                        <div class="data">27.11.2021</div>
-                     </div>
-                     <div class="card-item-rating">
-                        <div class="card-item-rating-body">
-                           <div class="card-item-rating-active"></div>
-                           <div class="card-item-rating-items">
-                              <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                           </div>
-                        </div>
-                        <div class="card-item-rating-value">4.5</div>
-                     </div>
-                  </div>
-                  <div class="card-reviews-content-body">
-                     <div class="text">
-                        <p class="title">Достоинства</p>
-                        <p class="desc">
-                           Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом..
-                        </p>
-                     </div>
-                     <div class="text">
-                        <p class="title">Комментарий</p>
-                        <p class="desc">
-                           Компрессор поставляется с установленной микропроцессорной системой управления,
-                           которая обеспечивает контроль времени наработки.
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-4">
-               <div class="card-reviews-content">
-                  <div class="card-reviews-content-header">
-                     <div class="card-reviews-content-txt">
-                        <div class="name">Кирилл</div>
-                        <div class="data">09.10.2021</div>
-                     </div>
-                     <div class="card-item-rating">
-                        <div class="card-item-rating-body">
-                           <div class="card-item-rating-active"></div>
-                           <div class="card-item-rating-items">
-                              <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                              <input type="radio" class="card-item-rating-item" value="5" name="rating">
-                           </div>
-                        </div>
-                        <div class="card-item-rating-value">5.0</div>
-                     </div>
-                  </div>
-                  <div class="card-reviews-content-body">
-                     <div class="text">
-                        <p class="title">Достоинства</p>
-                        <p class="desc">Винтовой компрессор.</p>
-                     </div>
-                     <div class="text">
-                        <p class="title">Недостатки</p>
-                        <p class="desc">
-                           Компрессор поставляется с установленной микропроцессорной системой управления,
-                           которая обеспечивает контроль времени наработки.
-                        </p>
-                     </div>
-                     <div class="text">
-                        <p class="title">Комментарий</p>
-                        <p class="desc">
-                           Компрессор поставляется с установленной микропроцессорной системой управления,
-                           которая обеспечивает контроль времени наработки.
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-    <!-- end card-reviews -->
-
-    <!-- card-recommended -->
-    <!-- end card-recommended -->
   </div>
 </div>
 <!--#include file="inc-footer.html"-->

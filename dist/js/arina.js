@@ -1,6 +1,5 @@
 const ratings = document.querySelectorAll('.card-item-rating');
-const btnAccordion = document.querySelector('.accordion-items-title');
-const contentAccordion = document.querySelector('.accordion-content');
+const acc = document.getElementsByClassName("accordion-items-title");
 
 let ratingActive;
 let ratingValue;
@@ -83,23 +82,43 @@ function setRating(rating) {
   }
 }
 
-btnAccordion.addEventListener('click', function() {
-  console.log(contentAccordion)
-  contentAccordion.classList.toggle('active');
-})
+for (let i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    let panel = this.nextElementSibling;
 
-if (matchMedia) {
-  var screen1170 = window.matchMedia("(max-width:1170px)");
-  screen1170.addListener(changes);
-  changes(screen1170);
+    panel.classList.toggle('active');
+    this.classList.toggle("active");
+
+    if (this.classList[1] === "active") {
+      acc[i].children[0].style.transform = "rotate(-180deg)";
+    } else {
+      acc[i].children[0].style.transform = "rotate(0deg)";
+    }
+  });
 }
 
-console.log($('.tabs-item .content'))
+if (matchMedia) {
+  let screen1024 = window.matchMedia("(max-width:1024px)");
+  screen1024.addListener(accordionChanges);
+  accordionChanges(screen1024);
+}
 
-function changes(screen768) {
-  if (screen768.matches) {
-    $('.accordion-content').appendTo($(".tabs-items"));
+function accordionChanges(screen1024) {
+  if (screen1024.matches) {
+    $('.accordion-content.tab1').appendTo($(".accordion.tab1"));
+    $('.accordion-content.tab2').appendTo($(".accordion.tab2"));
+    $('.accordion-content.tab3').appendTo($(".accordion.tab3"));
+    $('.accordion-content.tab4').appendTo($(".accordion.tab4"));
+    $('#tabs').appendTo($(".card-info-media"));
+    $('.reviews.ui-btn.all').appendTo($(".card-reviews"));
+    $('.card-item-services').appendTo($(".card-item-wrapper.card-item-radio"));
   } else {
-    $('.accordion-content').appendTo($(".tabs-item"));
+    $('.accordion-content.tab1').appendTo($(".tabs-items #tab-1"));
+    $('.accordion-content.tab2').appendTo($(".tabs-items #tab-2"));
+    $('.accordion-content.tab3').appendTo($(".tabs-items #tab-3"));
+    $('.accordion-content.tab4').appendTo($(".tabs-items #tab-4"));
+    $('#tabs').appendTo($(".card-item-more-info"));
+    $('.reviews.ui-btn.all').prependTo($(".card-reviews-btn"));
+    $('.card-item-services').appendTo($(".card-item-specifications"));
   }
 }
