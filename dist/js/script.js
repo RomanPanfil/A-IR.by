@@ -84,7 +84,6 @@ let stickerHideBtn = document.querySelector(".sticker-hide"),
   stickerHiden = document.querySelector(".sticker-hidden"),
   catalogText = document.querySelector(".catalog-stickers-btn-text"),
   imgChange = document.querySelector(".img-change");
-// imgChange.src = "./images/icons/red-cross.svg";
 
 stickerHideBtn.onclick = () => {
   stickerHiden.classList.toggle("sticker-hidden-open");
@@ -197,4 +196,40 @@ $inputTo.on("input", function () {
   instance.update({
     to: val,
   });
+});
+
+// catalog-info-btn
+let stickerHideBtnInfo = document.querySelector(".sticker-info-hide"),
+  stickerHidenInfo = document.querySelectorAll(".catalog-info-list-hidden"),
+  catalogTextInfo = document.querySelector(".catalog-info-btn-text"),
+  imgChangeInfo = document.querySelector(".catalog-info-img");
+
+stickerHideBtnInfo.onclick = () => {
+  stickerHidenInfo.forEach((element) => {
+    element.classList.toggle("sticker-hidden-open-info");
+  });
+  // stickerHidenInfo.classList.toggle("sticker-hidden-open-info");
+
+  if (catalogTextInfo.innerHTML === "Скрыть") {
+    catalogTextInfo.innerHTML = "Ещё подборки";
+    imgChangeInfo.src = "./images/icons/green-cross.svg";
+  } else {
+    catalogTextInfo.innerHTML = "Скрыть";
+    imgChangeInfo.src = "./images/icons/red-cross.svg";
+  }
+};
+
+// let questTitle = document.querySelectorAll(".catalog-question-item-title"),
+//   questText = document.querySelectorAll(".catalog-question-item-text");
+
+// questTitle.forEach((el) => {
+//   el.onclick = () => {
+//     questText.classList.toggle("zxc");
+//   };
+// });
+
+$(document).on("click", ".catalog-question-item-title", function (e) {
+  $(this)
+    .closest(".catalog-question-item")
+    .toggleClass("catalog-question-toggle");
 });
