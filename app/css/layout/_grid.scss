@@ -47,6 +47,14 @@
   justify-content: space-between;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
 [class*="col-"] {
   width: 100%;
   padding-left: 12px;
@@ -57,8 +65,6 @@
   padding-left: 0px;
   padding-right: 0px;
 }
-
-
 
 /*  12-column */
 

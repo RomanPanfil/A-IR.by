@@ -430,7 +430,7 @@
 
             <!-- col-4 -->
             <div class="col-sm-6 col-us-12 col-md-4">
-               <div class="card-item-wrapper">
+               <div class="card-item-wrapper dpn">
                   <div class="card-item-counter">
                   <div class="card-item-counter-txt">Количество</div>
                   <div class="card-item-counter-btn btn-minus">
@@ -464,7 +464,7 @@
                   </a>
                   </div>
                </div>
-               <div class="card-item-wrapper card-item-radio">
+               <div class="card-item-wrapper card-item-radio dpn">
                   <div class="card-item-title">Соберите свою комплектацию</div>
                   <div class="card-item-features">
                   <div class="card-item-features-title">Давление</div>
@@ -504,124 +504,215 @@
                   />
                   <label for="pressure4" class="features-label"> 20 атм</label>
                   </div>
-                  <div class="card-item-features">
-                  <div class="card-item-features-title">Объем ресивера</div>
-                  <input
-                     type="radio"
-                     id="volume"
-                     name="volume"
-                     class="features-input"
-                  />
-                  <label for="volume" class="features-label">нет</label>
-                  <input
-                     type="radio"
-                     id="volume1"
-                     name="volume"
-                     class="features-input"
-                  />
-                  <label for="volume1" class="features-label">200 л</label>
-                  <input
-                     type="radio"
-                     id="volume2"
-                     name="volume"
-                     class="features-input"
-                  />
-                  <label for="volume2" class="features-label">250 л</label>
-                  <input
-                     type="radio"
-                     id="volume3"
-                     name="volume"
-                     class="features-input"
-                  />
-                  <label for="volume3" class="features-label">500 л</label>
-                  </div>
-                  <div class="card-item-features">
-                  <div class="card-item-features-title">
-                     Частотный преобразователь
-                  </div>
-                  <input
-                     type="radio"
-                     id="type"
-                     name="type"
-                     class="features-input"
-                  />
-                  <label for="type" class="features-label">прямой</label>
-                  <input
-                     type="radio"
-                     id="type1"
-                     name="type"
-                     class="features-input"
-                  />
-                  <label for="type1" class="features-label">ременной</label>
-                  <input
-                     type="radio"
-                     id="type2"
-                     name="type"
-                     class="features-input"
-                  />
-                  <label for="type2" class="features-label">нет</label>
-                  </div>
-                  <div class="card-item-features">
-                  <div class="card-item-features-title">Осушитель воздуха</div>
-                  <input
-                     type="radio"
-                     id="dryer"
-                     name="dryer"
-                     class="features-input"
-                  />
-                  <label for="dryer" class="features-label">да</label>
-                  <input
-                     type="radio"
-                     id="dryer1"
-                     name="dryer"
-                     class="features-input"
-                  />
-                  <label for="dryer1" class="features-label">нет</label>
-                  </div>
-                  <a href="#" class="card-item-link">Собрать</a>
+                  <form action="">
+                     <div class="card-item-features">
+                        <div class="card-item-features-title">Объем ресивера</div>
+                        <input
+                           type="radio"
+                           id="volume"
+                           name="volume"
+                           class="features-input"
+                        />
+                        <label for="volume" class="features-label">нет</label>
+                        <input
+                           type="radio"
+                           id="volume1"
+                           name="volume"
+                           class="features-input"
+                        />
+                        <label for="volume1" class="features-label">200 л</label>
+                        <input
+                           type="radio"
+                           id="volume2"
+                           name="volume"
+                           class="features-input"
+                        />
+                        <label for="volume2" class="features-label">250 л</label>
+                        <input
+                           type="radio"
+                           id="volume3"
+                           name="volume"
+                           class="features-input"
+                        />
+                        <label for="volume3" class="features-label">500 л</label>
+                        </div>
+                        <div class="card-item-features">
+                        <div class="card-item-features-title">
+                           Частотный преобразователь
+                        </div>
+                        <input
+                           type="radio"
+                           id="type"
+                           name="type"
+                           class="features-input"
+                        />
+                        <label for="type" class="features-label">прямой</label>
+                        <input
+                           type="radio"
+                           id="type1"
+                           name="type"
+                           class="features-input"
+                        />
+                        <label for="type1" class="features-label">ременной</label>
+                        <input
+                           type="radio"
+                           id="type2"
+                           name="type"
+                           class="features-input"
+                        />
+                        <label for="type2" class="features-label">нет</label>
+                        </div>
+                        <div class="card-item-features">
+                        <div class="card-item-features-title">Осушитель воздуха</div>
+                        <input
+                           type="radio"
+                           id="dryer"
+                           name="dryer"
+                           class="features-input"
+                        />
+                        <label for="dryer" class="features-label">да</label>
+                        <input
+                           type="radio"
+                           id="dryer1"
+                           name="dryer"
+                           class="features-input"
+                        />
+                        <label for="dryer1" class="features-label">нет</label>
+                        </div>
+                        <button type="submit" class="card-item-link">Собрать</button>
+                  </form>
                </div>
-               
-               <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/query.html">
-                  <div class="card-item-options-txt">
-                  Закажите коммерческое предложение
+               <div class="card-item-wrapper card-item-wrapper-missing dpn">
+                  <div class="card-item-title">
+                     Снят с производства
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-document.svg" alt="alt" >
+                  <a href="#" class ="card-item-btn ui-btn">Подобрать аналог</a>
+               </div>
+               <div class="card-item-wrapper card-item-wrapper-dark dpn">
+                  <div class="card-item-counter">
+                  <div class="card-item-counter-txt">Количество</div>
+                  <div class="card-item-counter-btn btn-minus">
+                     <!-- <div class="card-item-minus"></div> -->
+                     <img
+                        src="./images/icons/btn-minus.svg"
+                        alt="alt"
+                        class="card-item-minus"
+                     />
                   </div>
-               </a>
-               <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
-                  <div class="card-item-options-txt">
-                  Закажите звонок!
-                  <span class="card-item-options-span">
-                     Функция заказа обратного звонка
-                  </span>
+                  <input class="card-item-counter-input" value="1" />
+                  <div class="card-item-counter-btn btn-plus">
+                     <img src="./images/icons/counter-plus.svg" alt="alt" />
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-phone.svg" alt="alt" />
                   </div>
-               </a>
-               <a href="#" class="card-item-options">
-                  <div class="card-item-options-txt">
-                  +375 (33) 398-18-18
-                  <span class="card-item-options-span">
-                     Поможем по всем вопросам
-                  </span>
+                  <div class="card-item-price">
+                  <div class="card-item-price-txt">Цена</div>
+
+                  <div class="card-item-price-current">5 381 BYN</div>
+                  <div class="card-item-price-currency">2 500$ / 2 300€</div>
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-info.svg" alt="alt" />
+                  <div class="card-item-line"></div>
+                  <a href="#" class="card-item-btn ui-btn card-btn-dark">Перейти в корзину</a>
+                  <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/fastOder.html">Быстрый заказ</a>
+                  <div class="card-item-line"></div>
+                  <div class="card-item-question">
+                  <img src="./images/icons/card-item-speaker.svg" alt="alt" />
+                  <a href="javascript:void(0)" class="card-item-question-link mfp-link" data-href="./popups/anotherPrice.html"
+                     >Нашли дешевле? Сообщите!
+                  </a>
                   </div>
-               </a>
-               <a href="#" class="card-item-options">
-                  <div class="card-item-options-txt">
-                  tech@irand.by
-                  <span class="card-item-options-span">
-                     Не стесняйтесь написать нам письмо
-                  </span>
+               </div>
+               <div class="card-item-wrapper card-item-wrapper-dark">
+                  <div class="card-item-counter">
+                  <div class="card-item-counter-txt">Количество</div>
+                  <div class="card-item-counter-btn btn-minus">
+                     <img
+                        src="./images/icons/btn-minus.svg"
+                        alt="alt"
+                        class="card-item-minus"
+                     />
                   </div>
-                  <div class="card-item-options-img">
-                  <img src="./images/icons/card-item-mail.svg" alt="alt" />
+                  <input class="card-item-counter-input" value="1" />
+                  <div class="card-item-counter-btn btn-plus">
+                     <img src="./images/icons/counter-plus.svg" alt="alt" />
                   </div>
-               </a>
+                  </div>
+                  <div class="card-item-price">
+                  <div class="card-item-price-txt">Цена</div>
+
+                  <div class="card-item-price-current">5 381 BYN</div>
+                  <div class="card-item-price-currency">2 500$ / 2 300€</div>
+                  </div>
+                  <div class="card-item-line"></div>
+                  <div class="card-item-status">
+                     Под заказ
+                  </div>
+                  <div class="card-item-delivery">
+                     <img src="./images/icons/card-item-delivery.svg" alt="alt">
+                     
+                     <div class="card-item-delivery-span">Доставка – 14 дней</div>
+                  </div>
+                  <a href="#" class="card-item-btn ui-btn card-btn-dark">Добавить в корзину</a>
+                  <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/fastOder.html">Быстрый заказ</a>
+                  <div class="card-item-line"></div>
+                  <div class="card-item-question">
+                  <img src="./images/icons/card-item-speaker.svg" alt="alt" />
+                  <a href="javascript:void(0)" class="card-item-question-link mfp-link" data-href="./popups/anotherPrice.html"
+                     >Нашли дешевле? Сообщите!
+                  </a>
+                  </div>
+               </div>
+               <div class="card-item-container">
+                  <div class="row">
+                     <div class="col-6 col-us-12 col-sm-12"><a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/query.html">
+                        <div class="card-item-options-txt">
+                        Закажите коммерческое предложение
+                        </div>
+                        <div class="card-item-options-img">
+                        <img src="./images/icons/card-item-document.svg" alt="alt" >
+                        </div>
+                     </a></div>
+                     <div class="col-6 col-us-12 col-sm-12"> <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
+                        <div class="card-item-options-txt">
+                        Закажите звонок!
+                        <span class="card-item-options-span">
+                           Функция заказа обратного звонка
+                        </span>
+                        </div>
+                        <div class="card-item-options-img">
+                        <img src="./images/icons/card-item-phone.svg" alt="alt" />
+                        </div>
+                     </a></div>
+                     <div class="col-6 col-us-12 col-sm-12"><a href="tel:+375333981818" class="card-item-options">
+                        <div class="card-item-options-txt">
+                        +375 (33) 398-18-18
+                        <span class="card-item-options-span">
+                           Поможем по всем вопросам
+                        </span>
+                        </div>
+                        <div class="card-item-options-img">
+                        <img src="./images/icons/card-item-info.svg" alt="alt" />
+                        </div>
+                     </a></div>
+                     <div class="col-6 col-us-12 col-sm-12">
+                        <a href="mailto:tech@irand.by" class="card-item-options">
+                           <div class="card-item-options-txt">
+                           tech@irand.by
+                           <span class="card-item-options-span">
+                              Не стесняйтесь написать нам письмо
+                           </span>
+                           </div>
+                           <div class="card-item-options-img">
+                           <img src="./images/icons/card-item-mail.svg" alt="alt" />
+                           </div>
+                        </a>
+                     </div>
+
+                  </div>
+                  
+                 
+                  
+                 
+               </div>
             </div>
         </div>
       </div>
@@ -633,7 +724,7 @@
       <!-- card-interest -->
       <div class="card-interest">
          <div class="card-interest-title">Должно пригодиться</div>
-         <div class="row">
+         <div class="row card-interest-mob">
          <div class="col-4">
             <a href="#" class="card-interest-item">
                <div class="card-interest-item-img">
@@ -689,25 +780,31 @@
          </div>
       </div>
 
-      <div class="swiper product-swiper">
+      <div class="swiper product-swiper  slider-adaptive slider-adaptive-none">
          <!-- Additional required wrapper -->
-         <div class="swiper-wrapper">
+         <div class="swiper-wrapper slider-adaptive-wrap">
            <!-- Slides -->
-           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
-           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
-           <div class="swiper-slide"><!--#include file="inc-product.html"--></div>
-          
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>    
          </div>
-         <!-- If we need pagination -->
-         <div class="swiper-pagination"></div>
+        
        
          <!-- If we need navigation buttons -->
-         <div class="swiper-button-prev"></div>
-         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev slider-adaptive-prev">
+            <!-- <img src="./images/icons/product-slider-left.svg" alt="alt"> -->
+         </div>
+         <div class="swiper-button-next slider-adaptive-next"></div>
        
-         <!-- If we need scrollbar -->
-         <div class="swiper-scrollbar"></div>
        </div>
+
+       <div class="product-swiper-desc"></div>
+
        <!-- card-usefull -->
        <!--! 🌵🌵🌵 <div class="card-product"></div> - название маленькой карточки стили для этой карточки заносим в components/_card-product.scss 🌵🌵🌵 -->
        <!-- end card-usefull -->
