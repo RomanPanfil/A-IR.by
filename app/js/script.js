@@ -138,63 +138,67 @@ $(document).ready(function () {
 });
 
 // ion range input
-var $range = $(".js-range-slider"),
-  $inputFrom = $(".js-input-from"),
-  $inputTo = $(".js-input-to"),
-  instance,
-  min_1 = 1600,
-  max_1 = 1000000,
-  from_1 = 1600,
-  to_1 = 1000000;
+$(".slider-wrapper").each(function () {
+  var $range = $(".js-range-slider", this),
+    $inputFrom = $(".js-input-from", this),
+    $inputTo = $(".js-input-to", this),
+    instance,
+    min_1 = $inputFrom[0].dataset.min,
+    max_1 = $inputTo[0].dataset.max,
+    from_1 = $inputFrom[0].dataset.min,
+    to_1 = $inputTo[0].dataset.max,
+    steps = $range[0].dataset.steps;
 
-$range.ionRangeSlider({
-  skin: "round",
-  type: "double",
-  min: min_1,
-  max: max_1,
-  from: from_1,
-  to: to_1,
-  step: 100,
-  onStart: updateInputs,
-  onChange: updateInputs,
-});
-instance = $range.data("ionRangeSlider");
-
-function updateInputs(data) {
-  from = data.from;
-  to = data.to;
-
-  $inputFrom.prop("value", from);
-  $inputTo.prop("value", to);
-}
-
-$inputFrom.on("input", function () {
-  var val = $(this).prop("value");
-
-  // validate
-  if (val < min) {
-    val = min;
-  } else if (val > to) {
-    val = to;
-  }
-
-  instance.update({
-    from: val,
+  $range.ionRangeSlider({
+    skin: "round",
+    type: "double",
+    min: min_1,
+    max: max_1,
+    from: from_1,
+    to: to_1,
+    step: steps,
+    onStart: updateInputs,
+    onChange: updateInputs,
   });
-});
 
-$inputTo.on("input", function () {
-  var val = $(this).prop("value");
+  instance = $range.data("ionRangeSlider");
 
-  // validate
-  if (val < from) {
-    val = from;
-  } else if (val > max) {
-    val = max;
+  function updateInputs(data) {
+    from = data.from;
+    to = data.to;
+
+    $inputFrom.prop("value", from);
+    $inputTo.prop("value", to);
   }
 
-  instance.update({
-    to: val,
+  $inputFrom.on("input", function () {
+    var val = $(this).prop("value");
+
+    // validate
+    if (val < min) {
+      val = min;
+    } else if (val > to) {
+      val = to;
+    }
+
+    instance.update({
+      from: val,
+    });
+  });
+
+  $inputTo.on("input", function () {
+    var val = $(this).prop("value");
+
+    // validate
+    if (val < from) {
+      val = from;
+    } else if (val > max) {
+      val = max;
+    }
+
+    instance.update({
+      to: val,
+    });
   });
 });
 
