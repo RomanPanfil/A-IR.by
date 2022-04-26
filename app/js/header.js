@@ -24,11 +24,11 @@ $(function () {
 //         document.documentElement.clientHeight)) *
 //     100;
 
-  //   console.log();
+//   console.log();
 //   console.log(Math.floor(height100));
-  //   console.log(document.body.getBoundingClientRect().height + " - 1 число ");
-  //   console.log(document.documentElement.clientHeight + " - 2 число ");
-  //   console.log(scrollDistance)
-};
+//   console.log(document.body.getBoundingClientRect().height + " - 1 число ");
+//   console.log(document.documentElement.clientHeight + " - 2 число ");
+//   console.log(scrollDistance)
+// };
 
 // window.addEventListener("scroll", ani);
