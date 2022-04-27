@@ -81,7 +81,7 @@ const slider3 = new Swiper('.reviews', {
       slidesPerView: 2,
       init: false,
     },
-
+    
     300: {
       slidesPerView: 1,
       init: false,
