@@ -77,47 +77,52 @@ var maskOptions = {
   placeholder: "+{000}(00)000-00-00",
   mask: "+{000}(00)000-00-00",
 };
-var mask = IMask(catalogPhone, maskOptions);
+if (catalogPhone) {
+  var mask = IMask(catalogPhone, maskOptions);
+}
+
 // Sticker hidden catalog.html
+if (document.querySelector(".sticker-hide")) {
+  let stickerHideBtn = document.querySelector(".sticker-hide"),
+    stickerHiden = document.querySelector(".sticker-hidden"),
+    catalogText = document.querySelector(".catalog-stickers-btn-text"),
+    imgChange = document.querySelector(".img-change");
 
-let stickerHideBtn = document.querySelector(".sticker-hide"),
-  stickerHiden = document.querySelector(".sticker-hidden"),
-  catalogText = document.querySelector(".catalog-stickers-btn-text"),
-  imgChange = document.querySelector(".img-change");
+  stickerHideBtn.onclick = () => {
+    stickerHiden.classList.toggle("sticker-hidden-open");
 
-stickerHideBtn.onclick = () => {
-  stickerHiden.classList.toggle("sticker-hidden-open");
-
-  if (catalogText.innerHTML === "Скрыть") {
-    catalogText.innerHTML = "Ещё подборки";
-    imgChange.src = "./images/icons/green-cross.svg";
-  } else {
-    catalogText.innerHTML = "Скрыть";
-    imgChange.src = "./images/icons/red-cross.svg";
-  }
-};
+    if (catalogText.innerHTML === "Скрыть") {
+      catalogText.innerHTML = "Ещё подборки";
+      imgChange.src = "./images/icons/green-cross.svg";
+    } else {
+      catalogText.innerHTML = "Скрыть";
+      imgChange.src = "./images/icons/red-cross.svg";
+    }
+  };
+}
 
 // Input range
 
 // checkbox hide on click
+if (document.querySelector(".catalog-products-field-btn")) {
+  let checkboxBtn = document.querySelector(".catalog-products-field-btn"),
+    catalogbtnText = document.querySelector(".catalog-products-field-text"),
+    catalogbtnImg = document.querySelector(".catalog-products-field-img img"),
+    checkboxHiden = document.querySelectorAll(".checkbox-hide");
 
-let checkboxBtn = document.querySelector(".catalog-products-field-btn"),
-  catalogbtnText = document.querySelector(".catalog-products-field-text"),
-  catalogbtnImg = document.querySelector(".catalog-products-field-img img"),
-  checkboxHiden = document.querySelectorAll(".checkbox-hide");
-
-checkboxBtn.onclick = () => {
-  if (catalogbtnText.innerHTML === "Показать еще 4") {
-    catalogbtnText.innerHTML = "Скрыть";
-    catalogbtnImg.src = "./images/icons/red-cross.svg";
-  } else {
-    catalogbtnText.innerHTML = "Показать еще 4";
-    catalogbtnImg.src = "./images/icons/green-cross.svg";
-  }
-  checkboxHiden.forEach((el) => {
-    el.classList.toggle("checkbox-on");
-  });
-};
+  checkboxBtn.onclick = () => {
+    if (catalogbtnText.innerHTML === "Показать еще 4") {
+      catalogbtnText.innerHTML = "Скрыть";
+      catalogbtnImg.src = "./images/icons/red-cross.svg";
+    } else {
+      catalogbtnText.innerHTML = "Показать еще 4";
+      catalogbtnImg.src = "./images/icons/green-cross.svg";
+    }
+    checkboxHiden.forEach((el) => {
+      el.classList.toggle("checkbox-on");
+    });
+  };
+}
 
 // Validation for catalog email input
 
@@ -138,98 +143,140 @@ $(document).ready(function () {
 });
 
 // ion range input
-var $range = $(".js-range-slider"),
-  $inputFrom = $(".js-input-from"),
-  $inputTo = $(".js-input-to"),
-  instance,
-  min_1 = 1600,
-  max_1 = 1000000,
-  from_1 = 1600,
-  to_1 = 1000000;
+$(".slider-wrapper").each(function () {
+  var $range = $(".js-range-slider", this),
+    $inputFrom = $(".js-input-from", this),
+    $inputTo = $(".js-input-to", this),
+    instance,
+    min_1 = $inputFrom[0].dataset.min,
+    max_1 = $inputTo[0].dataset.max,
+    from_1 = $inputFrom[0].dataset.min,
+    to_1 = $inputTo[0].dataset.max,
+    steps = $range[0].dataset.steps;
 
-$range.ionRangeSlider({
-  skin: "round",
-  type: "double",
-  min: min_1,
-  max: max_1,
-  from: from_1,
-  to: to_1,
-  step: 100,
-  onStart: updateInputs,
-  onChange: updateInputs,
-});
-instance = $range.data("ionRangeSlider");
-
-function updateInputs(data) {
-  from = data.from;
-  to = data.to;
-
-  $inputFrom.prop("value", from);
-  $inputTo.prop("value", to);
-}
-
-$inputFrom.on("input", function () {
-  var val = $(this).prop("value");
-
-  // validate
-  if (val < min) {
-    val = min;
-  } else if (val > to) {
-    val = to;
-  }
-
-  instance.update({
-    from: val,
+  $range.ionRangeSlider({
+    skin: "round",
+    type: "double",
+    min: min_1,
+    max: max_1,
+    from: from_1,
+    to: to_1,
+    step: steps,
+    onStart: updateInputs,
+    onChange: updateInputs,
   });
-});
 
-$inputTo.on("input", function () {
-  var val = $(this).prop("value");
+  instance = $range.data("ionRangeSlider");
 
-  // validate
-  if (val < from) {
-    val = from;
-  } else if (val > max) {
-    val = max;
+  function updateInputs(data) {
+    from = data.from;
+    to = data.to;
+
+    $inputFrom.prop("value", from);
+    $inputTo.prop("value", to);
   }
 
-  instance.update({
-    to: val,
+  $inputFrom.on("input", function () {
+    var val = $(this).prop("value");
+
+    // validate
+    if (val < min) {
+      val = min;
+    } else if (val > to) {
+      val = to;
+    }
+
+    instance.update({
+      from: val,
+    });
+  });
+
+  $inputTo.on("input", function () {
+    var val = $(this).prop("value");
+
+    // validate
+    if (val < from) {
+      val = from;
+    } else if (val > max) {
+      val = max;
+    }
+
+    instance.update({
+      to: val,
+    });
   });
 });
 
 // catalog-info-btn
-let stickerHideBtnInfo = document.querySelector(".sticker-info-hide"),
-  stickerHidenInfo = document.querySelectorAll(".catalog-info-list-hidden"),
-  catalogTextInfo = document.querySelector(".catalog-info-btn-text"),
-  imgChangeInfo = document.querySelector(".catalog-info-img");
+if (document.querySelector(".sticker-info-hide")) {
+  let stickerHideBtnInfo = document.querySelector(".sticker-info-hide"),
+    stickerHidenInfo = document.querySelectorAll(".catalog-info-list-hidden"),
+    catalogTextInfo = document.querySelector(".catalog-info-btn-text"),
+    imgChangeInfo = document.querySelector(".catalog-info-img");
 
-stickerHideBtnInfo.onclick = () => {
-  stickerHidenInfo.forEach((element) => {
-    element.classList.toggle("sticker-hidden-open-info");
+  stickerHideBtnInfo.onclick = () => {
+    stickerHidenInfo.forEach((element) => {
+      element.classList.toggle("sticker-hidden-open-info");
+    });
+    // stickerHidenInfo.classList.toggle("sticker-hidden-open-info");
+
+    if (catalogTextInfo.innerHTML === "Скрыть") {
+      catalogTextInfo.innerHTML = "Ещё подборки";
+      imgChangeInfo.src = "./images/icons/green-cross.svg";
+    } else {
+      catalogTextInfo.innerHTML = "Скрыть";
+      imgChangeInfo.src = "./images/icons/red-cross.svg";
+    }
+  };
+
+  $(document).on("click", ".catalog-question-item-title", function (e) {
+    $(this)
+      .closest(".catalog-question-item")
+      .toggleClass("catalog-question-toggle");
   });
-  // stickerHidenInfo.classList.toggle("sticker-hidden-open-info");
+}
 
-  if (catalogTextInfo.innerHTML === "Скрыть") {
-    catalogTextInfo.innerHTML = "Ещё подборки";
-    imgChangeInfo.src = "./images/icons/green-cross.svg";
-  } else {
-    catalogTextInfo.innerHTML = "Скрыть";
-    imgChangeInfo.src = "./images/icons/red-cross.svg";
-  }
-};
+// cardSticky
 
-// let questTitle = document.querySelectorAll(".catalog-question-item-title"),
-//   questText = document.querySelectorAll(".catalog-question-item-text");
+// let elemzxc = document.getElementById("coords-show-mark");
 
-// questTitle.forEach((el) => {
-//   el.onclick = () => {
-//     questText.classList.toggle("zxc");
-//   };
-// });
+// function createMessageUnder(elemzxc, html) {
+//   // создаём элемент, который будет содержать сообщение
+//   let message = document.createElement("div");
+//   // для стилей лучше было бы использовать css-класс здесь
+//   message.style.cssText = "position:fixed; color: red";
 
-$(document).on("click", ".catalog-question-item-title", function (e) {
-  $(this)
-    .closest(".catalog-question-item")
-    .toggleClass("catalog-question-toggle");
+//   // устанавливаем координаты элементу, не забываем про "px"!
+//   let coords = elemzxc.getBoundingClientRect();
+
+//   message.style.left = coords.left + "px";
+//   message.style.top = coords.bottom + "px";
+
+//   message.innerHTML = html;
+
+//   return message;
+// }
+
+// let message = createMessageUnder(elemzxc, "Hello, world!");
+// document.body.append(m
+
+$(document).ready(function () {
+  let cardBreackpoint = $("#card-breackpoint").offset().top;
+  let cardSticky = $(".card-sticky");
+  let headerCard = $(".header");
+  window.addEventListener("resize", function () {
+    cardBreackpoint = $("#card-breackpoint").offset().top;
+  });
+  window.addEventListener("scroll", function () {
+    if (window.scrollY < cardBreackpoint) {
+      console.log("Remove class");
+      headerCard.removeClass("headerCard_fixed");
+      cardSticky.removeClass("card-breackpoint-open");
+    } else {
+      console.log("ADD class");
+      headerCard.addClass("headerCard_fixed");
+      cardSticky.addClass("card-breackpoint-open");
+    }
+  });
+  console.log($("#card-breackpoint").offset().top);
 });
