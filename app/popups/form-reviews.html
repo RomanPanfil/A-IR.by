@@ -428,6 +428,7 @@
       const bgPopup = document.createElement('div');
       const popupSecondBlock = document.createElement('div');
       const popupSecond = document.createElement('div');
+      const popupSecondClose = document.createElement('div');
       const title = document.createElement('h1');
       const text = document.createElement('p');
       const btnExit = document.createElement('button');
@@ -436,6 +437,7 @@
       bgPopup.classList.add('popup-second-bg');
       popupSecondBlock.classList.add('popup-second-block');
       popupSecond.classList.add('popup-second');
+      popupSecondClose.classList.add('popup-second-close');
       title.classList.add('popup-second-title');
       text.classList.add('popup-second-text');
       btnExit.classList.add('popup-second-btn-exit');
@@ -447,19 +449,21 @@
       text.innerHTML = 'Отзыв не сохранится, если вы закроете окно.';
       btnExit.innerHTML = 'Уйти со страницы';
       btnCancel.innerHTML = 'Отмена';
+      popupSecondClose.innerHTML = '&times;';
 
       document.body.insertAdjacentElement('afterbegin', bgPopup);
       bgPopup.insertAdjacentElement('beforeend', popupSecond);
       popupSecond.insertAdjacentElement('beforeend', popupSecondBlock);
       popupSecondBlock.insertAdjacentElement('beforeend', title);
+      popupSecondBlock.insertAdjacentElement('beforeend', popupSecondClose);
       popupSecondBlock.insertAdjacentElement('beforeend', text);
       popupSecondBlock.insertAdjacentElement('beforeend', btnExit);
       popupSecondBlock.insertAdjacentElement('beforeend', btnCancel);
 
-      btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel)
+      btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel, popupSecondClose)
     }
 
-    function btnClick(btnExit, popupSecond, bgPopup, btnCancel) {
+    function btnClick(btnExit, popupSecond, bgPopup, btnCancel, popupSecondClose) {
       btnExit.onclick = function() {
         mfpClose.click();
         popupSecond.remove();
@@ -467,6 +471,11 @@
       }
 
       btnCancel.onclick = function() {
+        popupSecond.style.display = 'none';
+        bgPopup.style.display = 'none';
+      }
+
+      popupSecondClose.onclick = function() {
         popupSecond.style.display = 'none';
         bgPopup.style.display = 'none';
       }
