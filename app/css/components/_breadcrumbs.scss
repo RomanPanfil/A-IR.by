@@ -31,3 +31,31 @@
     margin-bottom: 24px;
   }
 }
+
+@media (max-width: 1024px) {
+  .page-breadcrumbs {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    i,
+    a {
+      display: none;
+    }
+    a:nth-last-child(-n + 3) {
+      display: inline-block;
+    }
+    i:nth-last-child(-n + 2) {
+      display: inline-block;
+    }
+  }
+}
+
+.page-breadcrumbs::-webkit-scrollbar {
+  width: 0;
+}
+.page-breadcrumbs {
+  -ms-overflow-style: none;
+}
+.page-breadcrumbs {
+  overflow: -moz-scrollbars-none;
+}
