@@ -111,7 +111,7 @@ function accordionChanges(screen1024) {
     $('.accordion-content.tab4').appendTo($(".accordion.tab4"));
     $('#tabs').appendTo($(".card-info-media"));
     $('.reviews.ui-btn.all').appendTo($(".card-reviews"));
-    $('.card-item-services').appendTo($(".card-item-wrapper.card-item-radio"));
+    $('.card-item-services').prependTo($('.card-item-container'));
   } else {
     $('.accordion-content.tab1').appendTo($(".tabs-items #tab-1"));
     $('.accordion-content.tab2').appendTo($(".tabs-items #tab-2"));
