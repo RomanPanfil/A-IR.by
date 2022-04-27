@@ -464,124 +464,7 @@
                   </a>
                   </div>
                </div>
-               <div class="card-item-wrapper card-item-radio dpn">
-                  <div class="card-item-title">Соберите свою комплектацию</div>
-                  <div class="card-item-features">
-                  <div class="card-item-features-title">Давление</div>
-                  <input
-                     type="radio"
-                     id="pressure"
-                     name="pressure"
-                     class="features-input"
-                  />
-                  <label for="pressure" class="features-label"> 7.5 атм</label>
-                  <input
-                     type="radio"
-                     id="pressure1"
-                     name="pressure"
-                     class="features-input"
-                  />
-                  <label for="pressure1" class="features-label"> 10 атм</label>
-                  <input
-                     type="radio"
-                     id="pressure2"
-                     name="pressure"
-                     class="features-input"
-                  />
-                  <label for="pressure2" class="features-label"> 13 атм</label>
-                  <input
-                     type="radio"
-                     id="pressure3"
-                     name="pressure"
-                     class="features-input"
-                  />
-                  <label for="pressure3" class="features-label"> 15 атм</label>
-                  <input
-                     type="radio"
-                     id="pressure4"
-                     name="pressure"
-                     class="features-input"
-                  />
-                  <label for="pressure4" class="features-label"> 20 атм</label>
-                  </div>
-                  <form action="">
-                     <div class="card-item-features">
-                        <div class="card-item-features-title">Объем ресивера</div>
-                        <input
-                           type="radio"
-                           id="volume"
-                           name="volume"
-                           class="features-input"
-                        />
-                        <label for="volume" class="features-label">нет</label>
-                        <input
-                           type="radio"
-                           id="volume1"
-                           name="volume"
-                           class="features-input"
-                        />
-                        <label for="volume1" class="features-label">200 л</label>
-                        <input
-                           type="radio"
-                           id="volume2"
-                           name="volume"
-                           class="features-input"
-                        />
-                        <label for="volume2" class="features-label">250 л</label>
-                        <input
-                           type="radio"
-                           id="volume3"
-                           name="volume"
-                           class="features-input"
-                        />
-                        <label for="volume3" class="features-label">500 л</label>
-                        </div>
-                        <div class="card-item-features">
-                        <div class="card-item-features-title">
-                           Частотный преобразователь
-                        </div>
-                        <input
-                           type="radio"
-                           id="type"
-                           name="type"
-                           class="features-input"
-                        />
-                        <label for="type" class="features-label">прямой</label>
-                        <input
-                           type="radio"
-                           id="type1"
-                           name="type"
-                           class="features-input"
-                        />
-                        <label for="type1" class="features-label">ременной</label>
-                        <input
-                           type="radio"
-                           id="type2"
-                           name="type"
-                           class="features-input"
-                        />
-                        <label for="type2" class="features-label">нет</label>
-                        </div>
-                        <div class="card-item-features">
-                        <div class="card-item-features-title">Осушитель воздуха</div>
-                        <input
-                           type="radio"
-                           id="dryer"
-                           name="dryer"
-                           class="features-input"
-                        />
-                        <label for="dryer" class="features-label">да</label>
-                        <input
-                           type="radio"
-                           id="dryer1"
-                           name="dryer"
-                           class="features-input"
-                        />
-                        <label for="dryer1" class="features-label">нет</label>
-                        </div>
-                        <button type="submit" class="card-item-link">Собрать</button>
-                  </form>
-               </div>
+               
                <div class="card-item-wrapper card-item-wrapper-missing dpn">
                   <div class="card-item-title">
                      Снят с производства
@@ -653,6 +536,7 @@
                   </div>
                   <a href="#" class="card-item-btn ui-btn card-btn-dark">Добавить в корзину</a>
                   <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/fastOder.html">Быстрый заказ</a>
+                  <a href="javascript:void(0)" class="card-item-btn ui-btn mfp-link" data-href="./popups/card-item.html" style ="display:none">card-item</a>
                   <div class="card-item-line"></div>
                   <div class="card-item-question">
                   <img src="./images/icons/card-item-speaker.svg" alt="alt" />
@@ -661,9 +545,186 @@
                   </a>
                   </div>
                </div>
+               <div class="card-item-wrapper card-item-radio ">
+                  <div class="card-item-title">Соберите свою комплектацию</div>
+                  
+                  <form action="">
+                     <div class="card-item-features">
+                        <div class="card-item-features-title">Давление</div>
+                        <div class="features-label-wrapper">
+                           <label  class="features-label"> 
+                              <input
+                              type="radio"
+                              name="pressure"
+                              class="features-input"
+                           />
+                              <span>7.5</span> <span>атм</span>
+                           </label>
+                        </div>
+                        
+                        <div class="features-label-wrapper">
+                           <label  class="features-label">
+                              <input
+                              type="radio"
+                              
+                              name="pressure"
+                              class="features-input"
+                           />
+                           <span>10</span> <span>атм</span>
+                              </label>
+                        </div>
+                        
+                        <div class="features-label-wrapper">
+                           <label  class="features-label">
+                           <input
+                           type="radio"
+                           
+                           name="pressure"
+                           class="features-input"
+                        />
+                          
+                           <span>13</span> <span>атм</span>
+                        </label></div>
+                        
+                        <div class="features-label-wrapper">
+                           <label  class="features-label">
+                           <input
+                           type="radio"
+                           
+                           name="pressure"
+                           class="features-input"
+                        />
+                        <span>15</span> <span>атм</span>      
+                     </label></div>
+                        
+                     <div class="features-label-wrapper">
+                        <label  class="features-label">
+                        <input
+                        type="radio"
+                        
+                        name="pressure"
+                        class="features-input"
+                     />
+                     <span>20</span> <span>атм</span>
+                     </label></div>
+                        </div>
+                     <div class="card-item-features">
+                        <div class="card-item-features-title">Объем ресивера</div>
+                        <div class="features-label-wrapper">
+                           <label  class="features-label">
+                              <input
+                                 type="radio"
+                                 
+                                 name="volume"
+                                 class="features-input"
+                              />
+                                 <span>нет</span>
+                              </label>
+                        </div>
+                       
+                        <div class="features-label-wrapper">
+                           <label  class="features-label">
+                              <input
+                              type="radio"
+                             
+                              name="volume"
+                              class="features-input"
+                           />
+                           <span>200</span> <span>л</span></label>
+                        </div>
+                        
+                        <div class="features-label-wrapper">
+                           <label  class="features-label">
+                              <input
+                              type="radio"
+                              
+                              name="volume"
+                              class="features-input"
+                           />
+                           <span>250</span> <span>л</span></label>
+                        </div>
+                        
+                        <div class="features-label-wrapper">
+                           <label  class="features-label">
+                           <input
+                           type="radio"
+                           
+                           name="volume"
+                           class="features-input"
+                        />
+                        <span>500</span> <span>л</span>      
+                     </label></div>
+                        
+                        </div>
+                        <div class="card-item-features">
+                        <div class="card-item-features-title">
+                           Частотный преобразователь
+                        </div>
+                        <div class="features-label-wrapper">
+                           <label  class="features-label features-label-long">
+                           <input
+                           type="radio"
+                          
+                           name="type"
+                           class="features-input"
+                        />
+                        <span>прямой</span>
+                        </label>
+                     </div>
+                        
+                        <div class="features-label-wrapper">
+                           <label  class="features-label features-label-long">
+                              <input
+                              type="radio"
+                              
+                              name="type"
+                              class="features-input"
+                              />
+                             <span>ременной</span>
+                           </label></div>
+                        
+                           <div class="features-label-wrapper">
+                              <label  class="features-label">
+                                 <input
+                                 type="radio"
+                                 
+                                 name="type"
+                                 class="features-input"
+                              />
+                              <span>нет</span>
+                                </label>
+                           </div>
+                        
+                        </div>
+                        <div class="card-item-features">
+                        <div class="card-item-features-title">Осушитель воздуха</div>
+                        <div class="features-label-wrapper"><label  class="features-label">
+                           <input
+                           type="radio"
+                           
+                           name="dayer"
+                           class="features-input"
+                        />
+                        <span>да</span>
+                          </label></div>
+                        
+                          <div class="features-label-wrapper"><label  class="features-label">
+                           <input
+                           type="radio"
+                           
+                           name="dayer"
+                           class="features-input"
+                        />
+                        <span>нет</span>
+                          </label></div>
+                          
+                        </div>
+                        <button type="submit" class="card-item-link">Собрать</button>
+                  </form>
+               </div>
                <div class="card-item-container">
-                  <div class="row">
-                     <div class="col-6 col-us-12 col-sm-12"><a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/query.html">
+                  <div class="row card-item-container-adaptive">
+                     <div class="col-ss-12 col-xs-6 col-md-12"><a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/query.html">
                         <div class="card-item-options-txt">
                         Закажите коммерческое предложение
                         </div>
@@ -671,7 +732,7 @@
                         <img src="./images/icons/card-item-document.svg" alt="alt" >
                         </div>
                      </a></div>
-                     <div class="col-6 col-us-12 col-sm-12"> <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
+                     <div class="col-ss-12 col-xs-6 col-md-12"> <a href="javascript:void(0)" class="card-item-options mfp-link" data-href="./popups/backcall.html">
                         <div class="card-item-options-txt">
                         Закажите звонок!
                         <span class="card-item-options-span">
@@ -682,7 +743,7 @@
                         <img src="./images/icons/card-item-phone.svg" alt="alt" />
                         </div>
                      </a></div>
-                     <div class="col-6 col-us-12 col-sm-12"><a href="tel:+375333981818" class="card-item-options">
+                     <div class="col-ss-12 col-xs-6 col-md-12"><a href="tel:+375333981818" class="card-item-options">
                         <div class="card-item-options-txt">
                         +375 (33) 398-18-18
                         <span class="card-item-options-span">
@@ -693,7 +754,7 @@
                         <img src="./images/icons/card-item-info.svg" alt="alt" />
                         </div>
                      </a></div>
-                     <div class="col-6 col-us-12 col-sm-12">
+                     <div class="col-ss-12 col-xs-6 col-md-12">
                         <a href="mailto:tech@irand.by" class="card-item-options">
                            <div class="card-item-options-txt">
                            tech@irand.by
@@ -707,18 +768,14 @@
                         </a>
                      </div>
 
-                  </div>
-                  
-                 
-                  
-                 
+                  </div>  
                </div>
             </div>
         </div>
       </div>
 
       <div class="card-info-media">
-
+         
       </div>
 
       <!-- card-interest -->
@@ -780,11 +837,11 @@
          </div>
       </div>
 
-      <div class="swiper product-swiper  slider-adaptive slider-adaptive-none">
+      <div class="swiper product-swiper  slider-adaptive slider-adaptive-none slider-preferably">
          <!-- Additional required wrapper -->
          <div class="swiper-wrapper slider-adaptive-wrap">
            <!-- Slides -->
-           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product-open.html"--></div>
            <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
            <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
            <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
@@ -802,7 +859,7 @@
          <div class="swiper-button-next slider-adaptive-next"></div>
        
        </div>
-
+       <div class="product-swiper-mob"></div>
        <div class="product-swiper-desc"></div>
 
        <!-- card-usefull -->
@@ -1126,9 +1183,34 @@
             </div>
          </div>
        <!-- end card-reviews -->
-   
-       <!-- card-recommended -->
-       <!-- end card-recommended -->
+       <div class="card-interest-title">
+         С этим товаром покупают
+       </div>
+       <div class="swiper product-swiper  slider-adaptive slider-adaptive-none slider-interest">
+         <!-- Additional required wrapper -->
+         <div class="swiper-wrapper slider-adaptive-wrap">
+           <!-- Slides -->
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product-open.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>
+           <div class="swiper-slide slider-adaptive-slide" ><!--#include file="inc-product.html"--></div>    
+         </div>
+        
+       
+         <!-- If we need navigation buttons -->
+         <div class="swiper-button-prev slider-adaptive-prev">
+            <!-- <img src="./images/icons/product-slider-left.svg" alt="alt"> -->
+         </div>
+         <div class="swiper-button-next slider-adaptive-next"></div>
+       
+       </div>
+       <div class="product-swiper-mob-interest"></div>
+       <div class="product-swiper-desc-interest"></div>
+  
     </div>
     
 
