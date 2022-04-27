@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="form-reviews-body">
-            <form action="#" method="POST" class="form-reviews-valid">
+            <form action="#" method="POST" class="form-reviews-valid" id="form-reviews-valid">
               <div class="form-cell">
                 <div class="form-cell-info form-cell-error">
                   <label for="name">Ваше имя<span>*</span></label> <br>
@@ -38,7 +38,7 @@
               </div>
               <div class="form-cell">
                 <div class="form-cell-rating">
-                  <label for="rating">Ваша оценка<span>*</span></label>
+                  <label for="rating" class="rating-label">Ваша оценка<span>*</span></label>
                   <div class="card-item-rating rating-set">
                     <div class="card-item-rating-body" id="rating">
                       <div class="card-item-rating-active"></div>
@@ -99,9 +99,9 @@
       </div>
     </div>
   </div>
-
   <script>
     $(document).ready(function () {
+      // функционал рейтинга
       const ratings = document.querySelectorAll('.card-item-rating');
 
       if (ratings.length > 0) {
@@ -191,6 +191,14 @@
           },
         },
 
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "rating") {
+            error.appendTo(".card-item-rating.rating-set");
+          } else {
+            error.insertAfter(element);
+          }
+        },
+        
         messages: {
           email: {
             required: "Пожалуйста, введите ваш Email",
@@ -206,6 +214,9 @@
             required: "Пожалуйста, оставьте свой комментарий",
             maxlength: "Комментарий не должен превышать 500 символов",
           },
+          rating: {
+            required: "Пожалуйста, поставьте оценку",
+          },
         }
       });
 
@@ -213,25 +224,23 @@
         "lettersonly",
         function(value, element) {
           return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
-        },
-
-        "Ваше имя не может состоять из цифр"
+        }, "Ваше имя не может состоять из цифр"
       );
 
       jQuery.validator.addMethod("url", function(value, element) {
         return this.optional(element) || /^https:\/\/www.youtube.com/.test(value);
-      }, 
-      
-      "Пожалуйста введите корректный url адрес");
+      }, "Пожалуйста введите корректный url адрес");
     });
 
+    // кнопка с загрузкой изображения\видео
+    const formBlock = document.getElementById('form-reviews-valid');
     const input = document.getElementById('file');
     const uploadFile = document.querySelector('.form-cell-field-load');
     const load = document.querySelector('.load-file');
     const errFile = document.createElement('span');
     const allFiles = document.createElement('div');
     const btnOpen = document.createElement('div');
-    const arr = [];
+    const arrStorageFile = [];
     
     errFile.classList.add('error-file');
     allFiles.classList.add('all-files');
@@ -243,55 +252,52 @@
     input.addEventListener('change', btnUploadFile);
     input.insertAdjacentElement('afterend', allFiles);
     btnOpen.addEventListener('click', triggerInput);
-    // allFiles.addEventListener('click', removeHeandler);
 
     // клик по диву, но триггер идет по инпут
     function triggerInput() {
-      input.click()
+      input.click();
     }
 
     // обработка клика по добавленной кнопке
-    // @todo: при загрузке трех картинок убирать кнопку добавить
     function btnUploadFile(e) {
       const files = Array.from(event.target.files);
 
-      console.log(files.length)
-      
+      // перебирает массив с файлами
       files.forEach((file, index) => {
         const size = file.size;
         const maxSize = 104857600;
         const reader = new FileReader();
 
-        console.log(index)
+        // проверяет размер файла
+        if (size < maxSize) {
+          reader.readAsDataURL(file);
+          arrStorageFile.push(file);
+        } else {
+          uploadFile.append(errFile);
+        }
 
-        // console.log(file)
-
-        // console.log(arr.push(file))
-
-        // console.log(arr)
-        
-        // скрывает инпут и добавляет кнопку после загрузки img
-        if (allFiles.children.length === 1 || size < maxSize) {
+        // скрывает инпут и показывает кнопку при условии, что длина массива >= 1
+        if (arrStorageFile.length >= 1 && size < maxSize) {
           btnOpen.style.display = 'block';
           load.style.display = 'none';
-          
+
           allFiles.insertAdjacentElement('beforeend', btnOpen);
         }
-        
-        // вывод видео\картинки, если файл превысил ограничение, то выводит ошибку 
+
+        // убирает кнопку, если длина массива равна 3
+        if (arrStorageFile.length === 3) {
+          btnOpen.style.display = 'none';
+        }
+         
         reader.onload = ev => {
           const src = ev.target.result;
-          const type = file.type.split('/')[1];
-          
-          if (size < maxSize) {
+          const type = file.type.split('/')[1];   
+
+          if (index <= 2) {
             innerFile(file, src, type);
-          } else {
-            uploadFile.append(errFile);
           }
         }
-
-        reader.readAsDataURL(file);
-      })
+      });
     };
 
     // создание блока и определение формата файла, который будет выведен
@@ -313,6 +319,7 @@
       typeFile.innerHTML = `.${file.type.split('/')[1]}`;
       
       removeFile.dataset.name = file.name;
+      allFilesSection.dataset.name = file.name;
 
       if (file.type.match('image')) {
         imgFile(removeFile, src)
@@ -349,31 +356,121 @@
       removeFile.insertAdjacentElement('afterend', videoFile)
     };
 
-    // обработка по нажатию крестика и удаление файла
-    function removeHeandler(event) {
-      const {name} = event.target.dataset;
-      const block = allFiles.querySelector(`[data-name="${name}"]`).closest('.all-files-item');
-
-      if (!block && !event.target.dataset) {
-        return
+    $(document).on('click', '.remove-file', function(e) {
+      const parent = $(this).closest('.all-files-item');
+      
+      // убирает из массива файл
+      for (let i = 0; i < arrStorageFile.length - 1; i++) {
+        arrStorageFile.splice(arrStorageFile[i].name, arrStorageFile[i]);
       }
 
-      block.remove();
-
-      // удаляет кнопку и возвращает инпут
-      if (document.querySelector('.all-files').children.length === 1) {
+      // если длина массива 0, то возвращает инпут и убирает кнопку иначе возвращает кнопку 
+      if (arrStorageFile.length - 1 === 0) {
         load.style.display = 'block';
         btnOpen.style.display = 'none';
+      } else {
+        load.style.display = 'none';
+        btnOpen.style.display = 'block';
       }
-    };
-
-    $(document).on('click', '.remove-file', function(e) {
-      e.preventDefault();
-
-      const parent = $(this).closest('.all-files-item');
 
       parent.remove();
+      arrStorageFile.splice(this.dataset.name, 1);
+      
+      e.preventDefault();
     });
+
+    // форма со всеми данными
+    function serializeForm(formNode) {
+      const {elements} = formNode
+
+      const data = new FormData()
+
+      // Array.from(elements)
+      //   .filter((item) => !!item.name)
+      //   .forEach((element) => {
+      //     const { name, type } = element
+      //     const value = type === 'radio' ? element.checked : element.value
+
+      //     data.append(name, value)
+      //   })
+
+        for (let i = 0; i < arrStorageFile.length; i++) {
+          data.append('file', arrStorageFile[i].name)
+        }
+
+      return data
+    }
+
+    function handleFormSubmit(event) {
+      event.preventDefault();
+
+      serializeForm(formBlock);
+    }
+
+    formBlock.addEventListener('submit', handleFormSubmit);
+
+    const container = document.querySelector('.popup-form-reviews');
+    const mfpContent = document.querySelector('.mfp-content');
+    const mfpClose = document.querySelector('.mfp-close');
+
+    const popupClose = document.createElement('div');
+
+    mfpClose.style.display = 'none';
+
+    popupClose.classList.add('popup-close');
+    popupClose.innerHTML = '&times;';
+
+    container.insertAdjacentElement('beforeend', popupClose);
+
+    popupClose.addEventListener('click', openPopup)
+
+    function openPopup() {
+      const bgPopup = document.createElement('div');
+      const popupSecondBlock = document.createElement('div');
+      const popupSecond = document.createElement('div');
+      const title = document.createElement('h1');
+      const text = document.createElement('p');
+      const btnExit = document.createElement('button');
+      const btnCancel = document.createElement('button');
+
+      bgPopup.classList.add('popup-second-bg');
+      popupSecondBlock.classList.add('popup-second-block');
+      popupSecond.classList.add('popup-second');
+      title.classList.add('popup-second-title');
+      text.classList.add('popup-second-text');
+      btnExit.classList.add('popup-second-btn-exit');
+      btnExit.classList.add('ui-btn');
+      btnCancel.classList.add('popup-second-btn-cancel');
+      btnCancel.classList.add('ui-btn');
+
+      title.innerHTML = 'Ой!';
+      text.innerHTML = 'Отзыв не сохранится, если вы закроете окно.';
+      btnExit.innerHTML = 'Уйти со страницы';
+      btnCancel.innerHTML = 'Отмена';
+
+      document.body.insertAdjacentElement('afterbegin', bgPopup);
+      bgPopup.insertAdjacentElement('beforeend', popupSecond);
+      popupSecond.insertAdjacentElement('beforeend', popupSecondBlock);
+      popupSecondBlock.insertAdjacentElement('beforeend', title);
+      popupSecondBlock.insertAdjacentElement('beforeend', text);
+      popupSecondBlock.insertAdjacentElement('beforeend', btnExit);
+      popupSecondBlock.insertAdjacentElement('beforeend', btnCancel);
+
+      btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel)
+    }
+
+    function btnClick(btnExit, popupSecond, bgPopup, btnCancel) {
+      btnExit.onclick = function() {
+        mfpClose.click();
+        popupSecond.remove();
+        bgPopup.remove();
+      }
+
+      btnCancel.onclick = function() {
+        popupSecond.style.display = 'none';
+        bgPopup.style.display = 'none';
+      }
+    }
 
   </script>
 </div>
