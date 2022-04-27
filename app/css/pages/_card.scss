@@ -746,8 +746,13 @@
       padding: 20px 10px;
 
       @media (max-width: 1024px) {
-        overflow: scroll;
+        overflow-x: auto;
+        overflow-y: hidden;
         padding: 20px 80px 20px 0;
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
       }
 
       @media (max-width: 450px) {
@@ -772,10 +777,6 @@
 
       @media (max-width: 600px) {
         flex-direction: column;
-      }
-
-      @media (max-width: 1024px) {
-        padding: 0 40px;
       }
     }
 
