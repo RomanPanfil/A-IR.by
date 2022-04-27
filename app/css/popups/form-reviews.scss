@@ -261,12 +261,17 @@
   
         &-rating {
           display: inline-block;
+
+          .rating-label {
+            display: block;
+          }
   
           @media (max-width: 680px) {
             margin-bottom: 25px;
           }
   
           .rating-set {
+            position: relative;
             align-items: center;
             margin-top: 12px;
 
@@ -276,6 +281,14 @@
               &::before {
                 color: #f9de8e;
               }
+            }
+
+            .error {
+              position: absolute;
+              bottom: -15px;
+              left: 0;
+              color: red;
+              font-size: 0.75rem;
             }
   
             .card-item-rating-value {
@@ -356,4 +369,73 @@
     width: 26px;
     height: auto;
   }
+}
+
+.popup-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 50px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .35;
+  }
+}
+
+.popup-second {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 512px;
+  height: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 34px 48px;
+
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.popup-second-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(29, 38, 44, 0.35);
+  z-index: 9999;
+}
+
+.popup-second-title {
+  margin: 0 0 15px 0;
+}
+
+.popup-second-text {
+  margin-bottom: 20px;
+}
+
+.popup-second {
+  .ui-btn {
+    width: 48%;
+  }
+}
+
+.popup-second-btn-exit {
+  background-color: #2A4455;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.popup-second-btn-cancel {
+  background-color: #F5F5F5;
+  color: #000;
 }

@@ -1,5 +1,11 @@
 .card {
   &-item {
+    margin-bottom: 85px;
+
+    &-txt {
+      padding: 0 0 0 24px;
+    }
+
     &-headline {
       margin-bottom: 22px;
 
@@ -7,7 +13,7 @@
         font-weight: 700;
         font-size: rem(40);
         color: #000000;
-        margin-bottom: 12px;
+        margin-bottom: 7px;
 
         @media (max-width: 1024px) {
           font-size: 28px;
@@ -52,35 +58,51 @@
     }
 
     &-reviews {
-      margin-right: 25px;
       font-weight: 400;
       font-size: rem(16);
       color: $colorBlue;
-      margin-left: 25px;
-      padding-bottom: 2px;
+      margin-right: 25px;
+      margin-left: 8px;
+      line-height: 0;
+
+      &:hover {
+        opacity: .35;
+      }
     }
 
     &-fav {
-      display: flex;
+      display: inline-block;
       align-items: center;
       margin-right: 25px;
       font-weight: 400;
       font-size: rem(16);
       color: $colorBlue;
 
+      &:hover {
+        opacity: .35;
+      }
+
       img {
+        position: relative;
+        top: 4px;
         margin-right: 5px;
       }
     }
 
     &-comparison {
-      display: flex;
+      display: inline-block;
       align-items: center;
       font-weight: 400;
       font-size: rem(16);
       color: $colorBlue;
 
+      &:hover {
+        opacity: .35;
+      }
+
       img {
+        position: relative;
+        top: 4px;
         margin-right: 5px;
       }
     }
@@ -102,14 +124,6 @@
       @media (max-width: 1024px) {
         padding: 0;
         border: none;
-      }
-    }
-
-    &-info {
-      display: flex;
-
-      @media (max-width: 1172px) {
-        flex-direction: column;
       }
 
       .col-xl-5:nth-child(2) {
@@ -232,12 +246,13 @@
         margin-bottom: 22px;
 
         .ui-btn {
+          display: block;
           width: 100%;
           border: 1px solid #d3d3d3;
           border-radius: 5px;
           height: 40px;
-          padding: 9px;
-          line-height: 1;
+          padding: 0 12px;
+          line-height: 38px;
 
           &:hover {
             border: 1px solid #fff;
@@ -322,6 +337,7 @@
       &-warranty {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         align-items: center;
         margin-bottom: 26px;
 
@@ -350,24 +366,23 @@
 
       &-btn {
         display: flex;
+        justify-content: space-between;
+        gap: 8px;
 
-        @media (max-width: 482px) {
+        @media (max-width: 360px) {
           flex-direction: column;
         }
 
-        .ui-btn {
-          display: flex;
-          flex-direction: column;
-          height: 80px;
-          border: 1px solid #d3d3d3;
-          border-radius: 8px;
-          padding: 5px 32px;
-          margin-right: 8px;
-          align-items: center;
-          line-height: 2;
-          width: 120px;
-          margin: 0px auto;
-          justify-content: flex-end;
+        .services-btn {
+          border: 1px solid #D3D3D3;
+          color: black;
+          height: 80px px;
+          padding: 12px 24px 12px 24px;
+          width: 33%;
+          background: #fff;
+          border-radius: 5px;
+          white-space: nowrap;
+          transition: all 0.5s ease-out;
 
           &:hover {
             border: 1px solid #fff;
@@ -376,6 +391,7 @@
 
           @media (max-width: 482px) {
             width: 100%;
+            max-width: 100%;
             margin-bottom: 12px;
           }
         }
@@ -498,10 +514,17 @@
                 position: relative;
                 display: inline-block;
                 padding-left: 16px;
+                cursor: pointer;
           
                 &-box {
                   display: flex;
                   align-items: flex-start;
+                }
+
+                img {
+                  &:hover {
+                    opacity: .52;
+                  }
                 }
               }
           
@@ -656,6 +679,10 @@
   &-reviews {
     margin-bottom: 86px;
 
+    &-btn {
+      line-height: 0;
+    }
+
     .swiper-next,
     .swiper-rtl .swiper-prev {
       width: 40px;
@@ -741,7 +768,7 @@
     &-headline {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 30px;
+      margin-bottom: 4px;
 
       @media (max-width: 600px) {
         flex-direction: column;
@@ -850,41 +877,45 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 5px;
+      }
 
-        .name {
-          font-weight: 600;
-          font-size: 18px;
-          color: #000;
-        }
-
-        .data {
-          font-weight: 400;
-          font-size: 14px;
-          color: rgba(0, 0, 0, 0.5);
-        }
+      &-name {
+        font-weight: 600;
+        font-size: 18px;
+        color: #000;
+      }
+      
+      &-data {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.5);
       }
 
       &-body {
         padding: 20px 24px;
 
-        .text {
-          margin-bottom: 18px;
-
-          .title {
-            font-weight: 700;
-            font-size: 14px;
-          }
-
-          .desc {
-            font-weight: 400;
-            font-size: 14px;
-          }
-        }
-
         a {
           color: #1a66ae;
           font-weight: 600;
+
+          &:hover {
+            opacity: .35;
+          }
         }
+      }
+
+      &-text {
+        margin-bottom: 18px;
+      }
+
+      &-title {
+        font-weight: 700;
+        font-size: 14px;
+      }
+      
+      &-desc {
+        font-weight: 400;
+        font-size: 14px;
       }
     }
   }
@@ -933,7 +964,7 @@
   
     &-item {
       @media (max-width: 1024px) {
-        display: none;
+        display: none !important;
       }
     }
   
@@ -1051,6 +1082,10 @@
           padding: 5px 10px;
           text-align: left;
           font-size: rem(14);
+
+          @media (max-width: 650px) {
+            display: block;
+          }
   
           .tooltip {
             position: relative;
@@ -1089,6 +1124,12 @@
           &:nth-child(1) {
             padding-left: 32px;
             color: rgba(0, 0, 0, 0.7);
+          }
+
+          @media (max-width: 650px) {
+            &:nth-child(2) {
+              padding-left: 32px;
+            }
           }
   
           &:nth-child(2) {

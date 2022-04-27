@@ -1,10 +1,11 @@
 [class*="-rating"] {
-  display: flex;
+  display: inline-block;
   align-items: flex-end;
   line-height: 0.75;
 }
 
 [class*="-rating-value"] {
+  display: inline-block;
   line-height: 1;
   padding-left: 8px;
   font-family: $ffOpenSans;
@@ -14,6 +15,7 @@
 }
 
 [class*="-rating-body"] {
+  display: inline-block;
   position: relative;
   font-size: rem(25);
 
