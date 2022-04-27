@@ -1223,3 +1223,64 @@
     border-bottom-right-radius: 0px;
   }
 }
+
+// YouTube
+
+.popup-youtube {
+  position: relative;
+  display: inline-block;
+  &-btn {
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: #bc0000;
+    border-radius: 8px;
+    width: 124px;
+    height: 64px;
+    img {
+      position: absolute;
+      max-height: 32px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+.popup-youtube {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  &-wrapper {
+    margin-bottom: 22px;
+  }
+  &-btn {
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: #bc0000;
+    border-radius: 8px;
+    width: 124px;
+    height: 64px;
+    img {
+      position: absolute;
+      max-height: 32px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+  &-two {
+    .popup-youtube-btn {
+      width: 80px;
+      height: 40px;
+      img {
+        max-height: 20px;
+      }
+    }
+  }
+}
