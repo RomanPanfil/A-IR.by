@@ -20,6 +20,9 @@
     }
   }
   &-item {
+    @media (max-width: 1024px) {
+      display: none;
+    }
     &-img {
       max-width: 72px;
       margin-right: 24px;
@@ -39,6 +42,17 @@
   }
   .card-item-counter {
     margin-bottom: 0;
+    @media (max-width: 678px) {
+      display: none;
+    }
+  }
+  @media (max-width: 400px) {
+    .card-item-price-current {
+      font-size: rem(18);
+    }
+    .card-item-price-currency {
+      font-size: rem(16);
+    }
   }
 }
 
