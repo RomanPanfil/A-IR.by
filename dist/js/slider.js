@@ -27,10 +27,11 @@
 //   }
 // });
 
-const sliderEl = new Swiper(".el", {
+const slider1 = new Swiper(".el", {
   slidesPerView: 4,
   spaceBetween: 0,
   slideToClickedSlide: true,
+
 
   navigation: {
     nextEl: ".swiper-button-next",
@@ -48,7 +49,8 @@ const sliderEl = new Swiper(".el", {
   }
 });
 
-const sliderPreview = new Swiper('.preview', {
+const slider2 = new Swiper('.preview', {
+  
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -59,7 +61,7 @@ const sliderPreview = new Swiper('.preview', {
   },
 });
 
-const sliderReviews = new Swiper('.reviews', {
+const slider3 = new Swiper('.reviews', {
   loop: false,
   slidesPerView: 3,
   spaceBetween: 24,
@@ -73,19 +75,16 @@ const sliderReviews = new Swiper('.reviews', {
     1024: {
       slidesPerView: 3,
       init: true,
-      enabled: true,
     },
 
     580: {
       slidesPerView: 2,
       init: false,
-      enabled: false,
     },
     
     300: {
       slidesPerView: 1,
       init: false,
-      enabled: false,
       spaceBetween: 16,
     },
   }

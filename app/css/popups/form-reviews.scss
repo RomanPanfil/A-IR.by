@@ -376,7 +376,6 @@
   top: 0;
   right: 0;
   font-size: 50px;
-  color: #848484;
   cursor: pointer;
 
   &:hover {
@@ -439,17 +438,4 @@
 .popup-second-btn-cancel {
   background-color: #F5F5F5;
   color: #000;
-}
-
-.popup-second-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 50px;
-  color: #848484;
-  cursor: pointer;
-  
-  &:hover {
-    opacity: .35;
-  }
 }
