@@ -25,7 +25,7 @@
   margin-bottom: 33px;
   // overflow: hidden;
   @media (max-width: 1024px) {
-    padding: 16px 0;
+    padding: 11px 0;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   }
   .menu {
@@ -290,7 +290,9 @@
       text-align: center;
       flex: 0 0 20%;
       max-width: 20%;
-
+      &:hover {
+        opacity: 0.7;
+      }
       &-img {
         display: flex;
         align-items: center;
@@ -421,10 +423,13 @@
   right: 0;
   width: 100%;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  .main {
+    padding: 17px 0px;
+  }
 }
 
 .wrapper_fixed {
-  padding-top: 220px;
+  padding-top: 195px;
 }
 
 .headerCard_fixed {

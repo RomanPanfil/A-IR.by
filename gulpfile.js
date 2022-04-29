@@ -9,6 +9,7 @@ let path = {
     css: dist + "/css/",
     js: dist + "/js/",
     images: dist + "/images/",
+    svg: dist + "/images/svg",
     popups: dist + "/popups/",
     fonts: dist + "/fonts/cofo/",
     media: dist + "/media/",
@@ -18,6 +19,7 @@ let path = {
     css: app + "/css/*.scss",
     js: app + "/js/*.js",
     images: app + "/images/**/*.{jpg,png,svg,gif,ico,webp,mp4}",
+    svg: app + "/images/svg/*.{svg}",
     popups: app + "/popups/*.html",
     fonts: app + "/fonts/cofo/*",
     media: dist + "/media/*.{mp4}",
@@ -27,6 +29,7 @@ let path = {
     css: app + "/css/**/*.scss",
     js: app + "/js/**/*.js",
     images: app + "/images/**/*.{jpg,png,svg,gif,ico,webp,mp4}",
+    svg: app + "/images/svg/*.{svg}",
     fonts: app + "/fonts/cofo/*",
     popups: app + "/popups/*.html",
     media: app + "/media/*.{mp4}",
@@ -100,21 +103,23 @@ function media() {
   return src(path.src.media).pipe(dest(path.build.media));
 }
 
-gulp.task("svgSprite", function () {
-  return gulp
-    .src([dist + "/iconsprite/*.svg"])
-    .pipe(
-      svgSprite({
-        mode: {
-          stack: {
-            sprite: "../icons/icons.svg",
-            example: true,
-          },
-        },
-      })
-    )
-    .pipe(dest(path.build.images));
+ 
+  gulp.task('svgSprite', function () {
+    return gulp.src('app/images/svg/*.svg') // svg files for sprite
+        .pipe(svgSprite({
+                mode: {
+                    stack: {
+                        sprite: "../symbols.svg"  //sprite file name
+                    }
+                },
+            }
+        ))
+        .pipe(gulp.dest('dist/images/svg/'));
 });
+
+
+
+
 
 function watchFiles() {
   gulp.watch([path.watch.html], html);
@@ -124,10 +129,12 @@ function watchFiles() {
   gulp.watch([path.watch.media], media);
   gulp.watch([path.watch.images], images);
   gulp.watch([path.watch.popups], popups);
+  // gulp.watch([path.watch.svg], svg);
+  
 }
 
 let build = gulp.series(
-  gulp.parallel(js, css, html, images, popups, fonts, media)
+  gulp.parallel(js, css, html, images, popups, fonts, media, )
 );
 let watch = gulp.parallel(build, watchFiles);
 // let watch = gulp.parallel(build, watchFiles, browserSync);
@@ -140,5 +147,6 @@ exports.fonts = fonts;
 exports.build = build;
 exports.watch = watch;
 exports.default = watch;
-exports.popups = popups;
 exports.media = media;
+exports.popups = popups;
+// exports.svg = svg;
