@@ -23,7 +23,7 @@
 .header {
   position: relative;
   margin-bottom: 33px;
-  // overflow: hidden;
+  overflow: hidden;
   @media (max-width: 1024px) {
     padding: 11px 0;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -414,6 +414,9 @@
   }
 }
 
+.header.headerCard_fixed {
+  box-shadow: none;
+}
 .header_fixed {
   position: fixed;
   background: #fff;

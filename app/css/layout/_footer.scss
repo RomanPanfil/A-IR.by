@@ -63,6 +63,7 @@
       }
     }
     &-services {
+     
       @media (max-width: 768px) {
         margin-bottom: 44px;
         .footer-top-wrap {
@@ -136,6 +137,7 @@
           }
           &.footer-open + .footer-bottom-info {
             display: inline-block;
+            
           }
         }
       }
@@ -205,6 +207,7 @@
     &-links {
       @media (max-width: 768px) {
         margin-bottom: 40px;
+        text-align: center;
       }
       &-title {
         font-weight: 700;
@@ -326,6 +329,10 @@
       }
     }
   }
+}
+
+.footer-top-wrap {
+  margin-bottom: 27px;
 }
 
 // custom columns
