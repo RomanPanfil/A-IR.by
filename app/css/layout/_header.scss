@@ -23,10 +23,12 @@
 .header {
   position: relative;
   margin-bottom: 33px;
-  // overflow: hidden; Если добавить это свойство то откроешь меню номеров
+  transition: transform .4s, background-color .2s, -webkit-transform .4s;
+  will-change: transform;
   @media (max-width: 1024px) {
     padding: 11px 0;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
   .menu {
     background: #f5f5f5;
@@ -426,6 +428,7 @@
   right: 0;
   width: 100%;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0px, 0px, 0px);
   .main {
     padding: 17px 0px;
   }

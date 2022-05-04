@@ -9,15 +9,23 @@
     let header = $(".header"),
       headerMenu = $(".header .menu"),
       headerNav = $(".header .nav-wrapper"),
-      wrapperFixed = $(".wrapper");
-  
+      wrapperFixed = $(".wrapper"),
+      headerHeight = $('header').outerHeight(true);
     $(window).scroll(function () {
-      if ($(this).scrollTop() > 1) {
+      let cardBreackpointOpen = $('.card-breackpoint-open');
+      
+      let headerCardFixedHeight = $('.header_fixed').innerHeight();
+      cardBreackpointOpen.css('top', headerCardFixedHeight + 'px')
+      // console.log(headerCardFixedHeight)
+
+      if ($(this).scrollTop() > headerHeight) {
+        wrapperFixed.css('paddingTop', headerHeight + 'px')
         header.addClass("header_fixed");
         wrapperFixed.addClass("wrapper_fixed");
         headerMenu.hide();
         headerNav.hide();
       } else {
+        wrapperFixed.css('paddingTop', 0)
         header.removeClass("header_fixed");
         wrapperFixed.removeClass("wrapper_fixed");
         headerMenu.show();
@@ -25,7 +33,7 @@
       }
     });
   });
-});
+// });
 
 // const ani = () => {
 //   let scrollDistance = -document.body.getBoundingClientRect().top;
