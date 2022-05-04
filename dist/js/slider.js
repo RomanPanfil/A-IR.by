@@ -29,13 +29,13 @@
 
 const slider1 = new Swiper(".el", {
   slidesPerView: 4,
-  spaceBetween: 0,
+  spaceBetween: 10,
   slideToClickedSlide: true,
 
 
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".button-next",
+    prevEl: ".button-prev",
   },
 
   breakpoints: {
@@ -60,6 +60,14 @@ const slider2 = new Swiper('.preview', {
     el: '.swiper-pagination',
   },
 });
+
+$('.slider-el-slide').on('click', function (e) {
+  const index = $(this).closest('.swiper-slide').index();
+    
+  slider2.slideTo(index);
+  
+  e.preventDefault();
+})
 
 const slider3 = new Swiper('.reviews', {
   loop: false,

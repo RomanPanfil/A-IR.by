@@ -260,23 +260,23 @@ if (document.querySelector(".sticker-info-hide")) {
 // let message = createMessageUnder(elemzxc, "Hello, world!");
 // document.body.append(m
 
-$(document).ready(function () {
-  let cardBreackpoint = $("#card-breackpoint").offset().top;
-  let cardSticky = $(".card-sticky");
-  let headerCard = $(".header");
-  window.addEventListener("resize", function () {
-    cardBreackpoint = $("#card-breackpoint").offset().top;
-  });
-  window.addEventListener("scroll", function () {
-    if (window.scrollY < cardBreackpoint) {
-      console.log("Remove class");
-      headerCard.removeClass("headerCard_fixed");
-      cardSticky.removeClass("card-breackpoint-open");
-    } else {
-      console.log("ADD class");
-      headerCard.addClass("headerCard_fixed");
-      cardSticky.addClass("card-breackpoint-open");
-    }
-  });
-  console.log($("#card-breackpoint").offset().top);
-});
+// $(document).ready(function () {
+//   let cardBreackpoint = $("#card-breackpoint").offset().top;
+//   let cardSticky = $(".card-sticky");
+//   // let headerCard = $(".header");
+//   window.addEventListener("resize", function () {
+//     cardBreackpoint = $("#card-breackpoint").offset().top;
+//   });
+//   window.addEventListener("scroll", function () {
+//     if (window.scrollY < cardBreackpoint) {
+//       console.log("Remove class");
+//       headerCard.removeClass("headerCard_fixed");
+//       cardSticky.removeClass("card-breackpoint-open");
+//     } else {
+//       console.log("ADD class");
+//       headerCard.addClass("headerCard_fixed");
+//       cardSticky.addClass("card-breackpoint-open");
+//     }
+//   });
+//   console.log($("#card-breackpoint").offset().top);
+// });

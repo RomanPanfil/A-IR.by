@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   padding: 48px 64px;
-  
+
   @media (max-width: 1024px) {
     min-height: 100vh;
     flex-direction: column-reverse;
@@ -145,6 +145,7 @@
 .main-silder-container {
   position: relative;
   padding: 0px 30px;
+  text-align: center;
 
   @media (max-width: 650px) {
     padding: 0;
