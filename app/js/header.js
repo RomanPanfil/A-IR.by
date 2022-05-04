@@ -1,9 +1,3 @@
-// if (matchMedia) {
-//   var screen1024 = window.matchMedia("(max-width:1024px)");
-//   screen1024.addListener(changes);
-//   changes(screen1024);
-// }
-
 
   $(function () {
     let header = $(".header"),
@@ -13,9 +7,25 @@
       headerHeight = $('header').outerHeight(true);
     $(window).scroll(function () {
       let cardBreackpointOpen = $('.card-breackpoint-open');
-      
       let headerCardFixedHeight = $('.header_fixed').innerHeight();
-      cardBreackpointOpen.css('top', headerCardFixedHeight + 'px')
+      if (matchMedia) {
+        var screen678 = window.matchMedia("(max-width:678px)");
+        screen678.addListener(changes);
+        changes(screen678);
+      }
+      function changes(screen678) {
+        if (screen678.matches) {
+          cardBreackpointOpen.css('top', 'initial')
+          cardBreackpointOpen.css('bottom', 0)
+         
+        } else {
+          cardBreackpointOpen.css('top', headerCardFixedHeight + 'px')
+          cardBreackpointOpen.css('bottom', 'initial')
+         
+        }
+      }
+      
+    
       // console.log(headerCardFixedHeight)
 
       if ($(this).scrollTop() > headerHeight) {
@@ -33,21 +43,20 @@
       }
     });
   });
-// });
 
-// const ani = () => {
-//   let scrollDistance = -document.body.getBoundingClientRect().top;
-//   let height100 =
-//     (scrollDistance /
-//       (document.body.getBoundingClientRect().height -
-//         document.documentElement.clientHeight)) *
-//     100;
 
-//   console.log();
-//   console.log(Math.floor(height100));
-//   console.log(document.body.getBoundingClientRect().height + " - 1 число ");
-//   console.log(document.documentElement.clientHeight + " - 2 число ");
-//   console.log(scrollDistance)
-// };
+  // let cardStickyBtn = document.querySelector('.card-sticky-btn')
 
-// window.addEventListener("scroll", ani);
+  // if (matchMedia) {
+  //   var screen1024 = window.matchMedia("(max-width:1024px)");
+  //   screen1024.addListener(changes);
+  //   changes(screen1024);
+  // }
+
+  // function changes(screen1024) {
+  //   if (screen1024.matches) {
+  //     cardStickyBtn.innerHTML = ''
+  //   } else {
+  //     cardStickyBtn.innerHTML = 'В корзину' 
+  //   }
+  // }
