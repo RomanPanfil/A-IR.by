@@ -269,11 +269,14 @@ $(document).ready(function () {
   });
   window.addEventListener("scroll", function () {
     if (window.scrollY < cardBreackpoint) {
+      console.log("Remove class");
       headerCard.removeClass("headerCard_fixed");
       cardSticky.removeClass("card-breackpoint-open");
     } else {
+      console.log("ADD class");
       headerCard.addClass("headerCard_fixed");
       cardSticky.addClass("card-breackpoint-open");
     }
   });
+  console.log($("#card-breackpoint").offset().top);
 });

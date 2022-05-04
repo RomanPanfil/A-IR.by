@@ -57,7 +57,7 @@
         </div>
         <script>
             $(document).ready(function () {
-                const sliderVertical = new Swiper('.vertical-slider', {
+                const popupSliderEl = new Swiper('.vertical-slider', {
                     slidesPerView: 4,
                     slideToClickedSlide: true,
                     loop: true,
@@ -78,7 +78,7 @@
                     }
                 });
 
-                const sliderMainSlider = new Swiper('.main-slider', {
+                const slider2 = new Swiper('.main-slider', {
                     // loop: true,
                     navigation: {
                         nextEl: ".main-button-next",

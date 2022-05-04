@@ -25,5 +25,21 @@
       }
     });
   });
+});
 
+// const ani = () => {
+//   let scrollDistance = -document.body.getBoundingClientRect().top;
+//   let height100 =
+//     (scrollDistance /
+//       (document.body.getBoundingClientRect().height -
+//         document.documentElement.clientHeight)) *
+//     100;
 
+//   console.log();
+//   console.log(Math.floor(height100));
+//   console.log(document.body.getBoundingClientRect().height + " - 1 число ");
+//   console.log(document.documentElement.clientHeight + " - 2 число ");
+//   console.log(scrollDistance)
+// };
+
+// window.addEventListener("scroll", ani);
