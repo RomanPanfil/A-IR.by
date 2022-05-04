@@ -23,7 +23,7 @@
 .header {
   position: relative;
   margin-bottom: 33px;
-  overflow: hidden;
+  // overflow: hidden; Если добавить это свойство то откроешь меню номеров
   @media (max-width: 1024px) {
     padding: 11px 0;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -439,3 +439,4 @@
   box-shadow: initial;
   border-bottom: 1px solid #d3d3d3;
 }
+
