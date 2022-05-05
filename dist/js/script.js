@@ -236,6 +236,52 @@ if (document.querySelector(".sticker-info-hide")) {
   });
 }
 
+<<<<<<< HEAD
+// cardSticky
+
+// let elemzxc = document.getElementById("coords-show-mark");
+
+// function createMessageUnder(elemzxc, html) {
+//   // создаём элемент, который будет содержать сообщение
+//   let message = document.createElement("div");
+//   // для стилей лучше было бы использовать css-класс здесь
+//   message.style.cssText = "position:fixed; color: red";
+
+//   // устанавливаем координаты элементу, не забываем про "px"!
+//   let coords = elemzxc.getBoundingClientRect();
+
+//   message.style.left = coords.left + "px";
+//   message.style.top = coords.bottom + "px";
+
+//   message.innerHTML = html;
+
+//   return message;
+// }
+
+// let message = createMessageUnder(elemzxc, "Hello, world!");
+// document.body.append(m
+
+// $(document).ready(function () {
+//   let cardBreackpoint = $("#card-breackpoint").offset().top;
+//   let cardSticky = $(".card-sticky");
+//   let headerCard = $(".header");
+//   window.addEventListener("resize", function () {
+//     cardBreackpoint = $("#card-breackpoint").offset().top;
+//   });
+//   window.addEventListener("scroll", function () {
+//     if (window.scrollY < cardBreackpoint) {
+//       console.log("Remove class");
+//       headerCard.removeClass("headerCard_fixed");
+//       cardSticky.removeClass("card-breackpoint-open");
+//     } else {
+//       console.log("ADD class");
+//       headerCard.addClass("headerCard_fixed");
+//       cardSticky.addClass("card-breackpoint-open");
+//     }
+//   });
+//   console.log($("#card-breackpoint").offset().top);
+// });
+=======
 $(document).ready(function () {
   let cardBreackpoint = $("#card-breackpoint").offset().top;
   let cardSticky = $(".card-sticky");
@@ -258,3 +304,4 @@ $(document).ready(function () {
     }
   });
 });
+>>>>>>> main
