@@ -101,7 +101,7 @@
   </div>
   <script>
     $(document).ready(function () {
-      // функционал рейтинга
+      // rating stars
       const ratings = document.querySelectorAll('.card-item-rating');
 
       if (ratings.length > 0) {
@@ -142,16 +142,16 @@
         for (let i = 0; i < ratingItems.length; i++) {
           const ratingItem = ratingItems[i];
 
-          ratingItem.addEventListener('mouseenter', function(e) {
+          ratingItem.addEventListener('mouseenter', function (e) {
             initRatingVars(rating);
             setRatingActiveWidth(ratingItem.value);
           });
 
-          ratingItem.addEventListener('mouseleave', function(e) {
+          ratingItem.addEventListener('mouseleave', function (e) {
             setRatingActiveWidth();
           });
 
-          ratingItem.addEventListener('click', function(e) {
+          ratingItem.addEventListener('click', function (e) {
             initRatingVars(rating);
 
             ratingValue.innerHTML = ratingItem.value;
@@ -160,6 +160,7 @@
         }
       }
 
+      // validate form
       $(".form-reviews-valid").validate({
         errorElement: "span",
         rules: {
@@ -198,7 +199,7 @@
             error.insertAfter(element);
           }
         },
-        
+
         messages: {
           email: {
             required: "Пожалуйста, введите ваш Email",
@@ -222,256 +223,257 @@
 
       jQuery.validator.addMethod(
         "lettersonly",
-        function(value, element) {
+        function (value, element) {
           return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
         }, "Ваше имя не может состоять из цифр"
       );
 
-      jQuery.validator.addMethod("url", function(value, element) {
+      jQuery.validator.addMethod("url", function (value, element) {
         return this.optional(element) || /^https:\/\/www.youtube.com/.test(value);
       }, "Пожалуйста введите корректный url адрес");
-    });
 
-    // кнопка с загрузкой изображения\видео
-    const formBlock = document.getElementById('form-reviews-valid');
-    const input = document.getElementById('file');
-    const uploadFile = document.querySelector('.form-cell-field-load');
-    const load = document.querySelector('.load-file');
-    const errFile = document.createElement('span');
-    const allFiles = document.createElement('div');
-    const btnOpen = document.createElement('div');
-    const arrStorageFile = [];
-    
-    errFile.classList.add('error-file');
-    allFiles.classList.add('all-files');
-    btnOpen.classList.add('open-files');
+      // this whole code about the button which responsible for opening and load file(image & video)
+      const formBlock = document.getElementById('form-reviews-valid');
+      const input = document.getElementById('file');
+      const uploadFile = document.querySelector('.form-cell-field-load');
+      const load = document.querySelector('.load-file');
+      const errFile = document.createElement('span');
+      const allFiles = document.createElement('div');
+      const btnOpen = document.createElement('div');
+      const arrStorageFile = [];
 
-    errFile.innerHTML = 'Превышен максимально допустимый размер файла: 100 мб';
-    btnOpen.innerHTML = '<img src="../images/icons/btn-plus.svg" />';
+      errFile.classList.add('error-file');
+      allFiles.classList.add('all-files');
+      btnOpen.classList.add('open-files');
 
-    input.addEventListener('change', btnUploadFile);
-    input.insertAdjacentElement('afterend', allFiles);
-    btnOpen.addEventListener('click', triggerInput);
+      errFile.innerHTML = 'Превышен максимально допустимый размер файла: 100 мб';
+      btnOpen.innerHTML = '<img src="../images/icons/btn-plus.svg" />';
 
-    // клик по диву, но триггер идет по инпут
-    function triggerInput() {
-      input.click();
-    }
+      input.addEventListener('change', btnUploadFile);
+      input.insertAdjacentElement('afterend', allFiles);
+      btnOpen.addEventListener('click', triggerInput);
 
-    // обработка клика по добавленной кнопке
-    function btnUploadFile(e) {
-      const files = Array.from(event.target.files);
+      // when you click on the btnOpen this click will be trigger input
+      function triggerInput() {
+        input.click();
+      }
 
-      // перебирает массив с файлами
-      files.forEach((file, index) => {
-        const size = file.size;
-        const maxSize = 104857600;
-        const reader = new FileReader();
+      // обработка клика по добавленной кнопке
+      function btnUploadFile(e) {
+        const files = Array.from(event.target.files);
 
-        // проверяет размер файла
-        if (size < maxSize) {
-          reader.readAsDataURL(file);
-          arrStorageFile.push(file);
-        } else {
-          uploadFile.append(errFile);
-        }
+        // перебирает массив с файлами
+        files.forEach((file, index) => {
+          const size = file.size;
+          const maxSize = 104857600;
+          const reader = new FileReader();
 
-        // скрывает инпут и показывает кнопку при условии, что длина массива >= 1
-        if (arrStorageFile.length >= 1 && size < maxSize) {
-          btnOpen.style.display = 'block';
-          load.style.display = 'none';
-
-          allFiles.insertAdjacentElement('beforeend', btnOpen);
-        }
-
-        // убирает кнопку, если длина массива равна 3
-        if (arrStorageFile.length === 3) {
-          btnOpen.style.display = 'none';
-        }
-         
-        reader.onload = ev => {
-          const src = ev.target.result;
-          const type = file.type.split('/')[1];   
-
-          if (index <= 2) {
-            innerFile(file, src, type);
+          // проверяет размер файла
+          if (size < maxSize) {
+            reader.readAsDataURL(file);
+          } else {
+            uploadFile.append(errFile);
           }
+
+          // скрывает инпут и показывает кнопку при условии, что длина массива >= 1
+          if (arrStorageFile.length <= 3 && size < maxSize) {
+            btnOpen.style.display = 'block';
+            load.style.display = 'none';
+
+            allFiles.insertAdjacentElement('beforeend', btnOpen);
+          }
+
+          reader.onload = ev => {
+            const src = ev.target.result;
+            const type = file.type.split('/')[1];
+
+            // Если пользователь загружает одновременно допустим 6 файлов, то загрузятся только первые 3
+            if (index + arrStorageFile.length <= 3) {
+              innerFile(file, src, type);
+              arrStorageFile.push(file);
+            }
+
+            // убирает кнопку, если длина массива равна 3
+            if (index + arrStorageFile.length === 3) {
+              btnOpen.style.display = 'none';
+            }
+          }
+        });
+      };
+
+      // создание блока и определение формата файла, который будет выведен
+      function innerFile(file, src, type) {
+        const allFilesSection = document.createElement('div');
+        const removeFile = document.createElement('div');
+        const typeFile = document.createElement('div');
+
+        allFilesSection.classList.add('all-files-item');
+        removeFile.classList.add('remove-file');
+        typeFile.classList.add('type-file');
+
+        allFiles.prepend(allFilesSection);
+
+        allFilesSection.append(removeFile);
+        allFilesSection.append(typeFile);
+
+        removeFile.innerHTML = '&times;';
+        typeFile.innerHTML = `.${file.type.split('/')[1]}`;
+
+        removeFile.dataset.name = file.name;
+        allFilesSection.dataset.name = file.name;
+
+        if (file.type.match('image')) {
+          imgFile(removeFile, src)
+
+          errFile.remove();
+        } else if (file.type.match('video')) {
+          videoFile(removeFile, src)
+
+          errFile.remove();
         }
+      };
+
+      // создание блока картинки
+      function imgFile(removeFile, src) {
+        const imgFile = document.createElement('img');
+
+        imgFile.classList.add('img-file');
+
+        imgFile.src = src;
+
+        removeFile.insertAdjacentElement('afterend', imgFile)
+      };
+
+      // создание блока видео
+      function videoFile(removeFile, src) {
+        const videoFile = document.createElement('video');
+
+        videoFile.classList.add('video-file');
+
+        videoFile.src = src;
+        videoFile.height = 64;
+        videoFile.width = 88;
+
+        removeFile.insertAdjacentElement('afterend', videoFile)
+      };
+
+      $(document).on('click', '.remove-file', function (e) {
+        const parent = $(this).closest('.all-files-item');
+
+        // убирает из массива файл
+        for (let i = 0; i < arrStorageFile.length - 1; i++) {
+          arrStorageFile.splice(arrStorageFile[i].name, arrStorageFile[i]);
+        }
+
+        // если длина массива 0, то возвращает инпут и убирает кнопку иначе возвращает кнопку
+        if (arrStorageFile.length - 1 === 0) {
+          load.style.display = 'block';
+          btnOpen.style.display = 'none';
+        } else {
+          load.style.display = 'none';
+          btnOpen.style.display = 'block';
+        }
+
+        parent.remove();
+        arrStorageFile.splice(this.dataset.name, 1);
+
+        e.preventDefault();
       });
-    };
 
-    // создание блока и определение формата файла, который будет выведен
-    function innerFile(file, src, type) {
-      const allFilesSection = document.createElement('div');
-      const removeFile = document.createElement('div');
-      const typeFile = document.createElement('div');
+      // форма с данными файлов
+      function serializeForm(formNode) {
+        const { elements } = formNode
 
-      allFilesSection.classList.add('all-files-item');
-      removeFile.classList.add('remove-file');
-      typeFile.classList.add('type-file');
+        const data = new FormData()
 
-      allFiles.prepend(allFilesSection);
+        // Array.from(elements)
+        //   .filter((item) => !!item.name)
+        //   .forEach((element) => {
+        //     const { name, type } = element
+        //     const value = type === 'radio' ? element.checked : element.value
 
-      allFilesSection.append(removeFile);
-      allFilesSection.append(typeFile);
-
-      removeFile.innerHTML = '&times;';
-      typeFile.innerHTML = `.${file.type.split('/')[1]}`;
-      
-      removeFile.dataset.name = file.name;
-      allFilesSection.dataset.name = file.name;
-
-      if (file.type.match('image')) {
-        imgFile(removeFile, src)
-
-        errFile.remove();
-      } else if (file.type.match('video')) {
-        videoFile(removeFile, src)
-
-        errFile.remove();
-      }
-    };
-
-    // создание блока картинки
-    function imgFile(removeFile, src) {
-      const imgFile = document.createElement('img');
-
-      imgFile.classList.add('img-file');
-
-      imgFile.src = src;
-
-      removeFile.insertAdjacentElement('afterend', imgFile)
-    };
-
-    // создание блока видео
-    function videoFile(removeFile, src) {
-      const videoFile = document.createElement('video');
-
-      videoFile.classList.add('video-file');
-
-      videoFile.src = src;
-      videoFile.height = 64;
-      videoFile.width = 88;
-
-      removeFile.insertAdjacentElement('afterend', videoFile)
-    };
-
-    $(document).on('click', '.remove-file', function(e) {
-      const parent = $(this).closest('.all-files-item');
-      
-      // убирает из массива файл
-      for (let i = 0; i < arrStorageFile.length - 1; i++) {
-        arrStorageFile.splice(arrStorageFile[i].name, arrStorageFile[i]);
-      }
-
-      // если длина массива 0, то возвращает инпут и убирает кнопку иначе возвращает кнопку 
-      if (arrStorageFile.length - 1 === 0) {
-        load.style.display = 'block';
-        btnOpen.style.display = 'none';
-      } else {
-        load.style.display = 'none';
-        btnOpen.style.display = 'block';
-      }
-
-      parent.remove();
-      arrStorageFile.splice(this.dataset.name, 1);
-      
-      e.preventDefault();
-    });
-
-    // форма со всеми данными
-    function serializeForm(formNode) {
-      const {elements} = formNode
-
-      const data = new FormData()
-
-      // Array.from(elements)
-      //   .filter((item) => !!item.name)
-      //   .forEach((element) => {
-      //     const { name, type } = element
-      //     const value = type === 'radio' ? element.checked : element.value
-
-      //     data.append(name, value)
-      //   })
+        //     data.append(name, value)
+        //   })
 
         for (let i = 0; i < arrStorageFile.length; i++) {
           data.append('file', arrStorageFile[i].name)
         }
 
-      return data
-    }
-
-    function handleFormSubmit(event) {
-      event.preventDefault();
-
-      serializeForm(formBlock);
-    }
-
-    formBlock.addEventListener('submit', handleFormSubmit);
-
-    const container = document.querySelector('.popup-form-reviews');
-    const mfpContent = document.querySelector('.mfp-content');
-    const mfpClose = document.querySelector('.mfp-close');
-
-    const popupClose = document.createElement('div');
-
-    mfpClose.style.display = 'none';
-
-    popupClose.classList.add('popup-close');
-    popupClose.innerHTML = '&times;';
-
-    container.insertAdjacentElement('beforeend', popupClose);
-
-    popupClose.addEventListener('click', openPopup)
-
-    function openPopup() {
-      const bgPopup = document.createElement('div');
-      const popupSecondBlock = document.createElement('div');
-      const popupSecond = document.createElement('div');
-      const title = document.createElement('h1');
-      const text = document.createElement('p');
-      const btnExit = document.createElement('button');
-      const btnCancel = document.createElement('button');
-
-      bgPopup.classList.add('popup-second-bg');
-      popupSecondBlock.classList.add('popup-second-block');
-      popupSecond.classList.add('popup-second');
-      title.classList.add('popup-second-title');
-      text.classList.add('popup-second-text');
-      btnExit.classList.add('popup-second-btn-exit');
-      btnExit.classList.add('ui-btn');
-      btnCancel.classList.add('popup-second-btn-cancel');
-      btnCancel.classList.add('ui-btn');
-
-      title.innerHTML = 'Ой!';
-      text.innerHTML = 'Отзыв не сохранится, если вы закроете окно.';
-      btnExit.innerHTML = 'Уйти со страницы';
-      btnCancel.innerHTML = 'Отмена';
-
-      document.body.insertAdjacentElement('afterbegin', bgPopup);
-      bgPopup.insertAdjacentElement('beforeend', popupSecond);
-      popupSecond.insertAdjacentElement('beforeend', popupSecondBlock);
-      popupSecondBlock.insertAdjacentElement('beforeend', title);
-      popupSecondBlock.insertAdjacentElement('beforeend', text);
-      popupSecondBlock.insertAdjacentElement('beforeend', btnExit);
-      popupSecondBlock.insertAdjacentElement('beforeend', btnCancel);
-
-      btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel)
-    }
-
-    function btnClick(btnExit, popupSecond, bgPopup, btnCancel) {
-      btnExit.onclick = function() {
-        mfpClose.click();
-        popupSecond.remove();
-        bgPopup.remove();
+        return data
       }
 
-      btnCancel.onclick = function() {
-        popupSecond.style.display = 'none';
-        bgPopup.style.display = 'none';
-      }
-    }
+      function handleFormSubmit(event) {
+        event.preventDefault();
 
+        serializeForm(formBlock);
+      }
+
+      formBlock.addEventListener('submit', handleFormSubmit);
+
+      // second popup shows when you try close this popup
+      const container = document.querySelector('.popup-form-reviews');
+      const mfpContent = document.querySelector('.mfp-content');
+      const mfpClose = document.querySelector('.mfp-close');
+
+      const popupClose = document.createElement('div');
+
+      mfpClose.style.display = 'none';
+
+      popupClose.classList.add('popup-close');
+      popupClose.innerHTML = '&times;';
+
+      container.insertAdjacentElement('beforeend', popupClose);
+
+      popupClose.addEventListener('click', openPopup)
+
+      function openPopup() {
+        const bgPopup = document.createElement('div');
+        const popupSecondBlock = document.createElement('div');
+        const popupSecond = document.createElement('div');
+        const title = document.createElement('h1');
+        const text = document.createElement('p');
+        const btnExit = document.createElement('button');
+        const btnCancel = document.createElement('button');
+
+        bgPopup.classList.add('popup-second-bg');
+        popupSecondBlock.classList.add('popup-second-block');
+        popupSecond.classList.add('popup-second');
+        title.classList.add('popup-second-title');
+        text.classList.add('popup-second-text');
+        btnExit.classList.add('popup-second-btn-exit');
+        btnExit.classList.add('ui-btn');
+        btnCancel.classList.add('popup-second-btn-cancel');
+        btnCancel.classList.add('ui-btn');
+
+        title.innerHTML = 'Ой!';
+        text.innerHTML = 'Отзыв не сохранится, если вы закроете окно.';
+        btnExit.innerHTML = 'Уйти со страницы';
+        btnCancel.innerHTML = 'Отмена';
+
+        document.body.insertAdjacentElement('afterbegin', bgPopup);
+        bgPopup.insertAdjacentElement('beforeend', popupSecond);
+        popupSecond.insertAdjacentElement('beforeend', popupSecondBlock);
+        popupSecondBlock.insertAdjacentElement('beforeend', title);
+        popupSecondBlock.insertAdjacentElement('beforeend', text);
+        popupSecondBlock.insertAdjacentElement('beforeend', btnExit);
+        popupSecondBlock.insertAdjacentElement('beforeend', btnCancel);
+
+        btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel)
+      }
+
+      function btnClick(btnExit, popupSecond, bgPopup, btnCancel) {
+        btnExit.onclick = function () {
+          mfpClose.click();
+          popupSecond.remove();
+          bgPopup.remove();
+        }
+
+        btnCancel.onclick = function () {
+          popupSecond.style.display = 'none';
+          bgPopup.style.display = 'none';
+        }
+      }
+    });
   </script>
 </div>
 

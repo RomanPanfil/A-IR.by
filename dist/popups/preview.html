@@ -6,25 +6,25 @@
                     <div class="swiper vertical-slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="./images/popup-el.png" alt="">
+                                <img src="./images/popup-el.png" class="slider-popup-vertical-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el.png" alt="">
+                                <img src="https://via.placeholder.com/112x112" class="slider-popup-vertical-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el.png" alt="">
+                                <img src="https://via.placeholder.com/112x112/FFFFFF/000000" class="slider-popup-vertical-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el.png" alt="">
+                                <img src="https://via.placeholder.com/112x112/FFFFFF/008000" class="slider-popup-vertical-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el.png" alt="">
+                                <img src="https://via.placeholder.com/112x112/008000/FF0000" class="slider-popup-vertical-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el.png" alt="">
+                                <img src="https://via.placeholder.com/112x112/FFFFFF/0000FF" class="slider-popup-vertical-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el.png" alt="">
+                                <img src="https://via.placeholder.com/112x112/FFFFFF/FFFFF" class="slider-popup-vertical-img" alt="alt">
                             </div>
                         </div>
                     </div>
@@ -38,13 +38,25 @@
                     <div class="swiper main-slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="./images/popup-el-l.png" alt="">
+                                <img src="./images/popup-el-l.png" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el-l.png" alt="">
+                                <img src="https://via.placeholder.com/648x648" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="./images/popup-el-l.png" alt="">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/000000" alt="alt">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/008000" alt="alt">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://via.placeholder.com/648x648/008000/FF0000" alt="alt">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/0000FF" alt="alt">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/FFFFF" alt="alt">
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
@@ -60,7 +72,8 @@
                 const popupSliderEl = new Swiper('.vertical-slider', {
                     slidesPerView: 4,
                     slideToClickedSlide: true,
-                    loop: true,
+                    centeredSlides: true,
+                    // loop: true,
                     direction: 'vertical',
 
                     navigation: {
@@ -79,7 +92,7 @@
                 });
 
                 const slider2 = new Swiper('.main-slider', {
-                    // loop: true,
+                    loop: true,
                     navigation: {
                         nextEl: ".main-button-next",
                         prevEl: ".main-button-prev",
@@ -89,6 +102,14 @@
                         el: '.swiper-pagination',
                     },
                 });
+
+                $('.slider-popup-vertical-img').on('click', function (e) {
+                    const index = $(this).closest('.swiper-slide').index();
+
+                    slider2.slideTo(index);
+
+                    e.preventDefault();
+                })
             });
         </script>
     </div>

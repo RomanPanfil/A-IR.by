@@ -236,7 +236,6 @@ if (document.querySelector(".sticker-info-hide")) {
   });
 }
 
-
 $(document).ready(function () {
   let cardBreackpoint = $("#card-breackpoint").offset().top;
   let cardSticky = $(".card-sticky");
@@ -259,8 +258,3 @@ $(document).ready(function () {
     }
   });
 });
-
-
-
-
-
