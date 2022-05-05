@@ -23,10 +23,12 @@
 .header {
   position: relative;
   margin-bottom: 33px;
-  // overflow: hidden;
+  transition: transform .4s, background-color .2s, -webkit-transform .4s;
+  will-change: transform;
   @media (max-width: 1024px) {
-    padding: 16px 0;
+    padding: 11px 0;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
   }
   .menu {
     background: #f5f5f5;
@@ -189,7 +191,6 @@
         top: -12px;
       }
     }
-
     &-contacts {
       font-weight: 600;
       white-space: nowrap;
@@ -227,6 +228,7 @@
       }
       text-align: center;
       &-services {
+      
         display: inline-block;
         cursor: pointer;
         margin-right: 8px;
@@ -236,11 +238,10 @@
         }
         &-img {
           position: relative;
-          height: 24px;
-          img {
-            max-height: 24px;
-            display: inline-block;
-          }
+        }
+        &-svg {
+          max-width: 24px;
+          max-height: 24px;
         }
 
         &-text {
@@ -270,6 +271,7 @@
   }
   .nav {
     background: #fff;
+    gap: 2px;
     @media (max-width: 1024px) {
       display: none;
     }
@@ -279,7 +281,7 @@
     &-wrapper {
       background: #f5f5f5;
     }
-    gap: 2px;
+   
     &-item {
       display: flex;
       align-items: center;
@@ -290,7 +292,9 @@
       text-align: center;
       flex: 0 0 20%;
       max-width: 20%;
-
+      &:hover {
+        background: #EDEDED;
+      }
       &-img {
         display: flex;
         align-items: center;
@@ -384,9 +388,6 @@
     width: 100%;
     border-color: #d3d3d3;
     padding-right: 87px;
-    &:focus {
-      border: 1px solid $colorDark;
-    }
   }
   &-btn {
     border: none;
@@ -412,6 +413,9 @@
   }
 }
 
+.header.headerCard_fixed {
+  box-shadow: none;
+}
 .header_fixed {
   position: fixed;
   background: #fff;
@@ -421,13 +425,18 @@
   right: 0;
   width: 100%;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0px, 0px, 0px);
+  .main {
+    padding: 17px 0px;
+  }
 }
 
 .wrapper_fixed {
-  padding-top: 220px;
+  padding-top: 195px;
 }
 
 .headerCard_fixed {
   box-shadow: initial;
   border-bottom: 1px solid #d3d3d3;
 }
+
