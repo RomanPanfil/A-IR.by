@@ -31,17 +31,10 @@ $(document).on("change", ".card-item-counter-input", function (e) {
   }
 });
 
-// $(document).on("click", ".product-item-open", function (e) {
-//   e.stopPropagation();
-//   let item = $(e.target).closest(".product-item").toggleClass("product-open");
-// });
-
 const productSliderMarkUp = $(".slider-preferably")
   .clone()
   .removeClass("slider-adaptive-none");
-const productSliderMarkUpInterest = $(".slider-interest")
-  .clone()
-  .removeClass("slider-adaptive-none");
+
 // let enableSwiper = undefined;
 if (matchMedia) {
   var screen768 = window.matchMedia("(max-width:1024px)");
@@ -51,10 +44,8 @@ if (matchMedia) {
 function changes(screen768) {
   if (screen768.matches) {
     $(".product-swiper-mob").append(productSliderMarkUp);
-    $(".product-swiper-mob-interest").append(productSliderMarkUpInterest);
   } else {
     $(".product-swiper-desc").append(productSliderMarkUp);
-    $(".product-swiper-desc-interests").append(productSliderMarkUpInterest);
 
     new Swiper(".product-swiper-desc .product-swiper ", {
       slidesPerView: 4,
@@ -77,3 +68,43 @@ function changes(screen768) {
     });
   }
 }
+
+// if (matchMedia) {
+//   // var screen768 = window.matchMedia("(max-width:1024px)");
+//   screen768.addListener(changes2);
+//   changes2(screen768);
+// }
+// function changes2(screen768) {
+
+//   if (screen768.matches) {
+//     // $(".product-swiper-mob").append(productSliderMarkUp);
+//   } else {
+//     // $(".product-swiper-desc").append(productSliderMarkUp);
+//   }
+// }
+const productSliderMarkUpInterest = $(".slider-interest")
+  .clone()
+  .removeClass("slider-adaptive-none");
+$(".product-swiper-mob-interest").append(productSliderMarkUpInterest);
+
+$(".product-swiper-desc-interest").append(productSliderMarkUpInterest);
+
+new Swiper(".product-swiper-desc-interest .product-swiper ", {
+  slidesPerView: 4,
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  spaceBetween: 24,
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+    1300: {
+      slidesPerView: 4,
+      // spaceBetween: 16,
+    },
+  },
+});
