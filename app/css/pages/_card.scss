@@ -140,23 +140,35 @@
         margin: 0px auto;
         padding: 0 10px;
 
-        .button-next,
-        .button-prev {
-          top: 90%;
+        .swiper.el {
+          padding: 0 5px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+          top: 92%;
           font-size: 20px;
           right: 0;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
 
-        .button-prev {
+        .swiper-button-prev {
           left: 0;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
         }
 
-        .button-next:after {
+        .swiper-button-next:after {
           font-size: 25px;
           color: #071c28;
         }
 
-        .button-prev:after {
+        .swiper-button-prev:after {
           font-size: 25px;
           color: #071c28;
         }
@@ -180,6 +192,10 @@
         .swiper-slide-active {
           border: 1px solid #2a4455;
           border-radius: 5px;
+        }
+
+        .swiper-wrapper {
+          justify-content: center;
         }
       }
 
@@ -1204,6 +1220,67 @@
             background-color: #ffc100;
           }
         }
+      }
+    }
+  }
+}
+
+// YouTube
+
+.popup-youtube {
+  position: relative;
+  display: inline-block;
+  &-btn {
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: #bc0000;
+    border-radius: 8px;
+    width: 124px;
+    height: 64px;
+    img {
+      position: absolute;
+      max-height: 32px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+.popup-youtube {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  &-wrapper {
+    margin-bottom: 22px;
+  }
+  &-btn {
+    position: absolute;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: #bc0000;
+    border-radius: 8px;
+    width: 124px;
+    height: 64px;
+    img {
+      position: absolute;
+      max-height: 32px;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+  &-two {
+    .popup-youtube-btn {
+      width: 80px;
+      height: 40px;
+      img {
+        max-height: 20px;
       }
     }
   }

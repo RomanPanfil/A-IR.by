@@ -13,6 +13,13 @@
             <div class="card-item-rating">
               <div class="card-item-rating-body">
                 <div class="card-item-rating-active" style="width: 100%;"></div>
+                <div class="card-item-rating-items">
+                  <input type="radio" class="card-item-rating-item" value="1" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="2" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="3" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="4" name="rating">
+                  <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                </div>
               </div>
               <div class="card-item-rating-value">Нет оценки</div>
             </div>
@@ -135,16 +142,16 @@
         for (let i = 0; i < ratingItems.length; i++) {
           const ratingItem = ratingItems[i];
 
-          ratingItem.addEventListener('mouseenter', function(e) {
+          ratingItem.addEventListener('mouseenter', function (e) {
             initRatingVars(rating);
             setRatingActiveWidth(ratingItem.value);
           });
 
-          ratingItem.addEventListener('mouseleave', function(e) {
+          ratingItem.addEventListener('mouseleave', function (e) {
             setRatingActiveWidth();
           });
 
-          ratingItem.addEventListener('click', function(e) {
+          ratingItem.addEventListener('click', function (e) {
             initRatingVars(rating);
 
             ratingValue.innerHTML = ratingItem.value;
@@ -216,12 +223,12 @@
 
       jQuery.validator.addMethod(
         "lettersonly",
-        function(value, element) {
+        function (value, element) {
           return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
         }, "Ваше имя не может состоять из цифр"
       );
 
-      jQuery.validator.addMethod("url", function(value, element) {
+      jQuery.validator.addMethod("url", function (value, element) {
         return this.optional(element) || /^https:\/\/www.youtube.com/.test(value);
       }, "Пожалуйста введите корректный url адрес");
 
