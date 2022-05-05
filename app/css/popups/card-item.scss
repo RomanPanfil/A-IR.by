@@ -1,5 +1,147 @@
 .popup {
   &-card {
+    width: 78%;
     padding: 32px 64px;
+    @media (max-width: 1023px) {
+      width: 100%;
+      padding: 32px 48px;
+    }
+    &-img {
+      display: inline-block;
+      margin-right: 24px;
+      @media (max-width: 1024px) {
+        max-width: 88px;
+      }
+    }
+    &-info {
+      display: inline-block;
+      vertical-align: top;
+      &-link {
+        color: #000000a8;
+      }
+    }
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 1024px) {
+        display: block;
+      }
+    }
+    &-wrapper:nth-of-type(2) {
+      text-align: right;
+      max-width: 240px;
+      // margin-bottom: 32px;
+      @media (max-width: 1024px) {
+        max-width: 100%;
+      }
+    }
+    &-wrapper:nth-of-type(1) {
+      @media (max-width: 1023px) {
+        display: flex;
+      }
+    }
+    &-contant {
+      padding-top: 24px;
+      padding: 24px 64px 32px 64px;
+      margin: 0 -64px -32px -64px;
+      background-color: #f5f5f5;
+      @media (max-width: 1023px) {
+        padding-top: 0;
+        background-color: #ffffff;
+      }
+    }
+    &-optional {
+      margin-bottom: 16px;
+      @media (max-width: 1023px) {
+        display: flex;
+
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+      &-link {
+        display: inline-block;
+        width: calc(50% - 15px);
+        height: 40px;
+        line-height: 38px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        color: #000000;
+        font-weight: 600;
+        text-align: center;
+        background-color: #ffffff;
+        white-space: normal;
+        // white-space: nowrap;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        @media (max-width: 1023px) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // flex-wrap: nowrap;
+          min-width: 184px;
+          width: 184px;
+          height: 80px;
+          background-color: #f5f5f5;
+          padding: 18px 16px;
+          line-height: 1.3;
+          border: none;
+        }
+        &:hover {
+          color: #2a4455;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        }
+        &:first-child {
+          margin-right: 24px;
+          @media (max-width: 1023px) {
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+    .card-item-price-current {
+      color: #000000;
+    }
+    .card-item-btn {
+      @media (max-width: 1024px) {
+        display: inline-block;
+        width: calc(50% - 15px);
+        vertical-align: top;
+        &:first-child {
+          margin-right: 24px;
+        }
+      }
+    }
+    .card-item-features {
+      margin-bottom: 16px;
+      @media (max-width: 1023px) {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  }
+  .popup-line {
+    margin: 0 -64px 23px -64px;
+    @media (max-width: 1024px) {
+      margin: 0 -48px 23px -48px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .mfp-content {
+    background: none;
+  }
+}
+.popup-line-show {
+  display: none;
+  @media (max-width: 1023px) {
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+.popup-title {
+  @media (max-width: 400px) {
+    font-size: rem(22);
   }
 }

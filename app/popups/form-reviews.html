@@ -4,51 +4,122 @@
       <div class="form-reviews">
         <div class="form-reviews-content">
           <div class="form-reviews-header">
-            <div class="form-reviews-header-title">
-              Оставить отзыв
-            </div>
+            <div class="form-reviews-header-title">Оставить отзыв</div>
             <div class="form-reviews-header-item">
-              <span>Товар:</span> <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
+              <span>Товар:</span>
+              <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
             </div>
             <div class="card-item-rating">
               <div class="card-item-rating-body">
-                <div class="card-item-rating-active" style="width: 100%;"></div>
+                <div class="card-item-rating-active" style="width: 100%"></div>
                 <div class="card-item-rating-items">
-                  <input type="radio" class="card-item-rating-item" value="1" name="rating">
-                  <input type="radio" class="card-item-rating-item" value="2" name="rating">
-                  <input type="radio" class="card-item-rating-item" value="3" name="rating">
-                  <input type="radio" class="card-item-rating-item" value="4" name="rating">
-                  <input type="radio" class="card-item-rating-item" value="5" name="rating">
+                  <input
+                    type="radio"
+                    class="card-item-rating-item"
+                    value="1"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="card-item-rating-item"
+                    value="2"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="card-item-rating-item"
+                    value="3"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="card-item-rating-item"
+                    value="4"
+                    name="rating"
+                  />
+                  <input
+                    type="radio"
+                    class="card-item-rating-item"
+                    value="5"
+                    name="rating"
+                  />
                 </div>
               </div>
               <div class="card-item-rating-value">Нет оценки</div>
             </div>
           </div>
           <div class="form-reviews-body">
-            <form action="#" method="POST" class="form-reviews-valid" id="form-reviews-valid">
+            <form
+              action="#"
+              method="POST"
+              class="form-reviews-valid"
+              id="form-reviews-valid"
+            >
               <div class="form-cell">
                 <div class="form-cell-info form-cell-error">
-                  <label for="name">Ваше имя<span>*</span></label> <br>
-                  <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович">
+                  <label for="name">Ваше имя<span>*</span></label> <br />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Иванов Иван Иванович"
+                  />
                 </div>
                 <div class="form-cell-info form-cell-error">
-                  <label for="email">Ваш Email<span>*</span></label> <br>
-                  <input type="email" id="email" name="email" placeholder="123@gmail.com">
+                  <label for="email">Ваш Email<span>*</span></label> <br />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="123@gmail.com"
+                  />
                 </div>
               </div>
               <div class="form-cell">
                 <div class="form-cell-rating">
-                  <label for="rating" class="rating-label">Ваша оценка<span>*</span></label>
+                  <label for="rating" class="rating-label"
+                    >Ваша оценка<span>*</span></label
+                  >
                   <div class="card-item-rating rating-set">
                     <div class="card-item-rating-body" id="rating">
                       <div class="card-item-rating-active"></div>
                       <div class="card-item-rating-items">
                         <label for="rating"></label>
-                        <input type="radio" id="rating_1" class="card-item-rating-item" value="1.0" name="rating">
-                        <input type="radio" id="rating_2" class="card-item-rating-item" value="2.0" name="rating">
-                        <input type="radio" id="rating_3" class="card-item-rating-item" value="3.0" name="rating">
-                        <input type="radio" id="rating_4" class="card-item-rating-item" value="4.0" name="rating">
-                        <input type="radio" id="rating_5" class="card-item-rating-item" value="5.0" name="rating">
+                        <input
+                          type="radio"
+                          id="rating_1"
+                          class="card-item-rating-item"
+                          value="1.0"
+                          name="rating"
+                        />
+                        <input
+                          type="radio"
+                          id="rating_2"
+                          class="card-item-rating-item"
+                          value="2.0"
+                          name="rating"
+                        />
+                        <input
+                          type="radio"
+                          id="rating_3"
+                          class="card-item-rating-item"
+                          value="3.0"
+                          name="rating"
+                        />
+                        <input
+                          type="radio"
+                          id="rating_4"
+                          class="card-item-rating-item"
+                          value="4.0"
+                          name="rating"
+                        />
+                        <input
+                          type="radio"
+                          id="rating_5"
+                          class="card-item-rating-item"
+                          value="5.0"
+                          name="rating"
+                        />
                       </div>
                     </div>
                     <div class="card-item-rating-value"></div>
@@ -59,39 +130,82 @@
                 <div class="form-cell-info">
                   <label for="textbox">Текстовое поле<span>*</span></label>
                   <div class="form-cell-field-textarea">
-                    <textarea id="textbox" name="textbox" placeholder="Текст"></textarea>
+                    <textarea
+                      id="textbox"
+                      name="textbox"
+                      placeholder="Текст"
+                    ></textarea>
                   </div>
                   <div class="form-cell-field-quality">
-                    <input type="text" id="plus" name="plus" class="plus" placeholder="Пара слов о преимуществах">
-                    <input type="text" id="minus" name="minus" class="minus" placeholder="Пара слов о недостатках">
+                    <input
+                      type="text"
+                      id="plus"
+                      name="plus"
+                      class="plus"
+                      placeholder="Пара слов о преимуществах"
+                    />
+                    <input
+                      type="text"
+                      id="minus"
+                      name="minus"
+                      class="minus"
+                      placeholder="Пара слов о недостатках"
+                    />
                   </div>
                 </div>
               </div>
               <div class="form-cell">
                 <div class="form-cell-field-load">
-                  <label for="file" class="load-file" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi">
-                    <img src="../images/icons/file.svg" alt="alt">
+                  <label
+                    for="file"
+                    class="load-file"
+                    accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi"
+                  >
+                    <img src="../images/icons/file.svg" alt="alt" />
                     <span>Добавить фото или видео</span>
                   </label>
-                  <input type="file" id="file" name="file" class="file" multiple>
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    class="file"
+                    multiple
+                  />
                 </div>
                 <div class="form-cell-field-url">
-                  <img src="../images/icons/url-video.svg" alt="alt">
-                  <input type="text" id="url" name="url" class="url" placeholder="Добавить URL на видео">
+                  <img src="../images/icons/url-video.svg" alt="alt" />
+                  <input
+                    type="text"
+                    id="url"
+                    name="url"
+                    class="url"
+                    placeholder="Добавить URL на видео"
+                  />
                 </div>
               </div>
               <div class="form-cell">
                 <div class="form-cell-field-send">
                   <div class="checkbox">
-                    <input type="checkbox" id="checkbox" name="checkbox" class="checkbox-input">
+                    <input
+                      type="checkbox"
+                      id="checkbox"
+                      name="checkbox"
+                      class="checkbox-input"
+                    />
                     <label for="checkbox" class="checkbox-label"></label>
                   </div>
                   <div class="popup-agreement-txt">
                     Нажимая кнопку «Отправить отзыв» вы соглашаетесь
-                    <a href="#" class="popup-agreement-link">с политикой обработки персональных данных.</a>
+                    <a href="#" class="popup-agreement-link"
+                      >с политикой обработки персональных данных.</a
+                    >
                   </div>
                 </div>
-                <input type="submit" value="Отправить отзыв" class="btn-submit">
+                <input
+                  type="submit"
+                  value="Отправить отзыв"
+                  class="btn-submit"
+                />
               </div>
             </form>
           </div>
@@ -102,7 +216,7 @@
   <script>
     $(document).ready(function () {
       // rating stars
-      const ratings = document.querySelectorAll('.card-item-rating');
+      const ratings = document.querySelectorAll(".card-item-rating");
 
       if (ratings.length > 0) {
         initRatings();
@@ -112,7 +226,7 @@
         for (let i = 0; i < ratings.length; i++) {
           const rating = ratings[i];
 
-          if (rating.classList.contains('rating-set')) {
+          if (rating.classList.contains("rating-set")) {
             setRating(rating);
           }
 
@@ -122,41 +236,41 @@
       }
 
       function initRatingVars(rating) {
-        ratingActive = rating.querySelector('.card-item-rating-active');
-        ratingValue = rating.querySelector('.card-item-rating-value');
+        ratingActive = rating.querySelector(".card-item-rating-active");
+        ratingValue = rating.querySelector(".card-item-rating-value");
       }
 
       function setRatingActiveWidth(index = ratingValue.innerHTML) {
         const ratingActiveWidth = index / 0.05;
 
-        if (index === 'Нет оценки') {
-          ratingActive.style.width = '0%';
+        if (index === "Нет оценки") {
+          ratingActive.style.width = "0%";
         } else {
           ratingActive.style.width = `${ratingActiveWidth}%`;
         }
       }
 
       function setRating(rating) {
-        const ratingItems = rating.querySelectorAll('.card-item-rating-item');
+        const ratingItems = rating.querySelectorAll(".card-item-rating-item");
 
         for (let i = 0; i < ratingItems.length; i++) {
           const ratingItem = ratingItems[i];
 
-          ratingItem.addEventListener('mouseenter', function (e) {
+          ratingItem.addEventListener("mouseenter", function (e) {
             initRatingVars(rating);
             setRatingActiveWidth(ratingItem.value);
           });
 
-          ratingItem.addEventListener('mouseleave', function (e) {
+          ratingItem.addEventListener("mouseleave", function (e) {
             setRatingActiveWidth();
           });
 
-          ratingItem.addEventListener('click', function (e) {
+          ratingItem.addEventListener("click", function (e) {
             initRatingVars(rating);
 
             ratingValue.innerHTML = ratingItem.value;
             setRatingActiveWidth();
-          })
+          });
         }
       }
 
@@ -203,7 +317,7 @@
         messages: {
           email: {
             required: "Пожалуйста, введите ваш Email",
-            email: "Пожалуйста введите корректный Email"
+            email: "Пожалуйста введите корректный Email",
           },
 
           name: {
@@ -218,40 +332,48 @@
           rating: {
             required: "Пожалуйста, поставьте оценку",
           },
-        }
+        },
       });
 
       jQuery.validator.addMethod(
         "lettersonly",
         function (value, element) {
           return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
-        }, "Ваше имя не может состоять из цифр"
+        },
+        "Только буквы"
       );
 
-      jQuery.validator.addMethod("url", function (value, element) {
-        return this.optional(element) || /^https:\/\/www.youtube.com/.test(value);
-      }, "Пожалуйста введите корректный url адрес");
+      jQuery.validator.addMethod(
+        "url",
+        function (value, element) {
+          return (
+            this.optional(element) || /^https:\/\/www.youtube.com/.test(value)
+          );
+        },
+        "Пожалуйста введите корректный url адрес"
+      );
 
       // this whole code about the button which responsible for opening and load file(image & video)
-      const formBlock = document.getElementById('form-reviews-valid');
-      const input = document.getElementById('file');
-      const uploadFile = document.querySelector('.form-cell-field-load');
-      const load = document.querySelector('.load-file');
-      const errFile = document.createElement('span');
-      const allFiles = document.createElement('div');
-      const btnOpen = document.createElement('div');
+      const formBlock = document.getElementById("form-reviews-valid");
+      const input = document.getElementById("file");
+      const uploadFile = document.querySelector(".form-cell-field-load");
+      const load = document.querySelector(".load-file");
+      const errFile = document.createElement("span");
+      const allFiles = document.createElement("div");
+      const btnOpen = document.createElement("div");
       const arrStorageFile = [];
 
-      errFile.classList.add('error-file');
-      allFiles.classList.add('all-files');
-      btnOpen.classList.add('open-files');
+      errFile.classList.add("error-file");
+      allFiles.classList.add("all-files");
+      btnOpen.classList.add("open-files");
 
-      errFile.innerHTML = 'Превышен максимально допустимый размер файла: 100 мб';
+      errFile.innerHTML =
+        "Превышен максимально допустимый размер файла: 100 мб";
       btnOpen.innerHTML = '<img src="../images/icons/btn-plus.svg" />';
 
-      input.addEventListener('change', btnUploadFile);
-      input.insertAdjacentElement('afterend', allFiles);
-      btnOpen.addEventListener('click', triggerInput);
+      input.addEventListener("change", btnUploadFile);
+      input.insertAdjacentElement("afterend", allFiles);
+      btnOpen.addEventListener("click", triggerInput);
 
       // when you click on the btnOpen this click will be trigger input
       function triggerInput() {
@@ -277,15 +399,15 @@
 
           // скрывает инпут и показывает кнопку при условии, что длина массива >= 1
           if (arrStorageFile.length <= 3 && size < maxSize) {
-            btnOpen.style.display = 'block';
-            load.style.display = 'none';
+            btnOpen.style.display = "block";
+            load.style.display = "none";
 
-            allFiles.insertAdjacentElement('beforeend', btnOpen);
+            allFiles.insertAdjacentElement("beforeend", btnOpen);
           }
 
-          reader.onload = ev => {
+          reader.onload = (ev) => {
             const src = ev.target.result;
-            const type = file.type.split('/')[1];
+            const type = file.type.split("/")[1];
 
             // Если пользователь загружает одновременно допустим 6 файлов, то загрузятся только первые 3
             if (index + arrStorageFile.length <= 3) {
@@ -295,70 +417,70 @@
 
             // убирает кнопку, если длина массива равна 3
             if (index + arrStorageFile.length === 3) {
-              btnOpen.style.display = 'none';
+              btnOpen.style.display = "none";
             }
-          }
+          };
         });
-      };
+      }
 
       // создание блока и определение формата файла, который будет выведен
       function innerFile(file, src, type) {
-        const allFilesSection = document.createElement('div');
-        const removeFile = document.createElement('div');
-        const typeFile = document.createElement('div');
+        const allFilesSection = document.createElement("div");
+        const removeFile = document.createElement("div");
+        const typeFile = document.createElement("div");
 
-        allFilesSection.classList.add('all-files-item');
-        removeFile.classList.add('remove-file');
-        typeFile.classList.add('type-file');
+        allFilesSection.classList.add("all-files-item");
+        removeFile.classList.add("remove-file");
+        typeFile.classList.add("type-file");
 
         allFiles.prepend(allFilesSection);
 
         allFilesSection.append(removeFile);
         allFilesSection.append(typeFile);
 
-        removeFile.innerHTML = '&times;';
-        typeFile.innerHTML = `.${file.type.split('/')[1]}`;
+        removeFile.innerHTML = "&times;";
+        typeFile.innerHTML = `.${file.type.split("/")[1]}`;
 
         removeFile.dataset.name = file.name;
         allFilesSection.dataset.name = file.name;
 
-        if (file.type.match('image')) {
-          imgFile(removeFile, src)
+        if (file.type.match("image")) {
+          imgFile(removeFile, src);
 
           errFile.remove();
-        } else if (file.type.match('video')) {
-          videoFile(removeFile, src)
+        } else if (file.type.match("video")) {
+          videoFile(removeFile, src);
 
           errFile.remove();
         }
-      };
+      }
 
       // создание блока картинки
       function imgFile(removeFile, src) {
-        const imgFile = document.createElement('img');
+        const imgFile = document.createElement("img");
 
-        imgFile.classList.add('img-file');
+        imgFile.classList.add("img-file");
 
         imgFile.src = src;
 
-        removeFile.insertAdjacentElement('afterend', imgFile)
-      };
+        removeFile.insertAdjacentElement("afterend", imgFile);
+      }
 
       // создание блока видео
       function videoFile(removeFile, src) {
-        const videoFile = document.createElement('video');
+        const videoFile = document.createElement("video");
 
-        videoFile.classList.add('video-file');
+        videoFile.classList.add("video-file");
 
         videoFile.src = src;
         videoFile.height = 64;
         videoFile.width = 88;
 
-        removeFile.insertAdjacentElement('afterend', videoFile)
-      };
+        removeFile.insertAdjacentElement("afterend", videoFile);
+      }
 
-      $(document).on('click', '.remove-file', function (e) {
-        const parent = $(this).closest('.all-files-item');
+      $(document).on("click", ".remove-file", function (e) {
+        const parent = $(this).closest(".all-files-item");
 
         // убирает из массива файл
         for (let i = 0; i < arrStorageFile.length - 1; i++) {
@@ -367,11 +489,11 @@
 
         // если длина массива 0, то возвращает инпут и убирает кнопку иначе возвращает кнопку
         if (arrStorageFile.length - 1 === 0) {
-          load.style.display = 'block';
-          btnOpen.style.display = 'none';
+          load.style.display = "block";
+          btnOpen.style.display = "none";
         } else {
-          load.style.display = 'none';
-          btnOpen.style.display = 'block';
+          load.style.display = "none";
+          btnOpen.style.display = "block";
         }
 
         parent.remove();
@@ -382,9 +504,9 @@
 
       // форма с данными файлов
       function serializeForm(formNode) {
-        const { elements } = formNode
+        const { elements } = formNode;
 
-        const data = new FormData()
+        const data = new FormData();
 
         // Array.from(elements)
         //   .filter((item) => !!item.name)
@@ -396,10 +518,10 @@
         //   })
 
         for (let i = 0; i < arrStorageFile.length; i++) {
-          data.append('file', arrStorageFile[i].name)
+          data.append("file", arrStorageFile[i].name);
         }
 
-        return data
+        return data;
       }
 
       function handleFormSubmit(event) {
@@ -408,57 +530,57 @@
         serializeForm(formBlock);
       }
 
-      formBlock.addEventListener('submit', handleFormSubmit);
+      formBlock.addEventListener("submit", handleFormSubmit);
 
       // second popup shows when you try close this popup
-      const container = document.querySelector('.popup-form-reviews');
-      const mfpContent = document.querySelector('.mfp-content');
-      const mfpClose = document.querySelector('.mfp-close');
+      const container = document.querySelector(".popup-form-reviews");
+      const mfpContent = document.querySelector(".mfp-content");
+      const mfpClose = document.querySelector(".mfp-close");
 
-      const popupClose = document.createElement('div');
+      const popupClose = document.createElement("div");
 
-      mfpClose.style.display = 'none';
+      mfpClose.style.display = "none";
 
-      popupClose.classList.add('popup-close');
-      popupClose.innerHTML = '&times;';
+      popupClose.classList.add("popup-close");
+      popupClose.innerHTML = "&times;";
 
-      container.insertAdjacentElement('beforeend', popupClose);
+      container.insertAdjacentElement("beforeend", popupClose);
 
-      popupClose.addEventListener('click', openPopup)
+      popupClose.addEventListener("click", openPopup);
 
       function openPopup() {
-        const bgPopup = document.createElement('div');
-        const popupSecondBlock = document.createElement('div');
-        const popupSecond = document.createElement('div');
-        const title = document.createElement('h1');
-        const text = document.createElement('p');
-        const btnExit = document.createElement('button');
-        const btnCancel = document.createElement('button');
+        const bgPopup = document.createElement("div");
+        const popupSecondBlock = document.createElement("div");
+        const popupSecond = document.createElement("div");
+        const title = document.createElement("h1");
+        const text = document.createElement("p");
+        const btnExit = document.createElement("button");
+        const btnCancel = document.createElement("button");
 
-        bgPopup.classList.add('popup-second-bg');
-        popupSecondBlock.classList.add('popup-second-block');
-        popupSecond.classList.add('popup-second');
-        title.classList.add('popup-second-title');
-        text.classList.add('popup-second-text');
-        btnExit.classList.add('popup-second-btn-exit');
-        btnExit.classList.add('ui-btn');
-        btnCancel.classList.add('popup-second-btn-cancel');
-        btnCancel.classList.add('ui-btn');
+        bgPopup.classList.add("popup-second-bg");
+        popupSecondBlock.classList.add("popup-second-block");
+        popupSecond.classList.add("popup-second");
+        title.classList.add("popup-second-title");
+        text.classList.add("popup-second-text");
+        btnExit.classList.add("popup-second-btn-exit");
+        btnExit.classList.add("ui-btn");
+        btnCancel.classList.add("popup-second-btn-cancel");
+        btnCancel.classList.add("ui-btn");
 
-        title.innerHTML = 'Ой!';
-        text.innerHTML = 'Отзыв не сохранится, если вы закроете окно.';
-        btnExit.innerHTML = 'Уйти со страницы';
-        btnCancel.innerHTML = 'Отмена';
+        title.innerHTML = "Ой!";
+        text.innerHTML = "Отзыв не сохранится, если вы закроете окно.";
+        btnExit.innerHTML = "Уйти со страницы";
+        btnCancel.innerHTML = "Отмена";
 
-        document.body.insertAdjacentElement('afterbegin', bgPopup);
-        bgPopup.insertAdjacentElement('beforeend', popupSecond);
-        popupSecond.insertAdjacentElement('beforeend', popupSecondBlock);
-        popupSecondBlock.insertAdjacentElement('beforeend', title);
-        popupSecondBlock.insertAdjacentElement('beforeend', text);
-        popupSecondBlock.insertAdjacentElement('beforeend', btnExit);
-        popupSecondBlock.insertAdjacentElement('beforeend', btnCancel);
+        document.body.insertAdjacentElement("afterbegin", bgPopup);
+        bgPopup.insertAdjacentElement("beforeend", popupSecond);
+        popupSecond.insertAdjacentElement("beforeend", popupSecondBlock);
+        popupSecondBlock.insertAdjacentElement("beforeend", title);
+        popupSecondBlock.insertAdjacentElement("beforeend", text);
+        popupSecondBlock.insertAdjacentElement("beforeend", btnExit);
+        popupSecondBlock.insertAdjacentElement("beforeend", btnCancel);
 
-        btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel)
+        btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel);
       }
 
       function btnClick(btnExit, popupSecond, bgPopup, btnCancel) {
@@ -466,14 +588,13 @@
           mfpClose.click();
           popupSecond.remove();
           bgPopup.remove();
-        }
+        };
 
         btnCancel.onclick = function () {
-          popupSecond.style.display = 'none';
-          bgPopup.style.display = 'none';
-        }
+          popupSecond.style.display = "none";
+          bgPopup.style.display = "none";
+        };
       }
     });
   </script>
 </div>
-

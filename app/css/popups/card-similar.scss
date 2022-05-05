@@ -1,0 +1,50 @@
+.popup-similar {
+  width: 78%;
+
+  padding: 34px 64px 40px 64px;
+  @media (max-width: 1024px) {
+    padding: 34px 48px 40px 48px;
+  }
+  @media (max-width: 400px) {
+    padding: 34px 15px 40px 15px;
+    .popup-title {
+      font-size: rem(22);
+    }
+    .popup-product-span {
+      display: none;
+    }
+  }
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    background-color: #ffffff;
+
+    @media (max-width: 1260px) {
+      display: block;
+    }
+    .card-item-options {
+      max-width: 424px;
+    }
+  }
+  &-contant {
+    background-color: #f5f5f5;
+  }
+  // .popup-line {
+  //   margin: 0 -64px 23px -64px;
+  // }
+
+  .product-item {
+    width: 240px;
+  }
+  .swiper-slide {
+    width: 240px !important;
+    margin-right: 8px !important;
+  }
+  .popup-line {
+    margin: 0 -64px 23px -64px !important;
+    @media (max-width: 1024px) {
+      margin: 0 -48px 23px -48px !important;
+    }
+  }
+}
