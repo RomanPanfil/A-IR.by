@@ -237,6 +237,8 @@ if (document.querySelector(".sticker-info-hide")) {
 }
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 // cardSticky
 
 // let elemzxc = document.getElementById("coords-show-mark");
@@ -282,12 +284,16 @@ if (document.querySelector(".sticker-info-hide")) {
 //   console.log($("#card-breackpoint").offset().top);
 // });
 =======
+>>>>>>> main
 $(document).ready(function () {
   let cardBreackpoint = $("#card-breackpoint").offset().top;
   let cardSticky = $(".card-sticky");
   let headerCard = $(".header");
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
   window.addEventListener("resize", function () {
     cardBreackpoint = $("#card-breackpoint").offset().top;
   });
@@ -296,12 +302,21 @@ $(document).ready(function () {
       headerCard.removeClass("headerCard_fixed");
       cardSticky.removeClass("card-breackpoint-open");
       // cardSticky.css('top', headerCardFixedHeight);
+<<<<<<< HEAD
+    } else {
+      headerCard.addClass("headerCard_fixed");
+
+=======
       
     } else {    
       headerCard.addClass("headerCard_fixed");
       
+>>>>>>> main
       cardSticky.addClass("card-breackpoint-open");
     }
   });
 });
+<<<<<<< HEAD
+=======
+>>>>>>> main
 >>>>>>> main
