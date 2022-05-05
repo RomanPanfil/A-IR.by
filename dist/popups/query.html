@@ -88,7 +88,7 @@
           },
           name: {
             required: true,
-            lettersonly: true,
+            lettersonlyName: true,
           },
           number: {
             required: true,
@@ -96,7 +96,6 @@
           },
           person: {
             required: true,
-            lettersonly: true,
           },
         },
       });
@@ -118,18 +117,33 @@
       "Incorrect format"
     );
     jQuery.validator.addMethod(
-      "lettersonly",
+      "lettersonlyName",
       function (value, element) {
         return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
       },
-      "Incorrect format"
+      "Ваше имя не может состоять из цифр"
     );
-    // jQuery.validator.addMethod(
-    //   "number",
-    //   function (value, element) {
-    //     return this.optional(element) || /[^\d]/g.test(value);
-    //   },
-    //   "Incorrect format 1111111111"
-    // );
+    jQuery.validator.addMethod(
+      "email",
+      function (value, element) {
+        return (
+          this.optional(element) ||
+          /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/i.test(
+            value
+          )
+        );
+      },
+      "Введите корректный e-mail"
+    );
+    jQuery.validator.addMethod(
+      "number",
+      function (value, element) {
+        return (
+          this.optional(element) ||
+          /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+        );
+      },
+      "Ваш УНП не может состоять из букв"
+    );
   </script>
 </div>

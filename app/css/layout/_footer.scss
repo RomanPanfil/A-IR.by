@@ -63,6 +63,7 @@
       }
     }
     &-services {
+     
       @media (max-width: 768px) {
         margin-bottom: 44px;
         .footer-top-wrap {
@@ -136,6 +137,7 @@
           }
           &.footer-open + .footer-bottom-info {
             display: inline-block;
+            
           }
         }
       }
@@ -205,6 +207,7 @@
     &-links {
       @media (max-width: 768px) {
         margin-bottom: 40px;
+        text-align: center;
       }
       &-title {
         font-weight: 700;
@@ -236,15 +239,28 @@
         margin-bottom: 11px;
       }
       &-link {
-        max-width: 40px;
+        position: relative;
+        display: inline-block;
+        border: 1px solid #fff;
+        border-radius: 5px;
         margin-right: 8px;
+        min-width: 40px;
+        min-height: 40px;
+        opacity: 0.5;
         &:hover {
-          opacity: 0.5;
+          opacity: 1;
         }
-        img {
-          max-height: 40px;
+        svg {
+          position: absolute;
+          transform: translate(-50%,-50%);
+          top: 50%;
+          left: 50%;
+          width: 24px;
+          height: 24px;
+          fill: #fff;
         }
       }
+    
     }
     &-reit {
       &-title {
@@ -313,6 +329,10 @@
       }
     }
   }
+}
+
+.footer-top-wrap {
+  margin-bottom: 27px;
 }
 
 // custom columns
