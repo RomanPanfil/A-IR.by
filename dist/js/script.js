@@ -236,6 +236,7 @@ if (document.querySelector(".sticker-info-hide")) {
   });
 }
 
+<<<<<<< HEAD
 // cardSticky
 
 // let elemzxc = document.getElementById("coords-show-mark");
@@ -280,3 +281,27 @@ if (document.querySelector(".sticker-info-hide")) {
 //   });
 //   console.log($("#card-breackpoint").offset().top);
 // });
+=======
+$(document).ready(function () {
+  let cardBreackpoint = $("#card-breackpoint").offset().top;
+  let cardSticky = $(".card-sticky");
+  let headerCard = $(".header");
+
+
+  window.addEventListener("resize", function () {
+    cardBreackpoint = $("#card-breackpoint").offset().top;
+  });
+  window.addEventListener("scroll", function () {
+    if (window.scrollY < cardBreackpoint) {
+      headerCard.removeClass("headerCard_fixed");
+      cardSticky.removeClass("card-breackpoint-open");
+      // cardSticky.css('top', headerCardFixedHeight);
+      
+    } else {    
+      headerCard.addClass("headerCard_fixed");
+      
+      cardSticky.addClass("card-breackpoint-open");
+    }
+  });
+});
+>>>>>>> main

@@ -10,7 +10,7 @@ $(function () {
 
   tab.hide().filter(":first").show();
 
-  // Клики по вкладкам.
+  // click on tabs
   $("#tabs .tabs-nav a")
     .click(function () {
       tab.hide();
@@ -22,7 +22,7 @@ $(function () {
     .filter(":eq(1)")
     .click();
 
-  // Клики по якорным ссылкам.
+  // if you click on a link 'перейти к описанию' then will open the tab 'описание'  
   $(".tabs-target").click(function () {
     $("#tabs .tabs-nav * a[href*='#tab-1']").click();
   });
@@ -85,6 +85,7 @@ function setRating(rating) {
   }
 }
 
+// accordion arrow rotate (you can see this in small size screen)
 for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
     let panel = this.nextElementSibling;
@@ -100,6 +101,7 @@ for (let i = 0; i < acc.length; i++) {
   });
 }
 
+// moving some blocks in to another block when the screen size is 1024px
 if (matchMedia) {
   let screen1024 = window.matchMedia("(max-width:1024px)");
   screen1024.addListener(accordionChanges);
