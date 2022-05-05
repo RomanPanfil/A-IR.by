@@ -789,6 +789,10 @@
       @media (max-width: 1024px) {
         overflow: scroll;
         padding: 20px 80px 20px 0;
+
+        &::-webkit-scrollbar {
+          opacity: 0;
+        }
       }
 
       @media (max-width: 450px) {
