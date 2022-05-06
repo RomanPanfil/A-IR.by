@@ -1,7 +1,26 @@
 .catalog {
+  .card-interest-wrap {
+   
+    @media(max-width:1024px) {
+      
+      margin-right: -100%;
+      overflow-x: auto;
+      .row:first-child {
+        flex-wrap: nowrap;
+      }
+    }
+  }
   .card-interest-item {
     flex-direction: column;
     text-align: center;
+    padding: 25px 18px;
+    overflow: hidden;
+    &-img {
+      min-width: initial;
+      max-width: 95px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
   .calculator {
     padding: 54px 0px;
@@ -19,6 +38,10 @@
       margin-bottom: 45px;
       flex-direction: column;
       height: calc(100% - 45px);
+      @media(max-width:576px) {
+        height: calc(100% - 20px);
+          margin-bottom: 20px;
+      }
       &-title {
         font-size: rem(18);
         font-weight: 600;
@@ -75,9 +98,14 @@
       padding: 0 15px;
       &-img {
         max-width: 26px;
-        img {
-          display: block;
-          max-height: 26px;
+        display: inline-block;
+        vertical-align: middle;
+        &-svg {
+          position: relative;
+          top: 3px;
+          fill: #fff;
+          width: 26px;
+          height: 22px;
         }
       }
     }
@@ -312,6 +340,46 @@
             left: -10px;
           }
         }
+      }
+    }
+    &-btn {
+      width: 100%;
+      border: 1px solid #d3d3d3;
+      height: 40px;
+      line-height: 38px;
+      margin-bottom: 8px;
+    }
+    &-reniev {
+      height: 56px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      
+      box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+      &-svg {
+        position: relative;
+        top: 3px;
+        width: 26px;
+        height: 22px;
+        fill: #d3d3d3;
+      }
+      .calculator-btn {
+        line-height: 56px;
+        height: 100%;
+        padding: 0 5px;
+        width: 100%;
+        background: #fff;
+        color: #000;
+        border-right: 1px solid #F5F5F5;
+        font-weight: 400;
+        span {
+          font-weight: 600;
+        }
+      }
+      .calculator-reload {
+        background: #fff;
+        color: #000;
+        height: 100%;
+        text-overflow: initial;
       }
     }
     .product-item {
