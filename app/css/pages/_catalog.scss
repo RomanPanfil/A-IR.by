@@ -356,6 +356,9 @@
       }
     }
   }
+  &-question-and-acticles {
+    margin-bottom: 60px;
+  }
   &-question {
     &-title {
       margin-bottom: 30px;
@@ -456,6 +459,47 @@
         max-width: 140px;
         img {
           max-height: 48px;
+        }
+      }
+    }
+  }
+  &-articles {
+    &-title {
+      margin-bottom: 30px;
+    }
+    &-item {
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    
+      &-img {
+        line-height: 0;
+        margin-bottom: 17px;
+        img {
+          max-height: 192px;
+        }
+      }
+      &-content {
+        padding: 0px 24px 20px 24px;
+      }
+      &-date {
+        font-size: rem(14);
+        color: rgba(0, 0, 0, 0.5);
+        margin-bottom: 11px;
+      }
+      &-title {
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      &-text {
+        font-size: rem(14);
+        margin-bottom: 17px;
+      }
+      &-link {
+        font-weight: 600;
+        color: $colorBlue;
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
@@ -724,4 +768,69 @@ input[type="range"]::-moz-range-thumb {
 .irs--round .irs-bar {
   background-color: #071c28;
   height: 2px;
+}
+
+
+//Article-arrow
+
+.slider_article {
+  position: relative;
+  @media(max-width:1024px) {
+    margin-right: -40px;
+    margin-left: -8px;
+    padding-left: 8px;
+  }
+  .swiper-button-disabled {
+    background-color: #F5F5F5;
+    pointer-events: none;
+  }
+  .swiper-wrapper {
+    
+    @media(max-width:1024px) {
+        overflow-x: auto;
+        padding: 5px;
+        margin: 0px -5px;
+    }
+  }
+  .swiper-slide {
+    @media(max-width:1024px) {
+      max-width: 424px;
+      margin-right: 24px;
+  }
+  }
+}
+/* хром, сафари */
+.swiper-wrapper::-webkit-scrollbar { width: 0; }
+
+/* ie 10+ */
+.swiper-wrapper { -ms-overflow-style: none; }
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.swiper-wrapper { overflow: -moz-scrollbars-none; }
+.article-button-prev, .article-button-next {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url(./../images/icons/product-slider-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+  box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+  cursor: pointer;
+  @media(max-width:1024px) {
+      display: none;
+  }
+}
+.article-button-prev {
+  transform: rotate(180deg);
+  top: 43%;
+  left: 8px;
+  z-index: 9;
+}
+.article-button-next {
+  top: 43%;
+  right: 8px;
+  z-index: 9;
 }
