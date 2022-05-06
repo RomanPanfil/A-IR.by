@@ -554,7 +554,7 @@
               .tooltip {
                 position: relative;
                 display: inline-block;
-                padding-left: 16px;
+                margin-left: 16px;
                 cursor: pointer;
 
                 &-box {
@@ -1160,11 +1160,21 @@
           .tooltip {
             position: relative;
             display: inline-block;
-            padding-left: 16px;
+            margin-left: 16px;
 
             &-box {
               display: flex;
               align-items: flex-start;
+            }
+
+            .circle-info-svg {
+              position: absolute;
+              width: 5px;
+              height: 8px;
+              transform: translate(-50%,-50%);
+              top: 50%;
+              left: 50%;
+              fill: #d3d3d3;
             }
           }
 
@@ -1181,7 +1191,7 @@
             z-index: 1;
             top: 135%;
             left: -290%;
-            margin-left: -60px;
+            margin-left: -130px;
             opacity: 0;
             transition: opacity 0.3s;
           }
