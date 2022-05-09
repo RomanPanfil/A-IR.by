@@ -17,6 +17,10 @@ if (matchMedia) {
   var screen768 = window.matchMedia("(max-width:768px)");
   screen768.addListener(changes768);
   changes768(screen768);
+
+  var screen450 = window.matchMedia("(max-width:450px)");
+  screen450.addListener(changes450);
+  changes450(screen450);
 }
 
 function changes(screen1170) {
@@ -27,7 +31,7 @@ function changes(screen1170) {
     $(".footer-top-resource").appendTo($(".footer-bootom-media-links"));
     $(".footer-bottom-info").appendTo($(".footer-bootom-media-links"));
     $(".footer-bottom-reit").appendTo($(".footer-bottom-socials-wrapper"));
-    // $('.col-f-phones').prependTo($('.footer__top > .row'))
+   
   } else {
     $(".footer-bottom-links").appendTo($(".footer-bootom-media-links"));
     $(".footer-top-services").appendTo($(".footer-top-services-wrapper"));
@@ -35,9 +39,18 @@ function changes(screen1170) {
     $(".footer-top-resource").appendTo($(".footer-top-resource-container"));
     $(".footer-bottom-info").appendTo($(".footer-bottom-info-wrapper"));
     $(".footer-bottom-reit").appendTo($(".footer-bottom-reit-wrapper"));
-    // $(".footer__top .col-f-phones").insertAfter(
-    //   $(".footer__bottom .col-f-wide")
-    // );
+
+  }
+}
+function changes450(screen450) {
+  if (screen450.matches) {
+    $(".catalog_link").appendTo($('.catalog-articles'))
+    $(".video_link").appendTo($('.catalog-video'))
+    $(".feedback_link").appendTo($('.catalog-brands'))
+  } else {
+    $(".catalog_link").appendTo($('.catalog-articles-title'))
+    $(".video_link").appendTo($('.video_wrap'))
+    $(".feedback_link").appendTo($('.feedback-brands-header'))
   }
 }
 function changes768(screen768) {

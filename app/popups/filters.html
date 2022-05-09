@@ -640,14 +640,12 @@
             </div>
           </div>
         </div>
-        <a href="#" href="javascript:void(0)" data-href="./popups/filters.html" class="catalog-products-btn ui-btn mfp-link">Все фильтры</a>
-        <div class="catalog-products-reniev calculator-btn-wrapper">
-          <div class="calculator-btn ui-btn">
-            Показать <span>1679</span> товаров
-          </div>
+        <a href="#" class="catalog-products-btn ui-btn">Все фильтры</a>
+        <div class="calculator-btn-wrapper">
+          <div class="calculator-btn ui-btn">Рассчитать</div>
           <button class="calculator-reload ui-btn">
             <div class="calculator-reload-img">
-              <svg class="catalog-products-reniev-svg">
+              <svg class="calculator-reload-img-svg">
                 <use
                   xlink:href="./images/svg/symbols.svg#calculator-reload"
                 ></use>
@@ -745,6 +743,10 @@ if (document.querySelector(".catalog-products-field-btn")) {
     });
   };
 }
+    
+    if(document.querySelector('.popup-filters')) {
+      document.querySelector('.mfp-content').style.background = 'transparent'
+    }
     </script>
   </div>
   
