@@ -1,19 +1,17 @@
-@media(min-width:300px) {
+@media (min-width: 300px) {
   .col-video-300 {
     -webkit-box-flex: 0;
-      flex: 0 0 312px;
-      max-width: 312px;
+    flex: 0 0 312px;
+    max-width: 312px;
   }
 }
-
-
 
 .catalog {
   .card-interest-wrap {
     display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 24px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 24px;
     @media (max-width: 1024px) {
       margin-right: -15px;
       padding-right: 15px;
@@ -38,11 +36,11 @@
   }
   .card-interest-title {
     font-size: rem(40);
-    @media(max-width:650px) {
-      font-size: rem(32)  
+    @media (max-width: 650px) {
+      font-size: rem(32);
     }
-    @media(max-width:450px) {
-        font-size: rem(22);
+    @media (max-width: 450px) {
+      font-size: rem(22);
     }
   }
   .popup-youtube-wrapper {
@@ -52,16 +50,16 @@
       color: rgba(0, 0, 0, 0.5);
     }
   }
- 
+
   &-stickers {
     margin-bottom: 55px;
     &-wrap {
       display: block;
-      @media(max-width:576px) {
-        white-space:nowrap;
-       overflow-x: auto;   
-       margin-right: -15px;
-       padding-right: 15px;
+      @media (max-width: 576px) {
+        white-space: nowrap;
+        overflow-x: auto;
+        margin-right: -15px;
+        padding-right: 15px;
       }
     }
     .ui-sticker {
@@ -77,7 +75,7 @@
     &-btn {
       border: 1px solid #d3d3d3;
       margin-right: 0px;
-     
+
       &-text {
         display: inline-block;
       }
@@ -91,16 +89,16 @@
       }
     }
     .sticker_item {
-      @media(max-width:576px) {
-          display: none;
+      @media (max-width: 576px) {
+        display: none;
       }
     }
   }
 
   &-products {
     &-wrap {
-      @media(max-width:1024px) {
-          display: none;
+      @media (max-width: 1024px) {
+        display: none;
       }
     }
     &-banner {
@@ -167,10 +165,12 @@
       &-img {
         display: inline-block;
         margin-right: 8px;
+        height: 12px;
+        width: 12px;
         max-width: 12px;
-        img {
-          max-height: 12px;
-        }
+        background-image: url(.././images/icons/green-cross.svg);
+        background-repeat: no-repeat;
+        background-position: center;
       }
     }
     &-slider {
@@ -226,7 +226,7 @@
         margin-left: 0;
       }
     }
-   
+
     &-pagintaion {
       margin-bottom: 45px;
       &-more {
@@ -394,11 +394,11 @@
     margin-bottom: 60px;
   }
   &-question {
-    @media(max-width:1024px) {
-        margin-bottom: 48px;
+    @media (max-width: 1024px) {
+      margin-bottom: 48px;
     }
     &-title {
-      margin-bottom: 30px;
+      margin-bottom: 26px;
       font-weight: 700;
       font-size: rem(32);
     }
@@ -450,17 +450,16 @@
   &-video {
     margin-bottom: 85px;
     &-wrap {
-      @media(max-width:1024px) {
+      @media (max-width: 1024px) {
         margin-right: -20px;
         padding-right: 12px;
       }
     }
     .row {
-      @media(max-width:1024px) {
+      @media (max-width: 1024px) {
         flex-wrap: nowrap;
         overflow-x: auto;
       }
-     
     }
     .row::-webkit-scrollbar {
       width: 0;
@@ -494,14 +493,14 @@
   }
   &-brands {
     &-header {
-      margin-bottom: 38px;
+      margin-bottom: 24px;
     }
     &-main {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(2, 1fr);
       grid-gap: 24px;
-      @media(max-width:1024px) {
+      @media (max-width: 1024px) {
         margin-right: -15px;
         padding-right: 15px;
         overflow-x: auto;
@@ -511,16 +510,19 @@
       display: inline-block;
       font-weight: 700;
       font-size: rem(32);
+      @media (max-width: 576px) {
+        font-size: rem(22);
+      }
     }
     &-btn {
       display: inline-block;
-      @media(max-width:450px) {
-          width: 100%;
+      @media (max-width: 450px) {
+        width: 100%;
       }
     }
     .feedback_link {
-      @media(max-width:450px) {
-          margin-bottom: 56px;
+      @media (max-width: 450px) {
+        margin-bottom: 56px;
       }
     }
     &-item {
@@ -545,7 +547,7 @@
   }
   &-articles {
     &-title {
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
     &-item {
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -655,8 +657,8 @@
       border-radius: 8px;
       z-index: 1;
       .main-search-form {
-        @media(max-width:1024px) {
-            display: block;
+        @media (max-width: 1024px) {
+          display: block;
         }
       }
       &-title {
@@ -676,7 +678,7 @@
       }
       &-info {
         color: rgba(0, 0, 0, 0.5);
-        font-size: rem(12);
+        font-size: rem(14);
         a {
           color: #1a66ae;
           &:hover {
@@ -689,8 +691,8 @@
         right: -4px;
         bottom: -6px;
         z-index: -1;
-        @media(max-width:680px) {
-          display:none;  
+        @media (max-width: 680px) {
+          display: none;
         }
       }
     }
@@ -712,6 +714,11 @@
     font-size: rem(32);
     font-weight: 700;
     margin-bottom: 50px;
+    @media (max-width: 576px) {
+      font-size: rem(22);
+      margin-bottom: 34px;
+      text-align: center;
+    }
     span {
       color: $colorBlue;
     }
@@ -725,6 +732,7 @@
       margin-bottom: 20px;
     }
     &-title {
+      font-family: $ffPoppins;
       font-size: rem(18);
       font-weight: 600;
       margin-bottom: 8px;
@@ -747,8 +755,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    @media(max-width:1024px) {
-        margin-bottom:32px;
+    @media (max-width: 1024px) {
+      margin-bottom: 32px;
     }
   }
   &-total {
@@ -1026,18 +1034,34 @@ input[type="range"]::-moz-range-thumb {
   z-index: 9;
 }
 
-
 // Скрытие скролл бара
 
+.catalog-stickers-wrap::-webkit-scrollbar {
+  width: 0;
+}
+.catalog-stickers-wrap {
+  -ms-overflow-style: none;
+}
+.catalog-stickers-wrap {
+  overflow: -moz-scrollbars-none;
+}
 
-.catalog-stickers-wrap::-webkit-scrollbar { width: 0; }
-.catalog-stickers-wrap { -ms-overflow-style: none; }
-.catalog-stickers-wrap { overflow: -moz-scrollbars-none; }
+.catalog-brands-main::-webkit-scrollbar {
+  width: 0;
+}
+.catalog-brands-main {
+  -ms-overflow-style: none;
+}
+.catalog-brands-main {
+  overflow: -moz-scrollbars-none;
+}
 
-.catalog-brands-main::-webkit-scrollbar { width: 0; }
-.catalog-brands-main { -ms-overflow-style: none; }
-.catalog-brands-main { overflow: -moz-scrollbars-none; }
-
-.card-interest-wrap::-webkit-scrollbar { width: 0; }
-.card-interest-wrap { -ms-overflow-style: none; }
-.card-interest-wrap { overflow: -moz-scrollbars-none; }
+.card-interest-wrap::-webkit-scrollbar {
+  width: 0;
+}
+.card-interest-wrap {
+  -ms-overflow-style: none;
+}
+.card-interest-wrap {
+  overflow: -moz-scrollbars-none;
+}
