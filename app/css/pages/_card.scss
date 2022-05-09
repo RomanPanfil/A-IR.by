@@ -66,7 +66,7 @@
       line-height: 0;
 
       &:hover {
-        opacity: .35;
+        opacity: 0.35;
       }
     }
 
@@ -79,7 +79,7 @@
       color: $colorBlue;
 
       &:hover {
-        opacity: .35;
+        opacity: 0.35;
       }
 
       img {
@@ -97,7 +97,7 @@
       color: $colorBlue;
 
       &:hover {
-        opacity: .35;
+        opacity: 0.35;
       }
 
       img {
@@ -253,13 +253,19 @@
         }
 
         .swiper-pagination-bullet {
-          width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 24px));
-          height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 2px));
+          width: var(
+            --swiper-pagination-bullet-width,
+            var(--swiper-pagination-bullet-size, 24px)
+          );
+          height: var(
+            --swiper-pagination-bullet-height,
+            var(--swiper-pagination-bullet-size, 2px)
+          );
           border-radius: 2px;
         }
 
         .swiper-pagination-bullet-active {
-          background-color: #2A4455;
+          background-color: #2a4455;
         }
       }
     }
@@ -405,13 +411,13 @@
         span {
           font-size: 16px;
 
-          @media(max-width: 360px) {
-            font-size: 14px; 
+          @media (max-width: 360px) {
+            font-size: 14px;
           }
         }
 
         .services-btn {
-          border: 1px solid #D3D3D3;
+          border: 1px solid #d3d3d3;
           color: black;
           // height: 80px;
           padding: 12px 24px 12px 24px;
@@ -502,7 +508,7 @@
               text-align: center;
               height: 56px;
               padding: 16px 0;
-              border: 1px solid #D3D3D3;
+              border: 1px solid #d3d3d3;
               border-radius: 10px;
             }
           }
@@ -564,7 +570,7 @@
 
                 img {
                   &:hover {
-                    opacity: .52;
+                    opacity: 0.52;
                   }
                 }
               }
@@ -740,7 +746,7 @@
       padding: 10px 0;
 
       &::after {
-        content: '';
+        content: "";
       }
 
       img {
@@ -769,7 +775,7 @@
       padding: 10px 0;
 
       &::after {
-        content: '';
+        content: "";
       }
 
       img {
@@ -803,11 +809,11 @@
 
       .swiper-button-disabled {
         opacity: 1;
-        background-color: #F5F5F5;
+        background-color: #f5f5f5;
         box-shadow: none;
 
         img {
-          opacity: .35;
+          opacity: 0.35;
         }
       }
     }
@@ -871,13 +877,13 @@
           font-size: 18px;
           color: rgba(0, 0, 0, 0.5);
 
-          @media(max-width: 335px) {
+          @media (max-width: 335px) {
             font-size: 12px;
           }
         }
 
         .card-item-rating-value {
-          @media(max-width: 335px) {
+          @media (max-width: 335px) {
             font-size: 12px;
           }
         }
@@ -886,7 +892,7 @@
       .card-item-rating {
         padding-top: 8px;
 
-        @media(max-width: 335px) {
+        @media (max-width: 335px) {
           padding-top: 0;
         }
       }
@@ -962,7 +968,7 @@
           font-weight: 600;
 
           &:hover {
-            opacity: .35;
+            opacity: 0.35;
           }
         }
       }
@@ -983,7 +989,6 @@
     }
   }
 }
-
 
 .card-info-media {
   .tabs {
@@ -1032,7 +1037,7 @@
     }
 
     &-items {
-      border: 1px solid #D3D3D3;
+      border: 1px solid #d3d3d3;
       border-radius: 10px;
       border-bottom: none;
 
@@ -1040,7 +1045,7 @@
         margin-bottom: 55px;
       }
 
-      .accordion:nth-last-child(-n+2) .accordion-items-title {
+      .accordion:nth-last-child(-n + 2) .accordion-items-title {
         border-radius: 0 0 10px 10px;
       }
 
@@ -1061,7 +1066,7 @@
           text-align: center;
           height: 56px;
           padding: 16px 0;
-          border-bottom: 1px solid #D3D3D3;
+          border-bottom: 1px solid #d3d3d3;
           font-weight: 600;
         }
       }
@@ -1076,7 +1081,7 @@
         &.active {
           display: block;
           padding: 24px;
-          border-bottom: 1px solid #D3D3D3;
+          border-bottom: 1px solid #d3d3d3;
         }
 
         &.tab2 {
@@ -1173,7 +1178,7 @@
               position: absolute;
               width: 5px;
               height: 8px;
-              transform: translate(-50%,-50%);
+              transform: translate(-50%, -50%);
               top: 50%;
               left: 50%;
               fill: #d3d3d3;
@@ -1298,6 +1303,8 @@
   position: relative;
   display: inline-block;
   line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
   &-wrapper {
     margin-bottom: 22px;
   }
