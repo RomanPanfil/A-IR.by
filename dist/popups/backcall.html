@@ -11,24 +11,28 @@
     Напишите Ваш номер телефона и мы прямо сейчас перезвоним!
   </div>
   <form action="" class="popup-backcall">
-    <label class="popup-label" for="inputnameName"
-      >Ваше имя <span>*</span></label
-    >
-    <input
-      type="text"
-      name="name"
-      id="name"
-      class="popup-input"
-      placeholder="Иванов Иван Иванович"
-    />
-    <label class="popup-label" for="telephone">Телефон <span>*</span></label>
-    <input
-      type="text"
-      name="telephone"
-      id="telephone"
-      class="popup-input"
-      placeholder="+375 (33) 398-18-18"
-    />
+    <div class="popup-backcall-inputs">
+      <label class="popup-label" for="inputnameName"
+        >Ваше имя <span>*</span></label
+      >
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="popup-input"
+        placeholder="Иванов Иван Иванович"
+      />
+    </div>
+    <div class="popup-backcall-inputs">
+      <label class="popup-label" for="telephone">Телефон <span>*</span></label>
+      <input
+        type="text"
+        name="telephone"
+        id="telephone"
+        class="popup-input"
+        placeholder="+375 (33) 398-18-18"
+      />
+    </div>
 
     <div class="popup-agreement">
       <div class="checkbox">
@@ -50,6 +54,12 @@
     <button type="submit" class="popup-btn">Отправить запрос</button>
   </form>
   <script>
+    var element = document.getElementById("telephone");
+    var maskOptions = {
+      placeholder: "+{000}(00)000-00-00",
+      mask: "+{000}(00)000-00-00",
+    };
+    var mask = IMask(element, maskOptions);
     $(document).ready(function () {
       $(".popup-backcall").validate({
         errorElement: "span",
@@ -65,17 +75,37 @@
           },
           name: {
             required: true,
-            lettersonly: true,
+            lettersonlyName: true,
+          },
+          number: {
+            required: true,
+            number: true,
+          },
+          person: {
+            required: true,
+          },
+        },
+        messages: {
+          email: {
+            required: "Введите данные",
+          },
+          name: {
+            required: "Введите данные",
+          },
+          telephone: {
+            required: "Введите данные",
+            minlength: "Недостаточно цифр",
+          },
+          number: {
+            required: "Введите данные",
+          },
+          person: {
+            required: "Введите данные",
           },
         },
       });
     });
-    var element = document.getElementById("telephone");
-    var maskOptions = {
-      placeholder: "+{000}(00)000-00-00",
-      mask: "+{000}(00)000-00-00",
-    };
-    var mask = IMask(element, maskOptions);
+
     jQuery.validator.addMethod(
       "telephone",
       function (value, element) {
@@ -87,11 +117,33 @@
       "Incorrect format"
     );
     jQuery.validator.addMethod(
-      "lettersonly",
+      "lettersonlyName",
       function (value, element) {
         return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
       },
-      "Incorrect format"
+      "В этом поле допустимы только буквы"
+    );
+    jQuery.validator.addMethod(
+      "email",
+      function (value, element) {
+        return (
+          this.optional(element) ||
+          /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/i.test(
+            value
+          )
+        );
+      },
+      "Введите корректный e-mail"
+    );
+    jQuery.validator.addMethod(
+      "number",
+      function (value, element) {
+        return (
+          this.optional(element) ||
+          /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+        );
+      },
+      "Ваш УНП не может состоять из букв"
     );
   </script>
 </div>

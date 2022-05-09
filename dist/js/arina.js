@@ -22,7 +22,7 @@ $(function () {
     .filter(":eq(1)")
     .click();
 
-  // if you click on a link 'перейти к описанию' then will open the tab 'описание'  
+  // if you click on a link 'перейти к описанию' then will open the tab 'описание'
   $(".tabs-target").click(function () {
     $("#tabs .tabs-nav * a[href*='#tab-1']").click();
   });
@@ -126,6 +126,5 @@ function accordionChanges(screen1024) {
     $("#tabs").appendTo($(".card-item-more-info"));
     $(".reviews.ui-btn.all").prependTo($(".card-reviews-btn"));
     $(".card-item-services").appendTo($(".card-item-specifications"));
-    $(".card-item-container-adaptive").appendTo($(".card-item-container"));
   }
 }

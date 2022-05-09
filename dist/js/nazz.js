@@ -60,7 +60,7 @@ function changes(screen768) {
           slidesPerView: 3,
           spaceBetween: 16,
         },
-        1300: {
+        1110: {
           slidesPerView: 4,
           // spaceBetween: 16,
         },
@@ -102,9 +102,24 @@ new Swiper(".product-swiper-desc-interest .product-swiper ", {
       slidesPerView: 3,
       spaceBetween: 16,
     },
-    1300: {
+    1110: {
       slidesPerView: 4,
       // spaceBetween: 16,
     },
   },
 });
+
+// accordionChangesPop(screen1023);
+
+// catalogLine.onclick = () => {
+//   catalog.classList.add("catalog-products-line");
+//   catalog.classList.remove("catalog-products-grid");
+//   console.log("line");
+//   // $(".product-price").appendTo($(".product-item"));
+// };
+// catalogGrid.onclick = () => {
+//   catalog.classList.add("catalog-products-grid");
+//   catalog.classList.remove("catalog-products-line");
+//   console.log("grid");
+//   // $(".product-price").appendTo($(".product-info"));
+// };
