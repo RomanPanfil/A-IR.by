@@ -2,6 +2,10 @@
   &-item {
     margin-bottom: 85px;
 
+    @media(max-width: 1024px) {
+      margin-bottom: 0;
+    }
+
     &-txt {
       padding: 0 0 0 24px;
     }
@@ -145,7 +149,7 @@
       @media(max-width: 1024px) {
         margin-bottom: 0;
       }
-      
+
       &-el {
         max-width: 348px;
         margin: 0px auto;
