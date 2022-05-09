@@ -41,22 +41,22 @@
                                 <img src="./images/popup-el-l.png" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://via.placeholder.com/648x648" alt="alt">
+                                <img src="https://via.placeholder.com/648x648" class="main-slider-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://via.placeholder.com/648x648/FFFFFF/000000" alt="alt">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/000000"  class="main-slider-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://via.placeholder.com/648x648/FFFFFF/008000" alt="alt">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/008000" class="main-slider-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://via.placeholder.com/648x648/008000/FF0000" alt="alt">
+                                <img src="https://via.placeholder.com/648x648/008000/FF0000" class="main-slider-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://via.placeholder.com/648x648/FFFFFF/0000FF" alt="alt">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/0000FF" class="main-slider-img" alt="alt">
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://via.placeholder.com/648x648/FFFFFF/FFFFF" alt="alt">
+                                <img src="https://via.placeholder.com/648x648/FFFFFF/FFFFF" class="main-slider-img" alt="alt">
                             </div>
                         </div>
                         <div class="swiper-pagination"></div>
@@ -73,7 +73,7 @@
                     slidesPerView: 4,
                     slideToClickedSlide: true,
                     centeredSlides: true,
-                    // loop: true,
+                    loop: false,
                     direction: 'vertical',
 
                     navigation: {
@@ -92,7 +92,7 @@
                 });
 
                 const slider2 = new Swiper('.main-slider', {
-                    loop: true,
+                    loop: false,
                     navigation: {
                         nextEl: ".main-button-next",
                         prevEl: ".main-button-prev",
@@ -105,11 +105,27 @@
 
                 $('.slider-popup-vertical-img').on('click', function (e) {
                     const index = $(this).closest('.swiper-slide').index();
-
+                    
+                    e.preventDefault();
+                    
                     slider2.slideTo(index);
+                });
+
+                $('.main-button-next').on('click', function (e) {
+                    const index = $('.main-slider-img').closest('.swiper-slide-active').index();
 
                     e.preventDefault();
-                })
+
+                    popupSliderEl.slideTo(index);
+                });
+
+                $('.main-button-prev').on('click', function (e) {
+                    const index = $('.main-slider-img').closest('.swiper-slide-active').index();
+                    
+                    e.preventDefault();
+
+                    popupSliderEl.slideTo(index);
+                });
             });
         </script>
     </div>

@@ -161,7 +161,7 @@
                     class="load-file"
                     accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi"
                   >
-                    <img src="../images/icons/file.svg" alt="alt" />
+                    <img src="./images/icons/file.svg" alt="alt" />
                     <span>Добавить фото или видео</span>
                   </label>
                   <input
@@ -173,7 +173,7 @@
                   />
                 </div>
                 <div class="form-cell-field-url">
-                  <img src="../images/icons/url-video.svg" alt="alt" />
+                  <img src="./images/icons/url-video.svg" alt="alt" />
                   <input
                     type="text"
                     id="url"
@@ -188,14 +188,13 @@
                   <div class="checkbox">
                     <input
                       type="checkbox"
-                      id="checkbox"
-                      name="checkbox"
-                      class="checkbox-input"
+                      id="customCheckbox"
+                      name="customCheckbox"
+                      class="customCheckbox"
                     />
-                    <label for="checkbox" class="checkbox-label"></label>
+                    <label for="customCheckbox"></label>
                   </div>
                   <div class="popup-agreement-txt">
-                    Нажимая кнопку «Отправить отзыв» вы соглашаетесь
                     <a href="#" class="popup-agreement-link"
                       >с политикой обработки персональных данных.</a
                     >
@@ -297,7 +296,7 @@
             url: true,
           },
 
-          checkbox: {
+          customCheckbox: {
             required: true,
           },
 
@@ -309,6 +308,14 @@
         errorPlacement: function (error, element) {
           if (element.attr("name") == "rating") {
             error.appendTo(".card-item-rating.rating-set");
+          } else {
+            error.insertAfter(element);
+          }
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "customCheckbox") {
+            error.appendTo(".form-cell-field-send");
           } else {
             error.insertAfter(element);
           }
@@ -329,8 +336,13 @@
             required: "Пожалуйста, оставьте свой комментарий",
             maxlength: "Комментарий не должен превышать 500 символов",
           },
+
           rating: {
             required: "Пожалуйста, поставьте оценку",
+          },
+
+          customCheckbox: {
+            required: "Это поле обязательно",
           },
         },
       });
@@ -369,7 +381,7 @@
 
       errFile.innerHTML =
         "Превышен максимально допустимый размер файла: 100 мб";
-      btnOpen.innerHTML = '<img src="../images/icons/btn-plus.svg" />';
+      btnOpen.innerHTML = '<img src="./images/icons/btn-plus.svg" />';
 
       input.addEventListener("change", btnUploadFile);
       input.insertAdjacentElement("afterend", allFiles);
