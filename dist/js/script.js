@@ -84,12 +84,17 @@ if (catalogPhone) {
 // Sticker hidden catalog.html
 if (document.querySelector(".sticker-hide")) {
   let stickerHideBtn = document.querySelector(".sticker-hide"),
-    stickerHiden = document.querySelector(".sticker-hidden"),
+    stickerHiden = document.querySelectorAll(".sticker-hidden"),
     catalogText = document.querySelector(".catalog-stickers-btn-text"),
     imgChange = document.querySelector(".img-change");
 
-  stickerHideBtn.onclick = () => {
-    stickerHiden.classList.toggle("sticker-hidden-open");
+    // console.log(stickerHiden)
+
+    stickerHideBtn.onclick = () => {
+      stickerHiden.forEach((e) => {
+        e.classList.toggle("sticker-hidden-open");
+      })
+    // stickerHiden.
 
     if (catalogText.innerHTML === "Скрыть") {
       catalogText.innerHTML = "Ещё подборки";
@@ -104,17 +109,23 @@ if (document.querySelector(".sticker-hide")) {
 // Input range
 
 // checkbox hide on click
+
 if (document.querySelector(".catalog-products-field-btn")) {
   let checkboxBtn = document.querySelector(".catalog-products-field-btn"),
     catalogbtnText = document.querySelector(".catalog-products-field-text"),
     catalogbtnImg = document.querySelector(".catalog-products-field-img img"),
     checkboxHiden = document.querySelectorAll(".checkbox-hide");
+ 
 
   checkboxBtn.onclick = () => {
     if (catalogbtnText.innerHTML === "Показать еще 4") {
+      
       catalogbtnText.innerHTML = "Скрыть";
       catalogbtnImg.src = "./images/icons/red-cross.svg";
+     
     } else {
+  
+      
       catalogbtnText.innerHTML = "Показать еще 4";
       catalogbtnImg.src = "./images/icons/green-cross.svg";
     }

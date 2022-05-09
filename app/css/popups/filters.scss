@@ -1,0 +1,41 @@
+.popup-filters {
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    margin: initial;
+    padding: 0px 45px;
+    overflow: hidden;
+    max-width: 475px;
+ 
+    &-title {
+        font-size: rem(28);
+        font-weight: 700;
+        margin: 0 -250px;
+        padding: 16px 250px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #D3D3D3;
+    }
+    .mfp-close {
+        font-size: 0;
+        top: 24px;
+        right: 24px;
+        height: 24px;
+        width: 24px;
+        background-image: url(.././images/icons/Close.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+   
+}
+
+.mfp-wrap {
+    position: fixed !important;
+    top: 0 !important;
+    height: 100% !important;
+    overflow: hidden auto !important;
+}
+
+.mfp-bg {
+    position: fixed !important;
+    top: 0 !important;
+}
