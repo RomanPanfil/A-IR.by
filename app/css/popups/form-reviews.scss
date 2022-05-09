@@ -346,11 +346,6 @@
           .rating-set {
             position: relative;
             align-items: center;
-            margin-top: 12px;
-
-            @media(max-width: 680px) {
-              margin-top: 0;
-            }
 
             .card-item-rating-body {
               font-size: rem(50);
