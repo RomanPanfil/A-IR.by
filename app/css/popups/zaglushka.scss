@@ -1,0 +1,17 @@
+.popup {
+    &-img {
+        text-align: center;
+    }
+}
+.zaglushka-phone {
+     .mfp-close {
+        font-size: 0;
+        top: 24px;
+        right: 24px;
+        height: 24px;
+        width: 24px;
+        background-image: url(.././images/icons/Close.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

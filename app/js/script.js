@@ -17,6 +17,10 @@ if (matchMedia) {
   var screen768 = window.matchMedia("(max-width:768px)");
   screen768.addListener(changes768);
   changes768(screen768);
+
+  var screen450 = window.matchMedia("(max-width:450px)");
+  screen450.addListener(changes450);
+  changes450(screen450);
 }
 
 function changes(screen1170) {
@@ -27,7 +31,6 @@ function changes(screen1170) {
     $(".footer-top-resource").appendTo($(".footer-bootom-media-links"));
     $(".footer-bottom-info").appendTo($(".footer-bootom-media-links"));
     $(".footer-bottom-reit").appendTo($(".footer-bottom-socials-wrapper"));
-    // $('.col-f-phones').prependTo($('.footer__top > .row'))
   } else {
     $(".footer-bottom-links").appendTo($(".footer-bootom-media-links"));
     $(".footer-top-services").appendTo($(".footer-top-services-wrapper"));
@@ -35,9 +38,17 @@ function changes(screen1170) {
     $(".footer-top-resource").appendTo($(".footer-top-resource-container"));
     $(".footer-bottom-info").appendTo($(".footer-bottom-info-wrapper"));
     $(".footer-bottom-reit").appendTo($(".footer-bottom-reit-wrapper"));
-    // $(".footer__top .col-f-phones").insertAfter(
-    //   $(".footer__bottom .col-f-wide")
-    // );
+  }
+}
+function changes450(screen450) {
+  if (screen450.matches) {
+    $(".catalog_link").appendTo($(".catalog-articles"));
+    $(".video_link").appendTo($(".catalog-video"));
+    $(".feedback_link").appendTo($(".catalog-brands"));
+  } else {
+    $(".catalog_link").appendTo($(".catalog-articles-title"));
+    $(".video_link").appendTo($(".video_wrap"));
+    $(".feedback_link").appendTo($(".feedback-brands-header"));
   }
 }
 function changes768(screen768) {
@@ -84,12 +95,17 @@ if (catalogPhone) {
 // Sticker hidden catalog.html
 if (document.querySelector(".sticker-hide")) {
   let stickerHideBtn = document.querySelector(".sticker-hide"),
-    stickerHiden = document.querySelector(".sticker-hidden"),
+    stickerHiden = document.querySelectorAll(".sticker-hidden"),
     catalogText = document.querySelector(".catalog-stickers-btn-text"),
     imgChange = document.querySelector(".img-change");
 
+  // console.log(stickerHiden)
+
   stickerHideBtn.onclick = () => {
-    stickerHiden.classList.toggle("sticker-hidden-open");
+    stickerHiden.forEach((e) => {
+      e.classList.toggle("sticker-hidden-open");
+    });
+    // stickerHiden.
 
     if (catalogText.innerHTML === "Скрыть") {
       catalogText.innerHTML = "Ещё подборки";
@@ -104,24 +120,34 @@ if (document.querySelector(".sticker-hide")) {
 // Input range
 
 // checkbox hide on click
+
 if (document.querySelector(".catalog-products-field-btn")) {
-  let checkboxBtn = document.querySelector(".catalog-products-field-btn"),
-    catalogbtnText = document.querySelector(".catalog-products-field-text"),
+  let checkboxBtn = document.querySelectorAll(".catalog-products-field-btn"),
+    catalogbtnText = document.querySelectorAll(".catalog-products-field-text"),
     catalogbtnImg = document.querySelector(".catalog-products-field-img img"),
     checkboxHiden = document.querySelectorAll(".checkbox-hide");
 
-  checkboxBtn.onclick = () => {
-    if (catalogbtnText.innerHTML === "Показать еще 4") {
-      catalogbtnText.innerHTML = "Скрыть";
-      catalogbtnImg.src = "./images/icons/red-cross.svg";
-    } else {
-      catalogbtnText.innerHTML = "Показать еще 4";
-      catalogbtnImg.src = "./images/icons/green-cross.svg";
+  checkboxBtn.forEach((element) => {
+    element.addEventListener("click", openFunc);
+    function openFunc() {
+      let classListAdd = element.classList;
+      element.classList.toggle("checkboxBtn_active");
+      if (classListAdd.value.split(" ").indexOf("checkboxBtn_active") < 0) {
+        element.children[1].innerHTML = "Показать ещё";
+        element.children[0].style.backgroundImage =
+          "url(././images/icons/green-cross.svg)";
+      } else {
+        element.children[1].innerHTML = "Скрыть";
+        element.children[0].style.backgroundImage =
+          "url(././images/icons/red-cross.svg)";
+      }
+      const parent = element.closest(".catalog-products-field-container");
+      let checkboxes = parent.querySelectorAll(".checkbox-hide");
+      checkboxes.forEach((el) => {
+        el.classList.toggle("checkbox-on");
+      });
     }
-    checkboxHiden.forEach((el) => {
-      el.classList.toggle("checkbox-on");
-    });
-  };
+  });
 }
 
 // Validation for catalog email input
@@ -236,14 +262,12 @@ if (document.querySelector(".sticker-info-hide")) {
   });
 }
 
-
-if(document.getElementById('card-breackpoint')) {
+if (document.getElementById("card-breackpoint")) {
   $(document).ready(function () {
     let cardBreackpoint = $("#card-breackpoint").offset().top;
     let cardSticky = $(".card-sticky");
     let headerCard = $(".header");
-  
-  
+
     window.addEventListener("resize", function () {
       cardBreackpoint = $("#card-breackpoint").offset().top;
     });
@@ -251,18 +275,11 @@ if(document.getElementById('card-breackpoint')) {
       if (window.scrollY < cardBreackpoint) {
         headerCard.removeClass("headerCard_fixed");
         cardSticky.removeClass("card-breackpoint-open");
-        
-      } else {    
+      } else {
         headerCard.addClass("headerCard_fixed");
-        
+
         cardSticky.addClass("card-breackpoint-open");
       }
     });
   });
-  
 }
-
-
-
-
-
