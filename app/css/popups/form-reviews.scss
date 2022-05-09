@@ -12,6 +12,21 @@
     }
   }
 
+  .popup-agreement-txt {
+    @media(max-width: 1024px) {
+      font-size: 14px;
+    }
+
+    &::before {
+      content: 'Нажимая кнопку «Отправить отзыв» вы соглашаетесь';
+    }
+    @media(max-width: 1024px) {
+      &::before {
+        content: 'Я соглашаюсь с';
+      }
+    }
+  }
+
   .form-reviews {
     @media (max-width: 780px) {
       position: fixed;
@@ -43,7 +58,7 @@
       border-bottom: 1px solid #d3d3d3;
   
       @media (max-width: 680px) {
-        padding: 34px 15px;
+        padding: 15px;
       }
   
       &-title {
@@ -76,7 +91,7 @@
       padding: 34px 48px;
   
       @media (max-width: 680px) {
-        padding: 34px 15px;
+        padding: 24px 15px;
       }
   
       .form-cell {
@@ -86,6 +101,7 @@
   
         @media (max-width: 680px) {
           flex-direction: column;
+          margin-bottom: 0
         }
   
         label {
@@ -97,7 +113,45 @@
             color: #bc0000;
           }
         }
-  
+
+        .url {
+          margin-top: 0;
+        }
+
+        .customCheckbox {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+
+        .customCheckbox+label {
+          display: inline-flex;
+          align-items: center;
+          user-select: none;
+          margin-right: 8px;
+        }
+
+        .customCheckbox+label::before {
+          content: '';
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          flex-shrink: 0;
+          flex-grow: 0;
+          border: 1px solid #adb5bd;
+          border-radius: 0.25em;
+          margin-right: 0.5em;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 50% 50%;
+        }
+
+        .customCheckbox:checked+label::before {
+          border-color: #071C28;
+          background-color: #071C28;
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+        }
+          
         input {
           width: 288px;
           height: 40px;
@@ -120,8 +174,12 @@
           }
         }
 
+        .card-item-rating-item {
+          margin-bottom: 0;
+        }
+
         .btn-submit {
-          padding: 14px 30px;
+          padding: 9px 30px;
           background-color: #2a4455;
           color: #fff;
           font-weight: 700;
@@ -135,6 +193,13 @@
         }
   
         &-info {
+          @media(max-width:680px) {
+            margin-bottom: 24px;
+
+            input {
+              margin-bottom: 0;
+            }
+          }
           span.error {
             color: red;
             font-size: 0.75rem;
@@ -171,6 +236,13 @@
           
             @media (max-width: 680px) {
               flex-direction: column;
+               input {
+                 margin-bottom: 19px;
+
+                 &:last-child {
+                   margin-bottom: 0;
+                 }
+               }
             }
           
             .plus {
@@ -243,12 +315,17 @@
           }
 
           &-send {
+            position: relative;
             display: flex;
             flex-direction: row;
             margin-right: 40px;
 
+            @media(max-width: 1024px) {
+              margin-bottom: 24px;
+            }
+
             .popup-agreement-txt {
-              width: 330px;
+              width: 320px;
               color: rgba(0, 0, 0, 0.5);
             }
             
@@ -266,14 +343,9 @@
             display: block;
           }
   
-          @media (max-width: 680px) {
-            margin-bottom: 25px;
-          }
-  
           .rating-set {
             position: relative;
             align-items: center;
-            margin-top: 12px;
 
             .card-item-rating-body {
               font-size: rem(50);
@@ -405,6 +477,10 @@
   }
 }
 
+.popup-second-block {
+  width: 100%;
+}
+
 .popup-second-bg {
   position: fixed;
   top: 0;
@@ -427,15 +503,49 @@
   .ui-btn {
     width: 48%;
   }
+
+  @media(max-width: 576px) {
+    padding: 34px 15px;
+    align-items: center;
+  }
 }
 
 .popup-second-btn-exit {
   background-color: #2A4455;
   color: #fff;
   margin-right: 15px;
+
+  @media(max-width: 576px) {
+    margin-bottom: 8px;
+
+    &.ui-btn {
+      width: 100%;
+    }
+  }
+}
+
+.popup-second-btn-cancel {
+  @media(max-width: 576px) {      
+    &.ui-btn {
+      width: 100%;
+    }
+  }
 }
 
 .popup-second-btn-cancel {
   background-color: #F5F5F5;
   color: #000;
+}
+
+#customCheckbox-error {
+  position: absolute;
+  font-size: 12px;
+  top: 35px;
+  left: 24px;
+  width: 150px;
+  color: red;
+
+  @media(max-width: 327px) {
+    top: 50px;
+  }
 }
