@@ -1,31 +1,4 @@
-// const swiper = new Swiper(".product-swiper", {
-//   // Optional parameters
-//   loop: true,
-//   slidesPerView: 4,
-//   // Navigation arrows
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
-// });
-// let mql = window.matchMedia("(min-width: 992px)");
 
-// window.addEventListener("resize", () => {
-//   if (mql.matches) {
-//     const swiper = new Swiper(".product-swiper", {
-//       // Optional parameters
-//       loop: true,
-//       slidesPerView: 4,
-//       // Navigation arrows
-//       navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//       },
-//     });
-//   } else {
-//     swiper.destroy();
-//   }
-// });
 
 const slider1 = new Swiper(".el", {
   slidesPerView: 4,
@@ -98,3 +71,46 @@ const slider3 = new Swiper('.reviews', {
     },
   }
 });
+
+// Slider for catalog.html -> article
+
+
+
+
+
+// destroy .slider_article
+
+const breakpoint = window.matchMedia( '(max-width:1024px)' );
+let sliderArticle;
+const breakpointChecker = function() {
+
+  if ( breakpoint.matches === true ) {
+    
+     if ( sliderArticle !== undefined ) sliderArticle.destroy( true, true );
+    
+     return;
+
+  } else if ( breakpoint.matches === false ) {
+     
+     return enableSwiper();
+  }
+};
+
+const enableSwiper = function() {
+  const sliderArticle = new Swiper(".slider_article", {
+    slidesPerView: 1,
+    // spaceBetween: 10,
+
+  
+  
+    navigation: {
+      nextEl: ".article-button-next",
+      prevEl: ".article-button-prev",
+    },
+
+  });
+};
+
+breakpoint.addListener(breakpointChecker);
+// kickstart
+breakpointChecker();

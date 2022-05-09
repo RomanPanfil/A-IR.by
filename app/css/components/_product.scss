@@ -283,3 +283,16 @@
 .product-price {
   display: block;
 }
+.product-item-btn-span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.product-height {
+  &:hover {
+    height: 559px;
+  }
+  .product-item-description {
+    top: 88%;
+  }
+}

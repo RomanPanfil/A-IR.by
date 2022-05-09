@@ -887,5 +887,20 @@
         });
       }
     }
+    if (matchMedia) {
+      let removeHover23 = window.matchMedia("(max-width:500px)");
+      removeHover23.addListener(removeHover);
+      removeHover(removeHover23);
+    }
+
+    function removeHover(removeHover23) {
+      if (removeHover23.matches) {
+        $(".product-item").addClass("product-open");
+        $(".product-item").addClass("product-height");
+      } else {
+        $(".product-item").removeClass("product-open");
+        $(".product-item").removeClass("product-height");
+      }
+    }
   </script>
 </div>

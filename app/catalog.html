@@ -949,12 +949,20 @@
             </div>
             <div class="catalog-products-bar">
               <div class="catalog-products-filter">
-                <select name="" id="">
+                <span class="filter-adaptive-first"></span>
+                <select name="" id="" class="catalog-products-filter-popular">
                   <option value="Сначала популярные">Сначала популярные</option>
                   <option value="Новинки">Новинки</option>
                 </select>
+                <div class="catalog-products-filter-filters">
+                  <img
+                    src="./images/icons/catalog-product-filters.svg"
+                    alt="alt"
+                  />Фильтры
+                </div>
               </div>
               <div class="catalog-products-filter catalog-img-opacity">
+                <span class="filter-adaptive"></span>
                 <div class="catalog-products-filter-txt">Выводить по:</div>
                 <select name="" id="" class="catalog-products-filter-section">
                   <option value="21">21</option>
@@ -973,32 +981,7 @@
                 />
               </div>
             </div>
-            <div class="catalog-products-bar-mob">
-              <div class="catalog-products-filter">
-                <div class="catalog-products-filter-filters">
-                  <img
-                    src="./images/icons/catalog-product-filters.svg"
-                    alt="alt"
-                  />Фильтры
-                </div>
-              </div>
-              <div class="catalog-products-filter catalog-img-opacity">
-                <select name="" id="">
-                  <option value="Сначала популярные">Сначала популярные</option>
-                  <option value="Новинки">Новинки</option>
-                </select>
-                <img
-                  src="./images/icons/catalog-products-lines.svg"
-                  alt="alt"
-                  id="catalogLineMob"
-                />
-                <img
-                  src="./images/icons/catalog-products-sq.svg"
-                  alt="alt"
-                  id="catalogGridMob"
-                />
-              </div>
-            </div>
+
             <div class="row catalog-products-grid" id="catalog">
               <div class="col-12 col-sm-6 col-lg-4">
                 <!--#include file="inc-product.html"-->

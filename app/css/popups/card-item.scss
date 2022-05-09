@@ -239,3 +239,28 @@
     margin-bottom: 24px;
   }
 }
+
+.card-item-features::-webkit-scrollbar {
+  width: 0;
+}
+/* ie 10+ */
+
+.card-item-features {
+  -ms-overflow-style: none;
+}
+/* фф (свойство больше не работает, других способов тоже нет)*/
+
+.card-item-features {
+  overflow: -moz-scrollbars-none;
+}
+.popup-card-optional::-webkit-scrollbar {
+  width: 0;
+}
+/* ie 10+ */
+.popup-card-optional {
+  -ms-overflow-style: none;
+}
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.popup-card-optional {
+  overflow: -moz-scrollbars-none;
+}
