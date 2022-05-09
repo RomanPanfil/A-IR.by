@@ -60,7 +60,7 @@ function changes(screen768) {
           slidesPerView: 3,
           spaceBetween: 16,
         },
-        1300: {
+        1110: {
           slidesPerView: 4,
           // spaceBetween: 16,
         },
@@ -102,37 +102,24 @@ new Swiper(".product-swiper-desc-interest .product-swiper ", {
       slidesPerView: 3,
       spaceBetween: 16,
     },
-    1300: {
+    1110: {
       slidesPerView: 4,
       // spaceBetween: 16,
     },
   },
 });
 
-if (matchMedia) {
-  var screen1023 = window.matchMedia("(max-width:1023px)");
-  screen1023.addListener(accordionChangesPop);
-  accordionChangesPop(screen1023);
-}
-function accordionChangesPop(screen1023) {
-  if (screen1023.matches) {
-    $(".popup-card-wrapper-adaptive").appendTo($(".popup-card"));
-    $(".product-item-adaptive").appendTo($(".product-info-adaptive"));
-  } else {
-    $(".popup-card-wrapper-adaptive").appendTo($(".qwe"));
-  }
-}
 // accordionChangesPop(screen1023);
 
-catalogLine.onclick = () => {
-  catalog.classList.add("catalog-products-line");
-  catalog.classList.remove("catalog-products-grid");
-  console.log("line");
-  // $(".product-price").appendTo($(".product-item"));
-};
-catalogGrid.onclick = () => {
-  catalog.classList.add("catalog-products-grid");
-  catalog.classList.remove("catalog-products-line");
-  console.log("grid");
-  // $(".product-price").appendTo($(".product-info"));
-};
+// catalogLine.onclick = () => {
+//   catalog.classList.add("catalog-products-line");
+//   catalog.classList.remove("catalog-products-grid");
+//   console.log("line");
+//   // $(".product-price").appendTo($(".product-item"));
+// };
+// catalogGrid.onclick = () => {
+//   catalog.classList.add("catalog-products-grid");
+//   catalog.classList.remove("catalog-products-line");
+//   console.log("grid");
+//   // $(".product-price").appendTo($(".product-info"));
+// };

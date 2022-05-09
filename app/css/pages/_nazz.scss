@@ -191,7 +191,7 @@
         width: 100%;
         max-width: 82px;
         height: 32px;
-        line-height: 30px;
+        line-height: 28px;
         font-size: rem(14);
         font-weight: 600;
         text-align: center;
@@ -580,3 +580,10 @@
 // .features-label:checked ~ input {
 //   border: 2px solid black;
 // }
+.product-swiper-desc-interest {
+  @media (max-width: 1024px) {
+    .swiper-wrapper {
+      transform: translate3d(0px, 0px, 0px) !important;
+    }
+  }
+}
