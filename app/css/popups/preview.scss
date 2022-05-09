@@ -70,6 +70,7 @@
       .swiper-slide {
         img {
           border: 2px solid #fff;
+          max-width: 112px;
         }
 
         &-active {
@@ -153,6 +154,12 @@
 
   @media (max-width: 650px) {
     padding: 0;
+  }
+
+  .swiper-slide {
+    img {
+      max-width: 648px;
+    }
   }
 }
 

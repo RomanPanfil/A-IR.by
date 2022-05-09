@@ -14,6 +14,7 @@
         font-size: rem(40);
         color: #000000;
         margin-bottom: 7px;
+        line-height: 1.36;
 
         @media (max-width: 1024px) {
           font-size: 28px;
@@ -402,6 +403,11 @@
         justify-content: space-between;
         gap: 8px;
 
+        svg {
+          width: 32px;
+          height: 32px;
+        }
+
         span {
           font-size: 16px;
 
@@ -424,6 +430,19 @@
           &:hover {
             border: 1px solid #fff;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+
+            svg {
+              transition: all 0.5s ease-out;
+              fill: #2A4455;
+            }
+
+            span {
+              color: #2A4455;
+            }
+          }
+
+          svg {
+            fill: #D3D3D3;
           }
 
           @media (max-width: 482px) {
@@ -442,6 +461,7 @@
     &-more-info {
       border: 1px solid #d3d3d3;
       border-radius: 0px 0px 8px 8px;
+      overflow: hidden;
 
       @media (max-width: 1024px) {
         display: none;
@@ -733,7 +753,7 @@
       top: 46%;
       right: 20px;
       /* padding: 10px; */
-      text-align: baseline;
+      text-align: center;
       padding: 10px 0;
 
       &::after {
@@ -936,7 +956,7 @@
       &-txt {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
         margin-bottom: 5px;
       }
 

@@ -73,7 +73,7 @@
                     slidesPerView: 4,
                     slideToClickedSlide: true,
                     centeredSlides: true,
-                    // loop: true,
+                    loop: false,
                     direction: 'vertical',
 
                     navigation: {
@@ -91,8 +91,9 @@
                     }
                 });
 
-                const slider2 = new Swiper('.main-slider', {
-                    // loop: true,
+                const test = new Swiper('.main-slider', {
+                    loop: false,
+                    slidesPerView: 1,
                     navigation: {
                         nextEl: ".main-button-next",
                         prevEl: ".main-button-prev",
@@ -103,13 +104,15 @@
                     },
                 });
 
-                $('.slider-popup-vertical-img').on('click', function (e) {
-                    const index = $(this).closest('.swiper-slide').index();
+                // $('.slider-popup-vertical-img').on('click', function (e) {
+                //     e.preventDefault();
 
-                    slider2.slideTo(index);
+                //     const index = $(this).closest('.swiper-slide').index();
 
-                    e.preventDefault();
-                })
+                //     console.log(index)
+
+                //     test.slideTo(6);
+                // })
             });
         </script>
     </div>
