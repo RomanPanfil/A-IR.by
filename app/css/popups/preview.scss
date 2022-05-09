@@ -32,7 +32,7 @@
   }
 
   .popup-preview-slider-vertic {
-    width: 25%;
+    width: 19%;
     height: 100%;
 
     @media (max-width: 1024px) {
@@ -56,12 +56,12 @@
   .swiper {
     margin: 0;
 
-    &-wrapper {
-      justify-content: center
-    }
-
     &.vertical-slider {
       height: 700px;
+
+      .swiper-wrapper {
+        justify-content: center;
+      }
 
       @media (max-width: 992px) {
         height: 280px;
@@ -70,7 +70,6 @@
       .swiper-slide {
         img {
           border: 2px solid #fff;
-          max-width: 112px;
         }
 
         &-active {
@@ -155,12 +154,6 @@
   @media (max-width: 650px) {
     padding: 0;
   }
-
-  .swiper-slide {
-    img {
-      max-width: 648px;
-    }
-  }
 }
 
 .main-button-next {
@@ -203,4 +196,8 @@
   @media (max-width: 650px) {
     display: none;
   }
+}
+
+.swiper-vertical>.swiper-wrapper {
+  justify-content: center;
 }

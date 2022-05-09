@@ -58,7 +58,7 @@
       border-bottom: 1px solid #d3d3d3;
   
       @media (max-width: 680px) {
-        padding: 34px 15px;
+        padding: 15px;
       }
   
       &-title {
@@ -101,6 +101,7 @@
   
         @media (max-width: 680px) {
           flex-direction: column;
+          margin-bottom: 0
         }
   
         label {
@@ -236,7 +237,7 @@
             @media (max-width: 680px) {
               flex-direction: column;
                input {
-                 margin-bottom: 24px;
+                 margin-bottom: 19px;
 
                  &:last-child {
                    margin-bottom: 0;
@@ -342,14 +343,14 @@
             display: block;
           }
   
-          @media (max-width: 680px) {
-            margin-bottom: 25px;
-          }
-  
           .rating-set {
             position: relative;
             align-items: center;
             margin-top: 12px;
+
+            @media(max-width: 680px) {
+              margin-top: 0;
+            }
 
             .card-item-rating-body {
               font-size: rem(50);

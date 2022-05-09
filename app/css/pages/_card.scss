@@ -42,7 +42,7 @@
       &-links {
         display: flex;
         align-content: center;
-        align-items: flex-start;
+        align-items: center;
 
         @media (max-width: 768px) {
           justify-content: space-between;
@@ -110,6 +110,7 @@
 
     &-controller {
       display: flex;
+      align-items: flex-end;
 
       @media (max-width: 385px) {
         margin-top: 10px;
