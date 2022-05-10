@@ -100,6 +100,20 @@
     @media (max-width: 576px) {
       margin-bottom: 40px;
     }
+    &-title {
+      margin-bottom: 22px;
+      font-size: rem(32);
+      font-weight: 700;
+      @media (max-width: 576px) {
+        font-size: rem(28);
+      }
+    }
+    &-stickers {
+      .ui-sticker {
+        background-color: #f5f5f5;
+        border: 1px solid #ffffff00;
+      }
+    }
     &-wrap {
       @media (max-width: 1024px) {
         display: none;
