@@ -156,17 +156,12 @@
               </div>
               <div class="form-cell">
                 <div class="form-cell-field-load">
-<<<<<<< HEAD
                   <label
                     for="file"
                     class="load-file"
                     accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi"
                   >
-                    <img src="../images/icons/file.svg" alt="alt" />
-=======
-                  <label for="file" class="load-file" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi">
-                    <img src="./images/icons/file.svg" alt="alt">
->>>>>>> d02dc9e1a777845d6e96576f54dba9e8ecef6d71
+                    <img src="./images/icons/file.svg" alt="alt" />
                     <span>Добавить фото или видео</span>
                   </label>
                   <input
@@ -178,8 +173,7 @@
                   />
                 </div>
                 <div class="form-cell-field-url">
-<<<<<<< HEAD
-                  <img src="../images/icons/url-video.svg" alt="alt" />
+                  <img src="./images/icons/url-video.svg" alt="alt" />
                   <input
                     type="text"
                     id="url"
@@ -187,36 +181,23 @@
                     class="url"
                     placeholder="Добавить URL на видео"
                   />
-=======
-                  <img src="./images/icons/url-video.svg" alt="alt">
-                  <input type="text" id="url" name="url" class="url" placeholder="Добавить URL на видео">
->>>>>>> d02dc9e1a777845d6e96576f54dba9e8ecef6d71
                 </div>
               </div>
               <div class="form-cell">
                 <div class="form-cell-field-send">
                   <div class="checkbox">
-<<<<<<< HEAD
                     <input
                       type="checkbox"
-                      id="checkbox"
-                      name="checkbox"
-                      class="checkbox-input"
+                      id="customCheckbox"
+                      name="customCheckbox"
+                      class="customCheckbox"
                     />
-                    <label for="checkbox" class="checkbox-label"></label>
-                  </div>
-                  <div class="popup-agreement-txt">
-                    Нажимая кнопку «Отправить отзыв» вы соглашаетесь
-                    <a href="#" class="popup-agreement-link"
-                      >с политикой обработки персональных данных.</a
-                    >
-=======
-                    <input type="checkbox" id="customCheckbox" name="customCheckbox" class="customCheckbox">
                     <label for="customCheckbox"></label>
                   </div>
                   <div class="popup-agreement-txt">
-                    <a href="#" class="popup-agreement-link">с политикой обработки персональных данных.</a>
->>>>>>> d02dc9e1a777845d6e96576f54dba9e8ecef6d71
+                    <a href="#" class="popup-agreement-link"
+                      >с политикой обработки персональных данных.</a
+                    >
                   </div>
                 </div>
                 <input
@@ -359,15 +340,11 @@
           rating: {
             required: "Пожалуйста, поставьте оценку",
           },
-<<<<<<< HEAD
-        },
-=======
 
           customCheckbox: {
             required: "Это поле обязательно",
           },
-        }
->>>>>>> d02dc9e1a777845d6e96576f54dba9e8ecef6d71
+        },
       });
 
       jQuery.validator.addMethod(
@@ -402,14 +379,9 @@
       allFiles.classList.add("all-files");
       btnOpen.classList.add("open-files");
 
-<<<<<<< HEAD
       errFile.innerHTML =
         "Превышен максимально допустимый размер файла: 100 мб";
-      btnOpen.innerHTML = '<img src="../images/icons/btn-plus.svg" />';
-=======
-      errFile.innerHTML = 'Превышен максимально допустимый размер файла: 100 мб';
       btnOpen.innerHTML = '<img src="./images/icons/btn-plus.svg" />';
->>>>>>> d02dc9e1a777845d6e96576f54dba9e8ecef6d71
 
       input.addEventListener("change", btnUploadFile);
       input.insertAdjacentElement("afterend", allFiles);
