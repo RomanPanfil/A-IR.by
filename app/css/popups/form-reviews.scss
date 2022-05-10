@@ -1,3 +1,11 @@
+.popup-preview {
+  position: relative;
+  max-width: 1400px;
+  margin: 0px auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .popup-form-reviews {
   position: relative;
   margin: 20px auto;
@@ -548,4 +556,11 @@
   @media(max-width: 327px) {
     top: 50px;
   }
+}
+
+.mfp-close-btn-in .mfp-close {
+  font-size: 35px;
+  color: #848484;
+  right: 112px;
+  top: 32px;
 }
