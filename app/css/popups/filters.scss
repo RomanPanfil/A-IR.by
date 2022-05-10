@@ -1,64 +1,63 @@
 .popup-filters {
-    left: 0;
-    top: 0;
-    border-radius: 0;
-    margin: initial;
-    padding: 0px 45px;
-    overflow: hidden;
-    max-width: 475px;
-    @media(max-width:500px) {
-        padding: 0px 20px;
-    }
-    &-title {
-        font-size: rem(28);
-        font-weight: 700;
-        margin: 0 -250px;
-        padding: 16px 250px;
-        margin-bottom: 30px;
-        border-bottom: 1px solid #D3D3D3;
-    }
-    .mfp-close {
-        font-size: 0;
-        top: 24px;
-        right: 24px;
-        height: 24px;
-        width: 24px;
-        background-image: url(.././images/icons/Close.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-    .calculator-btn-wrapper {
-        margin-left: -45px;
-        .calculator-btn {
-            flex: 0 0 402px;
-            max-width: 402px;
-            border-top-left-radius: 0px;
-            border-bottom-left-radius: 0px;
-            padding: 0px 20px;
-        }
-        .calculator-reload {
-            flex: 0 0 75px;
-            max-width: 75px;
-            border-top-right-radius: 0px;
-            border-bottom-right-radius: 0px;
-        }
-    }
-   
+  left: 0;
+  top: 0;
+  border-radius: 0;
+  margin: initial;
+  padding: 0px 45px;
+  overflow: hidden;
+  max-width: 475px;
+  @media (max-width: 500px) {
+    padding: 0px 20px;
+  }
+  &-title {
+    font-size: rem(28);
+    font-weight: 700;
+    margin: 0 -250px;
+    padding: 16px 250px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d3d3d3;
+  }
+  .mfp-close {
+    font-size: 0;
+    top: 24px;
+    right: 24px;
+    height: 24px;
+    width: 24px;
+    background-image: url(.././images/icons/Close.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
-// @media(max-width:1024px) {
-//     .mfp-inline-holder .mfp-content, .mfp-ajax-holder .mfp-content {
-//         width: initial !important;
-//     }
-// }
+.popup-wrap {
+  max-width: 475px;
+  position: relative;
+  .calculator-btn-wrapper {
+    max-width: 475px;
+    .calculator-btn {
+      flex: 0 0 84.7%;
+      max-width: 84.7%;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      padding: 0px 20px;
+    }
+    .calculator-reload {
+      flex: 0 0 15.3%;
+      max-width: 15.3%;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      text-overflow: initial;
+    }
+  }
+}
 
 .mfp-wrap {
-    position: fixed !important;
-    top: 0 !important;
-    height: 100% !important;
-    overflow: hidden auto !important;
+  position: fixed !important;
+  top: 0 !important;
+  height: 100% !important;
+  overflow: hidden auto !important;
 }
 
 .mfp-bg {
-    position: fixed !important;
-    top: 0 !important;
+  position: fixed !important;
+  top: 0 !important;
 }
