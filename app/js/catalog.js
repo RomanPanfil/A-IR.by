@@ -63,7 +63,7 @@ function accordionChangesPop(screen1023) {
 }
 
 if (matchMedia) {
-  let removeHover23 = window.matchMedia("(max-width:1023px)");
+  let removeHover23 = window.matchMedia("(max-width:1024px)");
   removeHover23.addListener(removeHover);
   removeHover(removeHover23);
 }
