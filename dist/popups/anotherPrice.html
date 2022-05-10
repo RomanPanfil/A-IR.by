@@ -63,11 +63,11 @@
       <div class="checkbox">
         <input
           type="checkbox"
-          id="chheckbox"
-          name="chheckbox"
+          id="checkbox"
+          name="checkbox"
           class="checkbox-input"
         />
-        <label for="chheckbox" class="checkbox-label"></label>
+        <label for="checkbox" class="checkbox-label"></label>
       </div>
       <div class="popup-agreement-txt">
         Нажимая кнопку «Отправить запрос» вы соглашаетесь
@@ -101,6 +101,9 @@
             number: true,
           },
           person: {
+            required: true,
+          },
+          checkbox: {
             required: true,
           },
         },
