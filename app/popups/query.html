@@ -11,48 +11,62 @@
     Заполните форму быстрого заказа, наши менеджеры скоро свяжутся с вами!
   </div>
   <form action="" class="popup-query">
-    <label class="popup-label" for="name">Ваше имя <span>*</span></label>
-    <input
-      type="text"
-      name="name"
-      id="name"
-      class="popup-input"
-      placeholder="Иванов Иван Иванович"
-    />
-    <label class="popup-label" for="telephone">Телефон <span>*</span></label>
-    <input
-      type="text"
-      name="telephone"
-      id="telephone"
-      class="popup-input"
-      placeholder="+"
-    />
-    <label class="popup-label" for="email">Email <span>*</span></label>
-    <input
-      type="text"
-      name="email"
-      id="email"
-      class="popup-input"
-      placeholder="123@gmail.com"
-    />
-    <label class="popup-label" for="person"
-      >Наименование юр. лица <span>*</span></label
-    >
-    <input
-      type="text"
-      name="person"
-      id="person"
-      class="popup-input"
-      placeholder="Наименование юр. лица"
-    />
-    <label class="popup-label" for="number">УНП <span>*</span></label>
-    <input
-      type="text"
-      name="number"
-      id="number"
-      class="popup-input"
-      placeholder="123456778"
-    />
+    <div class="popup-backcall-inputs">
+      <label class="popup-label" for="name">Ваше имя <span>*</span></label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="popup-input"
+        placeholder="Иванов Иван Иванович"
+      />
+    </div>
+    <div class="popup-backcall-inputs">
+      <label class="popup-label" for="telephone">Телефон <span>*</span></label>
+      <input
+        type="text"
+        name="telephone"
+        id="telephone"
+        class="popup-input"
+        placeholder="+"
+      />
+    </div>
+
+    <div class="popup-backcall-inputs">
+      <label class="popup-label" for="email">Email <span>*</span></label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        class="popup-input"
+        placeholder="123@gmail.com"
+      />
+    </div>
+
+    <div class="popup-backcall-inputs">
+      <label class="popup-label" for="person"
+        >Наименование юр. лица <span>*</span></label
+      >
+      <input
+        type="text"
+        name="person"
+        id="person"
+        class="popup-input"
+        placeholder="Наименование юр. лица"
+      />
+    </div>
+
+    <div class="popup-backcall-inputs">
+      <label class="popup-label" for="number">УНП <span>*</span></label>
+      <input
+        type="text"
+        name="number"
+        id="number"
+        class="popup-input"
+        placeholder="123456778"
+      />
+    </div>
+
     <div class="popup-agreement">
       <div class="checkbox">
         <input
@@ -98,14 +112,27 @@
             required: true,
           },
         },
+        messages: {
+          email: {
+            required: "Введите данные",
+          },
+          name: {
+            required: "Введите данные",
+          },
+          telephone: {
+            required: "Введите данные",
+            minlength: "Недостаточно цифр",
+          },
+          number: {
+            required: "Введите данные",
+          },
+          person: {
+            required: "Введите данные",
+          },
+        },
       });
     });
-    var element = document.getElementById("telephone");
-    var maskOptions = {
-      placeholder: "+{000}(00)000-00-00",
-      mask: "+{000}(00)000-00-00",
-    };
-    var mask = IMask(element, maskOptions);
+
     jQuery.validator.addMethod(
       "telephone",
       function (value, element) {
@@ -121,7 +148,7 @@
       function (value, element) {
         return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
       },
-      "Ваше имя не может состоять из цифр"
+      "В этом поле допустимы только буквы"
     );
     jQuery.validator.addMethod(
       "email",
@@ -145,5 +172,11 @@
       },
       "Ваш УНП не может состоять из букв"
     );
+    var element = document.getElementById("telephone");
+    var maskOptions = {
+      placeholder: "+{000}(00)000-00-00",
+      mask: "+{000}(00)000-00-00",
+    };
+    var mask = IMask(element, maskOptions);
   </script>
 </div>

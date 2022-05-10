@@ -1,41 +1,12 @@
 .product {
   &-item {
-    &:hover {
-      .product-item-like {
-        box-shadow: none;
-      }
-      .product-item-show {
-        display: block;
-      }
-      .product-item-img {
-        opacity: 0.5;
-      }
-      .product-item-btn {
-        background-color: $colorDark;
-      }
-
-      .product-item-price-old {
-        display: inline;
-      }
-      .product-item-buttons {
-        margin-bottom: 17px;
-      }
-      .product-item-description {
-        display: block;
-      }
-      .product-item-open {
-        img {
-          transform: translate(-50%, -50%) rotate(180deg);
-        }
-      }
-    }
     display: inline-block;
     position: relative;
-    padding: 16px 20px;
+    padding: 16px 20px 24px 20px;
     margin-right: 16px;
     width: 100%;
-    min-width: 264px;
-    max-width: 312px;
+    // min-width: 264px;
+    // max-width: 312px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     &-links {
@@ -43,12 +14,16 @@
     }
     &-installments {
       display: inline-block;
+      width: calc(100% - 50px);
       height: 24px;
       line-height: 24px;
       background-color: $colorDark;
       padding: 0 16px;
       margin-right: 8px;
-
+      white-space: nowrap;
+      // overflow-x: auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
       color: #ffffff;
       border-radius: 5px;
       &:hover {
@@ -78,10 +53,12 @@
       display: block;
       text-align: center;
       margin-bottom: 45px;
+      max-height: 200px;
     }
     &-stats {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin-bottom: 12px;
     }
     &-rait {
@@ -143,8 +120,14 @@
       color: #ffffff;
       background-color: $colorRed;
       border-radius: 5px;
+      text-overflow: ellipsis;
+      padding: 0 12px;
+      overflow: hidden;
       &:hover {
         opacity: 0.5;
+      }
+      img {
+        display: none;
       }
     }
     &-like {
@@ -193,6 +176,18 @@
     }
     &-description {
       display: none;
+      width: 100%;
+      position: absolute;
+      left: 16px;
+      top: 99%;
+      background-color: #ffffff;
+      z-index: 4;
+      padding: 0 16px;
+      margin: 0 -16px;
+
+      box-shadow: 0 2px 3px 0 rgb(0 0 0 / 10%);
+
+      border-radius: 5px;
     }
     &-info {
       margin-bottom: 5px;
@@ -202,6 +197,37 @@
       }
       &-span {
         font-weight: 600;
+      }
+    }
+  }
+  &-open {
+    &:hover {
+      .product-item-like {
+        box-shadow: none;
+      }
+      .product-item-show {
+        display: block;
+      }
+      .product-item-img {
+        opacity: 0.5;
+      }
+      .product-item-btn {
+        background-color: $colorDark;
+      }
+
+      .product-item-price-old {
+        display: inline;
+      }
+      .product-item-buttons {
+        // margin-bottom: 17px;
+      }
+      .product-item-description {
+        display: block;
+      }
+      .product-item-open {
+        img {
+          transform: translate(-50%, -50%) rotate(180deg);
+        }
       }
     }
   }
@@ -254,42 +280,19 @@
     background-color: #83dbe4;
   }
 }
-
-.product-flex {
-  .product {
-    &-item {
-      @media (max-width: 1300px) {
-        display: flex;
-        max-width: 100%;
-      }
-      // &-container {
-      //   @media (max-width: 992px) {
-      //     display: inline-block;
-      //   }
-      // }
-    }
-    &-img {
-      @media (max-width: 992px) {
-        width: 27%;
-        margin-right: 18px;
-        .product-item-open {
-          display: none;
-        }
-        .product-item-rait {
-          display: none;
-        }
-        .product-item-installments {
-          // white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        .product-item-title {
-          font-weight: 700;
-        }
-        .product-item-img {
-          margin-bottom: 5px;
-        }
-      }
-    }
+.product-price {
+  display: block;
+}
+.product-item-btn-span {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.product-height {
+  &:hover {
+    height: 559px;
+  }
+  .product-item-description {
+    top: 88%;
   }
 }
