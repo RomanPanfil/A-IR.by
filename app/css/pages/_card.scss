@@ -891,10 +891,10 @@
         justify-content: space-between;
       }
 
-      @media (max-width: 345px) {
-        // flex-direction: column;
-        align-items: flex-start;
-      }
+      // @media (max-width: 345px) {
+      //   // flex-direction: column;
+      //   align-items: flex-start;
+      // }
 
       &-title {
         margin-right: 32px;
@@ -932,8 +932,6 @@
       }
 
       .card-item-rating {
-        padding-top: 8px;
-
         @media (max-width: 335px) {
           padding-top: 0;
         }
