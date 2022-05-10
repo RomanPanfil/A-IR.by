@@ -474,6 +474,12 @@
           @media (max-width: 360px) {
             padding: 15px;
           }
+
+          .img-btn {
+            .footer-bottom-socials-svg {
+              width: 42px;
+            }
+          }
         }
       }
     }
@@ -1075,7 +1081,6 @@
     &-items {
       border: 1px solid #d3d3d3;
       border-radius: 10px;
-      border-bottom: none;
 
       @media (max-width: 1024px) {
         margin-bottom: 55px;
@@ -1083,6 +1088,14 @@
 
       .accordion:nth-last-child(-n + 2) .accordion-items-title {
         border-radius: 0 0 10px 10px;
+      }
+
+      .accordion {
+        &.tab4 {
+          .accordion-items-title {
+            border-bottom: none;
+          }
+        }
       }
 
       .accordion-items-title {
