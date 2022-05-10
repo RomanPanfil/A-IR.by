@@ -233,3 +233,23 @@
     top: 0;
   }
 }
+.form-cell-field-send {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-right: 40px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 24px;
+  }
+
+  .popup-agreement-txt {
+    width: 320px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .checkbox {
+    margin-bottom: 0;
+    top: 5px;
+  }
+}

@@ -57,7 +57,9 @@
         }
 
         @media (max-width: 385px) {
-          flex-direction: column;
+          .card-item-reviews {
+            display: none;
+          }
         }
       }
     }
