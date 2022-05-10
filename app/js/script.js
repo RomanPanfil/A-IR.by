@@ -93,30 +93,59 @@ if (catalogPhone) {
 }
 
 // Sticker hidden catalog.html
-if (document.querySelector(".sticker-hide")) {
-  let stickerHideBtn = document.querySelector(".sticker-hide"),
-    stickerHiden = document.querySelectorAll(".sticker-hidden"),
-    catalogText = document.querySelector(".catalog-stickers-btn-text"),
-    imgChange = document.querySelector(".img-change");
+// if (document.querySelector(".sticker-hide")) {
+//   let stickerHideBtn = document.querySelector(".sticker-hide"),
+//     stickerHiden = document.querySelectorAll(".sticker-hidden"),
+//     catalogText = document.querySelector(".catalog-stickers-btn-text"),
+//     imgChange = document.querySelector(".img-change");
 
-  // console.log(stickerHiden)
+//   // console.log(stickerHiden)
 
-  stickerHideBtn.onclick = () => {
-    stickerHiden.forEach((e) => {
-      e.classList.toggle("sticker-hidden-open");
-    });
-    // stickerHiden.
+//   stickerHideBtn.onclick = () => {
+//     stickerHiden.forEach((e) => {
+//       e.classList.toggle("sticker-hidden-open");
+//     });
+//     // stickerHiden.
 
-    if (catalogText.innerHTML === "Скрыть") {
-      catalogText.innerHTML = "Ещё подборки";
-      imgChange.src = "./images/icons/green-cross.svg";
-    } else {
-      catalogText.innerHTML = "Скрыть";
-      imgChange.src = "./images/icons/red-cross.svg";
+//     if (catalogText.innerHTML === "Скрыть") {
+//       catalogText.innerHTML = "Ещё подборки";
+//       imgChange.src = "./images/icons/green-cross.svg";
+//     } else {
+//       catalogText.innerHTML = "Скрыть";
+//       imgChange.src = "./images/icons/red-cross.svg";
+//     }
+//   };
+// }
+if (document.querySelector(".catalog-stickers-btn")) {
+  let catalogBtn = document.querySelectorAll(".catalog-stickers-btn");
+  // catalogbtnText = document.querySelectorAll(".catalog-products-field-text"),
+  // catalogbtnImg = document.querySelector(".catalog-products-field-img img"),
+  // checkboxHiden = document.querySelectorAll(".checkbox-hide");
+
+  catalogBtn.forEach((element) => {
+    element.addEventListener("click", openFuncz);
+    function openFuncz() {
+      let classListAdd = element.classList;
+      element.classList.toggle("checkboxBtn_active");
+      if (classListAdd.value.split(" ").indexOf("checkboxBtn_active") < 0) {
+        element.children[1].innerHTML = "Показать ещё";
+        element.children[0].style.backgroundImage =
+          "url(././images/icons/green-cross.svg)";
+      } else {
+        element.children[1].innerHTML = "Скрыть";
+        element.children[0].style.backgroundImage =
+          "url(././images/icons/red-cross.svg)";
+      }
+      const parentz = element.closest(".catalog-stickers");
+      console.log(element);
+      let checkboxesz = parentz.querySelectorAll(".sticker-hidden");
+      console.log(parentz);
+      checkboxesz.forEach((el) => {
+        el.classList.toggle("sticker-hidden-open");
+      });
     }
-  };
+  });
 }
-
 // Input range
 
 // checkbox hide on click
