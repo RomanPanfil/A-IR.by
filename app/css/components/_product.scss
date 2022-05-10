@@ -296,3 +296,11 @@
     top: 88%;
   }
 }
+.product-height-auto {
+  height: auto !important;
+  &:hover {
+    .product-item {
+      margin-bottom: 70px;
+    }
+  }
+}

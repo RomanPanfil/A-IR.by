@@ -587,3 +587,10 @@
     }
   }
 }
+.product-swiper-desc-catalog {
+  @media (max-width: 1024px) {
+    .swiper-wrapper {
+      transform: translate3d(0px, 0px, 0px) !important;
+    }
+  }
+}
