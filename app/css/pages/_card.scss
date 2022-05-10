@@ -2,7 +2,7 @@
   &-item {
     margin-bottom: 85px;
 
-    @media(max-width: 1024px) {
+    @media (max-width: 1024px) {
       margin-bottom: 0;
     }
 
@@ -144,11 +144,11 @@
     &-slider {
       position: relative;
 
-      @media(max-width: 1170px) {
+      @media (max-width: 1170px) {
         margin-bottom: 20px;
       }
 
-      @media(max-width: 1024px) {
+      @media (max-width: 1024px) {
         margin-bottom: 0;
       }
 
@@ -455,16 +455,16 @@
 
             svg {
               transition: all 0.5s ease-out;
-              fill: #2A4455;
+              fill: #2a4455;
             }
 
             span {
-              color: #2A4455;
+              color: #2a4455;
             }
           }
 
           svg {
-            fill: #D3D3D3;
+            fill: #d3d3d3;
           }
 
           @media (max-width: 482px) {
@@ -1386,4 +1386,15 @@
       }
     }
   }
+}
+
+.popup-rev.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  right: 12px;
+  text-align: initial;
+  padding-right: 0;
+  width: initial;
+}
+.mfp-iframe-holder .mfp-close {
+  top: 0;
 }
