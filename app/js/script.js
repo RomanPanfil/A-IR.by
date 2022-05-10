@@ -129,19 +129,22 @@ if (document.querySelector(".catalog-stickers-btn")) {
       element.classList.toggle("checkboxBtn_active");
       if (classListAdd.value.split(" ").indexOf("checkboxBtn_active") < 0) {
         element.children[1].innerHTML = "Показать ещё";
-        element.children[0].style.backgroundImage =
-          "url(././images/icons/green-cross.svg)";
+        // element.children[0].style.backgroundImage =
+        //   "url(././images/icons/green-cross.svg)";
       } else {
         element.children[1].innerHTML = "Скрыть";
-        element.children[0].style.backgroundImage =
-          "url(././images/icons/red-cross.svg)";
+        // element.children[0].style.backgroundImage =
+        //   "url(././images/icons/red-cross.svg)";
       }
       const parentz = element.closest(".catalog-stickers");
-      console.log(element);
+
       let checkboxesz = parentz.querySelectorAll(".sticker-hidden");
-      console.log(parentz);
+      let checkboxImg = parentz.querySelectorAll(".catalog-products-field-img");
       checkboxesz.forEach((el) => {
         el.classList.toggle("sticker-hidden-open");
+      });
+      checkboxImg.forEach((el) => {
+        el.classList.toggle("catalog-products-img-open");
       });
     }
   });
