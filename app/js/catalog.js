@@ -75,3 +75,26 @@ function removeHover(removeHover23) {
     $(".product-item").addClass("product-open");
   }
 }
+
+const productSliderMarkUpcatalog = $(".slider-catalog")
+  .clone()
+  .removeClass("slider-adaptive-none");
+$(".product-swiper-mob-catalog").append(productSliderMarkUpcatalog);
+
+$(".product-swiper-desc-catalog").append(productSliderMarkUpcatalog);
+
+new Swiper(".product-swiper-desc-catalog .product-swiper ", {
+  slidesPerView: 4,
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  spaceBetween: 8,
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 8,
+    },
+  },
+});
