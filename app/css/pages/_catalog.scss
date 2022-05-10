@@ -96,6 +96,10 @@
   }
 
   &-products {
+    margin-bottom: 46px;
+    @media (max-width: 576px) {
+      margin-bottom: 40px;
+    }
     &-wrap {
       @media (max-width: 1024px) {
         display: none;
