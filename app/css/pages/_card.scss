@@ -2,7 +2,7 @@
   &-item {
     margin-bottom: 85px;
 
-    @media(max-width: 1024px) {
+    @media (max-width: 1024px) {
       margin-bottom: 0;
     }
 
@@ -57,7 +57,9 @@
         }
 
         @media (max-width: 385px) {
-          flex-direction: column;
+          .card-item-reviews {
+            display: none;
+          }
         }
       }
     }
@@ -142,11 +144,11 @@
     &-slider {
       position: relative;
 
-      @media(max-width: 1170px) {
+      @media (max-width: 1170px) {
         margin-bottom: 20px;
       }
 
-      @media(max-width: 1024px) {
+      @media (max-width: 1024px) {
         margin-bottom: 0;
       }
 
@@ -453,16 +455,16 @@
 
             svg {
               transition: all 0.5s ease-out;
-              fill: #2A4455;
+              fill: #2a4455;
             }
 
             span {
-              color: #2A4455;
+              color: #2a4455;
             }
           }
 
           svg {
-            fill: #D3D3D3;
+            fill: #d3d3d3;
           }
 
           @media (max-width: 482px) {
@@ -834,8 +836,10 @@
         overflow-x: auto;
         overflow-y: hidden;
         // padding: 20px 80px 20px 0;
-        margin-right: -20px;
+        // margin-right: -20px;
+        // padding-right: 12px;
         padding-right: 12px;
+        padding-left: 12px;
 
         &::-webkit-scrollbar {
           opacity: 0;
@@ -889,10 +893,10 @@
         justify-content: space-between;
       }
 
-      @media (max-width: 345px) {
-        // flex-direction: column;
-        align-items: flex-start;
-      }
+      // @media (max-width: 345px) {
+      //   // flex-direction: column;
+      //   align-items: flex-start;
+      // }
 
       &-title {
         margin-right: 32px;
@@ -930,8 +934,6 @@
       }
 
       .card-item-rating {
-        padding-top: 8px;
-
         @media (max-width: 335px) {
           padding-top: 0;
         }
@@ -1384,4 +1386,15 @@
       }
     }
   }
+}
+
+.popup-rev.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  right: 12px;
+  text-align: initial;
+  padding-right: 0;
+  width: initial;
+}
+.mfp-iframe-holder .mfp-close {
+  top: 0;
 }
