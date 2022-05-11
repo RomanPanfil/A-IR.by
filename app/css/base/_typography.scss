@@ -1,5 +1,5 @@
 p {
-  margin: 0px;
+  padding: 5px 0px;
 }
 
 ul,
@@ -52,13 +52,12 @@ h5,
 }
 
 a {
-  color: #000;
+  color: $colorBlue;
   text-decoration: none;
   outline: none;
 }
 
 b,
-p,
 ul,
 li {
   padding: 0;
