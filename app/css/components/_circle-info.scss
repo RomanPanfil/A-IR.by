@@ -1,11 +1,11 @@
 // ! Html ⤵⤵⤵⤵⤵⤵⤵⤵⤵⤵⤵
 // <span class="circle-info">
-  // <svg class="circle-info-svg">
-  //   <use xlink:href="./images/svg/symbols.svg#circle-info-icon"></use>
-  // </svg>
-  // <span class="circle-info-text">
-  //   Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом.
-  // </span>
+// <svg class="circle-info-svg">
+//   <use xlink:href="./images/svg/symbols.svg#circle-info-icon"></use>
+// </svg>
+// <span class="circle-info-text">
+//   Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом.
+// </span>
 // </span>
 
 .circle-info {
@@ -21,7 +21,7 @@
   cursor: pointer;
   &:hover {
     background-color: #d3d3d3;
-    
+
     .circle-info-svg {
       fill: #fff;
     }
@@ -30,7 +30,7 @@
     position: absolute;
     width: 5px;
     height: 8px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     fill: #d3d3d3;
@@ -43,9 +43,10 @@
     background: #ffffff;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     border-radius: 3px;
-    padding: 17px 8px 19px 25px;
+    padding: 17px 18px 19px 25px;
     font-size: rem(14);
     line-height: 1.3;
+    font-weight: 400;
   }
   &:hover &-text {
     display: inline-block;
