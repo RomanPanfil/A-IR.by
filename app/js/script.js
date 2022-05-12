@@ -118,9 +118,6 @@ if (catalogPhone) {
 // }
 if (document.querySelector(".catalog-stickers-btn")) {
   let catalogBtn = document.querySelectorAll(".catalog-stickers-btn");
-  // catalogbtnText = document.querySelectorAll(".catalog-products-field-text"),
-  // catalogbtnImg = document.querySelector(".catalog-products-field-img img"),
-  // checkboxHiden = document.querySelectorAll(".checkbox-hide");
 
   catalogBtn.forEach((element) => {
     element.addEventListener("click", openFuncz);
@@ -129,20 +126,23 @@ if (document.querySelector(".catalog-stickers-btn")) {
       element.classList.toggle("checkboxBtn_active");
       if (classListAdd.value.split(" ").indexOf("checkboxBtn_active") < 0) {
         element.children[1].innerHTML = "Показать ещё";
-        // element.children[0].style.backgroundImage =
-        //   "url(././images/icons/green-cross.svg)";
       } else {
         element.children[1].innerHTML = "Скрыть";
-        // element.children[0].style.backgroundImage =
-        //   "url(././images/icons/red-cross.svg)";
       }
-      const parentz = element.closest(".catalog-stickers");
 
+      const parentz = element.closest(".open-wrap");
       let checkboxesz = parentz.querySelectorAll(".sticker-hidden");
+      let checkboxesB = parentz.querySelectorAll(".sticker-hiddenB");
       let checkboxImg = parentz.querySelectorAll(".catalog-products-field-img");
+
       checkboxesz.forEach((el) => {
         el.classList.toggle("sticker-hidden-open");
       });
+
+      checkboxesB.forEach((el) => {
+        el.classList.toggle("sticker-hidden-openB");
+      });
+
       checkboxImg.forEach((el) => {
         el.classList.toggle("catalog-products-img-open");
       });
@@ -315,3 +315,20 @@ if (document.getElementById("card-breackpoint")) {
     });
   });
 }
+
+//
+// let stickersWrap = document.querySelector(".wrap-setting");
+// if (stickersWrap) {
+//   let stickersWrapH = stickersWrap.clientHeight;
+//   let btnSetting = document.querySelector(".btn-setting");
+//   let stickersWrapCount = document.querySelectorAll(".sticker-setting");
+//   for (let i = 0; i < stickersWrapCount.length; i++) {
+//     console.log(stickersWrapCount[i]);
+//     if (stickersWrapH >= 80) {
+//       // stickersWrapCount[stickersWrapCount.length - 1].style.display = "none";
+//       // stickersWrapCount.pop(stickersWrapCount[i]).style.display = "none";
+//     } else {
+//       btnSetting.style.display = "inline-block";
+//     }
+//   }
+// }
