@@ -26,6 +26,10 @@
     }
   }
 
+  .row {
+    justify-content: center;
+  }
+
   .popup-agreement-txt {
     @media (max-width: 1024px) {
       font-size: 14px;
@@ -459,8 +463,9 @@
 
 .popup-close {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 26px;
+  right: 26px;
+  line-height: 0.5;
   font-size: 50px;
   cursor: pointer;
 
