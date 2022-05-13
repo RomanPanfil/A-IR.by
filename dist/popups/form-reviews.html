@@ -1,155 +1,103 @@
 <div class="popup-form-reviews">
-  <div class="container">
-    <div class="row">
-      <div class="form-reviews">
-        <div class="form-reviews-content">
-          <div class="form-reviews-header">
-            <div class="form-reviews-header-title">Оставить отзыв</div>
-            <div class="form-reviews-header-item">
-              <span>Товар:</span>
-              <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
-            </div>
-            <div class="card-item-rating">
-              <div class="card-item-rating-body">
-                <div class="card-item-rating-active" style="width: 100%"></div>
-                <div class="card-item-rating-items">
-                  <input
-                    type="radio"
-                    class="card-item-rating-item"
-                    value="1"
-                    name="rating"
-                  />
-                  <input
-                    type="radio"
-                    class="card-item-rating-item"
-                    value="2"
-                    name="rating"
-                  />
-                  <input
-                    type="radio"
-                    class="card-item-rating-item"
-                    value="3"
-                    name="rating"
-                  />
-                  <input
-                    type="radio"
-                    class="card-item-rating-item"
-                    value="4"
-                    name="rating"
-                  />
-                  <input
-                    type="radio"
-                    class="card-item-rating-item"
-                    value="5"
-                    name="rating"
-                  />
-                </div>
-              </div>
-              <div class="card-item-rating-value">Нет оценки</div>
+  <!-- <div class="container"> -->
+  <!-- <div class="row"> -->
+  <div class="form-reviews">
+    <div class="form-reviews-content">
+      <div class="form-reviews-header">
+        <div class="form-reviews-header-title">Оставить отзыв</div>
+        <div class="form-reviews-header-item">
+          <span>Товар:</span>
+          <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
+        </div>
+        <div class="card-item-rating">
+          <div class="card-item-rating-body">
+            <div class="card-item-rating-active" style="width: 100%"></div>
+            <div class="card-item-rating-items">
+              <input
+                type="radio"
+                class="card-item-rating-item"
+                value="1"
+                name="rating"
+              />
+              <input
+                type="radio"
+                class="card-item-rating-item"
+                value="2"
+                name="rating"
+              />
+              <input
+                type="radio"
+                class="card-item-rating-item"
+                value="3"
+                name="rating"
+              />
+              <input
+                type="radio"
+                class="card-item-rating-item"
+                value="4"
+                name="rating"
+              />
+              <input
+                type="radio"
+                class="card-item-rating-item"
+                value="5"
+                name="rating"
+              />
             </div>
           </div>
-          <div class="form-reviews-body">
-            <form
-              action="#"
-              method="POST"
-              class="form-reviews-valid"
-              id="form-reviews-valid"
-            >
-              <div class="form-cell">
-                <div class="form-cell-info form-cell-error">
-                  <label for="name">Ваше имя<span>*</span></label> <br />
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Иванов Иван Иванович"
-                  />
-                </div>
-                <div class="form-cell-info form-cell-error">
-                  <label for="email">Ваш Email<span>*</span></label> <br />
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="123@gmail.com"
-                  />
-                </div>
-              </div>
-              <div class="form-cell">
-                <div class="form-cell-rating">
-                  <label for="rating" class="rating-label"
-                    >Ваша оценка<span>*</span></label
-                  >
-                  <div class="card-item-rating rating-set">
-                    <div class="card-item-rating-body" id="rating">
-                      <div class="card-item-rating-active"></div>
-                      <div class="card-item-rating-items">
-                        <label for="rating"></label>
-                        <input
-                          type="radio"
-                          id="rating_1"
-                          class="card-item-rating-item"
-                          value="1.0"
-                          name="rating"
-                        />
-                        <input
-                          type="radio"
-                          id="rating_2"
-                          class="card-item-rating-item"
-                          value="2.0"
-                          name="rating"
-                        />
-                        <input
-                          type="radio"
-                          id="rating_3"
-                          class="card-item-rating-item"
-                          value="3.0"
-                          name="rating"
-                        />
-                        <input
-                          type="radio"
-                          id="rating_4"
-                          class="card-item-rating-item"
-                          value="4.0"
-                          name="rating"
-                        />
-                        <input
-                          type="radio"
-                          id="rating_5"
-                          class="card-item-rating-item"
-                          value="5.0"
-                          name="rating"
-                        />
-                      </div>
-                    </div>
-                    <div class="card-item-rating-value"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-cell">
-                <div class="form-cell-info">
-                  <label for="textbox">Текстовое поле<span>*</span></label>
-                  <div class="form-cell-field-textarea">
-                    <textarea
-                      id="textbox"
-                      name="textbox"
-                      placeholder="Текст"
-                    ></textarea>
-                  </div>
-                  <div class="form-cell-field-quality">
+          <div class="card-item-rating-value">Нет оценки</div>
+        </div>
+      </div>
+      <div class="form-reviews-body">
+        <form
+          action="#"
+          method="POST"
+          class="form-reviews-valid"
+          id="form-reviews-valid"
+        >
+          <div class="form-cell">
+            <div class="form-cell-info form-cell-error">
+              <label for="name">Ваше имя<span>*</span></label> <br />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Иванов Иван Иванович"
+              />
+            </div>
+            <div class="form-cell-info form-cell-error">
+              <label for="email">Ваш Email<span>*</span></label> <br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="123@gmail.com"
+              />
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="form-cell-rating">
+              <label for="rating" class="rating-label"
+                >Ваша оценка<span>*</span></label
+              >
+              <div class="card-item-rating rating-set">
+                <div class="card-item-rating-body" id="rating">
+                  <div class="card-item-rating-active"></div>
+                  <div class="card-item-rating-items">
+                    <label for="rating"></label>
                     <input
-                      type="text"
-                      id="plus"
-                      name="plus"
-                      class="plus"
-                      placeholder="Пара слов о преимуществах"
+                      type="radio"
+                      id="rating_1"
+                      class="card-item-rating-item"
+                      value="1.0"
+                      name="rating"
                     />
                     <input
-                      type="text"
-                      id="minus"
-                      name="minus"
-                      class="minus"
-                      placeholder="Пара слов о недостатках"
+                      type="radio"
+                      id="rating_2"
+                      class="card-item-rating-item"
+                      value="2.0"
+                      name="rating"
                     />
                   </div>
                 </div>
@@ -159,7 +107,6 @@
                   <label
                     for="file"
                     class="load-file"
-                    accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi"
                   >
                     <img src="./images/icons/file.svg" alt="alt" />
                     <span>Добавить фото или видео</span>
@@ -168,7 +115,7 @@
                     type="file"
                     id="file"
                     name="file"
-                    class="file"
+                    class="file" accept="image/*"
                     multiple
                   />
                 </div>
@@ -187,31 +134,108 @@
                 <div class="form-cell-field-send">
                   <div class="checkbox">
                     <input
-                      type="checkbox"
-                      id="customCheckbox"
-                      name="customCheckbox"
-                      class="customCheckbox"
+                      type="radio"
+                      id="rating_3"
+                      class="card-item-rating-item"
+                      value="3.0"
+                      name="rating"
                     />
-                    <label for="customCheckbox"></label>
-                  </div>
-                  <div class="popup-agreement-txt">
-                    <a href="#" class="popup-agreement-link"
-                      >с политикой обработки персональных данных.</a
-                    >
+                    <input
+                      type="radio"
+                      id="rating_4"
+                      class="card-item-rating-item"
+                      value="4.0"
+                      name="rating"
+                    />
+                    <input
+                      type="radio"
+                      id="rating_5"
+                      class="card-item-rating-item"
+                      value="5.0"
+                      name="rating"
+                    />
                   </div>
                 </div>
+                <div class="card-item-rating-value"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="form-cell-info">
+              <label for="textbox">Текстовое поле<span>*</span></label>
+              <div class="form-cell-field-textarea">
+                <textarea
+                  id="textbox"
+                  name="textbox"
+                  placeholder="Текст"
+                ></textarea>
+              </div>
+              <div class="form-cell-field-quality">
                 <input
-                  type="submit"
-                  value="Отправить отзыв"
-                  class="btn-submit"
+                  type="text"
+                  id="plus"
+                  name="plus"
+                  class="plus"
+                  placeholder="Пара слов о преимуществах"
+                />
+                <input
+                  type="text"
+                  id="minus"
+                  name="minus"
+                  class="minus"
+                  placeholder="Пара слов о недостатках"
                 />
               </div>
-            </form>
+            </div>
           </div>
-        </div>
+          <div class="form-cell">
+            <div class="form-cell-field-load">
+              <label
+                for="file"
+                class="load-file"
+                accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi"
+              >
+                <img src="./images/icons/file.svg" alt="alt" />
+                <span>Добавить фото или видео</span>
+              </label>
+              <input type="file" id="file" name="file" class="file" multiple />
+            </div>
+            <div class="form-cell-field-url">
+              <img src="./images/icons/url-video.svg" alt="alt" />
+              <input
+                type="text"
+                id="url"
+                name="url"
+                class="url"
+                placeholder="Добавить URL на видео"
+              />
+            </div>
+          </div>
+          <div class="form-cell">
+            <div class="form-cell-field-send">
+              <div class="checkbox">
+                <input
+                  type="checkbox"
+                  id="customCheckbox"
+                  name="customCheckbox"
+                  class="customCheckbox"
+                />
+                <label for="customCheckbox"></label>
+              </div>
+              <div class="popup-agreement-txt">
+                <a href="#" class="popup-agreement-link"
+                  >с политикой обработки персональных данных.</a
+                >
+              </div>
+            </div>
+            <input type="submit" value="Отправить отзыв" class="btn-submit" />
+          </div>
+        </form>
       </div>
     </div>
   </div>
+  <!-- </div> -->
+  <!-- </div> -->
   <script>
     $(document).ready(function () {
       // rating stars
