@@ -4,6 +4,18 @@
   }
 }
 .zaglushka-phone {
+  .popup {
+    &-title {
+      text-align: center;
+    }
+    &-text {
+      text-align: center;
+    }
+  }
+  @media (max-width: 450px) {
+    height: 100vh;
+    border-radius: 0;
+  }
   .mfp-close {
     font-size: 0;
     top: 24px;
