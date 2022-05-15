@@ -265,8 +265,8 @@
         color: #000000a8;
         font-size: rem(16);
         cursor: pointer;
-        background: url("../images/icons/catalog-products-arrows.svg") no-repeat
-          right;
+        // background: url("../images/icons/catalog-products-arrows.svg") no-repeat
+        //   right;
         background-position: right 2px center;
         option {
           background-color: #ffffff;
@@ -1422,15 +1422,15 @@ input[type="range"]::-moz-range-thumb {
 }
 
 // Стили для скрытие стикера
-.wrap-remove{
+.wrap-remove {
   max-height: 80px;
   overflow: hidden;
 }
-.wrap-toggle{
+.wrap-toggle {
   max-height: initial;
   overflow: auto;
 }
-.btn-setting-none{
+.btn-setting-none {
   display: none;
 }
 .catalog-slider-adaptive {
