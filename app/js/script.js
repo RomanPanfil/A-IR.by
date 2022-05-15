@@ -297,38 +297,96 @@ if (document.querySelector(".sticker-info-hide")) {
 if (document.getElementById("card-breackpoint")) {
   $(document).ready(function () {
     let cardBreackpoint = $("#card-breackpoint").offset().top;
+    // let footerBreackpoint = $("#footer").offset().top;
     let cardSticky = $(".card-sticky");
     let headerCard = $(".header");
-
+    // let footerHeight = $('#footer').innerHeight();
+    
     window.addEventListener("resize", function () {
       cardBreackpoint = $("#card-breackpoint").offset().top;
     });
     window.addEventListener("scroll", function () {
+      // console.log(footerBreackpoint)
+      // console.log(window.scrollY)
       if (window.scrollY < cardBreackpoint) {
         headerCard.removeClass("headerCard_fixed");
         cardSticky.removeClass("card-breackpoint-open");
       } else {
         headerCard.addClass("headerCard_fixed");
-
         cardSticky.addClass("card-breackpoint-open");
       }
+      // if (window.scrollY > footerBreackpoint) {
+      //   console.log('1')
+      //   cardSticky.css('top', footerHeight + 'px')
+      // }
     });
   });
 }
 
-//
-// let stickersWrap = document.querySelector(".wrap-setting");
-// if (stickersWrap) {
-//   let stickersWrapH = stickersWrap.clientHeight;
-//   let btnSetting = document.querySelector(".btn-setting");
-//   let stickersWrapCount = document.querySelectorAll(".sticker-setting");
-//   for (let i = 0; i < stickersWrapCount.length; i++) {
-//     console.log(stickersWrapCount[i]);
-//     if (stickersWrapH >= 80) {
-//       // stickersWrapCount[stickersWrapCount.length - 1].style.display = "none";
-//       // stickersWrapCount.pop(stickersWrapCount[i]).style.display = "none";
-//     } else {
-//       btnSetting.style.display = "inline-block";
-//     }
-//   }
-// }
+
+
+let wrapSettings = document.querySelector('.wrap-setting');
+if(wrapSettings){
+  let wrapHeight = wrapSettings.offsetHeight;
+  let wrapBtn = document.querySelector('.btn-setting');
+  
+window.addEventListener('resize', function() {
+  console.log('window')
+})
+
+
+if (wrapHeight <= 80){ 
+  wrapSettings.classList.remove("wrap-remove");
+  wrapBtn.classList.add('btn-setting-none'); 
+}
+else {
+  wrapSettings.classList.add("wrap-remove");
+  wrapBtn.classList.remove('btn-setting-none');
+}
+  
+  wrapBtn.addEventListener('click', function() {
+  let wrapRemove = document.querySelector('.wrap-remove');
+  wrapRemove.classList.toggle('wrap-toggle');
+  
+
+  })
+
+}
+
+// document.addEventListener("DOMContentLoaded", function(event) {
+//   console.log("DOM fully loaded and parsed");
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

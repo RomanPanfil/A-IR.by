@@ -398,11 +398,18 @@
       margin-bottom: 8px;
     }
     &-reniev {
+      width: 312px;
+      position: fixed;
+      bottom: 0;
+      z-index: 11;
       height: 56px;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
 
       box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+      @media (max-width: 1024px) {
+        display: none;
+      }
       &-svg {
         position: relative;
         top: 3px;
@@ -419,15 +426,20 @@
         color: #000;
         border-right: 1px solid #f5f5f5;
         font-weight: 400;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
         span {
           font-weight: 600;
         }
       }
       .calculator-reload {
+        position: relative;
         background: #fff;
         color: #000;
         height: 100%;
         text-overflow: initial;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
       }
     }
     .product-item {
@@ -866,6 +878,7 @@
     border-bottom-left-radius: 8px;
     padding: 0px 74px;
     background: $colorDark;
+    width: 100%;
   }
   &-btn-wrapper {
     display: flex;
@@ -876,15 +889,19 @@
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    padding: 0 15px;
+    width: 100%;
+    max-width: 56px;
     &-img {
       max-width: 26px;
       display: inline-block;
       vertical-align: middle;
+      position: relative;
       &-svg {
-        position: relative;
-        top: 3px;
-        fill: #fff;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        fill: #d3d3d3;
         width: 26px;
         height: 22px;
       }
@@ -1365,4 +1382,17 @@ input[type="range"]::-moz-range-thumb {
 
 .catalog-products-img-open {
   background-image: url(.././images/icons/red-cross.svg);
+}
+
+// Стили для скрытие стикера
+.wrap-remove{
+  max-height: 80px;
+  overflow: hidden;
+}
+.wrap-toggle{
+  max-height: initial;
+  overflow: auto;
+}
+.btn-setting-none{
+  display: none;
 }
