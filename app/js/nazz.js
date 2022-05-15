@@ -202,3 +202,8 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
     },
   },
 });
+(function ($) {
+  $(function () {
+    $("select").styler();
+  });
+})(jQuery);
