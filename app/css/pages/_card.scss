@@ -618,6 +618,7 @@
               }
 
               .tooltip .tooltiptext {
+                
                 visibility: hidden;
                 width: 400px;
                 background: #ffffff;
@@ -633,8 +634,9 @@
                 margin-left: -60px;
                 opacity: 0;
                 transition: opacity 0.3s;
+                
               }
-
+             
               .tooltip:hover .tooltiptext {
                 visibility: visible;
                 opacity: 1;
@@ -1259,7 +1261,11 @@
             opacity: 0;
             transition: opacity 0.3s;
           }
-
+          .tooltiptext {
+            @media(max-width:576px) {
+             width: calc(100vw - 55px) !important;   
+            }
+          }
           .tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
