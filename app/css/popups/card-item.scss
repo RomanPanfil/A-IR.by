@@ -18,6 +18,14 @@
         margin-bottom: 25px;
       }
     }
+    @media (max-width: 446px) {
+      .card-btn-adaptive {
+        white-space: normal;
+        text-overflow: initial;
+        overflow: initial;
+        line-height: 1.36;
+      }
+    }
     &-img {
       display: inline-block;
       margin-right: 24px;
@@ -57,6 +65,7 @@
       padding: 24px 64px 32px 64px;
       margin: 0 -64px -32px -64px;
       background-color: #f5f5f5;
+      border-radius: 10px;
       @media (max-width: 1023px) {
         padding-top: 0;
         background-color: #ffffff;
@@ -84,7 +93,7 @@
         width: calc(50% - 15px);
         height: 40px;
         line-height: 38px;
-        border: 1px solid grey;
+        border: 1px solid #d3d3d3;
         border-radius: 5px;
         color: #000000;
         font-weight: 600;
@@ -107,6 +116,7 @@
         &:hover {
           color: #2a4455;
           box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+          border: none;
         }
         &:first-child {
           margin-right: 24px;
@@ -227,11 +237,16 @@
 }
 .popup-card-wrapper-adaptive {
   @media (max-width: 500px) {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     padding: 16px 32px 16px 32px;
-    margin: -16px -32px -16px -32px;
+    z-index: 5;
     padding-bottom: 0;
     margin-bottom: 0;
+    background-color: #ffffff;
+    margin-left: -15px;
   }
 }
 .product-swiper-mob-item {
