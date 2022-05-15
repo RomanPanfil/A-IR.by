@@ -9,6 +9,36 @@ $(document).on("click", ".btn-plus", function () {
     thisInput.val(parseInt(thisInput.val(), 10) + 1);
   }
 });
+$(document).on("click", ".product-item-open", function () {
+  // сделать переменную  $(this).closest
+  if (document.documentElement.clientWidth > 1024) {
+    if ($(this).closest(".product-item").hasClass("product-open")) {
+      $(this).closest(".product-item").removeClass("product-open");
+    } else {
+      $(this).closest(".product-item").addClass("product-open");
+    }
+  } else {
+    var a = $(this);
+    $.magnificPopup.open({
+      items: { src: a.attr("data-href") },
+      type: "ajax",
+      overflowY: "scroll",
+      removalDelay: 610,
+      mainClass: "my-mfp-zoom-in",
+      ajax: {
+        tError: "Error. Not valid url",
+      },
+      callbacks: {
+        open: function () {
+          setTimeout(function () {
+            $(".mfp-wrap, .mfp-bg").addClass("delay-back");
+            $(".mfp-popup").addClass("delay-back");
+          }, 700);
+        },
+      },
+    });
+  }
+});
 //уменьшаем значение
 $(document).on("click", ".btn-minus", function () {
   var thisInput = $(this).next("input"),
@@ -123,3 +153,28 @@ new Swiper(".product-swiper-desc-interest .product-swiper ", {
 //   console.log("grid");
 //   // $(".product-price").appendTo($(".product-info"));
 // };
+// let qwe = document.querySelector(".features-disable");
+// console.log(qwe);
+// qwe.disabled = true;
+const productSliderMarkUpdear = $(".slider-dear")
+  .clone()
+  .removeClass("slider-adaptive-none");
+$(".product-swiper-mob-dear").append(productSliderMarkUpdear);
+
+$(".product-swiper-desc-dear").append(productSliderMarkUpdear);
+
+new Swiper(".product-swiper-desc-dear .product-swiper ", {
+  slidesPerView: 4,
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  spaceBetween: 8,
+  breakpoints: {
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 8,
+    },
+  },
+});
