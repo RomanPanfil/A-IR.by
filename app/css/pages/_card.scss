@@ -764,7 +764,12 @@
 
   &-reviews {
     margin-bottom: 86px;
-
+    .card-item-rating {
+      display: none;
+    }
+    .reviews.ui-btn.all {
+      margin-right: 0;
+    }
     &-btn {
       line-height: 0;
     }
@@ -955,7 +960,6 @@
         &.all {
           background: #f5f5f5;
           color: #000;
-          margin-right: 24px;
 
           @media (max-width: 1024px) {
             display: block;
