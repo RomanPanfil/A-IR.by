@@ -9,6 +9,30 @@ $(document).on("click", ".btn-plus", function () {
     thisInput.val(parseInt(thisInput.val(), 10) + 1);
   }
 });
+$(document).on("click", ".product-item-installments ", function () {
+  if (document.documentElement.clientWidth <= 1024) {
+    var a = $(this);
+    $.magnificPopup.open({
+      items: { src: a.attr("data-href") },
+      type: "ajax",
+      overflowY: "scroll",
+      removalDelay: 610,
+      mainClass: "my-mfp-zoom-in",
+      ajax: {
+        tError: "Error. Not valid url",
+      },
+      callbacks: {
+        open: function () {
+          setTimeout(function () {
+            $(".mfp-wrap, .mfp-bg").addClass("delay-back");
+            $(".mfp-popup").addClass("delay-back");
+          }, 700);
+        },
+      },
+    });
+  }
+  return false;
+});
 $(document).on("click", ".product-item-open", function () {
   // сделать переменную  $(this).closest
   if (document.documentElement.clientWidth > 1024) {
