@@ -40,6 +40,10 @@
         class="popup-input"
         placeholder="Иванов Иван Иванович"
       />
+      <!-- <div class="popup-valid-icon">
+      </div> -->
+      <div class="popup-icon">
+      </div>
     </div>
 
     <div class="popup-backcall-inputs">
@@ -63,7 +67,7 @@
         placeholder="123@gmail.com"
       />
     </div>
-
+    
     <div class="popup-agreement">
       <div class="checkbox">
         <input
@@ -82,6 +86,8 @@
       </div>
     </div>
     <button type="submit" class="popup-btn">Отправить запрос</button>
+
+    
   </form>
   <script>
     var element = document.getElementById("telephone");
@@ -137,7 +143,8 @@
             required: "Введите данные",
           },
           name: {
-            required: "Введите данные",
+            required: "Введите имя",
+            lettersonlyName: "Введите только буквы",
           },
           telephone: {
             required: "Введите данные",
@@ -150,8 +157,30 @@
             required: "Введите данные",
           },
         },
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+          
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        }
       });
+
+      
+
+
     });
+
+
+// Error 
+
+
+
+
 
     jQuery.validator.addMethod(
       "telephone",
