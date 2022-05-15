@@ -859,6 +859,10 @@
       var screen768 = window.matchMedia("(max-width:1024px)");
       screen768.addListener(changes);
       changes(screen768);
+
+      var screen576 = window.matchMedia("(max-width:576px)");
+      screen576.addListener(changesP);
+      changesP(screen576);
     }
     function changes(screen768) {
       if (screen768.matches) {
@@ -887,6 +891,13 @@
         });
       }
     }
+    function changesP(screen576) {
+      if (screen576.matches) {
+        $(".mfp-container").css("padding", 0);
+      } else {
+        $(".mfp-container").css("padding", 8);
+      }
+    }
     if (matchMedia) {
       let removeHover23 = window.matchMedia("(max-width:500px)");
       removeHover23.addListener(removeHover);
@@ -895,12 +906,13 @@
 
     function removeHover(removeHover23) {
       if (removeHover23.matches) {
-        $(".product-item").addClass("product-open");
+        // $(".product-item").addClass("product-open");
         $(".product-item").addClass("product-height");
       } else {
-        $(".product-item").removeClass("product-open");
+        // $(".product-item").removeClass("product-open");
         $(".product-item").removeClass("product-height");
       }
     }
+    // mfp-container
   </script>
 </div>

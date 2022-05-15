@@ -1351,3 +1351,8 @@ input[type="range"]::-moz-range-thumb {
 .catalog-products-img-open {
   background-image: url(.././images/icons/red-cross.svg);
 }
+.catalog-slider-adaptive {
+  .product-item {
+    max-width: 312px;
+  }
+}
