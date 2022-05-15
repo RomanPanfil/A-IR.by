@@ -80,7 +80,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -193,7 +197,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -308,7 +316,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -423,7 +435,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -538,7 +554,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -653,7 +673,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -768,7 +792,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -883,7 +911,11 @@
                 <a href="#" class="product-item-installments"
                   >Мега рассрочка 0024</a
                 >
-                <a href="javascript:void(0)" class="product-item-open">
+                <a
+                  href="javascript:void(0)"
+                  class="product-item-open"
+                  data-href="./popups/marks.html"
+                >
                   <img
                     src="./images/icons/product-arrow.svg"
                     alt="alt"
@@ -1003,21 +1035,14 @@
     <div class="product-swiper-desc-item"></div>
   </div>
   <script>
-    const productSliderMarkUpItem = $(".slider-item")
-      .clone()
-      .removeClass("slider-adaptive-none");
+    $(document).ready(function () {
+      function initPopSliderItem() {
+        const productSliderMarkUpitem = $(".slider-item")
+          .clone()
+          .removeClass("slider-adaptive-none");
+        $(".product-swiper-mob-item").append(productSliderMarkUpitem);
 
-    // let enableSwiper = undefined;
-    if (matchMedia) {
-      var screen768 = window.matchMedia("(max-width:1024px)");
-      screen768.addListener(changes);
-      changes(screen768);
-    }
-    function changes(screen768) {
-      if (screen768.matches) {
-        $(".product-swiper-mob-item").append(productSliderMarkUpItem);
-      } else {
-        $(".product-swiper-desc-item").append(productSliderMarkUpItem);
+        $(".product-swiper-desc-item").append(productSliderMarkUpitem);
 
         new Swiper(".product-swiper-desc-item .product-swiper ", {
           slidesPerView: 4,
@@ -1034,12 +1059,16 @@
             },
             1024: {
               slidesPerView: 3,
-              // spaceBetween: 16,
+              spaceBetween: 8,
             },
           },
         });
       }
-    }
+      initPopSliderItem();
+    });
+
+    // let enableSwiper = undefined;
+
     // if (matchMedia) {
     //   let screen500 = window.matchMedia("(max-width:500px)");
     //   screen500.addListener(accordionChangesPop);

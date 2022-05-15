@@ -10,10 +10,33 @@ $(document).on("click", ".btn-plus", function () {
   }
 });
 $(document).on("click", ".product-item-open", function () {
-  if ($(this).closest(".product-item").hasClass("product-open")) {
-    $(this).closest(".product-item").removeClass("product-open");
+  // сделать переменную  $(this).closest
+  if (document.documentElement.clientWidth > 1024) {
+    if ($(this).closest(".product-item").hasClass("product-open")) {
+      $(this).closest(".product-item").removeClass("product-open");
+    } else {
+      $(this).closest(".product-item").addClass("product-open");
+    }
   } else {
-    $(this).closest(".product-item").addClass("product-open");
+    var a = $(this);
+    $.magnificPopup.open({
+      items: { src: a.attr("data-href") },
+      type: "ajax",
+      overflowY: "scroll",
+      removalDelay: 610,
+      mainClass: "my-mfp-zoom-in",
+      ajax: {
+        tError: "Error. Not valid url",
+      },
+      callbacks: {
+        open: function () {
+          setTimeout(function () {
+            $(".mfp-wrap, .mfp-bg").addClass("delay-back");
+            $(".mfp-popup").addClass("delay-back");
+          }, 700);
+        },
+      },
+    });
   }
 });
 //уменьшаем значение
