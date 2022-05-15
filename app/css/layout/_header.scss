@@ -10,6 +10,11 @@
   }
 }
 .main-contacts-tel {
+  &-link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   &-numbers {
     display: none;
     position: absolute;
@@ -31,11 +36,40 @@
     .footer-bottom-socials-link {
       border: 1px solid #d3d3d3;
       margin-right: 0;
+    }
+    .socials-link-instagram{
       &:hover {
-        background: #df908a;
+        background: #8CB2D6;
         border: 1px solid transparent;
         .footer-bottom-socials-svg {
-          fill: $colorRed;
+          fill: #1A66AE; 
+        }
+      }
+    }
+    .socials-link-linked{
+      &:hover {
+        background: #8CB2D6;
+        border: 1px solid transparent;
+        .footer-bottom-socials-svg {
+          fill: #1A66AE; 
+        }
+      }
+    }
+    .socials-link-youtube{
+      &:hover {
+        background: #DF908A;
+        border: 1px solid transparent;
+        .footer-bottom-socials-svg {
+          fill: #BC0000; 
+        }
+      }
+    }
+    .socials-link-facebook{
+      &:hover {
+        background: #8CB2D6;
+        border: 1px solid transparent;
+        .footer-bottom-socials-svg {
+          fill: #1A66AE; 
         }
       }
     }
@@ -289,6 +323,9 @@
         @media (max-width: 1170px) {
           font-size: rem(14);
         }
+
+      }
+      &-email {
         &:hover {
           text-decoration: underline;
         }
