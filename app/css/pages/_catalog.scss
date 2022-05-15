@@ -274,9 +274,9 @@
             background-color: #f5f5f5;
           }
         }
-        &:hover {
-          opacity: 0.7;
-        }
+        // &:hover {
+        //   opacity: 0.7;
+        // }
         @media (max-width: 500px) {
           margin-right: 0;
         }
@@ -1437,5 +1437,30 @@ input[type="range"]::-moz-range-thumb {
   .product-item {
     max-width: 312px;
     height: initial;
+  }
+}
+
+
+// Select form styler 
+.jq-selectbox__dropdown {
+  position: relative;
+  ul {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    li {
+      padding: 5px 16px;
+      &:hover {
+        background: #F5F5F5;
+      }
+    }
+    li:first-child {
+      padding-top: 10px;
+    }
+    li:last-child {
+     padding-bottom: 10px;
+    }
   }
 }

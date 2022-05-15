@@ -10,7 +10,7 @@
   <div class="popup-txt">
     Заполните форму быстрого заказа, наши менеджеры скоро свяжутся с вами!
   </div>
-  <form action="" class="popup-query">
+  <form action="" class="popup-query popup-fastOder">
     <div class="popup-backcall-inputs">
       <label class="popup-label" for="name">Ваше имя <span>*</span></label>
       <input
@@ -20,7 +20,11 @@
         class="popup-input"
         placeholder="Иванов Иван Иванович"
       />
+     
+      <div class="popup-icon">
+      </div>
     </div>
+
     <div class="popup-backcall-inputs">
       <label class="popup-label" for="telephone">Телефон <span>*</span></label>
       <input
@@ -28,8 +32,10 @@
         name="telephone"
         id="telephone"
         class="popup-input"
-        placeholder="+"
+        placeholder="+375 (33) 398-18-18"
       />
+      <div class="popup-icon">
+      </div>
     </div>
 
     <div class="popup-backcall-inputs">
@@ -41,6 +47,8 @@
         class="popup-input"
         placeholder="123@gmail.com"
       />
+      <div class="popup-icon">
+      </div>
     </div>
 
     <div class="popup-backcall-inputs">
@@ -54,6 +62,8 @@
         class="popup-input"
         placeholder="Наименование юр. лица"
       />
+      <div class="popup-icon">
+      </div>
     </div>
 
     <div class="popup-backcall-inputs">
@@ -65,6 +75,8 @@
         class="popup-input"
         placeholder="123456778"
       />
+      <div class="popup-icon">
+      </div>
     </div>
 
     <div class="popup-agreement">
@@ -121,7 +133,7 @@
           },
           telephone: {
             required: "Введите данные",
-            minlength: "Недостаточно цифр",
+            minlength: " ",
           },
           number: {
             required: "Введите данные",
@@ -130,6 +142,17 @@
             required: "Введите данные",
           },
         },
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+          
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        }
       });
     });
 
@@ -141,14 +164,14 @@
           /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
         );
       },
-      "Incorrect format"
+      " "
     );
     jQuery.validator.addMethod(
       "lettersonlyName",
       function (value, element) {
         return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
       },
-      "В этом поле допустимы только буквы"
+      " "
     );
     jQuery.validator.addMethod(
       "email",
@@ -160,7 +183,7 @@
           )
         );
       },
-      "Введите корректный e-mail"
+      " "
     );
     jQuery.validator.addMethod(
       "number",
@@ -170,7 +193,7 @@
           /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
         );
       },
-      "Ваш УНП не может состоять из букв"
+      " "
     );
     var element = document.getElementById("telephone");
     var maskOptions = {
