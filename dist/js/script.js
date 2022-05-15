@@ -326,36 +326,34 @@ if (document.getElementById("card-breackpoint")) {
 
 
 let wrapSettings = document.querySelector('.wrap-setting');
+   
+  
 if(wrapSettings){
-  let wrapHeight = wrapSettings.offsetHeight;
   let wrapBtn = document.querySelector('.btn-setting');
   
-window.addEventListener('resize', function() {
-  console.log('window')
-})
+  function resSetting() {
+    const wrapSettingContainer = document.querySelector('.wrap-setting-container').clientHeight;
+
+    if (wrapSettingContainer <= 80){ 
+      wrapSettings.classList.remove("wrap-remove");
+      wrapBtn.classList.add('btn-setting-none'); 
+    }
+    else {
+      wrapSettings.classList.add("wrap-remove");
+      wrapBtn.classList.remove('btn-setting-none');
+    }
+  }
+  resSetting();
+  window.addEventListener('resize', resSetting)
 
 
-if (wrapHeight <= 80){ 
-  wrapSettings.classList.remove("wrap-remove");
-  wrapBtn.classList.add('btn-setting-none'); 
-}
-else {
-  wrapSettings.classList.add("wrap-remove");
-  wrapBtn.classList.remove('btn-setting-none');
-}
-  
   wrapBtn.addEventListener('click', function() {
   let wrapRemove = document.querySelector('.wrap-remove');
   wrapRemove.classList.toggle('wrap-toggle');
-  
-
   })
 
 }
 
-// document.addEventListener("DOMContentLoaded", function(event) {
-//   console.log("DOM fully loaded and parsed");
-// });
 
 
 

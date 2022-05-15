@@ -7,7 +7,6 @@
       headerNav = $(".header .nav-wrapper"),
       wrapperFixed = $(".wrapper"),
       footerBreackpoint = $("#footer"),
-      footerJs = document.getElementById('footer'),
       footerHeight = $('#footer').innerHeight(),
       headerHeight = $('header').outerHeight(true);
       
@@ -17,28 +16,9 @@
       let cardBreackpointOpen = $('.card-breackpoint-open');
       let headerCardFixedHeight = $('.header_fixed').innerHeight();
 
-      function getCoords(elem) {
-        let box = elem.getBoundingClientRect();
-        
-        return {
-          top: box.top + window.pageYOffset,
-          // left: box.left + window.pageXOffset,
 
-        };
-      
-      }
-    console.log(getCoords(footerJs));
-
-      
-
-      // const rect = footerJs.getBoundingClientRect()
-
-      // console.log('Смещение Y относительно документа:', rect.y + pageYOffset)
-      console.log(window.scrollY)
-      console.log(document.body.scrollHeight + 'asdasd')
-
-      console.log(document.body.innerHeight)
-      // console.log(footerJs.scrollY + "----------")
+      let offsetFooter = footerBreackpoint.offset().top
+   
 
       if (matchMedia) {
         var screen678 = window.matchMedia("(max-width:678px)");
@@ -52,7 +32,7 @@
             'bottom': 0
           })
           
-          if (window.scrollY > 4500) {
+          if (offsetFooter < document.documentElement.clientHeight + window.scrollY) {
             cardBreackpointOpen.css({
               'top': 'initial',
               'position': 'absolute',
@@ -74,8 +54,6 @@
         }
       }
       
-    
-      // console.log(headerCardFixedHeight)
 
       if ($(this).scrollTop() > headerHeight) {
         wrapperFixed.css('paddingTop', headerHeight + 'px')
@@ -93,19 +71,3 @@
     });
   });
 
-
-  // let cardStickyBtn = document.querySelector('.card-sticky-btn')
-
-  // if (matchMedia) {
-  //   var screen1024 = window.matchMedia("(max-width:1024px)");
-  //   screen1024.addListener(changes);
-  //   changes(screen1024);
-  // }
-
-  // function changes(screen1024) {
-  //   if (screen1024.matches) {
-  //     cardStickyBtn.innerHTML = ''
-  //   } else {
-  //     cardStickyBtn.innerHTML = 'В корзину' 
-  //   }
-  // }
