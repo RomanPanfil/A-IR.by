@@ -41,6 +41,12 @@ $(".slider-el-slide").on("click", function (e) {
   e.preventDefault();
 });
 
+slider2.on('slideChangeTransitionEnd', function () {
+    const index = $(".slider-preview-img").closest(".swiper-slide-active").index();
+
+    slider1.slideTo(index);
+});
+
 const slider3 = new Swiper(".reviews", {
   loop: false,
   slidesPerView: 3,

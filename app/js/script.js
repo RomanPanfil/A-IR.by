@@ -265,6 +265,13 @@ $(".slider-wrapper").each(function () {
   });
 });
 
+$(document).on("click", ".catalog-question-item-title", function (e) {
+    
+  $(this)
+    .closest(".catalog-question-item")
+    .toggleClass("catalog-question-toggle");
+});
+
 // catalog-info-btn
 if (document.querySelector(".sticker-info-hide")) {
   let stickerHideBtnInfo = document.querySelector(".sticker-info-hide"),
@@ -287,11 +294,7 @@ if (document.querySelector(".sticker-info-hide")) {
     }
   };
 
-  $(document).on("click", ".catalog-question-item-title", function (e) {
-    $(this)
-      .closest(".catalog-question-item")
-      .toggleClass("catalog-question-toggle");
-  });
+ 
 }
 
 if (document.getElementById("card-breackpoint")) {
