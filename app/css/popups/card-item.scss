@@ -17,6 +17,12 @@
       .popup-card-info {
         margin-bottom: 25px;
       }
+      .product-item-btn {
+        width: 100%;
+      }
+      .product-item-like {
+        margin-right: 0;
+      }
     }
     @media (max-width: 446px) {
       .card-btn-adaptive {
@@ -145,6 +151,9 @@
         overflow-x: auto;
         white-space: nowrap;
       }
+    }
+    .like-adaptive {
+      display: none;
     }
   }
   .popup-line-big {
@@ -278,4 +287,22 @@
 /* фф (свойство больше не работает, других способов тоже нет)*/
 .popup-card-optional {
   overflow: -moz-scrollbars-none;
+}
+.product-item-like {
+  margin-right: 0;
+}
+.like-adaptive {
+  display: none;
+}
+.product-swiper-mob-item {
+  display: none;
+  @media (max-width: 1024px) {
+    display: block;
+  }
+}
+.product-swiper-desc-item {
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
 }
