@@ -4,12 +4,13 @@
 <div class="catalog-products-bar">
   <div class="catalog-products-filter">
     <span class="filter-adaptive-first"></span>
-    <select name="" id="" class="catalog-products-filter-popular">
-      <!-- <option value="Сначала популярные">Сначала популярные</option> -->
-      <option value="Новинки">Новинки</option>
-      <option value="Новинки">Новинки</option>
-      <option value="Новинки">Новинки</option>
+    <select name="" class="catalog-products-filter-popular">
+      <option value="Сначала популярные">Сначала популярные</option>
+      <option value="Новинки">Сначала дешевле</option>
+      <option value="Новинки">Сначала дороже</option>
+      <option value="Новинки">С высоким рейтингом</option>
     </select>
+
     <a
       href="#"
       href="javascript:void(0)"
@@ -22,11 +23,17 @@
   <div class="catalog-products-filter catalog-img-opacity">
     <span class="filter-adaptive"></span>
     <div class="catalog-products-filter-txt">Выводить по:</div>
-    <select name="" id="" class="catalog-products-filter-section">
-      <option value="21">21</option>
-      <option value="21">25</option>
-      <option value="21">30</option>
-    </select>
+    <div class="catalog-filter-wrap">
+      <select name="" id="" class="catalog-products-filter-section">
+        <option value="21">30</option>
+        <option value="21">90</option>
+        <option value="21">120</option>
+        <option value="21">240</option>
+      </select>
+      <span class="new-ar"
+        ><img src="./images/icons/section-arrow.svg" alt="alt"
+      /></span>
+    </div>
     <img
       src="./images/icons/catalog-products-lines.svg"
       alt="alt"

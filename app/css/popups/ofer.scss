@@ -220,18 +220,14 @@
 .popup-fastOder {
   span.error {
     position: absolute;
-    top: 50%;
-    right: 19px;
-    display: inline-block;
-    z-index: 2;
-    width: 18px;
-    height: 18px;
-    background: #fff;
+    font-size: rem(14);
+    top: 46%;
+    left: 16px;
+    display: block;
+    color: #BC0000;
+  
   }
-  // span {
-  //   display: inline-block;
-  //   color: red;
-  // }
+
 }
 .popup-query {
   span {
@@ -284,34 +280,47 @@
 }
 
 .popup-input.error {
-  border-color: red;
+  position: relative;
+  border-color: #BC0000 !important;
+  background: transparent;
+  z-index: 2;
  
 }
 .popup-input.valid {
-  border-color: green;
+  border-color: #559E53;
 }
-.error-wrap {
-  width: 18px;
-  height: 18px;
-  background-image: url(.././images/icons/error-form-icon.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.popup-valid-icon {
-  display: none;
-  opacity: 0;
-  z-index: -1;
-}
-.valid + .popup-valid-icon {
-  display: inline-block;
+
+.popup-icon {
   position: absolute;
   top: 50%;
   right: 19px;
+}
+
+.popup-icon.valid {
   width: 18px;
   height: 18px;
   background-image: url(.././images/icons/accept-form-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 2;
+}
+.popup-icon.error {
+  width: 18px;
+  height: 18px;
+  background-image: url(.././images/icons/error-form-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+}
+
+.popup-backcall-inputs span.error {
+ 
   z-index: 1;
-  opacity: 1;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
 }
