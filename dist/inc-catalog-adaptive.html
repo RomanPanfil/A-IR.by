@@ -1,18 +1,16 @@
 <div class="catalog-products-banner">
-  <img src="./images/catalog-banner.png"
-       alt="alt" />
+  <img src="./images/catalog-banner.png" alt="alt" />
 </div>
 <div class="catalog-products-bar">
   <div class="catalog-products-filter">
     <span class="filter-adaptive-first"></span>
-    <select name=""
-            class="catalog-products-filter-popular">
+    <select name="" class="catalog-products-filter-popular">
       <option value="Сначала популярные">Сначала популярные</option>
-      <option value="Новинки">Новинки</option>
-      <option value="Новинки">Новинки</option>
-      <option value="Новинки">Новинки</option>
+      <option value="Новинки">Сначала дешевле</option>
+      <option value="Новинки">Сначала дороже</option>
+      <option value="Новинки">С высоким рейтингом</option>
     </select>
-   
+
     <a
       href="#"
       href="javascript:void(0)"
@@ -25,23 +23,30 @@
   <div class="catalog-products-filter catalog-img-opacity">
     <span class="filter-adaptive"></span>
     <div class="catalog-products-filter-txt">Выводить по:</div>
-    <select name=""
-            id=""
-            class="catalog-products-filter-section">
-      <option value="21">21</option>
-      <option value="21">25</option>
-      <option value="21">30</option>
-    </select>
-    <img src="./images/icons/catalog-products-lines.svg"
-         alt="alt"
-         id="catalogLine" />
-    <img src="./images/icons/catalog-products-sq.svg"
-         alt="alt"
-         id="catalogGrid" />
+    <div class="catalog-filter-wrap">
+      <select name="" id="" class="catalog-products-filter-section">
+        <option value="21">30</option>
+        <option value="21">90</option>
+        <option value="21">120</option>
+        <option value="21">240</option>
+      </select>
+      <span class="new-ar"
+        ><img src="./images/icons/section-arrow.svg" alt="alt"
+      /></span>
+    </div>
+    <img
+      src="./images/icons/catalog-products-lines.svg"
+      alt="alt"
+      id="catalogLine"
+    />
+    <img
+      src="./images/icons/catalog-products-sq.svg"
+      alt="alt"
+      id="catalogGrid"
+    />
   </div>
 </div>
-<div class="row catalog-products-grid"
-     id="catalog">
+<div class="row catalog-products-grid" id="catalog">
   <div class="col-12 col-sm-6 col-lg-4">
     <!--#include file="inc-product-adaptive.html"-->
   </div>
@@ -74,27 +79,18 @@
   </div>
 </div>
 <div class="catalog-products-pagintaion">
-  <a href="#"
-     class="catalog-products-pagintaion-more"> Показать еще</a>
+  <a href="#" class="catalog-products-pagintaion-more"> Показать еще</a>
   <div class="catalog-products-pagintaion-btns">
-    <img src="./images/icons/pagination-arrow-left.svg"
-         alt="alt" />
-    <a href="#"
-       class="catalog-products-pagintaion-btn">1</a>
-    <a href="#"
-       class="catalog-products-pagintaion-btn">2</a>
-    <a href="#"
-       class="catalog-products-pagintaion-btn">3</a>
+    <img src="./images/icons/pagination-arrow-left.svg" alt="alt" />
+    <a href="#" class="catalog-products-pagintaion-btn">1</a>
+    <a href="#" class="catalog-products-pagintaion-btn">2</a>
+    <a href="#" class="catalog-products-pagintaion-btn">3</a>
     <span class="catalog-products-pagintaion-dots">
       <div class="pagination-dots"></div>
     </span>
-    <a href="#"
-       class="catalog-products-pagintaion-btn">47</a>
-    <a href="#"
-       class="catalog-products-pagintaion-btn">48</a>
-    <a href="#"
-       class="catalog-products-pagintaion-btn">49</a>
-    <img src="./images/icons/pagination-arrow-right.svg"
-         alt="alt" />
+    <a href="#" class="catalog-products-pagintaion-btn">47</a>
+    <a href="#" class="catalog-products-pagintaion-btn">48</a>
+    <a href="#" class="catalog-products-pagintaion-btn">49</a>
+    <img src="./images/icons/pagination-arrow-right.svg" alt="alt" />
   </div>
 </div>

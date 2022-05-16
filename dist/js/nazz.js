@@ -205,10 +205,18 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
 
 // (function ($) {
 //   $(function () {
-    
+
 //   });
 // })(jQuery);
 
-$(document).ready(function (){
+$(document).ready(function () {
   $("select").styler();
-})
+});
+
+// $(document).on("click", ".jq-selectbox__select-text", function () {
+//   if ($(this).hasClass("new-arrow")) {
+//     $(this).removeClass("new-arrow");
+//   } else {
+//     $(this).addClass("new-arrow");
+//   }
+// });
