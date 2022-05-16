@@ -33,13 +33,15 @@
           })
           
           if (offsetFooter < document.documentElement.clientHeight + window.scrollY) {
+            console.log('------')
             cardBreackpointOpen.css({
-              'top': 'initial',
-              'position': 'absolute',
-              'bottom': footerHeight + 'px',
+              // 'top': 'initial',
+              'position': 'relative',
+              // 'bottom': footerHeight + 'px',
             })
             
           } else {
+            
             cardBreackpointOpen.css({
               'top': 'initial',
               'position': 'fixed',

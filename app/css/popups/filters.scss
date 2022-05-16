@@ -48,6 +48,7 @@
       text-overflow: initial;
     }
   }
+  
 }
 
 .mfp-wrap {
@@ -60,4 +61,17 @@
 .mfp-bg {
   position: fixed !important;
   top: 0 !important;
+}
+
+
+.calculator-count {
+  justify-content: center;
+  .calculator-btn {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .calculator-reload {
+    flex: 0 0 54px;
+    max-width: 54px;
+  }    
 }
