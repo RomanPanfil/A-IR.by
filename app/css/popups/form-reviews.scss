@@ -612,3 +612,27 @@
     top: 50px;
   }
 }
+
+
+.form-reviews-valid.popup-fastOder span.error {
+  top: 50%;
+  @media(max-width:680px) {
+    transform: translate(0, -43%);
+  }
+}
+
+.form-reviews-valid.popup-fastOder .popup-icon {
+  top: 51%;
+  @media(max-width:680px) {
+    transform: translate(0, -43%);
+  }
+}
+
+.form-reviews-valid.popup-fastOder .form-cell-info span.error {
+  position: relative;
+  left: 0;
+}
+
+.popup-form-reviews .form-reviews-body .form-cell input.valid {
+  border-color: #559E53;
+}
