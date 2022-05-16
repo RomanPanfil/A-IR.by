@@ -280,7 +280,10 @@
 }
 
 .popup-input.error {
+  position: relative;
   border-color: #BC0000 !important;
+  background: transparent;
+  z-index: 2;
  
 }
 .popup-input.valid {
@@ -299,6 +302,7 @@
   background-image: url(.././images/icons/accept-form-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 2;
 }
 .popup-icon.error {
   width: 18px;
@@ -306,9 +310,13 @@
   background-image: url(.././images/icons/error-form-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 2;
 }
 
 .popup-backcall-inputs span.error {
+ 
+  z-index: 1;
+
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
   -khtml-user-select: none;    /* Konqueror */

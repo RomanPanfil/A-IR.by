@@ -56,7 +56,12 @@
       color: rgba(0, 0, 0, 0.5);
     }
   }
-
+  .card-item-rating {
+    display: none;  
+  }
+  .reviews.ui-btn.all {
+    margin-right: 0;
+  }
   &-stickers {
     margin-bottom: 55px;
     &-wrap {
@@ -438,6 +443,10 @@
         span {
           font-weight: 600;
         }
+        &:hover {
+          opacity: 1;
+          background: rgb(248, 246, 246);
+        }
       }
       .calculator-reload {
         position: relative;
@@ -447,6 +456,10 @@
         text-overflow: initial;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
+        &:hover {
+          opacity: 1;
+          background: rgb(248, 246, 246);
+        }
       }
     }
     .product-item {
