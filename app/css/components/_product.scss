@@ -137,7 +137,7 @@
     &-add {
       position: relative;
       display: inline-block;
-      width: 40px;
+      min-width: 40px;
       height: 40px;
       margin-right: 20px;
       // box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -145,6 +145,7 @@
       &-disabled {
         background: #f5f5f5;
         box-shadow: none;
+
         .product-item-add-svg {
           fill: #d3d3d3;
         }
@@ -177,7 +178,7 @@
     &-like {
       position: relative;
       display: inline-block;
-      width: 40px;
+      min-width: 40px;
       height: 40px;
       margin-right: 20px;
       // box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
@@ -185,6 +186,12 @@
       &-disabled {
         background: #f5f5f5;
         box-shadow: none;
+        &:hover {
+          box-shadow: none !important;
+          .product-item-like-svg {
+            fill: #d3d3d3 !important;
+          }
+        }
         .product-item-like-svg {
           fill: #d3d3d3;
         }

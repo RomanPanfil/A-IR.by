@@ -27,9 +27,7 @@
   </div>
   <div class="popup-line popup-line-big"></div>
   <div class="popup-similar-contant">
-    <div
-      class="swiper product-swiper slider-adaptive slider-adaptive-none slider-similar"
-    >
+    <div class="swiper product-swiper slider-adaptive slider-item">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper slider-adaptive-wrap">
         <!-- Slides -->
@@ -123,7 +121,7 @@
                       ></use>
                     </svg>
                   </a>
-                  <a href="#" class="product-item-like">
+                  <a href="#" class="product-item-like like-adaptive">
                     <svg class="product-item-like-svg">
                       <use
                         xlink:href="./images/svg/symbols.svg#product-add"
@@ -242,7 +240,7 @@
                       ></use>
                     </svg>
                   </a>
-                  <a href="#" class="product-item-like">
+                  <a href="#" class="product-item-like like-adaptive">
                     <svg class="product-item-like-svg">
                       <use
                         xlink:href="./images/svg/symbols.svg#product-add"
@@ -361,7 +359,7 @@
                       ></use>
                     </svg>
                   </a>
-                  <a href="#" class="product-item-like">
+                  <a href="#" class="product-item-like like-adaptive">
                     <svg class="product-item-like-svg">
                       <use
                         xlink:href="./images/svg/symbols.svg#product-add"
@@ -480,7 +478,7 @@
                       ></use>
                     </svg>
                   </a>
-                  <a href="#" class="product-item-like">
+                  <a href="#" class="product-item-like like-adaptive">
                     <svg class="product-item-like-svg">
                       <use
                         xlink:href="./images/svg/symbols.svg#product-add"
@@ -599,7 +597,7 @@
                       ></use>
                     </svg>
                   </a>
-                  <a href="#" class="product-item-like">
+                  <a href="#" class="product-item-like like-adaptive">
                     <svg class="product-item-like-svg">
                       <use
                         xlink:href="./images/svg/symbols.svg#product-add"
@@ -718,7 +716,7 @@
                       ></use>
                     </svg>
                   </a>
-                  <a href="#" class="product-item-like">
+                  <a href="#" class="product-item-like like-adaptive">
                     <svg class="product-item-like-svg">
                       <use
                         xlink:href="./images/svg/symbols.svg#product-add"
@@ -837,7 +835,7 @@
                       ></use>
                     </svg>
                   </a>
-                  <a href="#" class="product-item-like">
+                  <a href="#" class="product-item-like like-adaptive">
                     <svg class="product-item-like-svg">
                       <use
                         xlink:href="./images/svg/symbols.svg#product-add"
@@ -874,70 +872,54 @@
       </div>
       <div class="swiper-button-next slider-adaptive-next"></div>
     </div>
-    <div class="product-swiper-mob-similar"></div>
-    <div class="product-swiper-desc-similar"></div>
+    <div class="product-swiper-mob-item"></div>
+    <div class="product-swiper-desc-item"></div>
   </div>
   <script>
-    function initPopSimilar() {
-      const productSliderMarkUpSimilar = $(".slider-similar")
-        .clone()
-        .removeClass("slider-adaptive-none");
+    // function initPopSimilar() {
+    //   function changesP(screen576) {
+    //     if (screen576.matches) {
+    //       $(".mfp-container").css("padding", 0);
+    //     } else {
+    //       $(".mfp-container").css("padding", 8);
+    //     }
+    //   }
 
-      // let enableSwiper = undefined;
-      // if (matchMedia) {
-      //   var screen768 = window.matchMedia("(max-width:1024px)");
-      //   screen768.addListener(changes);
-      //   changes(screen768);
+    //   // let enableSwiper = undefined;s
+    // }
+    $(document).ready(function () {
+      function initPopSliderItem() {
+        const productSliderMarkUpitem = $(".slider-item")
+          .clone()
+          .removeClass("slider-adaptive-none slider-item");
 
-      //   var screen576 = window.matchMedia("(max-width:576px)");
-      //   screen576.addListener(changesP);
-      //   changesP(screen576);
-      // }
-      $(".product-swiper-mob-similar").append(productSliderMarkUpSimilar);
-      $(".product-swiper-desc-similar").append(productSliderMarkUpSimilar);
-      new Swiper(".product-swiper-desc-similar .product-swiper ", {
-        slidesPerView: 4,
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        spaceBetween: 8,
-        breakpoints: {
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 8,
+        //оборачиваем исходную разметку дивом, будем использовать для адаптива как нативный скролл
+        $(".slider-item").wrap('<div class="product-swiper-mob-item"></div>');
+
+        //вставляем копию разметки и навешиваем свайпер для десктопа
+        $(".product-swiper-desc-item").append(productSliderMarkUpitem);
+
+        new Swiper(".product-swiper-desc-item .product-swiper", {
+          slidesPerView: 4,
+          // Navigation arrows
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
           },
-          1300: {
-            slidesPerView: 4,
-            // spaceBetween: 16,
+          spaceBetween: 8,
+          breakpoints: {
+            1335: {
+              slidesPerView: 4,
+              spaceBetween: 8,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 8,
+            },
           },
-        },
-      });
-      function changesP(screen576) {
-        if (screen576.matches) {
-          $(".mfp-container").css("padding", 0);
-        } else {
-          $(".mfp-container").css("padding", 8);
-        }
+        });
       }
-      if (matchMedia) {
-        let removeHover23 = window.matchMedia("(max-width:500px)");
-        removeHover23.addListener(removeHover);
-        removeHover(removeHover23);
-      }
-
-      function removeHover(removeHover23) {
-        if (removeHover23.matches) {
-          // $(".product-item").addClass("product-open");
-          $(".product-item").addClass("product-height");
-        } else {
-          // $(".product-item").removeClass("product-open");
-          $(".product-item").removeClass("product-height");
-        }
-      }
-    }
-    // mfp-container
-    initPopSimilar();
+      initPopSliderItem();
+    });
   </script>
 </div>
