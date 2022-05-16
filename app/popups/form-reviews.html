@@ -52,27 +52,34 @@
         <form
           action="#"
           method="POST"
-          class="form-reviews-valid"
+          class="form-reviews-valid popup-fastOder"
           id="form-reviews-valid"
         >
           <div class="form-cell">
-            <div class="form-cell-info form-cell-error">
-              <label for="name">Ваше имя<span>*</span></label> <br />
+            <div class="popup-backcall-inputs">
+              <label class="popup-label" for="name">Ваше имя <span>*</span></label>
               <input
                 type="text"
-                id="name"
                 name="name"
+                id="name"
+                class="popup-input"
                 placeholder="Иванов Иван Иванович"
               />
+              
+              <div class="popup-icon">
+              </div>
             </div>
-            <div class="form-cell-info form-cell-error">
-              <label for="email">Ваш Email<span>*</span></label> <br />
+            <div class="popup-backcall-inputs">
+              <label class="popup-label" for="email">Ваш Email <span>*</span></label>
               <input
-                type="email"
-                id="email"
+                type="text"
                 name="email"
+                id="email"
+                class="popup-input"
                 placeholder="123@gmail.com"
               />
+              <div class="popup-icon">
+              </div>
             </div>
           </div>
           <div class="form-cell">
@@ -294,7 +301,17 @@
             required: true,
           },
         },
-
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+          
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
         errorPlacement: function (error, element) {
           if (element.attr("name") == "rating") {
             error.appendTo(".card-item-rating.rating-set");
@@ -314,12 +331,12 @@
         messages: {
           email: {
             required: "Пожалуйста, введите ваш Email",
-            email: "Пожалуйста введите корректный Email",
+            email: " ",
           },
 
           name: {
             required: "Пожалуйста, введите ваше Имя",
-            name: "Ваше имя не может состоять из цифр",
+            name: " ",
           },
 
           textbox: {
@@ -342,7 +359,7 @@
         function (value, element) {
           return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
         },
-        "Только буквы"
+        " "
       );
 
       jQuery.validator.addMethod(
