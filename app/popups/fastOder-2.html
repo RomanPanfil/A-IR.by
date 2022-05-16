@@ -39,6 +39,9 @@
         class="popup-input"
         placeholder="Иванов Иван Иванович"
       />
+  
+      <div class="popup-icon">
+      </div>
     </div>
 
     <div class="popup-backcall-inputs">
@@ -50,6 +53,8 @@
         class="popup-input"
         placeholder="+375 (33) 398-18-18"
       />
+      <div class="popup-icon">
+      </div>
     </div>
 
     <div class="popup-backcall-inputs">
@@ -61,8 +66,10 @@
         class="popup-input"
         placeholder="123@gmail.com"
       />
+      <div class="popup-icon">
+      </div>
     </div>
-
+    
     <div class="popup-agreement">
       <div class="checkbox">
         <input
@@ -81,6 +88,8 @@
       </div>
     </div>
     <button type="submit" class="popup-btn">Отправить запрос</button>
+
+    
   </form>
   <script>
     var element = document.getElementById("telephone");
@@ -90,20 +99,21 @@
     };
     var mask = IMask(element, maskOptions);
 
-    let minusBtnPop = document.querySelector(".btn-minus");
-    let plusBtnPop = document.querySelector(".btn-plus");
-    let inputBtnPop = document.querySelector(".card-item-counter-input");
-    let regPop = /[^\d]/g;
-    plusBtnPop.onclick = () => {
-      inputBtnPop.value++;
+    let minusBtn = document.querySelectorAll(".btn-minus");
+    let plusBtn = document.querySelectorAll(".btn-plus");
+    let inputBtn = document.querySelectorAll(".card-item-counter-input");
+    let reg = /[^\d]/g;
+    plusBtn.onclick = () => {
+      console.log("plus");
+      inputBtn.value++;
     };
 
-    minusBtnPop.onclick = () => {
-      inputBtnPop.value == 1 ? false : inputBtnPop.value--;
+    minusBtn.onclick = () => {
+      inputBtn.value == 1 ? false : inputBtn.value--;
     };
 
-    inputBtnPop.oninput = function () {
-      this.value = this.value.replace(regPop, "");
+    inputBtn.oninput = function () {
+      this.value = this.value.replace(reg, "");
     };
     $(document).ready(function () {
       $(".popup-fastOder").validate({
@@ -132,14 +142,15 @@
         },
         messages: {
           email: {
-            required: "Введите данные",
+            required: "Введите ваш email",
           },
           name: {
-            required: "Введите данные",
+            required: "Введите имя",
+            // lettersonlyName: "",
           },
           telephone: {
-            required: "Введите данные",
-            minlength: "Недостаточно цифр",
+            required: "Введите ваш номер",
+            minlength: " ",
           },
           number: {
             required: "Введите данные",
@@ -148,8 +159,30 @@
             required: "Введите данные",
           },
         },
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+          
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        }
       });
+
+      
+
+
     });
+
+
+// Error 
+
+
+
+
 
     jQuery.validator.addMethod(
       "telephone",
@@ -159,14 +192,14 @@
           /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
         );
       },
-      "Incorrect format"
+      " "
     );
     jQuery.validator.addMethod(
       "lettersonlyName",
       function (value, element) {
         return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
       },
-      "В этом поле допустимы только буквы"
+      " "
     );
     jQuery.validator.addMethod(
       "email",
@@ -178,7 +211,7 @@
           )
         );
       },
-      "Введите корректный e-mail"
+      " "
     );
     jQuery.validator.addMethod(
       "number",

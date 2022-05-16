@@ -636,6 +636,7 @@
               }
 
               .tooltip .tooltiptext {
+
                 visibility: hidden;
                 width: 400px;
                 background: #ffffff;
@@ -651,6 +652,7 @@
                 margin-left: -60px;
                 opacity: 0;
                 transition: opacity 0.3s;
+
               }
 
               .tooltip:hover .tooltiptext {
@@ -975,6 +977,7 @@
     }
 
     .reviews {
+      margin-bottom: 12px;
       &.ui-btn {
         width: 200px;
         background: #2a4455;
@@ -1334,7 +1337,11 @@
             opacity: 0;
             transition: opacity 0.3s;
           }
-
+          .tooltiptext {
+            @media(max-width:576px) {
+             width: calc(100vw - 55px) !important;
+            }
+          }
           .tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
@@ -1412,9 +1419,9 @@
   position: relative;
   display: inline-block;
 
-  &.reviews {
-    border-radius: 0;
-  }
+  // &.reviews {
+  //   border-radius: 0;
+  // }
 
   &-btn {
     position: absolute;
@@ -1443,6 +1450,12 @@
   line-height: 0;
   border-radius: 8px;
   overflow: hidden;
+
+  &.reviews-video {
+    border-radius: 0;
+    // margin-bottom: 0;
+  }
+
   &-wrapper {
     margin-bottom: 22px;
   }

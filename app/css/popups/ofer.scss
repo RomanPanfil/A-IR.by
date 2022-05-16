@@ -13,6 +13,7 @@
     margin-top: 0;
     padding-left: 15px;
     padding-right: 15px;
+    border-radius: 0;
   }
   .mfp-close {
     position: absolute;
@@ -74,12 +75,14 @@
   //   margin-bottom: 27px;
   // }
   &-backcall-inputs {
+    position: relative;
     margin-bottom: 17px;
   }
   &-input {
     width: 100%;
     height: 40px;
     padding-left: 16px;
+    padding-right: 45px;
     font-weight: rem(14);
     border-radius: 5px;
     // margin-bottom: 17px;
@@ -92,6 +95,9 @@
     // }
     &:focus {
       border: 1px solid #000000;
+    }
+    &::placeholder {
+      color: transparent;
     }
   }
   &-agreement {
@@ -119,8 +125,23 @@
     background-color: $colorDark;
     border-radius: 5px;
     border: none;
+    font-weight: 700;
+    font-size: rem(16);
     &:hover {
       opacity: 0.5;
+    }
+  }
+  .mfp-close {
+    font-size: 0;
+    &::after {
+      display: inline-block;
+      position: relative;
+      top: 17px;
+      right: 5px;
+      height: 20px;
+      width: 20px;
+      content: "";
+      background: url("../images/icons/mfp-close.svg") no-repeat right;
     }
   }
 }
@@ -197,12 +218,16 @@
   // }
 }
 .popup-fastOder {
-  span {
-    position: relative;
-    // top: -17px;
-    display: inline-block;
-    color: red;
+  span.error {
+    position: absolute;
+    font-size: rem(14);
+    top: 46%;
+    left: 16px;
+    display: block;
+    color: #BC0000;
+  
   }
+
 }
 .popup-query {
   span {
@@ -252,4 +277,42 @@
     margin-bottom: 0;
     top: 5px;
   }
+}
+
+.popup-input.error {
+  border-color: #BC0000;
+ 
+}
+.popup-input.valid {
+  border-color: #559E53;
+}
+
+.popup-icon {
+  position: absolute;
+  top: 50%;
+  right: 19px;
+}
+
+.popup-icon.valid {
+  width: 18px;
+  height: 18px;
+  background-image: url(.././images/icons/accept-form-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popup-icon.error {
+  width: 18px;
+  height: 18px;
+  background-image: url(.././images/icons/error-form-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.popup-backcall-inputs span.error {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
 }

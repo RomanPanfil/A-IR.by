@@ -109,6 +109,7 @@
     @media (max-width: 576px) {
       margin-bottom: 40px;
     }
+
     &-title {
       margin-bottom: 22px;
       font-size: rem(32);
@@ -264,12 +265,18 @@
         color: #000000a8;
         font-size: rem(16);
         cursor: pointer;
-        background: url("../images/icons/catalog-products-arrows.svg") no-repeat
-          right;
+        // background: url("../images/icons/catalog-products-arrows.svg") no-repeat
+        //   right;
         background-position: right 2px center;
-        &:hover {
-          opacity: 0.7;
+        option {
+          background-color: #ffffff;
+          &:hover {
+            background-color: #f5f5f5;
+          }
         }
+        // &:hover {
+        //   opacity: 0.7;
+        // }
         @media (max-width: 500px) {
           margin-right: 0;
         }
@@ -398,11 +405,18 @@
       margin-bottom: 8px;
     }
     &-reniev {
+      width: 312px;
+      position: fixed;
+      bottom: 0;
+      z-index: 11;
       height: 56px;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
 
       box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+      @media (max-width: 1024px) {
+        display: none;
+      }
       &-svg {
         position: relative;
         top: 3px;
@@ -419,21 +433,32 @@
         color: #000;
         border-right: 1px solid #f5f5f5;
         font-weight: 400;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
         span {
           font-weight: 600;
         }
       }
       .calculator-reload {
+        position: relative;
         background: #fff;
         color: #000;
         height: 100%;
         text-overflow: initial;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
       }
     }
     .product-item {
       width: 100%;
       height: calc(100% - 24px);
       margin-bottom: 24px;
+    }
+    .product-item-price-old {
+      display: none;
+    }
+    .product-item-price {
+      color: #000000;
     }
   }
   &-info {
@@ -866,6 +891,7 @@
     border-bottom-left-radius: 8px;
     padding: 0px 74px;
     background: $colorDark;
+    width: 100%;
   }
   &-btn-wrapper {
     display: flex;
@@ -876,15 +902,19 @@
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    padding: 0 15px;
+    width: 100%;
+    max-width: 56px;
     &-img {
       max-width: 26px;
       display: inline-block;
       vertical-align: middle;
+      position: relative;
       &-svg {
-        position: relative;
-        top: 3px;
-        fill: #fff;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        fill: #d3d3d3;
         width: 26px;
         height: 22px;
       }
@@ -1164,11 +1194,17 @@ input[type="range"]::-moz-range-thumb {
       margin-top: 5px;
     }
   }
+  .product-adaptive-btn {
+    background-color: #bc0000 !important;
+    &:hover {
+      background-color: #991c12 !important;
+    }
+  }
   .product {
     &-item {
       display: flex;
       min-width: 100%;
-      padding-bottom: 16px;
+      padding-bottom: 0;
       &-open {
         @media (max-width: 1024px) {
           display: none;
@@ -1244,6 +1280,24 @@ input[type="range"]::-moz-range-thumb {
       &-price {
         width: 100% !important;
       }
+    }
+  }
+  .product-item-stats-adaptive {
+    display: flex !important;
+    justify-content: left;
+  }
+  .product-item-rait {
+    margin-right: 16px;
+  }
+  .product-item-stats {
+    display: none;
+  }
+  .product-adaptive-sale {
+    .product-item-price {
+      color: #bc0000;
+    }
+    .product-item-price-old {
+      display: block;
     }
   }
 }
@@ -1365,4 +1419,48 @@ input[type="range"]::-moz-range-thumb {
 
 .catalog-products-img-open {
   background-image: url(.././images/icons/red-cross.svg);
+}
+
+// Стили для скрытие стикера
+.wrap-remove {
+  max-height: 80px;
+  overflow: hidden;
+}
+.wrap-toggle {
+  max-height: initial;
+  overflow: auto;
+}
+.btn-setting-none {
+  display: none;
+}
+.catalog-slider-adaptive {
+  .product-item {
+    max-width: 312px;
+    height: initial;
+  }
+}
+
+
+// Select form styler 
+.jq-selectbox__dropdown {
+  position: relative;
+  ul {
+    position: absolute;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    li {
+      padding: 5px 16px;
+      &:hover {
+        background: #F5F5F5;
+      }
+    }
+    li:first-child {
+      padding-top: 10px;
+    }
+    li:last-child {
+     padding-bottom: 10px;
+    }
+  }
 }
