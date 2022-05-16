@@ -45,12 +45,93 @@
 
       &-icon {
         line-height: 0;
+        padding: 13px;
+        transition: 0.3s ease;
+
+        svg {
+          width: 20px;
+          height: 22px;
+        }
+
+        &.xls {
+          border: 1px solid #559E53;
+          border-radius: 8px;
+          svg {
+            fill: #559E53;
+          }
+        }
+        &.pdf {
+          border: 1px solid #BC0000;
+          border-radius: 8px;
+          svg {
+            fill: #BC0000;
+          }
+        }
+
+        &.doc {
+          border: 1px solid #1A66AE;
+          border-radius: 8px;
+          padding: 13px 8px;
+          svg {
+            width: 30px;
+            height: 23px;
+            fill: #1A66AE;
+          }
+        }
+        &.jpg {
+          border: 1px solid #FFC100;
+          border-radius: 8px;
+          padding: 13px 8px;
+          svg {
+            width: 30px;
+            height: 23px;
+            fill: #FFC100;
+          }
+        }
+        &.png {
+          border: 1px solid #FFC100;
+          border-radius: 8px;
+          padding: 13px 8px;
+          svg {
+            width: 30px;
+            height: 23px;
+            fill: #FFC100;
+          }
+        }
       }
     }
 
     &:hover {
       border: 1px solid #fff;
       box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+
+      .doc-link-download-format-icon.xls {
+        border: 1px solid #9CC19B;
+        background-color: #9CC19B;
+      }
+      .doc-link-download-format-icon.pdf {
+        border: 1px solid #DF908A;
+        background-color: #DF908A;
+      }
+      .doc-link-download-format-icon.doc {
+        border: 1px solid #8CB2D6;
+        background-color: #8CB2D6;
+      }
+      .doc-link-download-format-icon.jpg {
+        border: 1px solid #F9DE8E;
+        background-color: #F9DE8E;
+      }
+      .doc-link-download-format-icon.png {
+        border: 1px solid #F9DE8E;
+        background-color: #F9DE8E;
+      }
+
+      .xls {
+        fill: #559E53;
+      }
+      .pdf {
+        fill: #BC0000;
+      }
     }
   }
 }
