@@ -78,15 +78,24 @@
     }
 
     &-fav {
-      display: inline-block;
+      display: flex;
       align-items: center;
       margin-right: 25px;
       font-weight: 400;
       font-size: rem(16);
       color: $colorBlue;
 
+      svg {
+        width: 22px;
+        height: 20px;
+        fill: #D3D3D3;
+        margin-right: 4px;
+      }
+
       &:hover {
-        opacity: 0.35;
+        svg {
+          fill: #2A4455;
+        }
       }
 
       img {
@@ -97,14 +106,23 @@
     }
 
     &-comparison {
-      display: inline-block;
+      display: flex;
       align-items: center;
       font-weight: 400;
       font-size: rem(16);
       color: $colorBlue;
 
+      svg {
+        width: 22px;
+        height: 20px;
+        fill: #D3D3D3;
+        margin-right: 4px;
+      }
+
       &:hover {
-        opacity: 0.35;
+        svg {
+          fill: #2A4455;
+        }
       }
 
       img {
@@ -618,7 +636,7 @@
               }
 
               .tooltip .tooltiptext {
-                
+
                 visibility: hidden;
                 width: 400px;
                 background: #ffffff;
@@ -634,9 +652,9 @@
                 margin-left: -60px;
                 opacity: 0;
                 transition: opacity 0.3s;
-                
+
               }
-             
+
               .tooltip:hover .tooltiptext {
                 visibility: visible;
                 opacity: 1;
@@ -708,7 +726,7 @@
             margin-bottom: 2px;
           }
 
-          &-list {
+          ul {
             padding-left: 15px;
 
             li {
@@ -726,6 +744,17 @@
                 border-radius: 50%;
                 background-color: #ffc100;
               }
+            }
+          }
+
+          p {
+            margin: 0;
+
+            &:nth-child(1) {
+              margin-bottom: 24px;
+            }
+            &:nth-child(2) {
+              font-weight: 700;
             }
           }
         }
@@ -766,12 +795,11 @@
 
   &-reviews {
     margin-bottom: 86px;
-
-    .card-item-rating {
-      display: none;
-    }
+    // .card-item-rating {
+    //   display: none;
+    // }
     .reviews.ui-btn.all {
-      margin-right: 0;
+      margin-right: 24px;
     }
     &-btn {
       line-height: 0;
@@ -1027,6 +1055,11 @@
 
       &-text {
         margin-bottom: 18px;
+
+        p {
+          margin: 0;
+          padding: 0 0 5px 0;
+        }
       }
 
       &-title {
@@ -1101,9 +1134,52 @@
       }
 
       .accordion {
+        &.tab1 {
+          ul {
+            padding-left: 15px;
+
+            li {
+              position: relative;
+              margin-bottom: 2px;
+
+              &::before {
+                display: inline-block;
+                position: absolute;
+                left: -15px;
+                top: 9px;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: #ffc100;
+              }
+            }
+          }
+
+          p {
+            margin: 0;
+
+            &:nth-child(1) {
+              margin-bottom: 24px;
+            }
+            &:nth-child(2) {
+              font-weight: 700;
+            }
+          }
+        }
+
         &.tab4 {
           .accordion-items-title {
             border-bottom: none;
+          }
+
+          .doc-picture {
+            img {
+              padding: 16px;
+              border: 1px solid #d3d3d3;
+              border-radius: 5px;
+              height: auto;
+            }
           }
         }
       }
@@ -1263,7 +1339,7 @@
           }
           .tooltiptext {
             @media(max-width:576px) {
-             width: calc(100vw - 55px) !important;   
+             width: calc(100vw - 55px) !important;
             }
           }
           .tooltip:hover .tooltiptext {
@@ -1342,6 +1418,11 @@
 .popup-youtube {
   position: relative;
   display: inline-block;
+
+  // &.reviews {
+  //   border-radius: 0;
+  // }
+
   &-btn {
     position: absolute;
     display: inline-block;
@@ -1352,6 +1433,7 @@
     border-radius: 8px;
     width: 124px;
     height: 64px;
+
     img {
       position: absolute;
       max-height: 32px;
@@ -1368,6 +1450,12 @@
   line-height: 0;
   border-radius: 8px;
   overflow: hidden;
+
+  &.reviews-video {
+    border-radius: 0;
+    // margin-bottom: 0;
+  }
+
   &-wrapper {
     margin-bottom: 22px;
   }

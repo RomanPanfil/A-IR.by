@@ -28,6 +28,10 @@
   //   }
   // }
 
+  .row {
+    justify-content: center;
+  }
+
   .popup-agreement-txt {
     @media (max-width: 1024px) {
       font-size: 14px;
@@ -120,6 +124,10 @@
           margin-bottom: 0;
         }
 
+        &.load-file {
+          margin-bottom: 48px;
+        }
+
         label {
           font-weight: 400;
           font-size: 14px;
@@ -132,6 +140,13 @@
 
         .url {
           margin-top: 0;
+          transition: all 0.2s ease-out;
+          cursor: pointer;
+
+          &:hover {
+            border: 1px solid #fff;
+            box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+          }
         }
 
         .customCheckbox {
@@ -191,7 +206,7 @@
         }
 
         .card-item-rating-item {
-          margin-bottom: 0;
+          margin-bottom: 14px;
         }
 
         .btn-submit {
@@ -202,6 +217,7 @@
           border: none;
           font-size: 16px;
           border-radius: 5px;
+          margin-top: 0;
 
           @media (max-width: 680px) {
             width: 100%;
@@ -243,6 +259,15 @@
               font-family: $ffOpenSans;
               &:focus {
                 border: 1px solid #808080;
+              }
+
+              &::-webkit-scrollbar {
+                background-color: transparent;
+                width: 5px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background-color: #dfdfdf;
+                border-radius: 10px;
               }
             }
           }
@@ -294,6 +319,12 @@
               height: 60px;
               padding: 15px 16px;
               width: 288px;
+              transition: all 0.2s ease-out;
+
+              &:hover {
+                border: 1px solid #fff;
+                box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+              }
 
               @media (max-width: 680px) {
                 width: 100%;
@@ -304,7 +335,8 @@
                 position: relative;
                 top: -12px;
                 color: #000;
-                padding-left: 16px;
+                padding-left: 12px;
+                font-size: 16px;
               }
             }
           }
@@ -315,7 +347,14 @@
             img {
               position: absolute;
               z-index: 10;
+              top: -4px;
               padding: 18px;
+            }
+
+            span {
+              font-weight: 400;
+              font-size: 14px;
+              color: #BC0000;
             }
 
             input {
@@ -453,6 +492,12 @@
   padding: 18px 0;
   border: 1px solid #d3d3d3;
   border-radius: 10px;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 8px rgb(0 0 0 / 10%);
+  }
 
   img {
     width: 26px;
@@ -462,8 +507,9 @@
 
 .popup-close {
   position: absolute;
-  top: 0;
+  top: 26px;
   right: 26px;
+  line-height: 0.5;
   font-size: 50px;
   cursor: pointer;
 
