@@ -270,6 +270,12 @@
         font-weight: 700;
         margin-bottom: 11px;
       }
+      &-cont {
+        @media(max-width:768px) {
+            display: flex;
+            justify-content: center;
+        }
+      }
       &-link {
         display: flex;
         align-items: center;
@@ -293,7 +299,7 @@
         }
         &-svg {
           max-width: 100px;
-          max-height: 40px;
+          max-height: 25px;
           fill: #D3D3D3;
           &:hover {
             fill: #fff;
@@ -315,8 +321,9 @@
       &-map {
         display: inline-block;
         max-width: 100px;
+        max-height: 25px;
         position: relative;
-        top: 3px;
+       
         @media (max-width: 1240px) and (min-width: 1170px) {
           margin-right: 0;
         }
