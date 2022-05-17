@@ -1415,34 +1415,36 @@
 
 // YouTube
 
-.popup-youtube {
-  position: relative;
-  display: inline-block;
+// .popup-youtube {
+//   position: relative;
+//   display: inline-block;
 
-  // &.reviews {
-  //   border-radius: 0;
-  // }
+//   // &.reviews {
+//   //   border-radius: 0;
+//   // }
 
-  &-btn {
-    position: absolute;
-    display: inline-block;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    background: #bc0000;
-    border-radius: 8px;
-    width: 124px;
-    height: 64px;
+//   &-btn {
+//     position: absolute;
+//     display: inline-block;
+//     transform: translate(-50%, -50%);
+//     top: 50%;
+//     left: 50%;
+//     background: #bc0000;
+//     border-radius: 8px;
+//     width: 124px;
+//     height: 64px;
 
-    img {
-      position: absolute;
-      max-height: 32px;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-    }
-  }
-}
+//     img {
+//       position: absolute;
+//       max-height: 32px;
+//       transform: translate(-50%, -50%);
+//       top: 50%;
+//       left: 50%;
+//     }
+   
+//   }
+ 
+// }
 
 .popup-youtube {
   position: relative;
@@ -1450,7 +1452,7 @@
   line-height: 0;
   border-radius: 8px;
   overflow: hidden;
-
+ 
   &.reviews-video {
     border-radius: 0;
     // margin-bottom: 0;
@@ -1486,6 +1488,14 @@
       }
     }
   }
+  &-mini {
+    width: 48px;
+    height: 24px;
+    border-radius: 3px;
+    img {
+      max-height: 24px;
+    }
+  }
 }
 
 .popup-rev.mfp-image-holder .mfp-close,
@@ -1497,4 +1507,15 @@
 }
 .mfp-iframe-holder .mfp-close {
   top: 0;
+}
+
+
+
+
+.reviews-video {
+  max-width: 88px;
+  height: 64px;
+  img {
+    max-height: 64px;
+  }
 }

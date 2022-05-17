@@ -67,11 +67,15 @@
 
         <div class="card-item-controller">
           <a href="#" class="card-item-fav">
-            <img loading="lazy" src="./images/icons/fav.svg" alt="alt" />
+            <svg>
+              <use xlink:href="./images/svg/symbols.svg#fav"></use>
+            </svg>
             <span>В избранное</span>
           </a>
           <a href="#" class="card-item-comparison">
-            <img loading="lazy" src="./images/icons/btn-plus.svg" alt="alt" />
+            <svg>
+              <use xlink:href="./images/svg/symbols.svg#btn-plus"></use>
+            </svg>
             <span>В сравнении</span>
           </a>
         </div>
@@ -277,33 +281,33 @@
                         <div class="card-item-services-btn">
                           <button class="services-btn">
                             <div class="img-btn">
-                              <img
-                                loading="lazy"
-                                src="./images/icons/payment.svg"
-                                alt="alt"
-                              />
+                              <svg class="footer-bottom-socials-svg">
+                                <use
+                                  xlink:href="./images/svg/symbols.svg#payment"
+                                ></use>
+                              </svg>
                             </div>
-                            <span> Оплата </span>
+                            <span>Оплата</span>
                           </button>
                           <button class="services-btn">
                             <div class="img-btn">
-                              <img
-                                loading="lazy"
-                                src="./images/icons/delivery.svg"
-                                alt="alt"
-                              />
+                              <svg class="footer-bottom-socials-svg">
+                                <use
+                                  xlink:href="./images/svg/symbols.svg#delivery"
+                                ></use>
+                              </svg>
                             </div>
-                            <span> Доставка </span>
+                            <span>Доставка</span>
                           </button>
                           <button class="services-btn">
                             <div class="img-btn">
-                              <img
-                                loading="lazy"
-                                src="./images/icons/services.svg"
-                                alt="alt"
-                              />
+                              <svg class="footer-bottom-socials-svg">
+                                <use
+                                  xlink:href="./images/svg/symbols.svg#services"
+                                ></use>
+                              </svg>
                             </div>
-                            <span> Сервис </span>
+                            <span>Сервис</span>
                           </button>
                         </div>
                       </div>
@@ -548,7 +552,7 @@
                                 >
                                   <img
                                     loading="lazy"
-                                    src="./images/video.png"
+                                    src="//img.youtube.com/vi/qUwSYxoRhaM/maxresdefault.jpg"
                                     alt="alt"
                                   />
 
@@ -570,7 +574,7 @@
                                 >
                                   <img
                                     loading="lazy"
-                                    src="./images/video.png"
+                                    src="//img.youtube.com/vi/qUwSYxoRhaM/maxresdefault.jpg"
                                     alt="alt"
                                   />
 
@@ -592,7 +596,7 @@
                                 >
                                   <img
                                     loading="lazy"
-                                    src="./images/video.png"
+                                    src="//img.youtube.com/vi/qUwSYxoRhaM/maxresdefault.jpg"
                                     alt="alt"
                                   />
 
@@ -614,7 +618,7 @@
                                 >
                                   <img
                                     loading="lazy"
-                                    src="./images/video.png"
+                                    src="//img.youtube.com/vi/qUwSYxoRhaM/maxresdefault.jpg"
                                     alt="alt"
                                   />
 
@@ -636,7 +640,7 @@
                                 >
                                   <img
                                     loading="lazy"
-                                    src="./images/video.png"
+                                    src="//img.youtube.com/vi/qUwSYxoRhaM/maxresdefault.jpg"
                                     alt="alt"
                                   />
 
@@ -658,7 +662,7 @@
                                 >
                                   <img
                                     loading="lazy"
-                                    src="./images/video.png"
+                                    src="//img.youtube.com/vi/qUwSYxoRhaM/maxresdefault.jpg"
                                     alt="alt"
                                   />
 
@@ -1191,7 +1195,7 @@
       <div class="swiper-wrapper slider-adaptive-wrap">
         <!-- Slides -->
         <div class="swiper-slide slider-adaptive-slide">
-          <!--#include file="inc-product-open.html"-->
+          <!--#include file="inc-product.html"-->
         </div>
         <div class="swiper-slide slider-adaptive-slide">
           <!--#include file="inc-product.html"-->
@@ -1785,6 +1789,44 @@
       </div>
       <!-- end card-reviews -->
       <div class="card-interest-title">С этим товаром покупают</div>
+      <div class="swiper product-swiper slider-adaptive slider-interest">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper slider-adaptive-wrap">
+          <!-- Slides -->
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product.html"-->
+          </div>
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product-sale.html"-->
+          </div>
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product.html"-->
+          </div>
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product.html"-->
+          </div>
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product.html"-->
+          </div>
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product.html"-->
+          </div>
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product.html"-->
+          </div>
+          <div class="swiper-slide slider-adaptive-slide">
+            <!--#include file="inc-product.html"-->
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev slider-adaptive-prev">
+          <!-- <img src="./images/icons/product-slider-left.svg" alt="alt"> -->
+        </div>
+        <div class="swiper-button-next slider-adaptive-next"></div>
+      </div>
+
+      <div class="product-swiper-desc-interest"></div>
     </div>
   </div>
 </div>
