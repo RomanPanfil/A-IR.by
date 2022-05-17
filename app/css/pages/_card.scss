@@ -135,7 +135,8 @@
     &-controller {
       display: flex;
       align-items: flex-end;
-
+      position: relative;
+      top: 3px;
       @media (max-width: 385px) {
         margin-top: 10px;
       }
