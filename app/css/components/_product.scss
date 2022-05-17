@@ -62,11 +62,18 @@
       margin-bottom: 12px;
     }
     &-rait {
-      text-align: center;
-      width: 64px;
+      // text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // width: 70px;
+      padding: 0 14px;
       height: 24px;
       border: 1px solid #ffc100;
       border-radius: 5px;
+      img {
+        margin-right: 4px;
+      }
       &-span {
         font-weight: 600;
         font-size: rem(14);
@@ -110,13 +117,14 @@
     }
     &-buttons {
       display: flex;
+      justify-content: space-between;
       align-items: center;
     }
     &-btn {
       width: calc(100% - 98px);
       height: 40px;
       line-height: 40px;
-      margin-right: 8px;
+      margin-right: 10px;
       text-align: center;
       color: #ffffff;
       background-color: $colorRed;
@@ -180,9 +188,12 @@
       display: inline-block;
       min-width: 40px;
       height: 40px;
-      margin-right: 20px;
-      // box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+      margin-right: 10px;
       border-radius: 5px;
+      &:nth-of-type(3) {
+        margin-right: 0;
+        // background-color: black;
+      }
       &-disabled {
         background: #f5f5f5;
         box-shadow: none;
