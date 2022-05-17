@@ -136,32 +136,65 @@ function changes(screen768) {
 //     // $(".product-swiper-desc").append(productSliderMarkUp);
 //   }
 // }
-const productSliderMarkUpInterest = $(".slider-interest")
-  .clone()
-  .removeClass("slider-adaptive-none");
-$(".product-swiper-mob-interest").append(productSliderMarkUpInterest);
+////////////////////////////////////////////////////////////////////////слайдер
+// const productSliderMarkUpInterest = $(".slider-interest")
+//   .clone()
+//   .removeClass("slider-adaptive-none");
+// $(".product-swiper-mob-interest").append(productSliderMarkUpInterest);
 
-$(".product-swiper-desc-interest").append(productSliderMarkUpInterest);
+// $(".product-swiper-desc-interest").append(productSliderMarkUpInterest);
 
-new Swiper(".product-swiper-desc-interest .product-swiper ", {
-  slidesPerView: 4,
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  spaceBetween: 24,
-  breakpoints: {
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 16,
+// new Swiper(".product-swiper-desc-interest .product-swiper ", {
+//   slidesPerView: 4,
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   spaceBetween: 24,
+//   breakpoints: {
+//     1024: {
+//       slidesPerView: 3,
+//       spaceBetween: 16,
+//     },
+//     1110: {
+//       slidesPerView: 4,
+//       // spaceBetween: 16,
+//     },
+//   },
+// });
+function qwe() {
+  const productSliderMarkUpitem = $(".slider-interest")
+    .clone()
+    .removeClass("slider-adaptive-none slider-interest");
+
+  //оборачиваем исходную разметку дивом, будем использовать для адаптива как нативный скролл
+  $(".slider-interest").wrap('<div class="product-swiper-mob-interest"></div>');
+
+  //вставляем копию разметки и навешиваем свайпер для десктопа
+  $(".product-swiper-desc-interest").append(productSliderMarkUpitem);
+
+  new Swiper(".product-swiper-desc-interest .product-swiper", {
+    slidesPerView: 4,
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-    1110: {
-      slidesPerView: 4,
-      // spaceBetween: 16,
+    spaceBetween: 8,
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+      1110: {
+        slidesPerView: 4,
+        // spaceBetween: 16,
+      },
     },
-  },
-});
+  });
+}
+qwe();
 
 // accordionChangesPop(screen1023);
 
