@@ -94,9 +94,9 @@ for (let i = 0; i < acc.length; i++) {
     this.classList.toggle("active");
 
     if (this.classList[1] === "active") {
-      acc[i].children[0].style.transform = "rotate(-180deg)";
+      acc[i].children[0].style.transform = "translate(0, -50%) rotate(-180deg)";
     } else {
-      acc[i].children[0].style.transform = "rotate(0deg)";
+      acc[i].children[0].style.transform = "translate(0, -50%) rotate(0)";
     }
   });
 }

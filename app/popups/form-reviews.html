@@ -65,7 +65,7 @@
                 class="popup-input"
                 placeholder="Иванов Иван Иванович"
               />
-              
+
               <div class="popup-icon">
               </div>
             </div>
@@ -166,15 +166,13 @@
               <label
                 for="file"
                 class="load-file"
-                accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi"
               >
                 <img src="./images/icons/file.svg" alt="alt" />
                 <span>Добавить фото или видео</span>
               </label>
-              <input type="file" id="file" name="file" class="file" multiple />
+              <input type="file" id="file" name="file" class="file" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi" multiple />
             </div>
             <div class="form-cell-field-url">
-              <img src="./images/icons/url-video.svg" alt="alt" />
               <input
                 type="text"
                 id="url"
@@ -182,6 +180,7 @@
                 class="url"
                 placeholder="Добавить URL на видео"
               />
+              <img class="zxc" src="./images/icons/url-video.svg" alt="alt" />
             </div>
           </div>
           <div class="form-cell">
@@ -305,7 +304,7 @@
           $(element).addClass(errorClass).removeClass(validClass);
           $(element).closest('.popup-backcall-inputs').find('.popup-icon')
             .addClass(errorClass).removeClass(validClass);
-          
+
         },
         unhighlight: function(element, errorClass, validClass) {
           $(element).removeClass(errorClass).addClass(validClass);
@@ -369,7 +368,7 @@
             this.optional(element) || /^https:\/\/www.youtube.com/.test(value)
           );
         },
-        "Пожалуйста введите корректный url адрес"
+        "URL указан неверно"
       );
 
       // this whole code about the button which responsible for opening and load file(image & video)

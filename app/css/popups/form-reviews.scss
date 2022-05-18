@@ -352,6 +352,8 @@
             }
 
             span {
+              position: initial;
+              display: block;
               font-weight: 400;
               font-size: 14px;
               color: #BC0000;
@@ -367,6 +369,10 @@
                 color: #bc0000;
                 font-size: 16px;
               }
+
+              &:focus::-webkit-input-placeholder {
+                color: transparent;
+              }
             }
           }
 
@@ -381,8 +387,10 @@
             }
 
             .popup-agreement-txt {
-              width: 320px;
+              flex: 0 0 352px;
+              max-width: 352px;
               color: rgba(0, 0, 0, 0.5);
+              padding-right: 33px;
             }
 
             .checkbox {
@@ -635,4 +643,14 @@
 
 .popup-form-reviews .form-reviews-body .form-cell input.valid {
   border-color: #559E53;
+}
+
+input[type="submit"] {
+  max-width: 200px;
+  flex: 0 0 200px;
+  height: 48px;
+}
+
+.popup-form-reviews .form-reviews-body .form-cell .url.error ~ .zxc {
+  background-color: black;
 }
