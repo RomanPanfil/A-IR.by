@@ -124,6 +124,10 @@
           margin-bottom: 0;
         }
 
+        &.load {
+          margin-bottom: 48px;
+        }
+
         &.load-file {
           margin-bottom: 48px;
         }
@@ -160,6 +164,13 @@
           align-items: center;
           user-select: none;
           margin-right: 8px;
+          cursor: pointer;
+
+          &:hover {
+           &::before {
+             border: 1px solid #808080;
+           }
+          }
         }
 
         .customCheckbox + label::before {
@@ -169,7 +180,7 @@
           height: 1em;
           flex-shrink: 0;
           flex-grow: 0;
-          border: 1px solid #adb5bd;
+          border: 1px solid #D3D3D3;
           border-radius: 0.25em;
           margin-right: 0.5em;
           background-repeat: no-repeat;
@@ -677,11 +688,18 @@
 }
 
 input[type="submit"] {
+  // display: none;
   max-width: 200px;
   flex: 0 0 200px;
-  height: 48px;
+  height: 100px;
 }
 
 .popup-form-reviews .form-reviews-body .form-cell .url.error ~ .url-img {
   background-color: black;
+}
+
+.popup-form-reviews .form-reviews-body .form-cell .btn-submit {
+  max-width: 200px;
+  flex: 0 0 200px;
+  height: 48px;
 }
