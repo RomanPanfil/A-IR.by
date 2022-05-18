@@ -378,6 +378,26 @@ if(wrapSettings){
   }
 
 
+  // Кнопка оформить 
+
+  let cardBtnCheck = document.querySelectorAll('.cardBtnCheck');
+  if(cardBtnCheck) {
+      cardBtnCheck.forEach((e) => {
+      if(!e.classList.contains('cardBtnCheck-disabled')) {
+        e.onclick = () => {
+          if(!e.classList.contains('cardBtnCheck-disabled')) {
+            e.classList.add('cardstyle')
+            e.querySelector('.card-sticky-btn-img img').src = './images/icons/Addcart-add.svg'
+            e.querySelector('.cardBtntext').innerText = 'Оформить';
+          }
+        }
+      }
+      else {
+        e.querySelector('.card-sticky-btn-img img').src = './images/icons/Addcart-add-disabled.svg'
+      }
+    })
+  }
+
 
 
 
