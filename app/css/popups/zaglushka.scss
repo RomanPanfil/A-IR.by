@@ -6,11 +6,17 @@
 .zaglushka-phone {
   .popup {
     &-title {
-      text-align: center;
+      font-size: rem(28);
     }
-    &-text {
-      text-align: center;
+    @media(max-width:576px) {
+      &-title {
+        text-align: center;
+      }
+      &-text {
+        text-align: center;
+      }
     }
+   
   }
   @media (max-width: 450px) {
     height: 100vh;

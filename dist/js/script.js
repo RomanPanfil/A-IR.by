@@ -358,10 +358,24 @@ if(wrapSettings){
 }
 
 
+// Открытие кнопки сравнение 
 
 
-
-
+  let cardIitemComparison = document.querySelectorAll('.cardComparison');
+  if(cardIitemComparison) {
+    
+    let compareWrapper = document.getElementById('compareBtn'),
+        compareBtnClose = document.getElementById('compareBtnClose');
+    
+        cardIitemComparison.forEach((e) => {
+          e.onclick = () => {
+            compareWrapper.classList.add('compare-open')
+          }
+          compareBtnClose.onclick = () => {
+            compareWrapper.classList.remove('compare-open')
+          }
+        })
+  }
 
 
 
