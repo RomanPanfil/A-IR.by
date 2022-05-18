@@ -65,7 +65,7 @@
                 class="popup-input"
                 placeholder="Иванов Иван Иванович"
               />
-              
+
               <div class="popup-icon">
               </div>
             </div>
@@ -166,15 +166,15 @@
               <label
                 for="file"
                 class="load-file"
-                accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi"
               >
-                <img src="./images/icons/file.svg" alt="alt" />
+                <svg>
+                  <use xlink:href="./images/svg/symbols.svg#file"></use>
+              </svg>
                 <span>Добавить фото или видео</span>
               </label>
-              <input type="file" id="file" name="file" class="file" multiple />
+              <input type="file" id="file" name="file" class="file" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi" multiple />
             </div>
             <div class="form-cell-field-url">
-              <img src="./images/icons/url-video.svg" alt="alt" />
               <input
                 type="text"
                 id="url"
@@ -182,6 +182,9 @@
                 class="url"
                 placeholder="Добавить URL на видео"
               />
+              <svg>
+                  <use xlink:href="./images/svg/symbols.svg#url-video"></use>
+              </svg>
             </div>
           </div>
           <div class="form-cell">
@@ -305,7 +308,7 @@
           $(element).addClass(errorClass).removeClass(validClass);
           $(element).closest('.popup-backcall-inputs').find('.popup-icon')
             .addClass(errorClass).removeClass(validClass);
-          
+
         },
         unhighlight: function(element, errorClass, validClass) {
           $(element).removeClass(errorClass).addClass(validClass);
@@ -369,7 +372,7 @@
             this.optional(element) || /^https:\/\/www.youtube.com/.test(value)
           );
         },
-        "Пожалуйста введите корректный url адрес"
+        "URL указан неверно"
       );
 
       // this whole code about the button which responsible for opening and load file(image & video)
@@ -389,6 +392,7 @@
       errFile.innerHTML =
         "Превышен максимально допустимый размер файла: 100 мб";
       btnOpen.innerHTML = '<img src="./images/icons/btn-plus.svg" />';
+
 
       input.addEventListener("change", btnUploadFile);
       input.insertAdjacentElement("afterend", allFiles);
@@ -412,8 +416,12 @@
           // проверяет размер файла
           if (size < maxSize) {
             reader.readAsDataURL(file);
+            load.getElementsByTagName('span')[0].style.color = '#000';
+            load.getElementsByTagName('svg')[0].style.fill = '#2A4455';
           } else {
             uploadFile.append(errFile);
+            load.getElementsByTagName('span')[0].style.color = '#BC0000';
+            load.getElementsByTagName('svg')[0].style.fill = '#BC0000';
           }
 
           // скрывает инпут и показывает кнопку при условии, что длина массива >= 1

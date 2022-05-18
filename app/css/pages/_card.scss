@@ -461,7 +461,7 @@
           border: 1px solid #d3d3d3;
           color: black;
           // height: 80px;
-          padding: 12px 24px 12px 24px;
+          padding: 12px 0;
           width: 33%;
           background: #fff;
           border-radius: 5px;
@@ -557,6 +557,10 @@
           @media (max-width: 1024px) {
             display: none !important;
           }
+
+          .circle-info {
+            z-index: auto;
+          }
         }
 
         &-items {
@@ -629,9 +633,13 @@
                   align-items: flex-start;
                 }
 
-                img {
-                  &:hover {
-                    opacity: 0.52;
+                &:hover {
+                  .circle-info-svg {
+                    fill: #fff;
+                  }
+
+                  .circle-info {
+                    background-color: #d3d3d3;
                   }
                 }
               }
@@ -788,6 +796,12 @@
             border: 1px solid #d3d3d3;
             border-radius: 5px;
             height: auto;
+          }
+
+          &:hover {
+            img {
+              box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+            }
           }
         }
       }
@@ -1135,6 +1149,18 @@
       }
 
       .accordion {
+        .tooltip {
+          &:hover {
+            .circle-info-svg {
+              fill: #fff;
+            }
+
+            .circle-info {
+              background-color: #d3d3d3;
+            }
+          }
+        }
+
         &.tab1 {
           ul {
             padding-left: 15px;
@@ -1180,6 +1206,12 @@
               border: 1px solid #d3d3d3;
               border-radius: 5px;
               height: auto;
+            }
+
+            &:hover {
+              img {
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+              }
             }
           }
         }
@@ -1255,6 +1287,7 @@
             font-weight: 600;
             font-size: 14px;
             color: rgba(0, 0, 0, 0.5);
+            margin-top: 0;
           }
         }
       }
@@ -1442,9 +1475,9 @@
 //       top: 50%;
 //       left: 50%;
 //     }
-   
+
 //   }
- 
+
 // }
 
 .popup-youtube {
@@ -1453,7 +1486,7 @@
   line-height: 0;
   border-radius: 8px;
   overflow: hidden;
- 
+
   &.reviews-video {
     border-radius: 0;
     // margin-bottom: 0;
