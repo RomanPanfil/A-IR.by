@@ -437,13 +437,13 @@
             const type = file.type.split("/")[1];
 
             // Если пользователь загружает одновременно допустим 6 файлов, то загрузятся только первые 3
-            if (index + arrStorageFile.length <= 3) {
+            if (index + arrStorageFile.length <= 4) {
               innerFile(file, src, type);
               arrStorageFile.push(file);
             }
 
             // убирает кнопку, если длина массива равна 3
-            if (index + arrStorageFile.length === 3) {
+            if (index + arrStorageFile.length >= 3) {
               btnOpen.style.display = "none";
             }
           };
@@ -508,6 +508,12 @@
 
       $(document).on("click", ".remove-file", function (e) {
         const parent = $(this).closest(".all-files-item");
+
+        if (errFile) {
+          errFile.remove();
+          load.getElementsByTagName('span')[0].style.color = '#000';
+          load.getElementsByTagName('svg')[0].style.fill = '#2A4455';
+        }
 
         // убирает из массива файл
         for (let i = 0; i < arrStorageFile.length - 1; i++) {
