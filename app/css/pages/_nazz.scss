@@ -70,6 +70,7 @@
         border-top: 1px solid #d3d3d3;
         border-bottom: 1px solid #d3d3d3;
         z-index: 1;
+        border-radius: 0;
       }
     }
     &-price {
@@ -275,10 +276,8 @@
       font-weight: 600;
       border-radius: 5px;
       font-size: rem(16);
-      // @media (max-width: 1024) {
-      //   background-color: #f5f5f5;
-      //   border: none;
-      // }
+      font-family: $ffOpenSans;
+      color: #000000;
       &:hover {
         opacity: 0.5;
       }
@@ -320,16 +319,6 @@
       }
     }
     &-minus {
-      //   display: inline-block;
-      //   position: absolute;
-      //   top: 50%;
-      //   left: 50%;
-      //   transform: translate(-50%, -50%);
-      //   width: 16px;
-      //   height: 2px;
-      //   background-color: #ffffff;
-      //   border-radius: 8px;
-
       left: 47% !important;
       top: 12% !important;
     }
@@ -389,7 +378,7 @@
       align-items: center;
       padding: 8px 32px;
       margin-bottom: 16px;
-      background-color: #ebebeb;
+      background-color: #f5f5f5;
       border-radius: 8px;
       height: calc(100% - 16px);
       &:hover {

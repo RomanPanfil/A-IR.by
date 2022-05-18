@@ -127,6 +127,7 @@
     border: none;
     font-weight: 700;
     font-size: rem(16);
+    font-family: $ffOpenSans;
     &:hover {
       opacity: 0.5;
     }
@@ -224,10 +225,8 @@
     top: 46%;
     left: 16px;
     display: block;
-    color: #BC0000;
-  
+    color: #bc0000;
   }
-
 }
 .popup-query {
   span {
@@ -281,13 +280,12 @@
 
 .popup-input.error {
   position: relative;
-  border-color: #BC0000 !important;
+  border-color: #bc0000 !important;
   background: transparent;
   z-index: 2;
- 
 }
 .popup-input.valid {
-  border-color: #559E53;
+  border-color: #559e53;
 }
 
 .popup-icon {
@@ -314,13 +312,12 @@
 }
 
 .popup-backcall-inputs span.error {
- 
   z-index: 1;
 
   -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }

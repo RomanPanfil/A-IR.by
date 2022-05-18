@@ -227,11 +227,11 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  spaceBetween: 8,
+  // spaceBetween: 24,
   breakpoints: {
     1024: {
       slidesPerView: 4,
-      spaceBetween: 8,
+      spaceBetween: 24,
     },
   },
 });
