@@ -74,6 +74,11 @@
       &-price {
         font-size: rem(18);
       }
+      &-img {
+        width: 190px;
+        height: 190px;
+        margin: 0 auto;
+      }
     }
     @media (min-width: 500px) {
       .product {
@@ -125,6 +130,9 @@
       min-width: 264px;
       max-width: 312px;
     }
+    .product-swiper-mob-item {
+      margin-right: -48px;
+    }
   }
 }
 
@@ -156,4 +164,9 @@
 }
 .like-adaptive {
   display: none;
+}
+@media (max-width: 500px) {
+  .product-swiper-mob-item {
+    margin-right: -15px !important;
+  }
 }
