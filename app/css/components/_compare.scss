@@ -1,9 +1,13 @@
 .compare-wrapper {
+    display: none;
     position: fixed;
     z-index: 9;
     bottom: 0;
     right: 0;
     width: 100%;
+}
+.compare-open {
+    display: inline-block;
 }
 .compare-container {
     position: relative;
