@@ -167,7 +167,9 @@
                 for="file"
                 class="load-file"
               >
-                <img src="./images/icons/file.svg" alt="alt" />
+                <svg>
+                  <use xlink:href="./images/svg/symbols.svg#file"></use>
+              </svg>
                 <span>Добавить фото или видео</span>
               </label>
               <input type="file" id="file" name="file" class="file" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi" multiple />
@@ -180,7 +182,9 @@
                 class="url"
                 placeholder="Добавить URL на видео"
               />
-              <img class="zxc" src="./images/icons/url-video.svg" alt="alt" />
+              <svg>
+                  <use xlink:href="./images/svg/symbols.svg#url-video"></use>
+              </svg>
             </div>
           </div>
           <div class="form-cell">
@@ -389,6 +393,7 @@
         "Превышен максимально допустимый размер файла: 100 мб";
       btnOpen.innerHTML = '<img src="./images/icons/btn-plus.svg" />';
 
+
       input.addEventListener("change", btnUploadFile);
       input.insertAdjacentElement("afterend", allFiles);
       btnOpen.addEventListener("click", triggerInput);
@@ -411,8 +416,12 @@
           // проверяет размер файла
           if (size < maxSize) {
             reader.readAsDataURL(file);
+            load.getElementsByTagName('span')[0].style.color = '#000';
+            load.getElementsByTagName('svg')[0].style.fill = '#2A4455';
           } else {
             uploadFile.append(errFile);
+            load.getElementsByTagName('span')[0].style.color = '#BC0000';
+            load.getElementsByTagName('svg')[0].style.fill = '#BC0000';
           }
 
           // скрывает инпут и показывает кнопку при условии, что длина массива >= 1

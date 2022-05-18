@@ -461,7 +461,7 @@
           border: 1px solid #d3d3d3;
           color: black;
           // height: 80px;
-          padding: 12px 24px 12px 24px;
+          padding: 12px 0;
           width: 33%;
           background: #fff;
           border-radius: 5px;
@@ -1287,6 +1287,7 @@
             font-weight: 600;
             font-size: 14px;
             color: rgba(0, 0, 0, 0.5);
+            margin-top: 0;
           }
         }
       }
