@@ -407,3 +407,9 @@
 .product-item-stats-adaptive {
   display: none;
 }
+.like-select {
+  box-shadow: none !important;
+  .product-item-like-svg {
+    fill: #2a4455;
+  }
+}

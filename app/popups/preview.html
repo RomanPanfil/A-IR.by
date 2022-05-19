@@ -103,11 +103,17 @@
                     },
                 });
 
+                slider2.on('slideChangeTransitionEnd', function () {
+                    const index = $(".main-slider-img").closest(".swiper-slide-active").index();
+
+                    popupSliderEl.slideTo(index);
+                });
+
                 $('.slider-popup-vertical-img').on('click', function (e) {
                     const index = $(this).closest('.swiper-slide').index();
-                    
+
                     e.preventDefault();
-                    
+
                     slider2.slideTo(index);
                 });
 
@@ -121,7 +127,7 @@
 
                 $('.main-button-prev').on('click', function (e) {
                     const index = $('.main-slider-img').closest('.swiper-slide-active').index();
-                    
+
                     e.preventDefault();
 
                     popupSliderEl.slideTo(index);

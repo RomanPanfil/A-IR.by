@@ -84,7 +84,13 @@ $(document).on("change", ".card-item-counter-input", function (e) {
     $(this).val(0);
   }
 });
-
+$(document).on("click", ".product-item-like", function () {
+  if ($(this).hasClass("like-select")) {
+    $(this).removeClass("like-select");
+  } else {
+    $(this).addClass("like-select");
+  }
+});
 // const productSliderMarkUp = $(".slider-preferably")
 //   .clone()
 //   .removeClass("slider-adaptive-none");

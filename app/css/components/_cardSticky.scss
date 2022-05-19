@@ -19,6 +19,9 @@
     width: 100%;
     background: $colorRed;
     color: #fff;
+    &:hover {
+      background: #991C12;
+    }
     @media(max-width:1024px) {
         font-size: 0;
     }
@@ -47,6 +50,11 @@
       @media(max-width:1024px) {
           display: inline-block;
       }
+    }
+  }
+  .ui-btn {
+    &:hover {
+      opacity: 1;
     }
   }
   &-item {
@@ -107,3 +115,18 @@
   display: block;
 }
 
+
+.cardBtnCheck-disabled {
+  background: #F5F5F5;
+  color: #D3D3D3;
+  &:hover {
+    background: #F5F5F5;
+    color: #D3D3D3;
+  }
+}
+.cardstyle {
+  background: #2A4455;
+  &:hover {
+    background-color:#3F5766;
+  }
+}
