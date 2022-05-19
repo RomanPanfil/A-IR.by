@@ -266,7 +266,7 @@ $(".slider-wrapper").each(function () {
 });
 
 $(document).on("click", ".catalog-question-item-title", function (e) {
-    
+
   $(this)
     .closest(".catalog-question-item")
     .toggleClass("catalog-question-toggle");
@@ -294,7 +294,7 @@ if (document.querySelector(".sticker-info-hide")) {
     }
   };
 
- 
+
 }
 
 if (document.getElementById("card-breackpoint")) {
@@ -304,7 +304,7 @@ if (document.getElementById("card-breackpoint")) {
     let cardSticky = $(".card-sticky");
     let headerCard = $(".header");
     // let footerHeight = $('#footer').innerHeight();
-    
+
     window.addEventListener("resize", function () {
       cardBreackpoint = $("#card-breackpoint").offset().top;
     });
@@ -329,17 +329,17 @@ if (document.getElementById("card-breackpoint")) {
 
 
 let wrapSettings = document.querySelector('.wrap-setting');
-   
-  
+
+
 if(wrapSettings){
   let wrapBtn = document.querySelector('.btn-setting');
-  
+
   function resSetting() {
     const wrapSettingContainer = document.querySelector('.wrap-setting-container').clientHeight;
 
-    if (wrapSettingContainer <= 80){ 
+    if (wrapSettingContainer <= 80){
       wrapSettings.classList.remove("wrap-remove");
-      wrapBtn.classList.add('btn-setting-none'); 
+      wrapBtn.classList.add('btn-setting-none');
     }
     else {
       wrapSettings.classList.add("wrap-remove");
@@ -358,36 +358,33 @@ if(wrapSettings){
 }
 
 
-// Открытие кнопки сравнение 
+// Открытие кнопки сравнение
 
 
   let cardIitemComparison = document.querySelectorAll('.cardComparison');
   if(cardIitemComparison) {
-    
-    let compareWrapper = document.getElementById('compareBtn'),
-        compareBtnClose = document.getElementById('compareBtnClose');
-    
+
+    let compareWrapper = document.getElementById('compareBtn');
         cardIitemComparison.forEach((e) => {
-          e.onclick = () => {
-            compareWrapper.classList.add('compare-open')
-          }
-          compareBtnClose.onclick = () => {
-            compareWrapper.classList.remove('compare-open')
+     
+          e.onclick = () => { 
+            compareWrapper.classList.toggle('compare-open')
           }
         })
   }
 
 
-  // Кнопка оформить 
+  // Кнопка оформить
 
   let cardBtnCheck = document.querySelectorAll('.cardBtnCheck');
+
   if(cardBtnCheck) {
       cardBtnCheck.forEach((e) => {
       if(!e.classList.contains('cardBtnCheck-disabled')) {
         e.onclick = () => {
           if(!e.classList.contains('cardBtnCheck-disabled')) {
             e.classList.add('cardstyle')
-            e.querySelector('.card-sticky-btn-img img').src = './images/icons/Addcart-add.svg'
+            e.querySelector('.card-sticky-btn-img').classList.add('card-sticky-btn-change')
             e.querySelector('.cardBtntext').innerText = 'Оформить';
           }
         }
@@ -397,31 +394,3 @@ if(wrapSettings){
       }
     })
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

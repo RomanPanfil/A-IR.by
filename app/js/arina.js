@@ -129,3 +129,22 @@ function accordionChanges(screen1024) {
     $(".card-item-container-adaptive").appendTo($(".card-item-container"));
   }
 }
+
+
+let fav = document.querySelector('.card-item-fav');
+let comparison = document.querySelector('.card-item-comparison');
+
+fav.addEventListener('click', selectedFav)
+comparison.addEventListener('click', selectedComparison)
+
+// selected favorite
+function selectedFav() {
+  fav.children[0].style.fill = '#2A4455';
+  fav.children[1].innerText = 'В избранном';
+}
+
+// selected comparison
+function selectedComparison() {
+  comparison.children[0].style.fill = '#2A4455';
+  comparison.children[1].innerText = 'В сравнении';
+}
