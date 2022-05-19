@@ -84,44 +84,82 @@ $(document).on("change", ".card-item-counter-input", function (e) {
     $(this).val(0);
   }
 });
-
-const productSliderMarkUp = $(".slider-preferably")
-  .clone()
-  .removeClass("slider-adaptive-none");
-
-// let enableSwiper = undefined;
-if (matchMedia) {
-  var screen768 = window.matchMedia("(max-width:1024px)");
-  screen768.addListener(changes);
-  changes(screen768);
-}
-function changes(screen768) {
-  if (screen768.matches) {
-    $(".product-swiper-mob").append(productSliderMarkUp);
+$(document).on("click", ".product-item-like", function () {
+  if ($(this).hasClass("like-select")) {
+    $(this).removeClass("like-select");
   } else {
-    $(".product-swiper-desc").append(productSliderMarkUp);
-
-    new Swiper(".product-swiper-desc .product-swiper ", {
-      slidesPerView: 4,
-      // Navigation arrows
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      spaceBetween: 24,
-      breakpoints: {
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 16,
-        },
-        1110: {
-          slidesPerView: 4,
-          // spaceBetween: 16,
-        },
-      },
-    });
+    $(this).addClass("like-select");
   }
-}
+});
+// const productSliderMarkUp = $(".slider-preferably")
+//   .clone()
+//   .removeClass("slider-adaptive-none");
+
+// // let enableSwiper = undefined;
+// if (matchMedia) {
+//   var screen768 = window.matchMedia("(max-width:1024px)");
+//   screen768.addListener(changes);
+//   changes(screen768);
+// }
+// function changes(screen768) {
+//   if (screen768.matches) {
+//     $(".product-swiper-mob").append(productSliderMarkUp);
+//   } else {
+//     $(".product-swiper-desc").append(productSliderMarkUp);
+
+//     new Swiper(".product-swiper-desc .product-swiper ", {
+//       slidesPerView: 4,
+//       // Navigation arrows
+//       navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//       },
+//       spaceBetween: 24,
+//       breakpoints: {
+//         1024: {
+//           slidesPerView: 3,
+//           spaceBetween: 16,
+//         },
+//         1110: {
+//           slidesPerView: 4,
+//           // spaceBetween: 16,
+//         },
+//       },
+//     });
+//   }
+// }
+
+const productSliderMarkUppreferably = $(".slider-preferably")
+  .clone()
+  .removeClass("slider-adaptive-none slider-preferably");
+
+//оборачиваем исходную разметку дивом, будем использовать для адаптива как нативный скролл
+$(".slider-preferably").wrap(
+  '<div class="product-swiper-mob-preferably"></div>'
+);
+
+//вставляем копию разметки и навешиваем свайпер для десктопа
+$(".product-swiper-desc-preferably").append(productSliderMarkUppreferably);
+
+new Swiper(".product-swiper-desc-preferably .product-swiper", {
+  slidesPerView: 4,
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  spaceBetween: 8,
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+    1110: {
+      slidesPerView: 4,
+      // spaceBetween: 16,
+    },
+  },
+});
 
 // if (matchMedia) {
 //   // var screen768 = window.matchMedia("(max-width:1024px)");
@@ -227,11 +265,11 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  spaceBetween: 8,
+  // spaceBetween: 24,
   breakpoints: {
     1024: {
       slidesPerView: 4,
-      spaceBetween: 8,
+      spaceBetween: 24,
     },
   },
 });
@@ -253,3 +291,16 @@ $(document).ready(function () {
 //     $(this).addClass("new-arrow");
 //   }
 // });
+if (matchMedia) {
+  let removeHover23 = window.matchMedia("(max-width:1025px)");
+  removeHover23.addListener(removeHover);
+  removeHover(removeHover23);
+}
+
+function removeHover(removeHover23) {
+  if (removeHover23.matches) {
+    $(".product-item").removeClass("product-hover");
+  } else {
+    $(".product-item").addClass("product-hover");
+  }
+}
