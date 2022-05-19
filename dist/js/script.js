@@ -363,12 +363,14 @@ if(wrapSettings){
 
   let cardIitemComparison = document.querySelectorAll('.cardComparison');
   if(cardIitemComparison) {
-    
+
     let compareWrapper = document.getElementById('compareBtn'),
         compareBtnClose = document.getElementById('compareBtnClose');
     
         cardIitemComparison.forEach((e) => {
+     
           e.onclick = () => {
+            console.log(compareWrapper)
             compareWrapper.classList.add('compare-open')
           }
           compareBtnClose.onclick = () => {
@@ -387,7 +389,7 @@ if(wrapSettings){
         e.onclick = () => {
           if(!e.classList.contains('cardBtnCheck-disabled')) {
             e.classList.add('cardstyle')
-            e.querySelector('.card-sticky-btn-img img').src = './images/icons/Addcart-add.svg'
+            e.querySelector('.card-sticky-btn-img').classList.add('card-sticky-btn-change')
             e.querySelector('.cardBtntext').innerText = 'Оформить';
           }
         }

@@ -39,8 +39,14 @@
     &-img {
       display: none;
       max-width: 46px;
+      width: 46px;
+      height: 34px;
       line-height: 0;
       vertical-align: middle;
+      background-image: url(.././images/icons/Addcart.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
       @media(max-width:400px) {
           max-width: 36px;
       }
@@ -129,4 +135,7 @@
   &:hover {
     background-color:#3F5766;
   }
+}
+.card-sticky-btn-change {
+  background-image: url(.././images/icons/AddCart-add.svg);
 }
