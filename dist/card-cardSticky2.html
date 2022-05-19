@@ -40,7 +40,7 @@
             </svg>
             <span>В избранное</span>
           </a>
-          <a href="#" class="card-item-comparison">
+          <a href="#" class="card-item-comparison cardComparison">
             <svg>
               <use xlink:href="./images/svg/symbols.svg#btn-plus"></use>
             </svg>
@@ -390,7 +390,7 @@
                   </div>
                   <div class="tabs-item" id="tab-1">
                     <div class="accordion-content tab1">
-                      <p class="tabs-item-text">
+                      <p>
                         Винтовой компрессор марки A1R BB-4FC решает важную для
                         производства задачу - снабжает пневмоинструменты и
                         пневматические системы сжатым воздухом. Этот компрессор
@@ -406,10 +406,8 @@
                         BB-4FC подходит для промышленного применения.
                       </p>
 
-                      <p class="tabs-item-title">
-                        Главные особенности A1R BB-4FC:
-                      </p>
-                      <ul class="tabs-item-list">
+                      <p>Главные особенности A1R BB-4FC:</p>
+                      <ul>
                         <li><span>простой и быстрый монтаж;</span></li>
                         <li>
                           <span>микропроцессорная система управления;</span>
@@ -590,8 +588,12 @@
                                 <span>.PDF</span>
                                 <span>1.06 МБ</span>
                               </div>
-                              <div class="doc-link-download-format-icon">
-                                <img src="./images/icons/PDF.png" alt="alt" />
+                              <div class="doc-link-download-format-icon pdf">
+                                <svg class="pdf">
+                                  <use
+                                    xlink:href="./images/svg/symbols.svg#PDF"
+                                  ></use>
+                                </svg>
                               </div>
                             </div>
                           </a>
@@ -604,8 +606,12 @@
                                 <span>.XLS</span>
                                 <span>1.06 МБ</span>
                               </div>
-                              <div class="doc-link-download-format-icon">
-                                <img src="./images/icons/XLS.png" alt="alt" />
+                              <div class="doc-link-download-format-icon xls">
+                                <svg class="xls">
+                                  <use
+                                    xlink:href="./images/svg/symbols.svg#XLS"
+                                  ></use>
+                                </svg>
                               </div>
                             </div>
                           </a>
@@ -618,8 +624,12 @@
                                 <span>.DOC</span>
                                 <span>1.06 МБ</span>
                               </div>
-                              <div class="doc-link-download-format-icon">
-                                <img src="./images/icons/DOC.png" alt="alt" />
+                              <div class="doc-link-download-format-icon doc">
+                                <svg class="doc">
+                                  <use
+                                    xlink:href="./images/svg/symbols.svg#doc"
+                                  ></use>
+                                </svg>
                               </div>
                             </div>
                           </a>
@@ -632,8 +642,12 @@
                                 <span>.JPG</span>
                                 <span>1.06 МБ</span>
                               </div>
-                              <div class="doc-link-download-format-icon">
-                                <img src="./images/icons/JPG.png" alt="alt" />
+                              <div class="doc-link-download-format-icon jpg">
+                                <svg class="jpg">
+                                  <use
+                                    xlink:href="./images/svg/symbols.svg#jpg"
+                                  ></use>
+                                </svg>
                               </div>
                             </div>
                           </a>
@@ -646,8 +660,12 @@
                                 <span>.PNG</span>
                                 <span>1.06 МБ</span>
                               </div>
-                              <div class="doc-link-download-format-icon">
-                                <img src="./images/icons/PNG.png" alt="alt" />
+                              <div class="doc-link-download-format-icon png">
+                                <svg class="png">
+                                  <use
+                                    xlink:href="./images/svg/symbols.svg#png"
+                                  ></use>
+                                </svg>
                               </div>
                             </div>
                           </a>
@@ -714,8 +732,8 @@
             <form action="">
               <div class="card-item-features">
                 <div class="card-item-features-title">Давление</div>
-                <div class="features-label-wrapper">
-                  <label class="features-label">
+                <div class="features-label-wrapper features-label-disable">
+                  <label class="features-label features-disable">
                     <input
                       type="radio"
                       name="pressure"
@@ -788,16 +806,16 @@
                   <label class="features-label">
                     <input type="radio" name="volume" class="features-input" />
                     <div class="features-label-border"></div>
-                    <span>200</span> <span>л</span></label
-                  >
+                    <span>200</span> <span>л</span>
+                  </label>
                 </div>
 
                 <div class="features-label-wrapper">
                   <label class="features-label">
                     <input type="radio" name="volume" class="features-input" />
                     <div class="features-label-border"></div>
-                    <span>250</span> <span>л</span></label
-                  >
+                    <span>250</span> <span>л</span>
+                  </label>
                 </div>
 
                 <div class="features-label-wrapper">
@@ -996,10 +1014,10 @@
           <!--#include file="inc-product.html"-->
         </div>
         <div class="swiper-slide slider-adaptive-slide">
-          <!--#include file="inc-product.html"-->
+          <!--#include file="inc-product-sale.html"-->
         </div>
         <div class="swiper-slide slider-adaptive-slide">
-          <!--#include file="inc-product.html"-->
+          <!--#include file="inc-product-disable.html"-->
         </div>
         <div class="swiper-slide slider-adaptive-slide">
           <!--#include file="inc-product.html"-->
@@ -1135,23 +1153,27 @@
                   <div class="card-reviews-content-text">
                     <div class="popups-file">
                       <a
-                        class="mfp-link"
+                        class="mfp-link img"
                         href="javascript:void(0)"
                         data-href="./popups/rev-img.html"
                       >
                         <img src="./images/rev-img.png" alt="alt" />
                       </a>
-                      <a class="popup-youtube reviews-video"
-                         href="http://www.youtube.com/watch?v=lTRiuFIWV54">
-                         <img
-                         loading="lazy"
-                         src="//img.youtube.com/vi/lTRiuFIWV54/sddefault.jpg"
-                         alt="alt"
-                       />
-                       <div class="popup-youtube-btn popup-youtube-mini">
-                        <img src="./images/icons/youtube-mini.svg"
-                             alt="alt" />
-                      </div>
+                      <a
+                        class="popup-youtube reviews-video"
+                        href="http://www.youtube.com/watch?v=lTRiuFIWV54"
+                      >
+                        <img
+                          loading="lazy"
+                          src="//img.youtube.com/vi/lTRiuFIWV54/sddefault.jpg"
+                          alt="alt"
+                        />
+                        <div class="popup-youtube-btn popup-youtube-mini">
+                          <img
+                            src="./images/icons/youtube-mini.svg"
+                            alt="alt"
+                          />
+                        </div>
                       </a>
                     </div>
                   </div>
@@ -1278,17 +1300,21 @@
                       >
                         <img src="./images/rev-img.png" alt="alt" />
                       </a>
-                      <a class="popup-youtube reviews-video"
-                         href="http://www.youtube.com/watch?v=lTRiuFIWV54">
-                         <img
-                         loading="lazy"
-                         src="//img.youtube.com/vi/lTRiuFIWV54/sddefault.jpg"
-                         alt="alt"
-                       />
-                       <div class="popup-youtube-btn popup-youtube-mini">
-                        <img src="./images/icons/youtube-mini.svg"
-                             alt="alt" />
-                      </div>
+                      <a
+                        class="popup-youtube reviews-video"
+                        href="http://www.youtube.com/watch?v=lTRiuFIWV54"
+                      >
+                        <img
+                          loading="lazy"
+                          src="//img.youtube.com/vi/lTRiuFIWV54/sddefault.jpg"
+                          alt="alt"
+                        />
+                        <div class="popup-youtube-btn popup-youtube-mini">
+                          <img
+                            src="./images/icons/youtube-mini.svg"
+                            alt="alt"
+                          />
+                        </div>
                       </a>
                     </div>
                   </div>
@@ -1393,5 +1419,7 @@
   </div>
 </div>
 
-<!--#include file="inc-cardSticky-Sale.html"-->
+
+<!--#include file="inc-cardSticky-disable.html"-->
+<!--#include file="inc-compare.html"-->
 <!--#include file="inc-footer.html"-->
