@@ -364,17 +364,11 @@ if(wrapSettings){
   let cardIitemComparison = document.querySelectorAll('.cardComparison');
   if(cardIitemComparison) {
 
-    let compareWrapper = document.getElementById('compareBtn'),
-        compareBtnClose = document.getElementById('compareBtnClose');
-    
+    let compareWrapper = document.getElementById('compareBtn');
         cardIitemComparison.forEach((e) => {
      
-          e.onclick = () => {
-            console.log(compareWrapper)
-            compareWrapper.classList.add('compare-open')
-          }
-          compareBtnClose.onclick = () => {
-            compareWrapper.classList.remove('compare-open')
+          e.onclick = () => { 
+            compareWrapper.classList.toggle('compare-open')
           }
         })
   }
