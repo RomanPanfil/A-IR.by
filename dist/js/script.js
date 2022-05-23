@@ -92,30 +92,7 @@ if (catalogPhone) {
   var mask = IMask(catalogPhone, maskOptions);
 }
 
-// Sticker hidden catalog.html
-// if (document.querySelector(".sticker-hide")) {
-//   let stickerHideBtn = document.querySelector(".sticker-hide"),
-//     stickerHiden = document.querySelectorAll(".sticker-hidden"),
-//     catalogText = document.querySelector(".catalog-stickers-btn-text"),
-//     imgChange = document.querySelector(".img-change");
 
-//   // console.log(stickerHiden)
-
-//   stickerHideBtn.onclick = () => {
-//     stickerHiden.forEach((e) => {
-//       e.classList.toggle("sticker-hidden-open");
-//     });
-//     // stickerHiden.
-
-//     if (catalogText.innerHTML === "Скрыть") {
-//       catalogText.innerHTML = "Ещё подборки";
-//       imgChange.src = "./images/icons/green-cross.svg";
-//     } else {
-//       catalogText.innerHTML = "Скрыть";
-//       imgChange.src = "./images/icons/red-cross.svg";
-//     }
-//   };
-// }
 if (document.querySelector(".catalog-stickers-btn")) {
   let catalogBtn = document.querySelectorAll(".catalog-stickers-btn");
 
@@ -394,3 +371,10 @@ if(wrapSettings){
       }
     })
   }
+
+// // убирает отступ в попапе filters
+
+// let popupFilters = document.querySelector('.popup-filters')
+
+
+// console.log(document.querySelector('.mfp-container'))

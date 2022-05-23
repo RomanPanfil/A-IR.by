@@ -1,25 +1,4 @@
-// if (matchMedia) {
-//   let screen1023 = window.matchMedia("(max-width:1024px)");
-//   screen1023.addListener(accordionChangesPop);
-//   accordionChangesPop(screen1023);
-// }
 
-// function accordionChangesPop(screen1023) {
-//   if (screen1023.matches) {
-//     // $(".popup-card-wrapper-adaptive").appendTo($(".popup-card"));
-//     // $(".product-item-adaptive").appendTo($(".product-info-adaptive"));
-//     let productAdaptive = document.querySelectorAll(".product-item-adaptive");
-
-//     $(".product-item-adaptive").each(function (el) {
-//       $(this).appendTo(".product-info-adaptive");
-
-//       console.log(this);
-//     });
-//   } else {
-//     // $(".popup-card-wrapper-adaptive").appendTo($(".qwe"));
-//   }
-// }
-// accordionChangesPop(screen1023);
 
 catalogLine.onclick = () => {
   catalog.classList.add("catalog-products-line");
@@ -33,21 +12,10 @@ catalogGrid.onclick = () => {
   catalogGrid.style.opacity = "1";
   catalogLine.style.opacity = "0.3";
 };
-// catalogLineMob.onclick = () => {
-//   catalog.classList.add("catalog-products-line");
-//   catalog.classList.remove("catalog-products-grid");
-//   catalogGridMob.style.opacity = "0.3";
-//   catalogLineMob.style.opacity = "1";
-// };
-// catalogGridMob.onclick = () => {
-//   catalog.classList.add("catalog-products-grid");
-//   catalog.classList.remove("catalog-products-line");
-//   catalogGridMob.style.opacity = "1";
-//   catalogLineMob.style.opacity = "0.3";
-// };
+
 
 catalogGrid.click();
-// catalogGridMob.click();
+
 if (matchMedia) {
   let screen1023 = window.matchMedia("(max-width:1024px)");
   screen1023.addListener(accordionChangesPop);
@@ -84,3 +52,35 @@ new Swiper(".product-swiper-desc-catalog .product-swiper ", {
     },
   },
 });
+
+// Показываем/убираем кнопку "Показать х товаров"
+
+// $(function() {
+//   let catalogProductsSearch = $('#caralog_search');
+//   $(window).scroll(function() {
+//     let catalogSerachOffset = catalogProductsSearch.offset().top
+//     // console.log(window.scrollY)
+//     // console.log(catalogSerachOffset)
+//     if(catalogSerachOffset < window.scrollY) {
+//       console.log('hide')
+//     }else {
+//       console.log('see')
+//     }
+//   })
+
+// })
+
+$(document).ready(function(){
+  let catalogProductsSearch = $('#catalog_search');
+  let catalogProductsReniev = $('.catalog-products-reniev')
+  let cardReview = $('#card_review').offset().top;
+  let catalogSerachOffset = catalogProductsSearch.offset().top
+  
+  window.addEventListener('scroll',function() {
+    if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
+      catalogProductsReniev.addClass('catalog-search-open')
+    }else {
+      catalogProductsReniev.removeClass('catalog-search-open')
+    }
+  })
+})
