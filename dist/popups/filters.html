@@ -1,4 +1,4 @@
-<div class="popup-wrap">
+<div class="popup-wrap ">
   <div class="popup popup-filters">
     <div class="popup-filters-title">Фильтры</div>
     <form class="catalog-products-filters">
@@ -586,120 +586,123 @@
         </div>
       </div>
     </form>
-    <script>
-      $(".slider-wrapper").each(function () {
-        var $range = $(".js-range-slider", this),
-          $inputFrom = $(".js-input-from", this),
-          $inputTo = $(".js-input-to", this),
-          instance,
-          min_1 = $inputFrom[0].dataset.min,
-          max_1 = $inputTo[0].dataset.max,
-          from_1 = $inputFrom[0].dataset.min,
-          to_1 = $inputTo[0].dataset.max,
-          steps = $range[0].dataset.steps;
+  </div>
+  <div class="calculator-btn-container">
+    <div class="calculator-btn-wrapper">
+      <div class="calculator-btn ui-btn">Показать <span>1679</span> товаров</div>
+      <button class="calculator-reload ui-btn">
+        <div class="calculator-reload-img">
+          <svg class="calculator-reload-img-svg">
+            <use xlink:href="./images/svg/symbols.svg#calculator-reload"></use>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+     
+  <script>
+    $(".slider-wrapper").each(function () {
+      var $range = $(".js-range-slider", this),
+        $inputFrom = $(".js-input-from", this),
+        $inputTo = $(".js-input-to", this),
+        instance,
+        min_1 = $inputFrom[0].dataset.min,
+        max_1 = $inputTo[0].dataset.max,
+        from_1 = $inputFrom[0].dataset.min,
+        to_1 = $inputTo[0].dataset.max,
+        steps = $range[0].dataset.steps;
 
-        $range.ionRangeSlider({
-          skin: "round",
-          type: "double",
-          min: min_1,
-          max: max_1,
-          from: from_1,
-          to: to_1,
-          step: steps,
-          onStart: updateInputs,
-          onChange: updateInputs,
-        });
+      $range.ionRangeSlider({
+        skin: "round",
+        type: "double",
+        min: min_1,
+        max: max_1,
+        from: from_1,
+        to: to_1,
+        step: steps,
+        onStart: updateInputs,
+        onChange: updateInputs,
+      });
 
-        instance = $range.data("ionRangeSlider");
+      instance = $range.data("ionRangeSlider");
 
-        function updateInputs(data) {
-          from = data.from;
-          to = data.to;
+      function updateInputs(data) {
+        from = data.from;
+        to = data.to;
 
-          $inputFrom.prop("value", from);
-          $inputTo.prop("value", to);
+        $inputFrom.prop("value", from);
+        $inputTo.prop("value", to);
+      }
+
+      $inputFrom.on("input", function () {
+        var val = $(this).prop("value");
+
+        // validate
+        if (val < min) {
+          val = min;
+        } else if (val > to) {
+          val = to;
         }
 
-        $inputFrom.on("input", function () {
-          var val = $(this).prop("value");
-
-          // validate
-          if (val < min) {
-            val = min;
-          } else if (val > to) {
-            val = to;
-          }
-
-          instance.update({
-            from: val,
-          });
-        });
-
-        $inputTo.on("input", function () {
-          var val = $(this).prop("value");
-
-          // validate
-          if (val < from) {
-            val = from;
-          } else if (val > max) {
-            val = max;
-          }
-
-          instance.update({
-            to: val,
-          });
+        instance.update({
+          from: val,
         });
       });
 
-      if (document.querySelector(".catalog-products-field-btn")) {
-        let checkboxBtn = document.querySelectorAll(
-            ".catalog-products-field-btn"
-          ),
-          catalogbtnText = document.querySelectorAll(
-            ".catalog-products-field-text"
-          ),
-          catalogbtnImg = document.querySelector(
-            ".catalog-products-field-img img"
-          ),
-          checkboxHiden = document.querySelectorAll(".checkbox-hide");
+      $inputTo.on("input", function () {
+        var val = $(this).prop("value");
 
-        checkboxBtn.forEach((element) => {
-          element.addEventListener("click", openFunc);
-          function openFunc() {
-            let classListAdd = element.classList;
-            element.classList.toggle("checkboxBtn_active");
-            if (
-              classListAdd.value.split(" ").indexOf("checkboxBtn_active") < 0
-            ) {
-              element.children[1].innerHTML = "Показать ещё";
-              element.children[0].style.backgroundImage =
-                "url(././images/icons/green-cross.svg)";
-            } else {
-              element.children[1].innerHTML = "Скрыть";
-              element.children[0].style.backgroundImage =
-                "url(././images/icons/red-cross.svg)";
-            }
-            const parent = element.closest(".catalog-products-field-container");
-            let checkboxes = parent.querySelectorAll(".checkbox-hide");
-            checkboxes.forEach((el) => {
-              el.classList.toggle("checkbox-on");
-            });
-          }
+        // validate
+        if (val < from) {
+          val = from;
+        } else if (val > max) {
+          val = max;
+        }
+
+        instance.update({
+          to: val,
         });
-      }
-      if (document.querySelector(".popup-filters")) {
-        document.querySelector(".mfp-content").style.background = "transparent";
-      }
-    </script>
-  </div>
-  <div class="calculator-btn-wrapper">
-    <div class="calculator-btn ui-btn">Показать <span>1679</span> товаров</div>
-    <button class="calculator-reload ui-btn">
-      <div class="calculator-reload-img">
-        <svg class="calculator-reload-img-svg">
-          <use xlink:href="./images/svg/symbols.svg#calculator-reload"></use>
-        </svg>
-      </div>
-    </button>
-  </div>
+      });
+    });
+
+    if (document.querySelector(".catalog-products-field-btn")) {
+      let checkboxBtn = document.querySelectorAll(
+          ".catalog-products-field-btn"
+        ),
+        catalogbtnText = document.querySelectorAll(
+          ".catalog-products-field-text"
+        ),
+        catalogbtnImg = document.querySelector(
+          ".catalog-products-field-img img"
+        ),
+        checkboxHiden = document.querySelectorAll(".checkbox-hide");
+
+      checkboxBtn.forEach((element) => {
+        element.addEventListener("click", openFunc);
+        function openFunc() {
+          let classListAdd = element.classList;
+          element.classList.toggle("checkboxBtn_active");
+          if (
+            classListAdd.value.split(" ").indexOf("checkboxBtn_active") < 0
+          ) {
+            element.children[1].innerHTML = "Показать ещё";
+            element.children[0].style.backgroundImage =
+              "url(././images/icons/green-cross.svg)";
+          } else {
+            element.children[1].innerHTML = "Скрыть";
+            element.children[0].style.backgroundImage =
+              "url(././images/icons/red-cross.svg)";
+          }
+          const parent = element.closest(".catalog-products-field-container");
+          let checkboxes = parent.querySelectorAll(".checkbox-hide");
+          checkboxes.forEach((el) => {
+            el.classList.toggle("checkbox-on");
+          });
+        }
+      });
+    }
+    if (document.querySelector(".popup-filters")) {
+      document.querySelector(".mfp-content").style.background = "transparent";
+    }
+  </script>
 </div>

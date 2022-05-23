@@ -12,10 +12,10 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
     column-gap: 24px;
+    overflow-x: auto;
     @media (max-width: 1024px) {
       margin-right: -15px;
       padding-right: 15px;
-      overflow-x: auto;
       .row:first-child {
         flex-wrap: nowrap;
       }
@@ -138,6 +138,7 @@
       margin-bottom: 31px;
     }
     &-search {
+      display: inline-block;
       width: 100%;
       padding: 0px 5px;
       background: #f5f5f5;
@@ -411,7 +412,8 @@
       margin-bottom: 8px;
     }
     &-reniev {
-      width: 312px;
+     
+      width: 296px;
       position: fixed;
       bottom: 0;
       z-index: 11;
@@ -910,7 +912,10 @@
     width: 100%;
   }
   &-btn-wrapper {
-    display: flex;
+    display: none;
+    @media(max-width:1024px) {
+        display: flex;
+    }
   }
   &-reload {
     background: $colorDark;
@@ -1537,4 +1542,10 @@ input[type="range"]::-moz-range-thumb {
 
 .dropdown + .new-ar {
   transform: rotate(180deg);
+}
+
+
+// Показываем/убираем кнопку "Показать х товаров" 
+.catalog-search-open {
+  display: flex;
 }

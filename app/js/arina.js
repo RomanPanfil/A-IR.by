@@ -133,8 +133,8 @@ function accordionChanges(screen1024) {
 
 let fav = document.querySelector('.card-item-fav');
 let comparison = document.querySelector('.card-item-comparison');
-
-fav.addEventListener('click', selectedFav)
+if(fav) {
+  fav.addEventListener('click', selectedFav)
 comparison.addEventListener('click', selectedComparison)
 
 // selected favorite
@@ -147,4 +147,5 @@ function selectedFav() {
 function selectedComparison() {
   comparison.children[0].style.fill = '#2A4455';
   comparison.children[1].innerText = 'В сравнении';
+}
 }
