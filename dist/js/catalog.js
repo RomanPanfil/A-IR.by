@@ -1,20 +1,34 @@
+const changeCatalogStyle = (style) => {
+  localStorage.setItem('catalogStyle', style);
+  document.querySelector('#catalog').dataset.style = style
+  document.querySelectorAll('.catalog-style-toggler').forEach(el => {
+    el.classList.remove('active')
+    if (el.dataset.style && el.dataset.style === style) {
+      el.classList.add('active')
+    }
+  })
+}
+
+(function(){
+  if (!document.querySelector('.catalog-style-toggler')) return;
+
+  document.querySelectorAll('.catalog-style-toggler')
+    .forEach(el => {
+      el.addEventListener('click', function(e) {
+        e = e || window.event
+        e.preventDefault();
+        
+        const style = this.dataset.style || 'grid'
+        changeCatalogStyle(style)
+      })
+    });
+
+  if (localStorage.getItem('catalogStyle')) {
+    changeCatalogStyle(localStorage.getItem('catalogStyle'))
+  }
+})();
 
 
-catalogLine.onclick = () => {
-  catalog.classList.add("catalog-products-line");
-  catalog.classList.remove("catalog-products-grid");
-  catalogGrid.style.opacity = "0.3";
-  catalogLine.style.opacity = "1";
-};
-catalogGrid.onclick = () => {
-  catalog.classList.add("catalog-products-grid");
-  catalog.classList.remove("catalog-products-line");
-  catalogGrid.style.opacity = "1";
-  catalogLine.style.opacity = "0.3";
-};
-
-
-catalogGrid.click();
 
 if (matchMedia) {
   let screen1023 = window.matchMedia("(max-width:1024px)");
@@ -30,47 +44,10 @@ function accordionChangesPop(screen1023) {
   }
 }
 
-const productSliderMarkUpcatalog = $(".slider-catalog")
-  .clone()
-  .removeClass("slider-adaptive-none");
-$(".product-swiper-mob-catalog").append(productSliderMarkUpcatalog);
 
-$(".product-swiper-desc-catalog").append(productSliderMarkUpcatalog);
-
-new Swiper(".product-swiper-desc-catalog .product-swiper ", {
-  slidesPerView: 4,
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  spaceBetween: 24,
-  breakpoints: {
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 8,
-    },
-  },
-});
-
-// Показываем/убираем кнопку "Показать х товаров"
-
-// $(function() {
-//   let catalogProductsSearch = $('#caralog_search');
-//   $(window).scroll(function() {
-//     let catalogSerachOffset = catalogProductsSearch.offset().top
-//     // console.log(window.scrollY)
-//     // console.log(catalogSerachOffset)
-//     if(catalogSerachOffset < window.scrollY) {
-//       console.log('hide')
-//     }else {
-//       console.log('see')
-//     }
-//   })
-
-// })
-
-$(document).ready(function(){
+(function (){
+  if (!$('#catalog_search').length) return;
+  
   let catalogProductsSearch = $('#catalog_search');
   let catalogProductsReniev = $('.catalog-products-reniev')
   let cardReview = $('#card_review').offset().top;
@@ -83,4 +60,4 @@ $(document).ready(function(){
       catalogProductsReniev.removeClass('catalog-search-open')
     }
   })
-})
+})();

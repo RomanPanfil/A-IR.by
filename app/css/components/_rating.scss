@@ -1,22 +1,25 @@
 [class*="-rating"] {
   display: inline-block;
-  align-items: flex-end;
+  line-height: 1;
 }
 
 [class*="-rating-value"] {
   display: inline-block;
+  vertical-align: bottom;
   line-height: 1;
-  padding-left: 8px;
   font-family: $ffOpenSans;
   font-weight: 700;
-  font-size: rem(16);
+  @include fz(14);
   color: rgba(0, 0, 0, 0.7);
 }
 
 [class*="-rating-body"] {
   display: inline-block;
   position: relative;
-  font-size: rem(25);
+  font-size: 16px;
+  line-height: 1;
+  margin-right: 5px;
+  letter-spacing: 1.5px;
 
   &::before {
     content: '★★★★★';

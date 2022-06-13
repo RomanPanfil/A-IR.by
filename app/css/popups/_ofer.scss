@@ -1,25 +1,4 @@
 .popup {
-  position: relative;
-  width: 520px;
-  margin: auto;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  padding: 34px 48px 40px 48px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  @media (max-width: 520px) {
-    width: 100%;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 0;
-  }
-  .mfp-close {
-    position: absolute;
-    color: #000000;
-  }
-
   &-item {
     display: flex;
     &-img {
@@ -129,19 +108,6 @@
     font-family: $ffOpenSans;
     &:hover {
       opacity: 0.5;
-    }
-  }
-  .mfp-close {
-    font-size: 0;
-    &::after {
-      display: inline-block;
-      position: relative;
-      top: 17px;
-      right: 5px;
-      height: 20px;
-      width: 20px;
-      content: "";
-      background: url("../images/icons/mfp-close.svg") no-repeat right;
     }
   }
 }

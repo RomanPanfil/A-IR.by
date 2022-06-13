@@ -4,31 +4,19 @@ $(document).on("click", ".mfp-link", function () {
     items: { src: a.attr("data-href") },
     type: "ajax",
     overflowY: "scroll",
-    removalDelay: 610,
-    mainClass: "my-mfp-zoom-in",
+    removalDelay: 300,
+		mainClass: 'my-mfp-zoom-in',
     ajax: {
       tError: "Error. Not valid url",
     },
     callbacks: {
       open: function () {
-        setTimeout(function () {
-          $(".mfp-wrap, .mfp-bg").addClass("delay-back");
-          $(".mfp-popup").addClass("delay-back");
-        }, 700);
-      },
+        setTimeout(function(){
+          $('.mfp-wrap').addClass('not_delay');
+          $('.mfp-popup').addClass('not_delay');
+        },700);
+      }
     },
   });
   return false;
-});
-
-$(document).ready(function () {
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
-
-    fixedContentPos: false
-  });
 });

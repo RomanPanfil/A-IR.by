@@ -1,3 +1,5 @@
+const D = document
+
 let arrow = document.querySelector(".main-contacts-tel-arrow");
 let numbers = document.querySelector(".main-contacts-tel-numbers");
 arrow.addEventListener("click", function () {
@@ -93,39 +95,7 @@ if (catalogPhone) {
 }
 
 
-if (document.querySelector(".catalog-stickers-btn")) {
-  let catalogBtn = document.querySelectorAll(".catalog-stickers-btn");
 
-  catalogBtn.forEach((element) => {
-    element.addEventListener("click", openFuncz);
-    function openFuncz() {
-      let classListAdd = element.classList;
-      element.classList.toggle("checkboxBtn_active");
-      if (classListAdd.value.split(" ").indexOf("checkboxBtn_active") < 0) {
-        element.children[1].innerHTML = "Показать ещё";
-      } else {
-        element.children[1].innerHTML = "Скрыть";
-      }
-
-      const parentz = element.closest(".open-wrap");
-      let checkboxesz = parentz.querySelectorAll(".sticker-hidden");
-      let checkboxesB = parentz.querySelectorAll(".sticker-hiddenB");
-      let checkboxImg = parentz.querySelectorAll(".catalog-products-field-img");
-
-      checkboxesz.forEach((el) => {
-        el.classList.toggle("sticker-hidden-open");
-      });
-
-      checkboxesB.forEach((el) => {
-        el.classList.toggle("sticker-hidden-openB");
-      });
-
-      checkboxImg.forEach((el) => {
-        el.classList.toggle("catalog-products-img-open");
-      });
-    }
-  });
-}
 // Input range
 
 // checkbox hide on click
@@ -304,40 +274,33 @@ if (document.getElementById("card-breackpoint")) {
 }
 
 
+(function (){ 
+  if (!D.querySelector('.catalog-marks')) return;
 
-let wrapSettings = document.querySelector('.wrap-setting');
-
-
-if(wrapSettings){
-  let wrapBtn = document.querySelector('.btn-setting');
+  const wrapBtn =D.querySelector('.catalog-marks-toggler');
+  const wrapSettings = D.querySelector('.catalog-marks-list')
 
   function resSetting() {
-    const wrapSettingContainer = document.querySelector('.wrap-setting-container').clientHeight;
+    const wrapSettingContainer = document.querySelector('.catalog-marks-height').clientHeight;
 
+    console.log(wrapSettingContainer)
     if (wrapSettingContainer <= 80){
-      wrapSettings.classList.remove("wrap-remove");
-      wrapBtn.classList.add('btn-setting-none');
+      wrapSettings.classList.add("opened");
+      wrapBtn.classList.add('ui-hidden');
     }
     else {
-      wrapSettings.classList.add("wrap-remove");
-      wrapBtn.classList.remove('btn-setting-none');
+      wrapSettings.classList.remove("opened");
+      wrapBtn.classList.remove('ui-hidden');
     }
   }
   resSetting();
   window.addEventListener('resize', resSetting)
+})();
 
 
-  wrapBtn.addEventListener('click', function() {
-  let wrapRemove = document.querySelector('.wrap-remove');
-  wrapRemove.classList.toggle('wrap-toggle');
-  })
-
-}
 
 
 // Открытие кнопки сравнение
-
-
   let cardIitemComparison = document.querySelectorAll('.cardComparison');
   if(cardIitemComparison) {
 
@@ -372,9 +335,72 @@ if(wrapSettings){
     })
   }
 
-// // убирает отступ в попапе filters
 
-// let popupFilters = document.querySelector('.popup-filters')
+(function (){
+  if (!D.querySelector('.ux-collapsible-toggler')) return;
+
+  D
+    .querySelectorAll('.ux-collapsible-toggler')
+    .forEach(el => {
+      el.addEventListener('click',function(e) {
+        e = e || window.event
+        e.preventDefault()
+        e.stopPropagation()
+
+        const openTxt = this.dataset.open || 'Показать все'
+        const closeTxt = this.dataset.close || 'Скрыть'
+        const icon = this.querySelector('.ui-btn-icon')
+        const txt = this.querySelector('.ui-btn-txt')
+        const content = this.closest('.ux-collapsible').querySelector('.ux-collapsible-content')
+
+        if (this.classList.contains('opened')) {
+          txt.textContent = openTxt
+          icon.classList.remove('ui-btn-icon-cancel')
+          icon.classList.add('ui-btn-icon-plus')
+          content.classList.remove('opened')
+        } else {
+          txt.textContent = closeTxt
+          icon.classList.add('ui-btn-icon-cancel')
+          icon.classList.remove('ui-btn-icon-plus')
+          content.classList.add('opened')
+        }
+
+        this.classList.toggle('opened')
+      })
+    })
+})();
 
 
-// console.log(document.querySelector('.mfp-container'))
+(function (){
+  if (!D.querySelector('.ui-spoiler')) return;
+
+  D
+    .querySelectorAll('.ui-spoiler-toggler')
+    .forEach(el => {
+      el.addEventListener('click',function(e) {
+        e = e || window.event
+        e.preventDefault()
+        e.stopPropagation()
+
+        const openTxt = this.dataset.open || 'Показать все'
+        const closeTxt = this.dataset.close || 'Скрыть'
+        const icon = this.querySelector('.ui-btn-icon')
+        const txt = this.querySelector('.ui-btn-txt')
+        const content = this.closest('.ui-spoiler').querySelector('.ui-spoiler-body')
+
+        if (this.classList.contains('opened')) {
+          txt.textContent = openTxt
+          icon.classList.remove('ui-btn-icon-cancel')
+          icon.classList.add('ui-btn-icon-plus')
+          content.classList.remove('opened')
+        } else {
+          txt.textContent = closeTxt
+          icon.classList.add('ui-btn-icon-cancel')
+          icon.classList.remove('ui-btn-icon-plus')
+          content.classList.add('opened')
+        }
+
+        this.classList.toggle('opened')
+      })
+    })
+})();

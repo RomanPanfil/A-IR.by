@@ -20,74 +20,80 @@
 }
 .ui-sticker {
   display: inline-block;
+  vertical-align: middle;
   height: 32px;
   line-height: 30px;
-  border: 1px solid transparent;
-  background: transparent;
+  border: 1px solid $yellow;
+  background-color: #FFF;
   padding: 0 16px;
   text-align: center;
-  font-family: $ffOpenSans;
-  font-size: rem(14);
+  @include fz(14);
   font-weight: 600;
   cursor: pointer;
   border-radius: 5px;
-  margin-right: 8px;
+  margin-right: 6px;
+  margin-bottom: 8px;
   transition: 0.3s ease;
+  color: $yellow;
+
+  &:hover {
+    color: #fff;
+    background-color: $yellow;
+  }
+
+  &-mini {
+    height: 24px;
+    line-height: 22px;
+  }
+
+  &-blue {
+    color: #1a66ae;
+    border-color: #1a66ae;
+    &:hover {
+      color: #fff;
+      background: #1a66ae;
+    }
+  }
+  &-green {
+    color: #559e53;
+    border-color: #559e53;
+    &:hover {
+      color: #fff;
+      background: #559e53;
+    }
+  }
+  &-purple {
+    color: #7d3e8c;
+    border-color: #7d3e8c;
+    &:hover {
+      color: #fff;
+      background: #7d3e8c;
+    }
+  }
+  &-red {
+    color: #bc0000;
+    border-color: #bc0000;
+    &:hover {
+      color: #fff;
+      background: #bc0000;
+    }
+  }
+  &-orange {
+    color: #f28705;
+    border-color: #f28705;
+    &:hover {
+      color: #fff;
+      background: #f28705;
+    }
+  }
+  &-cyan {
+    color: #83dbe4;
+    border-color: #83dbe4;
+    &:hover {
+      color: #fff;
+      background: #83dbe4;
+    }
+  }
 }
 
-.sticker-yellow {
-  color: #ffc100;
-  border-color: #ffc100;
-  &:hover {
-    color: #fff;
-    background: #ffc100;
-  }
-}
-.sticker-blue {
-  color: #1a66ae;
-  border-color: #1a66ae;
-  &:hover {
-    color: #fff;
-    background: #1a66ae;
-  }
-}
-.sticker-green {
-  color: #559e53;
-  border-color: #559e53;
-  &:hover {
-    color: #fff;
-    background: #559e53;
-  }
-}
-.sticker-purple {
-  color: #7d3e8c;
-  border-color: #7d3e8c;
-  &:hover {
-    color: #fff;
-    background: #7d3e8c;
-  }
-}
-.sticker-red {
-  color: #bc0000;
-  border-color: #bc0000;
-  &:hover {
-    color: #fff;
-    background: #bc0000;
-  }
-}
-.sticker-orange {
-  color: #f28705;
-  border-color: #f28705;
-  &:hover {
-    color: #fff;
-    background: #f28705;
-  }
-}
-.sticker-cyan {
-  color: #83dbe4;
-  border-color: #83dbe4;
-  &:hover {
-    color: #fff;
-    background: #83dbe4;
-  }
-}
+

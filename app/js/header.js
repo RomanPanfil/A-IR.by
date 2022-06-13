@@ -7,14 +7,17 @@
       headerNav = $(".header .nav-wrapper"),
       wrapperFixed = $(".wrapper"),
       footerBreackpoint = $("#footer"),
-      footerHeight = $('#footer').innerHeight(),
-      headerHeight = $('header').outerHeight(true);
+      footerHeight = $('#footer').innerHeight();
+    const headerOffset = $('header .main').offset().top
+      
       
     
 
     $(window).scroll(function () {
       let cardBreackpointOpen = $('.card-breackpoint-open');
       let headerCardFixedHeight = $('.header_fixed').innerHeight();
+      const headerHeight = $('header .main').outerHeight(true);
+      
 
 
       let offsetFooter = footerBreackpoint.offset().top
@@ -57,18 +60,18 @@
       }
       
 
-      if ($(this).scrollTop() > headerHeight) {
+      if ($(this).scrollTop() > headerOffset) {
         wrapperFixed.css('paddingTop', headerHeight + 'px')
         header.addClass("header_fixed");
         wrapperFixed.addClass("wrapper_fixed");
-        headerMenu.hide();
-        headerNav.hide();
+        // headerMenu.hide();
+        // headerNav.hide();
       } else {
         wrapperFixed.css('paddingTop', 0)
         header.removeClass("header_fixed");
         wrapperFixed.removeClass("wrapper_fixed");
-        headerMenu.show();
-        headerNav.show();
+        // headerMenu.show();
+        // headerNav.show();
       }
     });
   });

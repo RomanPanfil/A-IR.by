@@ -12,7 +12,7 @@
 .main-contacts-tel {
   &-link {
     &:hover {
-      text-decoration: underline;
+      color: $secondary;
     }
   }
   &-numbers {
@@ -96,8 +96,9 @@
     margin-bottom: 11px;
     padding-left: 24px;
     position: relative;
+
     &:hover {
-      text-decoration: underline;
+      color: $secondary;
     }
     &-img {
       position: absolute;
@@ -132,12 +133,14 @@
 }
 // 🍤
 .header {
+  background: #FFF;
   position: relative;
-  margin-bottom: 17px;
-  transition: transform 0.4s, background-color 0.2s, -webkit-transform 0.4s;
-  will-change: transform;
-  @media (max-width: 1024px) {
-    padding: 11px 0;
+  margin-bottom: 30px;
+  // transition: transform 0.4s, -webkit-transform 0.4s;
+  // will-change: transform;
+
+  @media (max-width: 1024.99px) {
+    // padding: 11px 0;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
@@ -145,23 +148,28 @@
     background: #f5f5f5;
     padding: 10px 0px;
     font-size: rem(14);
-    @media (max-width: 1024px) {
+
+    @media (max-width: 1024.99px) {
       display: none !important;
     }
     li {
       display: inline-block;
+      margin-right: 32px;
+
+      @media (max-width: 1300px) {
+        margin-right: 16px;
+      }
+      @media (max-width: 1170px) {
+        margin-right: 10px;
+      }
+
       a {
-        margin-right: 32px;
         color: #000;
+
         &:hover {
-          text-decoration: underline;
+          color: $secondary;
         }
-        @media (max-width: 1300px) {
-          margin-right: 16px;
-        }
-        @media (max-width: 1170px) {
-          margin-right: 10px;
-        }
+        
       }
     }
     &-wrap {
@@ -194,24 +202,27 @@
     }
   }
   .main {
-    padding: 18px 0px;
+    padding: 16px 0px;
+    background: #FFF;
+
+    @media (max-width: 576.99px) {
+      padding: 12px 0;
+    }
+
     &-container {
       gap: 32px;
+
       @media (max-width: 1170px) {
         gap: 20px;
       }
-      @media (max-width: 1024px) {
+      @media (max-width: 1024.99px) {
         gap: 0;
       }
     }
 
-    @media (max-width: 1024px) {
-      padding: 0px;
-      height: 100%;
-    }
     &-card {
       display: none;
-      @media (max-width: 1024px) {
+      @media (max-width: 1024.99px) {
         display: inline-block;
         margin-left: 12px;
       }
@@ -219,7 +230,7 @@
     &-logo {
       flex: 0 0 192px;
       max-width: 192px;
-      @media (max-width: 1024px) {
+      @media (max-width: 1024.99px) {
         display: flex;
         width: 100%;
         max-width: initial;
@@ -234,6 +245,7 @@
         max-height: 40px;
       }
     }
+
     &-catalog {
       white-space: nowrap;
       height: 40px;
@@ -244,17 +256,19 @@
       font-weight: 600;
       border-radius: 5px;
       padding: 0px 14px;
-      @media (max-width: 1024px) {
+      cursor: pointer;
+
+      @media (max-width: 1024.99px) {
         display: inline-block;
         height: 48px;
         width: 48px;
         line-height: 48px;
       }
       &-wrapper {
-        @media (max-width: 1024px) {
+        @media (max-width: 1024.99px) {
           display: flex;
           align-items: center;
-          justify-content: end;
+          justify-content: flex-end;
           flex: 0 0 134px;
           max-width: 134px;
           padding-left: 24px;
@@ -308,10 +322,15 @@
       font-weight: 600;
       white-space: nowrap;
       padding-right: 12px;
+
       a {
         color: #000;
+
+        &:hover {
+          color: $secondary;
+        }
       }
-      @media (max-width: 1024px) {
+      @media (max-width: 1024.99px) {
         display: none;
       }
       &-tel,
@@ -323,11 +342,10 @@
         @media (max-width: 1170px) {
           font-size: rem(14);
         }
-
       }
       &-email {
         &:hover {
-          text-decoration: underline;
+          color: $secondary;
         }
       }
       &-icon {
@@ -344,51 +362,65 @@
     }
     &-menu {
       white-space: nowrap;
-      @media (max-width: 1024px) {
+      text-align: center;
+
+      @media (max-width: 1024.99px) {
         display: none;
       }
-      text-align: center;
+      
+
       &-services {
         display: inline-block;
         cursor: pointer;
         margin-left: 26px;
-        transition: 0.1s ease;
+        color: #000;
+
         @media (max-width: 1170px) {
           margin-left: 10px;
         }
-        &:hover {
-          opacity: 0.5;
-        }
+
         &-img {
           position: relative;
+          width: 22px;
+          height: 22px;
+          margin: 0 auto;
+
+          svg {
+            fill: #000;
+          }
         }
-        &-svg {
-          max-width: 24px;
-          max-height: 24px;
+        
+        &:hover {
+          color: $secondary;
+
+          svg {
+            fill: $secondary;
+          }
         }
 
         &-text {
           font-size: rem(14);
-          color: #1D262C;
+
           @media (max-width: 1170px) {
             font-size: rem(13);
           }
         }
         &-label {
           position: absolute;
-          width: 30px;
+          min-width: 16px;
           height: 16px;
+          line-height: 16px;
           background: $colorRed;
-          border-radius: 10px;
+          border-radius: 8px;
           font-size: rem(12);
           font-weight: 600;
           text-align: center;
           overflow: hidden;
           white-space: nowrap;
           color: #fff;
-          transform: translate(0, -50%);
-          top: 3px;
-          left: 50%;
+          top: -8px;
+          right: -50%;
+          padding: 0px 2px;
         }
       }
     }
@@ -396,7 +428,7 @@
   .nav {
     background: #fff;
     gap: 2px;
-    @media (max-width: 1024px) {
+    @media (max-width: 1024.99px) {
       display: none;
     }
 
@@ -438,7 +470,9 @@
   }
   .mob-menu {
     display: none;
-    @media (max-width: 1024px) {
+    line-height: 0;
+
+    @media (max-width: 1024.99px) {
       display: block;
       padding-right: 24px;
       @media (max-width: 400px) {
@@ -469,13 +503,15 @@
 .mobile-card {
   display: none;
   max-width: 32px;
+  line-height: 0;
+
   img {
     max-height: 32px;
     @media (max-width: 350px) {
       max-height: 28px;
     }
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1024.99px) {
     display: inline-block;
     margin-right: 32px;
     @media (max-width: 400px) {
@@ -483,10 +519,11 @@
     }
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1024.99px) {
   .mobile-separ {
     position: relative;
     display: inline-block;
+
     &::after {
       content: "";
       position: absolute;
@@ -494,10 +531,15 @@
       width: 1px;
       height: 80px;
       background: #d3d3d3;
-      transform: translate(-50%, -50%);
+      transform: translate(0, -50%);
       top: 50%;
-      left: 50%;
+      left: 0;
     }
+  }
+}
+@media (max-width: 576.99px) {
+  .mobile-separ:after {
+    height: 72px;
   }
 }
 
@@ -506,14 +548,20 @@
   &-form {
     position: relative;
     width: 100%;
-    @media (max-width: 1024px) {
+    display: block;
+
+    @media (max-width: 1024.99px) {
       display: none;
     }
   }
-  &-input {
+  input#{&}-input {
     width: 100%;
-    border-color: #d3d3d3;
-    padding-right: 87px;
+    padding-right: 90px;
+
+    &:hover,
+    &:focus {
+      border-color: $secondary;
+    }
   }
   &-btn {
     border: none;
@@ -522,10 +570,10 @@
     padding: 0;
     position: absolute;
     background-color: $colorDark;
-    transform: translate(0%, -50%);
-    top: 50%;
+    top: 0;
     right: 0;
     border-radius: 0 5px 5px 0;
+
     &-img {
       max-width: 24px;
       height: 24px;
@@ -543,18 +591,22 @@
   box-shadow: none;
 }
 .header_fixed {
-  position: fixed;
-  background: #fff;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  right: 0;
-  width: 100%;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-  transform: translate3d(0px, 0px, 0px);
   .main {
-    padding: 17px 0px;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    right: 0;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    transform: translate3d(0px, 0px, 0px);
   }
+
+  @media (min-width: 1025px) {
+    .main {
+      padding: 17px 0px;
+    }
+  }
+  
 }
 
 .wrapper_fixed {

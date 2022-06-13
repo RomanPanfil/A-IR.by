@@ -1,11 +1,25 @@
-<div class="popup zaglushka-phone">
-  <div class="page-stickers">
-    <a href="#" class="ui-sticker sticker-yellow">Мега рассрочка</a>
-    <a href="#" class="ui-sticker sticker-blue">Товар недели</a>
-    <a href="#" class="ui-sticker sticker-green">Ременной привод</a>
-    <a href="#" class="ui-sticker sticker-purple">Умный выбор</a>
-    <a href="#" class="ui-sticker sticker-red">-13%</a>
-    <a href="#" class="ui-sticker sticker-orange">Купи сейчас, плати потом</a>
-    <a href="#" class="ui-sticker sticker-cyan">Воздушный фильтр В ПОДАРОК!</a>
+<div class="mfp-popup mfp-anim popup-bottom popup-marks">
+  <div class="popup-marks-links">
+    <a href="#" class="ui-sticker ui-sticker-yellow">Мега рассрочка</a>
+    <a href="#" class="ui-sticker ui-sticker-blue">Товар недели</a>
+    <a href="#" class="ui-sticker ui-sticker-green">Ременной привод</a>
+    <a href="#" class="ui-sticker ui-sticker-purple">Умный выбор</a>
+    <a href="#" class="ui-sticker ui-sticker-red">-13%</a>
+    <a href="#" class="ui-sticker ui-sticker-orange">Купи сейчас, плати потом</a>
+    <a href="#" class="ui-sticker ui-sticker-cyan">Воздушный фильтр В ПОДАРОК!</a>
   </div>
+
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
 </div>
