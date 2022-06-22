@@ -97,7 +97,7 @@ button {
 
   &-icon {
     position: relative;
-    top: -2px;
+    top: -1px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 4px;
@@ -1152,4 +1152,27 @@ textarea.ui-input {
   &:hover {
     box-shadow: $shadow;
   }
+}
+
+.swiper-pagination {
+  text-align: center;
+
+  &-bullet {
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #c4c4c4;
+    margin: 0px 4px 4px;
+    opacity: 1;
+
+    &-active {
+      background-color: $secondary;
+    }
+  }
+}
+
+.no-overflow {
+  overflow: hidden;
 }

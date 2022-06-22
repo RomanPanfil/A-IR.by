@@ -2246,7 +2246,7 @@ button {
 }
 .ui-btn-icon {
   position: relative;
-  top: -2px;
+  top: -1px;
   display: inline-block;
   vertical-align: middle;
   margin-right: 4px;
@@ -3326,6 +3326,27 @@ textarea.ui-input {
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
 }
 
+.swiper-pagination {
+  text-align: center;
+}
+.swiper-pagination-bullet {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #c4c4c4;
+  margin: 0px 4px 4px;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #2A4455;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
 .page-stickers {
   margin-bottom: 15px;
   overflow-x: auto;
@@ -4242,6 +4263,11 @@ textarea.ui-input {
   display: block;
 }
 
+@media (max-width: 679px) {
+  .middle.panel-is-float {
+    padding-bottom: 84px;
+  }
+}
 .ui-ul {
   padding-left: 15px;
 }
@@ -6674,6 +6700,8 @@ textarea.ui-input {
     overflow: hidden;
     overflow-y: auto;
     max-height: calc(100vh - 172px);
+    margin-right: -15px;
+    padding-right: 15px;
   }
   .catalog-filters-btn {
     position: absolute;
@@ -6691,7 +6719,6 @@ textarea.ui-input {
     height: 72px;
     line-height: 72px;
     padding-right: 77px;
-    padding-left: 77px;
   }
   .catalog-filters-btn-icon {
     border-left: 1px solid rgba(255, 255, 255, 0.5);

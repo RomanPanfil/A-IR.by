@@ -192,3 +192,10 @@
 .card-breackpoint-open {
   display: block;
 }
+
+@media (max-width: 679px) {
+  .middle.panel-is-float {
+    padding-bottom: 84px;
+  }
+}
+

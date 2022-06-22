@@ -151,7 +151,7 @@ $.fn.Tabs = function() {
 
   const cardMini = new Swiper('.swiper-mobile-imgs',{
     slidesPerView: 3,
-    shortSwipes: false,
+    // shortSwipes: false,
     spaceBetween: 10,
     navigation: {
       nextEl: ".mobile-imgs-next",
@@ -166,7 +166,7 @@ $.fn.Tabs = function() {
 
   const cardSwiper = new Swiper('.swiper-card-imgs',{
     slidesPerView: 1,
-    shortSwipes: false,
+    // shortSwipes: false,
     autoHeight: true,
     navigation: {
       nextEl: ".card-imgs-next",
@@ -328,17 +328,29 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
 
 
 
-
-
-let arrow = document.querySelector(".main-contacts-tel-arrow");
-let numbers = document.querySelector(".main-contacts-tel-numbers");
-arrow.addEventListener("click", function () {
-  if (numbers.classList.contains("numbers-open")) {
+(function(){
+  let arrow = document.querySelector(".main-contacts-tel-arrow");
+  let numbers = document.querySelector(".main-contacts-tel-numbers");
+  if (!arrow || !numbers) return
+  
+  arrow.addEventListener("click", function (e) {
+    e = e || window.event
+    e.preventDefault()
+    this.classList.toggle("opened");
     numbers.classList.toggle("numbers-open");
-  } else {
-    numbers.classList.add("numbers-open");
-  }
-});
+  });
+ 
+	document.addEventListener('click', (e) => {
+    const withinBoundaries = e.composedPath().includes(numbers);
+    const isArrow = e.composedPath().includes(arrow);
+   
+    if ( !withinBoundaries && !isArrow) {
+      numbers.classList.remove("numbers-open");
+    }
+  })
+})();
+
+
 
 // Footer change media
 if (matchMedia) {
@@ -569,7 +581,6 @@ if (document.getElementById("card-breackpoint")) {
   function resSetting() {
     const wrapSettingContainer = document.querySelector('.catalog-marks-height').clientHeight;
 
-    console.log(wrapSettingContainer)
     if (wrapSettingContainer <= 80){
       wrapSettings.classList.add("opened");
       wrapBtn.classList.add('ui-hidden');
@@ -671,7 +682,7 @@ if (document.getElementById("card-breackpoint")) {
       slider = new Swiper(".catalog-reviews", {
         slidesPerView: 2,
         spaceBetween: 24,
-        shortSwipes: false,
+        // shortSwipes: false,
         navigation: {
           nextEl: ".catalog-reviews-next",
           prevEl: ".catalog-reviews-prev",
@@ -707,7 +718,7 @@ if (document.getElementById("card-breackpoint")) {
         slidesPerView: 1,
         spaceBetween: 24,
         autoHeight: true,
-        shortSwipes: false,
+        // shortSwipes: false,
         navigation: {
           nextEl: ".article-button-next",
           prevEl: ".article-button-prev",
@@ -735,7 +746,7 @@ if (document.getElementById("card-breackpoint")) {
       slider = new Swiper(".catalog-related-swiper", {
         slidesPerView: 2,
         spaceBetween: 24,
-        shortSwipes: false,
+        // shortSwipes: false,
         navigation: {
           nextEl: ".catalog-related-next",
           prevEl: ".catalog-related-prev",
@@ -772,7 +783,7 @@ if (document.getElementById("card-breackpoint")) {
       slider = new Swiper(".swiper-card-related", {
         slidesPerView: 3,
         spaceBetween: 24,
-        shortSwipes: false,
+        // shortSwipes: false,
         navigation: {
           nextEl: ".card-related-next",
           prevEl: ".card-related-prev",
@@ -809,7 +820,7 @@ if (document.getElementById("card-breackpoint")) {
       slider = new Swiper(".swiper-card-reviews", {
         slidesPerView: 2,
         spaceBetween: 24,
-        shortSwipes: false,
+        // shortSwipes: false,
         navigation: {
           nextEl: ".card-reviews-next",
           prevEl: ".card-reviews-prev",
@@ -846,7 +857,7 @@ if (document.getElementById("card-breackpoint")) {
       slider = new Swiper(".swiper-card-interest", {
         slidesPerView: 3,
         spaceBetween: 24,
-        shortSwipes: false,
+        // shortSwipes: false,
         navigation: {
           nextEl: ".card-interest-next",
           prevEl: ".card-interest-prev",
@@ -1005,6 +1016,7 @@ if (document.getElementById("card-breackpoint")) {
   document
     .querySelector('.catalog-filters-close')
     .addEventListener('click',() => {
+      document.documentElement.classList.remove('no-overflow');
       document.querySelector('.catalog-filters').classList.remove('opened');
     })
 })();
@@ -1016,6 +1028,7 @@ if (document.getElementById("card-breackpoint")) {
   document
     .querySelector('.catalog-filters-bg')
     .addEventListener('click',() => {
+      document.documentElement.classList.remove('no-overflow');
       document.querySelector('.catalog-filters').classList.remove('opened');
     })
 })();
@@ -1027,6 +1040,7 @@ if (document.getElementById("card-breackpoint")) {
   document
     .querySelector('.catalog-settings-filters')
     .addEventListener('click',() => {
+      document.documentElement.classList.add('no-overflow');
       document.querySelector('.catalog-filters').classList.add('opened');
     })
 })();
@@ -1132,10 +1146,12 @@ $(function () {
         // })
         
         if (offsetFooter < document.documentElement.clientHeight + window.scrollY) {
+          D.querySelector('#middle').classList.remove("panel-is-float")
           cardBreackpointOpen.css({
             'position': 'relative',
           })
         } else {
+          D.querySelector('#middle').classList.add("panel-is-float")
           cardBreackpointOpen.css({
             'top': 'initial',
             'position': 'fixed',
