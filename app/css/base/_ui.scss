@@ -83,7 +83,7 @@ button {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: .3s background-color, .3s color, .3s border-color;
+  transition: .3s background-color, .3s color, .3s border-color, .3s box-shadow;
   border-radius: 5px;
 
   &:hover {
@@ -267,6 +267,12 @@ button {
         visibility: visible;
       }
     }
+    &-768 {
+      @media (max-width: 768.99px) {
+        display: block;
+        visibility: visible;
+      }
+    }
     &-1024 {
       @media (max-width: 1024.99px) {
         display: block;
@@ -277,6 +283,12 @@ button {
   &-more {
     &-576 {
       @media (min-width: 577px) {
+        display: block;
+        visibility: visible;
+      }
+    }
+    &-768 {
+      @media (min-width: 769px) {
         display: block;
         visibility: visible;
       }
@@ -535,6 +547,13 @@ svg.sprite {
   }
 }
 
+.ui-field {
+  margin-bottom: 20px;
+
+  .ui-input, input {
+    padding-right: 50px;
+  }
+}
 .ui-input {
   display: block;
   height: 40px;
@@ -562,6 +581,29 @@ svg.sprite {
     border-color: #000;
     color: #000;
   }
+
+  &.valid {
+    border-color: $valid;
+  }
+  &.invalid,
+  &.error {
+    border-color: $invalid;
+  }
+
+  &-wrp {
+    position: relative;
+  }
+}
+span.error {
+  color: $primary;
+  @include fz(14);
+  padding-top: 4px;
+}
+textarea.ui-input {
+  height: auto;
+  padding: 16px;
+  white-space: normal;
+  line-height: 1.375;
 }
 
 ::-webkit-input-placeholder {opacity: 1; transition: opacity 0.3s ease; color: $border;}
@@ -769,6 +811,10 @@ svg.sprite {
   display: block;
   margin-bottom: 6px;
 
+  &-mini {
+    @include fz(14);
+  }
+
   &-inline {
     display: inline-block;
     vertical-align: middle;
@@ -930,5 +976,180 @@ svg.sprite {
     &.opened {
       max-height: none;
     }
+  }
+}
+
+
+.ui-table {
+  table-layout: fixed;
+  width: 100%;
+  border: 0px;
+  border-collapse: collapse;
+  @include fz(14);
+
+  th, td {
+    padding: 10px 32px;
+
+    &[colspan] {
+      font-weight: 700;
+      background-color: #FFF;
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+      h4, h5, h6 {
+        margin: 0;
+      }
+    }
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  td {
+    padding: 10px 32px;
+  
+    &:nth-child(1) {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  &-stripped {
+    tr:nth-child(even) td {
+      background-color: $disabled;
+    }
+  }
+}
+
+.ui-mini-title {
+  @include fz(12);
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: rgba(#000,.7);
+}
+
+.ui-centered {
+  text-align: center;
+}
+.ui-lefted {
+  text-align: left;
+}
+.ui-righted {
+  text-align: right;
+}
+
+.ui-color {
+  &-red {
+    color: $primary;
+  }
+  &-blue {
+    color: $colorBlue;
+  }
+  &-darkblue {
+    color: $secondary;
+  }
+  &-gray {
+    color: $gray;
+  }
+  &-black {
+    color: #000;
+  }
+}
+
+.input-iconed {
+  position: relative;
+
+  &-icon {
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: $secondary;
+    }
+  }
+
+  &-input {
+    display: block;
+    height: 60px;
+    line-height: 58px;
+    padding-left: 66px;
+    padding-right: 15px;
+    width: 100%;
+    border: 0 !important;
+    box-shadow: 0 0 0 1px $border;
+    border-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    @include fz(16);
+    background-color: #fff;
+    transition: box-shadow .3s;
+    outline: none;
+    color: $secondary;
+
+    &:hover, &:focus {
+      box-shadow: $shadow;
+    }
+    &::-webkit-input-placeholder {
+      color: $secondary;
+    }
+    &::-moz-placeholder {
+      color: $secondary;
+    }
+  }
+}
+
+
+
+.ui-file {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 60px;
+  line-height: 1.2;
+  border: 0 !important;
+  padding-left: 66px;
+  padding-right: 15px;
+  width: 100%;
+  border: 0 !important;
+  box-shadow: 0 0 0 1px $border;
+  border-radius: 8px;
+  @include fz(16);
+  background-color: #fff;
+  transition: box-shadow .3s;
+  outline: none;
+  color: $secondary;
+  cursor: pointer;
+
+  &-icon {
+    position: absolute;
+    left: 16px;
+    top: 15px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: $secondary;
+    }
+  }
+
+  &-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover {
+    box-shadow: $shadow;
   }
 }

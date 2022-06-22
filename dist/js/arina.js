@@ -1,4 +1,4 @@
-const ratings = document.querySelectorAll(".card-item-rating");
+const ratings = document.querySelectorAll(".card-rating");
 const acc = document.getElementsByClassName("accordion-items-title");
 
 let ratingActive;
@@ -47,8 +47,8 @@ function initRatings() {
 }
 
 function initRatingVars(rating) {
-  ratingActive = rating.querySelector(".card-item-rating-active");
-  ratingValue = rating.querySelector(".card-item-rating-value");
+  ratingActive = rating.querySelector(".card-rating-active");
+  ratingValue = rating.querySelector(".card-rating-value");
 }
 
 function setRatingActiveWidth(index = ratingValue.innerHTML) {
@@ -62,7 +62,7 @@ function setRatingActiveWidth(index = ratingValue.innerHTML) {
 }
 
 function setRating(rating) {
-  const ratingItems = rating.querySelectorAll(".card-item-rating-item");
+  const ratingItems = rating.querySelectorAll(".card-rating-item");
 
   for (let i = 0; i < ratingItems.length; i++) {
     const ratingItem = ratingItems[i];
@@ -102,50 +102,50 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 // moving some blocks in to another block when the screen size is 1024px
-if (matchMedia) {
-  let screen1024 = window.matchMedia("(max-width:1024px)");
-  screen1024.addListener(accordionChanges);
-  accordionChanges(screen1024);
-}
+// if (matchMedia) {
+//   let screen1024 = window.matchMedia("(max-width:1024px)");
+//   screen1024.addListener(accordionChanges);
+//   accordionChanges(screen1024);
+// }
 
-function accordionChanges(screen1024) {
-  if (screen1024.matches) {
-    $(".accordion-content.tab1").appendTo($(".accordion.tab1"));
-    $(".accordion-content.tab2").appendTo($(".accordion.tab2"));
-    $(".accordion-content.tab3").appendTo($(".accordion.tab3"));
-    $(".accordion-content.tab4").appendTo($(".accordion.tab4"));
-    $("#tabs").appendTo($(".card-info-media"));
-    $(".reviews.ui-btn.all").appendTo($(".card-reviews"));
-    $(".card-item-services").appendTo($(".card-item-wrapper.card-item-radio"));
-    $(".card-item-container-adaptive").appendTo($(".card-info-media"));
-  } else {
-    $(".accordion-content.tab1").appendTo($(".tabs-items #tab-1"));
-    $(".accordion-content.tab2").appendTo($(".tabs-items #tab-2"));
-    $(".accordion-content.tab3").appendTo($(".tabs-items #tab-3"));
-    $(".accordion-content.tab4").appendTo($(".tabs-items #tab-4"));
-    $("#tabs").appendTo($(".card-item-more-info"));
-    $(".reviews.ui-btn.all").prependTo($(".card-reviews-btn"));
-    $(".card-item-services").appendTo($(".card-item-specifications"));
-    $(".card-item-container-adaptive").appendTo($(".card-item-container"));
-  }
-}
+// function accordionChanges(screen1024) {
+//   if (screen1024.matches) {
+//     $(".accordion-content.tab1").appendTo($(".accordion.tab1"));
+//     $(".accordion-content.tab2").appendTo($(".accordion.tab2"));
+//     $(".accordion-content.tab3").appendTo($(".accordion.tab3"));
+//     $(".accordion-content.tab4").appendTo($(".accordion.tab4"));
+//     $("#tabs").appendTo($(".card-info-media"));
+//     $(".reviews.ui-btn.all").appendTo($(".card-reviews"));
+//     $(".card-services").appendTo($(".card-wrapper.card-radio"));
+//     $(".card-container-adaptive").appendTo($(".card-info-media"));
+//   } else {
+//     $(".accordion-content.tab1").appendTo($(".tabs-items #tab-1"));
+//     $(".accordion-content.tab2").appendTo($(".tabs-items #tab-2"));
+//     $(".accordion-content.tab3").appendTo($(".tabs-items #tab-3"));
+//     $(".accordion-content.tab4").appendTo($(".tabs-items #tab-4"));
+//     $("#tabs").appendTo($(".card-more-info"));
+//     $(".reviews.ui-btn.all").prependTo($(".card-reviews-btn"));
+//     $(".card-services").appendTo($(".card-specifications"));
+//     $(".card-container-adaptive").appendTo($(".card-container"));
+//   }
+// }
 
 
-let fav = document.querySelector('.card-item-fav');
-let comparison = document.querySelector('.card-item-comparison');
+let fav = document.querySelector('.card-fav');
+let comparison = document.querySelector('.card-comparison');
 if(fav) {
   fav.addEventListener('click', selectedFav)
-comparison.addEventListener('click', selectedComparison)
+  comparison.addEventListener('click', selectedComparison)
 
-// selected favorite
-function selectedFav() {
-  fav.children[0].style.fill = '#2A4455';
-  fav.children[1].innerText = 'В избранном';
-}
+  // selected favorite
+  function selectedFav() {
+    fav.children[0].style.fill = '#2A4455';
+    fav.children[1].innerText = 'В избранном';
+  }
 
-// selected comparison
-function selectedComparison() {
-  comparison.children[0].style.fill = '#2A4455';
-  comparison.children[1].innerText = 'В сравнении';
-}
+  // selected comparison
+  function selectedComparison() {
+    comparison.children[0].style.fill = '#2A4455';
+    comparison.children[1].innerText = 'В сравнении';
+  }
 }

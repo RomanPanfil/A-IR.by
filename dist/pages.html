@@ -2,62 +2,13 @@
 <div class="middle" id="middle">
   <div class="container">
     <div class="pages">
+      <h2>Страницы</h2>
       <ul class="ui-ul">
-        <!-- <li><a href="./card.html" target="_blank">Карточка товара</a></li> -->
         <li><a href="./catalog.html" target="_blank">Каталог</a></li>
-        <!-- <li>
-          <a href="./card-video2.html" target="_blank"
-            >Карточка товара 2 видео</a
-          >
-        </li>
-        <li>
-          <a href="./card-video3.html" target="_blank"
-            >Карточка товара 3 видео</a
-          >
-        </li>
-        <li>
-          <a href="./card-cardSticky2.html" target="_blank"
-            >Карточка товара(В корзину со скидкой + показана кнопка в состояние disabled)</a
-          >
-        </li>
-        <li>
-          <a href="./card-discontinued.html" target="_blank"
-            >Карточка нет товара</a
-          >
-        </li>
-        <li>
-          <a href="./card-not-available.html" target="_blank"
-            >Карточка нет в наличии</a
-          >
-        </li>
-        <li><a href="./card-delivery.html">Карточка под заказ</a></li> -->
-        <li>
-          <a
-            class="reviews mfp-link"
-            href="javascript:void(0)"
-            data-href="./popups/zaglushka-phone.html"
-          >
-            Уже набираем номер!
-          </a>
-        </li>
-        <li>
-          <a
-            class="reviews mfp-link"
-            href="javascript:void(0)"
-            data-href="./popups/soon.html"
-          >
-            Совсем скоро!
-          </a>
-        </li>
-        <li>
-          <a
-            class="reviews mfp-link"
-            href="javascript:void(0)"
-            data-href="./popups/marks.html"
-          >
-            Метки товара
-          </a>
-        </li>
+        <li><a href="./card.html" target="_blank">Карточка товара.</a> Кнопка сравнения открывается по клику на соответствующие иконки</li>
+        <li><a href="./card-not-produced.html" target="_blank">Карточка товара. Товар не производится. Только одно фото. Два видео</a></li>
+        <li><a href="./card-not-in-stock.html" target="_blank">Карточка товара. Нет в наличии. Три видео</a></li>
+        <li><a href="./card-to-order.html" target="_blank">Карточка товара. Товар добавлен в корзину. Под заказ. Нет отзывов</a></li>
         <!-- <li>
           <a
             class="reviews mfp-link"
@@ -82,14 +33,50 @@
             >Быстрый заказ - v2
           </a>
         </li>
+         -->
+        
+      </ul>
+
+      <h2>Попапы</h2>
+      <ul class="ui-ul">
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/zaglushka-phone.html">Уже набираем номер!</a>
+        </li>
         <li>
           <a
-            target="_blank"
-            href="./card-compare.html"
-            >В сравнении
+            class="mfp-link"
+            href="javascript:void(0)"
+            data-href="./popups/soon.html"
+          >
+            Совсем скоро!
           </a>
-        </li> -->
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/marks.html">Метки товара</a>
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/form-reviews.html">Оставить отзыв</a>
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/anotherPrice.html">В другом магазине дешевле?</a>
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/backcall.html">Обратный звонок</a>
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/query.html">Запрос коммерческого предложения</a>
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/fastOder.html">Быстрый заказ</a>
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/similar-goods.html">Похожие товары в наличии</a>
+        </li>
+        <li>
+          <a class="mfp-link" href="javascript:void(0)" data-href="./popups/in-cart.html">Товар добавлен в корзину</a>
+        </li>
       </ul>
+
     </div>
   </div>
 </div>
@@ -97,12 +84,14 @@
 
 <style>
   .pages {
-    display: inline-block;
+    /* display: inline-block; */
     margin-bottom: 80px;
-   
+  }
+  .pages a {
+    font-weight: 700;
   }
   
-  .pages .ui-ul {
+  /* .pages .ui-ul {
    display: inline-block; 
   }
   .pages a {
@@ -112,5 +101,5 @@
 
   .pages a:hover {
     text-decoration: underline;
-  }
+  } */
 </style>

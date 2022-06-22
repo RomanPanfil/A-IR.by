@@ -1,108 +1,98 @@
-<div class="popup">
-  <div class="popup-title">
-    В другом магазине цена ниже, чем у нас? Сообщите!
-  </div>
-  <div class="popup-product">
-    Товар:
-    <a href="#" class="popup-product-link"
-      >Винтовой компрессор A1R BB-4FC, 10 бар</a
-    >
-  </div>
-  <div class="popup-line"></div>
-
-  <form action="" class="popup-price popup-fastOder">
-    <div class="popup-backcall-inputs">
-      <label class="popup-label" for="email"
-        >Ссылка на товар в другом магазине <span>*</span></label
-      >
-      <input
-        type="text"
-        name="email"
-        id="email"
-        class="popup-input"
-        placeholder="123@gmail.com"
-      />
-      <div class="popup-icon">
-      </div>
+<div class="mfp-popup mfp-anim popup-lower popup-bottom">
+  <div class="mfp-popup-header">
+    <div class="mfp-popup-title">В другом магазине цена ниже, чем у нас? Сообщите!</div>
+    <div class="mfp-popup-product">
+      <span class="mfp-popup-product-label">Товар:</span>
+      <a href="#" class="mfp-popup-product-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
     </div>
+  </div><!--.header-->
 
-    <div class="popup-backcall-inputs">
-      <label class="popup-label" for="price"
-        >Цена в другом магазине, BYN <span>*</span></label
-      >
-      <input
-        type="text"
-        name="price"
-        id="price"
-        class="popup-input"
-        placeholder="1 200"
-      />
-      <div class="popup-icon">
-      </div>
-    </div>
-
-    <div class="popup-backcall-inputs">
-      <label class="popup-label" for="name">Ваше имя <span>*</span></label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        class="popup-input"
-        placeholder="Иванов Иван Иванович"
-      />
   
-      <div class="popup-icon">
-      </div>
-    </div>
-
-    <div class="popup-backcall-inputs">
-      <label class="popup-label" for="telephone">Телефон <span>*</span></label>
-      <input
-        type="text"
-        name="telephone"
-        id="telephone"
-        class="popup-input"
-        placeholder="+375 (33) 398-18-18"
-      />
-      <div class="popup-icon">
-      </div>
-    </div>
-
-    <div class="popup-agreement">
-      <div class="checkbox">
-        <input
-          type="checkbox"
-          id="customCheckbox"
-          name="customCheckbox"
-          class="checkbox-input"
-        />
-        <label for="customCheckbox" class="checkbox-label"></label>
-      </div>
-      <div class="popup-agreement-txt">
-        Нажимая кнопку «Отправить запрос» вы соглашаетесь
-        <a href="#" class="popup-agreement-link"
-          >с политикой обработки персональных данных.</a
+  <form action="" class="popup-price">
+    <div class="mfp-popup-fields">
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini" for="email"
+          >Ссылка на товар в другом магазине <span class="ui-color-red">*</span></label
         >
+        <div class="ui-input-wrp">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="ui-input"
+            placeholder="123@gmail.com"
+          />
+          <div class="popup-icon"></div>
+        </div>
       </div>
-    </div>
-    <!-- <div class="popup-agreement">
-      <div class="checkbox">
-        <input
-          type="checkbox"
-          id="customCheckbox"
-          name="customCheckbox"
-          class="checkbox-input"
-        />
-        <label for="customCheckbox" class="checkbox-label"></label>
-      </div>
-      <div class="popup-agreement-txt">
-        <a href="#" class="popup-agreement-link"
-          >с политикой обработки персональных данных.</a
+  
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini" for="price"
+          >Цена в другом магазине, BYN <span class="ui-color-red">*</span></label
         >
+        <div class="ui-input-wrp">
+          <input
+            type="text"
+            name="price"
+            id="price"
+            class="ui-input"
+            placeholder="1 200"
+          />
+          <div class="popup-icon"></div>
+        </div>
       </div>
-    </div> -->
-    <button type="submit" class="popup-btn">Отправить запрос</button>
+  
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini" for="name">Ваше имя <span class="ui-color-red">*</span></label>
+        <div class="ui-input-wrp">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="ui-input"
+            placeholder="Иванов Иван Иванович"
+          />
+          <div class="popup-icon"></div>
+        </div>
+      </div>
+  
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini" for="telephone">Телефон <span class="ui-color-red">*</span></label>
+        <div class="ui-input-wrp">
+          <input
+            type="text"
+            name="telephone"
+            id="telephone"
+            class="ui-input"
+            placeholder="+375 (33) 398-18-18"
+          />
+          <div class="popup-icon"></div>
+        </div>
+      </div>
+    </div><!--.fields-->
+    
+
+    
+    <div class="ui-checkbox">
+      <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked>
+      <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить отзыв» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a></label>
+    </div>
+    
+    <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
   </form>
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
   <script>
     $(document).ready(function () {
       $(".popup-price").validate({
@@ -158,13 +148,13 @@
         },
         highlight: function(element, errorClass, validClass) {
           $(element).addClass(errorClass).removeClass(validClass);
-          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+          $(element).closest('.ui-field').find('.popup-icon')
             .addClass(errorClass).removeClass(validClass);
           
         },
         unhighlight: function(element, errorClass, validClass) {
           $(element).removeClass(errorClass).addClass(validClass);
-          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+          $(element).closest('.ui-field').find('.popup-icon')
             .removeClass(errorClass).addClass(validClass);
         }
       });

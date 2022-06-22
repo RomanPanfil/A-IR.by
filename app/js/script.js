@@ -265,10 +265,6 @@ if (document.getElementById("card-breackpoint")) {
         headerCard.addClass("headerCard_fixed");
         cardSticky.addClass("card-breackpoint-open");
       }
-      // if (window.scrollY > footerBreackpoint) {
-      //   console.log('1')
-      //   cardSticky.css('top', footerHeight + 'px')
-      // }
     });
   });
 }

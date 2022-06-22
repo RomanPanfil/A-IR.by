@@ -9,75 +9,60 @@
   display: none;
   position: fixed;
   background: #fff;
-  width: 100%;
+  left: 0;
+  right: 0;
   z-index: 10;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  &-wrapper {
+  overflow: hidden;
+
+  &.opened {
+    display: block;
+  }
+
+  .card-counter {
+    margin-bottom: 0;
+    margin-right: 13%;
+  }
+  .card-price {
+
+    &-current {
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+  }
+  
+  &-row {
     padding: 10px 0px;
-  }
-  &-btn {
-    width: 100%;
-    background: $colorRed;
-    color: #fff;
-    &:hover {
-      background: #991C12;
-    }
-    @media(max-width:1024.99px) {
-        font-size: 0;
-    }
-    @media(max-width:576px) {
-        max-width: 116px;
-    }
-    &-wrapper {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      @media(max-width:576px) {
-          justify-content: flex-end;
-      }
-    }
-    &-img {
-      display: none;
-      max-width: 46px;
-      width: 46px;
-      height: 34px;
-      line-height: 0;
-      vertical-align: middle;
-      background-image: url(.././images/icons/Addcart.svg);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      @media(max-width:400px) {
-          max-width: 36px;
-      }
-      img {
-        max-height: 38px;
-      }
-      @media(max-width:1024.99px) {
-          display: inline-block;
-      }
-    }
-  }
-  .ui-btn {
-    &:hover {
-      opacity: 1;
-    }
+    height: 84px;
   }
   &-item {
     &-img {
+      flex: 0 0 72px;
       max-width: 72px;
       margin-right: 24px;
+
       img {
-        max-height: 72px;
+        max-height: 64px;
+        display: block;
       }
     }
     &-title {
       font-size: rem(18);
       font-weight: 600;
       color: rgba(0, 0, 0, 0.7);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
- 
+
+    .card-rating {
+      @include fz(14);
+
+      &-value {
+        margin-right: 5px;
+      }
+      &-counter {
+        vertical-align: bottom;
+      }
+    }
   }
   .card-item-wrap {
       @media(max-width:1024.99px) {
@@ -107,35 +92,103 @@
         font-size: rem(24);
     }
   }
-  .card-item-counter {
-    margin-bottom: 0;
-    @media (max-width: 1024.99px) {
+
+  &-btn {
+    width: 100%;
+    display: block;
+
+    &-icon {
       display: none;
     }
-    
   }
- 
+
+  @media (max-width: 1100px) {
+    .card-counter {
+      display: none;
+    }
+
+    &-product {
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+    &-prices {
+      flex: 0 0 calc(40% - 140px);
+      max-width: calc(40% - 140px);
+    }
+    &-btns {
+      flex: 0 0 140px;
+      max-width: 140px;
+    }
+    &-btn {
+      font-size: 0;
+      color: transparent;
+
+      &-icon {
+        display: inline-block !important;
+        fill: #FFF;
+      }
+    }
+
+    &-item {
+      &-title {
+        max-height: 48px;
+        overflow: hidden;
+        margin-bottom: 0;
+      }
+      .card-rating {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 841px) {
+    &-product {
+      flex: 0 0 calc(100% - 350px);
+      max-width: calc(100% - 350px);
+    }
+    &-prices {
+      flex: 0 0 210px;
+      max-width: 210px;
+    }
+  }
+
+  @media (max-width: 678px) {
+    &-product {
+      display: none;
+      visibility: hidden;
+    }
+    &-prices {
+      flex: 0 0 calc(100% - 140px);
+      max-width: calc(100% - 140px);
+    }
+  }
+
+  @media (max-width: 576.99px) {
+    &-btn {
+      &-icon {
+        width: 44px;
+      }
+    }
+  }
+
+  @media (max-width: 360px) {
+    .card-price-current {
+      @include fz(24);
+    }
+    &-prices {
+      flex: 0 0 calc(100% - 116px);
+      max-width: calc(100% - 116px);
+    }
+    &-btns {
+      flex: 0 0 116px;
+      max-width: 116px;
+    }
+    &-btn {
+      padding: 0px 30px;
+    }
+  }
 }
 
 .card-breackpoint-open {
   display: block;
-}
-
-
-.cardBtnCheck-disabled {
-  background: #F5F5F5;
-  color: #D3D3D3;
-  &:hover {
-    background: #F5F5F5;
-    color: #D3D3D3;
-  }
-}
-.cardstyle {
-  background: #2A4455;
-  &:hover {
-    background-color:#3F5766;
-  }
-}
-.card-sticky-btn-change {
-  background-image: url(.././images/icons/AddCart-add.svg);
 }

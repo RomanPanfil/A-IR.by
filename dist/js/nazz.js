@@ -23,7 +23,7 @@ $(document).on("click", ".btn-minus", function () {
     }
   }
 });
-$(document).on("change", ".card-item-counter-input", function (e) {
+$(document).on("change", ".card-counter-input", function (e) {
   let val = parseInt($(this).val(), 10);
   if (val < 0) {
     $(this).val(0);

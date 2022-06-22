@@ -15,7 +15,7 @@
 
     $(window).scroll(function () {
       let cardBreackpointOpen = $('.card-breackpoint-open');
-      let headerCardFixedHeight = $('.header_fixed').innerHeight();
+      let headerCardFixedHeight = $('.header_fixed .main').innerHeight();
       const headerHeight = $('header .main').outerHeight(true);
       
 

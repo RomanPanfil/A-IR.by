@@ -82,7 +82,7 @@
 
 .catalog-filters {
   position: relative;
-  min-height: 100%;
+  // min-height: 100%;
   padding-bottom: 70px;
 
   &-founded {
@@ -618,6 +618,7 @@
     }
     .row::-webkit-scrollbar {
       width: 0;
+      height: 0;
     }
     .row {
       -ms-overflow-style: none;
@@ -892,17 +893,22 @@
 }
 
 .video-card {
-  margin-bottom: 22px;
+  margin: 0 auto 22px;
+  max-width: 648px;
+  font-weight: 600;
 
   &-link {
     display: block;
     position: relative;
     margin-bottom: 9px;
+    overflow: hidden;
+    border-radius: 8px;
 
     img {
       display: block;
       margin: 0 auto;
       border-radius: 8px;
+      transition: transform .3s;
     }
 
     &-btn {
@@ -930,9 +936,11 @@
         border-width: 10px 0 10px 15px;
         border-color: transparent transparent transparent #fff;
       }
+    }
 
+    &:hover {
       img {
-        border-radius: 5px;
+        transform: scale(1.03);
       }
     }
   }
@@ -942,6 +950,22 @@
     line-height: 1.35;
   }
 }
+.col-12 {
+  @media (min-width: 1025px) {
+    .video-card-link-btn {
+      width: 124px;
+      height: 64px;
+
+      &:after {
+        border-width: 16px 0 16px 24px;
+      }
+    }
+    .video-card-title {
+      @include fz(16);
+    }
+  }
+}
+
 
 .catalog-calc {
   padding-top: 54px;
@@ -1514,6 +1538,7 @@ input[type="range"]::-moz-range-thumb {
 /* хром, сафари */
 .swiper-wrapper::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 
 /* ie 10+ */
@@ -1531,6 +1556,7 @@ input[type="range"]::-moz-range-thumb {
 
 .catalog-stickers-wrap::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 .catalog-stickers-wrap {
   -ms-overflow-style: none;
@@ -1541,6 +1567,7 @@ input[type="range"]::-moz-range-thumb {
 
 .catalog-brands-main::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 .catalog-brands-main {
   -ms-overflow-style: none;
@@ -1551,6 +1578,7 @@ input[type="range"]::-moz-range-thumb {
 
 .subcats-grid::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 .subcats-grid {
   -ms-overflow-style: none;
@@ -1686,7 +1714,7 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768.99px) {
   .catalog-reviews-mobile {
     
     .ui-scroller {
@@ -1695,17 +1723,13 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 576.99px) {
   .catalog-reviews-mobile {
     margin-bottom: 24px;
     
     .review-card {
       flex: 0 0 340px;
       margin-right: 16px;
-
-      &-header, &-body {
-        padding: 18px 16px;
-      }
     }
   }
 }
@@ -1742,7 +1766,7 @@ input[type="range"]::-moz-range-thumb {
     }
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 768.99px) {
   .catalog-related-mobile {
 
     .ui-scroller {
@@ -1775,6 +1799,7 @@ input[type="range"]::-moz-range-thumb {
       position: relative;
       display: block;
       padding-bottom: 100%;
+      padding-bottom: Min(100%,280px);
 
       img {
         position: absolute;

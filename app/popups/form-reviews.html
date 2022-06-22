@@ -1,217 +1,226 @@
-<div class="popup-form-reviews">
-  <!-- <div class="container"> -->
-  <!-- <div class="row"> -->
-  <div class="form-reviews">
-    <div class="form-reviews-content">
-      <div class="form-reviews-header">
-        <div class="form-reviews-header-title">Оставить отзыв</div>
-        <div class="form-reviews-header-item">
-          <span>Товар:</span>
-          <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
-        </div>
-        <div class="card-item-rating">
-          <div class="card-item-rating-body">
-            <div class="card-item-rating-active" style="width: 100%"></div>
-            <div class="card-item-rating-items">
-              <input
-                type="radio"
-                class="card-item-rating-item"
-                value="1"
-                name="rating"
-              />
-              <input
-                type="radio"
-                class="card-item-rating-item"
-                value="2"
-                name="rating"
-              />
-              <input
-                type="radio"
-                class="card-item-rating-item"
-                value="3"
-                name="rating"
-              />
-              <input
-                type="radio"
-                class="card-item-rating-item"
-                value="4"
-                name="rating"
-              />
-              <input
-                type="radio"
-                class="card-item-rating-item"
-                value="5"
-                name="rating"
-              />
-            </div>
-          </div>
-          <div class="card-item-rating-value">Нет оценки</div>
+<div class="popup-review mfp-popup mfp-anim">
+  
+  <div class="mfp-popup-header popup-review-header">
+    <div class="mfp-popup-title popup-review-title">Оставить отзыв</div>
+    <div class="mfp-popup-product">
+      <span class="mfp-popup-product-label">Товар:</span>
+      <a href="#" class="mfp-popup-product-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
+    </div>
+    <div class="card-item-rating">
+      <div class="card-item-rating-body">
+        <div class="card-item-rating-active" style="width: 100%"></div>
+        <div class="card-item-rating-items">
+          <input
+            type="radio"
+            class="card-item-rating-item"
+            value="1"
+            name="rating"
+          />
+          <input
+            type="radio"
+            class="card-item-rating-item"
+            value="2"
+            name="rating"
+          />
+          <input
+            type="radio"
+            class="card-item-rating-item"
+            value="3"
+            name="rating"
+          />
+          <input
+            type="radio"
+            class="card-item-rating-item"
+            value="4"
+            name="rating"
+          />
+          <input
+            type="radio"
+            class="card-item-rating-item"
+            value="5"
+            name="rating"
+          />
         </div>
       </div>
-      <div class="form-reviews-body">
-        <form
-          action="#"
-          method="POST"
-          class="form-reviews-valid popup-fastOder"
-          id="form-reviews-valid"
-        >
-          <div class="form-cell">
-            <div class="popup-backcall-inputs">
-              <label class="popup-label" for="name">Ваше имя <span>*</span></label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                class="popup-input"
-                placeholder="Иванов Иван Иванович"
-              />
-
-              <div class="popup-icon">
-              </div>
-            </div>
-            <div class="popup-backcall-inputs">
-              <label class="popup-label" for="email">Ваш Email <span>*</span></label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                class="popup-input"
-                placeholder="123@gmail.com"
-              />
-              <div class="popup-icon">
-              </div>
-            </div>
-          </div>
-          <div class="form-cell">
-            <div class="form-cell-rating">
-              <label for="rating" class="rating-label"
-                >Ваша оценка<span>*</span></label
-              >
-              <div class="card-item-rating rating-set">
-                <div class="card-item-rating-body" id="rating">
-                  <div class="card-item-rating-active"></div>
-                  <div class="card-item-rating-items">
-                    <label for="rating"></label>
-                    <input
-                      type="radio"
-                      id="rating_1"
-                      class="card-item-rating-item"
-                      value="1.0"
-                      name="rating"
-                    />
-                    <input
-                      type="radio"
-                      id="rating_2"
-                      class="card-item-rating-item"
-                      value="2.0"
-                      name="rating"
-                    />
-                    <input
-                      type="radio"
-                      id="rating_3"
-                      class="card-item-rating-item"
-                      value="3.0"
-                      name="rating"
-                    />
-                    <input
-                      type="radio"
-                      id="rating_4"
-                      class="card-item-rating-item"
-                      value="4.0"
-                      name="rating"
-                    />
-                    <input
-                      type="radio"
-                      id="rating_5"
-                      class="card-item-rating-item"
-                      value="5.0"
-                      name="rating"
-                    />
-                  </div>
-                </div>
-                <div class="card-item-rating-value"></div>
-              </div>
-            </div>
-          </div>
-          <div class="form-cell ">
-            <div class="form-cell-info">
-              <label for="textbox">Текстовое поле<span>*</span></label>
-              <div class="form-cell-field-textarea">
-                <textarea
-                  id="textbox"
-                  name="textbox"
-                  placeholder="Текст"
-                ></textarea>
-              </div>
-              <div class="form-cell-field-quality">
-                <input
-                  type="text"
-                  id="plus"
-                  name="plus"
-                  class="plus"
-                  placeholder="Пара слов о преимуществах"
-                />
-                <input
-                  type="text"
-                  id="minus"
-                  name="minus"
-                  class="minus"
-                  placeholder="Пара слов о недостатках"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="form-cell load">
-            <div class="form-cell-field-load">
-              <label
-                for="file"
-                class="load-file"
-              >
-                <svg>
-                  <use xlink:href="./images/svg/symbols.svg#file"></use>
-              </svg>
-                <span>Добавить фото или видео</span>
-              </label>
-              <input type="file" id="file" name="file" class="file" accept="jpg, .jpeg, .png, .webp, .webm, .3gp, .mp4, .avi" multiple />
-            </div>
-            <div class="form-cell-field-url">
-              <input
-                type="text"
-                id="url"
-                name="url"
-                class="url"
-                placeholder="Добавить URL на видео"
-              />
-              <svg>
-                  <use xlink:href="./images/svg/symbols.svg#url-video"></use>
-              </svg>
-            </div>
-          </div>
-          <div class="form-cell">
-            <div class="form-cell-field-send">
-              <div class="checkbox">
-                <input
-                  type="checkbox"
-                  id="customCheckbox"
-                  name="customCheckbox"
-                  class="customCheckbox"
-                />
-                <label for="customCheckbox"></label>
-              </div>
-              <div class="popup-agreement-txt">
-                <a href="#" class="popup-agreement-link"
-                  >с политикой обработки персональных данных.</a
-                >
-              </div>
-            </div>
-            <input type="submit" value="Отправить отзыв" class="btn-submit" />
-          </div>
-        </form>
-      </div>
+      <div class="card-item-rating-value">Нет оценки</div>
     </div>
   </div>
-  <!-- </div> -->
-  <!-- </div> -->
+
+  <div class="popup-review-body">
+    <form class="popup-review-form" id="popup-review-form">
+      <div class="popup-review-fields">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="name">Ваше имя <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="ui-input"
+                  placeholder="Иванов Иван Иванович"
+                />
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="email">Ваш Email <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  class="ui-input"
+                  placeholder="123@gmail.com"
+                />
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui-field">
+          <label for="rating" class="ui-label ui-label-mini">Ваша оценка<span class="ui-color-red">*</span></label>
+          <div class="card-item-rating rating-set">
+            <div class="card-item-rating-body" id="rating">
+              <div class="card-item-rating-active"></div>
+              <div class="card-item-rating-items">
+                <label for="rating"></label>
+                <input
+                  type="radio"
+                  id="rating_1"
+                  class="card-item-rating-item"
+                  value="1.0"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  id="rating_2"
+                  class="card-item-rating-item"
+                  value="2.0"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  id="rating_3"
+                  class="card-item-rating-item"
+                  value="3.0"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  id="rating_4"
+                  class="card-item-rating-item"
+                  value="4.0"
+                  name="rating"
+                />
+                <input
+                  type="radio"
+                  id="rating_5"
+                  class="card-item-rating-item"
+                  value="5.0"
+                  name="rating"
+                />
+              </div>
+            </div>
+            <div class="card-item-rating-value"></div>
+          </div>
+        </div>
+  
+        <div class="ui-field">
+          <label for="" class="ui-label ui-label-mini">Текстовое поле<span class="ui-color-red">*</span></label>
+          <textarea
+            id="textbox"
+            name="textbox"
+            placeholder="Текст"
+            class="ui-input"
+            rows="5"
+          ></textarea>
+        </div>
+  
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input
+                type="text"
+                id="plus"
+                name="plus"
+                class="ui-input popup-review-input-plus"
+                placeholder="Пара слов о преимуществах"
+              />
+            </div>
+          </div><!--.col-->
+  
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <input
+                type="text"
+                id="minus"
+                name="minus"
+                class="ui-input popup-review-input-minus"
+                placeholder="Пара слов о недостатках"
+              />
+            </div>
+          </div><!--.col-->
+  
+          <div class="col-xs-6">
+            <div class="ui-field form-cell-field-load">
+              <label
+                for="popup-review-file"
+                class="ui-file load-file"
+              >
+                <div class="ui-file-icon">
+                  <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#file"/></svg>
+                </div>
+                <span class="ui-file-txt">Добавить фото или видео</span>
+                <input type="file" id="popup-review-file" name="file" class="ui-file-input file" accept=".jpg,.jpeg,.png,.webp,.webm,.3gp,.mp4,.avi" multiple />
+              </label>
+              
+            </div>
+          </div><!--.col-->
+  
+          <div class="col-xs-6">
+            <div class="ui-field">
+              <div class="form-cell-field-url input-iconed">
+                <div class="input-iconed-icon">
+                  <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#url"/></svg>
+                </div>
+                <input
+                  type="text"
+                  id="url"
+                  name="url"
+                  class="input-iconed-input url"
+                  placeholder="Добавить URL на видео"
+                />
+              </div>
+            </div>
+          </div><!--.col-->
+        </div>
+      </div><!--.feilds-->
+
+
+      <div class="popup-review-bottom">
+        <div class="row">
+          <div class="col-sm-7 col-md-8">
+            <div class="ui-checkbox">
+              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked>
+              <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить отзыв» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a></label>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-4">
+            <button type="submit" class="ui-btn ui-btn-block ui-btn-blue">Отправить отзыв</button>
+          </div>
+        </div>
+      </div>
+
+      
+    </form>
+  </div>
+  
   <script>
     $(document).ready(function () {
       // rating stars
@@ -274,7 +283,7 @@
       }
 
       // validate form
-      $(".form-reviews-valid").validate({
+      $(".popup-review-form").validate({
         errorElement: "span",
         rules: {
           email: {
@@ -306,13 +315,13 @@
         },
         highlight: function(element, errorClass, validClass) {
           $(element).addClass(errorClass).removeClass(validClass);
-          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+          $(element).closest('.ui-field').find('.popup-icon')
             .addClass(errorClass).removeClass(validClass);
 
         },
         unhighlight: function(element, errorClass, validClass) {
           $(element).removeClass(errorClass).addClass(validClass);
-          $(element).closest('.popup-backcall-inputs').find('.popup-icon')
+          $(element).closest('.ui-field').find('.popup-icon')
             .removeClass(errorClass).addClass(validClass);
         },
         errorPlacement: function (error, element) {
@@ -376,8 +385,8 @@
       );
 
       // this whole code about the button which responsible for opening and load file(image & video)
-      const formBlock = document.getElementById("form-reviews-valid");
-      const input = document.getElementById("file");
+      const formBlock = document.getElementById("popup-review-form");
+      const input = document.getElementById("popup-review-file");
       const uploadFile = document.querySelector(".form-cell-field-load");
       const load = document.querySelector(".load-file");
       const errFile = document.createElement("span");
@@ -395,7 +404,7 @@
 
 
       input.addEventListener("change", btnUploadFile);
-      input.insertAdjacentElement("afterend", allFiles);
+      document.querySelector('.popup-review .ui-file').insertAdjacentElement("afterend", allFiles);
       btnOpen.addEventListener("click", triggerInput);
 
       // when you click on the btnOpen this click will be trigger input
@@ -522,7 +531,7 @@
 
         // если длина массива 0, то возвращает инпут и убирает кнопку иначе возвращает кнопку
         if (arrStorageFile.length - 1 === 0) {
-          load.style.display = "block";
+          load.style.display = "flex";
           btnOpen.style.display = "none";
         } else {
           load.style.display = "none";
@@ -566,7 +575,7 @@
       formBlock.addEventListener("submit", handleFormSubmit);
 
       // second popup shows when you try close this popup
-      const container = document.querySelector(".popup-form-reviews");
+      const container = document.querySelector(".popup-review");
       const mfpContent = document.querySelector(".mfp-content");
       const mfpClose = document.querySelector(".mfp-close");
 
@@ -587,6 +596,7 @@
         const popupSecond = document.createElement("div");
         const title = document.createElement("h1");
         const text = document.createElement("p");
+        const btns = document.createElement('div');
         const btnExit = document.createElement("button");
         const btnCancel = document.createElement("button");
 
@@ -595,23 +605,24 @@
         popupSecond.classList.add("popup-second");
         title.classList.add("popup-second-title");
         text.classList.add("popup-second-text");
-        btnExit.classList.add("popup-second-btn-exit");
-        btnExit.classList.add("ui-btn");
-        btnCancel.classList.add("popup-second-btn-cancel");
-        btnCancel.classList.add("ui-btn");
+        btnExit.classList.add("popup-second-btn-exit",'ui-btn','ui-btn-blue','ui-btn-block');
+        btnCancel.classList.add("popup-second-btn-cancel",'ui-btn','ui-btn-secondary','ui-btn-block');
+        btns.classList.add('popup-second-btns');
 
-        title.innerHTML = "Ой!";
-        text.innerHTML = "Отзыв не сохранится, если вы закроете окно.";
-        btnExit.innerHTML = "Уйти со страницы";
-        btnCancel.innerHTML = "Отмена";
+        title.textContent = "Ой!";
+        text.textContent = "Отзыв не сохранится, если вы закроете окно.";
+        btnExit.textContent = "Уйти со страницы";
+        btnCancel.textContent = "Отмена";
+
+        btns.appendChild(btnExit)
+        btns.appendChild(btnCancel)
 
         document.body.insertAdjacentElement("afterbegin", bgPopup);
         bgPopup.insertAdjacentElement("beforeend", popupSecond);
         popupSecond.insertAdjacentElement("beforeend", popupSecondBlock);
         popupSecondBlock.insertAdjacentElement("beforeend", title);
         popupSecondBlock.insertAdjacentElement("beforeend", text);
-        popupSecondBlock.insertAdjacentElement("beforeend", btnExit);
-        popupSecondBlock.insertAdjacentElement("beforeend", btnCancel);
+        popupSecondBlock.insertAdjacentElement("beforeend", btns);
 
         btnClick(btnExit, popupSecondBlock, bgPopup, btnCancel);
       }

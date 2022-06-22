@@ -1,12 +1,23 @@
 // Stickers
 .page-stickers {
-  margin-bottom: 13px;
+  margin-bottom: 15px;
   overflow-x: auto;
   white-space: nowrap;
+  margin-right: -40px;
+
+  @media (max-width: 1024.99px) {
+    margin-right: -40px;
+    padding-right: 40px;
+  }
+  @media (max-width: 768.99px) {
+    margin-right: -15px;
+    padding-right: 15px;
+  }
 }
 /* хром, сафари */
 .page-stickers::-webkit-scrollbar {
   width: 0;
+  height: 0;
 }
 
 /* ie 10+ */
