@@ -23,7 +23,8 @@ const FARBA = {
     if (!domScript) {
       script.onload = callback;
     } else {
-      domScript.onload = callback;
+      // domScript.onload = callback;
+      callback()
     }
   },
 

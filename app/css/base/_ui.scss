@@ -1176,3 +1176,92 @@ textarea.ui-input {
 .no-overflow {
   overflow: hidden;
 }
+
+.slick {
+  &-arrow {
+    position: absolute;
+    top: 50%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    margin-top: -12px;
+    font-size: 0;
+    color: transparent;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: filter .3s;
+    cursor: pointer;
+    z-index: 9;
+
+    &:hover {
+      filter: none;
+    }
+
+    &.slick-disabled {
+      filter: grayscale(100%);
+      cursor: not-allowed;
+      opacity: 0.3 !important;
+    }
+  }
+
+  &-prev {
+    left: 0;
+    background-image: url(../images/icons/arrow-prev.svg);
+  }
+  &-next {
+    right: 0;
+    background-image: url(../images/icons/arrow-next.svg);
+  }
+}
+.slick-vertical {
+  .slick {
+    &-arrow {
+      margin-top: 0;
+      top: auto;
+      left: 50%;
+      margin-left: -12px;
+      transform: rotate(90deg);
+    }
+    &-prev {
+      top: 0;
+    }
+    &-next {
+      bottom: 0;
+    }
+  }
+}
+
+.slick-dots {
+  text-align: center;
+  padding: 10px 0 0;
+  margin: 0;
+  font-size: 0;
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 4px 4px;
+    padding: 0;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #c4c4c4;
+    transition: background-color .3s;
+    cursor: pointer;
+
+    button {
+      display: none;
+      visibility: hidden;
+    }
+
+    &:hover,
+    &.slick-active {
+      background-color: $secondary;
+    }
+  }
+}
