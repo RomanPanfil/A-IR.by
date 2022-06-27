@@ -22,7 +22,7 @@
         margin-bottom: 15px;
       }
     }
-    
+
     a {
       color: #fff;
       opacity: 0.5;
@@ -182,13 +182,13 @@
       font-size: rem(22);
       font-weight: 600;
       margin-bottom: 12px;
-      transition: opacity .3s;
+      transition: color .3s;
 
       @media (max-width: 850px) and (min-width: 768px) {
         font-size: rem(19); 
       }
       &:hover {
-        opacity: 0.8;
+        color: rgba(#FFF,.75)
       }
       &-img {
         display: inline-block;
