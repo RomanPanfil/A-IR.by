@@ -1055,9 +1055,11 @@ li {
   padding-bottom: 0;
   margin-bottom: 0;
   font-size: 0;
-  margin-right: -10px;
+  margin-left: -5px;
+  margin-right: -5px;
   margin-bottom: -10px;
   white-space: normal;
+  text-align: center;
 }
 .main-contacts-drop-social {
   display: inline-block;
@@ -1066,8 +1068,7 @@ li {
   height: 40px;
   border-radius: 5px;
   border: 1px solid #D3D3D3;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin: 0px 5px 10px 5px;
   -webkit-transition: border 0.3s, background-color 0.3s;
   -o-transition: border 0.3s, background-color 0.3s;
   transition: border 0.3s, background-color 0.3s;
@@ -1112,6 +1113,15 @@ li {
   .main-contacts-drop-num {
     font-size: 16px;
     font-size: 1rem;
+  }
+  .main-contacts-drop-socials {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+  .main-contacts-drop-social {
+    width: 48px;
+    height: 48px;
+    margin: 0px 4px 8px 4px;
   }
   .main-contacts-drop-social.ui-screen-less-1024 {
     display: inline-block;
@@ -3047,14 +3057,18 @@ textarea.ui-input {
 @media (max-width: 768.99px) {
   .ui-tooltip-answer {
     position: fixed;
-    left: 15px;
-    right: 15px;
+    left: 0px;
+    right: 0px;
     width: auto;
     top: auto;
-    bottom: 15px;
+    bottom: 0px;
+    padding: 20px 15px;
     -webkit-transform: translate(0px, -15px);
         -ms-transform: translate(0px, -15px);
             transform: translate(0px, -15px);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    border-radius: 0;
   }
   .ui-tooltip:hover .ui-tooltip-answer {
     -webkit-transform: translate(0px, 0px);

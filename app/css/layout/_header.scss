@@ -68,9 +68,11 @@
     padding-bottom: 0;
     margin-bottom: 0;
     font-size: 0;
-    margin-right: -10px;
+    margin-left: -5px;
+    margin-right: -5px;
     margin-bottom: -10px;
     white-space: normal;
+    text-align: center;
   }
 
   &-social {
@@ -80,8 +82,7 @@
     height: 40px;
     border-radius: 5px;
     border: 1px solid $border;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin: 0px 5px 10px 5px;
     transition: border .3s, background-color .3s;
     padding: 8px;
 
@@ -129,6 +130,16 @@
     }
     &-num {
       @include fz(16);
+    }
+
+    &-socials {
+      margin-left: -4px;
+      margin-right: -4px;
+    }
+    &-social {
+      width: 48px;
+      height: 48px;
+      margin: 0px 4px 8px 4px;
     }
 
     &-social.ui-screen-less-1024 {

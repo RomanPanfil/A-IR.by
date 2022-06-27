@@ -809,12 +809,16 @@ textarea.ui-input {
   @media (max-width: 768.99px) {
     &-answer {
       position: fixed;
-      left: 15px;
-      right: 15px;
+      left: 0px;
+      right: 0px;
       width: auto;
       top: auto;
-      bottom: 15px;
+      bottom: 0px;
+      padding: 20px 15px;
       transform: translate(0px, -15px);
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+      border-radius: 0;
     }
 
     &:hover {
