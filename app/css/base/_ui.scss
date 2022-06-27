@@ -793,7 +793,7 @@ textarea.ui-input {
     transition: .15s visibility, .15s opacity, .15s transform;
   }
   &:hover {
-    z-index: 99;
+    z-index: 109;
     
     .ui-tooltip-icon {
       background-color: $border;
@@ -803,6 +803,24 @@ textarea.ui-input {
       visibility: visible;
       opacity: 1;
       transform: translate(0px, -50%);
+    }
+  }
+
+  @media (max-width: 768.99px) {
+    &-answer {
+      position: fixed;
+      left: 15px;
+      right: 15px;
+      width: auto;
+      top: auto;
+      bottom: 15px;
+      transform: translate(0px, -15px);
+    }
+
+    &:hover {
+      .ui-tooltip-answer {
+        transform: translate(0px, 0px);
+      }
     }
   }
 }

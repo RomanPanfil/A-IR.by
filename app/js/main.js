@@ -330,23 +330,29 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
 
 
 (function(){
-  let arrow = document.querySelector(".main-contacts-tel-arrow");
-  let numbers = document.querySelector(".main-contacts-tel-numbers");
-  if (!arrow || !numbers) return
+  let arrows = document.querySelectorAll(".main-contacts-tel-arrow, .mob-menu-phone");
+  let numbers = document.querySelector(".main-contacts-drop");
+  if (!arrows.length || !numbers) return
   
-  arrow.addEventListener("click", function (e) {
-    e = e || window.event
-    e.preventDefault()
-    this.classList.toggle("opened");
-    numbers.classList.toggle("numbers-open");
+  arrows.forEach(el => {
+    el.addEventListener("click", function (e) {
+      e = e || window.event
+      e.preventDefault()
+      this.classList.toggle("opened");
+      numbers.classList.toggle("numbers-open");
+    })
   });
+    
  
 	document.addEventListener('click', (e) => {
     const withinBoundaries = e.composedPath().includes(numbers);
-    const isArrow = e.composedPath().includes(arrow);
+    const isArrow = e.composedPath().includes(document.querySelector(".main-contacts-tel-arrow"));
+    const isMob = e.composedPath().includes(document.querySelector(".mob-menu-phone"));
    
-    if ( !withinBoundaries && !isArrow) {
+    if ( !withinBoundaries && !isArrow && !isMob) {
       numbers.classList.remove("numbers-open");
+      document.querySelector(".main-contacts-tel-arrow").classList.remove('opened')
+      document.querySelector(".mob-menu-phone").classList.remove('opened')
     }
   })
 })();

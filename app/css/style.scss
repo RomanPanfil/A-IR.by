@@ -63,13 +63,15 @@ body {
   }
 }
 
+@import "./base/typography";
+
 // Layout
 @import "./layout/grid";
 @import "./layout/header";
 @import "./layout/footer";
 @import "./layout/form";
 // Base
-@import "./base/typography";
+
 @import "./base/default";
 @import "./base/ui";
 // Component
