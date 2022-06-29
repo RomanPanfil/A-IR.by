@@ -1192,22 +1192,16 @@ function fixCardImgsTablet(card,imgs,section) {
   const offset = card.offsetTop
   const rect = card.getBoundingClientRect()
   const vh = document.documentElement.clientHeight
-  const w = section.clientWidth
   const to = 165 //offset from top of screen
+  const ih = imgs.clientHeight
+  const w = section.clientWidth
 
-  function getComputed(im,cd) {
-    const ih = im.clientHeight
-    const style = cd.currentStyle || window.getComputedStyle(cd)
-    return ih - parseInt(style.marginBottom,10) - to
-  }
 
-  const ih = getComputed(imgs,card)
-
-  if (sc > offset - to && sc + vh - ih < offset + rect.height) {
+  if (sc > offset - to && sc + vh - (vh - ih - to) < offset + rect.height) {
     imgs.classList.add('fixed')
     imgs.classList.remove('fixed-bottom')
     imgs.style.width = w + 'px'
-  } else if (sc + vh - ih > offset + rect.height) {
+  } else if (sc + vh -  (vh - ih - to) > offset + rect.height) {
     imgs.classList.add('fixed-bottom')
     imgs.classList.remove('fixed')
     imgs.style.width = w + 'px'
@@ -1224,6 +1218,7 @@ function fixCardImgsTablet(card,imgs,section) {
   const section = document.querySelector('.card-section')
 
   document.addEventListener('scroll',fixCardImgsTablet.bind(null,card,imgs,section))
+  window.addEventListener('resize',fixCardImgsTablet.bind(null,card,imgs,section))
 })();
 
 
