@@ -153,6 +153,17 @@
     width: auto;
     margin-top: 13px;
   }
+
+  @media (max-width: 420px) {
+    padding: 15px;
+
+    &-social {
+      width: 36px;
+      height: 36px;
+      width: calc(((100vw - 22px) / 7) - 8px);
+      height: calc(((100vw - 22px) / 7) - 8px);
+    }
+  }
 }
 
 
@@ -703,3 +714,4 @@
   box-shadow: initial;
   border-bottom: 1px solid #d3d3d3;
 }
+
