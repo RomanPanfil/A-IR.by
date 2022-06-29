@@ -999,7 +999,7 @@ if (document.getElementById("card-breackpoint")) {
     const rect = filters.getBoundingClientRect()
     const vh = document.documentElement.clientHeight
 
-    //81 - btn height + position offset from bottom
+    //81 = btn height + position offset from bottom
     if (sc + vh - 81 > offset && sc + vh < offset + rect.height) {
       submit.classList.add('fixed')
       submit.classList.remove('fixed-bottom')
@@ -1121,7 +1121,6 @@ function setRating(rating) {
 
 
 
-
 $(function () {
   let header = $(".header"),
     headerMenu = $(".header .menu"),
@@ -1182,6 +1181,50 @@ $(function () {
     }
   });
 });
+
+
+//фиксируем блок с картинками при скроле на планшетах
+function fixCardImgsTablet(card,imgs,section) {
+  let dw = document.documentElement.clientWidth
+  if (dw > 1024 || dw < 768) return;
+
+  const sc = window.pageYOffset;
+  const offset = card.offsetTop
+  const rect = card.getBoundingClientRect()
+  const vh = document.documentElement.clientHeight
+  const w = section.clientWidth
+  const to = 165 //offset from top of screen
+
+  function getComputed(im,cd) {
+    const ih = im.clientHeight
+    const style = cd.currentStyle || window.getComputedStyle(cd)
+    return ih - parseInt(style.marginBottom,10) - to
+  }
+
+  const ih = getComputed(imgs,card)
+
+  if (sc > offset - to && sc + vh - ih < offset + rect.height) {
+    imgs.classList.add('fixed')
+    imgs.classList.remove('fixed-bottom')
+    imgs.style.width = w + 'px'
+  } else if (sc + vh - ih > offset + rect.height) {
+    imgs.classList.add('fixed-bottom')
+    imgs.classList.remove('fixed')
+    imgs.style.width = w + 'px'
+  } else {
+    imgs.classList.remove('fixed')
+    imgs.classList.remove('fixed-bottom')
+    imgs.style.width = ''
+  }
+}
+
+(function() {
+  const card = document.querySelector('.card')
+  const imgs = document.querySelector('.card-imgs')
+  const section = document.querySelector('.card-section')
+
+  document.addEventListener('scroll',fixCardImgsTablet.bind(null,card,imgs,section))
+})();
 
 
 jQuery(document).ready(function($){

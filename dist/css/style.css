@@ -3055,8 +3055,12 @@ textarea.ui-input {
           transform: translate(0px, -50%);
 }
 @media (max-width: 768.99px) {
+  .ui-tooltip {
+    position: static;
+  }
   .ui-tooltip-answer {
     position: fixed;
+    z-index: 110;
     left: 0px;
     right: 0px;
     width: auto;
@@ -6603,6 +6607,26 @@ textarea.ui-input {
   }
 }
 
+@media (max-width: 1024.99px) and (min-width: 768px) {
+  .card-section {
+    position: relative;
+    min-height: 100%;
+  }
+
+  .card-imgs {
+    margin-bottom: 0;
+  }
+  .card-imgs.fixed {
+    position: fixed;
+    z-index: 1;
+    top: 165px;
+  }
+  .card-imgs.fixed-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+  }
+}
 @media (max-width: 1024.99px) {
   .col-video-300,
 .col-yt-video {

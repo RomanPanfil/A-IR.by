@@ -807,8 +807,11 @@ textarea.ui-input {
   }
 
   @media (max-width: 768.99px) {
+    position: static;
+    
     &-answer {
       position: fixed;
+      z-index: 110;
       left: 0px;
       right: 0px;
       width: auto;
