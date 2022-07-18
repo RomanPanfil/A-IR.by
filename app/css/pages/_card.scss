@@ -1917,8 +1917,9 @@
 @media (max-width: 1024.99px) {
   .card-related-mobile,
   .card-interest-mobile,
-  .card-dryers-mobile,
-  .card-trust-mobile {
+  .main-recommend-mobile,
+  .main-compressors-mobile,
+  .main-dryers-mobile {
     margin-bottom: 25px;
 
     .ui-scroller {
@@ -1951,7 +1952,10 @@
 @media (max-width: 768.99px) {
   .card-related-mobile,
   .card-reviews-mobile,
-  .card-interest-mobile {
+  .card-interest-mobile,
+  .main-recommend-mobile,
+  .main-compressors-mobile,
+  .main-dryers-mobile {
     .ui-scroller {
       margin-right: -15px;
     }
@@ -1959,7 +1963,10 @@
 }
 @media (max-width: 576.99px) {
   .card-related-mobile,
-  .card-interest-mobile {
+  .card-interest-mobile,
+  .main-recommend-mobile,
+  .main-compressors-mobile,
+  .main-dryers-mobile {
     .slider-product {
       margin-right: 16px;
     }

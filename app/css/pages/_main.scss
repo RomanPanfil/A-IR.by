@@ -2,25 +2,30 @@
   &-banners {
     white-space: nowrap;
     margin-bottom: 38px;
+
     @media (max-width: 1399px) {
       overflow-x: auto;
     }
+
     &-link {
       display: inline-block;
       max-width: 312px;
       margin-right: 24px;
     }
+
     &-img {
       width: 100%;
     }
   }
+
   &-banner {
     margin-bottom: 86px;
+
     img {
       width: 100%;
-      // max-height: 344px;
     }
   }
+
   &-fields {
     &-wrapper {
       display: flex;
@@ -31,26 +36,31 @@
       max-height: 432px;
       background-color: #f5f5f5;
       padding: 32px 32px 0 32px;
+
       @media (max-width: 420px) {
         margin-bottom: 16px;
         padding: 32px 24px 0 24px;
         margin-right: 0;
       }
     }
+
     &-wrap {
       display: flex;
       flex-wrap: nowrap;
       white-space: nowrap;
       margin-bottom: 85px;
+
       @media (max-width: 1399px) {
         overflow-x: auto;
         overflow-y: hidden;
       }
+
       @media (max-width: 420px) {
         display: block;
         white-space: normal;
       }
     }
+
     &-title {
       margin-bottom: 18px;
       font-weight: 700;
@@ -59,42 +69,81 @@
       font-size: rem(22);
       white-space: normal;
     }
+
     &-link {
       display: block;
       margin-bottom: 18px;
       color: #000000;
+
       &:hover {
         color: $primary;
       }
+
       &-img {
         width: 16px;
         height: 10px;
         margin-left: 8px;
       }
     }
+
     &-img {
       text-align: center;
+
       @media (max-width: 420px) {
         display: none;
       }
     }
   }
+
   &-slider {
-    margin-bottom: 45px;
+    margin-bottom: 35px;
+
     .swiper {
       margin-bottom: 30px;
     }
-    // .ui-arrow {
-    //   top: 41%;
-    // }
+
+    &-slide {
+      max-height: 408px;
+
+      img {
+        border-radius: 8px;
+      }
+    }
+
     &-pagintaion {
       position: relative;
+      .swiper-pagination-bullet {
+        width: 40px;
+        height: 3px;
+        margin-right: 8px !important;
+      }
     }
-    @media (max-width: 1024px) {
+
+    @media (max-width: 1024.99px) {
       display: none;
     }
   }
+
+  &-recommend {
+    &-swiper {
+      margin: -10px -10px 0;
+      padding: 10px 10px 70px;
+    }
+  }
+  &-compressors {
+    &-swiper {
+      margin: -10px -10px 0;
+      padding: 10px 10px 70px;
+    }
+  }
+  &-dryers {
+    &-swiper {
+      margin: -10px -10px 0;
+      padding: 10px 10px 70px;
+    }
+  }
 }
+
 .card-trust {
   .slider-img {
     min-width: 312px;
@@ -102,13 +151,16 @@
     margin-right: 24px;
   }
 }
+
 .main-banners::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+
 .main-banners {
   -ms-overflow-style: none;
 }
+
 .main-banners {
   overflow: -moz-scrollbars-none;
 }
@@ -117,6 +169,7 @@
   width: 0;
   height: 0;
 }
+
 .main-fields-wrap {
   -ms-overflow-style: none;
 }
@@ -124,3 +177,7 @@
 .main-fields-wrap {
   overflow: -moz-scrollbars-none;
 }
+// .main-recommend-swiper {
+//   margin: -10px -10px 0;
+//   padding: 10px 10px 70px;
+// }

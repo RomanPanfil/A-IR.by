@@ -1284,7 +1284,7 @@ jQuery(document).ready(function ($) {
 }); //ready
 
 (function () {
-  if (!document.querySelector(".card-dryers-desktop")) return;
+  if (!document.querySelector(".card-reviews-desktop")) return;
   let slider = null,
     native = null;
 
@@ -1296,31 +1296,46 @@ jQuery(document).ready(function ($) {
   }
   function changes(bp) {
     if (bp.matches && !slider) {
-      slider = new Swiper(".swiper-card-dryers", {
-        slidesPerView: 3,
+      slider = new Swiper(".swiper-card-reviews", {
+        slidesPerView: 2,
         spaceBetween: 24,
         // shortSwipes: false,
         navigation: {
-          nextEl: ".card-related-next",
-          prevEl: ".card-related-prev",
+          nextEl: ".card-reviews-next",
+          prevEl: ".card-reviews-prev",
         },
         breakpoints: {
           1140: {
-            slidesPerView: 4,
+            slidesPerView: 3,
           },
         },
       });
     }
 
     if (!bp.matches && !native) {
-      const clone = $(".card-dryers-desktop .slider-product").clone();
-      $(".card-dryers-mobile .ui-scroller").prepend(clone);
+      const clone = $(".card-reviews-desktop .review-card").clone();
+      $(".card-reviews-mobile .ui-scroller").prepend(clone);
       native = true;
     }
   }
 })();
+
+new Swiper(".main-slider-swiper", {
+  slidesPerView: 1,
+
+  // shortSwipes: false,
+  navigation: {
+    nextEl: ".main-slider-next",
+    prevEl: ".main-slider-prev",
+  },
+  pagination: {
+    el: ".main-slider-pagintaion",
+    clickable: true,
+  },
+});
+
 (function () {
-  if (!document.querySelector(".card-trust-desktop")) return;
+  if (!document.querySelector(".main-recommend-desktop")) return;
   let slider = null,
     native = null;
 
@@ -1332,13 +1347,13 @@ jQuery(document).ready(function ($) {
   }
   function changes(bp) {
     if (bp.matches && !slider) {
-      slider = new Swiper(".swiper-card-trust", {
+      slider = new Swiper(".main-recommend-swiper", {
         slidesPerView: 3,
         spaceBetween: 24,
         // shortSwipes: false,
         navigation: {
-          nextEl: ".card-related-next",
-          prevEl: ".card-related-prev",
+          nextEl: ".main-recommend-next",
+          prevEl: ".main-recommend-prev",
         },
         breakpoints: {
           1140: {
@@ -1349,24 +1364,83 @@ jQuery(document).ready(function ($) {
     }
 
     if (!bp.matches && !native) {
-      const clone = $(".card-trust-desktop .slider-img").clone();
-      $(".card-trust-mobile .ui-scroller").prepend(clone);
+      const clone = $(".main-recommend-desktop .slider-product").clone();
+      $(".main-recommend-mobile .ui-scroller").prepend(clone);
       native = true;
     }
   }
 })();
-(function () {
-  new Swiper(".swiper-main-slider", {
-    slidesPerView: 1,
 
-    // shortSwipes: false,
-    navigation: {
-      nextEl: ".card-related-next",
-      prevEl: ".card-related-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
+(function () {
+  if (!document.querySelector(".main-compressors-desktop")) return;
+  let slider = null,
+    native = null;
+
+  //desktop
+  if (matchMedia) {
+    var bp = window.matchMedia("(min-width:1024.02px)");
+    bp.addListener(changes);
+    changes(bp);
+  }
+  function changes(bp) {
+    if (bp.matches && !slider) {
+      slider = new Swiper(".main-compressors-swiper", {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        // shortSwipes: false,
+        navigation: {
+          nextEl: ".main-compressors-next",
+          prevEl: ".main-compressors-prev",
+        },
+        breakpoints: {
+          1140: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    }
+
+    if (!bp.matches && !native) {
+      const clone = $(".main-compressors-desktop .slider-product").clone();
+      $(".main-compressors-mobile .ui-scroller").prepend(clone);
+      native = true;
+    }
+  }
+})();
+
+(function () {
+  if (!document.querySelector(".main-dryers-desktop")) return;
+  let slider = null,
+    native = null;
+
+  //desktop
+  if (matchMedia) {
+    var bp = window.matchMedia("(min-width:1024.02px)");
+    bp.addListener(changes);
+    changes(bp);
+  }
+  function changes(bp) {
+    if (bp.matches && !slider) {
+      slider = new Swiper(".main-dryers-swiper", {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        // shortSwipes: false,
+        navigation: {
+          nextEl: ".main-dryers-next",
+          prevEl: ".main-dryers-prev",
+        },
+        breakpoints: {
+          1140: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    }
+
+    if (!bp.matches && !native) {
+      const clone = $(".main-dryers-desktop .slider-product").clone();
+      $(".main-dryers-mobile .ui-scroller").prepend(clone);
+      native = true;
+    }
+  }
 })();

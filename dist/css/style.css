@@ -6452,14 +6452,16 @@ textarea.ui-input {
 @media (max-width: 1024.99px) {
   .card-related-mobile,
 .card-interest-mobile,
-.card-dryers-mobile,
-.card-trust-mobile {
+.main-recommend-mobile,
+.main-compressors-mobile,
+.main-dryers-mobile {
     margin-bottom: 25px;
   }
   .card-related-mobile .ui-scroller,
 .card-interest-mobile .ui-scroller,
-.card-dryers-mobile .ui-scroller,
-.card-trust-mobile .ui-scroller {
+.main-recommend-mobile .ui-scroller,
+.main-compressors-mobile .ui-scroller,
+.main-dryers-mobile .ui-scroller {
     margin: -10px;
     padding: 10px;
     margin-right: -40px;
@@ -6469,8 +6471,9 @@ textarea.ui-input {
   }
   .card-related-mobile .slider-product,
 .card-interest-mobile .slider-product,
-.card-dryers-mobile .slider-product,
-.card-trust-mobile .slider-product {
+.main-recommend-mobile .slider-product,
+.main-compressors-mobile .slider-product,
+.main-dryers-mobile .slider-product {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 264px;
             flex: 0 0 264px;
@@ -6498,13 +6501,19 @@ textarea.ui-input {
 @media (max-width: 768.99px) {
   .card-related-mobile .ui-scroller,
 .card-reviews-mobile .ui-scroller,
-.card-interest-mobile .ui-scroller {
+.card-interest-mobile .ui-scroller,
+.main-recommend-mobile .ui-scroller,
+.main-compressors-mobile .ui-scroller,
+.main-dryers-mobile .ui-scroller {
     margin-right: -15px;
   }
 }
 @media (max-width: 576.99px) {
   .card-related-mobile .slider-product,
-.card-interest-mobile .slider-product {
+.card-interest-mobile .slider-product,
+.main-recommend-mobile .slider-product,
+.main-compressors-mobile .slider-product,
+.main-dryers-mobile .slider-product {
     margin-right: 16px;
   }
 
@@ -10121,18 +10130,41 @@ button.mfp-close:hover:after,
   }
 }
 .main-slider {
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 .main-slider .swiper {
   margin-bottom: 30px;
 }
+.main-slider-slide {
+  max-height: 408px;
+}
+.main-slider-slide img {
+  border-radius: 8px;
+}
 .main-slider-pagintaion {
   position: relative;
 }
-@media (max-width: 1024px) {
+.main-slider-pagintaion .swiper-pagination-bullet {
+  width: 40px;
+  height: 3px;
+  margin-right: 8px !important;
+}
+@media (max-width: 1024.99px) {
   .main-slider {
     display: none;
   }
+}
+.main-recommend-swiper {
+  margin: -10px -10px 0;
+  padding: 10px 10px 70px;
+}
+.main-compressors-swiper {
+  margin: -10px -10px 0;
+  padding: 10px 10px 70px;
+}
+.main-dryers-swiper {
+  margin: -10px -10px 0;
+  padding: 10px 10px 70px;
 }
 
 .card-trust .slider-img {
