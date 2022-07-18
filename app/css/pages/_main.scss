@@ -2,17 +2,14 @@
   &-banners {
     white-space: nowrap;
     margin-bottom: 38px;
-
     @media (max-width: 1399px) {
       overflow-x: auto;
     }
-
     &-link {
       display: inline-block;
       max-width: 312px;
       margin-right: 24px;
     }
-
     &-img {
       width: 100%;
     }
@@ -36,31 +33,26 @@
       max-height: 432px;
       background-color: #f5f5f5;
       padding: 32px 32px 0 32px;
-
       @media (max-width: 420px) {
         margin-bottom: 16px;
         padding: 32px 24px 0 24px;
         margin-right: 0;
       }
     }
-
     &-wrap {
       display: flex;
       flex-wrap: nowrap;
       white-space: nowrap;
       margin-bottom: 85px;
-
       @media (max-width: 1399px) {
         overflow-x: auto;
         overflow-y: hidden;
       }
-
       @media (max-width: 420px) {
         display: block;
         white-space: normal;
       }
     }
-
     &-title {
       margin-bottom: 18px;
       font-weight: 700;
@@ -69,7 +61,6 @@
       font-size: rem(22);
       white-space: normal;
     }
-
     &-link {
       display: block;
       margin-bottom: 18px;
@@ -151,7 +142,6 @@
     margin-right: 24px;
   }
 }
-
 .main-banners::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -169,7 +159,6 @@
   width: 0;
   height: 0;
 }
-
 .main-fields-wrap {
   -ms-overflow-style: none;
 }

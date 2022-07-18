@@ -6452,16 +6452,26 @@ textarea.ui-input {
 @media (max-width: 1024.99px) {
   .card-related-mobile,
 .card-interest-mobile,
+<<<<<<< HEAD
 .main-recommend-mobile,
 .main-compressors-mobile,
 .main-dryers-mobile {
+=======
+.card-dryers-mobile,
+.card-trust-mobile {
+>>>>>>> main
     margin-bottom: 25px;
   }
   .card-related-mobile .ui-scroller,
 .card-interest-mobile .ui-scroller,
+<<<<<<< HEAD
 .main-recommend-mobile .ui-scroller,
 .main-compressors-mobile .ui-scroller,
 .main-dryers-mobile .ui-scroller {
+=======
+.card-dryers-mobile .ui-scroller,
+.card-trust-mobile .ui-scroller {
+>>>>>>> main
     margin: -10px;
     padding: 10px;
     margin-right: -40px;
@@ -6471,9 +6481,14 @@ textarea.ui-input {
   }
   .card-related-mobile .slider-product,
 .card-interest-mobile .slider-product,
+<<<<<<< HEAD
 .main-recommend-mobile .slider-product,
 .main-compressors-mobile .slider-product,
 .main-dryers-mobile .slider-product {
+=======
+.card-dryers-mobile .slider-product,
+.card-trust-mobile .slider-product {
+>>>>>>> main
     -webkit-box-flex: 0;
         -ms-flex: 0 0 264px;
             flex: 0 0 264px;
@@ -10129,6 +10144,7 @@ button.mfp-close:hover:after,
     display: none;
   }
 }
+<<<<<<< HEAD
 .main-slider {
   margin-bottom: 35px;
 }
@@ -10165,6 +10181,16 @@ button.mfp-close:hover:after,
 .main-dryers-swiper {
   margin: -10px -10px 0;
   padding: 10px 10px 70px;
+=======
+.main-slider .swiper {
+  padding-bottom: 80px;
+}
+.main-slider .ui-arrow {
+  top: 41%;
+}
+.main-slider-pagintaion {
+  bottom: 45px !important;
+>>>>>>> main
 }
 
 .card-trust .slider-img {

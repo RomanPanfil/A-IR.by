@@ -1284,7 +1284,11 @@ jQuery(document).ready(function ($) {
 }); //ready
 
 (function () {
+<<<<<<< HEAD
   if (!document.querySelector(".card-reviews-desktop")) return;
+=======
+  if (!document.querySelector(".card-dryers-desktop")) return;
+>>>>>>> main
   let slider = null,
     native = null;
 
@@ -1296,6 +1300,7 @@ jQuery(document).ready(function ($) {
   }
   function changes(bp) {
     if (bp.matches && !slider) {
+<<<<<<< HEAD
       slider = new Swiper(".swiper-card-reviews", {
         slidesPerView: 2,
         spaceBetween: 24,
@@ -1348,12 +1353,20 @@ new Swiper(".main-slider-swiper", {
   function changes(bp) {
     if (bp.matches && !slider) {
       slider = new Swiper(".main-recommend-swiper", {
+=======
+      slider = new Swiper(".swiper-card-dryers", {
+>>>>>>> main
         slidesPerView: 3,
         spaceBetween: 24,
         // shortSwipes: false,
         navigation: {
+<<<<<<< HEAD
           nextEl: ".main-recommend-next",
           prevEl: ".main-recommend-prev",
+=======
+          nextEl: ".card-related-next",
+          prevEl: ".card-related-prev",
+>>>>>>> main
         },
         breakpoints: {
           1140: {
@@ -1364,15 +1377,25 @@ new Swiper(".main-slider-swiper", {
     }
 
     if (!bp.matches && !native) {
+<<<<<<< HEAD
       const clone = $(".main-recommend-desktop .slider-product").clone();
       $(".main-recommend-mobile .ui-scroller").prepend(clone);
+=======
+      const clone = $(".card-dryers-desktop .slider-product").clone();
+      $(".card-dryers-mobile .ui-scroller").prepend(clone);
+>>>>>>> main
       native = true;
     }
   }
 })();
+<<<<<<< HEAD
 
 (function () {
   if (!document.querySelector(".main-compressors-desktop")) return;
+=======
+(function () {
+  if (!document.querySelector(".card-trust-desktop")) return;
+>>>>>>> main
   let slider = null,
     native = null;
 
@@ -1384,13 +1407,22 @@ new Swiper(".main-slider-swiper", {
   }
   function changes(bp) {
     if (bp.matches && !slider) {
+<<<<<<< HEAD
       slider = new Swiper(".main-compressors-swiper", {
+=======
+      slider = new Swiper(".swiper-card-trust", {
+>>>>>>> main
         slidesPerView: 3,
         spaceBetween: 24,
         // shortSwipes: false,
         navigation: {
+<<<<<<< HEAD
           nextEl: ".main-compressors-next",
           prevEl: ".main-compressors-prev",
+=======
+          nextEl: ".card-related-next",
+          prevEl: ".card-related-prev",
+>>>>>>> main
         },
         breakpoints: {
           1140: {
@@ -1401,12 +1433,18 @@ new Swiper(".main-slider-swiper", {
     }
 
     if (!bp.matches && !native) {
+<<<<<<< HEAD
       const clone = $(".main-compressors-desktop .slider-product").clone();
       $(".main-compressors-mobile .ui-scroller").prepend(clone);
+=======
+      const clone = $(".card-trust-desktop .slider-img").clone();
+      $(".card-trust-mobile .ui-scroller").prepend(clone);
+>>>>>>> main
       native = true;
     }
   }
 })();
+<<<<<<< HEAD
 
 (function () {
   if (!document.querySelector(".main-dryers-desktop")) return;
@@ -1443,4 +1481,20 @@ new Swiper(".main-slider-swiper", {
       native = true;
     }
   }
+=======
+(function () {
+  new Swiper(".swiper-main-slider", {
+    slidesPerView: 1,
+
+    // shortSwipes: false,
+    navigation: {
+      nextEl: ".card-related-next",
+      prevEl: ".card-related-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+>>>>>>> main
 })();
