@@ -6452,26 +6452,18 @@ textarea.ui-input {
 @media (max-width: 1024.99px) {
   .card-related-mobile,
 .card-interest-mobile,
-<<<<<<< HEAD
 .main-recommend-mobile,
 .main-compressors-mobile,
-.main-dryers-mobile {
-=======
-.card-dryers-mobile,
-.card-trust-mobile {
->>>>>>> main
+.main-dryers-mobile,
+.main-trust-mobile {
     margin-bottom: 25px;
   }
   .card-related-mobile .ui-scroller,
 .card-interest-mobile .ui-scroller,
-<<<<<<< HEAD
 .main-recommend-mobile .ui-scroller,
 .main-compressors-mobile .ui-scroller,
-.main-dryers-mobile .ui-scroller {
-=======
-.card-dryers-mobile .ui-scroller,
-.card-trust-mobile .ui-scroller {
->>>>>>> main
+.main-dryers-mobile .ui-scroller,
+.main-trust-mobile .ui-scroller {
     margin: -10px;
     padding: 10px;
     margin-right: -40px;
@@ -6481,14 +6473,10 @@ textarea.ui-input {
   }
   .card-related-mobile .slider-product,
 .card-interest-mobile .slider-product,
-<<<<<<< HEAD
 .main-recommend-mobile .slider-product,
 .main-compressors-mobile .slider-product,
-.main-dryers-mobile .slider-product {
-=======
-.card-dryers-mobile .slider-product,
-.card-trust-mobile .slider-product {
->>>>>>> main
+.main-dryers-mobile .slider-product,
+.main-trust-mobile .slider-product {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 264px;
             flex: 0 0 264px;
@@ -6519,7 +6507,8 @@ textarea.ui-input {
 .card-interest-mobile .ui-scroller,
 .main-recommend-mobile .ui-scroller,
 .main-compressors-mobile .ui-scroller,
-.main-dryers-mobile .ui-scroller {
+.main-dryers-mobile .ui-scroller,
+.main-trust-mobile .ui-scroller {
     margin-right: -15px;
   }
 }
@@ -6528,7 +6517,8 @@ textarea.ui-input {
 .card-interest-mobile .slider-product,
 .main-recommend-mobile .slider-product,
 .main-compressors-mobile .slider-product,
-.main-dryers-mobile .slider-product {
+.main-dryers-mobile .slider-product,
+.main-trust-mobile .slider-product {
     margin-right: 16px;
   }
 
@@ -10048,26 +10038,29 @@ button.mfp-close:hover:after,
 }
 
 .main-banners {
-  white-space: nowrap;
-  margin-bottom: 38px;
-}
-@media (max-width: 1399px) {
-  .main-banners {
-    overflow-x: auto;
-  }
+  margin-bottom: 40px;
 }
 .main-banners-link {
   display: inline-block;
   max-width: 312px;
   margin-right: 24px;
 }
-.main-banners-img {
+.main-banners-image {
   width: 100%;
+}
+.main-banners .swiper-pagination {
+  position: relative;
 }
 .main-banner {
   margin-bottom: 86px;
 }
+@media (max-width: 1023px) {
+  .main-banner {
+    display: none;
+  }
+}
 .main-banner img {
+  min-height: 280px;
   width: 100%;
 }
 .main-fields-wrapper {
@@ -10087,17 +10080,16 @@ button.mfp-close:hover:after,
   background-color: #f5f5f5;
   padding: 32px 32px 0 32px;
 }
-@media (max-width: 420px) {
+@media (max-width: 576.99px) {
   .main-fields-wrapper {
+    max-width: initial;
     margin-bottom: 16px;
-    padding: 32px 24px 0 24px;
+    padding: 32px 24px 45px 24px;
     margin-right: 0;
   }
 }
 .main-fields-wrap {
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   white-space: nowrap;
@@ -10109,10 +10101,11 @@ button.mfp-close:hover:after,
     overflow-y: hidden;
   }
 }
-@media (max-width: 420px) {
+@media (max-width: 576.99px) {
   .main-fields-wrap {
     display: block;
     white-space: normal;
+    margin-bottom: 40px;
   }
 }
 .main-fields-title {
@@ -10138,13 +10131,24 @@ button.mfp-close:hover:after,
 }
 .main-fields-img {
   text-align: center;
+  height: 100%;
 }
-@media (max-width: 420px) {
+.main-fields-img img {
+  height: 100%;
+}
+@media (max-width: 576.99px) {
   .main-fields-img {
     display: none;
   }
 }
-<<<<<<< HEAD
+.main-fields-skid {
+  margin: 0 -32px;
+}
+@media (max-width: 576.99px) {
+  .main-fields-info a:last-child {
+    margin-bottom: 0;
+  }
+}
 .main-slider {
   margin-bottom: 35px;
 }
@@ -10181,22 +10185,61 @@ button.mfp-close:hover:after,
 .main-dryers-swiper {
   margin: -10px -10px 0;
   padding: 10px 10px 70px;
-=======
-.main-slider .swiper {
-  padding-bottom: 80px;
 }
-.main-slider .ui-arrow {
-  top: 41%;
-}
-.main-slider-pagintaion {
-  bottom: 45px !important;
->>>>>>> main
-}
-
-.card-trust .slider-img {
-  min-width: 312px;
-  padding: 50px 56px 0 56px;
+.main-trust-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 312px;
+          flex: 0 0 312px;
   margin-right: 24px;
+  padding: 50px 10px 45px 70px;
+}
+.main-list {
+  display: none;
+  margin-bottom: 60px;
+}
+.main-list-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 17px 0;
+  color: #000;
+  border-top: 1px solid #f5f5f5;
+}
+.main-list-link-more {
+  position: relative;
+}
+.main-list-link-more::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -5px;
+  width: 12px;
+  height: 10px;
+  background: url(../images/svg/toggler-arrow.svg) center no-repeat;
+  background-size: contain;
+  -webkit-transition: 0.3s -webkit-transform;
+  transition: 0.3s -webkit-transform;
+  -o-transition: 0.3s transform;
+  transition: 0.3s transform;
+  transition: 0.3s transform, 0.3s -webkit-transform;
+}
+.main-list-link svg {
+  margin-right: 18px;
+  width: 22px;
+  height: 22px;
+}
+.main-list-link:hover {
+  font-weight: 600;
+  background-color: #f5f5f5;
+}
+@media (max-width: 1024.99px) {
+  .main-list {
+    display: block;
+  }
 }
 
 .main-banners::-webkit-scrollbar {

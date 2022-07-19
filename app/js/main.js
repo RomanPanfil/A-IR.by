@@ -1334,6 +1334,23 @@ new Swiper(".main-slider-swiper", {
   },
 });
 
+new Swiper(".main-banners-slider", {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  breakpoints: {
+    576.99: {
+      slidesPerView: 4,
+    },
+  },
+  
+  // shortSwipes: false,
+  
+  pagination: {
+    el: ".main-banners-pagintaion",
+    clickable: true,
+  },
+});
+
 (function () {
   if (!document.querySelector(".main-recommend-desktop")) return;
   let slider = null,
@@ -1440,6 +1457,43 @@ new Swiper(".main-slider-swiper", {
     if (!bp.matches && !native) {
       const clone = $(".main-dryers-desktop .slider-product").clone();
       $(".main-dryers-mobile .ui-scroller").prepend(clone);
+      native = true;
+    }
+  }
+})();
+
+(function () {
+  if (!document.querySelector(".main-trust-desktop")) return;
+  let slider = null,
+    native = null;
+
+  //desktop
+  if (matchMedia) {
+    var bp = window.matchMedia("(min-width:1024.02px)");
+    bp.addListener(changes);
+    changes(bp);
+  }
+  function changes(bp) {
+    if (bp.matches && !slider) {
+      slider = new Swiper(".main-trust-swiper", {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        // shortSwipes: false,
+        navigation: {
+          nextEl: ".main-trust-next",
+          prevEl: ".main-trust-prev",
+        },
+        breakpoints: {
+          1140: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    }
+
+    if (!bp.matches && !native) {
+      const clone = $(".main-trust-desktop .main-trust-img").clone();
+      $(".main-trust-mobile .ui-scroller").prepend(clone);
       native = true;
     }
   }

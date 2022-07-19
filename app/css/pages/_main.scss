@@ -1,24 +1,31 @@
 .main {
   &-banners {
-    white-space: nowrap;
-    margin-bottom: 38px;
-    @media (max-width: 1399px) {
-      overflow-x: auto;
-    }
+    margin-bottom: 40px;
+
     &-link {
       display: inline-block;
       max-width: 312px;
       margin-right: 24px;
     }
-    &-img {
-      width: 100%;
+
+    &-image {
+      width:100%
+    }
+
+    .swiper-pagination{
+      position: relative;
     }
   }
 
   &-banner {
     margin-bottom: 86px;
 
+    @media(max-width:1023px){
+      display: none;
+    }
+
     img {
+      min-height: 280px;
       width: 100%;
     }
   }
@@ -33,26 +40,33 @@
       max-height: 432px;
       background-color: #f5f5f5;
       padding: 32px 32px 0 32px;
-      @media (max-width: 420px) {
+
+      @media (max-width: 576.99px) {
+        max-width: initial;
         margin-bottom: 16px;
-        padding: 32px 24px 0 24px;
+        padding: 32px 24px 45px 24px;
         margin-right: 0;
       }
     }
+
     &-wrap {
-      display: flex;
+      display: -webkit-box;
       flex-wrap: nowrap;
       white-space: nowrap;
       margin-bottom: 85px;
+
       @media (max-width: 1399px) {
         overflow-x: auto;
         overflow-y: hidden;
       }
-      @media (max-width: 420px) {
+
+      @media (max-width: 576.99px) {
         display: block;
         white-space: normal;
+        margin-bottom: 40px;
       }
     }
+
     &-title {
       margin-bottom: 18px;
       font-weight: 700;
@@ -61,6 +75,7 @@
       font-size: rem(22);
       white-space: normal;
     }
+
     &-link {
       display: block;
       margin-bottom: 18px;
@@ -79,10 +94,27 @@
 
     &-img {
       text-align: center;
+      height: 100%;
 
-      @media (max-width: 420px) {
+      img {
+        height: 100%;
+      }
+
+      @media (max-width: 576.99px) {
         display: none;
       }
+    }
+
+    &-skid {
+      margin: 0 -32px;
+    }
+
+    &-info{
+      @media (max-width: 576.99px) {
+      a:last-child{
+        margin-bottom: 0;
+      }
+    }
     }
   }
 
@@ -133,15 +165,72 @@
       padding: 10px 10px 70px;
     }
   }
+  &-trust {
+    &-swiper {
+      // margin: -10px -10px 0;
+      // padding: 10px 10px 70px;
+    }
+    &-img {
+      flex: 0 0 312px;
+      margin-right: 24px;
+      // height: 50px;
+      padding:50px 10px 45px 70px;
+    }
+  }
+  &-list {
+    display: none;
+    margin-bottom: 60px;
+
+   &-link {
+    display: flex;
+    align-items: center;
+    padding: 17px 0;
+    color: $font;
+    border-top: 1px solid $disabled;
+
+    &-more {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        margin-top: -5px;
+        width: 12px;
+        height: 10px;
+        background: url(../images/svg/toggler-arrow.svg) center no-repeat;
+        background-size: contain;
+        -webkit-transition: 0.3s -webkit-transform;
+        transition: 0.3s -webkit-transform;
+        -o-transition: 0.3s transform;
+        transition: 0.3s transform;
+        transition: 0.3s transform, 0.3s -webkit-transform;
+      }
+    }
+
+    svg {
+      margin-right: 18px;
+      width: 22px;
+      height: 22px;
+    }
+
+    &:hover {
+      font-weight: 600;
+      background-color: $disabled;
+    }
+
+    
+   }
+
+   @media(max-width:1024.99px){
+    display: block;
+   } 
+  }
+  
 }
 
-.card-trust {
-  .slider-img {
-    min-width: 312px;
-    padding: 50px 56px 0 56px;
-    margin-right: 24px;
-  }
-}
+
 .main-banners::-webkit-scrollbar {
   width: 0;
   height: 0;
