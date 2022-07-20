@@ -55,15 +55,15 @@ $.fn.Tabs = function() {
 	var selector = this;
 
 	this.each(function() {
-		var obj = $(this); 
+		var obj = $(this);
 		$(obj.attr('href')).hide();
 		$(obj).click(function() {
 			$(selector).removeClass('selected');
-			
+
 			$(selector).each(function(i, element) {
 				$($(element).attr('href')).hide();
 			});
-			
+
 			$(this).addClass('selected');
 			$($(this).attr('href')).fadeIn();
 			return false;
@@ -73,7 +73,7 @@ $.fn.Tabs = function() {
 	$(this).show();
 	$(this).first().click();
 	if(location.hash!='' && $('a[href="' + location.hash + '"]').length)
-		$('a[href="' + location.hash + '"]').click();	
+		$('a[href="' + location.hash + '"]').click();
 };
 
 
@@ -223,7 +223,7 @@ const changeCatalogStyle = (style) => {
       el.addEventListener('click', function(e) {
         e = e || window.event
         e.preventDefault();
-        
+
         const style = this.dataset.style || 'grid'
         changeCatalogStyle(style)
       })
@@ -238,12 +238,12 @@ const changeCatalogStyle = (style) => {
 
 (function (){
   if (!$('#catalog_search').length) return;
-  
+
   let catalogProductsSearch = $('#catalog_search');
   let catalogProductsReniev = $('.catalog-products-reniev')
   let cardReview = $('#card_review').offset().top;
   let catalogSerachOffset = catalogProductsSearch.offset().top
-  
+
   window.addEventListener('scroll',function() {
     if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
       catalogProductsReniev.addClass('catalog-search-open')
@@ -333,7 +333,7 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
   let arrows = document.querySelectorAll(".main-contacts-tel-arrow, .mob-menu-phone");
   let numbers = document.querySelector(".main-contacts-drop");
   if (!arrows.length || !numbers) return
-  
+
   arrows.forEach(el => {
     el.addEventListener("click", function (e) {
       e = e || window.event
@@ -342,13 +342,13 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
       numbers.classList.toggle("numbers-open");
     })
   });
-    
- 
+
+
 	document.addEventListener('click', (e) => {
     const withinBoundaries = e.composedPath().includes(numbers);
     const isArrow = e.composedPath().includes(document.querySelector(".main-contacts-tel-arrow"));
     const isMob = e.composedPath().includes(document.querySelector(".mob-menu-phone"));
-   
+
     if ( !withinBoundaries && !isArrow && !isMob) {
       numbers.classList.remove("numbers-open");
       document.querySelector(".main-contacts-tel-arrow").classList.remove('opened')
@@ -579,7 +579,7 @@ if (document.getElementById("card-breackpoint")) {
 }
 
 
-(function (){ 
+(function (){
   if (!D.querySelector('.catalog-marks')) return;
 
   const wrapBtn =D.querySelector('.catalog-marks-toggler');
@@ -960,7 +960,7 @@ if (document.getElementById("card-breackpoint")) {
 
       const txt = this.querySelector('.catalog-filters-toggler-txt')
       const icon = this.querySelector('.ui-btn-icon')
-      
+
       if (this.classList.contains('opened')) {
         txt.textContent = 'Показать все'
         icon.classList.add('ui-btn-icon-plus')
@@ -1129,15 +1129,15 @@ $(function () {
     footerBreackpoint = $("#footer"),
     footerHeight = $('#footer').innerHeight();
   const headerOffset = $('header .main').offset().top
-    
+
 
   $(window).scroll(function () {
     let cardBreackpointOpen = $('.card-breackpoint-open');
     let headerCardFixedHeight = $('.header_fixed .main').innerHeight();
     const headerHeight = $('header .main').outerHeight(true);
-    
+
     let offsetFooter = footerBreackpoint.offset().top
- 
+
 
     if (matchMedia) {
       var screen678 = window.matchMedia("(max-width:678px)");
@@ -1150,7 +1150,7 @@ $(function () {
         //   'top': 'initial',
         //   'bottom': 0
         // })
-        
+
         if (offsetFooter < document.documentElement.clientHeight + window.scrollY) {
           D.querySelector('#middle').classList.remove("panel-is-float")
           cardBreackpointOpen.css({
@@ -1169,7 +1169,7 @@ $(function () {
         cardBreackpointOpen.css('bottom', 'initial')
       }
     }
-    
+
     if ($(this).scrollTop() > headerOffset) {
       wrapperFixed.css('paddingTop', headerHeight + 'px')
       header.addClass("header_fixed");
@@ -1228,7 +1228,7 @@ jQuery(document).ready(function($){
   $(document).on('click','.tabs-target',function(e){
     e.preventDefault();
     const id = $(this).attr('href');
-    
+
     if ($(id).length) {
       $('.card-tabs-link[href="'+id+'"]').click();
       const offset = $('.card-tabs-body').offset().top
@@ -1294,7 +1294,7 @@ jQuery(document).ready(function($){
     },
   });
 
-  
+
   $('.card-tabs-link').Tabs();
 
   $(document).on('click','.mfp-custom-close',function(e){

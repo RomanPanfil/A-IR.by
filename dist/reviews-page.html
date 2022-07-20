@@ -8,25 +8,31 @@
     <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
   </div>
 
-  <div class="reviews-product-overview">
+  <div class="reviews-overview" id="card-breackpoint">
     <div class="row">
       <div class="col-md-6">
-        <div class="reviews-product-item">
-          <img src="./images/reviews-product-item.png" alt="alt">
+        <div class="reviews-item">
+          <!-- <img src="./images/reviews-product-item.png" alt="alt"> -->
+          <picture>
+            <source media="(max-width: 678px)" srcset="./images/reviews-product-item-mob.png">
+            <img src="./images/reviews-product-item.png" alt="alt" loading="lazy">
+          </picture>
 
-          <div class="reviews-product-info">
+          <div class="reviews-info">
             <p>Код: <span><strong>01020304</strong></span></p>
             <p><strong>Винтовой компрессор A1R BB-4FC, 10 бар</strong></p>
 
-            <a href="#" class="reviews-product-back">
-              На страницу товара
+            <a href="#" class="reviews-back">
+              <span>
+                На страницу товара
+              </span>
             </a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
-        <div class="fastorder-product-prices">
+      <div class="col-md-4 col-dis-none">
+        <div class="fastorder-prices">
           <div class="card-counter">
             <div class="card-counter-btn btn-minus disabled">
                 <img src="./images/icons/btn-minus.svg" alt="alt" class="card-minus">
@@ -44,11 +50,8 @@
         </div>
       </div>
 
-      <div class="col-md-2">
-        <a href="#" class="ui-btn card-sticky-btn">
-               В корзину
-               <svg class="sprite card-sticky-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"></use></svg>
-            </a>
+      <div class="col-md-2 col-dis-none">
+        <a href="#" class="slider-product-btn ui-btn ui-btn-midi ui-btn-block">В корзину</a>
       </div>
     </div>
   </div>
@@ -178,8 +181,8 @@
             <a href="#" class="ui-pgn-arrow">
               <svg class="sprite ui-pgn-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-prev"></use></svg>
             </a>
-            <a href="#" class="ui-pgn-btn current">1</a>
-            <span class="ui-pgn-btn">2</span>
+            <span class="ui-pgn-btn current">1</span>
+            <a class="ui-pgn-btn">2</a>
             <a href="#" class="ui-pgn-btn">3</a>
             <a href="#" class="ui-pgn-arrow">
               <svg class="sprite ui-pgn-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"></use></svg>
@@ -188,24 +191,27 @@
         </div>
       </div>
 
-      <div class="col-md-4 col-offset-1">
-        <div class="reviews-block-info">
-          <div class="card-rating">
-            <div class="card-rating-body">
-              <div class="card-rating-active" style="width: 90%;"></div>
+      <div class="col-md-4 col-offset-1 col-offset-none col-ss-12">
+        <div class="reviews-send">
+          <div class="reviews-block-info">
+            <div class="card-rating">
+              <div class="card-rating-body">
+                <div class="card-rating-active" style="width: 90%;"></div>
+              </div>
+              <div class="card-rating-value">4.0</div>
             </div>
-            <div class="card-rating-value">4.0</div>
+
+            <span><strong>9 отзывов</strong></span>
           </div>
 
-          <span><strong>9 отзывов</strong></span>
+          <a class="ui-btn ui-btn-block ui-btn-blue mfp-link" href="javascript:void(0)" data-href="./popups/form-reviews.html">
+            Оставить отзыв
+          </a>
         </div>
-
-        <a class="ui-btn ui-btn-block ui-btn-blue mfp-link" href="javascript:void(0)" data-href="./popups/form-reviews.html">
-          Оставить отзыв
-        </a>
       </div>
     </div>
   </div>
 </div>
+<!--#include file="inc-cardSticky.html"-->
 
 <!--#include file="inc-footer.html"-->

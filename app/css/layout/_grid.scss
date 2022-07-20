@@ -76,13 +76,17 @@
   padding-right: 0px;
 }
 
+@media(max-width: 1024px) {
+  .col-dis-none {
+    display: none;
+  }
 
+  .col-offset-none {
+    margin-left: 0;
+  }
+}
 
 /*  12-column */
-
-.col-offset-1 {
-  margin-left: 8.33333%;
-}
 
 .col-1 {
   -ms-flex: 0 0 8.33333%;
@@ -470,6 +474,10 @@
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+  }
+
+  .col-offset-1 {
+    margin-left: 8.33333%;
   }
 }
 @media (min-width: 1170px) {
