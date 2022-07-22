@@ -8902,6 +8902,20 @@ input[type=range]::-moz-range-thumb {
             flex-direction: column-reverse;
   }
 }
+.reviews-block .review-card-data {
+  position: static;
+}
+.reviews-block .review-card-topline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.reviews-block .review-card-name {
+  margin-right: 16px;
+}
 .reviews-block-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8959,7 +8973,8 @@ input[type=range]::-moz-range-thumb {
   }
 }
 .reviews-block .card-reviews-title {
-  margin-bottom: 34px;
+  margin-bottom: 37px;
+  line-height: 1.7;
 }
 @media (max-width: 1024px) {
   .reviews-block .reviews-block-cards .review-card:last-child::after {
