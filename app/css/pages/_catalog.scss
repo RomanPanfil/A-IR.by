@@ -1648,7 +1648,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 @media (max-width: 1024.99px) {
-  .catalog-articles-mobile {
+  .catalog-articles-mobile,
+  .main-article-mobile {
     .ui-scroller {
       display: flex;
       padding: 10px;
@@ -1662,7 +1663,8 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 @media (max-width: 768px) {
-  .catalog-articles-mobile {
+  .catalog-articles-mobile,
+  .main-article-mobile  {
     .ui-scroller {
       margin-right: -15px;
     }
