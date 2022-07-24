@@ -268,7 +268,6 @@
     }
   }
 
-
   &-trust {
     
     &-img {
@@ -420,6 +419,11 @@
     display: flex;
     margin-bottom: 85px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+
+    @media(max-width:768.99px){
+        box-shadow: none;
+        margin-bottom: 55px;
+    }
     
 
     &-img {
@@ -436,6 +440,11 @@
 
     &-info {
       padding: 40px 50px 0 50px;
+
+      @media(max-width:768.99px){
+        padding-left: 0;
+        padding-right: 0; 
+      }
     }
 
     &-title {
@@ -443,6 +452,10 @@
       font-weight: 700;
       font-size: rem(44);
       line-height: 1.3;
+
+      @media(max-width:768.99px){
+        font-size: rem(30); 
+      }
     }
 
     &-description{
@@ -478,6 +491,16 @@
     .main-tabs {
       &-body {
         padding-top: 50px;
+
+        a:first-child {
+          border-top: none;
+        }
+
+        @media(max-width:768.99px){
+          padding-top: 0;
+          border: 1px solid #D3D3D3;
+          border-radius: 8px;
+        }
       }
 
       &-links {
@@ -487,6 +510,10 @@
         li {
           width: 100%;
           list-style: none;
+        }
+
+        @media(max-width:768.99px){
+          display: none;
         }
       }
     
@@ -527,7 +554,51 @@
     
         &-mobile {
           display: none;
+
+          @media(max-width:768.99px){
+            display: block;
+            position: relative;
+            padding: 16px 40px;
+            margin-bottom: -1px;
+            font-weight: 600;
+            font-size: rem(18);
+            text-align: center;
+            border-bottom: 1px solid #D3D3D3;
+            border-top: 1px solid #D3D3D3;
+            color: $font;
+            cursor: pointer;
+          }
+
+          &:after {
+            content: "";
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            margin-top: -5px;
+            width: 12px;
+            height: 10px;
+            background: url(../images/svg/toggler-arrow.svg) center no-repeat;
+            background-size: contain;
+            transition: 0.3s transform;
+          }
+
+          &.opened {
+            &:after {
+              transform: rotate(180deg);
+            }
+          }
         }
+      }
+
+      &-tab {
+        @media(max-width:768.99px){
+          display: none !important;
+          padding: 40px 20px;
+        }
+      }
+
+      .opened {
+        display: block !important;
       }
     }
   }

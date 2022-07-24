@@ -806,6 +806,14 @@
     padding: 35px 32px;
   }
 
+  &-tab {
+    .row {
+      @media(max-width:768.99px){
+        padding: 40px 20px 
+      }
+    }
+  }
+
   @media (max-width: 1170px) and (min-width: 1025px) {
     &-links li {
       width: auto;
@@ -859,11 +867,11 @@
     }
   }
 
-  @media (max-width: 576.99px) {
-    &-tab {
-      padding: 22px 16px;
-    }
-  }
+  // @media (max-width: 576.99px) {
+  //   &-tab {
+  //     padding: 22px 16px;
+  //   }
+  // }
 }
 // card-tabs
 
