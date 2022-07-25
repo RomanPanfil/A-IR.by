@@ -1,0 +1,64 @@
+.review {
+   &-item {
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 70px;
+    border-bottom: 1px solid $border;
+
+    &-img {
+        margin-right: 24px;
+        img {
+            max-height: 130px;
+        }
+    }
+
+    &-code {
+        margin-bottom: 8px;
+        color: rgba(0, 0, 0, 0.5);
+       
+        
+        &-code {
+            font-weight: 600;
+        }
+    }
+
+    &-title {
+        margin-bottom: 27px;
+        font-size: rem(18);
+        font-weight: 600;
+    }
+
+    &-link {
+        max-width: 200px;
+        padding: 10px 20px;
+        background-color: $tertiary;
+
+        &-back {
+            display: inline-block;
+            width: 100%;
+            font-size: rem(14);
+            color: $font;
+        }
+
+        &-img {
+            width: 12px;
+            height: 12px;
+            margin-right: 12px;
+        }
+    }
+
+    &-price {
+        display: flex;
+    }
+
+    &-pricelist{
+        
+    }
+   }
+}
+
+.rewiew-item-link-img{
+    width: 12px;
+    height: 12px;
+}
