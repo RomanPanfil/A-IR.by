@@ -1,0 +1,155 @@
+<div class="popup-password">
+  <div class="popup-password-txt">
+    <div class="mfp-popup-title popup-review-title password-error">
+      Ой!
+    </div>
+
+    <span>Данная компания уже создана. Пожалуйста, заполните форму ниже, чтобы отправить запрос
+  в нашу техническую поддержку.</span>
+  </div>
+
+
+  <form action="#" class="popup-password-form">
+    <div class="ui-field">
+      <label class="ui-label ui-label-mini" for="name">Ваше имя <span class="ui-color-red">*</span></label>
+      <div class="ui-input-wrp">
+        <input type="text" name="name" id="name" class="ui-input" placeholder="Иванов Иван Иванович">
+        <div class="popup-icon"></div>
+      </div>
+    </div>
+
+    <div class="ui-field">
+      <label class="ui-label ui-label-mini" for="telephone">Телефон <span class="ui-color-red">*</span></label>
+      <div class="ui-input-wrp">
+        <input type="text" name="telephone" id="telephone" class="ui-input" placeholder="+375 (33) 398 18 18">
+        <div class="popup-icon"></div>
+      </div>
+    </div>
+
+    <div class="ui-field">
+      <label class="ui-label ui-label-mini" for="inn">УНП компании <span class="ui-color-red">*</span></label>
+      <div class="ui-input-wrp">
+        <input type="text" name="inn" id="inn" class="ui-input" placeholder="123456778">
+        <div class="popup-icon"></div>
+      </div>
+    </div>
+
+    <div class="ui-checkbox">
+      <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+      <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить запрос» вы соглашаетесь  с <a href="#">политикой обработки персональных данных.</a></label>
+    </div>
+
+    <button type="submit" class="ui-btn ui-btn-block ui-btn-blue">Отправить запрос</button>
+  </form>
+
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
+  <script>
+    $( document ).ready(function() {
+      // validate form
+      $(".popup-password-form").validate({
+       errorElement: 'span',
+       errorPlacement: function (error, element) {
+          if (element.attr("type") == "checkbox") {
+             return element.next('label').append(error);
+          }
+          error.insertAfter($(element));
+       },
+       rules: {
+          telephone: {
+            required: true,
+            minlength: 12,
+            telephone: true,
+          },
+          name: {
+             required: true,
+             lettersonly: true,
+          },
+          inn: {
+            required:true,
+            number: true,
+          },
+       },
+
+       messages: {
+        name: {
+           required: "Введите своё ФИО",
+           lettersonly: "Введите корректное ФИО",
+        },
+        telephone: {
+          required: "Введите данные",
+          minlength: " ",
+        },
+        inn: {
+          required:"Введите свой ИНН",
+          number: 'Введите корректный ИНН',
+        },
+     },
+    });
+
+    jQuery.validator.addMethod(
+        "lettersonly",
+        function (value, element) {
+          return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+        },
+        "Incorrect format"
+      );
+
+    jQuery.validator.addMethod(
+        "telephone",
+        function (value, element) {
+          return (
+            this.optional(element) ||
+            /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+          );
+        },
+        "Incorrect format"
+      );
+      jQuery.validator.addMethod(
+        "emailErr",
+        function (value, element) {
+          if(/123@gmail.com/.test(value))  {
+            return false;
+          } else {
+              return true
+          }
+        },
+        "Incorrect format"
+      );
+
+      var element = document.getElementById("telephone");
+      var maskOptions = {
+        placeholder: "+{000}(00)000-00-00",
+        mask: "+{000}(00)000-00-00",
+      };
+      var mask = IMask(element, maskOptions);
+
+      // Скрываем/показываем пароль
+      let passEye = document.querySelector('.ui-field-password-eye'),
+      unputEye = document.querySelector('.input-eye');
+      if(passEye) {
+        passEye.onclick = () => {
+          if(unputEye.getAttribute('type') === 'password' ){
+              passEye.classList.add('password-eye-see')
+              unputEye.setAttribute('type', 'text')
+          } else {
+              passEye.classList.remove('password-eye-see')
+              unputEye.setAttribute('type', 'password')
+          }
+      }
+    }
+  });
+  </script>
+</div>

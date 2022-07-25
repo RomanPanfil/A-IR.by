@@ -10360,4 +10360,282 @@ button.mfp-close:hover:after,
 .zaglushka-phone .page-stickers .ui-sticker {
   margin-bottom: 8px;
 }
+
+.sign-popup {
+  max-width: 520px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 35px 48px;
+  position: relative;
+}
+@media (max-width: 576px) {
+  .sign-popup {
+    margin: auto 0 0 0;
+    padding: 24px 15px;
+    border-radius: 0;
+    max-width: 100%;
+  }
+}
+.sign-popup .mfp-popup-title {
+  margin-bottom: 28px;
+}
+.sign-popup-tabs {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 33px;
+}
+.sign-popup-tabs::after {
+  content: "";
+  position: absolute;
+  left: -48px;
+  right: -48px;
+  height: 1px;
+  bottom: 0;
+  background-color: #D3D3D3;
+}
+.sign-popup-tabs li {
+  width: 100%;
+}
+@media (max-width: 576px) {
+  .sign-popup-reg {
+    display: block;
+    text-align: center;
+  }
+}
+.sign-popup-content .ui-field.password {
+  position: relative;
+  margin-bottom: 35px;
+}
+@media (max-width: 576px) {
+  .sign-popup-content .ui-field.password {
+    margin-bottom: 25px;
+  }
+}
+.sign-popup-content .ui-field.password a {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.sign-popup-content .ui-checkbox {
+  margin-bottom: 21px;
+}
+@media (max-width: 576px) {
+  .sign-popup-content .ui-checkbox {
+    margin-bottom: 25px;
+  }
+}
+.sign-popup-content .ui-btn {
+  margin-bottom: 31px;
+}
+@media (max-width: 576px) {
+  .sign-popup-content .ui-btn {
+    margin-bottom: 23px;
+  }
+}
+@media (max-width: 576px) {
+  .sign-popup-content .ui-label {
+    font-size: 16px;
+  }
+}
+.sign-popup-content .ui-checkbox-label {
+  font-size: 12px;
+}
+@media (max-width: 576px) {
+  .sign-popup-content .ui-checkbox-label {
+    font-size: 14px;
+  }
+}
+.sign-popup-content .ui-checkbox-label::before {
+  top: 6px;
+}
+.sign-popup-content .ui-checkbox-label::after {
+  top: 10px;
+}
+.sign-popup-tab {
+  display: block;
+  text-align: center;
+  width: 100%;
+  border: none;
+  overflow: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 0 6px 0;
+  background-color: transparent;
+  color: #808080;
+}
+.sign-popup-tab.active {
+  border-bottom: 3px solid #2A4455;
+  color: #2A4455;
+}
+
+.popup-password {
+  background-color: #fff;
+  position: relative;
+  max-width: 520px;
+  margin: 0px auto;
+  padding: 34px 48px;
+  border-radius: 10px;
+}
+@media (max-width: 576px) {
+  .popup-password {
+    border-radius: 0;
+    padding: 24px 15px;
+    max-width: 100%;
+  }
+}
+.popup-password .mfp-popup-title {
+  position: relative;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+}
+@media (max-width: 576px) {
+  .popup-password .mfp-popup-title {
+    padding-bottom: 18px;
+  }
+}
+.popup-password .mfp-popup-title::after {
+  content: "";
+  position: absolute;
+  left: -48px;
+  right: -48px;
+  height: 1px;
+  bottom: 0;
+  background-color: #D3D3D3;
+}
+.popup-password .ui-field.margin-35 {
+  margin-bottom: 35px;
+}
+@media (max-width: 576px) {
+  .popup-password .ui-field.margin-35 {
+    margin-bottom: 25px;
+  }
+}
+.popup-password .ui-checkbox {
+  margin-bottom: 21px;
+}
+@media (max-width: 576px) {
+  .popup-password .ui-checkbox {
+    margin-bottom: 25px;
+  }
+}
+.popup-password .ui-checkbox-label {
+  font-size: 12px;
+}
+@media (max-width: 576px) {
+  .popup-password .ui-checkbox-label {
+    font-size: 14px;
+  }
+}
+.popup-password .ui-checkbox-label::before {
+  top: 6px;
+}
+.popup-password .ui-checkbox-label::after {
+  top: 10px;
+}
+.popup-password .ui-btn.margin-31 {
+  margin-bottom: 31px;
+}
+@media (max-width: 576px) {
+  .popup-password .ui-btn.margin-31 {
+    margin-bottom: 23px;
+  }
+}
+@media (max-width: 576px) {
+  .popup-password-link {
+    display: block;
+    text-align: center;
+  }
+}
+
+.popup-alert-msg.password-send {
+  margin-bottom: 15px;
+}
+@media (max-width: 576px) {
+  .popup-alert-msg.password-send {
+    text-align: center;
+    margin-bottom: 93px;
+  }
+}
+@media (max-width: 576px) {
+  .popup-alert-title.password-send {
+    text-align: center;
+  }
+}
+
+.popup-password-txt {
+  position: relative;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+}
+.popup-password-txt::after {
+  content: "";
+  position: absolute;
+  left: -48px;
+  right: -48px;
+  height: 1px;
+  bottom: 0;
+  background-color: #D3D3D3;
+}
+.popup-password-txt span {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-review-title.password-error {
+  padding-bottom: 0;
+  margin-bottom: 15px;
+}
+.popup-review-title.password-error::after {
+  content: none;
+}
+
+.sign-company-txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 11px;
+  margin-bottom: 33px;
+  position: relative;
+}
+.sign-company-txt::after {
+  content: "";
+  position: absolute;
+  left: -48px;
+  right: -48px;
+  height: 1px;
+  bottom: 0;
+  background-color: #D3D3D3;
+}
+.sign-company-txt .progress-bar {
+  position: absolute;
+  bottom: 0;
+  background-color: #2A4455;
+  height: 3px;
+  width: 50%;
+}
+.sign-company-headline {
+  font-size: 16px;
+  color: #2A4455;
+  font-weight: 600;
+}
+.sign-company-steps {
+  font-size: 16px;
+  color: #2A4455;
+}
+.sign-company-second {
+  display: none;
+}
+
+.popup-review-title.sign-company {
+  padding-bottom: 0;
+  margin-bottom: 23px;
+}
+.popup-review-title.sign-company::after {
+  content: none;
+}
 /*# sourceMappingURL=sourcemaps/style.css.map */
