@@ -1,4 +1,4 @@
-<div class="popup-password">
+<div class="mfp-popup mfp-anim popup-bottom popup-password">
   <div class="popup-password-txt">
     <div class="mfp-popup-title popup-review-title password-error">
       Ой!
@@ -70,8 +70,8 @@
        rules: {
           telephone: {
             required: true,
-            minlength: 12,
-            telephone: true,
+            minlength: 17,
+            // telephone: true,
           },
           name: {
              required: true,
@@ -90,7 +90,7 @@
         },
         telephone: {
           required: "Введите данные",
-          minlength: " ",
+          minlength: "Введите полный номер телефона",
         },
         inn: {
           required:"Введите свой ИНН",
@@ -107,16 +107,16 @@
         "Incorrect format"
       );
 
-    jQuery.validator.addMethod(
-        "telephone",
-        function (value, element) {
-          return (
-            this.optional(element) ||
-            /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
-          );
-        },
-        "Incorrect format"
-      );
+    // jQuery.validator.addMethod(
+    //     "telephone",
+    //     function (value, element) {
+    //       return (
+    //         this.optional(element) ||
+    //         /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+    //       );
+    //     },
+    //     "Incorrect format"
+    //   );
       jQuery.validator.addMethod(
         "emailErr",
         function (value, element) {
@@ -129,27 +129,17 @@
         "Incorrect format"
       );
 
-      var element = document.getElementById("telephone");
-      var maskOptions = {
-        placeholder: "+{000}(00)000-00-00",
-        mask: "+{000}(00)000-00-00",
-      };
-      var mask = IMask(element, maskOptions);
+      var phoneMask = IMask(
+      document.getElementById('telephone'), {
+        mask: '+{000}(00)000-00-00'
+      });
 
-      // Скрываем/показываем пароль
-      let passEye = document.querySelector('.ui-field-password-eye'),
-      unputEye = document.querySelector('.input-eye');
-      if(passEye) {
-        passEye.onclick = () => {
-          if(unputEye.getAttribute('type') === 'password' ){
-              passEye.classList.add('password-eye-see')
-              unputEye.setAttribute('type', 'text')
-          } else {
-              passEye.classList.remove('password-eye-see')
-              unputEye.setAttribute('type', 'password')
-          }
-      }
-    }
+      // var element = document.getElementById("telephone");
+      // var maskOptions = {
+      //   placeholder: "+{000}(00)000-00-00",
+      //   mask: "+{000}(00)000-00-00",
+      // };
+      // var mask = IMask(element, maskOptions);
   });
   </script>
 </div>
