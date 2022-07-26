@@ -10047,6 +10047,7 @@ button.mfp-close:hover:after,
 }
 .main-banners-image {
   width: 100%;
+  border-radius: 8px;
 }
 .main-banners-pagintaion {
   padding-top: 25px;
