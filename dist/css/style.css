@@ -11070,9 +11070,12 @@ button.mfp-close:hover:after,
           justify-content: space-between;
   border-radius: 8px;
   margin-bottom: 56px;
-  box-shadow: rgba(0, 0, 0, 0.08);
-  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d3d3d3;
+}
+.myorder-item:hover {
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid transparent;
 }
 @media (max-width: 768.99px) {
   .myorder-item {
@@ -11127,9 +11130,8 @@ button.mfp-close:hover:after,
   margin-bottom: 16px;
 }
 .myorder-container .myorder-item:hover {
-  box-shadow: rgba(0, 0, 0, 0.08);
-  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
   border: 1px solid transparent;
 }
 
