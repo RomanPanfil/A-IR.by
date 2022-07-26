@@ -13,8 +13,8 @@
     <div class="progress-bar"></div>
   </div>
 
-  <form action="#" class="popup-password-form">
-    <div class="sign-company-first">
+  <div class="sign-company-first">
+    <form action="#" class="sign-sompany-first-form">
       <div class="ui-field">
         <label class="ui-label ui-label-mini" for="inn">УНП <span class="ui-color-red">*</span></label>
         <div class="ui-input-wrp">
@@ -55,9 +55,11 @@
       <button type="sumbit" class="ui-btn ui-btn-block ui-btn-blue margin-31 btn-next">Далее</button>
 
       <span class="popup-password-link">Уже зарегистрированы? <a href="#" class="mfp-link" data-href="./popups/sign-in.html">Войти</a></span>
-    </div>
+    </form>
+  </div>
 
-    <div class="sign-company-second">
+  <div class="sign-company-second">
+    <form action="#" class="sign-sompany-second-form">
       <div class="ui-field">
         <label class="ui-label ui-label-mini" for="nameCompany">Название организации или ИП <span class="ui-color-red">*</span></label>
         <div class="ui-input-wrp">
@@ -104,30 +106,19 @@
       </div>
 
       <button type="submit" class="ui-btn ui-btn-block ui-btn-red">Зарегистрироваться</button>
-    </div>
-  </form>
+    </form>
+  </div>
 
-    <script>
+  <script>
     $( document ).ready(function() {
-      const btnNext = document.querySelector('.btn-next');
       const txtHeadline = document.querySelector('.sign-company-headline');
       const txtSteps = document.querySelector('.sign-company-steps span');
       const firstStep = document.querySelector('.sign-company-first');
       const secondStep = document.querySelector('.sign-company-second');
       const progressBar = document.querySelector('.progress-bar');
-      const error = document.querySelector('.error');
-
-      btnNext.addEventListener('click', (e) => {
-        txtHeadline.textContent = 'Юридические данные';
-        txtSteps.textContent = '2';
-
-        firstStep.style.display = 'none';
-        secondStep.style.display = 'block';
-        progressBar.style.width = '100%';
-      })
 
       // validate form
-      $(".popup-password-form").validate({
+      $(".sign-sompany-first-form").validate({
        errorElement: 'span',
        errorPlacement: function (error, element) {
           if (element.attr("type") == "checkbox") {
@@ -150,6 +141,55 @@
              required: true,
              lettersonly: true,
           },
+          inn: {
+            required:true,
+            number: true,
+          },
+       },
+
+       submitHandler: function(form) {
+         txtHeadline.textContent = 'Юридические данные';
+         txtSteps.textContent = '2';
+
+         firstStep.style.display = 'none';
+         secondStep.style.display = 'block';
+         progressBar.style.width = '100%';
+
+        //submit via ajax
+        return false;  //This doesn't prevent the form from submitting.
+    },
+
+       messages: {
+        email: {
+            required: "Введите свой email",
+            email: "Введите корректное email",
+            emailErr: `<div class='inn-occupied'>
+          Пользователь уже существует <a href="#">Войти</a>
+          </div>`
+         },
+        name: {
+           required: "Введите своё ФИО",
+           lettersonly: "Введите корректное ФИО",
+        },
+        telephone: {
+          required: "Введите данные",
+          minlength: " ",
+        },
+        inn: {
+          required:"Введите свой ИНН",
+          number: 'Введите корректный ИНН',
+        },
+     },
+    });
+      $(".sign-sompany-second-form").validate({
+       errorElement: 'span',
+       errorPlacement: function (error, element) {
+          if (element.attr("type") == "checkbox") {
+             return element.next('label').append(error);
+          }
+          error.insertAfter($(element));
+       },
+       rules: {
           nameCompany: {
              required: true,
              lettersonly: true,
@@ -170,31 +210,9 @@
              required: true,
              number: true,
           },
-          secondname: {
-             required: true,
-             lettersonly: true,
-          },
-          password: {
-             required: true,
-          },
-          inn: {
-            required:true,
-            number: true,
-          },
        },
 
        messages: {
-        email: {
-            required: "Введите свой email",
-            email: "Введите корректное email",
-            emailErr: `<div class='inn-occupied'>
-          Пользователь уже существует <a href="#">Войти</a>
-          </div>`
-         },
-        name: {
-           required: "Введите своё ФИО",
-           lettersonly: "Введите корректное ФИО",
-        },
         nameCompany: {
            required: "Введите название организации или ИП",
            lettersonly: "Введите корректные данные",
@@ -215,20 +233,8 @@
            required: "Введите расчётный счет IBAN",
            number: "Введите корректные данные",
         },
-        password: {
-           required: "Введите пароль",
-        },
-        telephone: {
-          required: "Введите данные",
-          minlength: " ",
-        },
-        inn: {
-          required:"Введите свой ИНН",
-          number: 'Введите корректный ИНН',
-        },
      },
     });
-
 
     jQuery.validator.addMethod(
         "lettersonly",
@@ -266,21 +272,6 @@
         mask: "+{000}(00)000-00-00",
       };
       var mask = IMask(element, maskOptions);
-
-      // Скрываем/показываем пароль
-      let passEye = document.querySelector('.ui-field-password-eye'),
-      unputEye = document.querySelector('.input-eye');
-      if(passEye) {
-        passEye.onclick = () => {
-          if(unputEye.getAttribute('type') === 'password' ){
-              passEye.classList.add('password-eye-see')
-              unputEye.setAttribute('type', 'text')
-          } else {
-              passEye.classList.remove('password-eye-see')
-              unputEye.setAttribute('type', 'password')
-          }
-      }
-    }
   });
   </script>
 </div>

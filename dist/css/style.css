@@ -8927,15 +8927,20 @@ input[type=range]::-moz-range-thumb {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 35px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.reviews-block-info .card-rating {
+  padding-right: 20px;
+}
+@media (max-width: 1024px) {
+  .reviews-block-info .card-rating {
+    padding-right: 0;
+  }
 }
 .reviews-block-info .card-rating-body {
   font-size: 44px;
   margin-right: 12px;
-}
-@media (max-width: 1180px) {
-  .reviews-block-info .card-rating-body {
-    font-size: 38px;
-  }
 }
 @media (max-width: 1024px) {
   .reviews-block-info .card-rating-body {
@@ -8945,11 +8950,6 @@ input[type=range]::-moz-range-thumb {
 .reviews-block-info .card-rating-value {
   font-size: 28px !important;
   line-height: 1.4;
-}
-@media (max-width: 1180px) {
-  .reviews-block-info .card-rating-value {
-    font-size: 18px;
-  }
 }
 @media (max-width: 1024px) {
   .reviews-block-info .card-rating-value {
@@ -8961,11 +8961,6 @@ input[type=range]::-moz-range-thumb {
   font-size: 18px;
   line-height: 1.4;
   color: rgba(0, 0, 0, 0.5);
-}
-@media (max-width: 1180px) {
-  .reviews-block-info span {
-    font-size: 14px;
-  }
 }
 @media (max-width: 1024px) {
   .reviews-block-info span {
