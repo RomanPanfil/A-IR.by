@@ -10507,7 +10507,7 @@ button.mfp-close:hover:after,
 }
 @media (max-width: 768.99px) {
   .main-about-title {
-    font-size: 1.875rem;
+    font-size: 1.375rem;
   }
 }
 .main-about-description {
@@ -10787,6 +10787,11 @@ button.mfp-close:hover:after,
 .main-articles {
   margin-bottom: 85px;
 }
+.main-articles .ui-block-head {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 @media (max-width: 1024.99px) {
   .main-articles {
     margin-bottom: 60px;
@@ -10794,7 +10799,6 @@ button.mfp-close:hover:after,
 }
 .main-articles .main-article-item {
   height: 100%;
-  max-height: 416px;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
@@ -10805,6 +10809,7 @@ button.mfp-close:hover:after,
         -ms-flex: 0 0 424px;
             flex: 0 0 424px;
     margin-right: 24px;
+    max-width: 75vw;
   }
 }
 @media (max-width: 460.99px) {
@@ -10827,6 +10832,9 @@ button.mfp-close:hover:after,
   .main-articles .main-article {
     margin-bottom: 55px;
   }
+}
+.main-articles .main-article .swiper-slide {
+  height: 100%;
 }
 .main-news-link {
   display: -webkit-box;
@@ -10892,6 +10900,7 @@ button.mfp-close:hover:after,
   .main-news-wrap {
     display: inline-block;
     max-width: 424px;
+    max-width: 75vw;
     margin-right: 24px;
   }
 }
@@ -10908,16 +10917,8 @@ button.mfp-close:hover:after,
     overflow-y: hidden;
     overflow-x: auto;
     padding-top: 4px;
-  }
-}
-@media (max-width: 1024.99px) {
-  .main-news-list {
     margin-right: -40px;
-  }
-}
-@media (max-width: 420.99px) {
-  .main-news-list {
-    margin-right: -15px;
+    padding-right: 40px;
   }
 }
 @media (max-width: 420.99px) {
@@ -10928,6 +10929,11 @@ button.mfp-close:hover:after,
 }
 .main-news-list div:last-child {
   margin-right: 6px;
+}
+@media (max-width: 1220px) {
+  .main-news .ui-block-title {
+    padding-right: 0;
+  }
 }
 
 .main-banners::-webkit-scrollbar {
@@ -11012,16 +11018,18 @@ button.mfp-close:hover:after,
 }
 
 .ui-main-title .ui-block-title {
-  font-size: 2.75rem !important;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 1.35;
 }
 @media (max-width: 1024.99px) {
   .ui-main-title .ui-block-title {
-    font-size: 2.375rem !important;
+    font-size: 1.75rem !important;
   }
 }
 @media (max-width: 1024.99px) {
   .ui-main-title .ui-block-title {
-    font-size: 1.875rem !important;
+    font-size: 1.375rem !important;
   }
 }
 
@@ -11153,5 +11161,82 @@ button.mfp-close:hover:after,
 
 .myorder-item-send-circle-red {
   background-color: #bc0000;
+}
+
+.waitList-title {
+  margin-bottom: 14px;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+@media (max-width: 1024.99) {
+  .waitList-title {
+    font-size: 28px;
+    font-size: 1.75rem;
+  }
+}
+.waitList-status {
+  display: inline-block;
+  margin-bottom: 32px;
+  padding: 6.5px 16px;
+  font-size: 14px;
+  font-size: 0.875rem;
+  background: #D3D3D3;
+  border-radius: 5px;
+  color: #ffffff;
+}
+.waitList-status-active {
+  background-color: #559E53;
+}
+.waitList-item {
+  position: relative;
+  padding: 43px 32px;
+  margin-bottom: 16px;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+}
+.waitList-item-product-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  margin-right: 25px;
+}
+.waitList-item-btns {
+  text-align: end;
+}
+.waitList-item-btns .ui-btn {
+  height: 40px;
+  max-width: 176px;
+  margin-top: -4px;
+  line-height: 40px;
+  white-space: normal;
+  padding: 0 5px;
+}
+.waitList-item-code {
+  color: rgba(0, 0, 0, 0.5);
+}
+.waitList-item-active {
+  border: 1px solid #559E53;
+}
+.waitList-item-remove {
+  position: absolute;
+  top: 25px;
+  right: 32px;
+}
+.waitList-item-remove-link {
+  color: rgba(0, 0, 0, 0.5);
+}
+.waitList-item-prices .card-price-current {
+  color: #000000;
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+.waitList-item-prices .card-price {
+  margin-top: 4px;
+}
+.waitList-item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */

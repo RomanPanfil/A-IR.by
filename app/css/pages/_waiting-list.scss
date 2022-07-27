@@ -1,0 +1,88 @@
+.waitList{
+    &-title {
+        margin-bottom: 14px;
+        @include fz(32);
+        font-weight: 700;
+
+        @media(max-width:1024.99){
+            @include fz(28);  
+        }
+    }
+
+    &-status {
+        display: inline-block;
+        margin-bottom: 32px;
+        padding: 6.5px 16px;
+        @include fz(14);
+        background: #D3D3D3;
+        border-radius: 5px;
+        color: #ffffff;
+
+        &-active {
+            background-color: $valid;
+        }
+    }
+
+    &-item {
+        position: relative;
+        padding: 43px 32px;
+        margin-bottom: 16px;
+        border: 1px solid #D3D3D3;
+        border-radius: 8px;
+
+        &-product {
+            &-img {
+                flex: 0 0 100px;
+                margin-right: 25px;
+            }
+        }
+
+        &-btns {
+            text-align: end;
+            .ui-btn {
+                height: 40px;
+                max-width: 176px;
+                margin-top: -4px;
+                line-height: 40px;
+                white-space: normal;
+                padding: 0 5px;
+            }
+        }
+
+        &-code {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        &-active {
+            border: 1px solid $valid;
+        }
+
+        &-remove {
+            position: absolute;
+            top: 25px;
+            right: 32px;
+
+            &-link {
+                color: rgba(0, 0, 0, 0.5);
+
+                &:hover {
+                    // text-decoration: underline;
+                }
+            }
+        }
+
+        &-prices{ 
+            .card-price-current{
+                color: #000000;
+                @include fz(22);
+            }
+            .card-price {
+                margin-top: 4px;
+            }
+        }
+
+        &-wrap {
+            display: flex;
+        }
+    }
+}
