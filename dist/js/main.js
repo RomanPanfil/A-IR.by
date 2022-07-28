@@ -1301,4 +1301,44 @@ jQuery(document).ready(function($){
     e.preventDefault()
     $.magnificPopup.close()
   })
+
+  // $(function() {
+  //   let tabOrder = $('#making-order-pickup .making-order-content > div');
+  //   let tabPayment = $('#making-order-payment .making-order-content > div');
+
+  //   tabOrder.hide().filter(':first').show();
+
+  //   // Клики по вкладкам.
+  //   $('#making-order-pickup .making-order-tabs a').click(function(){
+  //     tabOrder.hide();
+  //     tabOrder.filter(this.hash).show();
+  //     $('#making-order-pickup .making-order-tabs a').removeClass('active');
+  //     $(this).addClass('active');
+  //     return false;
+  //   }).filter(':first').click();
+
+  //   // Клики по вкладкам.
+  //   $('#making-order-payment .making-order-tabs a').click(function(){
+  //     tabPayment.hide();
+  //     tabPayment.filter(this.hash).show();
+  //     $('#making-order-payment .making-order-tabs a').removeClass('active');
+  //     $(this).addClass('active');
+  //     return false;
+  //   }).filter(':first').click();
+  // });
+
+  // function myMap() {
+  // var mapProp= {
+  //     center:new google.maps.LatLng(51.508742,-0.120850),
+  //     zoom:5,
+  // };
+  // var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  // }
+
+  // let test = document.querySelector('.making-order-header');
+  // let list = document.querySelector('.making-order-list');
+
+  // test.addEventListener('click', () => {
+  //   list.classList.toggle('active')
+  // })
 });//ready
