@@ -1613,3 +1613,7 @@ $('.main-list-li').click(function(){
 
 
 
+$('.waitList-item-remove-link').click(function(){
+  $(this).closest($('div.waitList-item')).remove();
+ 
+});

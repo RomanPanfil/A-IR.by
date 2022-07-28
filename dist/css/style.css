@@ -11190,16 +11190,49 @@ button.mfp-close:hover:after,
 }
 .waitList-item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 43px 32px;
   margin-bottom: 16px;
   border: 1px solid #D3D3D3;
   border-radius: 8px;
 }
-.waitList-item-product-img {
+.waitList-item-img {
+  display: inline-block;
+  max-width: 100px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100px;
           flex: 0 0 100px;
   margin-right: 25px;
+}
+@media (max-width: 768.99px) {
+  .waitList-item-img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 80px;
+            flex: 0 0 80px;
+    max-width: 80px;
+  }
+}
+.waitList-item-title {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 2px;
+}
+.waitList-item-product-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width: 1024.99px) {
+  .waitList-item-product {
+    margin-bottom: 20px;
+  }
 }
 .waitList-item-btns {
   text-align: end;
@@ -11207,10 +11240,45 @@ button.mfp-close:hover:after,
 .waitList-item-btns .ui-btn {
   height: 40px;
   max-width: 176px;
-  margin-top: -4px;
   line-height: 40px;
   white-space: normal;
   padding: 0 5px;
+}
+@media (max-width: 768.99px) {
+  .waitList-item-btns {
+    text-align: left;
+  }
+}
+.waitList-item-btn {
+  position: relative;
+  min-width: 176px;
+}
+@media (max-width: 768.99px) {
+  .waitList-item-btn-span {
+    display: none;
+  }
+}
+.waitList-item-btn-svg {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 35px;
+  height: 30px;
+}
+@media (max-width: 768.99px) {
+  .waitList-item-btn-svg {
+    display: block;
+  }
+}
+@media (max-width: 768.99px) {
+  .waitList-item-btn {
+    max-width: 84px !important;
+    min-width: 84px !important;
+  }
 }
 .waitList-item-code {
   color: rgba(0, 0, 0, 0.5);
@@ -11226,15 +11294,108 @@ button.mfp-close:hover:after,
 .waitList-item-remove-link {
   color: rgba(0, 0, 0, 0.5);
 }
+@media (max-width: 768.99px) {
+  .waitList-item-remove {
+    bottom: 24px;
+    right: 16px;
+    top: auto;
+  }
+}
+.waitList-item-prices {
+  white-space: nowrap;
+}
 .waitList-item-prices .card-price-current {
   color: #000000;
   font-size: 22px;
   font-size: 1.375rem;
 }
+.waitList-item-prices .card-price-current span {
+  font-size: 16px;
+  font-size: 1rem;
+}
 .waitList-item-prices .card-price {
   margin-top: 4px;
+  margin-right: 110px;
+}
+@media (max-width: 1340px) {
+  .waitList-item-prices .card-price {
+    margin-right: 40px;
+  }
+}
+@media (max-width: 768.99px) {
+  .waitList-item-prices .card-price {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+.waitList-item-prices .card-counter {
+  display: inline-block;
+}
+@media (max-width: 768.99px) {
+  .waitList-item-prices .card-counter {
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+.waitList-item-prices .card-price-current {
+  display: inline-block;
 }
 .waitList-item-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 1024.99px) {
+  .waitList-item-wrap {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media (max-width: 768.99px) {
+  .waitList-item-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.waitList-item-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+@media (max-width: 1024.99px) {
+  .waitList-item-body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+@media (max-width: 1024.99px) {
+  .waitList-item {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+}
+@media (max-width: 768.99px) {
+  .waitList-item {
+    padding: 16px 16px 24px 16px;
+  }
+}
+.waitList .zxc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
