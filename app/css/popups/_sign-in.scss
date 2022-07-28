@@ -1,0 +1,159 @@
+.sign-popup {
+  max-width: 520px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 35px 48px;
+  position: relative;
+
+  @media(max-width: 576px) {
+    margin: auto 0 0 0;
+    padding: 24px 15px;
+    border-radius: 0;
+    max-width: 100%;
+  }
+
+  .mfp-popup-title {
+    margin-bottom: 28px;
+  }
+
+  &-tabs {
+    position: relative;
+    display: flex;
+    margin-bottom: 33px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -48px;
+      right: -48px;
+      height: 1px;
+      bottom: 0;
+      background-color: #D3D3D3;
+    }
+
+    li {
+      width: 100%;
+    }
+  }
+
+  &-headline {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &-reg {
+    @media(max-width: 576px) {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &-content {
+    .ui-field {
+      &.mfp-popup-fields {
+        // position: relative;
+        margin-bottom: 35px;
+
+        @media(max-width: 576px) {
+          margin-bottom: 25px;
+        }
+
+        a {
+          font-size: 14px;
+
+          @media(max-width: 576px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .ui-checkbox {
+      margin-bottom: 21px;
+
+      @media(max-width: 576px) {
+        margin-bottom: 25px;
+      }
+    }
+
+    .margin-31 {
+      margin-bottom: 31px;
+
+      @media(max-width: 576px) {
+        margin-bottom: 23px;
+      }
+    }
+
+    .ui-label {
+      @media(max-width: 576px) {
+        font-size: 16px;
+      }
+    }
+
+    .ui-checkbox-label {
+      font-size: 12px;
+
+      @media(max-width: 576px) {
+        font-size: 14px;
+      }
+
+      &::before {
+        top: 6px;
+      }
+
+      &::after {
+        top: 10px;
+      }
+    }
+  }
+
+  &-tab {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0 0 6px 0;
+    background-color: transparent;
+    color: #808080;
+
+    &.active {
+      // border-bottom: 3px solid #2A4455;
+      color: #2A4455;
+
+      &::after {
+        content: "";
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          bottom: 0;
+          background-color: #2A4455ed;
+      }
+    }
+  }
+}
+
+// .mfp-container {
+//   @media(max-width: 576px) {
+//     &::before {
+//       content: none !important;
+//     }
+//   }
+// }
+
+// .mfp-content {
+//   @media(max-width: 576px) {
+//     min-height: 100vh;
+//     height: -webkit-fill-available;
+//     display: flex;
+//     align-items: flex-end;
+//   }
+// }

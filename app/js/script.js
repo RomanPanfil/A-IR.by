@@ -270,7 +270,7 @@ if (document.getElementById("card-breackpoint")) {
 }
 
 
-(function (){ 
+(function (){
   if (!D.querySelector('.catalog-marks')) return;
 
   const wrapBtn =D.querySelector('.catalog-marks-toggler');
@@ -302,8 +302,8 @@ if (document.getElementById("card-breackpoint")) {
 
     let compareWrapper = document.getElementById('compareBtn');
         cardIitemComparison.forEach((e) => {
-     
-          e.onclick = () => { 
+
+          e.onclick = () => {
             compareWrapper.classList.toggle('compare-open')
           }
         })
