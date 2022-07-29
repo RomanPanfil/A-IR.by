@@ -1,4 +1,6 @@
 .waitList{
+    margin-bottom: 90px;
+
     &-title {
         margin-bottom: 14px;
         @include fz(32);
@@ -78,7 +80,7 @@
 
         &-btn {
             position: relative;
-            min-width: 176px;
+            width: 176px;
 
             &-span {
                 @media(max-width:768.99px){
@@ -101,8 +103,7 @@
             }
 
             @media(max-width:768.99px){
-                max-width: 84px !important;
-                min-width: 84px !important;
+                width: 84px !important;
             }
         }
 
@@ -112,6 +113,59 @@
 
         &-active {
             border: 1px solid $valid;
+        }
+
+        &-inactive {
+            padding-bottom: 28px;
+            
+            .waitList-item-btn{
+                margin-bottom: 24px;
+                margin-top: 28px;
+                background-color: $disabled;
+                color: #000000;
+                transition: 0.3s background-color, 0.3s color, 0.3s border-color, 0.3s box-shadow, 0.3s -webkit-box-shadow;
+
+                &:hover {
+                    background-color: #e6e2e2;
+                }
+
+                @media(max-width:1024.99px){
+                    margin: 0;
+                  }
+
+                @media(max-width:768.99px){
+                  flex: 0 0 100%;
+                }
+            }
+
+            .waitList-item-btns{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                @media(max-width:1024.99px){
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+
+            .waitList-item-product{
+                @media(max-width:1024.99px){
+                    margin-bottom: 43px;
+                }
+            }
+
+            .waitList-item-body {
+                @media(max-width:768.99px){
+                  margin-bottom: 24px;
+                }
+            }
+
+            @media(max-width:768.99px){
+                padding-bottom: 96px !important;
+            }
         }
 
         &-remove {
@@ -197,6 +251,40 @@
                 align-items: flex-start;
             }
         }
+
+        &-line {
+            display: none;
+            position: absolute;
+            bottom: 96px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #D3D3D3;
+
+            @media(max-width:768.99px){
+               display: block;
+            }
+
+        }
+
+        &-wait {
+            @include fz(14);
+            line-height: 1.35;
+
+            @media(max-width:768.99px){
+                position: absolute;
+                bottom: 60px;
+                right: 16px;
+                @include fz(16);
+            }
+
+            @media(max-width:420.99px){
+                position: absolute;
+                bottom: 60px;
+                right: 16px;
+                @include fz(14);
+            }
+        }
         
         @media(max-width:1024.99px){
             padding-top: 22px;
@@ -207,7 +295,12 @@
             padding: 16px 16px 24px 16px;
         }
     }
-    .zxc {
-        display: flex;
+
+    div:last-child {
+        margin-bottom: 0;
+    }
+
+    @media(max-width:1024.99px){
+        margin-bottom: 55px;
     }
 }
