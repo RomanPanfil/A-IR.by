@@ -1,5 +1,5 @@
 <div class="popup-review mfp-popup mfp-anim">
-  
+
   <div class="mfp-popup-header popup-review-header">
     <div class="mfp-popup-title popup-review-title">Оставить отзыв</div>
     <div class="mfp-popup-product">
@@ -65,7 +65,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="col-xs-6">
             <div class="ui-field">
               <label class="ui-label ui-label-mini" for="email">Ваш Email <span class="ui-color-red">*</span></label>
@@ -86,51 +86,18 @@
         <div class="ui-field">
           <label for="rating" class="ui-label ui-label-mini">Ваша оценка<span class="ui-color-red">*</span></label>
           <div class="card-item-rating rating-set">
-            <div class="card-item-rating-body" id="rating">
-              <div class="card-item-rating-active"></div>
-              <div class="card-item-rating-items">
-                <label for="rating"></label>
-                <input
-                  type="radio"
-                  id="rating_1"
-                  class="card-item-rating-item"
-                  value="1.0"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  id="rating_2"
-                  class="card-item-rating-item"
-                  value="2.0"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  id="rating_3"
-                  class="card-item-rating-item"
-                  value="3.0"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  id="rating_4"
-                  class="card-item-rating-item"
-                  value="4.0"
-                  name="rating"
-                />
-                <input
-                  type="radio"
-                  id="rating_5"
-                  class="card-item-rating-item"
-                  value="5.0"
-                  name="rating"
-                />
+            <div class="card-rating-body rating" id="rating">
+                <!-- <div class="card-rating-active"></div> -->
+                <div class="card-rating-star" data-value="1"></div>
+                <div class="card-rating-star" data-value="2"></div>
+                <div class="card-rating-star" data-value="3"></div>
+                <div class="card-rating-star" data-value="4"></div>
+                <div class="card-rating-star" data-value="5"></div>
               </div>
-            </div>
             <div class="card-item-rating-value"></div>
           </div>
         </div>
-  
+
         <div class="ui-field">
           <label for="" class="ui-label ui-label-mini">Текстовое поле<span class="ui-color-red">*</span></label>
           <textarea
@@ -141,7 +108,7 @@
             rows="5"
           ></textarea>
         </div>
-  
+
         <div class="row">
           <div class="col-xs-6">
             <div class="ui-field">
@@ -154,7 +121,7 @@
               />
             </div>
           </div><!--.col-->
-  
+
           <div class="col-xs-6">
             <div class="ui-field">
               <input
@@ -166,7 +133,7 @@
               />
             </div>
           </div><!--.col-->
-  
+
           <div class="col-xs-6">
             <div class="ui-field form-cell-field-load">
               <label
@@ -179,10 +146,10 @@
                 <span class="ui-file-txt">Добавить фото или видео</span>
                 <input type="file" id="popup-review-file" name="file" class="ui-file-input file" accept=".jpg,.jpeg,.png,.webp,.webm,.3gp,.mp4,.avi" multiple />
               </label>
-              
+
             </div>
           </div><!--.col-->
-  
+
           <div class="col-xs-6">
             <div class="ui-field">
               <div class="form-cell-field-url input-iconed">
@@ -217,70 +184,91 @@
         </div>
       </div>
 
-      
+
     </form>
   </div>
-  
+
   <script>
     $(document).ready(function () {
       // rating stars
-      const ratings = document.querySelectorAll(".card-item-rating");
+      // const ratings = document.querySelectorAll(".card-item-rating");
 
-      if (ratings.length > 0) {
-        initRatings();
-      }
+      // if (ratings.length > 0) {
+      //   initRatings();
+      // }
 
-      function initRatings() {
-        for (let i = 0; i < ratings.length; i++) {
-          const rating = ratings[i];
+      // function initRatings() {
+      //   for (let i = 0; i < ratings.length; i++) {
+      //     const rating = ratings[i];
 
-          if (rating.classList.contains("rating-set")) {
-            setRating(rating);
+      //     if (rating.classList.contains("rating-set")) {
+      //       setRating(rating);
+      //     }
+
+      //     initRatingVars(rating);
+      //     setRatingActiveWidth();
+      //   }
+      // }
+
+      // function initRatingVars(rating) {
+      //   ratingActive = rating.querySelector(".card-item-rating-active");
+      //   ratingValue = rating.querySelector(".card-item-rating-value");
+      // }
+
+      // function setRatingActiveWidth(index = ratingValue.innerHTML) {
+      //   const ratingActiveWidth = index / 0.05;
+
+      //   if (index === "Нет оценки") {
+      //     ratingActive.style.width = "0%";
+      //   } else {
+      //     ratingActive.style.width = `${ratingActiveWidth}%`;
+      //   }
+      // }
+
+      // function setRating(rating) {
+      //   const ratingItems = rating.querySelectorAll(".card-item-rating-item");
+
+      //   for (let i = 0; i < ratingItems.length; i++) {
+      //     const ratingItem = ratingItems[i];
+
+      //     ratingItem.addEventListener("mouseenter", function (e) {
+      //       initRatingVars(rating);
+      //       setRatingActiveWidth(ratingItem.value);
+      //     });
+
+      //     ratingItem.addEventListener("mouseleave", function (e) {
+      //       setRatingActiveWidth();
+      //     });
+
+      //     ratingItem.addEventListener("click", function (e) {
+      //       initRatingVars(rating);
+
+      //       ratingValue.innerHTML = ratingItem.value;
+      //       setRatingActiveWidth();
+      //     });
+      //   }
+      // }
+
+      const arrStars = document.querySelectorAll('.card-rating-body.rating .card-rating-star');
+      const elValue = document.querySelector('.card-item-rating.rating-set .card-item-rating-value');
+      const elRating = document.getElementById('rating');
+
+      elRating.addEventListener('click', (e) => {
+        const value = e.target.dataset.value;
+        elValue.textContent = `${value}` + '.0';
+
+        for(let i = 0; i < arrStars.length; i++) {
+          arrStars[i].classList.remove('active');
+        }
+
+        if(arrStars.length !== 0) {
+          let countRating = arrStars.length - (arrStars.length - value);
+
+          for(let i = 0; i < countRating; i++) {
+            arrStars[i].classList.add('active');
           }
-
-          initRatingVars(rating);
-          setRatingActiveWidth();
         }
-      }
-
-      function initRatingVars(rating) {
-        ratingActive = rating.querySelector(".card-item-rating-active");
-        ratingValue = rating.querySelector(".card-item-rating-value");
-      }
-
-      function setRatingActiveWidth(index = ratingValue.innerHTML) {
-        const ratingActiveWidth = index / 0.05;
-
-        if (index === "Нет оценки") {
-          ratingActive.style.width = "0%";
-        } else {
-          ratingActive.style.width = `${ratingActiveWidth}%`;
-        }
-      }
-
-      function setRating(rating) {
-        const ratingItems = rating.querySelectorAll(".card-item-rating-item");
-
-        for (let i = 0; i < ratingItems.length; i++) {
-          const ratingItem = ratingItems[i];
-
-          ratingItem.addEventListener("mouseenter", function (e) {
-            initRatingVars(rating);
-            setRatingActiveWidth(ratingItem.value);
-          });
-
-          ratingItem.addEventListener("mouseleave", function (e) {
-            setRatingActiveWidth();
-          });
-
-          ratingItem.addEventListener("click", function (e) {
-            initRatingVars(rating);
-
-            ratingValue.innerHTML = ratingItem.value;
-            setRatingActiveWidth();
-          });
-        }
-      }
+      })
 
       // validate form
       $(".popup-review-form").validate({

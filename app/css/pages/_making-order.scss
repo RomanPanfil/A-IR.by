@@ -43,6 +43,10 @@
     }
   }
 
+  &-myAddress {
+    margin-bottom: 32px;
+  }
+
   &-select {
     position: relative;
     margin-bottom: 8px;
@@ -82,6 +86,13 @@
     label {
       line-height: 1.4;
       padding-left: 28px;
+    }
+
+    .subtitle {
+      font-weight: 400;
+      font-size: 14px;
+      margin-top: 7px;
+      color: rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -129,6 +140,10 @@
     span {
       font-size: 14px;
       margin-bottom: 4px;
+
+      @media(max-width: 576px) {
+        font-size: 16px;
+      }
     }
   }
 
@@ -202,6 +217,7 @@
 
       #map-address {
         margin-bottom: 34px;
+        height: 264px !important;
       }
     }
   }

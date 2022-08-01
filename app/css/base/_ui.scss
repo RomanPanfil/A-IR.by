@@ -609,6 +609,7 @@ textarea.ui-input {
   padding: 16px;
   white-space: normal;
   line-height: 1.375;
+  resize: vertical;
 }
 
 ::-webkit-input-placeholder {opacity: 1; transition: opacity 0.3s ease; color: $border;}

@@ -1054,72 +1054,81 @@ if (document.getElementById("card-breackpoint")) {
 
 
 
-const ratings = document.querySelectorAll(".card-rating");
-const acc = document.getElementsByClassName("accordion-items-title");
+// const ratings = document.querySelectorAll(".card-rating");
+// const acc = document.getElementsByClassName("accordion-items-title");
 
-let ratingActive;
-let ratingValue;
+// let ratingActive;
+// let ratingValue;
 
 
-// rating stars
-if (ratings.length > 0) {
-  initRatings();
-}
+// // rating stars
+// if (ratings.length > 0) {
+//   initRatings();
+// }
 
-function initRatings() {
-  for (let i = 0; i < ratings.length; i++) {
-    const rating = ratings[i];
+// function initRatings() {
+//   for (let i = 0; i < ratings.length; i++) {
+//     const rating = ratings[i];
 
-    if (rating.classList.contains("rating-set")) {
-      setRating(rating);
-    }
+//     if (rating.classList.contains("rating-set")) {
+//       setRating(rating);
+//     }
 
-    initRatingVars(rating);
-    setRatingActiveWidth();
+//     initRatingVars(rating);
+//     setRatingActiveWidth();
+//   }
+// }
+
+// function initRatingVars(rating) {
+//   ratingActive = rating.querySelector(".card-rating-active");
+//   ratingValue = rating.querySelector(".card-rating-value");
+// }
+
+// function setRatingActiveWidth(index = ratingValue.innerHTML) {
+//   const ratingActiveWidth = index / 0.05;
+
+//   if (index === "Нет оценки") {
+//     ratingActive.style.width = "0%";
+//   } else {
+//     ratingActive.style.width = `${ratingActiveWidth}%`;
+//   }
+// }
+
+// function setRating(rating) {
+//   const ratingItems = rating.querySelectorAll(".card-rating-item");
+
+//   for (let i = 0; i < ratingItems.length; i++) {
+//     const ratingItem = ratingItems[i];
+
+//     ratingItem.addEventListener("mouseenter", function (e) {
+//       initRatingVars(rating);
+//       setRatingActiveWidth(ratingItem.value);
+//     });
+
+//     ratingItem.addEventListener("mouseleave", function (e) {
+//       setRatingActiveWidth();
+//     });
+
+//     ratingItem.addEventListener("click", function (e) {
+//       initRatingVars(rating);
+
+//       ratingValue.innerHTML = ratingItem.value;
+//       setRatingActiveWidth();
+//     });
+//   }
+// }
+
+let arrStars = document.querySelectorAll('.card-rating-star');
+
+if(arrStars.length !== 0) {
+  let elValue = document.querySelector('.card-rating-value');
+  let numValue = Math.round(elValue.textContent);
+  let countRating = arrStars.length - (arrStars.length - numValue);
+
+  for(let i = 0; i < countRating; i++) {
+    arrStars[i].classList.add('active')
   }
 }
-
-function initRatingVars(rating) {
-  ratingActive = rating.querySelector(".card-rating-active");
-  ratingValue = rating.querySelector(".card-rating-value");
-}
-
-function setRatingActiveWidth(index = ratingValue.innerHTML) {
-  const ratingActiveWidth = index / 0.05;
-
-  if (index === "Нет оценки") {
-    ratingActive.style.width = "0%";
-  } else {
-    ratingActive.style.width = `${ratingActiveWidth}%`;
-  }
-}
-
-function setRating(rating) {
-  const ratingItems = rating.querySelectorAll(".card-rating-item");
-
-  for (let i = 0; i < ratingItems.length; i++) {
-    const ratingItem = ratingItems[i];
-
-    ratingItem.addEventListener("mouseenter", function (e) {
-      initRatingVars(rating);
-      setRatingActiveWidth(ratingItem.value);
-    });
-
-    ratingItem.addEventListener("mouseleave", function (e) {
-      setRatingActiveWidth();
-    });
-
-    ratingItem.addEventListener("click", function (e) {
-      initRatingVars(rating);
-
-      ratingValue.innerHTML = ratingItem.value;
-      setRatingActiveWidth();
-    });
-  }
-}
-
-
-
 
 $(function () {
   let header = $(".header"),
@@ -1217,6 +1226,7 @@ function fixCardImgsTablet(card,imgs,section) {
   const imgs = document.querySelector('.card-imgs')
   const section = document.querySelector('.card-section')
 
+  if(!card) return
   document.addEventListener('scroll',fixCardImgsTablet.bind(null,card,imgs,section))
   window.addEventListener('resize',fixCardImgsTablet.bind(null,card,imgs,section))
 })();
@@ -1598,6 +1608,14 @@ jQuery(document).ready(function($){
       },
       "Incorrect format"
     );
+
+    jQuery.validator.addMethod(
+        "lettersonly",
+        function (value, element) {
+          return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+        },
+        "Incorrect format"
+      );
 
     (function() {
       if(matchMedia) {
