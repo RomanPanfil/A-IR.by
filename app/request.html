@@ -1,0 +1,110 @@
+<!--#include file="inc-header.html"-->
+<div class="request">
+    <div class="request-body">
+        <div class="request-body-info">
+            <div class="request-body-info-wrap">
+                <div class="request-body-info-title">Запрос товаров</div>
+                <div class="request-body-txt">Не нашли необходимого товара у нас на сайте?<br>
+                    Вы можете оставить заявку и мы приложим все силы, чтобы найти и предоставить вам его.
+                </div>
+            </div>
+        </div>
+        <div class="request-body-wrap">
+            <form  class="request-body-wrap-form">
+                <div class="ui-field">
+                    <label class="ui-label ui-label-mini" for="name">Наименование товара <span class="ui-color-red">*</span></label>
+                    <div class="ui-input-wrp">
+                      <input type="text" name="name" id="name" class="ui-input" placeholder="Винтовой компрессор...">
+                      <div class="popup-icon"></div>
+                    </div>
+                </div>
+
+                <div class="ui-field">
+                    <label class="ui-label ui-label-mini" for="name">Ссылка на товар в другом магазине</label>
+                    <div class="ui-input-wrp">
+                      <input type="text" name="name" id="name" class="ui-input" placeholder="https:">
+                      <div class="popup-icon"></div>
+                    </div>
+                </div>
+
+                <div class="ui-field">
+                    <label for="" class="ui-label ui-label-mini">Текстовое поле<span class="ui-color-red">*</span></label>
+                    <textarea id="textbox" name="textbox" placeholder="Текст" class="ui-input" rows="4"></textarea>
+                </div>
+
+                <div class="ui-label ui-label-mini">Как вы хотите получить ответ?    
+                </div>
+
+                <div class="request-checkboxes">
+                    <div class="row">
+                        <div class="col-12 col-us-6">
+                            <label class="request-checkbox">
+                                <input type="radio" name="chose" class="request-checkbox-input">
+                                <div class="request-checkbox-input-data">
+                                    Ответ на телефон
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="col-12 col-us-6">
+                            <label class="request-checkbox">
+                                <input type="radio" name="chose" class="request-checkbox-input">
+                                <div class="request-checkbox-input-data">
+                                    Ответ на Email
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <div class="ui-checkbox">
+                    <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+                    <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить отзыв» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a></label>
+                </div>
+
+                <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="request-list">
+        <div class="request-list-title">Мои запросы</div>
+
+        <div class="request-list-wrap has-link has-comment">
+            <a href="#" class="myorder-item">
+                <div class="myorder-item-wrap">
+                  <div class="myorder-item-title">Винтовой компрессор A1R BB-4FC, 10 бар</div>
+                  <div class="myorder-item-send-text">От 24.04.2022</div>
+                </div>
+                
+                <object>
+                    <a href="#" class="myorder-item-link">
+                        <svg class="myorder-item-link-svg">
+                          <use xlink:href="svg/svg/symbols.svg#request-icon"/>
+                        </svg>
+                        <span class="myorder-item-link-span"> Ссылка на товар в другом магазине</span>
+                    </a>
+                </object>
+            </a>
+            <div class="request-list-comment">
+                <div class="request-list-comment-title">Комментарий</div>
+                <div class="request-list-comment-title">
+                    Винтовой компрессор марки A1R BB-4FC решает важную для производства задачу - снабжает пневмоинструменты и пневматические системы сжатым воздухом. Этот компрессор имеет отличные показатели по производительности - 0,49 м³/мин, обладает низким уровнем шума и имеет энергосберегающий режим - переходит в холостой ход и затем останавливается при отсутствии разбора сжатого воздуха. Компрессор поставляется с установленной микропроцессорной системой управления, которая обеспечивает контроль времени наработки.
+                </div>
+            </div>
+        </div>
+
+        <div class="request-list-wrap">
+            <a href="#" class="myorder-item">
+                <div class="myorder-item-wrap">
+                  <div class="myorder-item-title">Винтовой компрессор A1R BB-4FC, 10 бар</div>
+                  <div class="myorder-item-send-text">От 24.04.2022</div>
+                </div>
+              </a>
+        </div>
+
+    </div>
+</div>
+<!--#include file="inc-footer.html"-->

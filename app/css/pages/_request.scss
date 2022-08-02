@@ -1,0 +1,241 @@
+.request{
+    &-body {
+        display: flex;
+        margin-bottom: 80px;
+        border: 1px solid #D3D3D3;
+        border-radius: 8px;
+
+        @media(max-width:1024.99px){
+            display: block;
+            margin-bottom: 60px;
+            border: none;
+            
+        }
+
+        &-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 50%;
+
+            @media(max-width:1024.99px){
+                display: block;
+            }
+
+            &-wrap {
+                max-width: 436px;
+
+                @media(max-width:1024.99px){
+                    max-width: 100%;
+                    margin-bottom: 55px;
+                }
+            }
+
+            &-title {
+                margin-bottom:13px;
+                @include fz(32);
+                font-weight: 700;
+                line-height: 1.35;
+
+                @media(max-width:1024.99px){
+                    @include fz(28);
+                }
+            }
+        }
+
+        &-wrap {
+            flex: 0 0 50%;
+            padding: 40px 16px;
+            background-color: #F5F5F5;
+            border-radius: 0 8px 8px 0;
+
+            @media(max-width:1024.99px){
+                display: block;
+                margin: 0 -40px;
+                padding: 40px 0 45px 0;
+                border-radius: none;
+                border-radius: 0;
+            }
+
+            @media(max-width:768px){
+                margin: 0 -15px;
+                padding: 40px 16px;
+            }
+
+            &-form {
+                max-width: 424px;
+                margin: 0 auto;
+            }
+        } 
+        
+        
+    }
+
+    &-list {
+        margin-bottom: 70px;
+
+        @media(max-width:1024.99px){
+            margin-bottom: 40px;
+        }
+
+        &-title {
+            margin-bottom: 24px;
+            @include fz(28);
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        &-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-comment {
+            padding:30px 32px 25px 32px;
+            margin-top: -13px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+        }
+
+        &-wrap {
+            margin-bottom: 16px;
+        }
+
+        .myorder-item{
+            position: relative;
+            margin-bottom: 0;
+
+            @media(max-width:420.99px){              
+                flex-direction: column;
+                padding-right:16px;
+                padding-left: 16px;
+            }
+
+            object {
+                width: 100%;
+            }
+        }
+
+        
+    }
+
+    &-checkbox {
+        &-input {
+            &-data {
+                padding: 13px 24px;
+                font-weight: 600;
+                line-height: 1.36;
+                border: 1px solid $border;
+                border-radius: 8px;
+                background-color: #ffffff;
+                text-align: center;
+
+                @media(max-width:440px) {
+                    padding: 13px 14px;
+                }
+
+                // @media(max-width:410px) {
+                //     width: 100%;
+                // }
+            }
+        }
+
+        input:checked + .request-checkbox-input-data {
+            box-shadow: inset 0px 0px 0px 2px $secondary;
+            color: $secondary;
+        }
+
+        input {
+            display: none;
+        }
+
+    }
+
+    &-checkboxes{
+        margin-bottom: 35px;
+
+        @media(max-width:420.99px){
+            margin-bottom: 25px;
+        }
+    }
+
+    .myorder-item-link {
+        display: flex;
+        align-items: self-start;    
+        justify-content: end;
+    
+        &:hover {
+            .myorder-item-link-span{
+                color: #2A4455;
+            }
+    
+            .myorder-item-link-svg{
+                fill: #2A4455;
+            }
+            
+        }
+    
+        @media(max-width:420.99px){
+            justify-content: center;
+            margin: 0 -16px;
+            
+            padding: 16px 16px 0 16px;
+            border-top: 1px solid $border;
+        }
+    }
+    
+    .myorder-item-link-svg {
+        width: 18px;
+        height: 18px;
+        flex: 0 0 18px;
+        max-width: 18px;
+        margin-right: 8px;
+    
+        @media(max-width:1024.99px){
+           margin-right: 0;
+        }
+    
+        @media(max-width:420.99px){
+            margin-right: 8px;
+        }
+    }
+    
+    .myorder-item-link-span {
+        @media(max-width:1024.99px){
+            display: none;
+        }
+    
+        @media(max-width:420.99px){
+            display: block;
+        }
+    }
+    
+    .myorder-item-title {
+        @media(max-width:420.99px){
+            margin-bottom: 10px;
+        }
+    }
+
+    .myorder-item-wrap{
+      flex: 0 0 65%;
+    }
+
+    .has-link {
+        .myorder-item-wrap {
+            @media(max-width:420.99px){
+              margin-bottom: 28px;   
+            }
+              
+          }
+    }
+
+    .has-comment {
+        .myorder-item{
+            background-color: $tertiary;
+            border: none;
+        }
+    }
+
+    
+}
+
