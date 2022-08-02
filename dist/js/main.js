@@ -1118,17 +1118,21 @@ if (document.getElementById("card-breackpoint")) {
 //   }
 // }
 
-let arrStars = document.querySelectorAll('.card-rating-star');
+let arrStars = document.querySelectorAll('.ui-rating-star');
+let arrBlock = document.querySelectorAll('.ui-rating');
 
-if(arrStars.length !== 0) {
-  let elValue = document.querySelector('.card-rating-value');
-  let numValue = Math.round(elValue.textContent);
-  let countRating = arrStars.length - (arrStars.length - numValue);
+arrBlock.forEach((e) => {
+  if(arrStars.length !== 0) {
+    let arrLength = e.children[0].children.length;
+    let elValue = e.children[1].textContent;
+    let numValue = Math.round(elValue);
+    let countRating = arrLength - (arrLength - numValue);
 
-  for(let i = 0; i < countRating; i++) {
-    arrStars[i].classList.add('active')
+    for(let i = 0; i < countRating; i++) {
+      e.children[0].children[i].classList.add('active');
+    }
   }
-}
+})
 
 $(function () {
   let header = $(".header"),

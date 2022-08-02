@@ -6,43 +6,15 @@
       <span class="mfp-popup-product-label">Товар:</span>
       <a href="#" class="mfp-popup-product-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
     </div>
-    <div class="card-item-rating">
-      <div class="card-item-rating-body">
-        <div class="card-item-rating-active" style="width: 100%"></div>
-        <div class="card-item-rating-items">
-          <input
-            type="radio"
-            class="card-item-rating-item"
-            value="1"
-            name="rating"
-          />
-          <input
-            type="radio"
-            class="card-item-rating-item"
-            value="2"
-            name="rating"
-          />
-          <input
-            type="radio"
-            class="card-item-rating-item"
-            value="3"
-            name="rating"
-          />
-          <input
-            type="radio"
-            class="card-item-rating-item"
-            value="4"
-            name="rating"
-          />
-          <input
-            type="radio"
-            class="card-item-rating-item"
-            value="5"
-            name="rating"
-          />
-        </div>
+    <div class="ui-rating">
+      <div class="ui-rating-stars">
+        <div class="ui-rating-star base active"></div>
+        <div class="ui-rating-star base active"></div>
+        <div class="ui-rating-star base active"></div>
+        <div class="ui-rating-star base active"></div>
+        <div class="ui-rating-star base active"></div>
       </div>
-      <div class="card-item-rating-value">Нет оценки</div>
+      <div class="ui-rating-value base">5.0</div>
     </div>
   </div>
 
@@ -85,16 +57,15 @@
 
         <div class="ui-field">
           <label for="rating" class="ui-label ui-label-mini">Ваша оценка<span class="ui-color-red">*</span></label>
-          <div class="card-item-rating rating-set">
-            <div class="card-rating-body rating" id="rating">
-                <!-- <div class="card-rating-active"></div> -->
-                <div class="card-rating-star" data-value="1"></div>
-                <div class="card-rating-star" data-value="2"></div>
-                <div class="card-rating-star" data-value="3"></div>
-                <div class="card-rating-star" data-value="4"></div>
-                <div class="card-rating-star" data-value="5"></div>
-              </div>
-            <div class="card-item-rating-value"></div>
+          <div class="ui-rating rating-set">
+            <div class="ui-rating-stars rating" id="rating">
+              <div class="ui-rating-star large" data-value="1"></div>
+              <div class="ui-rating-star large" data-value="2"></div>
+              <div class="ui-rating-star large" data-value="3"></div>
+              <div class="ui-rating-star large" data-value="4"></div>
+              <div class="ui-rating-star large" data-value="5"></div>
+            </div>
+            <div class="ui-rating-value large"></div>
           </div>
         </div>
 
@@ -249,23 +220,26 @@
       //   }
       // }
 
-      const arrStars = document.querySelectorAll('.card-rating-body.rating .card-rating-star');
-      const elValue = document.querySelector('.card-item-rating.rating-set .card-item-rating-value');
+      const arrStars = document.querySelectorAll('.ui-rating-stars.rating .ui-rating-star');
+      const elValue = document.querySelector('.ui-rating.rating-set .ui-rating-value');
       const elRating = document.getElementById('rating');
 
       elRating.addEventListener('click', (e) => {
         const value = e.target.dataset.value;
-        elValue.textContent = `${value}` + '.0';
 
-        for(let i = 0; i < arrStars.length; i++) {
-          arrStars[i].classList.remove('active');
-        }
+        if(e.target.classList[0] === 'ui-rating-star') {
+          elValue.textContent = `${value}` + '.0';
 
-        if(arrStars.length !== 0) {
-          let countRating = arrStars.length - (arrStars.length - value);
+          for(let i = 0; i < arrStars.length; i++) {
+            arrStars[i].classList.remove('active');
+          }
 
-          for(let i = 0; i < countRating; i++) {
-            arrStars[i].classList.add('active');
+          if(arrStars.length !== 0) {
+            let countRating = arrStars.length - (arrStars.length - value);
+
+            for(let i = 0; i < countRating; i++) {
+              arrStars[i].classList.add('active');
+            }
           }
         }
       })

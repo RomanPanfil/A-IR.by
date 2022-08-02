@@ -312,9 +312,9 @@
       //   }
       // }
 
-      .card-rating-value {
-        font-size: 28px !important;
-        line-height: 1.2;
+      .ui-rating-value {
+        // font-size: 28px !important;
+        // line-height: 1.2;
 
         // @media(max-width: 1180px) {
         //   font-size: 18px;
@@ -389,7 +389,7 @@
         border-bottom: 0;
         margin-bottom: 57px;
 
-        .ui-rating-stars {
+        .review-card-body {
           padding-bottom: 0;
         }
       }
@@ -403,7 +403,7 @@
       padding-bottom: 34px;
     }
 
-    .ui-rating-stars {
+    .review-card-body {
       padding: 0;
       padding-bottom: 49px;
     }
@@ -432,10 +432,10 @@
     //   font-size: 23px;
     // }
 
-    .review-card-rating-value {
-      font-size: 16px;
-      line-height: 1.2;
-    }
+    // .ui-rating-value {
+    //   font-size: 16px;
+    //   line-height: 1.2;
+    // }
 
     .review-card-text {
       font-size: 16px;

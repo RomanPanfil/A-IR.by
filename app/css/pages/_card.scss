@@ -35,6 +35,11 @@
 
   &-links {
     line-height: 24px;
+
+    .ui-rating {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
   }
   &-rating {
     vertical-align: middle;
@@ -71,7 +76,7 @@
       height: 22px;
       fill: $border;
     }
-    
+
     &:hover,
     &.active {
       color: $secondary;
@@ -183,7 +188,7 @@
     align-items: center;
     justify-content: center;
     padding: 15px;
-    
+
     img {
       display: block;
       max-height: 392px;
@@ -950,7 +955,7 @@
 }
 
 .card-features {
-  
+
   &-title {
     @include fz(18);
     font-weight: 700;
@@ -1039,7 +1044,7 @@
       box-shadow: inset 0px 0px 0px 1px $secondary;
     }
   }
-  
+
   @media (min-width: 1025px) {
     &-value,
     &-unit {
@@ -1049,7 +1054,7 @@
       margin-right: 4px;
     }
   }
-  
+
   input:checked + .features-btn-data {
     box-shadow: inset 0px 0px 0px 2px $secondary;
     color: $secondary;
@@ -1462,14 +1467,14 @@
       font-size: rem(18);
     }
   }
-  
+
   &-title {
     margin-bottom: 12px;
     font-size: rem(18);
     font-weight: 600;
     line-height: 1.5;
   }
-  
+
   &-link {
     display: inline-block;
     width: 100%;
@@ -1859,6 +1864,10 @@
   &-empty {
     max-width: 650px;
     color: rgba(#000,.7);
+
+    .ui-btn {
+      padding: 0px 35px;
+    }
   }
 
   @media (max-width: 1024.99px) and (min-width: 769px) {
@@ -1876,7 +1885,7 @@
 
   @media (max-width: 1024.99px) {
     margin-bottom: 55px;
-   
+
     &-btnall {
       display: none;
     }
@@ -1967,7 +1976,7 @@
       flex: 0 0 340px;
       margin-right: 24px;
       height: auto;
-      min-height: calc(100% - 24px); 
+      min-height: calc(100% - 24px);
       margin-bottom: 24px;
     }
   }
@@ -1985,7 +1994,7 @@
 @media (max-width: 576.99px) {
   .card-related-mobile,
   .card-interest-mobile {
-    
+
     .slider-product {
       margin-right: 16px;
     }
