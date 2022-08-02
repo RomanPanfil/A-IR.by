@@ -4580,10 +4580,10 @@ textarea.ui-input {
   margin-right: 5px;
 }
 .card-headline-reviews {
-  line-height: 24px;
-  height: 24px;
+  line-height: 21px;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: bottom;
+  margin-right: 24px;
 }
 .card-headline-action {
   display: inline-block;
