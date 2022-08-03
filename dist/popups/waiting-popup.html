@@ -12,7 +12,7 @@
     <form  class="waiting-form">
             <div class="ui-field">
                 <label for="" class="ui-label ui-label-mini">Текстовое поле<span class="ui-color-red">*</span></label>
-                <textarea id="textbox" name="textbox" placeholder="Текст" class="ui-input" rows="4"></textarea>
+                <textarea id="textbox" name="textbox" placeholder="Текст" class="ui-input" rows="5"></textarea>
             </div>
 
             <div class="ui-label ui-label-mini">Как вы хотите получить ответ?    
@@ -64,7 +64,24 @@
       }
     </style>
     <script>
-      
+         $(".waiting-form").validate({
+        errorElement: "span",
+        rules: {
+
+          textbox: {
+            required: true,
+            maxlength: 500,
+          }
+        },
+        
+        messages: {        
+          textbox: {
+            required: "Пожалуйста, оставьте свой комментарий",
+            maxlength: "Комментарий не должен превышать 500 символов",
+          },
+        },
+      });
+
     </script>
   </div>
   
