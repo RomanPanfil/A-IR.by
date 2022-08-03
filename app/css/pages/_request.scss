@@ -130,13 +130,15 @@
                 background-color: #ffffff;
                 text-align: center;
 
-                @media(max-width:440px) {
+                @media(max-width:450px) {
                     padding: 13px 14px;
                 }
 
-                // @media(max-width:410px) {
-                //     width: 100%;
-                // }
+                @media(max-width:410px) {
+                    &:nth-of-type(1){
+                        margin-bottom:12px;
+                    }
+                }
             }
         }
 

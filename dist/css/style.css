@@ -10378,7 +10378,9 @@ button.mfp-close:hover:after,
 }
 @media (max-width: 420px) {
   .main-trust .swiper-pagination {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: relative;
   }
 }
@@ -11711,9 +11713,14 @@ button.mfp-close:hover:after,
   background-color: #ffffff;
   text-align: center;
 }
-@media (max-width: 440px) {
+@media (max-width: 450px) {
   .request-checkbox-input-data {
     padding: 13px 14px;
+  }
+}
+@media (max-width: 410px) {
+  .request-checkbox-input-data:nth-of-type(1) {
+    margin-bottom: 12px;
   }
 }
 .request-checkbox input:checked + .request-checkbox-input-data {
