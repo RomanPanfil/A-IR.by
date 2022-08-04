@@ -11814,4 +11814,7 @@ button.mfp-close:hover:after,
   background-color: #F5F5F5;
   border: none;
 }
+.request textarea {
+  resize: vertical;
+}
 /*# sourceMappingURL=sourcemaps/style.css.map */
