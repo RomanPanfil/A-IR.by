@@ -64,7 +64,10 @@
       }
     </style>
     <script>
-         $(".waiting-form").validate({
+        
+
+      $(document).ready(function () {
+        $(".waiting-form").validate({
         errorElement: "span",
         rules: {
 
@@ -80,7 +83,9 @@
             maxlength: "Комментарий не должен превышать 500 символов",
           },
         },
+        
       });
+      })
 
     </script>
   </div>
