@@ -1,0 +1,153 @@
+<div class="mfp-popup mfp-anim popup-bottom account">
+  <div class="mfp-popup-title popup-review-title">
+    Личные данные
+  </div>
+
+  <div class="account-body">
+    <form action="#" class="account-form">
+      <div class="ui-field-wrapper">
+        <div class="ui-field">
+          <label class="ui-label ui-label-mini" for="name">ФИО <span class="ui-color-red">*</span></label>
+          <div class="ui-input-wrp">
+            <input type="text" name="name" id="name" class="ui-input" placeholder="Храменкова Полина Андреевна">
+            <div class="popup-icon"></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="gender">Пол <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <select name="gender" id="gender" class="ui-input">
+                  <option value="volvo">Женский</option>
+                  <option value="saab">Мужской</option>
+                </select>
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="date">Дата рождения <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="date" name="date" id="date" class="ui-input" value="1996-04-30">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ui-field">
+          <label class="ui-label ui-label-mini" for="email">Ваш Email <span class="ui-color-red">*</span></label>
+          <div class="ui-input-wrp">
+            <input type="text" name="email" id="email" class="ui-input" placeholder="123@gmail.com">
+            <div class="popup-icon"></div>
+          </div>
+        </div>
+
+        <div class="ui-field mfp-popup-fields">
+          <label class="ui-label ui-label-mini" for="password">Пароль</label>
+          <div class="ui-input-wrp">
+            <input type="password" name="password" id="password" class="ui-input">
+            <div class="popup-icon"></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" class="account-link">Изменить / Восстановить пароль</a>
+
+      <div class="ui-checkbox">
+        <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+        <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+      </div>
+
+      <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Сохранить</button>
+    </form>
+  </div>
+
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
+  <!-- <script>
+    $( document ).ready(function() {
+      // validate form
+      $(".account-form").validate({
+        errorElement: "span",
+        rules: {
+          email: {
+            required: true,
+            email: true,
+            emailErrPerson: true,
+          },
+
+          emailCompany: {
+            required: true,
+            email: true,
+            emailErrCompany: true,
+          },
+
+          password: {
+            required: true,
+            minlength: 8,
+          },
+        },
+
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "customCheckbox") {
+            error.appendTo(".form-cell-field-send");
+          } else {
+            error.insertAfter(element);
+          }
+        },
+
+        messages: {
+          email: {
+            required: "Пожалуйста, введите ваш Email",
+            email: "Введите корректный email",
+            emailErrPerson: `<div class='inn-occupied'>
+            Пользователь не найден. <a href="#" class="mfp-link" data-href="./popups/sign-up-person.html">Регистрация</a>
+            </div>`,
+          },
+
+          emailCompany: {
+            required: "Пожалуйста, введите ваш Email",
+            email: "Введите корректный email",
+            emailErrCompany: `<div class='inn-occupied'>
+            Пользователь не найден. <a href="#" class="mfp-link" data-href="./popups/sign-up-company.html">Регистрация</a>
+            </div>`,
+          },
+
+          password: {
+            required: "Пожалуйста, введите пароль",
+            password: " ",
+            minlength: "Введите не меньше 8 символов",
+          },
+        },
+      });
+    });
+  </script> -->
+</div>

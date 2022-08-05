@@ -1,0 +1,15 @@
+.popup-alert {
+  .update-contract {
+    margin-bottom: 29px;
+
+    @media(max-width: 576px) {
+      margin-bottom: 55px;
+    }
+
+    &-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+    }
+  }
+}

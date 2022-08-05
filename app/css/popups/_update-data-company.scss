@@ -1,0 +1,53 @@
+.update-company {
+  max-width: 964px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 35px 48px;
+  position: relative;
+
+  @media(max-width: 576px) {
+    max-width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 24px 15px;
+  }
+
+  .mfp-popup-title {
+    position: relative;
+    margin-bottom: 25px;
+    padding-bottom: 24px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -48px;
+      right: -48px;
+      height: 1px;
+      bottom: 0;
+      background-color: #D3D3D3;
+    }
+  }
+
+  .ui-field-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -48px;
+      right: -48px;
+      height: 1px;
+      bottom: 0;
+      background-color: #D3D3D3;
+    }
+  }
+
+  &-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}

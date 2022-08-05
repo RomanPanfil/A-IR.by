@@ -1,0 +1,232 @@
+<div class="mfp-popup mfp-anim change-address">
+  <div class="mfp-popup-title popup-review-title">
+    Адреса
+  </div>
+  <div class="change-address-body">
+    <form action="#">
+      <div class="change-address-main">
+        <div class="change-address-title">
+          Основной адрес доставки
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="name">Населённый пункт <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="name" id="name" class="ui-input" placeholder="Минск">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Дом <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Корпус</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Квартира/Офис</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Подъезд</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Этаж</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Код домофона</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="change-address-second">
+        <div class="change-address-title margin">
+          Дополнительные адреса доставки
+        </div>
+
+        <div class="change-address-new"></div>
+
+        <div class="change-address-btn">Добавить</div>
+      </div>
+
+      <div class="change-address-confirm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="ui-checkbox">
+              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+              <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $( document ).ready(function() {
+      //acount add address
+      let btnAdd = document.querySelector('.change-address-btn');
+      let field = document.querySelector('.ui-field');
+      let block = document.querySelector('.change-address-second .change-address-new');
+      let blockSecond = document.querySelector('.change-address-second');
+      let count = 1;
+
+      blockSecond.addEventListener('click', (e) => {
+        if(e.target.classList[0] === 'change-address-remove') {
+          e.target.parentNode.parentNode.parentNode.remove()
+        }
+      })
+
+      btnAdd.addEventListener('click', () => {
+        let blockDiv = document.createElement('div');
+        blockDiv.classList.add('change-address-main')
+
+        blockDiv.innerHTML = `
+        <div class="change-address-headline">
+          <div class="change-address-title second">
+            Адрес №${count++}
+          </div>
+
+          <div class="change-address-control">
+            <div class="change-address-basic">Сделать основным</div>
+            <div class="change-address-remove">Удалить</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="name">Населённый пункт <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="name" id="name" class="ui-input" placeholder="Минск">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Дом <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Корпус</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Квартира/Офис</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Подъезд</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Этаж</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-ss-6">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="telephone">Код домофона</label>
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        `
+
+        block.append(blockDiv)
+      })
+    });
+  </script>
+</div>

@@ -1,0 +1,16 @@
+.popup-alert {
+  .update {
+    margin-bottom: 31px;
+
+    @media(max-width: 576px) {
+      text-align: center;
+      margin-bottom: 87px;
+    }
+  }
+
+  .popup-alert-title {
+    @media(max-width: 576px) {
+      text-align: center;
+    }
+  }
+}

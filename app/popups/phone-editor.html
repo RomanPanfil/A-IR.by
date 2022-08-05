@@ -1,0 +1,94 @@
+<div class="mfp-popup mfp-anim popup-bottom phone-editor">
+  <div class="mfp-popup-title popup-review-title">
+    Личные телефоны
+  </div>
+  <div class="phone-editor-body">
+    <form action="#">
+      <div class="phone-editor-main">
+        <div class="phone-editor-title">
+          Основной телефон для связи
+        </div>
+
+        <div class="ui-field">
+          <label class="ui-label ui-label-mini" for="telephone">Телефон <span class="ui-color-red">*</span></label>
+          <div class="ui-input-wrp">
+            <input type="text" name="telephone" id="telephone" class="ui-input" placeholder="+375 (33) 398 18 18">
+            <div class="popup-icon"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-editor-second">
+        <div class="phone-editor-title">
+          Дополнительные телефоны
+        </div>
+
+        <div class="phone-editor-new"></div>
+
+        <div class="phone-editor-btn">Добавить</div>
+      </div>
+
+      <div class="ui-checkbox">
+        <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+        <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+      </div>
+
+      <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Сохранить</button>
+    </form>
+  </div>
+
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
+  <script>
+    $( document ).ready(function() {
+      //acount add phone
+      let btnAdd = document.querySelector('.phone-editor-btn');
+      let field = document.querySelector('.ui-field');
+      let block = document.querySelector('.phone-editor-second .phone-editor-new');
+      let blockSecond = document.querySelector('.phone-editor-second');
+      let count = 0;
+
+      blockSecond.addEventListener('click', (e) => {
+        if(e.target.classList[0] === 'phone-editor-remove') {
+          e.target.parentNode.parentNode.parentNode.remove()
+        }
+      })
+
+      btnAdd.addEventListener('click', () => {
+        let blockDiv = document.createElement('div');
+        let countPlus = count++
+
+        blockDiv.innerHTML = `
+          <div class="ui-field">
+            <div class="phone-editor-headline">
+              <label class="ui-label ui-label-mini" for="telephone${countPlus}">Телефон </label>
+
+              <div class="phone-editor-control">
+                <div class="phone-editor-basic">Сделать основным</div>
+                <div class="phone-editor-remove">Удалить</div>
+              </div>
+            </div>
+            <div class="ui-input-wrp">
+              <input type="text" name="telephone${countPlus}" id="telephone${countPlus}" class="ui-input" placeholder="+375 (33) 398 18 18">
+              <div class="popup-icon"></div>
+            </div>
+          </div>
+        `
+
+        block.append(blockDiv)
+      })
+    });
+  </script>
+</div>
