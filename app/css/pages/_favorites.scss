@@ -1,0 +1,33 @@
+.favorites {
+    &-title {
+        @include fz(32);
+        font-weight: 700;
+        margin-bottom: 38px;
+
+        @media(max-width:768px){
+            @include fz(28);
+            margin-bottom: 32px;
+        }
+    }
+
+    &-grid {
+       @media(max-width:768px) {
+        .col-product-card {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+       }
+    }
+
+    .ui-pgn {
+        margin-bottom: 100px;
+        
+        @media(max-width:1024.99px){
+            margin-bottom: 65px;
+        }
+
+        @media(max-width:768.99px){
+            margin-bottom: 55px;
+        }
+    }
+}

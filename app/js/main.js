@@ -1667,3 +1667,27 @@ $(document).ready(function () {
     }
   });
 })
+
+
+
+let el = document.querySelector(".favorites-grid");
+
+
+
+(function () {
+  if (matchMedia) {
+    const screen = window.matchMedia("(max-width:1024px)");
+    screen.addListener(changes);
+    changes(screen);
+  }
+  function changes(screen) {
+    if (screen.matches) {
+      //экран менее 1024
+      el.dataset.style = "line";
+     
+    } else {
+      //экран более 1024
+      el.dataset.style = "grid";
+    }
+  }
+})();
