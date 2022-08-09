@@ -5,6 +5,7 @@
   border-radius: 10px;
   padding: 35px 48px;
   position: relative;
+  overflow: hidden;
 
   @media(max-width: 576px) {
     max-width: 100%;
@@ -50,4 +51,46 @@
     font-size: 18px;
     margin-bottom: 20px;
   }
+
+  .account-body {
+    height: 568px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: -25px -48px 0 -48px;
+    padding: 25px 48px 0 48px;
+  }
+
+  .update-company-confirm {
+    padding-top: 40px;
+    position: relative;
+    box-shadow: 0px -4px 3px rgb(0 0 0 / 8%);
+    margin: 0 -48px;
+    padding: 40px 48px 0 48px;
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   left: -48px;
+    //   right: -48px;
+    //   height: 1px;
+    //   top: 0;
+    //   background-color: #D3D3D3;
+    // }
+
+    @media(max-width: 576px) {
+      padding-top: 25px;
+    }
+  }
+}
+
+.account-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.account-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.account-body::-webkit-scrollbar-thumb {
+  background-color: #D3D3D3;
 }

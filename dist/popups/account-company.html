@@ -1,9 +1,9 @@
-<div class="mfp-popup mfp-anim change-address">
+<div class="mfp-popup mfp-anim popup-bottom change-address">
   <div class="mfp-popup-title popup-review-title">
     Аккаунты организации
   </div>
   <div class="change-address-body">
-    <form action="#">
+    <form action="#" class="account-company-form">
       <div class="change-address-main">
         <div class="change-address-title">
           Основной аккаунт
@@ -12,18 +12,18 @@
         <div class="row">
           <div class="col-md-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="name">Email <span class="ui-color-red">*</span></label>
+              <label class="ui-label ui-label-mini" for="email">Email <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
-                <input type="text" name="name" id="name" class="ui-input" placeholder="polina.ndv@tut.by">
+                <input type="text" name="email" id="email" class="ui-input email" placeholder="polina.ndv@tut.by">
                 <div class="popup-icon"></div>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="street">Имя <span class="ui-color-red">*</span></label>
+              <label class="ui-label ui-label-mini" for="name">Имя <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
-                <input type="text" name="street" id="street" class="ui-input" placeholder="Иванов Иван">
+                <input type="text" name="name" id="name" class="ui-input name" placeholder="Иванов Иван">
                 <div class="popup-icon"></div>
               </div>
             </div>
@@ -45,7 +45,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="ui-checkbox">
-              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input">
               <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
             </div>
           </div>
@@ -58,6 +58,20 @@
     </form>
   </div>
 
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
   <script>
     $( document ).ready(function() {
       //acount add address
@@ -65,54 +79,151 @@
       let field = document.querySelector('.ui-field');
       let block = document.querySelector('.change-address-second .change-address-new');
       let blockSecond = document.querySelector('.change-address-second');
-      let count = 1;
+      let mainInputEmail = document.querySelector('.change-address-main #email');
+      let mainInputName = document.querySelector('.change-address-main #name');
+      let count = 0;
 
       blockSecond.addEventListener('click', (e) => {
-        if(e.target.classList[0] === 'change-address-remove') {
-          e.target.parentNode.parentNode.parentNode.remove()
+        let parentBlock = e.target.closest('.change-address-new');
+        let thisForm = e.target.closest('.change-address-main');
+        let findElement = e.target.closest('.change-address-inputs');
+        let thisElementClass = e.target.classList[0];
+
+        if(thisElementClass === 'change-address-remove') {
+          thisForm.remove();
+        }
+
+        if(thisForm === null) return
+
+        let inputEmail = thisForm.querySelector('.email');
+        let inputName = thisForm.querySelector('.name');
+
+        if(thisElementClass === 'change-address-basic') {
+          mainInputEmail.value = inputEmail.value;
+          mainInputName.value = inputName.value;
         }
       })
 
       btnAdd.addEventListener('click', () => {
         let blockDiv = document.createElement('div');
-        blockDiv.classList.add('change-address-main')
+        let countPlus = count++;
+
+        blockDiv.classList.add('change-address-main');
 
         blockDiv.innerHTML = `
-        <div class="change-address-headline">
-          <div class="change-address-title">
-            Аккаунт №${count++}
+          <div class="change-address-headline">
+            <div class="change-address-title">
+              Аккаунт №${count++}
+            </div>
+
+            <div class="change-address-control">
+              <div class="change-address-basic">Сделать основным</div>
+              <div class="change-address-remove">Удалить</div>
+            </div>
           </div>
 
-          <div class="change-address-control">
-            <div class="change-address-basic">Сделать основным</div>
-            <div class="change-address-remove">Удалить</div>
-          </div>
-        </div>
+          <div class="change-address-inputs">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="ui-field">
+                  <label class="ui-label ui-label-mini" for="email${countPlus}">Email</label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="email${countPlus}" id="email${countPlus}" class="ui-input email" placeholder="polina.ndv@tut.by">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
+              </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="name">Email</label>
-              <div class="ui-input-wrp">
-                <input type="text" name="name" id="name" class="ui-input" placeholder="polina.ndv@tut.by">
-                <div class="popup-icon"></div>
+              <div class="col-md-6">
+                <div class="ui-field">
+                  <label class="ui-label ui-label-mini" for="name${countPlus}">Имя</label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="name${countPlus}" id="name${countPlus}" class="ui-input name" placeholder="Иванов Иван">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="street">Имя</label>
-              <div class="ui-input-wrp">
-                <input type="text" name="street" id="street" class="ui-input" placeholder="Иванов Иван">
-                <div class="popup-icon"></div>
-              </div>
-            </div>
-          </div>
-        </div>
         `
 
         block.append(blockDiv)
       })
+
+      // validate form
+      $(".account-company-form").validate({
+        errorElement: "span",
+        rules: {
+          email: {
+            required: true,
+            email: true,
+            emailErrPerson: true,
+          },
+
+          name: {
+            required: true,
+            lettersonly: true,
+          },
+        },
+
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "customCheckbox") {
+            error.appendTo(".form-cell-field-send");
+          } else {
+            error.insertAfter(element);
+          }
+        },
+
+        messages: {
+          email: {
+            required: "Пожалуйста, введите ваш Email",
+            email: "Введите корректный email",
+            emailErrPerson: `<div class='inn-occupied'>
+            Пользователь не найден. <a href="#" class="mfp-link" data-href="./popups/sign-up-person.html">Регистрация</a>
+            </div>`,
+          },
+
+          name: {
+            required: "Введите своё ФИО",
+            lettersonly: "Введите корректное ФИО",
+          },
+        },
+      });
+
+      jQuery.validator.addMethod(
+        "emailErrPerson",
+        function (value, element) {
+          if(/123@gmail.com/.test(value))  {
+            return false;
+          } else {
+              return true
+          }
+        },
+        "Incorrect format"
+      );
+      jQuery.validator.addMethod(
+        "emailErrCompany",
+        function (value, element) {
+          if(/123@gmail.com/.test(value))  {
+            return false;
+          } else {
+              return true
+          }
+        },
+        "Incorrect format"
+      );
     });
   </script>
 </div>

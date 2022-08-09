@@ -1,9 +1,9 @@
-<div class="mfp-popup mfp-anim change-address">
+<div class="mfp-popup mfp-anim popup-bottom change-address">
   <div class="mfp-popup-title popup-review-title">
     Телефоны организации
   </div>
   <div class="change-address-body">
-    <form action="#">
+    <form action="#" class="company-phone-form">
       <div class="change-address-main">
         <div class="change-address-title">
           Основной телефон организации
@@ -12,18 +12,18 @@
         <div class="row">
           <div class="col-md-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="name">Телефон <span class="ui-color-red">*</span></label>
+              <label class="ui-label ui-label-mini" for="telephone">Телефон <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
-                <input type="text" name="name" id="name" class="ui-input" placeholder="+375 (29) 123-34-56">
+                <input type="text" name="telephone" id="telephone" class="ui-input telephone" placeholder="+375 (29) 123-34-56">
                 <div class="popup-icon"></div>
               </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="street">Контактное лицо <span class="ui-color-red">*</span></label>
+              <label class="ui-label ui-label-mini" for="name">Контактное лицо <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
-                <input type="text" name="street" id="street" class="ui-input" placeholder="Храменкова Полина Андреевна">
+                <input type="text" name="name" id="name" class="ui-input name" placeholder="Храменкова Полина Андреевна">
                 <div class="popup-icon"></div>
               </div>
             </div>
@@ -58,6 +58,20 @@
     </form>
   </div>
 
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
   <script>
     $( document ).ready(function() {
       //acount add address
@@ -65,54 +79,148 @@
       let field = document.querySelector('.ui-field');
       let block = document.querySelector('.change-address-second .change-address-new');
       let blockSecond = document.querySelector('.change-address-second');
-      let count = 1;
+      let mainInputPhone = document.querySelector('.change-address-main #telephone');
+      let mainInputName = document.querySelector('.change-address-main #name');
+      let count = 0;
 
       blockSecond.addEventListener('click', (e) => {
-        if(e.target.classList[0] === 'change-address-remove') {
-          e.target.parentNode.parentNode.parentNode.remove()
+        let parentBlock = e.target.closest('.change-address-new');
+        let thisForm = e.target.closest('.change-address-main');
+        let findElement = e.target.closest('.change-address-inputs');
+        let thisElementClass = e.target.classList[0];
+
+        if(thisElementClass === 'change-address-remove') {
+          thisForm.remove();
+        }
+
+        if(thisForm === null) return
+
+        let inputPhone = thisForm.querySelector('.telephone');
+        let inputName = thisForm.querySelector('.name');
+
+        if(thisElementClass === 'change-address-basic') {
+          mainInputPhone.value = inputPhone.value;
+          mainInputName.value = inputName.value;
         }
       })
 
       btnAdd.addEventListener('click', () => {
         let blockDiv = document.createElement('div');
-        blockDiv.classList.add('change-address-main')
+        let countPlus = count++;
+
+        blockDiv.classList.add('change-address-main');
 
         blockDiv.innerHTML = `
-        <div class="change-address-headline">
-          <div class="change-address-title">
-            Телефон №${count++}
+          <div class="change-address-headline">
+            <div class="change-address-title">
+              Телефон №${count++}
+            </div>
+
+            <div class="change-address-control">
+              <div class="change-address-basic">Сделать основным</div>
+              <div class="change-address-remove">Удалить</div>
+            </div>
           </div>
 
-          <div class="change-address-control">
-            <div class="change-address-basic">Сделать основным</div>
-            <div class="change-address-remove">Удалить</div>
-          </div>
-        </div>
+          <div class="change-address-inputs">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="ui-field">
+                  <label class="ui-label ui-label-mini" for="telephone${countPlus}">Телефон</label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="telephone${countPlus}" id="telephone${countPlus}" class="ui-input telephone" placeholder="+375 (29) 123-34-56">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
+              </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="name">Телефон <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="name" id="name" class="ui-input" placeholder="+375 (29) 123-34-56">
-                <div class="popup-icon"></div>
+              <div class="col-md-6">
+                <div class="ui-field">
+                  <label class="ui-label ui-label-mini" for="name${countPlus}">Контактное лицо</label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="name${countPlus}" id="name${countPlus}" class="ui-input name" placeholder="Храменкова Полина Андреевна">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="street">Контактное лицо <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="street" id="street" class="ui-input" placeholder="Храменкова Полина Андреевна">
-                <div class="popup-icon"></div>
-              </div>
-            </div>
-          </div>
-        </div>
         `
 
         block.append(blockDiv)
+
+        let element = document.querySelectorAll('input[class="ui-input telephone"]');
+
+        let maskOptions = {
+          mask: '+{000}(00)000-00-00'
+        };
+        for (let i = 0; i < element.length; i++){
+          let mask = IMask(element[i], maskOptions);
+        }
       })
+
+      // validate form
+      $(".company-phone-form").validate({
+        errorElement: "span",
+        rules: {
+          telephone: {
+            required: true,
+            minlength: 17,
+            // telephone: true,
+          },
+
+          name: {
+            required: true,
+            lettersonly: true,
+          },
+        },
+
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "customCheckbox") {
+            error.appendTo(".form-cell-field-send");
+          } else {
+            error.insertAfter(element);
+          }
+        },
+
+        messages: {
+          telephone: {
+            required: "Введите данные",
+            minlength: "Введите полный номер",
+          },
+
+          name: {
+            required: "Введите своё ФИО",
+            lettersonly: "Введите корректное ФИО",
+          },
+        },
+      });
+
+      jQuery.validator.addMethod(
+        "lettersonly",
+        function (value, element) {
+          return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+        },
+        "Incorrect format"
+      );
+
+      var phoneMask = IMask(
+      document.getElementById('telephone'), {
+        mask: '+{000}(00)000-00-00'
+      });
+
     });
   </script>
 </div>

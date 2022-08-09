@@ -3,7 +3,7 @@
     Личные телефоны
   </div>
   <div class="phone-editor-body">
-    <form action="#">
+    <form action="#" class="phone-editor-form">
       <div class="phone-editor-main">
         <div class="phone-editor-title">
           Основной телефон для связи
@@ -12,7 +12,7 @@
         <div class="ui-field">
           <label class="ui-label ui-label-mini" for="telephone">Телефон <span class="ui-color-red">*</span></label>
           <div class="ui-input-wrp">
-            <input type="text" name="telephone" id="telephone" class="ui-input" placeholder="+375 (33) 398 18 18">
+            <input type="text" name="telephone" id="telephone" class="ui-input telephone" placeholder="+375 (33) 398 18 18">
             <div class="popup-icon"></div>
           </div>
         </div>
@@ -58,37 +58,105 @@
       let field = document.querySelector('.ui-field');
       let block = document.querySelector('.phone-editor-second .phone-editor-new');
       let blockSecond = document.querySelector('.phone-editor-second');
+      let inputMain = document.querySelector('.phone-editor-main #telephone');
       let count = 0;
 
       blockSecond.addEventListener('click', (e) => {
-        if(e.target.classList[0] === 'phone-editor-remove') {
-          e.target.parentNode.parentNode.parentNode.remove()
+        let parentBlock = e.target.closest('.ui-field');
+        let thisElementClass = e.target.classList[0];
+
+        if(parentBlock === null) return
+
+        console.log(thisElementClass)
+
+        let inputPhone = parentBlock.querySelector('.ui-input.telephone');
+
+        if(thisElementClass === 'phone-editor-remove') {
+          parentBlock.remove();
+        }
+
+        if(thisElementClass === 'phone-editor-basic') {
+          inputMain.value = inputPhone.value;
         }
       })
 
       btnAdd.addEventListener('click', () => {
         let blockDiv = document.createElement('div');
-        let countPlus = count++
+        let countPlus = count++;
 
         blockDiv.innerHTML = `
-          <div class="ui-field">
-            <div class="phone-editor-headline">
-              <label class="ui-label ui-label-mini" for="telephone${countPlus}">Телефон </label>
+            <div class="ui-field">
+              <div class="phone-editor-headline">
+                <label class="ui-label ui-label-mini" for="telephone${countPlus}">Телефон </label>
 
-              <div class="phone-editor-control">
-                <div class="phone-editor-basic">Сделать основным</div>
-                <div class="phone-editor-remove">Удалить</div>
+                <div class="phone-editor-control">
+                  <div class="phone-editor-basic">Сделать основным</div>
+                  <div class="phone-editor-remove">Удалить</div>
+                </div>
+              </div>
+
+              <div class="ui-input-wrp">
+                <input type="text" name="telephone${countPlus}" id="telephone${countPlus}" class="ui-input telephone" placeholder="+375 (33) 398 18 18">
+
               </div>
             </div>
-            <div class="ui-input-wrp">
-              <input type="text" name="telephone${countPlus}" id="telephone${countPlus}" class="ui-input" placeholder="+375 (33) 398 18 18">
-              <div class="popup-icon"></div>
-            </div>
-          </div>
-        `
+          `
+        block.append(blockDiv);
 
-        block.append(blockDiv)
+        let element = document.querySelectorAll('input[class="ui-input telephone"]');
+        let maskOptions = {
+          mask: '+{000}(00)000-00-00'
+        };
+
+        for(let i = 0; i < element.length; i++){
+          let mask = IMask(element[i], maskOptions);
+        }
       })
+    });
+
+    $( document ).ready(function() {
+      // validate form
+      $(".phone-editor-form").validate({
+        errorElement: "span",
+        rules: {
+          telephone: {
+            required: true,
+            minlength: 17,
+          },
+        },
+
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "customCheckbox") {
+            error.appendTo(".form-cell-field-send");
+          } else {
+            error.insertAfter(element);
+          }
+        },
+
+        messages: {
+          telephone: {
+            required: "Введите данные",
+            minlength: "Введите полный номер",
+          },
+        },
+      });
+
+      var phoneMask = IMask(
+      document.getElementById('telephone'), {
+        mask: '+{000}(00)000-00-00'
+      });
     });
   </script>
 </div>

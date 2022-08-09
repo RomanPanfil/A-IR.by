@@ -3,7 +3,7 @@
     Адреса
   </div>
   <div class="change-address-body">
-    <form action="#">
+    <form action="#" class="change-address-form">
       <div class="change-address-main">
         <div class="change-address-title">
           Основной адрес доставки
@@ -12,9 +12,9 @@
         <div class="row">
           <div class="col-md-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="name">Населённый пункт <span class="ui-color-red">*</span></label>
+              <label class="ui-label ui-label-mini" for="locality">Населённый пункт <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
-                <input type="text" name="name" id="name" class="ui-input" placeholder="Минск">
+                <input type="text" name="locality" id="locality" class="ui-input locality" placeholder="Минск">
                 <div class="popup-icon"></div>
               </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="ui-field">
               <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
-                <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
+                <input type="text" name="street" id="street" class="ui-input street" placeholder="Первомайская">
                 <div class="popup-icon"></div>
               </div>
             </div>
@@ -33,54 +33,54 @@
         <div class="row">
           <div class="col-md-2 col-ss-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Дом <span class="ui-color-red">*</span></label>
+              <label class="ui-label ui-label-mini" for="house">Дом <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <input type="text" name="house" id="house" class="ui-input house">
                 <div class="popup-icon"></div>
               </div>
             </div>
           </div>
           <div class="col-md-2 col-ss-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Корпус</label>
+              <label class="ui-label ui-label-mini" for="building ">Корпус</label>
               <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <input type="text" name="building " id="building" class="ui-input building">
                 <div class="popup-icon"></div>
               </div>
             </div>
           </div>
           <div class="col-md-2 col-ss-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Квартира/Офис</label>
+              <label class="ui-label ui-label-mini" for="apartment">Квартира/Офис</label>
               <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <input type="text" name="apartment" id="apartment" class="ui-input apartment">
                 <div class="popup-icon"></div>
               </div>
             </div>
           </div>
           <div class="col-md-2 col-ss-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Подъезд</label>
+              <label class="ui-label ui-label-mini" for="entrance">Подъезд</label>
               <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <input type="text" name="entrance" id="entrance" class="ui-input entrance">
                 <div class="popup-icon"></div>
               </div>
             </div>
           </div>
           <div class="col-md-2 col-ss-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Этаж</label>
+              <label class="ui-label ui-label-mini" for="floor">Этаж</label>
               <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <input type="text" name="floor" id="floor" class="ui-input floor">
                 <div class="popup-icon"></div>
               </div>
             </div>
           </div>
           <div class="col-md-2 col-ss-6">
             <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Код домофона</label>
+              <label class="ui-label ui-label-mini" for="intercomCode">Код домофона</label>
               <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
+                <input type="text" name="intercomCode" id="intercomCode" class="ui-input intercomCode">
                 <div class="popup-icon"></div>
               </div>
             </div>
@@ -122,11 +122,47 @@
       let field = document.querySelector('.ui-field');
       let block = document.querySelector('.change-address-second .change-address-new');
       let blockSecond = document.querySelector('.change-address-second');
+      let mainInputLocality = document.querySelector('.locality');
+      let mainInputStreet = document.querySelector('.change-address-main .street');
+      let mainInputHouse = document.querySelector('.change-address-main .house');
+      let mainInputBuilding = document.querySelector('.change-address-main .building');
+      let mainInputApartment = document.querySelector('.change-address-main .apartment');
+      let mainInputEntrance = document.querySelector('.change-address-main .entrance');
+      let mainInputFloor = document.querySelector('.change-address-main .floor');
+      let mainInputIntercomCode = document.querySelector('.change-address-main .intercomCode');
       let count = 1;
 
+
       blockSecond.addEventListener('click', (e) => {
-        if(e.target.classList[0] === 'change-address-remove') {
-          e.target.parentNode.parentNode.parentNode.remove()
+        let parentBlock = e.target.closest('.change-address-new');
+        let thisForm = e.target.closest('.change-address-main');
+        let thisElementClass = e.target.classList[0];
+        let findElement = e.target.closest('.change-address-inputs');
+
+        if(thisElementClass === 'change-address-remove') {
+          thisForm.remove();
+        }
+
+        if(thisForm === null) return
+
+        let inputLocality = thisForm.querySelector('.locality');
+        let inputStreet = thisForm.querySelector('.street');
+        let inputHouse = thisForm.querySelector('.house');
+        let inputApartment = thisForm.querySelector('.apartment');
+        let inputBuilding = thisForm.querySelector('.building');
+        let inputEntrance = thisForm.querySelector('.entrance');
+        let inputFloor = thisForm.querySelector('.floor');
+        let inputIntercomCode = thisForm.querySelector('.intercomCode');
+
+        if(thisElementClass === 'change-address-basic') {
+          mainInputLocality.value = inputLocality.value;
+          mainInputStreet.value = inputStreet.value;
+          mainInputHouse.value = inputHouse.value;
+          mainInputBuilding.value = inputBuilding.value;
+          mainInputApartment.value = inputApartment.value;
+          mainInputEntrance.value = inputEntrance.value;
+          mainInputFloor.value = inputFloor.value;
+          mainInputIntercomCode.value = inputIntercomCode.value;
         }
       })
 
@@ -146,79 +182,81 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="name">Населённый пункт <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="name" id="name" class="ui-input" placeholder="Минск">
-                <div class="popup-icon"></div>
+        <div class="change-address-inputs">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="locality">Населённый пункт</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="locality" id="locality" class="ui-input locality" placeholder="Минск">
+                  <div class="popup-icon"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="street">Улица</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="street" id="street" class="ui-input street" placeholder="Первомайская">
+                  <div class="popup-icon"></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
-                <div class="popup-icon"></div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-2 col-ss-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Дом <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
-                <div class="popup-icon"></div>
+          <div class="row">
+            <div class="col-md-2 col-ss-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="house">Дом</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="house" id="house" class="ui-input house">
+                  <div class="popup-icon"></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 col-ss-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Корпус</label>
-              <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
-                <div class="popup-icon"></div>
+            <div class="col-md-2 col-ss-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="building">Корпус</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="building" id="building" class="ui-input building">
+                  <div class="popup-icon"></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 col-ss-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Квартира/Офис</label>
-              <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
-                <div class="popup-icon"></div>
+            <div class="col-md-2 col-ss-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="apartment">Квартира/Офис</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="apartment" id="apartment" class="ui-input apartment">
+                  <div class="popup-icon"></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 col-ss-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Подъезд</label>
-              <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
-                <div class="popup-icon"></div>
+            <div class="col-md-2 col-ss-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="entrance">Подъезд</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="entrance" id="entrance" class="ui-input entrance">
+                  <div class="popup-icon"></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 col-ss-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Этаж</label>
-              <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
-                <div class="popup-icon"></div>
+            <div class="col-md-2 col-ss-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="floor">Этаж</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="floor" id="floor" class="ui-input floor">
+                  <div class="popup-icon"></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-2 col-ss-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="telephone">Код домофона</label>
-              <div class="ui-input-wrp">
-                <input type="text" name="telephone" id="telephone" class="ui-input">
-                <div class="popup-icon"></div>
+            <div class="col-md-2 col-ss-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="intercomCode">Код домофона</label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="intercomCode" id="intercomCode" class="ui-input intercomCode">
+                  <div class="popup-icon"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -227,6 +265,64 @@
 
         block.append(blockDiv)
       })
+
+      $(".change-address-form").validate({
+      errorElement: "span",
+      rules: {
+        locality: {
+          required: true,
+          lettersonly: true,
+        },
+
+        street: {
+          required: true,
+          lettersonly: true,
+        },
+
+        house: {
+          required: true,
+          number: true,
+        },
+      },
+
+      highlight: function(element, errorClass, validClass) {
+        $(element).addClass(errorClass).removeClass(validClass);
+        $(element).closest('.ui-field').find('.popup-icon')
+          .addClass(errorClass).removeClass(validClass);
+
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).removeClass(errorClass).addClass(validClass);
+        $(element).closest('.ui-field').find('.popup-icon')
+          .removeClass(errorClass).addClass(validClass);
+      },
+
+      errorPlacement: function (error, element) {
+        if (element.attr("name") == "customCheckbox") {
+          error.appendTo(".form-cell-field-send");
+        } else {
+          error.insertAfter(element);
+        }
+      },
+
+      messages: {
+        locality: {
+          required: "Введите населенный пункт",
+          lettersonly: "Введите данные",
+        },
+
+
+        street: {
+          required: "Введите улицу",
+          lettersonly: "Введите данные",
+        },
+
+        house: {
+          required: "Введите номер дома",
+          number: "Введите данные",
+        },
+      },
+    });
     });
   </script>
 </div>

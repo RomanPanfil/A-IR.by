@@ -11322,6 +11322,21 @@ button.mfp-close:hover:after,
     margin-bottom: 15px;
   }
 }
+.account .ui-field-wrapper select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+@media (max-width: 1024.99px) {
+  .account .ui-field-wrapper .catalog-settings-amount {
+    display: block;
+  }
+}
+.account .ui-input-wrp img {
+  position: absolute;
+  right: 16px;
+  top: 8px;
+}
 .account .ui-checkbox {
   margin-bottom: 21px;
   font-size: 12px;
@@ -11343,6 +11358,49 @@ button.mfp-close:hover:after,
   margin-bottom: 23px;
   font-weight: 600;
   font-size: 14px;
+}
+.account-select {
+  overflow: visible;
+  padding: 0 16px !important;
+}
+.account-select .catalog-settings-select {
+  width: 100%;
+}
+.account-select .jq-selectbox__trigger-arrow {
+  right: 16px;
+}
+.account .jq-selectbox__select {
+  display: block;
+  height: 40px !important;
+  line-height: 38px !important;
+  width: 100%;
+  max-width: 100%;
+  background: #fff;
+  padding: 0px 16px !important;
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid #D3D3D3 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  -webkit-transition: 0.3s border, 0.3s color;
+  -o-transition: 0.3s border, 0.3s color;
+  transition: 0.3s border, 0.3s color;
+  border-radius: 5px;
+  outline: none;
+}
+.account .jq-selectbox {
+  display: block !important;
+}
+.account .jq-selectbox__trigger-arrow {
+  right: 16px !important;
+}
+.account .xdsoft_datetimepicker .xdsoft_calendar td > div {
+  padding-right: 0;
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {
@@ -11367,6 +11425,149 @@ input[type=date]::-webkit-calendar-picker-indicator {
 
 input[type=date] {
   background: url(../../images/calendar.svg) no-repeat 90% 40%;
+}
+
+.xdsoft_timepicker {
+  display: none !important;
+}
+
+.xdsoft_today_button {
+  display: none !important;
+}
+
+.xdsoft_prev {
+  display: none !important;
+}
+
+.xdsoft_next {
+  display: none !important;
+}
+
+.xdsoft_datetimepicker * {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar th {
+  color: #2A4455 !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td,
+.xdsoft_datetimepicker .xdsoft_calendar th {
+  background: transparent !important;
+  border: none !important;
+  color: #000 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+  background: #F5F5F5 !important;
+  border: none !important;
+  color: #2A4455 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-radius: 5px !important;
+}
+
+.xdsoft_datetimepicker {
+  border-radius: 8px !important;
+  border: none;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select {
+  top: -150px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_monthselect {
+  right: 27px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option {
+  background: #fff !important;
+  color: #000 !important;
+  padding: 5px 8px !important;
+  font-weight: 400;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {
+  color: #2A4455 !important;
+  background: #F5F5F5 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border-radius: 5px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td,
+.xdsoft_datetimepicker .xdsoft_calendar th {
+  text-align: center !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td:hover,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:hover {
+  color: #000 !important;
+  background: transparent !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar td > div:hover {
+  color: #000 !important;
+  background: transparent !important;
+  border: 1px solid #D3D3D3 !important;
+  border-radius: 5px !important;
+  padding: 2px 4px;
+}
+
+.xdsoft_datetimepicker .xdsoft_datepicker {
+  width: 200px !important;
+  margin-left: 0 !important;
+  padding: 0 16px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar thead th {
+  color: #2A4455 !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_month span {
+  color: #2A4455 !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_month {
+  width: 115px !important;
+  text-align: start !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_year span {
+  color: #2A4455 !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select {
+  min-height: auto !important;
+  border: none !important;
+  border-radius: 10px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect div:first-child {
+  position: relative !important;
+  top: 150px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select {
+  max-height: 300px !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select::after {
+  content: "";
+  background: url(../../images/up-arrow.svg) no-repeat 0 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  bottom: 250px;
+}
+
+.xdsoft_scrollbar > .xdsoft_scroller::after {
+  content: none !important;
 }
 
 .phone-editor {
@@ -11441,6 +11642,9 @@ input[type=date] {
 .phone-editor-second .phone-editor-title {
   margin-bottom: 18px;
 }
+.phone-editor-second .ui-input.valid {
+  border-color: #D3D3D3;
+}
 .phone-editor-btn {
   font-weight: 400;
   font-size: 16px;
@@ -11514,6 +11718,7 @@ input[type=date] {
   border-radius: 10px;
   padding: 35px 48px;
   position: relative;
+  overflow: hidden;
 }
 @media (max-width: 576px) {
   .update-company {
@@ -11555,6 +11760,38 @@ input[type=date] {
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 20px;
+}
+.update-company .account-body {
+  height: 568px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: -25px -48px 0 -48px;
+  padding: 25px 48px 0 48px;
+}
+.update-company .update-company-confirm {
+  padding-top: 40px;
+  position: relative;
+  -webkit-box-shadow: 0px -4px 3px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px -4px 3px rgba(0, 0, 0, 0.08);
+  margin: 0 -48px;
+  padding: 40px 48px 0 48px;
+}
+@media (max-width: 576px) {
+  .update-company .update-company-confirm {
+    padding-top: 25px;
+  }
+}
+
+.account-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.account-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.account-body::-webkit-scrollbar-thumb {
+  background-color: #D3D3D3;
 }
 
 .change-address {
@@ -11648,6 +11885,8 @@ input[type=date] {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .change-address-control {
   display: -webkit-box;
