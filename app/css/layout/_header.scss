@@ -715,3 +715,69 @@
   border-bottom: 1px solid #d3d3d3;
 }
 
+.nav-account {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  @media(max-width:1400px){
+    margin-right: -40px;
+    padding-right: 40px;
+  }
+  
+    &-link {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-right: 75px;
+      height: 55px;
+      white-space: nowrap;
+      color: #000;
+      border-bottom:2px solid transparent ;
+
+      &:hover {
+        border-bottom: 2px solid #2A4455;
+      }
+
+      &-label {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 8px;
+        right: -8px;
+        background-color:$colorRed;
+        border-radius: 50%;
+        color: #ffffff;
+        @include fz(12);
+        text-align: center;
+      }
+    }
+
+    a:last-child{
+      margin-right: 0;
+    }
+
+    .nav-active {
+      border-bottom: 2px solid #2A4455;
+      color: #2A4455;
+    }
+}
+
+.nav-body{
+  border-top: 1px solid #F5F5F5;
+  box-shadow: 0 6px 3px -4px rgba(0, 0, 0, .1);
+}
+
+.nav-account::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.nav-account {
+  -ms-overflow-style: none;
+}
+
+.nav-account {
+  overflow: -moz-scrollbars-none;
+}
