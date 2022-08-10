@@ -45,8 +45,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="ui-checkbox">
-              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
-              <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+              <div class="ui-checkbox-body">
+                <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" name="customCheckbox" checked="">
+                <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+              </div>
             </div>
           </div>
 
@@ -152,7 +154,7 @@
         let element = document.querySelectorAll('input[class="ui-input telephone"]');
 
         let maskOptions = {
-          mask: '+{000}(00)000-00-00'
+          mask: '+{375}(00)000-00-00'
         };
         for (let i = 0; i < element.length; i++){
           let mask = IMask(element[i], maskOptions);
@@ -173,6 +175,10 @@
             required: true,
             lettersonly: true,
           },
+
+          customCheckbox: {
+            required: true,
+          }
         },
 
         highlight: function(element, errorClass, validClass) {
@@ -193,6 +199,10 @@
           } else {
             error.insertAfter(element);
           }
+
+          if (element.hasClass('ui-checkbox-input')) {
+            element.closest('.ui-checkbox-body').after(error);
+          }
         },
 
         messages: {
@@ -205,6 +215,10 @@
             required: "Введите своё ФИО",
             lettersonly: "Введите корректное ФИО",
           },
+
+          customCheckbox: {
+            required: 'Подтвердите ваше согласие с условиями'
+          }
         },
       });
 
@@ -218,7 +232,7 @@
 
       var phoneMask = IMask(
       document.getElementById('telephone'), {
-        mask: '+{000}(00)000-00-00'
+        mask: '+{375}(00)000-00-00'
       });
 
     });

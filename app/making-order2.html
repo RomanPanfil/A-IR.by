@@ -113,8 +113,8 @@
                       <span class="subtitle">Дополнительный адрес доставки</span>
                     </label>
                   </div>
-                  <div class="making-order-select">
-                    <input type="radio" id="address4" name="select">
+                  <div class="making-order-select other">
+                    <input type="radio" id="address4" name="select" class="other">
                     <label for="address4">
                       Доставка на другой адрес <br>
                       <span class="subtitle">Добавление нового адреса доставки</span>
@@ -122,77 +122,79 @@
                   </div>
                 </div>
 
-                <div class="row flex">
-                  <div class="col-xs-6">
-                    <div class="ui-field">
-                      <label class="ui-label ui-label-mini" for="locality">Населённый пункт <span class="ui-color-red">*</span></label>
-                      <div class="ui-input-wrp">
-                        <input type="text" name="locality" id="locality" class="ui-input" placeholder="Минск">
-                        <div class="popup-icon"></div>
+                <div class="making-order-form">
+                  <div class="row flex">
+                    <div class="col-xs-6">
+                      <div class="ui-field">
+                        <label class="ui-label ui-label-mini" for="locality">Населённый пункт <span class="ui-color-red">*</span></label>
+                        <div class="ui-input-wrp">
+                          <input type="text" name="locality" id="locality" class="ui-input" placeholder="Минск">
+                          <div class="popup-icon"></div>
+                        </div>
+                      </div>
+
+                      <div class="ui-field">
+                        <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
+                        <div class="ui-input-wrp">
+                          <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
+                          <div class="popup-icon"></div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-us-4 col-ss-6">
+                          <div class="ui-field">
+                            <label class="ui-label ui-label-mini" for="house">Дом <span class="ui-color-red">*</span></label>
+                            <div class="ui-input-wrp">
+                              <input type="text" name="house" id="house" class="ui-input">
+                              <div class="popup-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-us-4 col-ss-6">
+                          <div class="ui-field">
+                            <label class="ui-label ui-label-mini" for="building ">Корпус</label>
+                            <div class="ui-input-wrp">
+                              <input type="text" name="building " id="building " class="ui-input">
+                              <div class="popup-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-us-4 col-ss-6">
+                          <div class="ui-field">
+                            <label class="ui-label ui-label-mini" for="apartment">Квартира/Офис </label>
+                            <div class="ui-input-wrp">
+                              <input type="text" name="apartment" id="apartment" class="ui-input">
+                              <div class="popup-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-us-4 col-ss-6">
+                          <div class="ui-field">
+                            <label class="ui-label ui-label-mini" for="entrance">Подъезд </label>
+                            <div class="ui-input-wrp">
+                              <input type="text" name="entrance" id="entrance" class="ui-input">
+                              <div class="popup-icon"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-us-4 col-ss-6">
+                          <div class="ui-field">
+                            <label class="ui-label ui-label-mini" for="floor">Этаж </label>
+                            <div class="ui-input-wrp">
+                              <input type="text" name="floor" id="floor" class="ui-input">
+                              <div class="popup-icon"></div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="ui-field">
-                      <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
-                      <div class="ui-input-wrp">
-                        <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
-                        <div class="popup-icon"></div>
+                    <div class="col-xs-6">
+                      <div class="making-order-comment">
+                        <span>Комментарий</span>
+                        <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
                       </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-us-4 col-ss-6">
-                        <div class="ui-field">
-                          <label class="ui-label ui-label-mini" for="house">Дом <span class="ui-color-red">*</span></label>
-                          <div class="ui-input-wrp">
-                            <input type="text" name="house" id="house" class="ui-input">
-                            <div class="popup-icon"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-us-4 col-ss-6">
-                        <div class="ui-field">
-                          <label class="ui-label ui-label-mini" for="building ">Корпус</label>
-                          <div class="ui-input-wrp">
-                            <input type="text" name="building " id="building " class="ui-input">
-                            <div class="popup-icon"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-us-4 col-ss-6">
-                        <div class="ui-field">
-                          <label class="ui-label ui-label-mini" for="apartment">Квартира/Офис </label>
-                          <div class="ui-input-wrp">
-                            <input type="text" name="apartment" id="apartment" class="ui-input">
-                            <div class="popup-icon"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-us-4 col-ss-6">
-                        <div class="ui-field">
-                          <label class="ui-label ui-label-mini" for="entrance">Подъезд </label>
-                          <div class="ui-input-wrp">
-                            <input type="text" name="entrance" id="entrance" class="ui-input">
-                            <div class="popup-icon"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-us-4 col-ss-6">
-                        <div class="ui-field">
-                          <label class="ui-label ui-label-mini" for="floor">Этаж </label>
-                          <div class="ui-input-wrp">
-                            <input type="text" name="floor" id="floor" class="ui-input">
-                            <div class="popup-icon"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xs-6">
-                    <div class="making-order-comment">
-                      <span>Комментарий</span>
-                      <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
                     </div>
                   </div>
                 </div>

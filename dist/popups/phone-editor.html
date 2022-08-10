@@ -29,8 +29,10 @@
       </div>
 
       <div class="ui-checkbox">
-        <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
-        <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+        <div class="ui-checkbox-body">
+          <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" name="customCheckbox" checked="">
+          <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+        </div>
       </div>
 
       <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Сохранить</button>
@@ -66,8 +68,6 @@
         let thisElementClass = e.target.classList[0];
 
         if(parentBlock === null) return
-
-        console.log(thisElementClass)
 
         let inputPhone = parentBlock.querySelector('.ui-input.telephone');
 
@@ -105,7 +105,7 @@
 
         let element = document.querySelectorAll('input[class="ui-input telephone"]');
         let maskOptions = {
-          mask: '+{000}(00)000-00-00'
+          mask: '+{375}(00)000-00-00'
         };
 
         for(let i = 0; i < element.length; i++){
@@ -123,6 +123,10 @@
             required: true,
             minlength: 17,
           },
+
+          customCheckbox: {
+            required: true,
+          }
         },
 
         highlight: function(element, errorClass, validClass) {
@@ -143,6 +147,10 @@
           } else {
             error.insertAfter(element);
           }
+
+          if (element.hasClass('ui-checkbox-input')) {
+            element.closest('.ui-checkbox-body').after(error);
+          }
         },
 
         messages: {
@@ -150,12 +158,16 @@
             required: "Введите данные",
             minlength: "Введите полный номер",
           },
+
+          customCheckbox: {
+            required: 'Подтвердите ваше согласие с условиями'
+          }
         },
       });
 
       var phoneMask = IMask(
       document.getElementById('telephone'), {
-        mask: '+{000}(00)000-00-00'
+        mask: '+{375}(00)000-00-00'
       });
     });
   </script>

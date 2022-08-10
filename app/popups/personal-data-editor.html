@@ -33,7 +33,7 @@
               <label class="ui-label ui-label-mini" for="date">Дата рождения <span class="ui-color-red">*</span></label>
               <div class="ui-input-wrp">
                 <input id="datetimepicker" name="date" type="text" class="ui-input">
-                <img src="../images/calendar.svg" alt="alt">
+                <img src="./images/calendar.svg" alt="alt">
                 <div class="popup-icon"></div>
               </div>
             </div>
@@ -57,11 +57,13 @@
         </div>
       </div>
 
-      <a href="#" class="account-link">Изменить / Восстановить пароль</a>
+      <a class="account-link mfp-link" href="javascript:void(0)" data-href="./popups/password.html">Изменить / Восстановить пароль</a>
 
       <div class="ui-checkbox">
-        <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
-        <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+        <div class="ui-checkbox-body">
+          <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" name="customCheckbox" checked="">
+          <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+        </div>
       </div>
 
       <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Сохранить</button>
@@ -128,6 +130,10 @@
 
           catalog_amount: {
             required: true,
+          },
+
+          customCheckbox: {
+            required: true,
           }
         },
 
@@ -150,8 +156,11 @@
             error.insertAfter(element);
           }
 
-          if ( element.hasClass('catalog-settings-select')) {
+          if (element.hasClass('catalog-settings-select')) {
             element.closest('.jq-selectbox').after(error);
+          }
+          if (element.hasClass('ui-checkbox-input')) {
+            element.closest('.ui-checkbox-body').after(error);
           }
         },
 
@@ -181,10 +190,12 @@
 
           catalog_amount: {
             required: 'Введите данные'
+          },
+
+          customCheckbox: {
+            required: 'Подтвердите ваше согласие с условиями'
           }
         },
-
-
       });
     });
   </script>

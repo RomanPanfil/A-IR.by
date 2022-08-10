@@ -1439,7 +1439,7 @@ jQuery(document).ready(function($){
         email: {
             required: true,
             email: true,
-            emailErr: true,
+            // emailErr: true,
         },
 
         telephone: {
@@ -1527,10 +1527,7 @@ jQuery(document).ready(function($){
 
         email: {
           required: "Введите свой email",
-          email: "Введите корректное email",
-          emailErr: `<div class='inn-occupied'>
-          Пользователь уже существует <a href="#">Войти</a>
-          </div>`
+          email: "Введите корректный email",
         },
 
         telephone: {
@@ -1601,17 +1598,17 @@ jQuery(document).ready(function($){
       },
       "Incorrect format"
     );
-    jQuery.validator.addMethod(
-      "emailErrCompany",
-      function (value, element) {
-        if(/123@gmail.com/.test(value))  {
-          return false;
-        } else {
-            return true
-        }
-      },
-      "Incorrect format"
-    );
+    // jQuery.validator.addMethod(
+    //   "emailErrCompany",
+    //   function (value, element) {
+    //     if(/123@gmail.com/.test(value))  {
+    //       return false;
+    //     } else {
+    //         return true
+    //     }
+    //   },
+    //   "Incorrect format"
+    // );
 
     jQuery.validator.addMethod(
         "lettersonly",
@@ -1636,4 +1633,18 @@ jQuery(document).ready(function($){
         }
       }
     })();
+
+    let allInputs = document.querySelector('.making-order-myAddress');
+    let otherAddressForm = document.querySelector('.making-order-form');
+
+    if(allInputs && otherAddressForm) {
+      allInputs.addEventListener('click', (e) => {
+        if(e.target.classList[0] === 'other') {
+          otherAddressForm.style.display = 'block'
+        } else {
+          otherAddressForm.style.display = 'none'
+        }
+      })
+    }
+
 });//ready
