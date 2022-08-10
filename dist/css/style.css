@@ -3719,10 +3719,10 @@ textarea.ui-input {
 
 .ui-rating-star {
   display: inline-block;
-  background: url(../../images/star-grey.svg) repeat 0 0;
+  background: url(.././images/star-grey.svg) repeat 0 0;
 }
 .ui-rating-star.active {
-  background: url(../../images/star.svg) repeat 0 0;
+  background: url(.././images/star.svg) repeat 0 0;
 }
 .ui-rating-star.large {
   width: 34px;
@@ -11298,17 +11298,13 @@ button.mfp-close:hover:after,
 
 .account {
   max-width: 520px;
-  margin: 20px auto;
   background-color: #ffffff;
-  border-radius: 10px;
   padding: 35px 48px;
   position: relative;
 }
 @media (max-width: 576px) {
   .account {
-    margin: auto 0 0 0;
     padding: 24px 15px;
-    border-radius: 0;
     max-width: 100%;
   }
 }
@@ -11545,12 +11541,12 @@ input[type=date] {
   background: transparent !important;
   border: 1px solid #D3D3D3 !important;
   border-radius: 5px !important;
-  padding: 2px 4px;
+  padding: 2px 4px !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar td > div {
   border: 1px solid transparent !important;
-  padding: 2px 4px;
+  padding: 2px 4px !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_datepicker {
@@ -11638,8 +11634,8 @@ input[type=date] {
 .xdsoft_datetimepicker .xdsoft_calendar::after {
   content: "";
   position: absolute;
-  left: -16px;
-  right: -24px;
+  left: -15px;
+  right: -15px;
   height: 1px;
   top: 0;
   background-color: #D3D3D3;
@@ -11668,17 +11664,13 @@ input[type=date] {
 
 .phone-editor {
   max-width: 520px;
-  margin: 20px auto;
   background-color: #ffffff;
-  border-radius: 10px;
   padding: 35px 48px;
   position: relative;
 }
 @media (max-width: 576px) {
   .phone-editor {
-    margin: auto 0 0 0;
     padding: 24px 15px;
-    border-radius: 0;
     max-width: 100%;
   }
 }
@@ -11772,10 +11764,16 @@ input[type=date] {
   cursor: pointer;
   border-right: 1px solid #808080;
 }
+.phone-editor-basic:hover {
+  color: #2A4455;
+}
 .phone-editor-remove {
   color: #808080;
   padding-left: 8px;
   cursor: pointer;
+}
+.phone-editor-remove:hover {
+  color: #606060;
 }
 
 .popup-alert .update {
@@ -11805,6 +11803,9 @@ input[type=date] {
   display: block;
   text-align: center;
   margin-top: 15px;
+}
+.popup-alert .ui-btn {
+  white-space: normal;
 }
 
 .update-company {
@@ -11897,17 +11898,13 @@ input[type=date] {
 
 .change-address {
   max-width: 964px;
-  margin: 20px auto;
   background-color: #ffffff;
-  border-radius: 10px;
   padding: 35px 48px;
   position: relative;
 }
 @media (max-width: 576px) {
   .change-address {
     max-width: 100%;
-    border-radius: 0;
-    margin: 0;
     padding: 24px 15px;
   }
 }
@@ -12001,9 +11998,15 @@ input[type=date] {
   cursor: pointer;
   border-right: 1px solid #808080;
 }
+.change-address-basic:hover {
+  color: #2A4455;
+}
 .change-address-remove {
   color: #808080;
   padding-left: 8px;
   cursor: pointer;
+}
+.change-address-remove:hover {
+  color: #606060;
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */

@@ -1,15 +1,15 @@
 .account {
   max-width: 520px;
-  margin: 20px auto;
+  // margin: 20px auto;
   background-color: #ffffff;
-  border-radius: 10px;
+  // border-radius: 10px;
   padding: 35px 48px;
   position: relative;
 
   @media(max-width: 576px) {
-    margin: auto 0 0 0;
+    // margin: auto 0 0 0;
     padding: 24px 15px;
-    border-radius: 0;
+    // border-radius: 0;
     max-width: 100%;
   }
 
@@ -264,12 +264,12 @@ input[type="date"] {
   background: transparent !important;
   border: 1px solid #D3D3D3 !important;
   border-radius: 5px !important;
-  padding: 2px 4px;
+  padding: 2px 4px !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_calendar td>div {
   border: 1px solid transparent !important;
-  padding: 2px 4px;
+  padding: 2px 4px !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_datepicker {
@@ -365,8 +365,8 @@ input[type="date"] {
   &::after {
     content: "";
     position: absolute;
-    left: -16px;
-    right: -24px;
+    left: -15px;
+    right: -15px;
     height: 1px;
     top: 0;
     background-color: #D3D3D3;

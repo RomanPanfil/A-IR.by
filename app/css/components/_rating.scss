@@ -99,10 +99,10 @@
 
 .ui-rating-star {
   display: inline-block;
-  background: url(../../images/star-grey.svg) repeat 0 0;
+  background: url(.././images/star-grey.svg) repeat 0 0;
 
   &.active {
-    background: url(../../images/star.svg) repeat 0 0;
+    background: url(.././images/star.svg) repeat 0 0;
   }
 
   &.large {
