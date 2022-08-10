@@ -18,7 +18,7 @@ let path = {
     html: app + "/*.html",
     css: app + "/css/*.scss",
     js: app + "/js/*.js",
-    images: ["!app/images/svg/**/*", app + "/images/**/*.{jpg,jpeg,png,gif,ico,webp, svg}"],
+    images: ["!app/images/svg/**/*", app + "/images/**/*.{jpg,jpeg,png,gif,ico,webp,svg}"],
     svg: app + "/images/svg/*.svg",
     popups: app + "/popups/*.html",
     fonts: app + "/fonts/cofo/*",

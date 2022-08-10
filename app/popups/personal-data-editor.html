@@ -90,7 +90,7 @@
           // value:'12.03.2013',
           format:'d.m.Y',
           timepicker: false,
-          opened: true,
+          // opened: true,
           lang: 'ru',
         });
 
@@ -102,17 +102,10 @@
 
   <script>
     $( document ).ready(function() {
-      // let test = document.querySelector('.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_');
-
-      // console.log(test)
-
-      // test.addEventListener('click', (e) => {
-      //   console.log(e.target)
-      // })
-
       // validate form
       $(".account-form").validate({
         errorElement: "span",
+
         rules: {
           email: {
             required: true,
@@ -156,6 +149,10 @@
           } else {
             error.insertAfter(element);
           }
+
+          if ( element.hasClass('catalog-settings-select')) {
+            element.closest('.jq-selectbox').after(error);
+          }
         },
 
         messages: {
@@ -186,6 +183,8 @@
             required: 'Введите данные'
           }
         },
+
+
       });
     });
   </script>

@@ -300,18 +300,73 @@ input[type="date"] {
 
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
   &::after {
-    content: '';
+    content: "";
     background: url(../../images/up-arrow.svg) no-repeat 0 0;
     display: block;
     width: 10px;
     height: 10px;
-    position: relative;
-    bottom: 250px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    /* background: white; */
+    width: 100%;
+    height: 20px;
+    background: white url(../../images/up-arrow.svg) no-repeat;
+    background-position: center;
+  }
+  &::before {
+    content: "";
+    background: url(../../images/up-arrow.svg) no-repeat 0 0;
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9999999;
+    /* background: white; */
+    width: 100%;
+    height: 20px;
+    background: white url(../../images/down-arrow.svg) no-repeat;
+    background-position: center;
   }
 }
 
 .xdsoft_scrollbar>.xdsoft_scroller {
   &::after {
+    content: none !important;
+  }
+}
+
+.xdsoft_datetimepicker .xdsoft_calendar {
+  position: relative !important;
+  width: 100% !important;
+  padding-top: 11px !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -16px;
+    right: -24px;
+    height: 1px;
+    top: 0;
+    background-color: #D3D3D3;
+  }
+}
+
+.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select>div>.xdsoft_option:hover {
+  background: #F5F5F5 !important;
+  border-radius: 5px !important;
+  color: #2A4455 !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_month .xdsoft_select.xdsoft_monthselect.xdsoft_scroller_box {
+  &::after {
+    content: none !important;
+  }
+
+  &::before {
     content: none !important;
   }
 }
