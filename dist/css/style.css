@@ -11959,9 +11959,12 @@ button.mfp-close:hover:after,
     border-top: 1px solid #D3D3D3;
   }
 }
+<<<<<<< HEAD
 .request-item-wrap {
   padding-right: 10px;
 }
+=======
+>>>>>>> 75d82c28e313fb8957570b9f83bf3969c86cd1ee
 @media (max-width: 420.99px) {
   .request-item-wrap {
     padding: 20px 16px 0 16px;
