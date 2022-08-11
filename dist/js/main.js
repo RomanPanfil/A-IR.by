@@ -1532,25 +1532,6 @@ $('.main-list-li').click(function(){
   }
 });
 
-// (function () {
-//   if (matchMedia) {
-//     const screen = window.matchMedia("(max-width:768px)");
-//     screen.addListener(changes);
-//     changes(screen);
-//   }
-//   function changes(screen) {
-//     if (screen.matches) {
-//       //экран менее 768
-     
-
-//       $(".main-more-mobile").prepend($("#tabs"));
-//     } else {
-//       //экран более 768
-//       $(".main-about-more").prepend($("#tabs"));
-      
-//     }
-//   }
-// })();
 
 (function () {
   if (!D.querySelector(".main-tabs-link")) return;
@@ -1691,3 +1672,13 @@ let el = document.querySelector(".favorites-grid");
     }
   }
 })();
+
+$(document).ready(function () {
+  $('.check-comment').click(function(){
+    $(this).hasClass("has-comment")?$(this).remove("has-comment"):$(this).addClass("has-comment");
+  });
+})
+
+
+
+

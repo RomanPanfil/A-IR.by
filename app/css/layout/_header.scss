@@ -736,6 +736,14 @@
       color: #000;
       border-bottom:2px solid transparent ;
 
+      @media(max-width:1024.99px){
+        margin-right:65px;
+      }
+
+      @media(max-width:420.99px){
+        margin-right:50px;
+      }
+
       &:hover {
         border-bottom: 2px solid #2A4455;
       }
