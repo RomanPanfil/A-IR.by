@@ -15,5 +15,9 @@
   }
   .ui-btn {
     white-space: normal;
+    overflow: visible;
+    line-height: 1;
+    height: auto;
+    padding: 15px 0;
   }
 }

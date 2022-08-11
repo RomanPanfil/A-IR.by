@@ -154,7 +154,7 @@
         let element = document.querySelectorAll('input[class="ui-input telephone"]');
 
         let maskOptions = {
-          mask: '+{375}(00)000-00-00'
+          mask: '+{375} (00) 000 00 00'
         };
         for (let i = 0; i < element.length; i++){
           let mask = IMask(element[i], maskOptions);
@@ -167,7 +167,7 @@
         rules: {
           telephone: {
             required: true,
-            minlength: 17,
+            minlength: 19,
             // telephone: true,
           },
 
@@ -232,7 +232,7 @@
 
       var phoneMask = IMask(
       document.getElementById('telephone'), {
-        mask: '+{375}(00)000-00-00'
+        mask: '+{375} (00) 000 00 00'
       });
 
     });

@@ -1392,11 +1392,9 @@ jQuery(document).ready(function($){
   }
 }
 
-  jQuery(document).ready(function($) {
-    if ($('#map-address')) {
-      mapContactInit();
-    }
-  });
+if(document.getElementById('map-address')) {
+  mapContactInit();
+}
 
   let header = document.querySelector('.making-order-header');
   let list = document.querySelector('.making-order-list');
