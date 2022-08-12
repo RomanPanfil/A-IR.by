@@ -1197,9 +1197,9 @@ textarea.ui-input {
     }
   }
 }
-
-.no-overflow {
-  overflow: hidden;
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  left: 0 !important;
+  transform: translateX(0%) !important;
 }
 
 .slick {

@@ -120,7 +120,7 @@
                 padding: 13px 24px;
                 font-weight: 600;
                 line-height: 1.36;
-                border: 1px solid $border;
+                border: 2px solid $border;
                 border-radius: 8px;
                 background-color: #ffffff;
                 text-align: center;
@@ -138,8 +138,8 @@
         }
 
         input:checked + .request-checkbox-input-data {
-            box-shadow: inset 0px 0px 0px 2px $secondary;
-            color: $secondary;
+            // box-shadow: inset 0px 0px 0px 2px $secondary;
+            border:2px solid $secondary;
         }
 
         input {
