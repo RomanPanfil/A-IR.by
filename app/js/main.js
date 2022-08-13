@@ -1618,16 +1618,26 @@ if(document.getElementById('map-address')) {
 
     (function() {
       if(matchMedia) {
-        const screen = window.matchMedia('(max-width:576px)');
-        screen.addListener(changes);
-        changes(screen);
+        const screen576 = window.matchMedia('(max-width:576px)');
+        screen576.addListener(changes);
+        changes(screen576);
+        const screen1024 = window.matchMedia('(max-width:1024px)');
+        screen1024.addListener(changes);
+        changes(screen1024);
       }
 
       function changes(screen) {
         if(screen.matches) {
-          $('.making-order-comment.self-call').before($('#map-address'))
+          $('.making-order-comment.self-call').before($('#map-address'));
         } else {
           $('.col-ss-6.map').append($('#map-address'))
+        }
+      }
+
+      // @todo: replacement block into another blocks
+      function changes(screen) {
+        if(screen.matches) {
+          $('.cart-item-headline').after($('.cart-item-remove'))
         }
       }
     })();
@@ -1644,5 +1654,35 @@ if(document.getElementById('map-address')) {
         }
       })
     }
+
+    let deleteSelected = document.querySelector('.cart-delete-btn');
+    let deleteCheckBoxAll = document.querySelector('.cart-delete input[name=customCheckbox]');
+    let itemList = document.querySelector('.cart-list');
+
+    itemList.addEventListener('click', (e) => {
+      if(e.target.classList[0] === 'cart-item-remove') {
+        e.target.closest('.cart-item').remove()
+      }
+    })
+
+    deleteCheckBoxAll.addEventListener('click', (e) => {
+      let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]');
+
+      for(let i = 0; i < checkedInput.length; i++) {
+        if(deleteCheckBoxAll.checked === true) {
+          checkedInput[i].checked = true
+        } else {
+          checkedInput[i].checked = false
+        }
+      }
+    })
+
+    deleteSelected.addEventListener('click', (e) => {
+      let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]:checked')
+
+      for(let i = 0; i < checkedInput.length; i++) {
+        checkedInput[i].closest('.cart-item').remove()
+      }
+    })
 
 });//ready

@@ -142,6 +142,58 @@
   .xdsoft_datetimepicker .xdsoft_calendar td>div {
     padding-right: 0;
   }
+
+  &-headline {
+    .popup-review-title {
+      margin-bottom: 15px;
+    }
+  }
+
+  &-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .making-order-select input[type=radio] {
+    display: none;
+  }
+
+  .making-order-select {
+    @media(max-width: 576px) {
+      height: 100%;
+    }
+  }
+
+  .making-order-select label {
+    padding-left: 0;
+    text-align: center;
+
+    @media(max-width: 576px) {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 0;
+    }
+  }
+
+  &-answer {
+    margin-bottom: 35px;
+
+    @media(max-width: 576px) {
+      margin-bottom: 25px;
+    }
+
+    &-title {
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+  }
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {
