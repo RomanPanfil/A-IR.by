@@ -9750,9 +9750,14 @@ input[type=range]::-moz-range-thumb {
 .cart-list .ui-checkbox {
   margin-right: 16px;
 }
+@media (max-width: 320px) {
+  .cart-list .ui-checkbox {
+    margin-right: 6px;
+  }
+}
 @media (max-width: 576px) {
   .cart-img {
-    width: 64px;
+    max-width: 64px;
     height: 64px;
   }
 }
@@ -9798,6 +9803,11 @@ input[type=range]::-moz-range-thumb {
 }
 .cart-item img {
   margin-right: 16px;
+}
+@media (max-width: 320px) {
+  .cart-item img {
+    margin-right: 6px;
+  }
 }
 @media (max-width: 1024px) {
   .cart-item-value {

@@ -1634,10 +1634,16 @@ if(document.getElementById('map-address')) {
         }
       }
 
-      // @todo: replacement block into another blocks
       function changes(screen) {
         if(screen.matches) {
-          $('.cart-item-headline').after($('.cart-item-remove'))
+          let block = document.querySelectorAll('.cart-item-info');
+
+          for(let i = 0; i < block.length; i++) {
+            let header = block[i].querySelectorAll('.cart-item-headline')[0];
+            let remove = block[i].querySelectorAll('.cart-item-remove')[0];
+
+            header.after(remove)
+          }
         }
       }
     })();

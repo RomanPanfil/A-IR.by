@@ -54,12 +54,16 @@
 
     .ui-checkbox {
       margin-right: 16px;
+
+      @media(max-width: 320px) {
+        margin-right: 6px;
+      }
     }
   }
 
   &-img {
     @media(max-width: 576px) {
-      width: 64px;
+      max-width: 64px;
       height: 64px;
     }
   }
@@ -99,6 +103,10 @@
 
     img {
       margin-right: 16px;
+
+      @media(max-width: 320px) {
+        margin-right: 6px;
+      }
     }
 
     &-value {
