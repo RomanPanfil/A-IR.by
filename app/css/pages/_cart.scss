@@ -153,7 +153,10 @@
       font-weight: 600;
       font-size: 18px;
       margin-bottom: 10px;
-      max-width: 375px;
+
+      @media(max-width: 1024px) {
+        max-width: 375px;
+      }
 
       @media(max-width: 576px) {
         font-size: 16px;
@@ -174,11 +177,14 @@
 
 
     &-txt {
+      flex: 0 0 375px;
+
       @media(max-width: 1024px) {
         margin-bottom: 19px;
         display: flex;
         justify-content: space-between;
         width: 100%;
+        flex: 0 0 100%;
       }
 
       @media(max-width: 576px) {
@@ -188,8 +194,14 @@
 
     &-control {
       text-align: right;
+      flex: 0 0 216px;
 
-      @media(max-width: 1292px) {
+      @media(max-width: 1024px) {
+        flex: 0 0 100%;
+      }
+
+      @media(max-width: 1398px) {
+        margin-top: 15px;
         text-align: left;
       }
 
@@ -223,7 +235,7 @@
     align-items: baseline;
     line-height: 1;
 
-    @media(max-width: 1292px) {
+    @media(max-width: 1398px) {
       justify-content: flex-start;
     }
 
