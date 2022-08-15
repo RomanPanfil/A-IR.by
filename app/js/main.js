@@ -1635,14 +1635,17 @@ if(document.getElementById('map-address')) {
       }
 
       function changes(screen) {
-        if(screen.matches) {
-          let block = document.querySelectorAll('.cart-item-info');
+        let block = document.querySelectorAll('.cart-item-info');
 
-          for(let i = 0; i < block.length; i++) {
-            let header = block[i].querySelectorAll('.cart-item-headline')[0];
-            let remove = block[i].querySelectorAll('.cart-item-remove')[0];
+        for(let i = 0; i < block.length; i++) {
+          let header = block[i].querySelectorAll('.cart-item-headline')[0];
+          let remove = block[i].querySelectorAll('.cart-item-remove')[0];
+          let control = block[i].querySelectorAll('.cart-item-control')[0];
 
+          if(screen.matches) {
             header.after(remove)
+          } else {
+            control.prepend(remove)
           }
         }
       }
