@@ -10135,6 +10135,18 @@ button.mfp-close:hover:after,
   margin-bottom: 8px;
 }
 
+.popup-request .popup-alert-img {
+  margin-bottom: 40px;
+}
+@media (max-width: 577px) {
+  .popup-request .popup-alert-title {
+    text-align: center;
+  }
+  .popup-request .popup-alert-msg {
+    text-align: center;
+  }
+}
+
 .main-banners {
   margin-bottom: 40px;
 }

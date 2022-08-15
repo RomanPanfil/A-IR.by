@@ -41,3 +41,18 @@
     }
   }
 }
+.popup-request {
+  .popup-alert-img {
+    margin-bottom: 40px;
+  }
+
+  @media(max-width:577px) {
+    .popup-alert-title{
+      text-align: center;
+    }
+
+    .popup-alert-msg {
+      text-align: center;
+    }
+  }
+}
