@@ -1753,11 +1753,22 @@ li {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   overflow-x: auto;
+  margin-bottom: 55px;
 }
 @media (max-width: 1400px) {
   .nav-account {
     margin-right: -40px;
     padding-right: 40px;
+  }
+}
+@media (max-width: 1024.99px) {
+  .nav-account {
+    margin-bottom: 42px;
+  }
+}
+@media (max-width: 420.99px) {
+  .nav-account {
+    margin-bottom: 35px;
   }
 }
 .nav-account-link {
@@ -12896,5 +12907,18 @@ button.mfp-close:hover:after,
   font-size: 18px;
   font-size: 1.125rem;
   color: #808080;
+}
+
+@media (max-width: 420.99px) {
+  .assistance .request-body-info-wrap {
+    margin-bottom: 30px;
+  }
+}
+.assistance .request-body {
+  margin-bottom: 88px;
+}
+.assistance-form {
+  max-width: 424px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=sourcemaps/style.css.map */

@@ -720,11 +720,20 @@
   justify-content: space-between;
   flex-wrap: nowrap;
   overflow-x: auto;
+  margin-bottom: 55px;
 
   @media(max-width:1400px){
     margin-right: -40px;
     padding-right: 40px;
   }
+
+  @media(max-width:1024.99px){
+   margin-bottom: 42px;
+  }
+
+  @media(max-width:420.99px){
+    margin-bottom: 35px;
+   }
   
     &-link {
       position: relative;

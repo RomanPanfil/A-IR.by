@@ -1651,6 +1651,49 @@ $(document).ready(function () {
 })
 
 $(document).ready(function () {
+  $(".assistance-form").validate({
+    errorElement: "span",
+    rules: {
+      topic: {
+        required: true,
+      },
+
+      textbox: {
+        required: true,
+        maxlength: 500,
+      },
+
+     
+
+    },
+
+    messages: {
+      topic: {
+        required: "Пожалуйста, введите ваше тему обращения",
+        name: " ",
+      },
+
+      textbox: {
+        required: "Пожалуйста, оставьте свой комментарий",
+        maxlength: "Комментарий не должен превышать 500 символов",
+      },
+
+    },
+    highlight: function(element, errorClass, validClass) {
+      $(element).addClass(errorClass).removeClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .addClass(errorClass).removeClass(validClass);
+      
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).removeClass(errorClass).addClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .removeClass(errorClass).addClass(validClass);
+    }
+  });
+})
+
+$(document).ready(function () {
   $('.check-comment').click(function(){
     $(this).hasClass("has-comment")?$(this).removeClass("has-comment"):$(this).addClass("has-comment");
   });

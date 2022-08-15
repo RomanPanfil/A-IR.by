@@ -1,0 +1,65 @@
+<!--#include file="inc-header-account.html"-->
+<div class="assistance">
+    <div class="request-body">
+        <div class="request-body-info">
+            <div class="request-body-info-wrap">
+                <div class="request-body-info-title">Помощь</div>
+                <div class="request-body-txt">Пожалуйста, подробно опишите возникшую проблему,
+                    а мы в кротчайшие сроки постараемся её решить!
+                </div>
+            </div>
+        </div>
+        <div class="request-body-wrap">
+            <form action = "" class="assistance-form">
+                <div class="ui-field">
+                    <label class="ui-label ui-label-mini" for="topic">Тема <span class="ui-color-red">*</span></label>
+                    <div class="ui-input-wrp">
+                      <input type="text" name="topic" id="topic" class="ui-input" placeholder="Тема обращения">
+                      <div class="popup-icon"></div>
+                    </div>
+                </div>
+
+                <div class="ui-field">
+                    <label for="" class="ui-label ui-label-mini">Текстовое поле<span class="ui-color-red">*</span></label>
+                    <textarea id="textbox" name="textbox" placeholder="Текст" class="ui-input" rows="4"></textarea>
+                </div>
+
+                <div class="ui-label ui-label-mini">
+                    Как вы хотите получить ответ?
+                </div>
+
+                <div class="request-checkboxes">
+                    <div class="row">
+                        <div class="col-12 col-us-6">
+                            <label class="request-checkbox">
+                                <input type="radio" name="chose" class="request-checkbox-input">
+                                <div class="request-checkbox-input-data">
+                                    Ответ на телефон
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="col-12 col-us-6">
+                            <label class="request-checkbox">
+                                <input type="radio" name="chose" class="request-checkbox-input">
+                                <div class="request-checkbox-input-data">
+                                    Ответ на Email
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                <div class="ui-checkbox">
+                    <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+                    <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить отзыв» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a></label>
+                </div>
+
+                <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--#include file="inc-footer.html"-->
