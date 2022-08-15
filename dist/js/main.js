@@ -1618,9 +1618,6 @@ if(document.getElementById('map-address')) {
 
     (function() {
       if(matchMedia) {
-        const screen576 = window.matchMedia('(max-width:576px)');
-        screen576.addListener(changes);
-        changes(screen576);
         const screen1024 = window.matchMedia('(max-width:1024px)');
         screen1024.addListener(changes);
         changes(screen1024);
