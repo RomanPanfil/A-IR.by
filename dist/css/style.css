@@ -1753,22 +1753,11 @@ li {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   overflow-x: auto;
-  margin-bottom: 55px;
 }
 @media (max-width: 1400px) {
   .nav-account {
     margin-right: -40px;
     padding-right: 40px;
-  }
-}
-@media (max-width: 1024.99px) {
-  .nav-account {
-    margin-bottom: 42px;
-  }
-}
-@media (max-width: 420.99px) {
-  .nav-account {
-    margin-bottom: 35px;
   }
 }
 .nav-account-link {
@@ -12242,9 +12231,15 @@ button.mfp-close:hover:after,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
   margin: 0 -32px 0 -32px;
   padding: 0 32px;
   border-bottom: 1px solid #D3D3D3;
+}
+@media (max-width: 400px) {
+  .account-setup-top {
+    padding-right: 60px;
+  }
 }
 .account-setup-middle {
   margin: 0 -32px 0 -32px;
@@ -12260,6 +12255,11 @@ button.mfp-close:hover:after,
 }
 .account-setup-bottom .row:first-child {
   margin-bottom: 35px;
+}
+@media (max-width: 576.99px) {
+  .account-setup-bottom .row:first-child {
+    margin-bottom: 0;
+  }
 }
 .account-setup-bottom .account-setup-para {
   margin-bottom: 18px;
@@ -12308,12 +12308,24 @@ button.mfp-close:hover:after,
   font-size: 14px;
   font-size: 0.875rem;
 }
+@media (max-width: 420.99px) {
+  .account-setup-delete {
+    display: none;
+  }
+}
 .account-organization {
   padding-bottom: 35px;
 }
 .account-organization .account-setup-phone-name {
   color: rgba(0, 0, 0, 0.5);
   margin-left: 44px;
+}
+@media (max-width: 576.99px) {
+  .account-organization .account-setup-phone-name {
+    margin-left: 0;
+    margin-top: 10px;
+    display: block;
+  }
 }
 .account-organization .account-setup-wrapper {
   display: -webkit-box;
@@ -12340,14 +12352,46 @@ button.mfp-close:hover:after,
 .account .pb-0 {
   padding-bottom: 0;
 }
-
-.account-setup-edit-svg {
-  width: 24px;
-  height: 24px;
+@media (max-width: 400px) {
+  .account .max-215 {
+    max-width: 215px;
+  }
 }
 
-.account-setup-edit-btn {
+.account-setup-edit-svg {
+  position: absolute;
+  right: 32px;
+  width: 24px;
+  height: 24px;
+  stroke: #1A66AE;
+  stroke-width: 2;
+  stroke-linecap: "round";
+  stroke-linejoin: "round";
+}
+.account-setup-edit-svg:hover {
+  stroke: #2A4455;
+}
+
+.account-edit-btn {
   display: none;
+  width: 176px;
+  height: 40px;
+  margin-top: -5px;
+  line-height: 40px;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media (max-width: 576.99px) {
+  .account-setup-mb .account-setup-wrap {
+    margin-bottom: 35px !important;
+  }
+}
+@media (max-width: 576.99px) {
+  .account-setup-mb .mb-0 {
+    margin-bottom: 0 !important;
+  }
 }
 
 .order-header {

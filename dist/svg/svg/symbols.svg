@@ -17,7 +17,7 @@
 		</symbol>
 	
 		<symbol id="account-edit" viewBox="0 0 26 26">
-			<path d="M23.997 6.844a3.423 3.423 0 1 0-4.841-4.841l-16.34 16.34L1 25l6.657-1.816L19.64 11.201" stroke="#1A66AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+			<path d="M23.997 6.844a3.423 3.423 0 1 0-4.841-4.841l-16.34 16.34L1 25l6.657-1.816L19.64 11.201" fill="transparent"></path>
 		</symbol>
 	
 		<symbol id="btn-plus" viewBox="0 0 22 22">
