@@ -5,6 +5,14 @@
     padding-bottom: 19px;
     border-bottom: 1px solid #D3D3D3;
 
+    .ui-checkbox {
+      margin-bottom: 0;
+    }
+
+    .ui-checkbox-label::before {
+      border: 1px solid #D3D3D3;
+    }
+
     @media(max-width: 1024px) {
       border-bottom: none;
       position: relative;
@@ -17,6 +25,23 @@
         height: 1px;
         bottom: 0;
         background-color: #D3D3D3;
+      }
+    }
+
+    @media(max-width: 576px) {
+      .ui-checkbox-label::before {
+        width: 24px;
+        height: 24px;
+        top: -2px;
+      }
+
+      .ui-checkbox-label::after {
+        top: 10px;
+        left: 7px;
+      }
+
+      .ui-checkbox-label {
+        margin-left: 8px;
       }
     }
 
@@ -38,18 +63,24 @@
   &-list {
     margin-bottom: 88px;
 
+    .ui-checkbox-label::before {
+        border: 1px solid #D3D3D3;
+      }
+
     @media(max-width: 1024px) {
       margin-bottom: 57px;
     }
 
-    .ui-checkbox-label::before {
-      width: 24px;
-      height: 24px;
-    }
+    @media(max-width: 576px) {
+      .ui-checkbox-label::before {
+        width: 24px;
+        height: 24px;
+      }
 
-    .ui-checkbox-label::after {
-      top: 10px;
-      left: 7px;
+      .ui-checkbox-label::after {
+        top: 10px;
+        left: 7px;
+      }
     }
 
     .ui-checkbox {
@@ -196,18 +227,17 @@
       text-align: right;
       flex: 0 0 216px;
 
-      @media(max-width: 1024px) {
-        flex: 0 0 100%;
-      }
-
       @media(max-width: 1398px) {
         margin-top: 15px;
         text-align: left;
       }
 
       @media(max-width: 1024px) {
+        flex: 0 0 100%;
+        margin-top: 0;
         text-align: left;
       }
+
 
       .card-counter-btn {
         text-align: left;
@@ -313,6 +343,7 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      align-items: baseline;
       margin-bottom: 10px;
 
       &:last-of-type {

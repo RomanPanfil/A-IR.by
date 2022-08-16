@@ -9705,6 +9705,12 @@ input[type=range]::-moz-range-thumb {
   padding-bottom: 19px;
   border-bottom: 1px solid #D3D3D3;
 }
+.cart-delete .ui-checkbox {
+  margin-bottom: 0;
+}
+.cart-delete .ui-checkbox-label::before {
+  border: 1px solid #D3D3D3;
+}
 @media (max-width: 1024px) {
   .cart-delete {
     border-bottom: none;
@@ -9718,6 +9724,20 @@ input[type=range]::-moz-range-thumb {
     height: 1px;
     bottom: 0;
     background-color: #D3D3D3;
+  }
+}
+@media (max-width: 576px) {
+  .cart-delete .ui-checkbox-label::before {
+    width: 24px;
+    height: 24px;
+    top: -2px;
+  }
+  .cart-delete .ui-checkbox-label::after {
+    top: 10px;
+    left: 7px;
+  }
+  .cart-delete .ui-checkbox-label {
+    margin-left: 8px;
   }
 }
 .cart-delete-btn {
@@ -9734,18 +9754,23 @@ input[type=range]::-moz-range-thumb {
 .cart-list {
   margin-bottom: 88px;
 }
+.cart-list .ui-checkbox-label::before {
+  border: 1px solid #D3D3D3;
+}
 @media (max-width: 1024px) {
   .cart-list {
     margin-bottom: 57px;
   }
 }
-.cart-list .ui-checkbox-label::before {
-  width: 24px;
-  height: 24px;
-}
-.cart-list .ui-checkbox-label::after {
-  top: 10px;
-  left: 7px;
+@media (max-width: 576px) {
+  .cart-list .ui-checkbox-label::before {
+    width: 24px;
+    height: 24px;
+  }
+  .cart-list .ui-checkbox-label::after {
+    top: 10px;
+    left: 7px;
+  }
 }
 .cart-list .ui-checkbox {
   margin-right: 16px;
@@ -9924,13 +9949,6 @@ input[type=range]::-moz-range-thumb {
       -ms-flex: 0 0 216px;
           flex: 0 0 216px;
 }
-@media (max-width: 1024px) {
-  .cart-item-control {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
-  }
-}
 @media (max-width: 1398px) {
   .cart-item-control {
     margin-top: 15px;
@@ -9939,6 +9957,10 @@ input[type=range]::-moz-range-thumb {
 }
 @media (max-width: 1024px) {
   .cart-item-control {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    margin-top: 0;
     text-align: left;
   }
 }
@@ -10062,6 +10084,9 @@ input[type=range]::-moz-range-thumb {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin-bottom: 10px;
 }
 .cart-order-txt:last-of-type {
