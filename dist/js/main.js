@@ -1366,7 +1366,7 @@ new Swiper(".main-trust-slider", {
     
   breakpoints: {
     421: {
-      slidesPerView: 1,
+      slidesPerView: "auto",
     },
     1024: {
       slidesPerView: 3,

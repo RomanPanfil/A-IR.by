@@ -216,6 +216,7 @@
         padding-bottom: 35px;
 
         .account-setup-phone-name {
+            display: inline-block;
             color: rgba(0, 0, 0, 0.5);
             margin-left: 44px;
 
@@ -286,11 +287,52 @@
     line-height: 40px;
     @include fz(16);
     font-weight: 700;
-    
 }
 
 .account-edit {
-    
+    box-shadow: none;
+    border: 1px solid #BC0000;
+
+    .account-edit-btn {
+        display: block;
+
+        @media(max-width:420.99px) {
+            display: none;
+        }
+    }
+
+    .account-setup-edit-link{
+        display: none;
+
+        @media(max-width:420.99px) {
+            display: block;
+            stroke: #BC0000;
+        }
+    }
+
+    .account-setup-top {
+        border-color: #BC0000;
+    }
+    .account-setup-middle{
+        border-color: #BC0000;
+    }
+    .account-setup-bottom {
+        border-color: #BC0000;
+    }
+    .account-setup-edit-svg {
+        @media(max-width:420.99px) {
+            stroke: #BC0000;
+        }
+    }
+
+    .account-body-btn {
+        background-color: #BC0000;
+        color: #FFF;
+        
+        &:hover {
+            background-color: #991C12;
+        }
+    }
 }
 
 .account-setup-mb {
