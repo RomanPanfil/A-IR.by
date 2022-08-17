@@ -11,6 +11,11 @@
 
     .ui-checkbox-label::before {
       border: 1px solid #D3D3D3;
+      top: 3px;
+    }
+
+    .ui-checkbox-label::after {
+      top: 7px;
     }
 
     @media(max-width: 1024px) {
@@ -36,7 +41,7 @@
       }
 
       .ui-checkbox-label::after {
-        top: 10px;
+        top: 7px;
         left: 7px;
       }
 
@@ -48,6 +53,10 @@
     &-btn {
       color: rgba(0, 0, 0, 0.5);
       cursor: pointer;
+
+      @media(max-width: 320px) {
+        text-align: right;
+      }
 
       &:hover {
         color: #5b5b5b;
@@ -132,13 +141,13 @@
       align-items: flex-start;
     }
 
-    img {
-      margin-right: 16px;
+    // img {
+    //   margin-right: 16px;
 
-      @media(max-width: 320px) {
-        margin-right: 6px;
-      }
-    }
+    //   @media(max-width: 320px) {
+    //     margin-right: 6px;
+    //   }
+    // }
 
     &-value {
       @media(max-width: 1024px) {
@@ -172,7 +181,7 @@
       align-items: center;
       width: 100%;
       justify-content: space-between;
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
 
       @media(max-width: 1024px) {
         flex-direction: column;
@@ -205,10 +214,22 @@
       }
     }
 
+    &-img {
+      width: 100%;
+      max-width: 112px;
+      margin-right: 16px;
 
+      @media(max-width: 576px) {
+        max-width: 64px;
+      }
+
+      @media(max-width: 320px) {
+        margin-right: 6px;
+      }
+    }
 
     &-txt {
-      flex: 0 0 375px;
+      // flex: 0 0 375px;
 
       @media(max-width: 1024px) {
         margin-bottom: 19px;
@@ -227,10 +248,10 @@
       text-align: right;
       flex: 0 0 216px;
 
-      @media(max-width: 1398px) {
-        margin-top: 15px;
-        text-align: left;
-      }
+      // @media(max-width: 1398px) {
+      //   margin-top: 15px;
+      //   text-align: left;
+      // }
 
       @media(max-width: 1024px) {
         flex: 0 0 100%;
@@ -257,6 +278,20 @@
       }
     }
 
+    &-checkbox {
+      flex: 0 0 20px;
+      max-width: 20px;
+
+      @media(max-width: 576px) {
+        flex: 0 0 25px;
+        max-width: 25px;
+        margin-right: 16px;
+      }
+
+      @media(max-width: 320px) {
+        margin-right: 6px;
+      }
+    }
   }
 
   &-count {
@@ -265,9 +300,9 @@
     align-items: baseline;
     line-height: 1;
 
-    @media(max-width: 1398px) {
-      justify-content: flex-start;
-    }
+    // @media(max-width: 1398px) {
+    //   justify-content: flex-start;
+    // }
 
     @media(max-width: 1024px) {
       flex-direction: column-reverse

@@ -1442,7 +1442,7 @@ if(document.getElementById('map-address')) {
 
         telephone: {
           required: true,
-          minlength: 17,
+          minlength: 19,
           // telephone: true,
         },
 
@@ -1596,6 +1596,16 @@ if(document.getElementById('map-address')) {
       },
       "Incorrect format"
     );
+
+    let inputPhone = document.getElementById('telephone');
+
+    if(inputPhone) {
+      var phoneMask = IMask(
+        document.getElementById('telephone'), {
+          mask: '+{375} (00) 000 00 00'
+        });
+    }
+
     // jQuery.validator.addMethod(
     //   "emailErrCompany",
     //   function (value, element) {
@@ -1624,14 +1634,6 @@ if(document.getElementById('map-address')) {
       }
 
       function changes(screen) {
-        if(screen.matches) {
-          $('.making-order-comment.self-call').before($('#map-address'));
-        } else {
-          $('.col-ss-6.map').append($('#map-address'))
-        }
-      }
-
-      function changes(screen) {
         let block = document.querySelectorAll('.cart-item-info');
 
         for(let i = 0; i < block.length; i++) {
@@ -1641,9 +1643,27 @@ if(document.getElementById('map-address')) {
 
           if(screen.matches) {
             header.after(remove)
+
+            console.log('asd')
           } else {
             control.prepend(remove)
           }
+        }
+      }
+    })();
+
+    (function() {
+      if(matchMedia) {
+        const screen576 = window.matchMedia('(max-width:576px)');
+        screen576.addListener(changes);
+        changes(screen576);
+      }
+
+      function changes(screen) {
+        if(screen.matches) {
+          $('.making-order-comment.self-call').before($('#map-address'));
+        } else {
+          $('.col-xs-6.map').append($('#map-address'))
         }
       }
     })();
@@ -1665,30 +1685,35 @@ if(document.getElementById('map-address')) {
     let deleteCheckBoxAll = document.querySelector('.cart-delete input[name=customCheckbox]');
     let itemList = document.querySelector('.cart-list');
 
-    itemList.addEventListener('click', (e) => {
-      if(e.target.classList[0] === 'cart-item-remove') {
-        e.target.closest('.cart-item').remove()
-      }
-    })
-
-    deleteCheckBoxAll.addEventListener('click', (e) => {
-      let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]');
-
-      for(let i = 0; i < checkedInput.length; i++) {
-        if(deleteCheckBoxAll.checked === true) {
-          checkedInput[i].checked = true
-        } else {
-          checkedInput[i].checked = false
+    if(itemList) {
+      itemList.addEventListener('click', (e) => {
+        if(e.target.classList[0] === 'cart-item-remove') {
+          e.target.closest('.cart-item').remove()
         }
-      }
-    })
+      })
+    }
 
-    deleteSelected.addEventListener('click', (e) => {
-      let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]:checked')
+    if(deleteCheckBoxAll) {
+      deleteCheckBoxAll.addEventListener('click', (e) => {
+        let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]');
 
-      for(let i = 0; i < checkedInput.length; i++) {
-        checkedInput[i].closest('.cart-item').remove()
-      }
-    })
+        for(let i = 0; i < checkedInput.length; i++) {
+          if(deleteCheckBoxAll.checked === true) {
+            checkedInput[i].checked = true
+          } else {
+            checkedInput[i].checked = false
+          }
+        }
+      })
+    }
 
+    if(deleteSelected) {
+      deleteSelected.addEventListener('click', (e) => {
+        let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]:checked')
+
+        for(let i = 0; i < checkedInput.length; i++) {
+          checkedInput[i].closest('.cart-item').remove()
+        }
+      })
+    }
 });//ready
