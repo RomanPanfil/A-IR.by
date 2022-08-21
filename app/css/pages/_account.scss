@@ -43,6 +43,11 @@
             margin-bottom: 16px;
             border: 1px solid #D3D3D3;
             border-radius: 8px;
+
+            @media(max-width:420px){
+                padding-left: 24px;
+                padding-right: 24px;
+            }
         }
 
         &-info {
@@ -85,7 +90,7 @@
         }
 
         &-sample{
-            padding: 16px 32px;
+            padding: 20px 32px 28px 32px;
             border: 1px solid #D3D3D3;
             border-radius: 8px;
 
@@ -102,8 +107,13 @@
             }
 
             &-bulk {
-                margin-bottom: 15px;
+                margin-bottom: 19px;
                 color: rgba(0, 0, 0, 0.5);
+            }
+
+            @media(max-width:420px){
+                padding-left: 24px;
+                padding-right: 24px;
             }
         }
 
@@ -120,6 +130,11 @@
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
       border-radius: 8px;
 
+      @media(max-width:420px){
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
       &-top {
         display: flex;
         justify-content: space-between;
@@ -128,6 +143,11 @@
         padding: 0 32px;
         border-bottom: 1px solid #D3D3D3;
 
+        @media(max-width:420px){
+            padding-left: 24px;
+            margin: 0 -24px 0 -24px;
+        }
+
 
          @media(max-width:400px) {
             padding-right: 60px;
@@ -135,15 +155,31 @@
       
       }
 
+      &-phone {
+        margin-right: 10px;
+      }
+
       &-middle {
         margin: 0 -32px 0 -32px;
         padding: 20px 32px 25px 32px;
         border-bottom: 1px solid #D3D3D3;
+
+        @media(max-width:420px){
+            padding-left: 24px;
+            padding-right: 24px;
+            margin: 0 -24px 0 -24px;
+        }
       }
 
       &-bottom {
         padding-top: 25px;
         padding-bottom: 35px;
+
+        @media(max-width:420px){
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+            margin: 0 -24px 0 -24px !important;
+        }
 
         div:last-child {
             margin-bottom: 0;
@@ -218,13 +254,30 @@
         .account-setup-phone-name {
             display: inline-block;
             color: rgba(0, 0, 0, 0.5);
-            margin-left: 44px;
 
             @media(max-width:576.99px) {
                 margin-left: 0;
                 margin-top: 10px;
                 display: block;
             }
+        }
+
+        .account-setup-phone-mail {
+            display: inline-block;
+            margin-right: 75px;
+
+            @media(max-width:1024.99px){
+                margin-right: 120px;
+            }
+
+            @media(max-width:420.99px){
+                margin-right: 0;
+            }
+        }
+
+        .account-setup-phone-number{
+            display: inline-block;
+            margin-right: 44px;
         }
 
         .account-setup-wrapper {
@@ -347,3 +400,51 @@
         }
     }
 }
+
+.account-adress-adaptive {
+    .account-setup-wrapper {
+        align-items: self-start;
+    }
+
+    .account-setup-adress {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+
+  .progress {
+    position: relative;
+
+    &-bar {
+            display: flex;
+            justify-content: space-between;
+            li {
+                height: 8px;
+                width: 8px;
+                border-radius: 50%;
+                background: #D3D3D3;
+            }
+            .progress-bar-disable {
+                position: absolute;
+                top: 2px;
+                z-index: -1;
+                height: 4px;
+                width: 100%;
+                background: #D3D3D3;
+            }
+        
+            .progress-bar-active {
+                position: absolute;
+                top: 2px;
+                z-index: 2;
+                height: 4px;
+                margin: 0 2px;
+                background: #2A4455;
+            }
+        
+            .active {
+                background-color: #2A4455;
+            }
+    }
+  }
