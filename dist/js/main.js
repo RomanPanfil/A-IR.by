@@ -1361,7 +1361,9 @@ new Swiper(".main-banners-slider", {
 
 new Swiper(".main-trust-slider", {
   slidesPerView: 1,
-  spaceBetween: 24, 
+  spaceBetween: 24,
+  loop: true,
+
  
     
   breakpoints: {
@@ -1380,13 +1382,23 @@ new Swiper(".main-trust-slider", {
     el: ".main-trust-pagintaion",
     clickable: true,
     dynamicBullets:true, 
-    // dynamicMainBullets:3,
+    dynamicMainBullets:3,
   },
+  
   navigation: {
     nextEl: ".main-trust-next",
     prevEl: ".main-trust-prev",
   },
 });
+
+// var swiper = new Swiper(".qwe", {
+//   loop: true,
+//   pagination: {
+//     el: ".swiper-pagination-qwe",
+//     dynamicBullets: true,
+//     dynamicMainBullets: 3
+//   }
+// });
 
 
 (function () {
@@ -1599,7 +1611,7 @@ $('.waitList-item-remove-link').click(function(){
   $(this).closest($('div.waitList-item')).remove();
 });
 
-$('.account-setup-wrapper').click(function(){
+$('.account-setup-delete').click(function(){
   $(this).closest($('div.account-setup-wrapper')).remove();
 });
 

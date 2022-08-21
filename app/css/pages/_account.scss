@@ -235,7 +235,7 @@
       &-wrapper {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
         margin-bottom: 18px;
       }
 
@@ -250,53 +250,95 @@
 
     &-organization{
         padding-bottom: 35px;
-        .account-setup-phone {
-            display: flex;
-            // justify-content: space-between;
-            // flex: 0 0 55%;
+        
 
-            @media(max-width:576.99px){
-                flex-direction: column;
-            }
-
-        }
-
-        .account-setup-phone-name {
+        .account-setup-wrapper-name {
             display: inline-block;
+            flex: 0 0 46%;
+            max-width: 46%;
+            margin-right: 15px;
+            word-break: break-word;
             color: rgba(0, 0, 0, 0.5);
 
-            @media(max-width:576.99px) {
-                margin-left: 0;
-                margin-top: 10px;
-                display: block;
-            }
-        }
-
-        .account-setup-phone-mail {
-            display: inline-block;
-            width: 180px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-right: 75px;
-
             @media(max-width:1024.99px){
-                margin-right: 120px;
+                max-width: 51%;
+                flex: 0 0 51%; 
             }
 
             @media(max-width:576.99px){
+                display: block;
                 margin-right: 0;
+                flex: none;
+                max-width: none;
+            }
+
+            
+
+            // @media(max-width:576.99px) {
+            //     margin-left: 0;
+            //     margin-top: 10px;
+            //     display: block;
+            // }
+        }
+
+        .account-setup-wrapper-mail {
+            display: inline-block;
+            max-width: 36%;
+            flex: 0 0 36%;
+            margin-right: 15px;
+            word-break: break-word;
+
+            @media(max-width:1024.99px){
+                flex: 0 0 31%;
+                max-width: 31% 
+                
+            }
+
+
+            @media(max-width:576.99px){
+                display: block;
+                margin-right: 0;
+                margin-bottom: 10px;
+                flex: none;
+                max-width: none;
             }
         }
 
-        .account-setup-phone-number{
+        .account-setup-wrapper-number {
             display: inline-block;
-            margin-right: 44px;
+            max-width: 36%;
+            flex: 0 0 36%;
+            margin-right: 15px;
+            word-break: break-word;
+
+            @media(max-width:1024.99px){
+                flex: 0 0 31%;
+                max-width: 31% 
+                
+            }
+
+
+            @media(max-width:576.99px){
+                display: block;
+                margin-right: 0;
+                margin-bottom: 10px;
+                flex: none;
+                max-width: none;
+            }
         }
+
+        
 
         .account-setup-wrapper {
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
             margin-bottom: 18px;
+
+            @media(max-width:576.99px){
+                // align-items: self-start;
+                display: block !important;
+            }
 
         }
         .account-setup-bottom {
@@ -313,6 +355,21 @@
         .account-setup-middle{
             border-bottom: none;
             border-top: 1px solid #D3D3D3;
+        }
+
+        .account-setup-delete {
+            flex: 0 0 60px;
+            max-width: 60px;
+
+            @media(max-width:576.99px){
+                display: none;
+            }
+        }
+
+        .account-setup-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content:initial;
         }
         
     }
@@ -416,7 +473,7 @@
 
 .account-adress-adaptive {
     .account-setup-wrapper {
-        align-items: self-start;
+        // align-items: self-start;
     }
 
     .account-setup-adress {
@@ -461,3 +518,6 @@
             }
     }
   }
+
+
+  

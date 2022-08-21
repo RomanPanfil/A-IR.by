@@ -10320,6 +10320,7 @@ button.mfp-close:hover:after,
   .main-fields-wrapper {
     display: block;
     width: 100%;
+    min-width: initial;
     height: initial;
     margin-bottom: 16px;
     padding: 32px 24px 45px 24px;
@@ -10527,7 +10528,7 @@ button.mfp-close:hover:after,
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: relative;
+    position: static;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -11314,10 +11315,6 @@ button.mfp-close:hover:after,
       -ms-transform: scale(1) !important;
           transform: scale(1) !important;
 }
-.main-trust .main-trust-pagintaion {
-  width: 160px !important;
-}
-
 .myorder {
   margin-bottom: 88px;
 }
@@ -12409,9 +12406,9 @@ button.mfp-close:hover:after,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin-bottom: 18px;
 }
 .account-setup-delete {
@@ -12426,51 +12423,89 @@ button.mfp-close:hover:after,
 .account-organization {
   padding-bottom: 35px;
 }
-.account-organization .account-setup-phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media (max-width: 576.99px) {
-  .account-organization .account-setup-phone {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-.account-organization .account-setup-phone-name {
+.account-organization .account-setup-wrapper-name {
   display: inline-block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 46%;
+          flex: 0 0 46%;
+  max-width: 46%;
+  margin-right: 15px;
+  word-break: break-word;
   color: rgba(0, 0, 0, 0.5);
 }
-@media (max-width: 576.99px) {
-  .account-organization .account-setup-phone-name {
-    margin-left: 0;
-    margin-top: 10px;
-    display: block;
+@media (max-width: 1024.99px) {
+  .account-organization .account-setup-wrapper-name {
+    max-width: 51%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 51%;
+            flex: 0 0 51%;
   }
 }
-.account-organization .account-setup-phone-mail {
+@media (max-width: 576.99px) {
+  .account-organization .account-setup-wrapper-name {
+    display: block;
+    margin-right: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    max-width: none;
+  }
+}
+.account-organization .account-setup-wrapper-mail {
   display: inline-block;
-  width: 180px;
-  overflow: hidden;
-  -o-text-overflow: ellipsis;
-     text-overflow: ellipsis;
-  margin-right: 75px;
+  max-width: 36%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 36%;
+          flex: 0 0 36%;
+  margin-right: 15px;
+  word-break: break-word;
 }
 @media (max-width: 1024.99px) {
-  .account-organization .account-setup-phone-mail {
-    margin-right: 120px;
+  .account-organization .account-setup-wrapper-mail {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 31%;
+            flex: 0 0 31%;
+    max-width: 31%;
   }
 }
 @media (max-width: 576.99px) {
-  .account-organization .account-setup-phone-mail {
+  .account-organization .account-setup-wrapper-mail {
+    display: block;
     margin-right: 0;
+    margin-bottom: 10px;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    max-width: none;
   }
 }
-.account-organization .account-setup-phone-number {
+.account-organization .account-setup-wrapper-number {
   display: inline-block;
-  margin-right: 44px;
+  max-width: 36%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 36%;
+          flex: 0 0 36%;
+  margin-right: 15px;
+  word-break: break-word;
+}
+@media (max-width: 1024.99px) {
+  .account-organization .account-setup-wrapper-number {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 31%;
+            flex: 0 0 31%;
+    max-width: 31%;
+  }
+}
+@media (max-width: 576.99px) {
+  .account-organization .account-setup-wrapper-number {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    max-width: none;
+  }
 }
 .account-organization .account-setup-wrapper {
   display: -webkit-box;
@@ -12479,7 +12514,15 @@ button.mfp-close:hover:after,
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin-bottom: 18px;
+}
+@media (max-width: 576.99px) {
+  .account-organization .account-setup-wrapper {
+    display: block !important;
+  }
 }
 .account-organization .account-setup-bottom {
   padding-bottom: 25px;
@@ -12493,6 +12536,29 @@ button.mfp-close:hover:after,
 .account-organization .account-setup-middle {
   border-bottom: none;
   border-top: 1px solid #D3D3D3;
+}
+.account-organization .account-setup-delete {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 60px;
+          flex: 0 0 60px;
+  max-width: 60px;
+}
+@media (max-width: 576.99px) {
+  .account-organization .account-setup-delete {
+    display: none;
+  }
+}
+.account-organization .account-setup-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
 }
 .account .pb-0 {
   padding-bottom: 0;
@@ -12583,11 +12649,6 @@ button.mfp-close:hover:after,
   }
 }
 
-.account-adress-adaptive .account-setup-wrapper {
-  -webkit-box-align: self-start;
-      -ms-flex-align: self-start;
-          align-items: self-start;
-}
 .account-adress-adaptive .account-setup-adress {
   display: inline-block;
   margin-right: 10px;
@@ -12835,6 +12896,7 @@ button.mfp-close:hover:after,
       -ms-flex: 0 0 57%;
           flex: 0 0 57%;
   max-width: 57%;
+  margin-right: 20px;
 }
 @media (max-width: 1024.99px) {
   .order-compres-item-name {
@@ -12842,6 +12904,7 @@ button.mfp-close:hover:after,
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    margin-right: 0;
   }
 }
 @media (max-width: 576.99px) {
@@ -12851,6 +12914,9 @@ button.mfp-close:hover:after,
         -ms-flex: none;
             flex: none;
   }
+}
+.order-compres-item-text {
+  padding-right: 20px;
 }
 @media (max-width: 1024.99px) {
   .order-compres-item-text {
@@ -12862,6 +12928,7 @@ button.mfp-close:hover:after,
   font-weight: 600;
   font-size: 18px;
   font-size: 1.125rem;
+  color: #000000;
 }
 @media (max-width: 576.99px) {
   .order-compres-item-title {
@@ -12930,11 +12997,15 @@ button.mfp-close:hover:after,
   }
 }
 .order-compres-item-price {
+  padding-right: 20px;
   font-weight: 600;
+  white-space: nowrap;
 }
 @media (max-width: 1024.99px) {
   .order-compres-item-price {
     margin-bottom: 26px;
+    padding-right: 0;
+    white-space: normal;
   }
 }
 .order-compres-item-button {
@@ -13160,6 +13231,7 @@ button.mfp-close:hover:after,
   }
 }
 .order-card-payment-leftside {
+  padding-right: 15px;
   font-weight: 400;
   color: #808080;
 }

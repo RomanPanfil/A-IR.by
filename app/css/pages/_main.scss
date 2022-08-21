@@ -184,6 +184,7 @@
       @media (max-width: 768.99px) {
         display: block;
         width: 100%;
+        min-width: initial;
         height:initial;
         margin-bottom: 16px;
         padding: 32px 24px 45px 24px;
@@ -398,7 +399,8 @@
 
       @media(max-width:420px){
         display: flex;
-        position: relative;
+        // display: block;
+        position: static;
         justify-content:center;
       }
     }
@@ -1227,6 +1229,6 @@
   }
 
   .main-trust-pagintaion {
-    width: 160px !important;
+    // width: 160px !important;
   }
 }
