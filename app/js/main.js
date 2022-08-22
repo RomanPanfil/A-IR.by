@@ -1643,8 +1643,6 @@ if(document.getElementById('map-address')) {
 
           if(screen.matches) {
             header.after(remove)
-
-            console.log('asd')
           } else {
             control.prepend(remove)
           }
