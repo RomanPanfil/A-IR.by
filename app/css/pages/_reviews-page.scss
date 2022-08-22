@@ -299,22 +299,22 @@
         }
       }
 
-      .card-rating-body {
-        font-size: 44px;
-        margin-right: 12px;
+      // .card-rating-body {
+      //   font-size: 44px;
+      //   margin-right: 12px;
 
-        // @media(max-width: 1180px) {
-        //   font-size: 38px;
-        // }
+      //   // @media(max-width: 1180px) {
+      //   //   font-size: 38px;
+      //   // }
 
-        @media(max-width: 1024px) {
-          font-size: 44px;
-        }
-      }
+      //   @media(max-width: 1024px) {
+      //     font-size: 44px;
+      //   }
+      // }
 
-      .card-rating-value {
-        font-size: 28px !important;
-        line-height: 1.4;
+      .ui-rating-value {
+        // font-size: 28px !important;
+        // line-height: 1.2;
 
         // @media(max-width: 1180px) {
         //   font-size: 18px;
@@ -428,14 +428,14 @@
       }
     }
 
-    .review-card-rating-body {
-      font-size: 23px;
-    }
+    // .review-card-rating-body {
+    //   font-size: 23px;
+    // }
 
-    .review-card-rating-value {
-      font-size: 16px;
-      line-height: 1.2;
-    }
+    // .ui-rating-value {
+    //   font-size: 16px;
+    //   line-height: 1.2;
+    // }
 
     .review-card-text {
       font-size: 16px;

@@ -5,158 +5,288 @@
     Оформление заказа
   </div>
 
-  <div class="row">
-    <div class="col-md-7">
-      <div class="making-order-group">
-        <div class="making-order-caption">
-          1. Введите данные получателя заказа
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="ui-field mfp-popup-fields">
-              <label class="ui-label ui-label-mini" for="name">ФИО <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="name" id="name" class="ui-input" placeholder="Иванов Иван Иванович">
-                <div class="popup-icon"></div>
-              </div>
-            </div>
+  <form action="#" class="marking-order-validate">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="making-order-group">
+          <div class="making-order-caption">
+            1. Введите данные получателя заказа
           </div>
-          <div class="col-md-6">
-            <div class="ui-field mfp-popup-fields">
-              <label class="ui-label ui-label-mini" for="email">Ваш Email <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="email" id="email" class="ui-input" placeholder="123@gmail.com">
-                <div class="popup-icon"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="ui-field">
-              <label class="ui-label ui-label-mini" for="phone">Телефон <span class="ui-color-red">*</span></label>
-              <div class="ui-input-wrp">
-                <input type="text" name="phone" id="phone" class="ui-input" placeholder="+375 (33) 398-18-18">
-                <div class="popup-icon"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="making-order-group">
-        <div class="making-order-caption">
-          2. Как вы хотите забрать свой заказ?
-        </div>
-
-        <div class="making-order-pickup" id="making-order-pickup">
-          <ul class="making-order-tabs">
-            <li><a href="#tab-1">Самовывоз</a></li>
-            <li><a href="#tab-2">Доставка</a></li>
-          </ul>
-
-          <div class="making-order-content">
-            <div class="making-order-item" id="tab-1">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="making-order-title">
-                    Выберите магазин
-                  </div>
-
-                  <div class="making-order-place">
-                    <div class="making-order-address">
-                      <input type="radio" id="address" name="address">
-                      <label for="minsk">г. Минск, ул. Тимирязева 72, офис 7008</label>
-                    </div>
-
-                    <div class="making-order-address">
-                      <input type="radio" id="address" name="address">
-                      <label for="address">г. Могилёв, ул. Челюскинцев 172</label>
-                    </div>
-                  </div>
-
-                  <div class="making-order-comment">
-                    <span>Комментарий</span>
-                    <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-                  <div id="googleMap"></div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="ui-field mfp-popup-fields">
+                <label class="ui-label ui-label-mini" for="name">ФИО <span class="ui-color-red">*</span></label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="name" id="name" class="ui-input" placeholder="Иванов Иван Иванович">
+                  <div class="popup-icon"></div>
                 </div>
               </div>
             </div>
-            <div class="making-order-item" id="tab-2">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="ui-field">
-                    <label class="ui-label ui-label-mini" for="locality">Населённый пункт <span class="ui-color-red">*</span></label>
-                    <div class="ui-input-wrp">
-                      <input type="text" name="locality" id="locality" class="ui-input" placeholder="Минск">
-                      <div class="popup-icon"></div>
+            <div class="col-md-6">
+              <div class="ui-field mfp-popup-fields">
+                <label class="ui-label ui-label-mini" for="email">Ваш Email <span class="ui-color-red">*</span></label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="email" id="email" class="ui-input" placeholder="123@gmail.com">
+                  <div class="popup-icon"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="telephone">Телефон <span class="ui-color-red">*</span></label>
+                <div class="ui-input-wrp">
+                  <input type="text" name="telephone" id="telephone" class="ui-input" placeholder="+375 (33) 398-18-18">
+                  <div class="popup-icon"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="making-order-group">
+          <div class="making-order-caption">
+            2. Как вы хотите забрать свой заказ?
+          </div>
+
+          <div class="making-order-pickup" id="making-order-pickup">
+            <ul class="making-order-tabs">
+              <li><a href="#tab-1">Самовывоз</a></li>
+              <li><a href="#tab-2">Доставка</a></li>
+            </ul>
+
+            <div class="making-order-content">
+              <div class="making-order-item" id="tab-1">
+                <div class="row flex">
+                  <div class="col-xs-6">
+                    <div class="making-order-title">
+                      Выберите магазин
+                    </div>
+
+                    <div class="making-order-place">
+                      <div class="making-order-address">
+                        <input type="radio" id="minsk" name="address" data-lat="53.924723" data-lng="27.511615" checked>
+                        <label for="minsk">г. Минск, ул. Тимирязева 72, офис 7008</label>
+                      </div>
+
+                      <div class="making-order-address">
+                        <input type="radio" id="mogilev" name="address" data-lat="53.879127" data-lng="30.265464">
+                        <label for="mogilev">г. Могилёв, ул. Челюскинцев 172</label>
+                      </div>
+                    </div>
+
+                    <div class="making-order-comment self-call">
+                      <!-- <span>Комментарий</span>
+                      <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea> -->
+
+                      <div class="ui-field">
+                        <label for="" class="ui-label ui-label-mini">Комментарий</label>
+                        <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
+                      </div>
                     </div>
                   </div>
 
-                  <div class="ui-field">
-                    <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
-                    <div class="ui-input-wrp">
-                      <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
-                      <div class="popup-icon"></div>
+                  <div class="col-xs-6 map">
+                    <div id="map-address" style="width:100%;height:100%"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="making-order-item" id="tab-2">
+                <div class="row flex">
+                  <div class="col-xs-6">
+                    <div class="ui-field">
+                      <label class="ui-label ui-label-mini" for="locality">Населённый пункт <span class="ui-color-red">*</span></label>
+                      <div class="ui-input-wrp">
+                        <input type="text" name="locality" id="locality" class="ui-input" placeholder="Минск">
+                        <div class="popup-icon"></div>
+                      </div>
+                    </div>
+
+                    <div class="ui-field">
+                      <label class="ui-label ui-label-mini" for="street">Улица <span class="ui-color-red">*</span></label>
+                      <div class="ui-input-wrp">
+                        <input type="text" name="street" id="street" class="ui-input" placeholder="Первомайская">
+                        <div class="popup-icon"></div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-us-4 col-ss-6">
+                        <div class="ui-field">
+                          <label class="ui-label ui-label-mini" for="house">Дом <span class="ui-color-red">*</span></label>
+                          <div class="ui-input-wrp">
+                            <input type="text" name="house" id="house" class="ui-input">
+                            <div class="popup-icon"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-us-4 col-ss-6">
+                        <div class="ui-field">
+                          <label class="ui-label ui-label-mini" for="building ">Корпус</label>
+                          <div class="ui-input-wrp">
+                            <input type="text" name="building " id="building " class="ui-input">
+                            <div class="popup-icon"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-us-4 col-ss-6">
+                        <div class="ui-field">
+                          <label class="ui-label ui-label-mini" for="apartment">Квартира/Офис </label>
+                          <div class="ui-input-wrp">
+                            <input type="text" name="apartment" id="apartment" class="ui-input">
+                            <div class="popup-icon"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-us-4 col-ss-6">
+                        <div class="ui-field">
+                          <label class="ui-label ui-label-mini" for="entrance">Подъезд </label>
+                          <div class="ui-input-wrp">
+                            <input type="text" name="entrance" id="entrance" class="ui-input">
+                            <div class="popup-icon"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-us-4 col-ss-6">
+                        <div class="ui-field">
+                          <label class="ui-label ui-label-mini" for="floor">Этаж </label>
+                          <div class="ui-input-wrp">
+                            <input type="text" name="floor" id="floor" class="ui-input">
+                            <div class="popup-icon"></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
+                  <div class="col-xs-6">
+                    <div class="making-order-comment">
+                      <span>Комментарий</span>
+                      <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="making-order-group">
+          <div class="making-order-caption">
+            3. Способ оплаты
+          </div>
+
+          <div class="making-order-payment" id="making-order-payment">
+            <ul class="making-order-tabs">
+              <li><a href="#tab-1">Физическое лицо</a></li>
+              <li><a href="#tab-2">Организация / ИП</a></li>
+            </ul>
+
+            <div class="making-order-content">
+              <div class="making-order-item" id="tab-1">
+                <div class="making-order-title">
+                  Выберите удобный способ оплаты
+                </div>
+
+                <div class="making-order-select">
+                  <input type="radio" id="select1" name="select">
+                  <label for="select1">Наличными при получении</label>
+                </div>
+                <div class="making-order-select">
+                  <input type="radio" id="select2" name="select">
+                  <label for="select2">Картой при получении</label>
+                </div>
+                <div class="making-order-select">
+                  <input type="radio" id="select3" name="select">
+                  <label for="select3">ЕРИП</label>
+                </div>
+              </div>
+
+              <div class="making-order-item" id="tab-2">
+                <div class="making-order-title">
+                  Выберите удобный способ оплаты
+                </div>
+
+                <div class="making-order-select">
+                  <input type="radio" id="select4" name="select" value="Безналичный расчёт">
+                  <label for="select4">Безналичный расчёт</label>
+                </div>
+
+                <div class="making-order-form">
                   <div class="row">
-                    <div class="col-md-4">
-                      <div class="ui-field">
-                        <label class="ui-label ui-label-mini" for="house">Дом <span class="ui-color-red">*</span></label>
+                    <div class="col-md-6">
+                      <div class="ui-field mfp-popup-fields">
+                        <label class="ui-label ui-label-mini" for="company">Название организации или ИП <span class="ui-color-red">*</span></label>
                         <div class="ui-input-wrp">
-                          <input type="text" name="house" id="house" class="ui-input">
+                          <input type="text" name="company" id="company" class="ui-input" placeholder="Название организации">
                           <div class="popup-icon"></div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="ui-field">
-                        <label class="ui-label ui-label-mini" for="building ">Корпус</label>
+
+                    <div class="col-md-6">
+                      <div class="ui-field mfp-popup-fields">
+                        <label class="ui-label ui-label-mini" for="inn">УНП <span class="ui-color-red">*</span></label>
                         <div class="ui-input-wrp">
-                          <input type="text" name="building " id="building " class="ui-input">
+                          <input type="text" name="inn" id="inn" class="ui-input" placeholder="123456778">
                           <div class="popup-icon"></div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="ui-field">
-                        <label class="ui-label ui-label-mini" for="apartment">Квартира/Офис </label>
+
+                    <div class="col-md-6">
+                      <div class="ui-field mfp-popup-fields">
+                        <label class="ui-label ui-label-mini" for="address">Юридический адрес <span class="ui-color-red">*</span></label>
                         <div class="ui-input-wrp">
-                          <input type="text" name="apartment" id="apartment" class="ui-input">
+                          <input type="text" name="address" id="address" class="ui-input" placeholder="Название организации">
                           <div class="popup-icon"></div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="ui-field">
-                        <label class="ui-label ui-label-mini" for="entrance">Подъезд </label>
+
+                    <div class="col-md-6">
+                      <div class="ui-field mfp-popup-fields">
+                        <label class="ui-label ui-label-mini" for="bank">Банк <span class="ui-color-red">*</span></label>
                         <div class="ui-input-wrp">
-                          <input type="text" name="entrance" id="entrance" class="ui-input">
+                          <input type="text" name="bank" id="bank" class="ui-input" placeholder="ЗАО Альфа-Банк">
                           <div class="popup-icon"></div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4">
-                      <div class="ui-field">
-                        <label class="ui-label ui-label-mini" for="floor">Этаж </label>
+
+                    <div class="col-md-6">
+                      <div class="ui-field mfp-popup-fields">
+                        <label class="ui-label ui-label-mini" for="bik">БИК <span class="ui-color-red">*</span></label>
                         <div class="ui-input-wrp">
-                          <input type="text" name="floor" id="floor" class="ui-input">
+                          <input type="text" name="bik" id="bik" class="ui-input" placeholder="XXXXXXXX">
+                          <div class="popup-icon"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="ui-field mfp-popup-fields">
+                        <label class="ui-label ui-label-mini" for="iban">Расчетный счет IBAN <span class="ui-color-red">*</span></label>
+                        <div class="ui-input-wrp">
+                          <input type="text" name="iban" id="iban" class="ui-input" placeholder="BY XX XXXXXX XXXXX XXXX XXXXXXXXXX">
                           <div class="popup-icon"></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div class="making-order-select">
+                  <input type="radio" id="select5" name="select" value="ЕРИП">
+                  <label for="select5">ЕРИП</label>
+                </div>
 
-                <div class="col-md-6">
-                  <div class="making-order-comment">
-                    <span>Комментарий</span>
-                    <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
+                <div class="making-order-erip">
+                  <div class="ui-field mfp-popup-fields">
+                    <label class="ui-label ui-label-mini" for="test">Тестовая форма <span class="ui-color-red">*</span></label>
+                    <div class="ui-input-wrp">
+                      <input type="text" name="test" id="test" class="ui-input" placeholder="Тестовая форма">
+                      <div class="popup-icon"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -165,179 +295,148 @@
         </div>
       </div>
 
-      <div class="making-order-group">
-        <div class="making-order-caption">
-          3. Способ оплаты
-        </div>
-
-        <div class="making-order-payment" id="making-order-payment">
-          <ul class="making-order-tabs">
-            <li><a href="#tab-1">Физическое лицо</a></li>
-            <li><a href="#tab-2">Организация / ИП</a></li>
-          </ul>
-
-          <div class="making-order-content">
-            <div class="making-order-item" id="tab-1">
-              <div class="making-order-title">
-                Выберите удобный способ оплаты
-              </div>
-
-              <div class="making-order-select">
-                <input type="radio" id="select" name="select">
-                <label for="select">Наличными при получении</label>
-              </div>
-              <div class="making-order-select">
-                <input type="radio" id="select" name="select">
-                <label for="select">Картой при получении</label>
-              </div>
-              <div class="making-order-select">
-                <input type="radio" id="select" name="select">
-                <label for="select">ЕРИП</label>
-              </div>
+      <div class="col-offset-1 col-md-4">
+        <div class="making-order-info">
+          <div class="making-order-header">
+            <div class="making-order-header-title">
+              Ваш заказ
             </div>
 
-            <div class="making-order-item" id="tab-2">
-              <div class="making-order-title">
-                Выберите удобный способ оплаты
-              </div>
-
-              <div class="making-order-select">
-                <input type="radio" id="select" name="select">
-                <label for="select">Безналичный расчёт</label>
-              </div>
-              <div class="making-order-select">
-                <input type="radio" id="select" name="select">
-                <label for="select">ЕРИП</label>
-              </div>
+            <div class="makinkg-order-change">
+              <a href="#">Изменить</a>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-offset-1 col-md-4">
-      <div class="making-order-info">
-        <div class="making-order-header">
-          <div class="making-order-header-title">
-            Ваш заказ
+            <div class="line"></div>
           </div>
 
-          <div class="makinkg-order-change">
-            <a href="#">Изменить</a>
-          </div>
-        </div>
-
-        <div class="making-order-body">
-          <div class="making-order-list">
-            <div class="making-order-product">
-              <div class="making-order-img">
-                <img src="./images/making-order-product.png" alt="alt">
-              </div>
-
-              <div class="making-order-details">
-                <div class="making-order-name">
-                  Винтовой компрессор A1R BB-4FC, 10 бар
+          <div class="making-order-body">
+            <div class="making-order-list">
+              <div class="making-order-product">
+                <div class="making-order-img">
+                  <img src="./images/making-order-product.png" alt="alt">
                 </div>
 
-                <div class="making-order-total">
-                  <div class="making-order-count">
-                    x1
+                <div class="making-order-details">
+                  <div class="making-order-name">
+                    Винтовой компрессор A1R BB-4FC, 10 бар
                   </div>
 
-                  <div class="making-order-sum">
-                    5 381.00 BYN
+                  <div class="making-order-total">
+                    <div class="making-order-count">
+                      x1
+                    </div>
+
+                    <div class="making-order-sum">
+                      5 381.00 BYN
+                    </div>
+
+                    <div class="making-order-code">
+                      10 762
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="making-order-product">
+                <div class="making-order-img">
+                  <img src="./images/making-order-product.png" alt="alt">
+                </div>
+
+                <div class="making-order-details">
+                  <div class="making-order-name">
+                    Винтовой компрессор A1R BB-4FC, 10 бар
+                  </div>
+
+                  <div class="making-order-total">
+                    <div class="making-order-count">
+                      x1
+                    </div>
+
+                    <div class="making-order-sum">
+                      5 381.00 BYN
+                    </div>
+
+                    <div class="making-order-code">
+                      10 762
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="making-order-product">
+                <div class="making-order-img">
+                  <img src="./images/making-order-product.png" alt="alt">
+                </div>
+
+                <div class="making-order-details">
+                  <div class="making-order-name">
+                    Винтовой компрессор A1R BB-4FC, 10 бар
+                  </div>
+
+                  <div class="making-order-total">
+                    <div class="making-order-count">
+                      x1
+                    </div>
+
+                    <div class="making-order-sum">
+                      5 381.00 BYN
+                    </div>
+
+                    <div class="making-order-code">
+                      10 762
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="making-order-product">
+                <div class="making-order-img">
+                  <img src="./images/making-order-product.png" alt="alt">
+                </div>
+
+                <div class="making-order-details">
+                  <div class="making-order-name">
+                    Винтовой компрессор A1R BB-4FC, 10 бар
+                  </div>
+
+                  <div class="making-order-total">
+                    <div class="making-order-count">
+                      x1
+                    </div>
+
+                    <div class="making-order-sum">
+                      5 381.00 BYN
+                    </div>
+
+                    <div class="making-order-code">
+                      10 762
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="making-order-product">
-              <div class="making-order-img">
-                <img src="./images/making-order-product.png" alt="alt">
+
+            <div class="making-order-result">
+              <div class="making-order-delivery">
+                <span>Доставка</span>
+                <span>Самовывоз</span>
               </div>
-
-              <div class="making-order-details">
-                <div class="making-order-name">
-                  Винтовой компрессор A1R BB-4FC, 10 бар
-                </div>
-
-                <div class="making-order-total">
-                  <div class="making-order-count">
-                    x1
-                  </div>
-
-                  <div class="making-order-sum">
-                    5 381.00 BYN
-                  </div>
-                </div>
+              <div class="making-order-cost">
+                <span>Итого</span>
+                <span>5861.00 BYN</span>
               </div>
             </div>
-            <div class="making-order-product">
-              <div class="making-order-img">
-                <img src="./images/making-order-product.png" alt="alt">
+
+            <div class="making-order-confirm">
+              <div class="ui-checkbox">
+                <input type="checkbox" id="customCheckbox" class="ui-checkbox-input">
+                <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Оформить заказ» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
               </div>
 
-              <div class="making-order-details">
-                <div class="making-order-name">
-                  Винтовой компрессор A1R BB-4FC, 10 бар
-                </div>
-
-                <div class="making-order-total">
-                  <div class="making-order-count">
-                    x1
-                  </div>
-
-                  <div class="making-order-sum">
-                    5 381.00 BYN
-                  </div>
-                </div>
-              </div>
+              <button type="submit" class="ui-btn ui-btn-block ui-btn-red">Оформить заказ</button>
             </div>
-            <div class="making-order-product">
-              <div class="making-order-img">
-                <img src="./images/making-order-product.png" alt="alt">
-              </div>
-
-              <div class="making-order-details">
-                <div class="making-order-name">
-                  Винтовой компрессор A1R BB-4FC, 10 бар
-                </div>
-
-                <div class="making-order-total">
-                  <div class="making-order-count">
-                    x1
-                  </div>
-
-                  <div class="making-order-sum">
-                    5 381.00 BYN
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="making-order-result">
-            <div class="making-order-delivery">
-              <span>Доставка</span>
-              <span>Самовывоз</span>
-            </div>
-            <div class="making-order-cost">
-              <span>Итого</span>
-              <span>5861.00 BYN</span>
-            </div>
-          </div>
-
-          <div class="making-order-confirm">
-            <div class="ui-checkbox">
-              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
-              <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Оформить заказ» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
-            </div>
-
-            <button type="submit" class="ui-btn ui-btn-block ui-btn-red">Войти</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>
 
 <!--#include file="inc-footer.html"-->

@@ -18,7 +18,7 @@ let path = {
     html: app + "/*.html",
     css: app + "/css/*.scss",
     js: app + "/js/*.js",
-    images: ["!app/images/svg/**/*", app + "/images/**/*.{jpg,jpeg,png,gif,ico,webp}"],
+    images: ["!app/images/svg/**/*", app + "/images/**/*.{jpg,jpeg,png,gif,ico,webp,svg}"],
     svg: app + "/images/svg/*.svg",
     popups: app + "/popups/*.html",
     fonts: app + "/fonts/cofo/*",
@@ -46,7 +46,7 @@ let { src, dest } = require("gulp"),
   gcmq = require("gulp-group-css-media-queries"),
   svgSprite = require("gulp-svg-sprites"),
   autoprefixer = require("gulp-autoprefixer");
-  
+
 
 // function browserSync(params) {
 //   browsersync.init({
@@ -99,7 +99,7 @@ function media() {
   return src(path.src.media).pipe(dest(path.build.media));
 }
 
- 
+
 //   gulp.task('svgSprite', function () {
 //     return gulp.src('app/images/svg/*.svg') // svg files for sprite
 //         .pipe(svgSprite({
@@ -138,7 +138,7 @@ function watchFiles() {
   gulp.watch(path.watch.images, images);
   gulp.watch([path.watch.popups], popups);
   gulp.watch([path.watch.svg], svg);
-  
+
 }
 
 let build = gulp.series(

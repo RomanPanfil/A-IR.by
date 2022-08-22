@@ -67,12 +67,10 @@
     }
   </style>
   <script>
-    var element = document.getElementById("telephone");
-    var maskOptions = {
-      placeholder: "+{000}(00)000-00-00",
-      mask: "+{000}(00)000-00-00",
-    };
-    var mask = IMask(element, maskOptions);
+    var phoneMask = IMask(
+    document.getElementById('telephone'), {
+      mask: '+{375} (00) 000-00-00'
+    });
 
     $(document).ready(function () {
       $(".form-backcall").validate({
@@ -80,8 +78,8 @@
         rules: {
           telephone: {
             required: true,
-            minlength: 12,
-            telephone: true,
+            minlength: 19,
+            // telephone: true,
           },
           name: {
             required: true,
@@ -94,7 +92,7 @@
           },
           telephone: {
             required: "Введите данные",
-            minlength: " ",
+            minlength: "Введите полный номер",
           },
         },
         highlight: function(element, errorClass, validClass) {
@@ -111,16 +109,16 @@
       });
     });
 
-    jQuery.validator.addMethod(
-      "telephone",
-      function (value, element) {
-        return (
-          this.optional(element) ||
-          /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
-        );
-      },
-      " "
-    );
+    // jQuery.validator.addMethod(
+    //   "telephone",
+    //   function (value, element) {
+    //     return (
+    //       this.optional(element) ||
+    //       /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+    //     );
+    //   },
+    //   " "
+    // );
     jQuery.validator.addMethod(
       "lettersonlyName",
       function (value, element) {

@@ -1,0 +1,166 @@
+<div class="mfp-popup mfp-anim popup-bottom account not_delay">
+  <div class="mfp-popup-title account-headline">
+    <div class="popup-review-title">
+      Вопрос по заказу
+    </div>
+
+    <div class="account-subtitle">
+      Заказ № <span>6577599036 от 24.04.2022</span>
+    </div>
+  </div>
+
+  <div class="account-body">
+    <form action="#" class="order-form" novalidate="novalidate">
+      <div class="ui-field-wrapper">
+        <div class="ui-field">
+          <label class="ui-label ui-label-mini" for="gender">Тема <span class="ui-color-red">*</span></label>
+          <div class="ui-input-wrp">
+            <label for="catalog_amount" class="ui-label"></label>
+            <select name="catalog_amount" id="catalog_amount" class="catalog-settings-select" data-placeholder="">
+              <option value=""></option>
+              <option>Неполная комплектация товара</option>
+              <option>Ремонт / Диагностика товара</option>
+              <option>Не хватает товара в заказе</option>
+              <option>Инструкция / Гарантийный талон</option>
+              <option>Возврат товара</option>
+              <option>Другой вопрос</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ui-field">
+          <label for="" class="ui-label ui-label-mini">Текст сообщения <span class="ui-color-red">*</span></label>
+          <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="account-answer">
+        <div class="account-answer-title">
+          Как вы хотите получить ответ?
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="making-order-select">
+              <input type="radio" id="select1" name="select" value="Ответ на телефон">
+              <label for="select1">Ответ на телефон</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="making-order-select">
+              <input type="radio" id="select2" name="select" value="Ответ на Email">
+              <label for="select2">Ответ на Email</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-checkbox">
+        <div class="ui-checkbox-body">
+          <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" name="customCheckbox" checked="">
+          <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить запрос» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+        </div>
+      </div>
+
+      <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Отправить запрос</button>
+    </form>
+  </div>
+
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
+  <script>
+    $( document ).ready(function() {
+        $("select").styler();
+
+        $('#datetimepicker').datetimepicker({
+          // value:'12.03.2013',
+          format:'d.m.Y',
+          timepicker: false,
+          // opened: true,
+          lang: 'ru',
+        });
+
+        $.datetimepicker.setLocale('ru');
+
+
+    });
+  </script>
+
+  <script>
+    $( document ).ready(function() {
+      // validate form
+      $(".order-form").validate({
+        errorElement: "span",
+
+        rules: {
+          catalog_amount: {
+            required: true,
+          },
+
+          customCheckbox: {
+            required: true,
+          },
+
+          textbox: {
+            required: true,
+            maxlength: 500,
+          },
+        },
+
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "customCheckbox") {
+            error.appendTo(".form-cell-field-send");
+          } else {
+            error.insertAfter(element);
+          }
+
+          if (element.hasClass('catalog-settings-select')) {
+            element.closest('.jq-selectbox').after(error);
+          }
+          if (element.hasClass('ui-checkbox-input')) {
+            element.closest('.ui-checkbox-body').after(error);
+          }
+        },
+
+        messages: {
+          catalog_amount: {
+            required: 'Введите данные'
+          },
+
+          customCheckbox: {
+            required: 'Подтвердите ваше согласие с условиями'
+          },
+
+          textbox: {
+            required: "Введите данные",
+            maxlength: "Текст не должен превышать 500 символов",
+          },
+        },
+      });
+    });
+  </script>
+<button title="Close (Esc)" type="button" class="mfp-close">×</button></div>
