@@ -14746,47 +14746,47 @@ input[type=date] {
   }
 }
 
-.account-title {
+.profile-title {
   margin-bottom: 10px;
   font-size: 32px;
   font-size: 2rem;
   font-weight: 700;
 }
 @media (max-width: 1024.99px) {
-  .account-title {
+  .profile-title {
     margin-bottom: 13px;
     font-size: 28px;
     font-size: 1.75rem;
   }
 }
-.account-code {
+.profile-code {
   margin-bottom: 35px;
   color: #808080;
 }
 @media (max-width: 1024.99px) {
-  .account-code {
+  .profile-code {
     margin-bottom: 25px;
   }
 }
-.account-code-nuber {
+.profile-code-nuber {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 600;
 }
-.account-body {
+.profile-body {
   margin-bottom: 90px;
 }
 @media (max-width: 1024.99px) {
-  .account-body {
+  .profile-body {
     margin-bottom: 50px;
   }
 }
 @media (max-width: 420.99px) {
-  .account-body {
+  .profile-body {
     margin-bottom: 55px;
   }
 }
-.account-body-wrap {
+.profile-body-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14802,23 +14802,23 @@ input[type=date] {
   border-radius: 8px;
 }
 @media (max-width: 420px) {
-  .account-body-wrap {
+  .profile-body-wrap {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
-.account-body-info-title {
+.profile-body-info-title {
   margin-bottom: 5px;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 600;
 }
-.account-body-info-description {
+.profile-body-info-description {
   font-size: 14px;
   font-size: 0.875rem;
   color: rgba(0, 0, 0, 0.5);
 }
-.account-body-btn {
+.profile-body-btn {
   height: 40px;
   line-height: 40px;
   -webkit-box-flex: 0;
@@ -14837,47 +14837,47 @@ input[type=date] {
   text-align: center;
 }
 @media (max-width: 390px) {
-  .account-body-btn {
+  .profile-body-btn {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 120px;
             flex: 0 0 120px;
     max-width: 120px;
   }
 }
-.account-body-sample {
+.profile-body-sample {
   padding: 20px 32px 28px 32px;
   border: 1px solid #D3D3D3;
   border-radius: 8px;
 }
-.account-body-sample-title {
+.profile-body-sample-title {
   margin-bottom: 9px;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 600;
 }
-.account-body-sample-progress {
+.profile-body-sample-progress {
   margin-bottom: 5px;
   font-size: 32px;
   font-size: 2rem;
   font-weight: 700;
 }
-.account-body-sample-bulk {
+.profile-body-sample-bulk {
   margin-bottom: 19px;
   color: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 420px) {
-  .account-body-sample {
+  .profile-body-sample {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
-.account-body-title {
+.profile-body-title {
   margin-bottom: 32px;
   font-size: 28px;
   font-size: 1.75rem;
   font-weight: 700;
 }
-.account-setup {
+.profile-setup {
   margin-bottom: 24px;
   padding: 24px 32px 0 32px;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
@@ -14885,12 +14885,12 @@ input[type=date] {
   border-radius: 8px;
 }
 @media (max-width: 420px) {
-  .account-setup {
+  .profile-setup {
     padding-left: 24px;
     padding-right: 24px;
   }
 }
-.account-setup-top {
+.profile-setup-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14903,88 +14903,88 @@ input[type=date] {
   border-bottom: 1px solid #D3D3D3;
 }
 @media (max-width: 420px) {
-  .account-setup-top {
+  .profile-setup-top {
     padding-left: 24px;
     margin: 0 -24px 0 -24px;
   }
 }
 @media (max-width: 400px) {
-  .account-setup-top {
+  .profile-setup-top {
     padding-right: 60px;
   }
 }
-.account-setup-phone {
+.profile-setup-phone {
   margin-right: 10px;
 }
-.account-setup-middle {
+.profile-setup-middle {
   margin: 0 -32px 0 -32px;
   padding: 20px 32px 25px 32px;
   border-bottom: 1px solid #D3D3D3;
 }
-.account-setup-middle div:last-child {
+.profile-setup-middle div:last-child {
   margin-bottom: 0;
 }
 @media (max-width: 420px) {
-  .account-setup-middle {
+  .profile-setup-middle {
     padding-left: 24px;
     padding-right: 24px;
     margin: 0 -24px 0 -24px;
   }
 }
-.account-setup-bottom {
+.profile-setup-bottom {
   padding-top: 25px;
   padding-bottom: 35px;
 }
 @media (max-width: 420px) {
-  .account-setup-bottom {
+  .profile-setup-bottom {
     padding-left: 24px !important;
     padding-right: 24px !important;
     margin: 0 -24px 0 -24px !important;
   }
 }
-.account-setup-bottom div:last-child {
+.profile-setup-bottom div:last-child {
   margin-bottom: 0;
 }
-.account-setup-bottom .row:first-child {
+.profile-setup-bottom .row:first-child {
   margin-bottom: 35px;
 }
 @media (max-width: 576.99px) {
-  .account-setup-bottom .row:first-child {
+  .profile-setup-bottom .row:first-child {
     margin-bottom: 0;
   }
 }
-.account-setup-bottom .account-setup-para {
+.profile-setup-bottom .profile-setup-para {
   margin-bottom: 18px;
 }
-.account-setup-title {
+.profile-setup-title {
   margin-bottom: 26px;
   font-size: 22px;
   font-size: 1.375rem;
   font-weight: 700;
 }
-.account-setup-item {
+.profile-setup-item {
   margin-bottom: 3px;
   color: rgba(0, 0, 0, 0.5);
 }
-.account-setup-wrap {
+.profile-setup-wrap {
   margin-bottom: 35px;
 }
-.account-setup-info .account-setup-title {
+.profile-setup-info .profile-setup-title {
   margin-bottom: 11px;
 }
-.account-setup-description {
+.profile-setup-description {
   margin-bottom: 20px;
   font-size: 14px;
   font-size: 0.875rem;
   color: rgba(0, 0, 0, 0.5);
 }
-.account-setup-para {
+.profile-setup-para {
   margin-bottom: 10px;
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 600;
 }
-.account-setup-wrapper {
+.profile-setup-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14996,19 +14996,19 @@ input[type=date] {
           align-items: baseline;
   margin-bottom: 18px;
 }
-.account-setup-delete {
+.profile-setup-delete {
   font-size: 14px;
   font-size: 0.875rem;
 }
 @media (max-width: 420.99px) {
-  .account-setup-delete {
+  .profile-setup-delete {
     display: none;
   }
 }
-.account-organization {
+.profile-organization {
   padding-bottom: 35px;
 }
-.account-organization .account-setup-wrapper-name {
+.profile-organization .profile-setup-wrapper-name {
   display: inline-block;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 46%;
@@ -15019,7 +15019,7 @@ input[type=date] {
   color: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 1024.99px) {
-  .account-organization .account-setup-wrapper-name {
+  .profile-organization .profile-setup-wrapper-name {
     max-width: 51%;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 51%;
@@ -15027,7 +15027,7 @@ input[type=date] {
   }
 }
 @media (max-width: 576.99px) {
-  .account-organization .account-setup-wrapper-name {
+  .profile-organization .profile-setup-wrapper-name {
     display: block;
     margin-right: 0;
     -webkit-box-flex: 0;
@@ -15036,7 +15036,7 @@ input[type=date] {
     max-width: none;
   }
 }
-.account-organization .account-setup-wrapper-mail {
+.profile-organization .profile-setup-wrapper-mail {
   display: inline-block;
   max-width: 36%;
   -webkit-box-flex: 0;
@@ -15046,7 +15046,7 @@ input[type=date] {
   word-break: break-word;
 }
 @media (max-width: 1024.99px) {
-  .account-organization .account-setup-wrapper-mail {
+  .profile-organization .profile-setup-wrapper-mail {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 31%;
             flex: 0 0 31%;
@@ -15054,7 +15054,7 @@ input[type=date] {
   }
 }
 @media (max-width: 576.99px) {
-  .account-organization .account-setup-wrapper-mail {
+  .profile-organization .profile-setup-wrapper-mail {
     display: block;
     margin-right: 0;
     margin-bottom: 10px;
@@ -15064,7 +15064,7 @@ input[type=date] {
     max-width: none;
   }
 }
-.account-organization .account-setup-wrapper-number {
+.profile-organization .profile-setup-wrapper-number {
   display: inline-block;
   max-width: 36%;
   -webkit-box-flex: 0;
@@ -15074,7 +15074,7 @@ input[type=date] {
   word-break: break-word;
 }
 @media (max-width: 1024.99px) {
-  .account-organization .account-setup-wrapper-number {
+  .profile-organization .profile-setup-wrapper-number {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 31%;
             flex: 0 0 31%;
@@ -15082,7 +15082,7 @@ input[type=date] {
   }
 }
 @media (max-width: 576.99px) {
-  .account-organization .account-setup-wrapper-number {
+  .profile-organization .profile-setup-wrapper-number {
     display: block;
     margin-right: 0;
     margin-bottom: 10px;
@@ -15092,7 +15092,7 @@ input[type=date] {
     max-width: none;
   }
 }
-.account-organization .account-setup-wrapper {
+.profile-organization .profile-setup-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15105,35 +15105,35 @@ input[type=date] {
   margin-bottom: 18px;
 }
 @media (max-width: 576.99px) {
-  .account-organization .account-setup-wrapper {
+  .profile-organization .profile-setup-wrapper {
     display: block !important;
   }
 }
-.account-organization .account-setup-bottom {
+.profile-organization .profile-setup-bottom {
   padding-bottom: 25px;
   margin: 0 -32px 0 -32px;
   padding: 30px 32px 25px 32px;
   border-top: 1px solid #D3D3D3;
 }
-.account-organization .account-setup-top {
+.profile-organization .profile-setup-top {
   border: none;
 }
-.account-organization .account-setup-middle {
+.profile-organization .profile-setup-middle {
   border-bottom: none;
   border-top: 1px solid #D3D3D3;
 }
-.account-organization .account-setup-delete {
+.profile-organization .profile-setup-delete {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 60px;
           flex: 0 0 60px;
   max-width: 60px;
 }
 @media (max-width: 576.99px) {
-  .account-organization .account-setup-delete {
+  .profile-organization .profile-setup-delete {
     display: none;
   }
 }
-.account-organization .account-setup-wrapper {
+.profile-organization .profile-setup-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15145,16 +15145,16 @@ input[type=date] {
       -ms-flex-pack: initial;
           justify-content: initial;
 }
-.account .pb-0 {
+.profile .pb-0 {
   padding-bottom: 0;
 }
 @media (max-width: 400px) {
-  .account .max-215 {
+  .profile .max-215 {
     max-width: 215px;
   }
 }
 
-.account-setup-edit-svg {
+.profile-setup-edit-svg {
   position: absolute;
   right: 32px;
   width: 24px;
@@ -15164,11 +15164,11 @@ input[type=date] {
   stroke-linecap: "round";
   stroke-linejoin: "round";
 }
-.account-setup-edit-svg:hover {
+.profile-setup-edit-svg:hover {
   stroke: #2A4455;
 }
 
-.account-edit-btn {
+.profile-edit-btn {
   display: none;
   width: 176px;
   height: 40px;
@@ -15179,62 +15179,62 @@ input[type=date] {
   font-weight: 700;
 }
 
-.account-edit {
+.profile-edit {
   -webkit-box-shadow: none;
           box-shadow: none;
   border: 1px solid #BC0000;
 }
-.account-edit .account-edit-btn {
+.profile-edit .profile-edit-btn {
   display: block;
 }
 @media (max-width: 420.99px) {
-  .account-edit .account-edit-btn {
+  .profile-edit .profile-edit-btn {
     display: none;
   }
 }
-.account-edit .account-setup-edit-link {
+.profile-edit .profile-setup-edit-link {
   display: none;
 }
 @media (max-width: 420.99px) {
-  .account-edit .account-setup-edit-link {
+  .profile-edit .profile-setup-edit-link {
     display: block;
     stroke: #BC0000;
   }
 }
-.account-edit .account-setup-top {
+.profile-edit .profile-setup-top {
   border-color: #BC0000;
 }
-.account-edit .account-setup-middle {
+.profile-edit .profile-setup-middle {
   border-color: #BC0000;
 }
-.account-edit .account-setup-bottom {
+.profile-edit .profile-setup-bottom {
   border-color: #BC0000;
 }
 @media (max-width: 420.99px) {
-  .account-edit .account-setup-edit-svg {
+  .profile-edit .profile-setup-edit-svg {
     stroke: #BC0000;
   }
 }
-.account-edit .account-body-btn {
+.profile-edit .profile-body-btn {
   background-color: #BC0000;
   color: #FFF;
 }
-.account-edit .account-body-btn:hover {
+.profile-edit .profile-body-btn:hover {
   background-color: #991C12;
 }
 
 @media (max-width: 576.99px) {
-  .account-setup-mb .account-setup-wrap {
+  .profile-setup-mb .profile-setup-wrap {
     margin-bottom: 35px !important;
   }
 }
 @media (max-width: 576.99px) {
-  .account-setup-mb .mb-0 {
+  .profile-setup-mb .mb-0 {
     margin-bottom: 0 !important;
   }
 }
 
-.account-adress-adaptive .account-setup-adress {
+.profile-adress-adaptive .profile-setup-adress {
   display: inline-block;
   margin-right: 10px;
 }

@@ -1417,6 +1417,8 @@ if(document.getElementById('map-address')) {
         orderForm.classList.remove('active')
       }
 
+      console.log($(this).val())
+
       if($(this).val() === 'ЕРИП') {
         orderErip.classList.add('active');
       } else {
@@ -2103,22 +2105,22 @@ $(document).ready(function () {
 
 let el = document.querySelector(".favorites-grid");
 
-
-
-(function () {
-  if (matchMedia) {
-    const screen = window.matchMedia("(max-width:1024px)");
-    screen.addListener(changes);
-    changes(screen);
-  }
-  function changes(screen) {
-    if (screen.matches) {
-      //экран менее 1024
-      el.dataset.style = "line";
-
-    } else {
-      //экран более 1024
-      el.dataset.style = "grid";
+if(el) {
+  (function () {
+    if (matchMedia) {
+      const screen = window.matchMedia("(max-width:1024px)");
+      screen.addListener(changes);
+      changes(screen);
     }
-  }
-})();
+    function changes(screen) {
+      if (screen.matches) {
+        //экран менее 1024
+        el.dataset.style = "line";
+
+      } else {
+        //экран более 1024
+        el.dataset.style = "grid";
+      }
+    }
+  })();
+}
