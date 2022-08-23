@@ -12339,6 +12339,9 @@ button.mfp-close:hover:after,
   padding: 20px 32px 25px 32px;
   border-bottom: 1px solid #D3D3D3;
 }
+.account-setup-middle div:last-child {
+  margin-bottom: 0;
+}
 @media (max-width: 420px) {
   .account-setup-middle {
     padding-left: 24px;
