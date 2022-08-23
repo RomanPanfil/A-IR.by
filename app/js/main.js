@@ -1998,8 +1998,8 @@ $('.waitList-item-remove-link').click(function(){
   $(this).closest($('div.waitList-item')).remove();
 });
 
-$('.account-setup-delete').click(function(){
-  $(this).closest($('div.account-setup-wrapper')).remove();
+$('.profile-setup-delete').click(function(){
+  $(this).closest($('div.profile-setup-wrapper')).remove();
 });
 
 $(document).ready(function () {
