@@ -1,0 +1,23 @@
+.popup-alert {
+  .update-contract {
+    margin-bottom: 29px;
+
+    @media(max-width: 576px) {
+      margin-bottom: 55px;
+    }
+
+    &-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+
+    }
+  }
+  .ui-btn {
+    white-space: normal;
+    overflow: visible;
+    line-height: 1;
+    height: auto;
+    padding: 15px 0;
+  }
+}

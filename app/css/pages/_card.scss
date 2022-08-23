@@ -35,6 +35,11 @@
 
   &-links {
     line-height: 24px;
+
+    .ui-rating {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
   }
   &-rating {
     vertical-align: middle;
@@ -48,10 +53,11 @@
   }
 
   &-reviews {
-    line-height: 24px;
-    height: 24px;
+    line-height: 21px;
+    // height: 24px;
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
+    margin-right: 24px;
   }
 
   &-action {
@@ -809,7 +815,7 @@
   &-tab {
     .row {
       @media(max-width:768.99px){
-        padding: 40px 20px 
+        padding: 40px 20px
       }
     }
   }
@@ -1842,7 +1848,11 @@
 
   &-empty {
     max-width: 650px;
-    color: rgba(#000, 0.7);
+    color: rgba(#000,.7);
+
+    .ui-btn {
+      padding: 0px 35px;
+    }
   }
 
   @media (max-width: 1024.99px) and (min-width: 769px) {

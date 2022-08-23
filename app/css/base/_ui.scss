@@ -71,8 +71,9 @@ button {
   line-height: 48px;
   max-width: 100%;
   background-color: $primary;
-  padding: 0px 35px;
-  padding: 0px Max(35px, 10%);
+  // padding: 0px 35px;
+  // padding: 0px Max(35px, 10%);
+  padding: 0;
   font-family: $ffOpenSans;
   font-weight: 700;
   @include fz(16);
@@ -85,6 +86,10 @@ button {
   text-overflow: ellipsis;
   transition: .3s background-color, .3s color, .3s border-color, .3s box-shadow;
   border-radius: 5px;
+
+  @media(max-width: 1100px) {
+    padding: 0px Max(35px, 10%);
+  }
 
   &:hover {
     background-color: $primary_hover;
@@ -115,7 +120,7 @@ button {
   &-active,
   &-blue {
     background-color: $secondary;
-    
+
     &:hover {
       background-color: $secondary_hover;
     }
@@ -405,11 +410,11 @@ svg.sprite {
 
 .ui-pgn {
   margin-bottom: 45px;
-  
+
   .ui-btn-block {
     margin-bottom: 30px;
   }
-  
+
   &-btns {
     font-size: 0;
     text-align: center;
@@ -485,7 +490,7 @@ svg.sprite {
   }
   @media (max-width: 420px) {
     &-arrow {
-      
+
       width: 24px;
       height: 32px;
       padding: 5px 4px;
@@ -598,12 +603,14 @@ span.error {
   color: $primary;
   @include fz(14);
   padding-top: 4px;
+  line-height: 1;
 }
 textarea.ui-input {
   height: auto;
   padding: 16px;
   white-space: normal;
   line-height: 1.375;
+  resize: vertical;
 }
 
 ::-webkit-input-placeholder {opacity: 1; transition: opacity 0.3s ease; color: $border;}
@@ -794,7 +801,7 @@ textarea.ui-input {
   }
   &:hover {
     z-index: 109;
-    
+
     .ui-tooltip-icon {
       background-color: $border;
       color: #FFF;
@@ -808,7 +815,7 @@ textarea.ui-input {
 
   @media (max-width: 768.99px) {
     position: static;
-    
+
     &-answer {
       position: fixed;
       z-index: 110;
@@ -906,12 +913,12 @@ textarea.ui-input {
     min-width: 100%;
 
     ul {
-      
+
 
       li {
         padding: 5px 16px;
         cursor: pointer;
-        
+
         &:hover {
           background: #f5f5f5;
         }
@@ -1033,7 +1040,7 @@ textarea.ui-input {
 
   td {
     padding: 10px 32px;
-  
+
     &:nth-child(1) {
       color: rgba(0, 0, 0, 0.7);
     }

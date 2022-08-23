@@ -48,8 +48,38 @@ const FARBA = {
           });
         });
       }
+<<<<<<< HEAD
     });
   },
+=======
+    })
+  }
+}
+
+$.fn.Tabs = function() {
+	var selector = this;
+
+	this.each(function() {
+		var obj = $(this);
+		$(obj.attr('href')).hide();
+		$(obj).click(function() {
+			$(selector).removeClass('selected');
+
+			$(selector).each(function(i, element) {
+				$($(element).attr('href')).hide();
+			});
+
+			$(this).addClass('selected');
+			$($(this).attr('href')).fadeIn();
+			return false;
+		});
+	});
+
+	$(this).show();
+	$(this).first().click();
+	if(location.hash!='' && $('a[href="' + location.hash + '"]').length)
+		$('a[href="' + location.hash + '"]').click();
+>>>>>>> main
 };
 
 $.fn.Tabs = function () {
@@ -235,8 +265,23 @@ const changeCatalogStyle = (style) => {
       e = e || window.event;
       e.preventDefault();
 
+<<<<<<< HEAD
       const style = this.dataset.style || "grid";
       changeCatalogStyle(style);
+=======
+(function(){
+  if (!document.querySelector('.catalog-style-toggler')) return;
+
+  document.querySelectorAll('.catalog-style-toggler')
+    .forEach(el => {
+      el.addEventListener('click', function(e) {
+        e = e || window.event
+        e.preventDefault();
+
+        const style = this.dataset.style || 'grid'
+        changeCatalogStyle(style)
+      })
+>>>>>>> main
     });
   });
 
@@ -253,11 +298,27 @@ const changeCatalogStyle = (style) => {
   let cardReview = $("#card_review").offset().top;
   let catalogSerachOffset = catalogProductsSearch.offset().top;
 
+<<<<<<< HEAD
   window.addEventListener("scroll", function () {
     if (window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
       catalogProductsReniev.addClass("catalog-search-open");
     } else {
       catalogProductsReniev.removeClass("catalog-search-open");
+=======
+(function (){
+  if (!$('#catalog_search').length) return;
+
+  let catalogProductsSearch = $('#catalog_search');
+  let catalogProductsReniev = $('.catalog-products-reniev')
+  let cardReview = $('#card_review').offset().top;
+  let catalogSerachOffset = catalogProductsSearch.offset().top
+
+  window.addEventListener('scroll',function() {
+    if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
+      catalogProductsReniev.addClass('catalog-search-open')
+    }else {
+      catalogProductsReniev.removeClass('catalog-search-open')
+>>>>>>> main
     }
   });
 })();
@@ -336,9 +397,15 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
     ".main-contacts-tel-arrow, .mob-menu-phone"
   );
   let numbers = document.querySelector(".main-contacts-drop");
+<<<<<<< HEAD
   if (!arrows.length || !numbers) return;
 
   arrows.forEach((el) => {
+=======
+  if (!arrows.length || !numbers) return
+
+  arrows.forEach(el => {
+>>>>>>> main
     el.addEventListener("click", function (e) {
       e = e || window.event;
       e.preventDefault();
@@ -347,6 +414,7 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
     });
   });
 
+<<<<<<< HEAD
   document.addEventListener("click", (e) => {
     const withinBoundaries = e.composedPath().includes(numbers);
     const isArrow = e
@@ -357,6 +425,15 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
       .includes(document.querySelector(".mob-menu-phone"));
 
     if (!withinBoundaries && !isArrow && !isMob) {
+=======
+
+	document.addEventListener('click', (e) => {
+    const withinBoundaries = e.composedPath().includes(numbers);
+    const isArrow = e.composedPath().includes(document.querySelector(".main-contacts-tel-arrow"));
+    const isMob = e.composedPath().includes(document.querySelector(".mob-menu-phone"));
+
+    if ( !withinBoundaries && !isArrow && !isMob) {
+>>>>>>> main
       numbers.classList.remove("numbers-open");
       document
         .querySelector(".main-contacts-tel-arrow")
@@ -582,8 +659,16 @@ if (document.getElementById("card-breackpoint")) {
 (function () {
   if (!D.querySelector(".catalog-marks")) return;
 
+<<<<<<< HEAD
   const wrapBtn = D.querySelector(".catalog-marks-toggler");
   const wrapSettings = D.querySelector(".catalog-marks-list");
+=======
+(function (){
+  if (!D.querySelector('.catalog-marks')) return;
+
+  const wrapBtn =D.querySelector('.catalog-marks-toggler');
+  const wrapSettings = D.querySelector('.catalog-marks-list')
+>>>>>>> main
 
   function resSetting() {
     const wrapSettingContainer = document.querySelector(
@@ -952,10 +1037,20 @@ if (document.getElementById("card-breackpoint")) {
       const txt = this.querySelector(".catalog-filters-toggler-txt");
       const icon = this.querySelector(".ui-btn-icon");
 
+<<<<<<< HEAD
       if (this.classList.contains("opened")) {
         txt.textContent = "Показать все";
         icon.classList.add("ui-btn-icon-plus");
         icon.classList.remove("ui-btn-icon-cancel");
+=======
+      const txt = this.querySelector('.catalog-filters-toggler-txt')
+      const icon = this.querySelector('.ui-btn-icon')
+
+      if (this.classList.contains('opened')) {
+        txt.textContent = 'Показать все'
+        icon.classList.add('ui-btn-icon-plus')
+        icon.classList.remove('ui-btn-icon-cancel')
+>>>>>>> main
       } else {
         txt.textContent = "Скрыть";
         icon.classList.remove("ui-btn-icon-plus");
@@ -1039,75 +1134,110 @@ if (document.getElementById("card-breackpoint")) {
     });
 })();
 
+<<<<<<< HEAD
 const ratings = document.querySelectorAll(".card-rating");
 const acc = document.getElementsByClassName("accordion-items-title");
+=======
 
-let ratingActive;
-let ratingValue;
 
+// const ratings = document.querySelectorAll(".card-rating");
+// const acc = document.getElementsByClassName("accordion-items-title");
+>>>>>>> main
+
+// let ratingActive;
+// let ratingValue;
+
+<<<<<<< HEAD
 // rating stars
 if (ratings.length > 0) {
   initRatings();
 }
+=======
 
-function initRatings() {
-  for (let i = 0; i < ratings.length; i++) {
-    const rating = ratings[i];
+// // rating stars
+// if (ratings.length > 0) {
+//   initRatings();
+// }
+>>>>>>> main
 
-    if (rating.classList.contains("rating-set")) {
-      setRating(rating);
+// function initRatings() {
+//   for (let i = 0; i < ratings.length; i++) {
+//     const rating = ratings[i];
+
+//     if (rating.classList.contains("rating-set")) {
+//       setRating(rating);
+//     }
+
+//     initRatingVars(rating);
+//     setRatingActiveWidth();
+//   }
+// }
+
+// function initRatingVars(rating) {
+//   ratingActive = rating.querySelector(".card-rating-active");
+//   ratingValue = rating.querySelector(".card-rating-value");
+// }
+
+// function setRatingActiveWidth(index = ratingValue.innerHTML) {
+//   const ratingActiveWidth = index / 0.05;
+
+//   if (index === "Нет оценки") {
+//     ratingActive.style.width = "0%";
+//   } else {
+//     ratingActive.style.width = `${ratingActiveWidth}%`;
+//   }
+// }
+
+// function setRating(rating) {
+//   const ratingItems = rating.querySelectorAll(".card-rating-item");
+
+//   for (let i = 0; i < ratingItems.length; i++) {
+//     const ratingItem = ratingItems[i];
+
+//     ratingItem.addEventListener("mouseenter", function (e) {
+//       initRatingVars(rating);
+//       setRatingActiveWidth(ratingItem.value);
+//     });
+
+//     ratingItem.addEventListener("mouseleave", function (e) {
+//       setRatingActiveWidth();
+//     });
+
+//     ratingItem.addEventListener("click", function (e) {
+//       initRatingVars(rating);
+
+//       ratingValue.innerHTML = ratingItem.value;
+//       setRatingActiveWidth();
+//     });
+//   }
+// }
+
+<<<<<<< HEAD
+=======
+let arrStars = document.querySelectorAll('.ui-rating-star');
+let arrBlock = document.querySelectorAll('.ui-rating');
+
+arrBlock.forEach((e) => {
+  if(arrStars.length !== 0) {
+    let arrLength = e.children[0].children.length;
+    let elValue = e.children[1].textContent;
+    let numValue = Math.round(elValue);
+    let countRating = arrLength - (arrLength - numValue);
+
+    for(let i = 0; i < countRating; i++) {
+      e.children[0].children[i].classList.add('active');
     }
-
-    initRatingVars(rating);
-    setRatingActiveWidth();
   }
-}
+})
 
-function initRatingVars(rating) {
-  ratingActive = rating.querySelector(".card-rating-active");
-  ratingValue = rating.querySelector(".card-rating-value");
-}
-
-function setRatingActiveWidth(index = ratingValue.innerHTML) {
-  const ratingActiveWidth = index / 0.05;
-
-  if (index === "Нет оценки") {
-    ratingActive.style.width = "0%";
-  } else {
-    ratingActive.style.width = `${ratingActiveWidth}%`;
-  }
-}
-
-function setRating(rating) {
-  const ratingItems = rating.querySelectorAll(".card-rating-item");
-
-  for (let i = 0; i < ratingItems.length; i++) {
-    const ratingItem = ratingItems[i];
-
-    ratingItem.addEventListener("mouseenter", function (e) {
-      initRatingVars(rating);
-      setRatingActiveWidth(ratingItem.value);
-    });
-
-    ratingItem.addEventListener("mouseleave", function (e) {
-      setRatingActiveWidth();
-    });
-
-    ratingItem.addEventListener("click", function (e) {
-      initRatingVars(rating);
-
-      ratingValue.innerHTML = ratingItem.value;
-      setRatingActiveWidth();
-    });
-  }
-}
-
+>>>>>>> main
 $(function () {
   let header = $(".header"),
     headerMenu = $(".header .menu"),
     headerNav = $(".header .nav-wrapper"),
     wrapperFixed = $(".wrapper"),
     footerBreackpoint = $("#footer"),
+<<<<<<< HEAD
     footerHeight = $("#footer").innerHeight();
   const headerOffset = $("header .main").offset().top;
 
@@ -1117,6 +1247,19 @@ $(function () {
     const headerHeight = $("header .main").outerHeight(true);
 
     let offsetFooter = footerBreackpoint.offset().top;
+=======
+    footerHeight = $('#footer').innerHeight();
+  const headerOffset = $('header .main').offset().top
+
+
+  $(window).scroll(function () {
+    let cardBreackpointOpen = $('.card-breackpoint-open');
+    let headerCardFixedHeight = $('.header_fixed .main').innerHeight();
+    const headerHeight = $('header .main').outerHeight(true);
+
+    let offsetFooter = footerBreackpoint.offset().top
+
+>>>>>>> main
 
     if (matchMedia) {
       var screen678 = window.matchMedia("(max-width:678px)");
@@ -1130,11 +1273,16 @@ $(function () {
         //   'bottom': 0
         // })
 
+<<<<<<< HEAD
         if (
           offsetFooter <
           document.documentElement.clientHeight + window.scrollY
         ) {
           D.querySelector("#middle").classList.remove("panel-is-float");
+=======
+        if (offsetFooter < document.documentElement.clientHeight + window.scrollY) {
+          D.querySelector('#middle').classList.remove("panel-is-float")
+>>>>>>> main
           cardBreackpointOpen.css({
             position: "relative",
           });
@@ -1192,6 +1340,7 @@ function fixCardImgsTablet(card, imgs, section) {
   }
 }
 
+<<<<<<< HEAD
 (function () {
   const card = document.querySelector(".card");
   const imgs = document.querySelector(".card-imgs");
@@ -1205,6 +1354,16 @@ function fixCardImgsTablet(card, imgs, section) {
     "resize",
     fixCardImgsTablet.bind(null, card, imgs, section)
   );
+=======
+(function() {
+  const card = document.querySelector('.card')
+  const imgs = document.querySelector('.card-imgs')
+  const section = document.querySelector('.card-section')
+
+  if(!card) return
+  document.addEventListener('scroll',fixCardImgsTablet.bind(null,card,imgs,section))
+  window.addEventListener('resize',fixCardImgsTablet.bind(null,card,imgs,section))
+>>>>>>> main
 })();
 
 jQuery(document).ready(function ($) {
@@ -1213,7 +1372,11 @@ jQuery(document).ready(function ($) {
 
   $(document).on("click", ".tabs-target", function (e) {
     e.preventDefault();
+<<<<<<< HEAD
     const id = $(this).attr("href");
+=======
+    const id = $(this).attr('href');
+>>>>>>> main
 
     if ($(id).length) {
       $('.card-tabs-link[href="' + id + '"]').click();
@@ -1280,6 +1443,7 @@ jQuery(document).ready(function ($) {
     },
   });
 
+<<<<<<< HEAD
   $(".card-tabs-link").Tabs();
 
   $(document).on("click", ".mfp-custom-close", function (e) {
@@ -1742,3 +1906,412 @@ let el = document.querySelector(".favorites-grid");
 
 
 
+=======
+
+  $('.card-tabs-link').Tabs();
+
+  $(document).on('click','.mfp-custom-close',function(e){
+    e.preventDefault()
+    $.magnificPopup.close()
+  })
+
+  $(function() {
+    let tabOrder = $('#making-order-pickup .making-order-content > div');
+    let tabPayment = $('#making-order-payment .making-order-content > div');
+
+    tabOrder.hide().filter(':first').show();
+
+    // Клики по вкладкам.
+    $('#making-order-pickup .making-order-tabs a').click(function(){
+      tabOrder.hide();
+      tabOrder.filter(this.hash).show();
+      $('#making-order-pickup .making-order-tabs a').removeClass('active');
+      $(this).addClass('active');
+      return false;
+    }).filter(':first').click();
+
+    // Клики по вкладкам.
+    $('#making-order-payment .making-order-tabs a').click(function(){
+      tabPayment.hide();
+      tabPayment.filter(this.hash).show();
+      $('#making-order-payment .making-order-tabs a').removeClass('active');
+      $(this).addClass('active');
+      return false;
+    }).filter(':first').click();
+  });
+
+  function mapContactInit() {
+  var mapOptions = {
+    zoom: 17,
+    center: new google.maps.LatLng(53.924723, 27.511615),
+    mapTypeControl:false,
+    scrollwheel: false,
+    zoomControl: false,
+    scaleControl:false,
+    disableDefaultUI: true,
+
+    mapTypeControlOptions: {
+        mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    },
+
+    navigationControlOptions: {
+        style: google.maps.NavigationControlStyle.SMALL
+    },
+  }
+
+  // initial map
+  var map = new google.maps.Map(document.getElementById('map-address'), mapOptions);
+  var myCenter = new google.maps.LatLng(53.924723, 27.511615);
+  var marker = new google.maps.Marker({position:myCenter});
+
+  marker.setMap(map);
+
+  // for select
+  let minsk = document.getElementById('minsk');
+  let mogilev = document.getElementById('mogilev');
+
+  minsk.addEventListener('click', () => {
+    location(minsk)
+  })
+
+  mogilev.addEventListener('click', () => {
+    location(mogilev)
+  })
+
+  function location(town) {
+    let thsLat = town.dataset.lat;
+    let thsLng = town.dataset.lng
+
+    map.setCenter(new google.maps.LatLng(thsLat, thsLng));
+
+    var myCenter = new google.maps.LatLng(thsLat, thsLng);
+    var marker = new google.maps.Marker({position:myCenter});
+
+    marker.setMap(map);
+  }
+}
+
+if(document.getElementById('map-address')) {
+  mapContactInit();
+}
+
+  let header = document.querySelector('.making-order-header');
+  let list = document.querySelector('.making-order-list');
+
+  if(header) {
+    header.addEventListener('click', () => {
+      list.classList.toggle('active')
+      header.classList.toggle('opened')
+    })
+  }
+
+  let orderForm = document.querySelector('.making-order-form');
+  let orderErip = document.querySelector('.making-order-erip');
+
+  $(function () {
+    $('#tab-2 input[type=radio]').change(function() {
+      if($(this).val() === 'Безналичный расчёт') {
+        orderForm.classList.add('active');
+      } else {
+        orderForm.classList.remove('active')
+      }
+
+      if($(this).val() === 'ЕРИП') {
+        orderErip.classList.add('active');
+      } else {
+        orderErip.classList.remove('active')
+      }
+    })
+  })
+
+  // validate for marking-order.html
+   $(".marking-order-validate").validate({
+      errorElement: "span",
+      rules: {
+        name: {
+            required: true,
+            lettersonly: true,
+        },
+
+        email: {
+            required: true,
+            email: true,
+            // emailErr: true,
+        },
+
+        telephone: {
+          required: true,
+          minlength: 19,
+          // telephone: true,
+        },
+
+        locality: {
+          required: true,
+          lettersonly: true,
+        },
+
+        street: {
+          required: true,
+          lettersonly: true,
+        },
+
+        house: {
+          required: true,
+          number: true,
+        },
+
+        company: {
+          required: true,
+          lettersonly: true,
+        },
+
+        inn: {
+          required:true,
+          number: true,
+        },
+
+        address: {
+          required: true,
+          lettersonly: true,
+        },
+
+        bank: {
+          required: true,
+          lettersonly: true,
+        },
+
+        bik: {
+          required: true,
+          number: true,
+        },
+
+        iban: {
+          required: true,
+          number: true,
+        },
+
+        test: {
+          required: true,
+          number: true,
+        },
+      },
+
+      highlight: function(element, errorClass, validClass) {
+        $(element).addClass(errorClass).removeClass(validClass);
+        $(element).closest('.ui-field').find('.popup-icon')
+          .addClass(errorClass).removeClass(validClass);
+
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).removeClass(errorClass).addClass(validClass);
+        $(element).closest('.ui-field').find('.popup-icon')
+          .removeClass(errorClass).addClass(validClass);
+      },
+
+      errorPlacement: function (error, element) {
+        if (element.attr("name") == "customCheckbox") {
+          error.appendTo(".form-cell-field-send");
+        } else {
+          error.insertAfter(element);
+        }
+      },
+
+      messages: {
+        name: {
+          required: "Введите своё ФИО",
+          lettersonly: "Введите корректное ФИО",
+        },
+
+        email: {
+          required: "Введите свой email",
+          email: "Введите корректный email",
+        },
+
+        telephone: {
+          required: "Введите данные",
+          minlength: "Введите полный номер",
+        },
+
+        locality: {
+          required: "Введите населенный пункт",
+          lettersonly: "Введите данные",
+        },
+
+        street: {
+          required: "Введите улицу",
+          lettersonly: "Введите данные",
+        },
+
+        house: {
+          required: "Введите номер дома",
+          number: "Введите данные",
+        },
+
+        company: {
+          required: "Введите название",
+          lettersonly: "Введите данные",
+        },
+
+        inn: {
+          required:"Введите свой ИНН",
+          number: 'Введите корректный ИНН',
+        },
+
+        address: {
+          required: "Введите адрес",
+          lettersonly: "Введите данные",
+        },
+
+        bank: {
+          required: "Введите название банка",
+          lettersonly: "Введите данные",
+        },
+
+        bik: {
+          required: "Введите данные БИК",
+          number: "Введите корректные данные",
+        },
+
+        iban: {
+          required: "Введите расчётный счет IBAN",
+          number: "Введите корректные данные",
+        },
+
+        test: {
+          required: "Введите данные",
+          number: "Введите корректные данные",
+        },
+      },
+    });
+
+    jQuery.validator.addMethod(
+      "emailErrPerson",
+      function (value, element) {
+        if(/123@gmail.com/.test(value))  {
+          return false;
+        } else {
+            return true
+        }
+      },
+      "Incorrect format"
+    );
+
+    let inputPhone = document.getElementById('telephone');
+
+    if(inputPhone) {
+      var phoneMask = IMask(
+        document.getElementById('telephone'), {
+          mask: '+{375} (00) 000 00 00'
+        });
+    }
+
+    // jQuery.validator.addMethod(
+    //   "emailErrCompany",
+    //   function (value, element) {
+    //     if(/123@gmail.com/.test(value))  {
+    //       return false;
+    //     } else {
+    //         return true
+    //     }
+    //   },
+    //   "Incorrect format"
+    // );
+
+    jQuery.validator.addMethod(
+        "lettersonly",
+        function (value, element) {
+          return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+        },
+        "Incorrect format"
+      );
+
+    (function() {
+      if(matchMedia) {
+        const screen1024 = window.matchMedia('(max-width:1024px)');
+        screen1024.addListener(changes);
+        changes(screen1024);
+      }
+
+      function changes(screen) {
+        let block = document.querySelectorAll('.cart-item-info');
+
+        for(let i = 0; i < block.length; i++) {
+          let header = block[i].querySelectorAll('.cart-item-headline')[0];
+          let remove = block[i].querySelectorAll('.cart-item-remove')[0];
+          let control = block[i].querySelectorAll('.cart-item-control')[0];
+
+          if(screen.matches) {
+            header.after(remove)
+          } else {
+            control.prepend(remove)
+          }
+        }
+      }
+    })();
+
+    (function() {
+      if(matchMedia) {
+        const screen576 = window.matchMedia('(max-width:576px)');
+        screen576.addListener(changes);
+        changes(screen576);
+      }
+
+      function changes(screen) {
+        if(screen.matches) {
+          $('.making-order-comment.self-call').before($('#map-address'));
+        } else {
+          $('.col-xs-6.map').append($('#map-address'))
+        }
+      }
+    })();
+
+    let allInputs = document.querySelector('.making-order-myAddress');
+    let otherAddressForm = document.querySelector('.making-order-form');
+
+    if(allInputs && otherAddressForm) {
+      allInputs.addEventListener('click', (e) => {
+        if(e.target.classList[0] === 'other') {
+          otherAddressForm.style.display = 'block'
+        } else {
+          otherAddressForm.style.display = 'none'
+        }
+      })
+    }
+
+    let deleteSelected = document.querySelector('.cart-delete-btn');
+    let deleteCheckBoxAll = document.querySelector('.cart-delete input[name=customCheckbox]');
+    let itemList = document.querySelector('.cart-list');
+
+    if(itemList) {
+      itemList.addEventListener('click', (e) => {
+        if(e.target.classList[0] === 'cart-item-remove') {
+          e.target.closest('.cart-item').remove()
+        }
+      })
+    }
+
+    if(deleteCheckBoxAll) {
+      deleteCheckBoxAll.addEventListener('click', (e) => {
+        let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]');
+
+        for(let i = 0; i < checkedInput.length; i++) {
+          if(deleteCheckBoxAll.checked === true) {
+            checkedInput[i].checked = true
+          } else {
+            checkedInput[i].checked = false
+          }
+        }
+      })
+    }
+
+    if(deleteSelected) {
+      deleteSelected.addEventListener('click', (e) => {
+        let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]:checked')
+
+        for(let i = 0; i < checkedInput.length; i++) {
+          checkedInput[i].closest('.cart-item').remove()
+        }
+      })
+    }
+});//ready
+>>>>>>> main

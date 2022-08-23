@@ -124,7 +124,7 @@ button.mfp-close:hover:after,
     position: relative;
     padding-bottom: 25px;
     margin-bottom: 25px;
-    
+
     &:after {
       content: "";
       position: absolute;
@@ -308,7 +308,7 @@ button.mfp-close:hover:after,
       }
     }
   }
-  
+
   @media (min-width: 769px) {
     &-bottom {
       .ui-checkbox {
@@ -328,7 +328,7 @@ button.mfp-close:hover:after,
   }
 
   @media (max-width: 576.99px) {
-    
+
     &-fields {
       margin-bottom: 25px;
     }
@@ -437,7 +437,7 @@ button.mfp-close:hover:after,
       display: flex;
       align-items: center;
       justify-content: space-between;
-  
+
       .ui-btn {
         flex: 0 0 calc(50% - 12px);
         max-width: calc(50% - 12px);
@@ -945,3 +945,18 @@ button.mfp-close:hover:after,
 // @import "card-similar.scss";
 @import "filters.scss";
 @import "zaglushka.scss";
+@import "sign-in.scss";
+@import "sign-up-person.scss";
+@import "password.scss";
+@import "password-send.scss";
+@import "password-error.scss";
+@import "sign-up-company.scss";
+@import "personal-data-editor.scss";
+@import "phone-editor.scss";
+@import "update.scss";
+@import "update-contract.scss";
+@import "update-data-company.scss";
+@import "change-address.scss";
+@import "account-company.scss";
+@import "company-phone-editor.scss";
+@import "order.scss";

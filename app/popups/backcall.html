@@ -8,7 +8,7 @@
   </div><!--.header-->
 
 
-  
+
   <div class="mfp-popup-subtitle">
     Напишите Ваш номер телефона и мы прямо сейчас перезвоним!
   </div>
@@ -28,7 +28,7 @@
           <div class="popup-icon"></div>
         </div>
       </div>
-  
+
       <div class="ui-field">
         <label class="ui-label ui-label-mini" for="telephone">Телефон <span class="ui-color-red">*</span></label>
         <div class="ui-input-wrp">
@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-    
+
 
 
     <div class="ui-checkbox">
@@ -67,12 +67,10 @@
     }
   </style>
   <script>
-    var element = document.getElementById("telephone");
-    var maskOptions = {
-      placeholder: "+{000}(00)000-00-00",
-      mask: "+{000}(00)000-00-00",
-    };
-    var mask = IMask(element, maskOptions);
+    var phoneMask = IMask(
+    document.getElementById('telephone'), {
+      mask: '+{375} (00) 000-00-00'
+    });
 
     $(document).ready(function () {
       $(".form-backcall").validate({
@@ -80,8 +78,8 @@
         rules: {
           telephone: {
             required: true,
-            minlength: 12,
-            telephone: true,
+            minlength: 19,
+            // telephone: true,
           },
           name: {
             required: true,
@@ -94,14 +92,14 @@
           },
           telephone: {
             required: "Введите данные",
-            minlength: " ",
+            minlength: "Введите полный номер",
           },
         },
         highlight: function(element, errorClass, validClass) {
           $(element).addClass(errorClass).removeClass(validClass);
           $(element).closest('.ui-field').find('.popup-icon')
             .addClass(errorClass).removeClass(validClass);
-          
+
         },
         unhighlight: function(element, errorClass, validClass) {
           $(element).removeClass(errorClass).addClass(validClass);
@@ -111,16 +109,16 @@
       });
     });
 
-    jQuery.validator.addMethod(
-      "telephone",
-      function (value, element) {
-        return (
-          this.optional(element) ||
-          /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
-        );
-      },
-      " "
-    );
+    // jQuery.validator.addMethod(
+    //   "telephone",
+    //   function (value, element) {
+    //     return (
+    //       this.optional(element) ||
+    //       /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/i.test(value)
+    //     );
+    //   },
+    //   " "
+    // );
     jQuery.validator.addMethod(
       "lettersonlyName",
       function (value, element) {

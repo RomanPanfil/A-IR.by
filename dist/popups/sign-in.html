@@ -1,0 +1,195 @@
+<div class="mfp-popup mfp-anim popup-bottom sign-popup">
+  <div class="sign-popup-body">
+    <div class="mfp-popup-title popup-review-title">
+      Вход или регистрация
+    </div>
+    <form action="#" class="popup-sign">
+      <div class="sign-popup-form" id="tabs">
+        <ul class="sign-popup-tabs">
+          <li><a href="#tab-1" class="sign-popup-tab tabs-target">Физическое лицо</a></li>
+          <li><a href="#tab-2" class="sign-popup-tab tabs-target">Юридическое лицо</a></li>
+        </ul>
+
+        <div class="sign-popup-content">
+          <div class="sign-popup-section" id="tab-1">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="email">Ваш Email <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="email" id="email" class="ui-input" placeholder="123@gmail.com">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+            <div class="ui-field mfp-popup-fields">
+              <div class="sign-popup-headline">
+                <label class="ui-label ui-label-mini" for="password">
+                  Пароль <span class="ui-color-red">*</span>
+                </label>
+                <a href="#" data-href="./popups/password.html" class="sign-popup-password mfp-link">Забыли пароль?</a>
+              </div>
+              <div class="ui-input-wrp">
+                <input type="text" name="password" id="password" class="ui-input" placeholder="Пароль">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+            <div class="ui-checkbox">
+              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+              <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Войти» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+            </div>
+            <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Войти</button>
+            <a href="#" data-href="./popups/sign-up-person.html" class="sign-popup-reg mfp-link">Зарегистрироваться как физическое лицо</a>
+          </div>
+
+          <div class="sign-popup-section" id="tab-2">
+            <div class="ui-field">
+              <label class="ui-label ui-label-mini" for="emailCompany">Ваш Email <span class="ui-color-red">*</span></label>
+              <div class="ui-input-wrp">
+                <input type="text" name="emailCompany" id="emailCompany" class="ui-input" placeholder="123@gmail.com">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+            <div class="ui-field password">
+              <div class="sign-popup-headline">
+                <label class="ui-label ui-label-mini" for="password">
+                  Пароль <span class="ui-color-red">*</span>
+                </label>
+                <a href="#" data-href="./popups/password.html" class="sign-popup-password mfp-link">Забыли пароль?</a>
+              </div>
+              <div class="ui-input-wrp">
+                <input type="text" name="password" id="password" class="ui-input" placeholder="Пароль">
+                <div class="popup-icon"></div>
+              </div>
+            </div>
+            <div class="ui-checkbox">
+              <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+              <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Войти» вы соглашаетесь с<a href="#">политикой обработки персональных данных.</a></label>
+            </div>
+            <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Войти</button>
+            <a href="#" class="sign-popup-reg mfp-link" data-href="./popups/sign-up-company.html">Зарегистрироваться как юридическое лицо</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+
+  <script>
+    $( document ).ready(function() {
+      $(function() {
+        var tab = $('#tabs .sign-popup-content > div');
+        tab.hide().filter(':first').show();
+
+        // Клики по вкладкам.
+        $('#tabs .sign-popup-tabs a').click(function(){
+          tab.hide();
+          tab.filter(this.hash).show();
+          $('#tabs .sign-popup-tabs a').removeClass('active');
+          $(this).addClass('active');
+          return false;
+        }).filter(':first').click();
+      });
+
+      // validate form
+      $(".popup-sign").validate({
+        errorElement: "span",
+        rules: {
+          email: {
+            required: true,
+            email: true,
+            emailErrPerson: true,
+          },
+
+          emailCompany: {
+            required: true,
+            email: true,
+            emailErrCompany: true,
+          },
+
+          password: {
+            required: true,
+            minlength: 8,
+          },
+        },
+
+        highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+        errorPlacement: function (error, element) {
+          if (element.attr("name") == "customCheckbox") {
+            error.appendTo(".form-cell-field-send");
+          } else {
+            error.insertAfter(element);
+          }
+        },
+
+        messages: {
+          email: {
+            required: "Пожалуйста, введите ваш Email",
+            email: "Введите корректный email",
+            emailErrPerson: `<div class='inn-occupied'>
+            Пользователь не найден. <a href="#" class="mfp-link" data-href="./popups/sign-up-person.html">Регистрация</a>
+            </div>`,
+          },
+
+          emailCompany: {
+            required: "Пожалуйста, введите ваш Email",
+            email: "Введите корректный email",
+            emailErrCompany: `<div class='inn-occupied'>
+            Пользователь не найден. <a href="#" class="mfp-link" data-href="./popups/sign-up-company.html">Регистрация</a>
+            </div>`,
+          },
+
+          password: {
+            required: "Пожалуйста, введите пароль",
+            password: " ",
+            minlength: "Введите не меньше 8 символов",
+          },
+        },
+      });
+
+      jQuery.validator.addMethod(
+        "emailErrPerson",
+        function (value, element) {
+          if(/123@gmail.com/.test(value))  {
+            return false;
+          } else {
+              return true
+          }
+        },
+        "Incorrect format"
+      );
+      jQuery.validator.addMethod(
+        "emailErrCompany",
+        function (value, element) {
+          if(/123@gmail.com/.test(value))  {
+            return false;
+          } else {
+              return true
+          }
+        },
+        "Incorrect format"
+      );
+    });
+  </script>
+</div>
