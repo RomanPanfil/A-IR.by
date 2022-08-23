@@ -1382,7 +1382,7 @@ new Swiper(".main-trust-slider", {
     el: ".main-trust-pagintaion",
     clickable: true,
     dynamicBullets:true, 
-    dynamicMainBullets:3,
+    // dynamicMainBullets:3,
   },
   
   navigation: {

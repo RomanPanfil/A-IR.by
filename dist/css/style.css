@@ -10523,17 +10523,6 @@ button.mfp-close:hover:after,
 .main-trust .swiper-pagination {
   display: none;
 }
-@media (max-width: 420px) {
-  .main-trust .swiper-pagination {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: static;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-}
 @media (max-width: 1024.99px) {
   .main-trust .swiper-wrapper {
     padding-left: 55px;
@@ -11314,6 +11303,30 @@ button.mfp-close:hover:after,
   -webkit-transform: scale(1) !important;
       -ms-transform: scale(1) !important;
           transform: scale(1) !important;
+}
+@media (max-width: 420.99px) {
+  .main-trust .swiper-pagination {
+    display: block;
+    position: static;
+  }
+
+  .main-trust .swiper-pagination-bullet {
+    display: none;
+    left: auto !important;
+  }
+
+  .main-trust .swiper-pagination-bullet-active,
+.main-trust .swiper-pagination-bullet-active-next,
+.main-trust .swiper-pagination-bullet-active-next-next,
+.main-trust .swiper-pagination-bullet-active-prev,
+.main-trust .swiper-pagination-bullet-active-prev-prev {
+    display: inline-block;
+  }
+}
+@media (max-width: 1024.99) {
+  .main-trust .swiper-wrapper {
+    padding-left: 55px;
+  }
 }
 .myorder {
   margin-bottom: 88px;
