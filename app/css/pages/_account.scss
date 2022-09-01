@@ -79,14 +79,6 @@
               flex: 0 0 120px;
               max-width: 120px;
             }
-
-
-            // &:hover {
-            //     opacity: 0.5;
-            //     transition: 0.3 ease all;
-            //     background-color: #F5F5F5;
-            //     color: #000;
-            // }
         }
 
         &-sample{
@@ -197,9 +189,7 @@
             }
         }
 
-        .profile-setup-para {
-            // margin-bottom: 18px;
-        }
+        
       }
 
       &-title {
@@ -275,14 +265,6 @@
                 flex: none;
                 max-width: none;
             }
-
-
-
-            // @media(max-width:576.99px) {
-            //     margin-left: 0;
-            //     margin-top: 10px;
-            //     display: block;
-            // }
         }
 
         .profile-setup-wrapper-mail {
@@ -338,7 +320,7 @@
             margin-bottom: 18px;
 
             @media(max-width:576.99px){
-                // align-items: self-start;
+                
                 display: block !important;
             }
 
@@ -480,9 +462,6 @@
 }
 
 .profile-adress-adaptive {
-    .profile-setup-wrapper {
-        // align-items: self-start;
-    }
 
     .profile-setup-adress {
         display: inline-block;

@@ -798,3 +798,76 @@
 .nav-account {
   overflow: -moz-scrollbars-none;
 }
+
+.profile-menu {
+  position: relative;
+  display: inline-block;
+
+  &-ul {
+    display: none;
+    position: absolute;
+    text-align: left;
+    top: 50px;
+    left: -50px;
+    padding: 6px 24px 11px 24px;
+    background-color: #000000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+    background-color: #ffffff;
+    z-index: 10;
+  }
+
+  &-li {
+    min-width: 100%;
+    padding: 9px 24px;
+    margin: 0 -24px;
+
+
+    &:last-child {
+      
+    }
+
+    &:hover {
+      background-color: #F5F5F5;
+      color: #000;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: #000;
+
+      &:hover {
+        color: #000;
+      }
+
+      .nav-account-link-label {
+        position: relative;
+        display: inline-block;
+        margin-left: 8px;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    display: none;
+    padding: 50px 100px 50px 0;
+    position: absolute;
+  }
+
+  &:hover {
+    .profile-menu-ul {
+      display: block;
+    }
+
+    &::before {
+      display: block;
+    }
+  }
+
+  
+}
