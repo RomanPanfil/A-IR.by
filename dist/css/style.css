@@ -1840,6 +1840,66 @@ li {
   overflow: -moz-scrollbars-none;
 }
 
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+.profile-menu-ul {
+  display: none;
+  position: absolute;
+  text-align: left;
+  top: 50px;
+  left: -50px;
+  padding: 6px 24px 11px 24px;
+  background-color: #000000;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  background-color: #ffffff;
+  z-index: 10;
+}
+.profile-menu-li {
+  min-width: 100%;
+  padding: 9px 24px;
+  margin: 0 -24px;
+}
+.profile-menu-li:hover {
+  background-color: #F5F5F5;
+  color: #000;
+}
+.profile-menu-li-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  color: #000;
+}
+.profile-menu-li-link:hover {
+  color: #000;
+}
+.profile-menu-li-link .nav-account-link-label {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  top: 0;
+  right: 0;
+}
+.profile-menu::before {
+  content: "";
+  display: none;
+  padding: 50px 100px 50px 0;
+  position: absolute;
+}
+.profile-menu:hover .profile-menu-ul {
+  display: block;
+}
+.profile-menu:hover::before {
+  display: block;
+}
+
 .footer-top-wrap {
   margin-bottom: 27px;
 }
@@ -14521,7 +14581,7 @@ input[type=date] {
   padding: 13px 24px;
   font-weight: 600;
   line-height: 1.36;
-  border: 2px solid #D3D3D3;
+  border: 1px solid #D3D3D3;
   border-radius: 8px;
   background-color: #ffffff;
   text-align: center;
