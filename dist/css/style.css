@@ -14137,6 +14137,7 @@ input[type=date] {
 .waitList-item-btn {
   position: relative;
   width: 176px;
+  font-weight: 600;
 }
 @media (max-width: 768.99px) {
   .waitList-item-btn-span {
@@ -14274,6 +14275,7 @@ input[type=date] {
   font-size: 1.375rem;
 }
 .waitList-item-prices .card-price-current span {
+  font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -14953,9 +14955,6 @@ input[type=date] {
     margin-bottom: 0;
   }
 }
-.profile-setup-bottom .profile-setup-para {
-  margin-bottom: 18px;
-}
 .profile-setup-title {
   margin-bottom: 26px;
   font-size: 22px;
@@ -15147,6 +15146,9 @@ input[type=date] {
 }
 .profile .pb-0 {
   padding-bottom: 0;
+}
+.profile .mb-18 {
+  margin-bottom: 18px;
 }
 @media (max-width: 400px) {
   .profile .max-215 {
