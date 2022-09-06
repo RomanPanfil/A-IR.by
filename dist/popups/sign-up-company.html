@@ -147,6 +147,19 @@
           },
        },
 
+         highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+
        submitHandler: function(form) {
          txtHeadline.textContent = 'Юридические данные';
          txtSteps.textContent = '2';
@@ -176,8 +189,8 @@
           minlength: "Введите полный номер",
         },
         inn: {
-          required:"Введите свой ИНН",
-          number: 'Введите корректный ИНН',
+          required:"Введите свой УНП",
+          number: 'Введите корректный УНП',
         },
      },
     });
@@ -204,13 +217,25 @@
           },
           bik: {
              required: true,
-             number: true,
+            //  number: true,
           },
           iban: {
              required: true,
              number: true,
           },
        },
+
+       highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
 
        messages: {
         nameCompany: {
@@ -227,7 +252,7 @@
         },
         bik: {
            required: "Введите данные БИК",
-           number: "Введите корректные данные",
+          //  number: "Введите корректные данные",
         },
         iban: {
            required: "Введите расчётный счет IBAN",
@@ -237,12 +262,13 @@
     });
 
     jQuery.validator.addMethod(
-        "lettersonly",
-        function (value, element) {
-          return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
-        },
-        "Incorrect format"
-      );
+      "lettersonly",
+      function (value, element) {
+        return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+      },
+      "Incorrect format"
+    );
+
 
     // jQuery.validator.addMethod(
     //     "telephone",

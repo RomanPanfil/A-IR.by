@@ -578,6 +578,24 @@ if (document.getElementById("card-breackpoint")) {
   // });
 }
 
+if (document.querySelector(".making-order-headline")) {
+  let cardBreackpoint = $("#card-breackpoint").offset().top;
+  var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
+  let cardSticky = $(".making-order-info");
+  const cardHeight = cardSticky.innerHeight();
+
+  window.addEventListener("resize", function () {
+    cardBreackpoint = $("#card-breackpoint").offset().top;
+  });
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > cardBreackpoint && window.scrollY < (offBottom - cardHeight - window.innerHeight)) {
+      cardSticky.addClass("card-breackpoint-open");
+    } else {
+      cardSticky.removeClass("card-breackpoint-open");
+    }
+  });
+}
 
 (function (){
   if (!D.querySelector('.catalog-marks')) return;
@@ -911,6 +929,15 @@ if (document.getElementById("card-breackpoint")) {
           mainClass: "my-mfp-zoom-in",
           ajax: {
             tError: "Error. Not valid url",
+          },
+          // @todo добавить везде, где инициализация
+          callbacks: {
+            open: function() {
+              document.documentElement.style.overflow = 'hidden'
+            },
+            close: function() {
+              document.documentElement.style.overflow = ''
+            }
           }
         });
       })
@@ -942,6 +969,16 @@ if (document.getElementById("card-breackpoint")) {
           mainClass: "my-mfp-zoom-in",
           ajax: {
             tError: "Error. Not valid url",
+          },
+
+          callbacks: {
+            open: function() {
+              document.documentElement.style.overflow = 'hidden'
+            },
+
+            close: function() {
+              document.documentElement.style.overflow = ''
+            }
           }
         });
       })
@@ -1271,6 +1308,16 @@ jQuery(document).ready(function($){
           },700);
         }
       },
+
+      callbacks: {
+        open: function() {
+          document.documentElement.style.overflow = 'hidden'
+        },
+
+        close: function() {
+          document.documentElement.style.overflow = ''
+        }
+      }
     });
     return false;
   });
@@ -1406,29 +1453,22 @@ if(document.getElementById('map-address')) {
     })
   }
 
-  let orderForm = document.querySelector('.making-order-form');
-  let orderErip = document.querySelector('.making-order-erip');
+  let orderForm = document.querySelector('.making-order-payment .making-order-form');
 
   $(function () {
-    $('#tab-2 input[type=radio]').change(function() {
+    $('.making-order-payment #tab-2 input[type=radio]').change(function() {
       if($(this).val() === 'Безналичный расчёт') {
         orderForm.classList.add('active');
       } else {
         orderForm.classList.remove('active')
       }
-
-      console.log($(this).val())
-
-      if($(this).val() === 'ЕРИП') {
-        orderErip.classList.add('active');
-      } else {
-        orderErip.classList.remove('active')
-      }
     })
   })
 
+  //cal-arr
+
   // validate for marking-order.html
-   $(".marking-order-validate").validate({
+   $(".making-order-validate").validate({
       errorElement: "span",
       rules: {
         name: {
@@ -1485,12 +1525,12 @@ if(document.getElementById('map-address')) {
 
         bik: {
           required: true,
-          number: true,
+          // number: true,
         },
 
         iban: {
           required: true,
-          number: true,
+          // number: true,
         },
 
         test: {
@@ -1572,12 +1612,12 @@ if(document.getElementById('map-address')) {
 
         bik: {
           required: "Введите данные БИК",
-          number: "Введите корректные данные",
+          // number: "Введите корректные данные",
         },
 
         iban: {
           required: "Введите расчётный счет IBAN",
-          number: "Введите корректные данные",
+          // number: "Введите корректные данные",
         },
 
         test: {
@@ -1662,21 +1702,23 @@ if(document.getElementById('map-address')) {
       function changes(screen) {
         if(screen.matches) {
           $('.making-order-comment.self-call').before($('#map-address'));
+          console.log('aaaaaaa')
         } else {
           $('.col-xs-6.map').append($('#map-address'))
+          console.log('bbbbb')
         }
       }
     })();
 
     let allInputs = document.querySelector('.making-order-myAddress');
-    let otherAddressForm = document.querySelector('.making-order-form');
+    let otherAddressForm = document.querySelector('.making-order-pickup .making-order-form');
 
     if(allInputs && otherAddressForm) {
       allInputs.addEventListener('click', (e) => {
         if(e.target.classList[0] === 'other') {
-          otherAddressForm.style.display = 'block'
+          otherAddressForm.style.display = 'block';
         } else {
-          otherAddressForm.style.display = 'none'
+          otherAddressForm.style.display = 'none';
         }
       })
     }
@@ -1991,8 +2033,6 @@ $('.main-list-li').click(function(){
     }
   }
 })();
-
-
 
 $('.waitList-item-remove-link').click(function(){
   $(this).closest($('div.waitList-item')).remove();

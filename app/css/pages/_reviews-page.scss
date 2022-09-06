@@ -133,6 +133,10 @@
       border-bottom: none;
       position: relative;
 
+      .ui-rating {
+        margin-right: 15px;
+      }
+
       &::after {
         content: "";
         position: absolute;

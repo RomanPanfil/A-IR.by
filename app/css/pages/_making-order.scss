@@ -15,6 +15,15 @@
     }
   }
 
+  &-validate {
+    .ui-input {
+      @media(max-width: 576px) {
+        height: 48px;
+        font-size: 16px;
+      }
+    }
+  }
+
   &-caption {
     font-weight: 700;
     font-size: 32px;
@@ -75,7 +84,7 @@
     label {
       display: block;
       padding: 15px 0 15px 32px;
-      border: 2px solid #D3D3D3;
+      border: 1px solid #D3D3D3;
       border-radius: 8px;
 
       &:hover {
@@ -211,6 +220,13 @@
   &-info {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
+    position: relative;
+
+    &.card-breackpoint-open {
+      position: fixed;
+      top: 100px !important;
+      max-width: 423px;
+    }
 
     @media(max-width: 1024px) {
       box-shadow: none;
