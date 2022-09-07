@@ -579,22 +579,49 @@ if (document.getElementById("card-breackpoint")) {
 }
 
 if (document.querySelector(".making-order-headline")) {
-  let cardBreackpoint = $("#card-breackpoint").offset().top;
-  var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
-  let cardSticky = $(".making-order-info");
-  const cardHeight = cardSticky.innerHeight();
+  // let cardBreackpoint = $("#card-breackpoint").offset().top;
+  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
+  // let cardSticky = $(".making-order-info");
+  // const cardHeight = cardSticky.innerHeight();
+  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
+  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
 
-  window.addEventListener("resize", function () {
-    cardBreackpoint = $("#card-breackpoint").offset().top;
-  });
+  // window.addEventListener("resize", function () {
+  //   cardBreackpoint = $("#card-breackpoint").offset().top;
+  // });
+  const stickyBlock = document.querySelector('.making-order-info')
+  const card = document.querySelector('#card-breackpoint')
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > cardBreackpoint && window.scrollY < (offBottom - cardHeight - window.innerHeight)) {
-      cardSticky.addClass("card-breackpoint-open");
+  function flipOrSticky() {
+    const box = card.getBoundingClientRect()
+    const stickyBox = stickyBlock.getBoundingClientRect()
+    const boxTop = box.top
+    const boxBottom = box.bottom
+    const stickyBottom = stickyBox.height
+    const py = window.pageYOffset
+
+    console.log(py, boxTop, boxBottom, stickyBottom)
+
+    if (py > boxTop + py) {
+      if (py < (boxBottom + py - stickyBottom - 185)) {
+        stickyBlock.classList.add("card-breackpoint-open");
+        stickyBlock.classList.remove("card-breackpoint-flipbottom");
+      } else {
+        stickyBlock.classList.remove("card-breackpoint-open");
+        stickyBlock.classList.add("card-breackpoint-flipbottom");
+      }
     } else {
-      cardSticky.removeClass("card-breackpoint-open");
+      stickyBlock.classList.remove("card-breackpoint-open", "card-breackpoint-flipbottom");
     }
-  });
+    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
+    //   stickyBlock.classList.add("card-breackpoint-open");
+    // } else {
+    //   stickyBlock.classList.remove("card-breackpoint-open");
+    // }
+  }
+
+  window.addEventListener("scroll", flipOrSticky);
+  window.addEventListener("load", flipOrSticky);
 }
 
 (function (){
