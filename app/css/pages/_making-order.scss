@@ -130,19 +130,28 @@
     margin-bottom: 18px;
 
     input[type='radio'] {
-      accent-color: #2A4455;
-      width: 16px;
-      height: 16px;
       position: absolute;
-      margin: 0;
-      left: 0;
-      top: 4px;
+      opacity: 0;
+      // accent-color: #2A4455;
+      // width: 16px;
+      // height: 16px;
+      // margin: 0;
+      // left: 0;
+      // top: 4px;
     }
 
     label {
       line-height: 1.4;
       padding-left: 28px;
       display: inline-block;
+    }
+
+    input + label::before {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50px;
+      border: 1px solid #4f4f4f;
     }
   }
 
