@@ -41,6 +41,14 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    a {
+      font-size: 14px;
+
+      @media(max-width: 576px) {
+        font-size: 16px;
+      }
+    }
   }
 
   &-reg {
@@ -50,25 +58,28 @@
     }
   }
 
-  &-content {
+  &-section {
     .ui-field {
       &.mfp-popup-fields {
-        // position: relative;
         margin-bottom: 35px;
 
         @media(max-width: 576px) {
           margin-bottom: 25px;
         }
-
-        a {
-          font-size: 14px;
-
-          @media(max-width: 576px) {
-            font-size: 16px;
-          }
-        }
       }
     }
+  }
+
+  &-content {
+    // .ui-field {
+    //   &.mfp-popup-fields {
+    //     margin-bottom: 35px;
+
+    //     @media(max-width: 576px) {
+    //       margin-bottom: 25px;
+    //     }
+    //   }
+    // }
 
     .ui-checkbox {
       margin-bottom: 21px;

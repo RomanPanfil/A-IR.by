@@ -6,16 +6,16 @@
         <a href="#" class="mfp-popup-product-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
       </div>
     </div><!--.header-->
-  
-    
-    
+
+
+
     <form  class="waiting-form">
             <div class="ui-field">
                 <label for="" class="ui-label ui-label-mini">Текстовое поле<span class="ui-color-red">*</span></label>
                 <textarea id="textbox" name="textbox" placeholder="Текст" class="ui-input" rows="5"></textarea>
             </div>
 
-            <div class="ui-label ui-label-mini">Как вы хотите получить ответ?    
+            <div class="ui-label ui-label-mini">Как вы хотите получить ответ?
             </div>
 
             <div class="request-checkboxes">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                
+
             </div>
 
             <div class="ui-checkbox">
@@ -49,7 +49,7 @@
 
             <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
     </form>
-    
+
     <style>
       @media (max-width: 576.99px) {
         .mfp-container:before {
@@ -67,7 +67,7 @@
        }
     </style>
     <script>
-        
+
 
       $(document).ready(function () {
         $(".waiting-form").validate({
@@ -79,17 +79,16 @@
             maxlength: 500,
           }
         },
-        
-        messages: {        
+
+        messages: {
           textbox: {
             required: "Пожалуйста, оставьте свой комментарий",
             maxlength: "Комментарий не должен превышать 500 символов",
           },
         },
-        
+
       });
       })
 
     </script>
   </div>
-  

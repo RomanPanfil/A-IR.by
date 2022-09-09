@@ -83,7 +83,7 @@
       let blockSecond = document.querySelector('.change-address-second');
       let mainInputPhone = document.querySelector('.change-address-main #telephone');
       let mainInputName = document.querySelector('.change-address-main #name');
-      let count = 0;
+      let count = 1;
 
       blockSecond.addEventListener('click', (e) => {
         let parentBlock = e.target.closest('.change-address-new');
@@ -115,7 +115,7 @@
         blockDiv.innerHTML = `
           <div class="change-address-headline">
             <div class="change-address-title">
-              Телефон №${count++}
+              Телефон №${countPlus}
             </div>
 
             <div class="change-address-control">

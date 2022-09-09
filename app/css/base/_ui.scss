@@ -557,6 +557,10 @@ svg.sprite {
 
   .ui-input, input {
     padding-right: 50px;
+
+    &.padding-rg {
+      padding-right: 0;
+    }
   }
 }
 .ui-input {
@@ -578,6 +582,11 @@ svg.sprite {
   transition: .3s border, .3s color;
   border-radius: 5px;
   outline: none;
+  -webkit-appearance: none;
+
+  @media(max-width: 576px) {
+    height: 48px;
+  }
 
   &:hover {
     border-color: #808080;
@@ -845,6 +854,10 @@ textarea.ui-input {
 
   &-mini {
     @include fz(14);
+
+    @media(max-width: 576px) {
+      @include fz(16);
+    }
   }
 
   &-inline {
@@ -1132,6 +1145,11 @@ textarea.ui-input {
     }
     &::-moz-placeholder {
       color: $secondary;
+    }
+
+    &.border {
+      border: 1px solid #D3D3D3 !important;
+      box-shadow: none;
     }
   }
 }
