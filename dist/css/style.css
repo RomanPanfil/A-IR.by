@@ -1840,6 +1840,66 @@ li {
   overflow: -moz-scrollbars-none;
 }
 
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+.profile-menu-ul {
+  display: none;
+  position: absolute;
+  text-align: left;
+  top: 50px;
+  left: -50px;
+  padding: 6px 24px 11px 24px;
+  background-color: #000000;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  background-color: #ffffff;
+  z-index: 10;
+}
+.profile-menu-li {
+  min-width: 100%;
+  padding: 9px 24px;
+  margin: 0 -24px;
+}
+.profile-menu-li:hover {
+  background-color: #F5F5F5;
+  color: #000;
+}
+.profile-menu-li-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  color: #000;
+}
+.profile-menu-li-link:hover {
+  color: #000;
+}
+.profile-menu-li-link .nav-account-link-label {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  top: 0;
+  right: 0;
+}
+.profile-menu::before {
+  content: "";
+  display: none;
+  padding: 50px 100px 50px 0;
+  position: absolute;
+}
+.profile-menu:hover .profile-menu-ul {
+  display: block;
+}
+.profile-menu:hover::before {
+  display: block;
+}
+
 .footer-top-wrap {
   margin-bottom: 27px;
 }
@@ -14307,6 +14367,7 @@ input[type=date] {
 .waitList-item-btn {
   position: relative;
   width: 176px;
+  font-weight: 600;
 }
 @media (max-width: 768.99px) {
   .waitList-item-btn-span {
@@ -14444,6 +14505,7 @@ input[type=date] {
   font-size: 1.375rem;
 }
 .waitList-item-prices .card-price-current span {
+  font-weight: 400;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -15123,9 +15185,6 @@ input[type=date] {
     margin-bottom: 0;
   }
 }
-.profile-setup-bottom .profile-setup-para {
-  margin-bottom: 18px;
-}
 .profile-setup-title {
   margin-bottom: 26px;
   font-size: 22px;
@@ -15317,6 +15376,9 @@ input[type=date] {
 }
 .profile .pb-0 {
   padding-bottom: 0;
+}
+.profile .mb-18 {
+  margin-bottom: 18px;
 }
 @media (max-width: 400px) {
   .profile .max-215 {
