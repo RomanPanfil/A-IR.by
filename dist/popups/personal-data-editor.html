@@ -95,12 +95,15 @@
           format:'d.m.Y',
           timepicker: false,
           opened: true,
+          closeOnDateSelect:true,
           lang: 'ru',
+          yearStart: 1940,
           dayOfWeekStart: 1,
           onGenerate: function() {
 
             if(!flag) {
               let blockOfYears = document.querySelector('.xdsoft_yearselect');
+              let blockScroll = blockOfYears.childNodes[0]
               let scroll = 30 * 9;
               let scrolled=0;
 
@@ -109,20 +112,34 @@
 
               blockOfYears.appendChild(arrowDown);
 
-              // arrowUp.addEventListener('click', () => {
-              //   blockOfYears.scrollTo({
-              //     top: scroll,
-              //     behavior: "smooth"
+              let arrowUp = document.createElement('div');
+              arrowUp.classList.add('arrowUp');
+
+              blockOfYears.appendChild(arrowUp);
+
+              arrowUp.addEventListener('click', () => {
+                let valueMargin = blockScroll.style.marginTop
+                let marginGet = valueMargin.split('px')[0]
+
+                blockScroll.style.marginTop = +marginGet + scroll + 'px'
+
+                console.log('down ' + valueMargin)
+              })
+
+              arrowDown.addEventListener('click', () => {
+                let valueMargin = blockScroll.style.marginTop
+                let marginGet = valueMargin.split('px')[0]
+
+                blockScroll.style.marginTop = +marginGet - scroll + 'px'
+              })
+
+              // $(".arrowDown").on("click" ,function(){
+              //   scrolled=scrolled+(30 * 9);
+
+              //   $(".xdsoft_yearselect").animate({
+              //     scrollTop:  scrolled
               //   });
-              // })
-
-              $(".arrowDown").on("click" ,function(){
-                scrolled=scrolled+(30 * 9);
-
-                $(".xdsoft_yearselect").animate({
-                  scrollTop:  scrolled
-                });
-              });
+              // });
 
               flag = true;
             }

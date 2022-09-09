@@ -854,6 +854,10 @@ textarea.ui-input {
 
   &-mini {
     @include fz(14);
+
+    @media(max-width: 576px) {
+      @include fz(16);
+    }
   }
 
   &-inline {
@@ -1141,6 +1145,11 @@ textarea.ui-input {
     }
     &::-moz-placeholder {
       color: $secondary;
+    }
+
+    &.border {
+      border: 1px solid #D3D3D3 !important;
+      box-shadow: none;
     }
   }
 }

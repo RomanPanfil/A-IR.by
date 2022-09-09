@@ -53,15 +53,16 @@
   }
 
   .account-body {
-    height: calc(100vh - 380px);
+    height: calc(100vh - 254px);
+    height: calc((var(--vh, 1vh) * 100) - 254px);
     overflow-x: hidden;
     overflow-y: auto;
     margin: -25px -48px 0 -48px;
     padding: 25px 48px 0 48px;
 
-    @media(max-width: 576px) {
-      height: 100%;
-    }
+    // @media(max-width: 576px) {
+    //   height: 100%;
+    // }
   }
 
   .update-company-confirm {
