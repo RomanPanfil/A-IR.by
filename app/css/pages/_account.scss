@@ -198,7 +198,7 @@
         }
 
         .profile-setup-para {
-            margin-bottom: 18px;
+            // margin-bottom: 18px;
         }
       }
 
@@ -380,6 +380,11 @@
     .pb-0 {
         padding-bottom: 0;
     }
+    
+    .mb-18 {
+        margin-bottom:18px;
+    }
+
     .max-215 {
         @media(max-width:400px) {
               max-width: 215px;

@@ -88,6 +88,7 @@
         &-btn {
             position: relative;
             width: 176px;
+            font-weight: 600;
 
             &-span {
                 @media(max-width:768.99px){
@@ -210,6 +211,7 @@
                 @include fz(22);
 
                 span {
+                    font-weight: 400;
                     @include fz(16);
                 }
             }
