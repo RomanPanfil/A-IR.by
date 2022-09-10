@@ -578,23 +578,92 @@ if (document.getElementById("card-breackpoint")) {
   // });
 }
 
-if (document.querySelector(".making-order-headline")) {
-  let cardBreackpoint = $("#card-breackpoint").offset().top;
-  var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
-  let cardSticky = $(".making-order-info");
-  const cardHeight = cardSticky.innerHeight();
+if (document.querySelector(".making-order-validate")) {
+  // let cardBreackpoint = $("#card-breackpoint").offset().top;
+  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
+  // let cardSticky = $(".making-order-info");
+  // const cardHeight = cardSticky.innerHeight();
+  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
+  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
 
-  window.addEventListener("resize", function () {
-    cardBreackpoint = $("#card-breackpoint").offset().top;
-  });
+  // window.addEventListener("resize", function () {
+  //   cardBreackpoint = $("#card-breackpoint").offset().top;
+  // });
+  const stickyBlock = document.querySelector('.making-order-info')
+  const card = document.querySelector('#card-breackpoint')
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > cardBreackpoint && window.scrollY < (offBottom - cardHeight - window.innerHeight)) {
-      cardSticky.addClass("card-breackpoint-open");
+  function flipOrSticky() {
+    const box = card.getBoundingClientRect()
+    const stickyBox = stickyBlock.getBoundingClientRect()
+    const boxTop = box.top
+    const boxBottom = box.bottom
+    const stickyBottom = stickyBox.height
+    const py = window.pageYOffset
+
+    if (py > boxTop + py) {
+      if (py < (boxBottom + py - stickyBottom - 185)) {
+        stickyBlock.classList.add("sticky-box");
+        stickyBlock.classList.remove("card-breackpoint-flipbottom");
+      } else {
+        stickyBlock.classList.remove("sticky-box");
+        stickyBlock.classList.add("card-breackpoint-flipbottom");
+      }
     } else {
-      cardSticky.removeClass("card-breackpoint-open");
+      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
     }
-  });
+    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
+    //   stickyBlock.classList.add("card-breackpoint-open");
+    // } else {
+    //   stickyBlock.classList.remove("card-breackpoint-open");
+    // }
+  }
+
+  window.addEventListener("scroll", flipOrSticky);
+  window.addEventListener("load", flipOrSticky);
+}
+
+if (document.querySelector(".making-form")) {
+  // let cardBreackpoint = $("#card-breackpoint").offset().top;
+  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
+  // let cardSticky = $(".making-order-info");
+  // const cardHeight = cardSticky.innerHeight();
+  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
+  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
+
+  // window.addEventListener("resize", function () {
+  //   cardBreackpoint = $("#card-breackpoint").offset().top;
+  // });
+  const stickyBlock = document.querySelector('.cart-order')
+  const card = document.querySelector('#card-breackpoint')
+
+  function flipOrSticky() {
+    const box = card.getBoundingClientRect()
+    const stickyBox = stickyBlock.getBoundingClientRect()
+    const boxTop = box.top
+    const boxBottom = box.bottom
+    const stickyBottom = stickyBox.height
+    const py = window.pageYOffset
+
+    if (py > boxTop + py) {
+      if (py < (boxBottom + py - stickyBottom - 185)) {
+        stickyBlock.classList.add("sticky-box");
+        stickyBlock.classList.remove("card-breackpoint-flipbottom");
+      } else {
+        stickyBlock.classList.remove("sticky-box");
+        stickyBlock.classList.add("card-breackpoint-flipbottom");
+      }
+    } else {
+      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
+    }
+    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
+    //   stickyBlock.classList.add("card-breackpoint-open");
+    // } else {
+    //   stickyBlock.classList.remove("card-breackpoint-open");
+    // }
+  }
+
+  window.addEventListener("scroll", flipOrSticky);
+  window.addEventListener("load", flipOrSticky);
 }
 
 (function (){
@@ -1702,10 +1771,8 @@ if(document.getElementById('map-address')) {
       function changes(screen) {
         if(screen.matches) {
           $('.making-order-comment.self-call').before($('#map-address'));
-          console.log('aaaaaaa')
         } else {
           $('.col-xs-6.map').append($('#map-address'))
-          console.log('bbbbb')
         }
       }
     })();
@@ -1758,6 +1825,18 @@ if(document.getElementById('map-address')) {
         }
       })
     }
+
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
 });//ready
 
 

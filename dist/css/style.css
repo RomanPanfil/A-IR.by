@@ -3272,6 +3272,12 @@ textarea.ui-input {
   font-size: 14px;
   font-size: 0.875rem;
 }
+@media (max-width: 576px) {
+  .ui-label-mini {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
 .ui-label-inline {
   display: inline-block;
   vertical-align: middle;
@@ -3543,6 +3549,11 @@ textarea.ui-input {
 .input-iconed-input::-moz-placeholder {
   color: #2A4455;
 }
+.input-iconed-input.border {
+  border: 1px solid #D3D3D3 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
 
 .ui-file {
   display: -webkit-box;
@@ -3715,6 +3726,21 @@ textarea.ui-input {
 }
 .slick-dots li:hover, .slick-dots li.slick-active {
   background-color: #2A4455;
+}
+
+.mob-txt {
+  display: none;
+}
+@media (max-width: 576px) {
+  .mob-txt {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .default-txt {
+    display: none;
+  }
 }
 
 .page-stickers {
@@ -9460,20 +9486,64 @@ input[type=range]::-moz-range-thumb {
 .making-order-address {
   position: relative;
   margin-bottom: 18px;
+  /* для элемента input c type="radio" */
+  /* для элемента label связанного с .custom-radio */
+  /* создание в label псевдоэлемента  before со следующими стилями */
+  /* стили при наведении курсора на радио */
+  /* стили для радиокнопки, находящейся в состоянии checked */
+  /* стили для радиокнопки, находящейся в состоянии disabled */
 }
-.making-order-address input[type=radio] {
-  accent-color: #2A4455;
+.making-order-address .custom-radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.making-order-address .custom-radio + label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.making-order-address .custom-radio + label::before {
+  content: "";
+  display: inline-block;
   width: 16px;
   height: 16px;
-  position: absolute;
-  margin: 0;
-  left: 0;
-  top: 4px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  border: 1px solid #D3D3D3;
+  border-radius: 50%;
+  margin-right: 8px;
+  background-size: 50% 50%;
 }
-.making-order-address label {
-  line-height: 1.4;
-  padding-left: 28px;
+.making-order-address .custom-radio:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #000;
+}
+.making-order-address .custom-radio:checked + label::after {
+  content: "";
   display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #2A4455;
+  position: absolute;
+  left: 4px;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+.making-order-address .custom-radio:disabled + label::before {
+  background-color: #e9ecef;
 }
 .making-order-comment .ui-field {
   margin-bottom: 0;
@@ -9555,10 +9625,12 @@ input[type=range]::-moz-range-thumb {
   border-radius: 8px;
   position: relative;
 }
-.making-order-info.card-breackpoint-open {
-  position: fixed;
-  top: 100px !important;
-  max-width: 423px;
+@media (min-width: 1024px) {
+  .making-order-info.sticky-box {
+    position: fixed;
+    top: 100px !important;
+    max-width: 423px;
+  }
 }
 @media (max-width: 1024px) {
   .making-order-info {
@@ -10258,6 +10330,13 @@ input[type=range]::-moz-range-thumb {
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
+}
+@media (min-width: 1024px) {
+  .cart-order.sticky-box {
+    position: fixed;
+    top: 100px !important;
+    max-width: 423px;
+  }
 }
 @media (max-width: 1024px) {
   .cart-order {
@@ -12375,6 +12454,19 @@ input[type=date] {
   background: white url(.././images/down-arrow.svg) no-repeat;
   background-position: center;
 }
+.xdsoft_yearselect .arrowUp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999999;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  width: 100%;
+  height: 20px;
+  background: white url(.././images/up-arrow.svg) no-repeat;
+  background-position: center;
+}
 
 .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option {
   background: #fff !important;
@@ -12451,8 +12543,7 @@ input[type=date] {
 }
 
 .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect div:first-child {
-  position: relative !important;
-  top: 150px !important;
+  padding: 22px 0 !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_label > .xdsoft_select {
@@ -12712,16 +12803,12 @@ input[type=date] {
   margin-bottom: 20px;
 }
 .update-company .account-body {
-  height: calc(100vh - 380px);
+  height: calc(100vh - 254px);
+  height: calc((var(--vh, 1vh) * 100) - 254px);
   overflow-x: hidden;
   overflow-y: auto;
   margin: -25px -48px 0 -48px;
   padding: 25px 48px 0 48px;
-}
-@media (max-width: 576px) {
-  .update-company .account-body {
-    height: 100%;
-  }
 }
 .update-company .update-company-confirm {
   padding-top: 40px;

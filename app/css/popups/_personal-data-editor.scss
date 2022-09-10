@@ -305,19 +305,20 @@ input[type="date"] {
     background: white url(.././images/down-arrow.svg) no-repeat;
     background-position: center;
   }
-  // .arrowUp {
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   z-index: 9999999;
-  //   width: 20px;
-  //   height: 20px;
-  //   background-color: white;
-  //   width: 100%;
-  //   height: 20px;
-  //   background: white url(.././images/up-arrow.svg) no-repeat;
-  //   background-position: center;
-  // }
+
+  .arrowUp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    width: 100%;
+    height: 20px;
+    background: white url(.././images/up-arrow.svg) no-repeat;
+    background-position: center;
+  }
 }
 
 // .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
@@ -368,10 +369,6 @@ input[type="date"] {
   padding: 0 16px !important;
 }
 
-// .xdsoft_datetimepicker {
-//   top: 314.578px !important;
-// }
-
 .xdsoft_datetimepicker .xdsoft_calendar thead th {
   color: #2A4455 !important;
 }
@@ -402,46 +399,14 @@ input[type="date"] {
 }
 
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select.xdsoft_yearselect div:first-child {
-  position: relative !important;
-  top: 150px !important;
+  // position: relative !important;
+  // top: 150px !important;
+  padding: 22px 0 !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
   max-height: 300px !important;
 }
-
-// .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
-//   &::after {
-//     content: "";
-//     display: block;
-//     width: 10px;
-//     height: 10px;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     z-index: 9999999;
-//     /* background: white; */
-//     width: 100%;
-//     height: 20px;
-//     background: white url(.././images/up-arrow.svg) no-repeat;
-//     background-position: center;
-//   }
-//   &::before {
-//     content: "";
-//     display: block;
-//     width: 10px;
-//     height: 10px;
-//     position: absolute;
-//     bottom: 0;
-//     right: 0;
-//     z-index: 9999999;
-//     /* background: white; */
-//     width: 100%;
-//     height: 20px;
-//     background: white url(.././images/down-arrow.svg) no-repeat;
-//     background-position: center;
-//   }
-// }
 
 .xdsoft_scrollbar>.xdsoft_scroller {
   &::after {
