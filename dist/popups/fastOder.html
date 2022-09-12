@@ -57,7 +57,7 @@
           <div class="popup-icon"></div>
         </div>
       </div>
-  
+
       <div class="ui-field">
         <label class="ui-label ui-label-mini" for="email">Email <span class="ui-color-red">*</span></label>
         <div class="ui-input-wrp">
@@ -73,13 +73,19 @@
       </div>
     </div><!--.fields-->
 
-    
-    
+
+
     <div class="ui-checkbox">
       <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked>
-      <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить отзыв» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a></label>
+      <label for="customCheckbox" class="ui-checkbox-label">
+        <span class="default-txt">
+          Нажимая кнопку «Отправить отзыв» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a>
+        </span>
+
+        <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+      </label>
     </div>
-    
+
     <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
 
   </form>
@@ -168,7 +174,7 @@
           $(element).addClass(errorClass).removeClass(validClass);
           $(element).closest('.ui-field').find('.popup-icon')
             .addClass(errorClass).removeClass(validClass);
-          
+
         },
         unhighlight: function(element, errorClass, validClass) {
           $(element).removeClass(errorClass).addClass(validClass);

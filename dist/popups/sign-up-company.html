@@ -49,7 +49,13 @@
 
       <div class="ui-checkbox">
         <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
-        <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Далее» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+        <label for="customCheckbox" class="ui-checkbox-label">
+          <span class="default-txt">
+            Нажимая кнопку «Далее» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a>
+          </span>
+
+          <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+        </label>
       </div>
 
       <button type="sumbit" class="ui-btn ui-btn-block ui-btn-blue margin-31 btn-next">Далее</button>
@@ -147,6 +153,19 @@
           },
        },
 
+         highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
+
+
        submitHandler: function(form) {
          txtHeadline.textContent = 'Юридические данные';
          txtSteps.textContent = '2';
@@ -176,8 +195,8 @@
           minlength: "Введите полный номер",
         },
         inn: {
-          required:"Введите свой ИНН",
-          number: 'Введите корректный ИНН',
+          required:"Введите свой УНП",
+          number: 'Введите корректный УНП',
         },
      },
     });
@@ -204,13 +223,25 @@
           },
           bik: {
              required: true,
-             number: true,
+            //  number: true,
           },
           iban: {
              required: true,
              number: true,
           },
        },
+
+       highlight: function(element, errorClass, validClass) {
+          $(element).addClass(errorClass).removeClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .addClass(errorClass).removeClass(validClass);
+
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).removeClass(errorClass).addClass(validClass);
+          $(element).closest('.ui-field').find('.popup-icon')
+            .removeClass(errorClass).addClass(validClass);
+        },
 
        messages: {
         nameCompany: {
@@ -227,7 +258,7 @@
         },
         bik: {
            required: "Введите данные БИК",
-           number: "Введите корректные данные",
+          //  number: "Введите корректные данные",
         },
         iban: {
            required: "Введите расчётный счет IBAN",
@@ -237,12 +268,13 @@
     });
 
     jQuery.validator.addMethod(
-        "lettersonly",
-        function (value, element) {
-          return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
-        },
-        "Incorrect format"
-      );
+      "lettersonly",
+      function (value, element) {
+        return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+      },
+      "Incorrect format"
+    );
+
 
     // jQuery.validator.addMethod(
     //     "telephone",

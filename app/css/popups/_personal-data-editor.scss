@@ -62,7 +62,8 @@
     img {
       position: absolute;
       right: 16px;
-      top: 8px;
+      top: 50%;
+      transform: translate(0, -50%);
     }
   }
 
@@ -129,6 +130,10 @@
     transition: 0.3s border, 0.3s color;
     border-radius: 5px;
     outline: none;
+
+    @media(max-width: 576px) {
+      height: 48px !important;
+    }
   }
 
   .jq-selectbox {
@@ -172,6 +177,10 @@
   .making-order-select label {
     padding-left: 0;
     text-align: center;
+    font-weight: 600;
+    border: 1px solid #D3D3D3;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     @media(max-width: 576px) {
       height: 100%;
@@ -282,6 +291,36 @@ input[type="date"] {
   box-shadow: 0px 2px 10px rgb(0 0 0 / 15%) !important;
 }
 
+.xdsoft_yearselect {
+  .arrowDown {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9999999;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    width: 100%;
+    height: 20px;
+    background: white url(.././images/down-arrow.svg) no-repeat;
+    background-position: center;
+  }
+
+  .arrowUp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999999;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    width: 100%;
+    height: 20px;
+    background: white url(.././images/up-arrow.svg) no-repeat;
+    background-position: center;
+  }
+}
+
 // .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
 //   overflow: visible !important;
 // }
@@ -330,10 +369,6 @@ input[type="date"] {
   padding: 0 16px !important;
 }
 
-// .xdsoft_datetimepicker {
-//   top: 314.578px !important;
-// }
-
 .xdsoft_datetimepicker .xdsoft_calendar thead th {
   color: #2A4455 !important;
 }
@@ -344,8 +379,12 @@ input[type="date"] {
 }
 
 .xdsoft_datetimepicker .xdsoft_month {
-  width: 115px !important;
+  width: 110px !important;
   text-align: start !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_year {
+  width: 53px !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_year span {
@@ -360,45 +399,13 @@ input[type="date"] {
 }
 
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select.xdsoft_yearselect div:first-child {
-  position: relative !important;
-  top: 150px !important;
+  // position: relative !important;
+  // top: 150px !important;
+  padding: 22px 0 !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
   max-height: 300px !important;
-}
-
-.xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
-  &::after {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 9999999;
-    /* background: white; */
-    width: 100%;
-    height: 20px;
-    background: white url(.././images/up-arrow.svg) no-repeat;
-    background-position: center;
-  }
-  &::before {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 9999999;
-    /* background: white; */
-    width: 100%;
-    height: 20px;
-    background: white url(.././images/down-arrow.svg) no-repeat;
-    background-position: center;
-  }
 }
 
 .xdsoft_scrollbar>.xdsoft_scroller {
@@ -445,4 +452,16 @@ input[type="date"] {
 
 .xdsoft_datetimepicker {
   padding: 10px 0 !important;
+}
+
+.xdsoft_datetimepicker .xdsoft_label i,
+.xdsoft_datetimepicker .xdsoft_prev,
+.xdsoft_datetimepicker .xdsoft_next,
+.xdsoft_datetimepicker .xdsoft_today_button {
+  background-image: url(../../images/cal-arr.svg);
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 6px;
+  background-position: center;
+  margin-left: 5px;
 }

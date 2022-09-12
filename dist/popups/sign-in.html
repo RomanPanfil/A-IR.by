@@ -33,7 +33,13 @@
             </div>
             <div class="ui-checkbox">
               <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
-              <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Войти» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+              <label for="customCheckbox" class="ui-checkbox-label">
+                <span class="default-txt">
+                  Нажимая кнопку «Войти» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a>
+                </span>
+
+                <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+              </label>
             </div>
             <button type="submit" class="ui-btn ui-btn-block ui-btn-blue margin-31">Войти</button>
             <a href="#" data-href="./popups/sign-up-person.html" class="sign-popup-reg mfp-link">Зарегистрироваться как физическое лицо</a>
@@ -47,7 +53,7 @@
                 <div class="popup-icon"></div>
               </div>
             </div>
-            <div class="ui-field password">
+            <div class="ui-field mfp-popup-fields">
               <div class="sign-popup-headline">
                 <label class="ui-label ui-label-mini" for="password">
                   Пароль <span class="ui-color-red">*</span>

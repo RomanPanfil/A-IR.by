@@ -578,6 +578,93 @@ if (document.getElementById("card-breackpoint")) {
   // });
 }
 
+if (document.querySelector(".making-order-validate")) {
+  // let cardBreackpoint = $("#card-breackpoint").offset().top;
+  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
+  // let cardSticky = $(".making-order-info");
+  // const cardHeight = cardSticky.innerHeight();
+  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
+  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
+
+  // window.addEventListener("resize", function () {
+  //   cardBreackpoint = $("#card-breackpoint").offset().top;
+  // });
+  const stickyBlock = document.querySelector('.making-order-info')
+  const card = document.querySelector('#card-breackpoint')
+
+  function flipOrSticky() {
+    const box = card.getBoundingClientRect()
+    const stickyBox = stickyBlock.getBoundingClientRect()
+    const boxTop = box.top
+    const boxBottom = box.bottom
+    const stickyBottom = stickyBox.height
+    const py = window.pageYOffset
+
+    if (py > boxTop + py) {
+      if (py < (boxBottom + py - stickyBottom - 185)) {
+        stickyBlock.classList.add("sticky-box");
+        stickyBlock.classList.remove("card-breackpoint-flipbottom");
+      } else {
+        stickyBlock.classList.remove("sticky-box");
+        stickyBlock.classList.add("card-breackpoint-flipbottom");
+      }
+    } else {
+      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
+    }
+    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
+    //   stickyBlock.classList.add("card-breackpoint-open");
+    // } else {
+    //   stickyBlock.classList.remove("card-breackpoint-open");
+    // }
+  }
+
+  window.addEventListener("scroll", flipOrSticky);
+  window.addEventListener("load", flipOrSticky);
+}
+
+if (document.querySelector(".making-form")) {
+  // let cardBreackpoint = $("#card-breackpoint").offset().top;
+  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
+  // let cardSticky = $(".making-order-info");
+  // const cardHeight = cardSticky.innerHeight();
+  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
+  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
+
+  // window.addEventListener("resize", function () {
+  //   cardBreackpoint = $("#card-breackpoint").offset().top;
+  // });
+  const stickyBlock = document.querySelector('.cart-order')
+  const card = document.querySelector('#card-breackpoint')
+
+  function flipOrSticky() {
+    const box = card.getBoundingClientRect()
+    const stickyBox = stickyBlock.getBoundingClientRect()
+    const boxTop = box.top
+    const boxBottom = box.bottom
+    const stickyBottom = stickyBox.height
+    const py = window.pageYOffset
+
+    if (py > boxTop + py) {
+      if (py < (boxBottom + py - stickyBottom - 185)) {
+        stickyBlock.classList.add("sticky-box");
+        stickyBlock.classList.remove("card-breackpoint-flipbottom");
+      } else {
+        stickyBlock.classList.remove("sticky-box");
+        stickyBlock.classList.add("card-breackpoint-flipbottom");
+      }
+    } else {
+      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
+    }
+    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
+    //   stickyBlock.classList.add("card-breackpoint-open");
+    // } else {
+    //   stickyBlock.classList.remove("card-breackpoint-open");
+    // }
+  }
+
+  window.addEventListener("scroll", flipOrSticky);
+  window.addEventListener("load", flipOrSticky);
+}
 
 (function (){
   if (!D.querySelector('.catalog-marks')) return;
@@ -911,6 +998,15 @@ if (document.getElementById("card-breackpoint")) {
           mainClass: "my-mfp-zoom-in",
           ajax: {
             tError: "Error. Not valid url",
+          },
+          // @todo добавить везде, где инициализация
+          callbacks: {
+            open: function() {
+              document.documentElement.style.overflow = 'hidden'
+            },
+            close: function() {
+              document.documentElement.style.overflow = ''
+            }
           }
         });
       })
@@ -942,6 +1038,16 @@ if (document.getElementById("card-breackpoint")) {
           mainClass: "my-mfp-zoom-in",
           ajax: {
             tError: "Error. Not valid url",
+          },
+
+          callbacks: {
+            open: function() {
+              document.documentElement.style.overflow = 'hidden'
+            },
+
+            close: function() {
+              document.documentElement.style.overflow = ''
+            }
           }
         });
       })
@@ -1271,6 +1377,16 @@ jQuery(document).ready(function($){
           },700);
         }
       },
+
+      callbacks: {
+        open: function() {
+          document.documentElement.style.overflow = 'hidden'
+        },
+
+        close: function() {
+          document.documentElement.style.overflow = ''
+        }
+      }
     });
     return false;
   });
@@ -1406,29 +1522,22 @@ if(document.getElementById('map-address')) {
     })
   }
 
-  let orderForm = document.querySelector('.making-order-form');
-  let orderErip = document.querySelector('.making-order-erip');
+  let orderForm = document.querySelector('.making-order-payment .making-order-form');
 
   $(function () {
-    $('#tab-2 input[type=radio]').change(function() {
+    $('.making-order-payment #tab-2 input[type=radio]').change(function() {
       if($(this).val() === 'Безналичный расчёт') {
         orderForm.classList.add('active');
       } else {
         orderForm.classList.remove('active')
       }
-
-      console.log($(this).val())
-
-      if($(this).val() === 'ЕРИП') {
-        orderErip.classList.add('active');
-      } else {
-        orderErip.classList.remove('active')
-      }
     })
   })
 
+  //cal-arr
+
   // validate for marking-order.html
-   $(".marking-order-validate").validate({
+   $(".making-order-validate").validate({
       errorElement: "span",
       rules: {
         name: {
@@ -1485,12 +1594,12 @@ if(document.getElementById('map-address')) {
 
         bik: {
           required: true,
-          number: true,
+          // number: true,
         },
 
         iban: {
           required: true,
-          number: true,
+          // number: true,
         },
 
         test: {
@@ -1572,12 +1681,12 @@ if(document.getElementById('map-address')) {
 
         bik: {
           required: "Введите данные БИК",
-          number: "Введите корректные данные",
+          // number: "Введите корректные данные",
         },
 
         iban: {
           required: "Введите расчётный счет IBAN",
-          number: "Введите корректные данные",
+          // number: "Введите корректные данные",
         },
 
         test: {
@@ -1669,14 +1778,14 @@ if(document.getElementById('map-address')) {
     })();
 
     let allInputs = document.querySelector('.making-order-myAddress');
-    let otherAddressForm = document.querySelector('.making-order-form');
+    let otherAddressForm = document.querySelector('.making-order-pickup .making-order-form');
 
     if(allInputs && otherAddressForm) {
       allInputs.addEventListener('click', (e) => {
         if(e.target.classList[0] === 'other') {
-          otherAddressForm.style.display = 'block'
+          otherAddressForm.style.display = 'block';
         } else {
-          otherAddressForm.style.display = 'none'
+          otherAddressForm.style.display = 'none';
         }
       })
     }
@@ -1716,6 +1825,18 @@ if(document.getElementById('map-address')) {
         }
       })
     }
+
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+      // We execute the same script as before
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
 });//ready
 
 
@@ -1991,8 +2112,6 @@ $('.main-list-li').click(function(){
     }
   }
 })();
-
-
 
 $('.waitList-item-remove-link').click(function(){
   $(this).closest($('div.waitList-item')).remove();

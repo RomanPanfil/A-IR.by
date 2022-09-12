@@ -6,22 +6,24 @@
         <a href="#" class="mfp-popup-product-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
       </div>
     </div><!--.header-->
-  
-    
-    
+
+
+
     <form  class="waiting-form">
             <div class="ui-field">
                 <label for="" class="ui-label ui-label-mini">Текстовое поле<span class="ui-color-red">*</span></label>
                 <textarea id="textbox" name="textbox" placeholder="Текст" class="ui-input" rows="5"></textarea>
             </div>
 
-            <div class="ui-label ui-label-mini">Как вы хотите получить ответ?    
+            <div class="ui-label ui-label-mini">Как вы хотите получить ответ?
             </div>
 
             <div class="request-checkboxes">
                 <div class="row">
                     <div class="col-12 col-us-6">
                         <label class="request-checkbox">
+                            <input type="radio" name="chose" class="request-checkbox-input" checked>
+                            <input type="radio" name="chose" class="request-checkbox-input" checked="checked">
                             <input type="radio" name="chose" class="request-checkbox-input" checked="checked">
                             <div class="request-checkbox-input-data">
                                 Ответ на телефон
@@ -39,17 +41,23 @@
                     </div>
                 </div>
 
-                
+
             </div>
 
             <div class="ui-checkbox">
                 <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
-                <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Отправить запрос» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a></label>
+                <label for="customCheckbox" class="ui-checkbox-label">
+                  <span class="default-txt">
+                    Нажимая кнопку «Отправить запрос» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a>
+                  </span>
+
+                  <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+                </label>
             </div>
 
             <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
     </form>
-    
+
     <style>
       @media (max-width: 576.99px) {
         .mfp-container:before {
@@ -67,7 +75,7 @@
        }
     </style>
     <script>
-        
+
 
       $(document).ready(function () {
         $(".waiting-form").validate({
@@ -79,17 +87,16 @@
             maxlength: 500,
           }
         },
-        
-        messages: {        
+
+        messages: {
           textbox: {
             required: "Пожалуйста, оставьте свой комментарий",
             maxlength: "Комментарий не должен превышать 500 символов",
           },
         },
-        
+
       });
       })
 
     </script>
   </div>
-  

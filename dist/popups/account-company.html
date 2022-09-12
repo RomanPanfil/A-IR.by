@@ -47,7 +47,13 @@
             <div class="ui-checkbox">
               <div class="ui-checkbox-body">
                 <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" name="customCheckbox" checked="">
-                <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+                <label for="customCheckbox" class="ui-checkbox-label">
+                  <span class="default-txt">
+                    Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a>
+                  </span>
+
+                  <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+                </label>
               </div>
             </div>
           </div>
@@ -83,7 +89,7 @@
       let blockSecond = document.querySelector('.change-address-second');
       let mainInputEmail = document.querySelector('.change-address-main #email');
       let mainInputName = document.querySelector('.change-address-main #name');
-      let count = 0;
+      let count = 1;
 
       blockSecond.addEventListener('click', (e) => {
         let parentBlock = e.target.closest('.change-address-new');
@@ -115,7 +121,7 @@
         blockDiv.innerHTML = `
           <div class="change-address-headline">
             <div class="change-address-title">
-              Аккаунт №${count++}
+              Аккаунт №${countPlus}
             </div>
 
             <div class="change-address-control">

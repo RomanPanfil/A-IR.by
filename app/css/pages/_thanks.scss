@@ -1,0 +1,60 @@
+.thanks {
+  &-headline {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 28px;
+
+    @media(max-width: 1024px) {
+      font-size: 28px;
+      margin-bottom: 23px;
+    }
+
+    @media(max-width: 576px) {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &-contact {
+    margin-bottom: 88px;
+
+    .card-contact-img {
+      flex: 0 0 40px;
+      max-width: 40px;
+
+      @media(max-width: 1024px) {
+        flex: 0 0 48px;
+        max-width: 48px;
+      }
+    }
+  }
+
+  &-client {
+    margin-bottom: 18px;
+
+    span {
+      font-weight: 700;
+    }
+
+    @media(max-width: 576px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-delivery {
+    margin-bottom: 35px;
+    font-weight: 700;
+
+    @media(max-width: 576px) {
+      margin-bottom: 42px;
+    }
+  }
+
+  &-quest {
+    margin-bottom: 34px;
+
+    @media(max-width: 576px) {
+      margin-bottom: 21px;
+    }
+  }
+}
