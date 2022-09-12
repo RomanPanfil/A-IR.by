@@ -2019,8 +2019,6 @@ new Swiper(".main-trust-slider", {
   }
 })();
 
-
-
 jQuery(document).ready(function ($) {
   $(".main-tabs-link").Tabs();
 

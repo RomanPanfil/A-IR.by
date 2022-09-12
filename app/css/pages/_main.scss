@@ -396,6 +396,8 @@
 
     .swiper-pagination{
       display: none;
+      line-height: 0;
+      font-size: 0;
 
       @media(max-width:420px){
         // display: flex;
