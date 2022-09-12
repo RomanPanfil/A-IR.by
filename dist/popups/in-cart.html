@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-popup-incart-left">
        <div class="incart-product">
-        <div class="incart-product-img"><a href="#"><img src="./images/product-img.png" alt="alt"></a></div>
+        <div class="incart-product-img"><a href="#"><img src="./images/product-img.webp" alt="alt"></a></div>
         <div class="incart-product-body">
           <div class="incart-product-title"><a href="#">Винтовой компрессор A1R BB-4FC, 10 бар</a></div>
           <div class="incart-product-price">5 381 BYN</div>
@@ -15,7 +15,7 @@
         </div>
 
        </div>
-        
+
       </div>
 
       <div class="col-popup-incart-right">
@@ -44,7 +44,7 @@
           </div>
         </div>
       </div>
-      
+
 
       <div class="incart-filters-links">
         <div id="group_1" class="incart-filters-tab">
@@ -81,7 +81,7 @@
             <div class="popup-card">
               <div class="popup-card-img">
                 <a href="#" class="popup-card-img-link">
-                  <img src="./images/product-img.png" alt="alt">
+                  <img src="./images/product-img.webp" alt="alt">
                 </a>
               </div>
 
@@ -144,7 +144,7 @@
             <div class="popup-card">
               <div class="popup-card-img">
                 <a href="#" class="popup-card-img-link">
-                  <img src="./images/product-img.png" alt="alt">
+                  <img src="./images/product-img.webp" alt="alt">
                 </a>
               </div>
 
@@ -215,7 +215,7 @@
     </div><!--desktop-->
   </div>
 
- 
+
   <style>
     @media (max-width: 576.99px) {
       .mfp-container:before {
@@ -233,7 +233,7 @@
     $(document).ready(function () {
 
       $('.incart-filters-tabs a').Tabs();
-      
+
       let slider = null, native = null;
 
       //desktop
@@ -266,7 +266,7 @@
           native = true
         }
 
-        
+
 
         function swiperFilters(slider) {
           let currentCat;
@@ -276,19 +276,19 @@
             const tab = $(this).attr('href');
 
             currentCat = filter;
-            
+
             $('.popup-goods-body .swiper-slide').css('display', 'none')
             $('.popup-goods-body .swiper-slide[data-cat="'+currentCat+'"]').css('display', '')
 
             $(tab).find('.incart-filter').removeClass('active');
             $(tab).find('.incart-filter').eq(0).addClass('active');
-            
+
             if (!slider) return false;
             slider.updateSize();
             slider.updateSlides();
             slider.updateProgress();
             slider.updateSlidesClasses();
-            slider.slideTo(0);      
+            slider.slideTo(0);
             return false;
           });
 
@@ -296,7 +296,7 @@
           $(document).on( 'click','.incart-filter', function(e) {
             e.preventDefault()
             const filter = $(this).attr('data-filter');
-            
+
             $('.popup-goods-body .swiper-slide').css('display', 'none')
 
             if (filter !== '') {
@@ -307,13 +307,13 @@
 
             $(this).siblings().removeClass( 'active' );
             $( this ).addClass( 'active' );
-            
+
             if (!slider) return false;
             slider.updateSize();
             slider.updateSlides();
             slider.updateProgress();
             slider.updateSlidesClasses();
-            slider.slideTo(0);      
+            slider.slideTo(0);
           });
 
 
