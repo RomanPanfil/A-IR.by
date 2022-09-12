@@ -54,7 +54,6 @@
 
   &-reviews {
     line-height: 21px;
-    // height: 24px;
     display: inline-block;
     vertical-align: bottom;
     margin-right: 24px;
@@ -487,7 +486,6 @@
         text-align: center;
 
         img {
-          // max-height: 328px;
           padding: 30px;
         }
       }
@@ -576,8 +574,7 @@
   }
 
   &-services {
-    // display: flex;
-    // flex-direction: column;
+    
 
     &-desc {
       .ui-btn {
@@ -873,11 +870,7 @@
     }
   }
 
-  // @media (max-width: 576.99px) {
-  //   &-tab {
-  //     padding: 22px 16px;
-  //   }
-  // }
+ 
 }
 // card-tabs
 
@@ -1091,7 +1084,7 @@
 
   &.reviews-video {
     border-radius: 0;
-    // margin-bottom: 0;
+    
   }
 
   &-wrapper {
@@ -1603,7 +1596,6 @@
     overflow-y: hidden;
     margin-bottom: 16px;
     margin-right: -40px;
-    // white-space: nowrap;
 
     .col-4 {
       max-width: 100%;

@@ -1,8 +1,10 @@
-const autoPrefixer = require("gulp-autoprefixer");
+// const autoPrefixer = require("gulp-autoprefixer");
 const sourcemaps = require("gulp-sourcemaps");
 const minifyCss = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const webp = require('gulp-webp');
+const del = require('del');
 
 let dist = "dist",
   app = "app";
@@ -17,27 +19,30 @@ let path = {
     popups: dist + "/popups/",
     fonts: dist + "/fonts/cofo/",
     media: dist + "/media/",
+    webpImg: dist + "/images/",
   },
   src: {
     html: app + "/*.html",
     css: app + "/css/*.scss",
     js: app + "/js/*.js",
-    images: ["!app/images/svg/**/*", app + "/images/**/*.{jpg,jpeg,png,gif,ico,webp,svg}"],
+    images: ["!app/images/svg/**/*", app + "/images/**/*.{gif,ico,webp,svg}"],
     svg: app + "/images/svg/*.svg",
     popups: app + "/popups/*.html",
     fonts: app + "/fonts/cofo/*",
     media: dist + "/media/*.{mp4}",
+    webpImg: app + "/images/*.{jpg,png,jpeg}",
   },
   watch: {
     html: app + "/**/*.html",
     css: app + "/css/**/*.scss",
     js: app + "/js/**/*.js",
     // images: app + "/images/**/*.{jpg,png,gif,ico,webp}",
-    images: ["!app/images/svg/**/*", app + "/images/**/*.{jpg,jpeg,png,gif,ico,webp}"],
+    images: ["!app/images/svg/**/*", app + "/images/**/*.{gif,ico,webp}"],
     svg: app + "/images/svg/*.svg",
     fonts: app + "/fonts/cofo/*",
     popups: app + "/popups/*.html",
     media: app + "/media/*.{mp4}",
+    webpImg: app + "/images/**/*.{jpg, png, jpeg}",
   },
   clean: "./" + dist + "/",
 };
@@ -78,8 +83,8 @@ function css() {
       })
     )
     // .pipe(gcmq())
-    .pipe(sourcemaps.write('sourcemaps'))
     .pipe(minifyCss())
+    .pipe(sourcemaps.write('sourcemaps'))
     .pipe(dest(path.build.css));
 }
 
@@ -90,6 +95,13 @@ function js() {
   .pipe(dest(path.build.js));
   // .pipe(browsersync.stream());
 }
+
+function imgWebp() {
+  return src(path.src.webpImg)
+  .pipe(webp())
+  .pipe(dest(path.build.webpImg))
+}
+
 function fonts() {
   return src(path.src.fonts).pipe(dest(path.build.fonts));
 }
@@ -133,9 +145,9 @@ function svg(cb) {
   cb();
 }
 
-
-
-
+const clean = async () => {
+    return del.sync(dist);
+}
 
 function watchFiles() {
   gulp.watch([path.watch.html], html);
@@ -146,11 +158,13 @@ function watchFiles() {
   gulp.watch(path.watch.images, images);
   gulp.watch([path.watch.popups], popups);
   gulp.watch([path.watch.svg], svg);
+  gulp.watch([path.watch.webpImg], imgWebp);
 
 }
 
 let build = gulp.series(
-  gulp.parallel(js, css, html, images, popups, fonts, media, svg)
+  clean,
+  gulp.parallel(js, css, html, images, imgWebp, popups, fonts, media, svg)
 );
 let watch = gulp.parallel(build, watchFiles);
 // let watch = gulp.parallel(build, watchFiles, browserSync);
@@ -166,3 +180,4 @@ exports.default = watch;
 exports.media = media;
 exports.popups = popups;
 exports.svg = svg;
+exports.imgWebp = imgWebp;
