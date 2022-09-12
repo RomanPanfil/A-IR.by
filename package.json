@@ -10,8 +10,12 @@
     "gulp-svg-sprite": "^1.5.0"
   },
   "dependencies": {
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svg-sprites": "^4.1.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
     "sass": "1.32.13"
   }
 }

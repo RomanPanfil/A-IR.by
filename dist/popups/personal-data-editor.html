@@ -62,7 +62,13 @@
       <div class="ui-checkbox">
         <div class="ui-checkbox-body">
           <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" name="customCheckbox" checked="">
-          <label for="customCheckbox" class="ui-checkbox-label">Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a></label>
+          <label for="customCheckbox" class="ui-checkbox-label">
+            <span class="default-txt">
+              Нажимая кнопку «Сохранить» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a>
+            </span>
+
+            <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+          </label>
         </div>
       </div>
 
@@ -95,15 +101,12 @@
           format:'d.m.Y',
           timepicker: false,
           opened: true,
-          closeOnDateSelect:true,
           lang: 'ru',
-          yearStart: 1940,
           dayOfWeekStart: 1,
           onGenerate: function() {
 
             if(!flag) {
               let blockOfYears = document.querySelector('.xdsoft_yearselect');
-              let blockScroll = blockOfYears.childNodes[0]
               let scroll = 30 * 9;
               let scrolled=0;
 
@@ -112,36 +115,22 @@
 
               blockOfYears.appendChild(arrowDown);
 
-              let arrowUp = document.createElement('div');
-              arrowUp.classList.add('arrowUp');
-
-              blockOfYears.appendChild(arrowUp);
-
-              arrowUp.addEventListener('click', () => {
-                let valueMargin = blockScroll.style.marginTop
-                let marginGet = valueMargin.split('px')[0]
-
-                blockScroll.style.marginTop = +marginGet + scroll + 'px'
-
-                console.log('down ' + valueMargin)
-              })
-
-              arrowDown.addEventListener('click', () => {
-                let valueMargin = blockScroll.style.marginTop
-                let marginGet = valueMargin.split('px')[0]
-
-                blockScroll.style.marginTop = +marginGet - scroll + 'px'
-              })
-
-              // $(".arrowDown").on("click" ,function(){
-              //   scrolled=scrolled+(30 * 9);
-
-              //   $(".xdsoft_yearselect").animate({
-              //     scrollTop:  scrolled
+              // arrowUp.addEventListener('click', () => {
+              //   blockOfYears.scrollTo({
+              //     top: scroll,
+              //     behavior: "smooth"
               //   });
-              // });
+              // })
 
-              flag = true;
+              $(".arrowDown").on("click" ,function(){
+                scrolled=scrolled+(30 * 9);
+
+                $(".xdsoft_yearselect").animate({
+                  scrollTop:  scrolled
+                });
+              });
+
+              flag =  true
             }
           },
         });

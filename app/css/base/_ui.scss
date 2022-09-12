@@ -1315,3 +1315,17 @@ textarea.ui-input {
     }
   }
 }
+
+.mob-txt {
+  display: none;
+
+  @media(max-width: 576px) {
+    display: block;
+  }
+}
+
+.default-txt {
+  @media(max-width: 576px) {
+    display: none;
+  }
+}

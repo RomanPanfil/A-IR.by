@@ -1,5 +1,9 @@
 const autoPrefixer = require("gulp-autoprefixer");
 const sourcemaps = require("gulp-sourcemaps");
+const minifyCss = require('gulp-clean-css');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+
 let dist = "dist",
   app = "app";
 
@@ -75,11 +79,15 @@ function css() {
     )
     // .pipe(gcmq())
     .pipe(sourcemaps.write('sourcemaps'))
+    .pipe(minifyCss())
     .pipe(dest(path.build.css));
 }
 
 function js() {
-  return src(path.src.js).pipe(fileinclude()).pipe(dest(path.build.js));
+  return src(path.src.js)
+  .pipe(fileinclude())
+  .pipe (uglify ())
+  .pipe(dest(path.build.js));
   // .pipe(browsersync.stream());
 }
 function fonts() {
