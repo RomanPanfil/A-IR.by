@@ -299,10 +299,9 @@ input[type="date"] {
     z-index: 9999999;
     width: 20px;
     height: 20px;
-    background-color: white;
     width: 100%;
     height: 20px;
-    background: white url(.././images/down-arrow.svg) no-repeat;
+    background: #fff url(../images/down-arrow.svg) no-repeat;
     background-position: center;
   }
 
@@ -313,17 +312,12 @@ input[type="date"] {
     z-index: 9999999;
     width: 20px;
     height: 20px;
-    background-color: white;
     width: 100%;
     height: 20px;
-    background: white url(.././images/up-arrow.svg) no-repeat;
+    background: #fff url(../images/up-arrow.svg) no-repeat;
     background-position: center;
   }
 }
-
-// .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
-//   overflow: visible !important;
-// }
 
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select>div>.xdsoft_option {
   background: #fff !important;
@@ -401,11 +395,11 @@ input[type="date"] {
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select.xdsoft_yearselect div:first-child {
   // position: relative !important;
   // top: 150px !important;
-  padding: 22px 0 !important;
+  // padding: 22px 0 !important;
 }
 
 .xdsoft_datetimepicker .xdsoft_label>.xdsoft_select {
-  max-height: 300px !important;
+  max-height: 328px !important;
 }
 
 .xdsoft_scrollbar>.xdsoft_scroller {
@@ -458,7 +452,7 @@ input[type="date"] {
 .xdsoft_datetimepicker .xdsoft_prev,
 .xdsoft_datetimepicker .xdsoft_next,
 .xdsoft_datetimepicker .xdsoft_today_button {
-  background-image: url(../../images/cal-arr.svg);
+  background-image: url(../images/cal-arr.svg);
   background-repeat: no-repeat;
   width: 8px;
   height: 6px;

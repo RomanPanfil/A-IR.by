@@ -20,6 +20,7 @@ let path = {
     fonts: dist + "/fonts/cofo/",
     media: dist + "/media/",
     webpImg: dist + "/images/",
+    htaccess: dist,
   },
   src: {
     html: app + "/*.html",
@@ -31,6 +32,7 @@ let path = {
     fonts: app + "/fonts/cofo/*",
     media: dist + "/media/*.{mp4}",
     webpImg: app + "/images/*.{jpg,png,jpeg}",
+    htaccess: app + "/.htaccess",
   },
   watch: {
     html: app + "/**/*.html",
@@ -70,6 +72,11 @@ let { src, dest } = require("gulp"),
 function html() {
   return src(path.src.html).pipe(fileinclude()).pipe(dest(path.build.html));
   // .pipe(browsersync.stream());
+}
+
+function htaccess() {
+  return src(path.src.htaccess, {dots: true})
+    .pipe(dest(path.build.htaccess))
 }
 
 function css() {
@@ -164,7 +171,7 @@ function watchFiles() {
 
 let build = gulp.series(
   clean,
-  gulp.parallel(js, css, html, images, imgWebp, popups, fonts, media, svg)
+  gulp.parallel(js, css, html, htaccess, images, imgWebp, popups, fonts, media, svg)
 );
 let watch = gulp.parallel(build, watchFiles);
 // let watch = gulp.parallel(build, watchFiles, browserSync);
@@ -181,3 +188,4 @@ exports.media = media;
 exports.popups = popups;
 exports.svg = svg;
 exports.imgWebp = imgWebp;
+exports.htaccess = htaccess;
