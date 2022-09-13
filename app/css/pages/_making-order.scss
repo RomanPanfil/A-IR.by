@@ -16,6 +16,8 @@
   }
 
   &-validate {
+    position: relative;
+    margin-bottom: 85px;
     .ui-input {
       @media(max-width: 576px) {
         height: 48px;
@@ -41,7 +43,7 @@
   }
 
   &-group {
-    margin-bottom: 85px;
+    // margin-bottom: 85px;
 
     @media(max-width: 768px) {
       margin-bottom: 56px;
@@ -289,6 +291,11 @@
       &.sticky-box {
         position: fixed;
         top: 100px !important;
+        max-width: 423px;
+      }
+      &.card-breackpoint-flipbottom {
+        position: absolute;
+        bottom: 0;
         max-width: 423px;
       }
     }
