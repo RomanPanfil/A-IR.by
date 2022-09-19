@@ -70,7 +70,6 @@
   }
 
   &-list {
-    margin-bottom: 88px;
 
     .ui-checkbox-label::before {
         border: 1px solid #D3D3D3;
@@ -338,6 +337,12 @@
         top: 100px !important;
         max-width: 423px;
       }
+
+      &.card-breackpoint-flipbottom {
+        position: absolute;
+        bottom: 0;
+        max-width: 423px;
+      }
     }
 
     @media(max-width: 1024px) {
@@ -473,4 +478,9 @@
       }
     }
   }
+}
+
+.making-form {
+  position: relative;
+  margin-bottom: 88px;
 }

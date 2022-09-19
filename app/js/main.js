@@ -601,7 +601,7 @@ if (document.querySelector(".making-order-validate")) {
     const py = window.pageYOffset
 
     if (py > boxTop + py) {
-      if (py < (boxBottom + py - stickyBottom - 185)) {
+      if (py < (boxBottom + py - stickyBottom - 100)) {
         stickyBlock.classList.add("sticky-box");
         stickyBlock.classList.remove("card-breackpoint-flipbottom");
       } else {
@@ -645,7 +645,7 @@ if (document.querySelector(".making-form")) {
     const py = window.pageYOffset
 
     if (py > boxTop + py) {
-      if (py < (boxBottom + py - stickyBottom - 185)) {
+      if (py < (boxBottom + py - stickyBottom - 100)) {
         stickyBlock.classList.add("sticky-box");
         stickyBlock.classList.remove("card-breackpoint-flipbottom");
       } else {
