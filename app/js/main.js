@@ -2241,3 +2241,94 @@ if(el) {
     }
   })();
 }
+
+
+// const lazyImages = document.querySelectorAll('img[data-src],source[data-srcset]')
+// const windowHeight = document.documentElement.clientHeight;
+
+// let lazyImagePositions = [];
+
+// if(lazyImages.length > 0) {
+//   lazyImages.forEach( img => {
+//     if (img.dataset.src || img.dataset.srcset){
+//       lazyImagePositions.push(img.getBoundingClientRect().top + pageYOffset)
+//       lazyCheck();
+//     }
+//   })
+// }
+
+// window.addEventListener("scroll", lazyScroll);
+
+// function lazyScroll () {
+//   if (document.querySelectorAll('img[data-src],source[data-srcset]').length > 0) {
+//     lazyCheck();
+//   }
+  
+// }
+
+// function lazyCheck() {
+//   let imgIndex = lazyImagePositions.findIndex(
+//     item => pageYOffset > item - windowHeight
+//   )
+
+//   if (imgIndex >= 0) {
+//     if(lazyImages[imgIndex].dataset.src) {
+
+//       lazyImages[imgIndex].src = lazyImages[imgIndex].dataset.src;
+//       lazyImages[imgIndex].removeAttribute("data-src")
+//     } else if (lazyImages[imgIndex].dataset.srcset){
+//       lazyImages[imgIndex].srcset = lazyImages[imgIndex].dataset.srcset;
+//       lazyImages[imgIndex].removeAttribute("data-srcset")
+//     }
+//     delete lazyImagePositions[imgIndex];
+//   }
+// }
+// console.log(lazyImagePositions)
+
+// const response = await server.posts()
+
+var scrollLoader = {
+  //разметка прелоадера
+  preloader: '<div class="ui-preloader"><div class="lds-ellipsis ui-preloader-spinner"><div></div><div></div><div></div><div></div></div><div class="ui-preloader-hint">Подождите, идет загрузка</div></div>',
+  //высота экрана + апдейт при ресайзе
+  screenHeight: document.documentElement.clientHeight,
+  update() {
+      this.screenHeight = document.documentElement.clientHeight;
+  },
+  //загружаем контент
+  loader(selector) {
+      const that = this;
+      let scroll = $(window).scrollTop();
+
+      $(selector).each(function(key,item){
+          const url = $(item).attr('data-href');
+          console.log(url)
+          if (url === undefined && url === '') return;
+          
+          let offset = $(item).offset().top;
+          if (scroll + that.screenHeight*1.5 > offset) {
+              $(item).html(that.preloader);
+              $.ajax({
+                  url: url,
+                  method: 'GET',
+                  success: function(data) {
+                      $(item).attr('data-loaded','true');
+                      $(item).html(data);
+                  },
+                  error: function() {
+                      $(item).attr('data-loaded','true');
+                      $(item).html('<div class="ui-error">Произошла непредвиденная ошибка. Обратитесь в поддержку сайта.</div>')
+                  }
+              })
+          }
+      });
+  }
+}//scrollLoader
+
+jQuery(window).on('resize',scrollLoader.update);
+jQuery(document).ready(function(){
+  jQuery(window).on('scroll',function(){
+      scrollLoader.loader('.ajx-scroll-load[data-loaded="false"]');
+  })
+});
+
