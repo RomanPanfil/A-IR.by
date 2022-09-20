@@ -20,6 +20,7 @@ let path = {
     fonts: dist + "/fonts/cofo/",
     media: dist + "/media/",
     webpImg: dist + "/images/",
+    ajaxDist: dist + "/ajax/",
     htaccess: dist,
   },
   src: {
@@ -32,6 +33,7 @@ let path = {
     fonts: app + "/fonts/cofo/*",
     media: dist + "/media/*.{mp4}",
     webpImg: app + "/images/*.{jpg,png,jpeg}",
+    ajaxDist: app + "/ajax/*.html",
     htaccess: app + "/.htaccess",
   },
   watch: {
@@ -44,6 +46,7 @@ let path = {
     fonts: app + "/fonts/cofo/*",
     popups: app + "/popups/*.html",
     media: app + "/media/*.{mp4}",
+    ajaxDist: dist + "/ajax/*.html",
     webpImg: app + "/images/**/*.{jpg, png, jpeg}",
   },
   clean: "./" + dist + "/",
@@ -113,6 +116,10 @@ function fonts() {
   return src(path.src.fonts).pipe(dest(path.build.fonts));
 }
 
+function ajaxDist() {
+  return src(path.src.ajaxDist).pipe(dest(path.build.ajaxDist));
+}
+
 function images() {
   return src(path.src.images).pipe(dest(path.build.images));
   // .pipe(browsersync.stream());
@@ -166,12 +173,13 @@ function watchFiles() {
   gulp.watch([path.watch.popups], popups);
   gulp.watch([path.watch.svg], svg);
   gulp.watch([path.watch.webpImg], imgWebp);
+  gulp.watch([path.watch.ajaxDist], ajaxDist);
 
 }
 
 let build = gulp.series(
   clean,
-  gulp.parallel(js, css, html, htaccess, images, imgWebp, popups, fonts, media, svg)
+  gulp.parallel(js, css, html, htaccess, ajaxDist, images, imgWebp, popups, fonts, media, svg)
 );
 let watch = gulp.parallel(build, watchFiles);
 // let watch = gulp.parallel(build, watchFiles, browserSync);
@@ -189,3 +197,4 @@ exports.popups = popups;
 exports.svg = svg;
 exports.imgWebp = imgWebp;
 exports.htaccess = htaccess;
+exports.ajaxDist = ajaxDist;

@@ -1734,7 +1734,7 @@ if(document.getElementById('map-address')) {
 
     if(allInputs && otherAddressForm) {
       allInputs.addEventListener('click', (e) => {
-        if(e.target.classList[0] === 'other') {
+        if(e.target.classList[2] === 'other') {
           otherAddressForm.style.display = 'block';
         } else {
           otherAddressForm.style.display = 'none';

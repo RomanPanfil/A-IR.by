@@ -344,7 +344,6 @@
     <div class="ui-screen-less-576">
       <a href="#" class="ui-btn ui-btn-secondary ui-btn-block">Все отзывы</a>
     </div>
-
     <script>
         setTimeout(() => {
             (function () {
@@ -377,23 +376,6 @@
     }
   }
 })();
-  },1000)
-
-  (function (){
-  if (!$('#catalog_search').length) return;
-
-  let catalogProductsSearch = $('#catalog_search');
-  let catalogProductsReniev = $('.catalog-products-reniev')
-  let cardReview = $('#card_review').offset().top;
-  let catalogSerachOffset = catalogProductsSearch.offset().top
-
-  window.addEventListener('scroll',function() {
-    if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
-      catalogProductsReniev.addClass('catalog-search-open')
-    }else {
-      catalogProductsReniev.removeClass('catalog-search-open')
-    }
-  })
-})();
+        }, 1000);
     </script>
-  </div>
+  </div><!-- end card-reviews -->
