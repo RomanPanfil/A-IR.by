@@ -1,14 +1,14 @@
-<div class="mian-recommend ui-block">
+<div class="mian-compressors ui-block">
     <div class="ui-block-head ui-main-title">
-      <div class="ui-block-title">Рекомендуем вам</div>
+      <div class="ui-block-title">Винтовые компрессоры</div>
     </div>
 
-    <div class="main-recommend-mobile ui-screen-less-1024">
+    <div class="main-compressors-mobile ui-screen-less-1024">
       <div class="ui-scroller"></div>
     </div>
 
-    <div class="main-recommend-desktop ui-screen-more-1024">
-      <div class="swiper main-recommend-swiper">
+    <div class="main-compressors-desktop ui-screen-more-1024">
+      <div class="swiper main-compressors-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="slider-product">
@@ -54,7 +54,7 @@
               <div class="slider-product-img">
                 <a href="#" class="slider-product-img-link">
                   <img
-                    data-src="./images/product-img.webp"
+                    src="./images/product-img.webp"
                     loading="lazy"
                     alt="product"
                   />
@@ -159,7 +159,7 @@
               <div class="slider-product-img">
                 <a href="#" class="slider-product-img-link">
                   <img
-                    data-src="//via.placeholder.com/210x210"
+                    src="https://via.placeholder.com/210x210"
                     loading="lazy"
                     alt="product"
                   />
@@ -302,7 +302,7 @@
               <div class="slider-product-img">
                 <a href="#" class="slider-product-img-link">
                   <img
-                    data-src="//via.placeholder.com/210x300/000/FFF"
+                    src="https://via.placeholder.com/210x300/000/FFF"
                     loading="lazy"
                     alt="product"
                   />
@@ -417,7 +417,7 @@
               <div class="slider-product-img">
                 <a href="#" class="slider-product-img-link">
                   <img
-                    data-src="./images/product-img.webp"
+                    src="./images/product-img.webp"
                     loading="lazy"
                     alt="product"
                   />
@@ -538,7 +538,7 @@
               <div class="slider-product-img">
                 <a href="#" class="slider-product-img-link">
                   <img
-                    data-src="./images/product-img.webp"
+                    src="./images/product-img.webp"
                     loading="lazy"
                     alt="product"
                   />
@@ -616,13 +616,13 @@
           </div>
         </div>
 
-        <div class="ui-arrow ui-arrow-prev main-recommend-prev">
+        <div class="ui-arrow ui-arrow-prev main-compressors-prev">
           <svg class="sprite ui-arrow-icon">
             <use xlink:href="svg/svg/symbols.svg#ui-arrow-prev" />
           </svg>
         </div>
 
-        <div class="ui-arrow ui-arrow-next main-recommend-next">
+        <div class="ui-arrow ui-arrow-next main-compressors-next">
           <svg class="sprite ui-arrow-icon">
             <use xlink:href="svg/svg/symbols.svg#ui-arrow-next" />
           </svg>
@@ -630,4 +630,45 @@
       </div>
       <!--.swiper-->
     </div>
+    <script>
+        setTimeout(() => {
+            (function () {
+  if (!document.querySelector(".main-compressors-desktop")) return;
+  let slider = null,
+    native = null;
+
+  //desktop
+  if (matchMedia) {
+    var bp = window.matchMedia("(min-width:1024.02px)");
+    bp.addListener(changes);
+    changes(bp);
+  }
+  function changes(bp) {
+    if (bp.matches && !slider) {
+      slider = new Swiper(".main-compressors-swiper", {
+        slidesPerView: 3,
+        spaceBetween: 24,
+        // shortSwipes: false,
+        navigation: {
+          nextEl: ".main-compressors-next",
+          prevEl: ".main-compressors-prev",
+        },
+        breakpoints: {
+          1140: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    }
+
+    if (!bp.matches && !native) {
+      const clone = $(".main-compressors-desktop .slider-product").clone();
+      $(".main-compressors-mobile .ui-scroller").prepend(clone);
+      native = true;
+    }
+  }
+})();
+  },1000)
+        
+    </script>
   </div>

@@ -1,0 +1,59 @@
+<div class="main-banners">
+    <div class="swiper main-banners-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="main-banners-img">
+            <img
+            class="main-banners-image" src="./images/main-banner-1.webp" srcset="./images/main-banner-1_2x.webp 2x" alt="alt"/>
+          </div>
+        </div>
+  
+        <div class="swiper-slide">
+          <div class="main-banners-img">
+            <img class="main-banners-image" src="./images/main-banner-4.webp" srcset="./images/main-banner-4_2x.webp 2x"  alt="alt"/>
+          </div>
+        </div>
+  
+        <div class="swiper-slide">
+          <div class="main-banners-img">
+            <img class="main-banners-image" src="./images/main-banner-2.webp" srcset="./images/main-banner-2_2x.webp 2x" alt="alt"/>
+          </div>
+        </div>
+  
+        <div class="swiper-slide">
+          <div class="main-banners-img">
+            <img class="main-banners-image" src="./images/main-banner-3.webp" srcset="./images/main-banner-3_2x.webp 2x" alt="alt"/>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="flex">
+        <div class="swiper-pagination main-banners-pagintaion"></div>
+      </div>
+  
+    </div>
+    <script>
+        setTimeout(() => {
+            new Swiper(".main-banners-slider", {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                // pagination:true,
+
+                breakpoints: {
+                    421: {
+                    slidesPerView: "auto",
+                    // pagination:true,
+                    },
+                },
+
+                // shortSwipes: false,
+
+                pagination: {
+                    el: ".main-banners-pagintaion",
+                    clickable: true,
+                },
+                });
+                },1000)
+    </script>
+  </div>
