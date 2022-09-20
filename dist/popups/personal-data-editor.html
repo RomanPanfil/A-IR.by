@@ -100,7 +100,7 @@
           // value:'12.03.2013',
           format:'d.m.Y',
           timepicker: false,
-          opened: true,
+          // opened: true,
           closeOnDateSelect:true,
           lang: 'ru',
           yearStart: 1939,
@@ -109,41 +109,44 @@
 
             if(!flag) {
               let blockOfYears = document.querySelector('.xdsoft_yearselect');
-              let blockScroll = blockOfYears.childNodes[0]
+              let blockScroll = blockOfYears.childNodes[0];
               let scroll = 30 * 9;
-              let scrolled=0;
-
-            let arrowDown = document.createElement('div');
-              arrowDown.classList.add('arrowDown');
-
-              blockOfYears.appendChild(arrowDown);
 
               let arrowUp = document.createElement('div');
+              let arrowDown = document.createElement('div');
+
               arrowUp.classList.add('arrowUp');
+              arrowDown.classList.add('arrowDown');
 
               blockOfYears.appendChild(arrowUp);
+              blockOfYears.appendChild(arrowDown);
 
-              arrowUp.addEventListener('click', (e) => {
-                let valueMargin = blockScroll.style.marginTop
-                let marginGet = valueMargin.split('px')[0]
+              arrowUp.addEventListener('click', () => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
 
-                blockScroll.style.marginTop = +marginGet + scroll + 'px'
+                blockScroll.style.marginTop = +marginGet + scroll + 'px';
               })
 
               arrowDown.addEventListener('click', () => {
-                let valueMargin = blockScroll.style.marginTop
-                let marginGet = valueMargin.split('px')[0]
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
 
-                blockScroll.style.marginTop = +marginGet - scroll + 'px'
+                blockScroll.style.marginTop = +marginGet - scroll + 'px';
               })
 
-              // $(".arrowDown").on("click" ,function(){
-              //   scrolled=scrolled+(30 * 9);
-
-              //   $(".xdsoft_yearselect").animate({
-              //     scrollTop:  scrolled
-              //   });
+              // $(calendar).on("click" ,function(){
+              //   console.log('asdasdasd')
               // });
+
+              // $(document).on('click', '.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_', function(e) {
+              //   console.log('vvvvvv')
+              //   console.log(e.target)
+              // });
+
+              $('.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_').bind("click", function(){
+                console.log('zxczxczxczxc')
+              })
 
               flag = true;
             }
@@ -151,6 +154,14 @@
         });
 
         $.datetimepicker.setLocale('ru');
+
+        // $(document).on('click', '.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_', (e) => {
+        //   console.log('test')
+        // })
+
+        // $('.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_').bind("click", function(){
+        //   console.log('zxczxczxczxc')
+        // })
     });
   </script>
 

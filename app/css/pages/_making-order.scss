@@ -24,6 +24,12 @@
         font-size: 16px;
       }
     }
+
+    .height {
+      @media(max-width: 576px) {
+        height: 136px;
+      }
+    }
   }
 
   &-caption {
@@ -43,7 +49,15 @@
   }
 
   &-group {
-    // margin-bottom: 85px;
+    margin-bottom: 85px;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @media(max-width: 1024px) {
+        margin-bottom: 56px;
+      }
+    }
 
     @media(max-width: 768px) {
       margin-bottom: 56px;
@@ -62,42 +76,147 @@
     position: relative;
     margin-bottom: 8px;
 
-    input[type='radio'] {
-      accent-color: #2A4455;
+    // input[type='radio'] {
+    //   accent-color: #2A4455;
+    //   width: 16px;
+    //   height: 16px;
+    //   position: absolute;
+    //   margin: 0;
+    //   right: 32px;
+    //   transform: translate(0, -50%);
+    //   top: 50%;
+
+    //   &:checked + label {
+    //     outline: 2px solid #2A4455;
+    //     font-weight: 600;
+    //     color: #2A4455;
+    //   }
+
+    //   @media(max-width: 576px) {
+    //     display: none;
+    //   }
+    // }
+
+    // label {
+    //   display: block;
+    //   padding: 15px 0 15px 32px;
+    //   border: 1px solid #D3D3D3;
+    //   border-radius: 8px;
+
+    //   &:hover {
+    //     outline: 2px solid grey;
+    //     border-color: transparent;
+    //   }
+    // }
+
+    // label {
+    //   line-height: 1.4;
+    //   padding-left: 28px;
+    // }
+
+    /* для элемента input c type="radio" */
+    .custom-radio {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    /* для элемента label связанного с .custom-radio */
+    .custom-radio+label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+      // padding-left: 20px;
+      padding: 15px 0 15px 32px;
+      border: 1px solid #D3D3D3;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        outline: 1px solid #808080;
+        border-color: transparent;
+      }
+    }
+
+    .custom-radio.block+label {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* создание в label псевдоэлемента  before со следующими стилями */
+    .custom-radio+label::before {
+      content: '';
+      display: block;
       width: 16px;
       height: 16px;
+      // flex-shrink: 0;
+      // flex-grow: 0;
+      border: 1px solid #D3D3D3;
+      border-radius: 50%;
+      margin-right: 8px;
       position: absolute;
-      margin: 0;
       right: 32px;
-      transform: translate(0, -50%);
-      top: 50%;
-
-      &:checked + label {
-        outline: 2px solid #2A4455;
-        font-weight: 600;
-        color: #2A4455;
-      }
+      top: 20px;
+      // background-size: 50% 50%;
 
       @media(max-width: 576px) {
         display: none;
       }
     }
 
-    label {
-      display: block;
-      padding: 15px 0 15px 32px;
-      border: 1px solid #D3D3D3;
-      border-radius: 8px;
+    .custom-radio.block+label::before {
+      content: '';
+      right: 32px;
+      top: 32px;
+      // background-size: 50% 50%;
+    }
 
-      &:hover {
-        outline: 2px solid grey;
-        border-color: transparent;
+    /* стили при наведении курсора на радио */
+    .custom-radio:not(:disabled):not(:checked)+label:hover::before {
+      border-color: #808080;
+    }
+
+    /* стили для радиокнопки, находящейся в состоянии checked */
+    .custom-radio:checked+label::after {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: #2A4455;
+      position: absolute;
+      top: 24px;
+      right: 44px;
+      border-radius: 50%;
+      // top: 50%;
+      // transform: translate(0, -50%);
+
+      @media(max-width: 576px) {
+        display: none;
       }
     }
 
-    label {
-      line-height: 1.4;
-      padding-left: 28px;
+    .custom-radio.block:checked+label::after {
+      content: '';
+      top: 36px;
+      right: 44px;
+    }
+
+    .custom-radio:checked+label {
+    outline: 2px solid #2A4455;
+      font-weight: 600;
+      color: #2A4455;
+    }
+
+    .custom-radio:checked+label::before {
+      content: '';
+      border-color: #2A4455;
+    }
+
+    /* стили для радиокнопки, находящейся в состоянии disabled */
+    .custom-radio:disabled+label::before {
+      background-color: #e9ecef;
     }
 
     .subtitle {
@@ -132,31 +251,6 @@
     position: relative;
     margin-bottom: 18px;
 
-    // input[type='radio'] {
-    //   position: absolute;
-    //   opacity: 0;
-    //   // accent-color: #2A4455;
-    //   // width: 16px;
-    //   // height: 16px;
-    //   // margin: 0;
-    //   // left: 0;
-    //   // top: 4px;
-    // }
-
-    // label {
-    //   line-height: 1.4;
-    //   padding-left: 28px;
-    //   display: inline-block;
-    // }
-
-    // input + label::before {
-    //   display: inline-block;
-    //   width: 16px;
-    //   height: 16px;
-    //   border-radius: 50px;
-    //   border: 1px solid #4f4f4f;
-    // }
-
     /* для элемента input c type="radio" */
     .custom-radio {
       position: absolute;
@@ -169,20 +263,24 @@
       display: inline-flex;
       align-items: center;
       user-select: none;
+      padding-left: 24px;
     }
 
     /* создание в label псевдоэлемента  before со следующими стилями */
     .custom-radio+label::before {
       content: '';
-      display: inline-block;
+      display: block;
       width: 16px;
       height: 16px;
-      flex-shrink: 0;
-      flex-grow: 0;
+      // flex-shrink: 0;
+      // flex-grow: 0;
       border: 1px solid #D3D3D3;
       border-radius: 50%;
       margin-right: 8px;
-      background-size: 50% 50%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      // background-size: 50% 50%;
     }
 
     /* стили при наведении курсора на радио */
@@ -190,19 +288,24 @@
       border-color: #000;
     }
 
-
     /* стили для радиокнопки, находящейся в состоянии checked */
     .custom-radio:checked+label::after {
       content: '';
-      display: inline-block;
+      display: block;
       width: 8px;
       height: 8px;
       background-color: #2A4455;
       position: absolute;
+      top: 4px;
       left: 4px;
       border-radius: 50%;
-      top: 50%;
-      transform: translate(0, -50%);
+      // top: 50%;
+      // transform: translate(0, -50%);
+    }
+
+    .custom-radio:checked+label::before {
+      content: '';
+      border-color: #2A4455;
     }
 
     /* стили для радиокнопки, находящейся в состоянии disabled */

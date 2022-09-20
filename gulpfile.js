@@ -98,7 +98,7 @@ function css() {
 function js() {
   return src(path.src.js)
   .pipe(fileinclude())
-  .pipe (uglify ())
+  // .pipe (uglify ())
   .pipe(dest(path.build.js));
   // .pipe(browsersync.stream());
 }

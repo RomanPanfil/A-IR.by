@@ -5,7 +5,7 @@
     Оформление заказа
   </div>
 
-  <form action="#" class="making-order-validate">
+  <form action="#" class="making-order-validate" id="card-breackpoint">
     <div class="row">
       <div class="col-md-7">
         <div class="making-order-group">
@@ -65,12 +65,12 @@
 
                     <div class="making-order-place">
                       <div class="making-order-address">
-                        <input type="radio" id="minsk" name="address" data-lat="53.924723" data-lng="27.511615" checked>
+                        <input type="radio" class="custom-radio" id="minsk" name="address" data-lat="53.924723" data-lng="27.511615" checked>
                         <label for="minsk">г. Минск, ул. Тимирязева 72, офис 7008</label>
                       </div>
 
                       <div class="making-order-address">
-                        <input type="radio" id="mogilev" name="address" data-lat="53.879127" data-lng="30.265464">
+                        <input type="radio" class="custom-radio" id="mogilev" name="address" data-lat="53.879127" data-lng="30.265464">
                         <label for="mogilev">г. Могилёв, ул. Челюскинцев 172</label>
                       </div>
                     </div>
@@ -81,7 +81,7 @@
 
                       <div class="ui-field">
                         <label for="" class="ui-label ui-label-mini">Комментарий</label>
-                        <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
+                        <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input height" rows="4"></textarea>
                       </div>
                     </div>
                   </div>
@@ -98,30 +98,30 @@
                   </div>
 
                   <div class="making-order-select">
-                    <input type="radio" id="address1" name="select">
+                    <input type="radio" class="custom-radio block" id="address1" name="select">
                     <label for="address1">
-                      г. Минск, ул. Тимирязева 72, офис 1010 <br>
+                      г. Минск, ул. Тимирязева 72, офис 1010
                       <span class="subtitle">Основной адрес доставки</span>
                     </label>
                   </div>
                   <div class="making-order-select">
-                    <input type="radio" id="address2" name="select">
+                    <input type="radio" class="custom-radio block" id="address2" name="select">
                     <label for="address2">
-                      г. Минск, ул. Тимирязева 72, офис 1010 <br>
+                      г. Минск, ул. Тимирязева 72, офис 1010
                       <span class="subtitle">Дополнительный адрес доставки</span>
                     </label>
                   </div>
                   <div class="making-order-select">
-                    <input type="radio" id="address3" name="select">
+                    <input type="radio" class="custom-radio block" id="address3" name="select">
                     <label for="address3">
-                      г. Минск, ул. Тимирязева 72, офис 1010 <br>
+                      г. Минск, ул. Тимирязева 72, офис 1010
                       <span class="subtitle">Дополнительный адрес доставки</span>
                     </label>
                   </div>
                   <div class="making-order-select other">
-                    <input type="radio" id="address4" name="select" class="other">
+                    <input type="radio" class="custom-radio block other" id="address4" name="select" class="other">
                     <label for="address4">
-                      Доставка на другой адрес <br>
+                      Доставка на другой адрес
                       <span class="subtitle">Добавление нового адреса доставки</span>
                     </label>
                   </div>
@@ -198,7 +198,7 @@
                     <div class="col-xs-6">
                       <div class="making-order-comment">
                         <span>Комментарий</span>
-                        <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input" rows="4"></textarea>
+                        <textarea id="textbox" name="textbox" placeholder="Комментарий к заказу" class="ui-input height" rows="4"></textarea>
                       </div>
                     </div>
                   </div>
@@ -226,15 +226,15 @@
                 </div>
 
                 <div class="making-order-select">
-                  <input type="radio" id="select1" name="select">
+                  <input type="radio" class="custom-radio" id="select1" name="select">
                   <label for="select1">Наличными при получении</label>
                 </div>
                 <div class="making-order-select">
-                  <input type="radio" id="select2" name="select">
+                  <input type="radio" class="custom-radio" id="select2" name="select">
                   <label for="select2">Картой при получении</label>
                 </div>
                 <div class="making-order-select">
-                  <input type="radio" id="select3" name="select">
+                  <input type="radio" class="custom-radio" id="select3" name="select">
                   <label for="select3">ЕРИП</label>
                 </div>
               </div>
@@ -245,7 +245,7 @@
                 </div>
 
                 <div class="making-order-select">
-                  <input type="radio" id="select4" name="select" value="Безналичный расчёт">
+                  <input type="radio" class="custom-radio" id="select4" name="select" value="Безналичный расчёт">
                   <label for="select4">Безналичный расчёт</label>
                 </div>
 
@@ -313,7 +313,7 @@
                   </div>
                 </div>
                 <div class="making-order-select">
-                  <input type="radio" id="select5" name="select" value="ЕРИП">
+                  <input type="radio" class="custom-radio" id="select5" name="select" value="ЕРИП">
                   <label for="select5">ЕРИП</label>
                 </div>
               </div>
