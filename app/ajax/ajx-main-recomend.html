@@ -648,7 +648,7 @@ if (matchMedia) {
 }
 function changes(bp) {
   if (bp.matches && !slider) {
-    console.log(bp.matches, slider )
+  
     slider = new Swiper(".main-recommend-swiper", {
       slidesPerView: 3,
       spaceBetween: 24,
@@ -663,7 +663,7 @@ function changes(bp) {
         },
       },
     });
-    console.log(bp.matches, slider )
+    
   }
 
   if (!bp.matches && !native) {
