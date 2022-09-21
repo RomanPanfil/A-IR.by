@@ -103,7 +103,8 @@
           // opened: true,
           closeOnDateSelect:true,
           lang: 'ru',
-          yearStart: 1939,
+          yearStart: 1940,
+          yearEnd: 2051,
           dayOfWeekStart: 1,
           onGenerate: function() {
 
@@ -126,6 +127,14 @@
                 let marginGet = valueMargin.split('px')[0];
 
                 blockScroll.style.marginTop = +marginGet + scroll + 'px';
+
+                if(marginGet === '-30') {
+                  blockScroll.style.marginTop = '25px'
+                }
+
+                if(marginGet === '25') {
+                  blockScroll.style.marginTop = '25px'
+                }
               })
 
               arrowDown.addEventListener('click', () => {
@@ -133,19 +142,24 @@
                 let marginGet = valueMargin.split('px')[0];
 
                 blockScroll.style.marginTop = +marginGet - scroll + 'px';
+
+                if(marginGet === '-3270') {
+                  blockScroll.style.marginTop = '-3270px'
+                }
               })
 
-              // $(calendar).on("click" ,function(){
-              //   console.log('asdasdasd')
-              // });
+              $(document).on('click touchend', '.arrowUp', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
 
-              // $(document).on('click', '.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_', function(e) {
-              //   console.log('vvvvvv')
-              //   console.log(e.target)
-              // });
+                blockScroll.style.marginTop = +marginGet + scroll + 'px';
+              })
 
-              $('.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_').bind("click", function(){
-                console.log('zxczxczxczxc')
+              $(document).on('click touchend', '.arrowDown', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                blockScroll.style.marginTop = +marginGet - scroll + 'px';
               })
 
               flag = true;
