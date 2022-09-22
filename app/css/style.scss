@@ -1,5 +1,6 @@
 @import "./abstracts/var";
 @import "./abstracts/mixin";
+@import "./mini.scss";
 
 *,
 :after,
@@ -105,3 +106,4 @@ body {
 @import "./pages/account";
 @import "./pages/order";
 @import "./pages/assistance";
+

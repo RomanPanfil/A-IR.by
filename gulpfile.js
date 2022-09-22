@@ -102,6 +102,7 @@ function js() {
   return src(path.src.js)
   .pipe(fileinclude())
   .pipe (uglify ())
+  .pipe(concat('main.js'))
   .pipe(dest(path.build.js));
   // .pipe(browsersync.stream());
 }
