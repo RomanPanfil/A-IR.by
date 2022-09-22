@@ -2072,13 +2072,7 @@ new Swiper(".main-trust-slider", {
 
 
 
-$('.main-list-li').click(function(){
-  if($(this).hasClass("list-open")) {
-    $(this).removeClass('list-open');
-  } else {
-    $(this).addClass('list-open');
-  }
-});
+
 
 (function () {
   if (!document.querySelector(".main-article-desktop")) return;
@@ -2289,6 +2283,10 @@ jQuery(document).ready(function(){
   })
 });
 
+swiper.on('slideChange', function(){
+  $(".swiper-pagination-bullet").removeClass("swiper-pagination-bullet-active");
+  $(".swiper-pagination-bullet:eq("+swiper.activeIndex+")").addClass("swiper-pagination-bullet-active");
+});
 
 new Swiper(".main-slider-swiper", {
   slidesPerView: 1,
@@ -2298,6 +2296,9 @@ new Swiper(".main-slider-swiper", {
     nextEl: ".main-slider-next",
     prevEl: ".main-slider-prev",
   },
+  hashNavigation: {
+    watchState: true,
+},
   pagination: {
     el: ".main-slider-pagintaion",
     clickable: true,
@@ -2372,3 +2373,4 @@ new Swiper(".main-banners-slider", {
     }
     })();
       
+   
