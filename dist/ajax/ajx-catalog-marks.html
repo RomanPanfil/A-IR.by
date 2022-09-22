@@ -35,27 +35,5 @@
       <div class="ui-btn-icon ui-btn-icon-plus"></div>
       <span class="ui-btn-txt">Показать ещё</span>
     </div>
-    <script>
-        (function (){
-  if (!D.querySelector('.catalog-marks')) return;
-
-  const wrapBtn =D.querySelector('.catalog-marks-toggler');
-  const wrapSettings = D.querySelector('.catalog-marks-list')
-
-  function resSetting() {
-    const wrapSettingContainer = document.querySelector('.catalog-marks-height').clientHeight;
-
-    if (wrapSettingContainer <= 80){
-      wrapSettings.classList.add("opened");
-      wrapBtn.classList.add('ui-hidden');
-    }
-    else {
-      wrapSettings.classList.remove("opened");
-      wrapBtn.classList.remove('ui-hidden');
-    }
-  }
-  resSetting();
-  window.addEventListener('resize', resSetting)
-})();
-    </script>
+    
   </div>

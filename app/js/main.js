@@ -2289,3 +2289,86 @@ jQuery(document).ready(function(){
   })
 });
 
+
+new Swiper(".main-slider-swiper", {
+  slidesPerView: 1,
+
+  // shortSwipes: false,
+  navigation: {
+    nextEl: ".main-slider-next",
+    prevEl: ".main-slider-prev",
+  },
+  pagination: {
+    el: ".main-slider-pagintaion",
+    clickable: true,
+  },
+});
+  
+
+new Swiper(".main-banners-slider", {
+  slidesPerView: 1,
+  spaceBetween: 24,
+  // pagination:true,
+
+  breakpoints: {
+      421: {
+      slidesPerView: "auto",
+      // pagination:true,
+      },
+  },
+
+  // shortSwipes: false,
+
+  pagination: {
+      el: ".main-banners-pagintaion",
+      clickable: true,
+  },
+  });
+  
+  $('.main-list-li').click(function(){
+    if($(this).hasClass("list-open")) {
+      $(this).removeClass('list-open');
+    } else {
+      $(this).addClass('list-open');
+    }
+  });
+
+  (function () {
+    // if (!document.querySelector(".main-recommend-desktop")) return;
+    let slider = null,
+      native = null;
+    
+    //desktop
+    if (matchMedia) {
+      var bp = window.matchMedia("(min-width:1024.02px)");
+      bp.addListener(changes);
+      changes(bp);
+    }
+    function changes(bp) {
+      if (bp.matches && !slider) {
+      
+        slider = new Swiper(".main-recommend-swiper", {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          // shortSwipes: false,
+          navigation: {
+            nextEl: ".main-recommend-next",
+            prevEl: ".main-recommend-prev",
+          },
+          breakpoints: {
+            1140: {
+              slidesPerView: 4,
+            },
+          },
+        });
+        
+      }
+    
+      if (!bp.matches && !native) {
+        const clone = $(".main-recommend-desktop .slider-product").clone();
+        $(".main-recommend-mobile .ui-scroller").prepend(clone);
+        native = true;
+      }
+    }
+    })();
+      

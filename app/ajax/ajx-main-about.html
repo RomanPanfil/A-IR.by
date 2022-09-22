@@ -136,28 +136,29 @@
 
   </div>
   <script>
-//         jQuery(document).ready(function ($) {
-//   $(".main-tabs-link").Tabs();
+jQuery(document).ready(function ($) {
+  $(".main-tabs-link").Tabs();
 
 
-//   $(document).on("click", ".tabs-target", function (e) {
-//     e.preventDefault();
-//     const id = $(this).attr("href");
+  $(document).on("click", ".tabs-target", function (e) {
+    e.preventDefault();
+    const id = $(this).attr("href");
 
 
-// if ($(id).length) {
-//       $('.main-tabs-link[href="' + id + '"]').click();
-//       const offset = $(".main-tabs-body").offset().top;
-//       $("html,body").animate({ scrollTop: offset - 160 }, 300);
-//     }
-//   });
+if ($(id).length) {
+      $('.main-tabs-link[href="' + id + '"]').click();
+      const offset = $(".main-tabs-body").offset().top;
+      $("html,body").animate({ scrollTop: offset - 160 }, 300);
+    }
+  });
 
-//   // Validation for catalog email input
-//   $(".main-tabs-link").Tabs();
+  // Validation for catalog email input
+  $(".main-tabs-link").Tabs();
 
-// });
+});
 
-setTimeout(() => {
+
+
 (function () {
 if (!D.querySelector(".main-tabs-link")) return;
 
@@ -186,28 +187,8 @@ D.querySelectorAll(".main-tabs-link-mobile").forEach((el) =>
 );
 })();
 
-jQuery(document).ready(function ($) {
-  $(".main-tabs-link").Tabs();
 
 
-  $(document).on("click", ".tabs-target", function (e) {
-    e.preventDefault();
-    const id = $(this).attr("href");
-
-
-if ($(id).length) {
-      $('.main-tabs-link[href="' + id + '"]').click();
-      const offset = $(".main-tabs-body").offset().top;
-      $("html,body").animate({ scrollTop: offset - 160 }, 300);
-    }
-  });
-
-  // Validation for catalog email input
-  $(".main-tabs-link").Tabs();
-
-});
-
-}, 1000);
 
 
   </script>
