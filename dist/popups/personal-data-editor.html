@@ -100,15 +100,16 @@
           // value:'12.03.2013',
           format:'d.m.Y',
           timepicker: false,
-          // opened: true,
+          opened: true,
           closeOnDateSelect:true,
           lang: 'ru',
-          yearStart: 1939,
+          yearStart: 1940,
+          yearEnd: 2051,
           dayOfWeekStart: 1,
           onGenerate: function() {
-
             if(!flag) {
               let blockOfYears = document.querySelector('.xdsoft_yearselect');
+              let btnYears = document.querySelector('.xdsoft_year');
               let blockScroll = blockOfYears.childNodes[0];
               let scroll = 30 * 9;
 
@@ -121,11 +122,32 @@
               blockOfYears.appendChild(arrowUp);
               blockOfYears.appendChild(arrowDown);
 
+              // btnYears.addEventListener('click', () => {
+              //   let valueMargin = blockScroll.style.marginTop;
+              //   let marginGet = valueMargin.split('px')[0];
+              //   let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
+              //   let numCurrentYear = +currentYearElement.textContent
+
+              //   if(numCurrentYear !== 2050 || numCurrentYear !== 1940) {
+              //     blockScroll.style.marginTop = +marginGet + 40 + 'px'
+              //   }
+
+              //   console.log(blockScroll.style.marginTop)
+              // })
+
               arrowUp.addEventListener('click', () => {
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
                 blockScroll.style.marginTop = +marginGet + scroll + 'px';
+
+                if(marginGet === '-30' || marginGet === '-62') {
+                  blockScroll.style.marginTop = '25px'
+                }
+
+                if(marginGet === '25') {
+                  blockScroll.style.marginTop = '25px'
+                }
               })
 
               arrowDown.addEventListener('click', () => {
@@ -133,19 +155,44 @@
                 let marginGet = valueMargin.split('px')[0];
 
                 blockScroll.style.marginTop = +marginGet - scroll + 'px';
+
+                if(marginGet === '-3000' || marginGet === '-2945') {
+                  blockScroll.style.marginTop = '-3032px'
+                }
+
+                if(marginGet === '-3032') {
+                  blockScroll.style.marginTop = '-3032px'
+                }
               })
 
-              // $(calendar).on("click" ,function(){
-              //   console.log('asdasdasd')
-              // });
+              $(document).on('click touchend', '.arrowUp', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
 
-              // $(document).on('click', '.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_', function(e) {
-              //   console.log('vvvvvv')
-              //   console.log(e.target)
-              // });
+                blockScroll.style.marginTop = +marginGet + scroll + 'px';
 
-              $('.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_').bind("click", function(){
-                console.log('zxczxczxczxc')
+                if(marginGet === '-30' || marginGet === '-62') {
+                  blockScroll.style.marginTop = '25px'
+                }
+
+                if(marginGet === '25') {
+                  blockScroll.style.marginTop = '25px'
+                }
+              })
+
+              $(document).on('click touchend', '.arrowDown', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                blockScroll.style.marginTop = +marginGet - scroll + 'px';
+
+                if(marginGet === '-3000' || marginGet === '-2945') {
+                  blockScroll.style.marginTop = '-3032px'
+                }
+
+                if(marginGet === '-3032') {
+                  blockScroll.style.marginTop = '-3032px'
+                }
               })
 
               flag = true;
@@ -154,14 +201,6 @@
         });
 
         $.datetimepicker.setLocale('ru');
-
-        // $(document).on('click', '.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_', (e) => {
-        //   console.log('test')
-        // })
-
-        // $('.xdsoft_datetimepicker.xdsoft_noselect.xdsoft_').bind("click", function(){
-        //   console.log('zxczxczxczxc')
-        // })
     });
   </script>
 
