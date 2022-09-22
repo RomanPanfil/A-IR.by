@@ -101,8 +101,8 @@ function css() {
 function js() {
   return src(['app/js/min.js', 'app/js/main.js'])
   .pipe(fileinclude())
-  .pipe(concat('main.js'))
   .pipe (uglify ())
+  .pipe(concat('main.js'))
   .pipe(dest(path.build.js));
   // .pipe(browsersync.stream());
 }
