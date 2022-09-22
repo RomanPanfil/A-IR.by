@@ -377,5 +377,22 @@
   }
 })();
         }, 1000);
+
+        (function (){
+  if (!$('#catalog_search').length) return;
+
+  let catalogProductsSearch = $('#catalog_search');
+  let catalogProductsReniev = $('.catalog-products-reniev')
+  let cardReview = $('#card_review').offset().top;
+  let catalogSerachOffset = catalogProductsSearch.offset().top
+
+  window.addEventListener('scroll',function() {
+    if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
+      catalogProductsReniev.addClass('catalog-search-open')
+    }else {
+      catalogProductsReniev.removeClass('catalog-search-open')
+    }
+  })
+})();
     </script>
   </div><!-- end card-reviews -->
