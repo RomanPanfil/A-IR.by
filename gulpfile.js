@@ -99,7 +99,7 @@ function css() {
 }
 
 function js() {
-  return src(path.src.js)
+  return src(['app/js/min.js', 'app/js/main.js'])
   .pipe(fileinclude())
   .pipe(concat('main.js'))
   .pipe (uglify ())
