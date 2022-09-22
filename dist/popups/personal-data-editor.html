@@ -100,7 +100,7 @@
           // value:'12.03.2013',
           format:'d.m.Y',
           timepicker: false,
-          // opened: true,
+          opened: true,
           closeOnDateSelect:true,
           lang: 'ru',
           yearStart: 1940,
@@ -109,7 +109,8 @@
           onGenerate: function() {
             if(!flag) {
               let blockOfYears = document.querySelector('.xdsoft_yearselect');
-              let btnYears = document.querySelector('.xdsoft_year');
+              let btnYears = document.querySelector('.xdsoft_label.xdsoft_year');
+              let control = document.querySelector('.xdsoft_monthpicker')
               let blockScroll = blockOfYears.childNodes[0];
               let scroll = 30 * 9;
 
@@ -122,30 +123,32 @@
               blockOfYears.appendChild(arrowUp);
               blockOfYears.appendChild(arrowDown);
 
-              // btnYears.addEventListener('click', () => {
-              //   let valueMargin = blockScroll.style.marginTop;
-              //   let marginGet = valueMargin.split('px')[0];
-              //   let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
-              //   let numCurrentYear = +currentYearElement.textContent
+              control.addEventListener('click', (e) => {
+                if(e.target.classList[1] === 'xdsoft_year') {
+                  let valueMargin = blockScroll.style.marginTop;
+                  let marginGet = valueMargin.split('px')[0];
+                  let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
+                  let numCurrentYear = +currentYearElement.textContent
 
-              //   if(numCurrentYear !== 2050 || numCurrentYear !== 1940) {
-              //     blockScroll.style.marginTop = +marginGet + 40 + 'px'
-              //   }
-
-              //   console.log(blockScroll.style.marginTop)
-              // })
+                  if(numCurrentYear !== 2050 || numCurrentYear !== 1940) {
+                    blockScroll.style.marginTop = +marginGet + 40 + 'px'
+                  }
+                }
+              })
 
               arrowUp.addEventListener('click', () => {
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
-                blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                if(+marginGet < 0) {
+                  blockScroll.style.marginTop = +marginGet + scroll + 'px';
 
-                if(marginGet === '-30' || marginGet === '-62') {
-                  blockScroll.style.marginTop = '25px'
-                }
-
-                if(marginGet === '25') {
+                  if(+marginGet < -271) {
+                    blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '25px'
+                  }
+                } else {
                   blockScroll.style.marginTop = '25px'
                 }
               })
@@ -156,12 +159,28 @@
 
                 blockScroll.style.marginTop = +marginGet - scroll + 'px';
 
-                if(marginGet === '-3000' || marginGet === '-2945') {
+                if(+marginGet > -3032) {
+                  if(+marginGet > -2760) {
+                    blockScroll.style.marginTop = +marginGet - scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '-3032px'
+                  }
+                } else {
                   blockScroll.style.marginTop = '-3032px'
                 }
+              })
 
-                if(marginGet === '-3032') {
-                  blockScroll.style.marginTop = '-3032px'
+              $(document).on('click touchend', '.xdsoft_monthpicker', (e) => {
+                console.log(e.target.parentElement)
+                if(e.target.parentElement.classList[1] === 'xdsoft_year') {
+                  let valueMargin = blockScroll.style.marginTop;
+                  let marginGet = valueMargin.split('px')[0];
+                  let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
+                  let numCurrentYear = +currentYearElement.textContent
+
+                  if(numCurrentYear !== 2050 || numCurrentYear !== 1940) {
+                    blockScroll.style.marginTop = +marginGet + 40 + 'px'
+                  }
                 }
               })
 
@@ -169,13 +188,15 @@
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
-                blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                if(+marginGet < 0) {
+                  blockScroll.style.marginTop = +marginGet + scroll + 'px';
 
-                if(marginGet === '-30' || marginGet === '-62') {
-                  blockScroll.style.marginTop = '25px'
-                }
-
-                if(marginGet === '25') {
+                  if(+marginGet < -271) {
+                    blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '25px'
+                  }
+                } else {
                   blockScroll.style.marginTop = '25px'
                 }
               })
@@ -184,13 +205,13 @@
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
-                blockScroll.style.marginTop = +marginGet - scroll + 'px';
-
-                if(marginGet === '-3000' || marginGet === '-2945') {
-                  blockScroll.style.marginTop = '-3032px'
-                }
-
-                if(marginGet === '-3032') {
+                if(+marginGet > -3032) {
+                  if(+marginGet > -2760) {
+                    blockScroll.style.marginTop = +marginGet - scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '-3032px'
+                  }
+                } else {
                   blockScroll.style.marginTop = '-3032px'
                 }
               })
