@@ -4,7 +4,7 @@
         <div class="ui-block-title">Нам доверяют</div>
       </div>
 
-      <div class="swiper main-trust-slider">
+      <div class="swiper main-trust-slider swiper-adaptive-trust">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="main-trust-img">
@@ -102,37 +102,44 @@
 
     <script>
         setTimeout(() => {
+          let arr = document.querySelectorAll('.main-trust-slider .swiper-slide');
+          if(arr.length > 5) {
+            $(".main-trust-slider").addClass("swiper-adaptive-trust");
+          } else {
+            $(".main-trust-slider").removeClass("swiper-adaptive-trust");
+          }
+          
             new Swiper(".main-trust-slider", {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  loop: true,
+              slidesPerView: 1,
+              spaceBetween: 24,
+              loop: true,
 
 
 
-  breakpoints: {
-    421: {
-      slidesPerView: "auto",
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-    1140: {
-      slidesPerView: 4,
-    },
-  },
+              breakpoints: {
+                421: {
+                  slidesPerView: "auto",
+                },
+                1024: {
+                  slidesPerView: 3,
+                },
+                1140: {
+                  slidesPerView: 4,
+                },
+              },
 
-  pagination: {
-    el: ".main-trust-pagintaion",
-    clickable: true,
-    dynamicBullets:true,
-    // dynamicMainBullets:3,
-  },
+              pagination: {
+                el: ".main-trust-pagintaion",
+                clickable: true,
+                dynamicBullets:true,
+                // dynamicMainBullets:3,
+              },
 
-  navigation: {
-    nextEl: ".main-trust-next",
-    prevEl: ".main-trust-prev",
-  },
-});
+              navigation: {
+                nextEl: ".main-trust-next",
+                prevEl: ".main-trust-prev",
+              },
+            });
         },1000)
         
     </script>
