@@ -171,7 +171,6 @@
               })
 
               $(document).on('click touchend', '.xdsoft_monthpicker', (e) => {
-                console.log(e.target.parentElement)
                 if(e.target.parentElement.classList[1] === 'xdsoft_year') {
                   let valueMargin = blockScroll.style.marginTop;
                   let marginGet = valueMargin.split('px')[0];
