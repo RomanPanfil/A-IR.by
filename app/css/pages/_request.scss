@@ -139,7 +139,8 @@
 
         input:checked + .request-checkbox-input-data {
             // box-shadow: inset 0px 0px 0px 2px $secondary;
-            border:2px solid $secondary;
+            outline:2px solid $secondary;
+            border-color: transparent;
         }
 
         input {
