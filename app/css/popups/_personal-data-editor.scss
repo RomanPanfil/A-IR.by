@@ -467,3 +467,9 @@ input[type="date"] {
 .xdsoft_noselect {
   user-select: auto !important;
 }
+
+.xdsoft_select.xdsoft_yearselect.xdsoft_scroller_box {
+  .blockYears {
+    padding: 40px 0;
+  }
+}
