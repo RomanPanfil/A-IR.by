@@ -1,11 +1,5 @@
 const D = document;
-$('.main-list-li').click(function(){
-  if($(this).hasClass("list-open")) {
-    $(this).removeClass('list-open');
-  } else {
-    $(this).addClass('list-open');
-  }
-});
+
 const FARBA = {
   //lazy load для сторонних либ
   lazyLibraryLoad(scriptSrc, linkHref, callback) {
@@ -828,9 +822,6 @@ if (document.querySelector(".making-form")) {
   }
 })();
 
-
-
-
 (function(){
   if (!document.querySelector('.catalog-related-desktop')) return
   let slider = null, native = null;
@@ -1020,6 +1011,46 @@ if (document.querySelector(".making-form")) {
 })();
 
 (function(){
+  if (!document.querySelector('.slider-produc-topline')) return
+
+  document.querySelectorAll('.slider-produc-topline')
+    .forEach(el => {
+      el.addEventListener('click', function (event) {
+        event = event || window.event
+        event.preventDefault()
+        event.stopPropagation()
+
+        const url = this.dataset.href || null
+
+        if (document.documentElement.clientWidth > 1024) {
+          return event.target.closest('.slider-product').classList.toggle('opened');
+        }
+
+        if (!url) return
+        $.magnificPopup.open({
+          items: { src: url },
+          type: "ajax",
+          overflowY: "scroll",
+          removalDelay: 610,
+          mainClass: "my-mfp-zoom-in",
+          ajax: {
+            tError: "Error. Not valid url",
+          },
+          // @todo добавить везде, где инициализация
+          callbacks: {
+            open: function() {
+              document.documentElement.style.overflow = 'hidden'
+            },
+            close: function() {
+              document.documentElement.style.overflow = ''
+            }
+          }
+        });
+      })
+    })
+})();
+
+(function(){
   if (!document.querySelector('.product-card-topline')) return
 
   document.querySelectorAll('.product-card-topline')
@@ -1164,7 +1195,13 @@ if (document.querySelector(".making-form")) {
     })
 })();
 
-
+$('.main-list-li').click(function(){
+  if($(this).hasClass("list-open")) {
+    $(this).removeClass('list-open');
+  } else {
+    $(this).addClass('list-open');
+  }
+});
 
 let arrStars = document.querySelectorAll('.ui-rating-star');
 let arrBlock = document.querySelectorAll('.ui-rating');
@@ -1859,79 +1896,79 @@ new Swiper(".main-trust-slider", {
   }
   })();
 
-(function () {
-  if (!document.querySelector(".main-compressors-desktop")) return;
-  let slider = null,
-    native = null;
+// (function () {
+//   if (!document.querySelector(".main-compressors-desktop")) return;
+//   let slider = null,
+//     native = null;
 
-  //desktop
-  if (matchMedia) {
-    var bp = window.matchMedia("(min-width:1024.02px)");
-    bp.addListener(changes);
-    changes(bp);
-  }
-  function changes(bp) {
-    if (bp.matches && !slider) {
-      slider = new Swiper(".main-compressors-swiper", {
-        slidesPerView: 3,
-        spaceBetween: 24,
-        // shortSwipes: false,
-        navigation: {
-          nextEl: ".main-compressors-next",
-          prevEl: ".main-compressors-prev",
-        },
-        breakpoints: {
-          1140: {
-            slidesPerView: 4,
-          },
-        },
-      });
-    }
+//   //desktop
+//   if (matchMedia) {
+//     var bp = window.matchMedia("(min-width:1024.02px)");
+//     bp.addListener(changes);
+//     changes(bp);
+//   }
+//   function changes(bp) {
+//     if (bp.matches && !slider) {
+//       slider = new Swiper(".main-compressors-swiper", {
+//         slidesPerView: 3,
+//         spaceBetween: 24,
+//         // shortSwipes: false,
+//         navigation: {
+//           nextEl: ".main-compressors-next",
+//           prevEl: ".main-compressors-prev",
+//         },
+//         breakpoints: {
+//           1140: {
+//             slidesPerView: 4,
+//           },
+//         },
+//       });
+//     }
 
-    if (!bp.matches && !native) {
-      const clone = $(".main-compressors-desktop .slider-product").clone();
-      $(".main-compressors-mobile .ui-scroller").prepend(clone);
-      native = true;
-    }
-  }
-})();
+//     if (!bp.matches && !native) {
+//       const clone = $(".main-compressors-desktop .slider-product").clone();
+//       $(".main-compressors-mobile .ui-scroller").prepend(clone);
+//       native = true;
+//     }
+//   }
+// })();
 
-(function () {
-  if (!document.querySelector(".main-dryers-desktop")) return;
-  let slider = null,
-    native = null;
+// (function () {
+//   if (!document.querySelector(".main-dryers-desktop")) return;
+//   let slider = null,
+//     native = null;
 
-  //desktop
-  if (matchMedia) {
-    var bp = window.matchMedia("(min-width:1024.02px)");
-    bp.addListener(changes);
-    changes(bp);
-  }
-  function changes(bp) {
-    if (bp.matches && !slider) {
-      slider = new Swiper(".main-dryers-swiper", {
-        slidesPerView: 3,
-        spaceBetween: 24,
-        // shortSwipes: false,
-        navigation: {
-          nextEl: ".main-dryers-next",
-          prevEl: ".main-dryers-prev",
-        },
-        breakpoints: {
-          1140: {
-            slidesPerView: 4,
-          },
-        },
-      });
-    }
+//   //desktop
+//   if (matchMedia) {
+//     var bp = window.matchMedia("(min-width:1024.02px)");
+//     bp.addListener(changes);
+//     changes(bp);
+//   }
+//   function changes(bp) {
+//     if (bp.matches && !slider) {
+//       slider = new Swiper(".main-dryers-swiper", {
+//         slidesPerView: 3,
+//         spaceBetween: 24,
+//         // shortSwipes: false,
+//         navigation: {
+//           nextEl: ".main-dryers-next",
+//           prevEl: ".main-dryers-prev",
+//         },
+//         breakpoints: {
+//           1140: {
+//             slidesPerView: 4,
+//           },
+//         },
+//       });
+//     }
 
-    if (!bp.matches && !native) {
-      const clone = $(".main-dryers-desktop .slider-product").clone();
-      $(".main-dryers-mobile .ui-scroller").prepend(clone);
-      native = true;
-    }
-  }
-})();
+//     if (!bp.matches && !native) {
+//       const clone = $(".main-dryers-desktop .slider-product").clone();
+//       $(".main-dryers-mobile .ui-scroller").prepend(clone);
+//       native = true;
+//     }
+//   }
+// })();
 
 
 
@@ -2168,3 +2205,8 @@ new Swiper(".main-banners-slider", {
       clickable: true,
   },
   });
+  
+
+      
+   
+  

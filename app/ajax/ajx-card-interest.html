@@ -67,7 +67,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -129,7 +129,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -188,7 +188,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -250,7 +250,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -313,7 +313,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -387,7 +387,46 @@
       </div>
     </div><!--.desktop-->
     <script>
-        setTimeout(() => {
+      (function(){
+  if (!document.querySelector('.slider-interest-topline')) return
+
+  document.querySelectorAll('.slider-interest-topline')
+    .forEach(el => {
+      el.addEventListener('click', function (event) {
+        event = event || window.event
+        event.preventDefault()
+        event.stopPropagation()
+
+        const url = this.dataset.href || null
+
+        if (document.documentElement.clientWidth > 1024) {
+          return event.target.closest('.slider-product').classList.toggle('opened');
+        }
+
+        if (!url) return
+        $.magnificPopup.open({
+          items: { src: url },
+          type: "ajax",
+          overflowY: "scroll",
+          removalDelay: 610,
+          mainClass: "my-mfp-zoom-in",
+          ajax: {
+            tError: "Error. Not valid url",
+          },
+          // @todo добавить везде, где инициализация
+          callbacks: {
+            open: function() {
+              document.documentElement.style.overflow = 'hidden'
+            },
+            close: function() {
+              document.documentElement.style.overflow = ''
+            }
+          }
+        });
+      })
+    })
+})();
+        
             (function(){
   if (!document.querySelector('.card-interest-desktop')) return
   let slider = null, native = null;
@@ -423,6 +462,6 @@
     }
   }
 })();
-        }, 1000);
+        
     </script>
   </div>

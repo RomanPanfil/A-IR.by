@@ -832,9 +832,9 @@
         }
       }
 
-      .opened {
-        display: block !important;
-      }
+      // .opened {
+      //   display: block !important;
+      // }
     }
   }
 
@@ -1327,4 +1327,27 @@
 
 .main-slider-swiper > .swiper-pagination-bullet {
   margin: 0 4px;
+}
+
+.opened-slider {
+  display: block !important;
+}
+.mian-recommend {
+  .slider-product-stickers {
+    position: absolute !important;
+    z-index: 10;
+  }
+}
+
+.mian-compressors {
+  .slider-product-stickers {
+    position: absolute !important;
+    z-index: 10;
+  }
+}
+.card-interest {
+  .slider-product-stickers {
+    position: absolute !important;
+    z-index: 10;
+  }
 }
