@@ -29533,70 +29533,6 @@ if (document.querySelector(".making-form")) {
 
 
 
-// const ratings = document.querySelectorAll(".card-rating");
-// const acc = document.getElementsByClassName("accordion-items-title");
-
-// let ratingActive;
-// let ratingValue;
-
-
-// // rating stars
-// if (ratings.length > 0) {
-//   initRatings();
-// }
-
-// function initRatings() {
-//   for (let i = 0; i < ratings.length; i++) {
-//     const rating = ratings[i];
-
-//     if (rating.classList.contains("rating-set")) {
-//       setRating(rating);
-//     }
-
-//     initRatingVars(rating);
-//     setRatingActiveWidth();
-//   }
-// }
-
-// function initRatingVars(rating) {
-//   ratingActive = rating.querySelector(".card-rating-active");
-//   ratingValue = rating.querySelector(".card-rating-value");
-// }
-
-// function setRatingActiveWidth(index = ratingValue.innerHTML) {
-//   const ratingActiveWidth = index / 0.05;
-
-//   if (index === "Нет оценки") {
-//     ratingActive.style.width = "0%";
-//   } else {
-//     ratingActive.style.width = `${ratingActiveWidth}%`;
-//   }
-// }
-
-// function setRating(rating) {
-//   const ratingItems = rating.querySelectorAll(".card-rating-item");
-
-//   for (let i = 0; i < ratingItems.length; i++) {
-//     const ratingItem = ratingItems[i];
-
-//     ratingItem.addEventListener("mouseenter", function (e) {
-//       initRatingVars(rating);
-//       setRatingActiveWidth(ratingItem.value);
-//     });
-
-//     ratingItem.addEventListener("mouseleave", function (e) {
-//       setRatingActiveWidth();
-//     });
-
-//     ratingItem.addEventListener("click", function (e) {
-//       initRatingVars(rating);
-
-//       ratingValue.innerHTML = ratingItem.value;
-//       setRatingActiveWidth();
-//     });
-//   }
-// }
-
 let arrStars = document.querySelectorAll('.ui-rating-star');
 let arrBlock = document.querySelectorAll('.ui-rating');
 
@@ -30090,18 +30026,6 @@ if(document.getElementById('map-address')) {
         });
     }
 
-    // jQuery.validator.addMethod(
-    //   "emailErrCompany",
-    //   function (value, element) {
-    //     if(/123@gmail.com/.test(value))  {
-    //       return false;
-    //     } else {
-    //         return true
-    //     }
-    //   },
-    //   "Incorrect format"
-    // );
-
     jQuery.validator.addMethod(
         "lettersonly",
         function (value, element) {
@@ -30227,25 +30151,7 @@ new Swiper(".main-slider-swiper", {
   },
 });
 
-new Swiper(".main-banners-slider", {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  // pagination:true,
 
-  breakpoints: {
-    421: {
-      slidesPerView: "auto",
-      // pagination:true,
-    },
-  },
-
-  // shortSwipes: false,
-
-  pagination: {
-    el: ".main-banners-pagintaion",
-    clickable: true,
-  },
-});
 
 new Swiper(".main-trust-slider", {
   slidesPerView: 1,
@@ -30393,56 +30299,6 @@ new Swiper(".main-trust-slider", {
     }
   }
 })();
-
-// jQuery(document).ready(function ($) {
-//   $(".main-tabs-link").Tabs();
-
-
-//   $(document).on("click", ".tabs-target", function (e) {
-//     e.preventDefault();
-//     const id = $(this).attr("href");
-
-
-// if ($(id).length) {
-//       $('.main-tabs-link[href="' + id + '"]').click();
-//       const offset = $(".main-tabs-body").offset().top;
-//       $("html,body").animate({ scrollTop: offset - 160 }, 300);
-//     }
-//   });
-
-//   // Validation for catalog email input
-//   $(".main-tabs-link").Tabs();
-
-// });
-
-
-// (function () {
-//   if (!D.querySelector(".main-tabs-link")) return;
-
-//   D.querySelectorAll(".main-tabs-link").forEach((el) => {
-//     const tab = D.querySelector(el.getAttribute("href"));
-//     if (tab) {
-//       const link = D.createElement("a");
-//       link.href = "javascript:void(0)";
-//       link.className = "main-tabs-link-mobile";
-//       link.textContent = el.textContent;
-//       link.dataset.href = el.getAttribute("href");
-//       tab.before(link);
-//     }
-//   });
-
-//   D.querySelectorAll(".main-tabs-link-mobile").forEach((el) =>
-//     el.addEventListener("click", function (e) {
-//       e = e || window.event;
-//       e.preventDefault();
-
-//       const tab = D.querySelector(this.dataset.href);
-
-//       this.classList.toggle("opened");
-//       tab.classList.toggle("opened");
-//     })
-//   );
-// })();
 
 
 
@@ -30659,37 +30515,6 @@ jQuery(document).ready(function(){
 });
 
 
-
-new Swiper(".main-slider-swiper", {
-  slidesPerView: 1,
-
-  // shortSwipes: false,
-  navigation: {
-    nextEl: ".main-slider-next",
-    prevEl: ".main-slider-prev",
-  },
-  
-  pagination: {
-    el: ".main-slider-pagintaion",
-    clickable: true,
-    type: 'custom',
-        renderCustom: function (swiper, current, total) {
-          var out = ''
-          for (i = 1; i < total+1; i++) {
-            if (i == current) {
-              out = out + '<span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex='+i+' role="button" aria-label="Go to slide '+i+1+'"></span>';
-            }
-            else {
-              out = out + '<span class="swiper-pagination-bullet" tabindex='+i+' role="button" aria-label="Go to slide '+i+1+'"></span>';
-            }
-          };
-          return out;
-        },
-    
-  },
-  
-});
-
   
 
 new Swiper(".main-banners-slider", {
@@ -30712,12 +30537,7 @@ new Swiper(".main-banners-slider", {
   },
   });
   
-  // swiper.on('slideChange', function(){
-  //   $(".swiper-pagination-bullet").removeClass("swiper-pagination-bullet-active");
-  //   $(".swiper-pagination-bullet:eq("+swiper.activeIndex+")").addClass("swiper-pagination-bullet-active");
-  // });
-  
-  
+
       
    
     
