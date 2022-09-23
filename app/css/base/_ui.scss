@@ -1103,6 +1103,16 @@ textarea.ui-input {
 
 .input-iconed {
   position: relative;
+  transition: box-shadow .3s;
+
+  &:hover {
+    box-shadow: 0 0 10px rgb(0 0 0 / 8%);
+    border-radius: 8px;
+
+    .input-iconed-input.border {
+      border: none !important;
+    }
+  }
 
   &-icon {
     position: absolute;
@@ -1136,6 +1146,7 @@ textarea.ui-input {
     transition: box-shadow .3s;
     outline: none;
     color: $secondary;
+    cursor: pointer;
 
     &:hover, &:focus {
       box-shadow: $shadow;
@@ -1147,10 +1158,10 @@ textarea.ui-input {
       color: $secondary;
     }
 
-    &.border {
-      border: 1px solid #D3D3D3 !important;
-      box-shadow: none;
-    }
+    // &.border {
+    //   border: 1px solid #D3D3D3 !important;
+    //   box-shadow: none;
+    // }
   }
 }
 
