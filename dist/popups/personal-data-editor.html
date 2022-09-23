@@ -93,7 +93,6 @@
     <script>
     $( document ).ready(function() {
       let flag = false;
-
         $("select").styler();
 
         $('#datetimepicker').datetimepicker({
@@ -104,7 +103,7 @@
           closeOnDateSelect:true,
           lang: 'ru',
           yearStart: 1940,
-          yearEnd: 2051,
+          yearEnd: new Date().getFullYear(),
           dayOfWeekStart: 1,
           onGenerate: function() {
             if(!flag) {
@@ -113,6 +112,8 @@
               let control = document.querySelector('.xdsoft_monthpicker')
               let blockScroll = blockOfYears.childNodes[0];
               let scroll = 30 * 9;
+
+              blockScroll.classList.add('blockYears')
 
               let arrowUp = document.createElement('div');
               let arrowDown = document.createElement('div');
@@ -123,6 +124,7 @@
               blockOfYears.appendChild(arrowUp);
               blockOfYears.appendChild(arrowDown);
 
+
               control.addEventListener('click', (e) => {
                 if(e.target.classList[1] === 'xdsoft_year') {
                   let valueMargin = blockScroll.style.marginTop;
@@ -130,7 +132,11 @@
                   let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
                   let numCurrentYear = +currentYearElement.textContent
 
-                  if(numCurrentYear !== 2050 || numCurrentYear !== 1940) {
+                  if(numCurrentYear === 2022) {
+                    blockScroll.style.marginTop = '-2242px'
+                  } else if (numCurrentYear === 1940) {
+                    blockScroll.style.marginTop = '0px'
+                  } else {
                     blockScroll.style.marginTop = +marginGet + 40 + 'px'
                   }
                 }
@@ -146,10 +152,10 @@
                   if(+marginGet < -271) {
                     blockScroll.style.marginTop = +marginGet + scroll + 'px';
                   } else {
-                    blockScroll.style.marginTop = '25px'
+                    blockScroll.style.marginTop = '0px'
                   }
                 } else {
-                  blockScroll.style.marginTop = '25px'
+                  blockScroll.style.marginTop = '0px'
                 }
               })
 
@@ -159,14 +165,14 @@
 
                 blockScroll.style.marginTop = +marginGet - scroll + 'px';
 
-                if(+marginGet > -3032) {
-                  if(+marginGet > -2760) {
+                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if(+marginGet > (-$(".blockYears").height() + 540)) {
                     blockScroll.style.marginTop = +marginGet - scroll + 'px';
                   } else {
-                    blockScroll.style.marginTop = '-3032px'
+                    blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
                   }
                 } else {
-                  blockScroll.style.marginTop = '-3032px'
+                  blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
                 }
               })
 
@@ -177,7 +183,11 @@
                   let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
                   let numCurrentYear = +currentYearElement.textContent
 
-                  if(numCurrentYear !== 2050 || numCurrentYear !== 1940) {
+                  if(numCurrentYear === 2022) {
+                    blockScroll.style.marginTop = '-2242px'
+                  } else if (numCurrentYear === 1940) {
+                    blockScroll.style.marginTop = '0px'
+                  } else {
                     blockScroll.style.marginTop = +marginGet + 40 + 'px'
                   }
                 }
@@ -193,10 +203,10 @@
                   if(+marginGet < -271) {
                     blockScroll.style.marginTop = +marginGet + scroll + 'px';
                   } else {
-                    blockScroll.style.marginTop = '25px'
+                    blockScroll.style.marginTop = '0px'
                   }
                 } else {
-                  blockScroll.style.marginTop = '25px'
+                  blockScroll.style.marginTop = '0px'
                 }
               })
 
@@ -204,14 +214,14 @@
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
-                if(+marginGet > -3032) {
-                  if(+marginGet > -2760) {
+                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if(+marginGet > (-$(".blockYears").height() + 540)) {
                     blockScroll.style.marginTop = +marginGet - scroll + 'px';
                   } else {
-                    blockScroll.style.marginTop = '-3032px'
+                    blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
                   }
                 } else {
-                  blockScroll.style.marginTop = '-3032px'
+                  blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
                 }
               })
 

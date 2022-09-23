@@ -39,6 +39,10 @@
     margin-bottom: 30px;
     padding-bottom: 12px;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     &::after {
       content: "";
       position: absolute;
