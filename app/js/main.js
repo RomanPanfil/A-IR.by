@@ -2149,7 +2149,6 @@ jQuery(document).ready(function(){
 
 
 
-
 new Swiper(".main-banners-slider", {
   slidesPerView: 1,
   spaceBetween: 24,
