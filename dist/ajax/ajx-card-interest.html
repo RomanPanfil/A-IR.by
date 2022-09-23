@@ -67,7 +67,7 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -129,7 +129,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -188,7 +188,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -250,7 +250,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -313,7 +313,7 @@
           </div>
           <div class="swiper-slide">
             <div class="slider-product">
-              <div class="slider-product-topline" onclick="" data-href="./popups/marks.html">
+              <div class="slider-interest-topline" onclick="" data-href="./popups/marks.html">
                 <div class="slider-product-sticker">Мега рассрочка 0/24</div>
                 <div class="slider-product-arrow">
                   <svg class="sprite slider-product-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
@@ -387,11 +387,10 @@
       </div>
     </div><!--.desktop-->
     <script>
+      (function(){
+  if (!document.querySelector('.slider-interest-topline')) return
 
-(function(){
-  if (!document.querySelector('.slider-product-topline')) return
-
-  document.querySelectorAll('.slider-product-topline')
+  document.querySelectorAll('.slider-interest-topline')
     .forEach(el => {
       el.addEventListener('click', function (event) {
         event = event || window.event
@@ -427,7 +426,6 @@
       })
     })
 })();
-
         
             (function(){
   if (!document.querySelector('.card-interest-desktop')) return

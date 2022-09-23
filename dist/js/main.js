@@ -29338,6 +29338,46 @@ if (document.querySelector(".making-form")) {
 
 
 (function(){
+  if (!document.querySelector('.slider-product-topline')) return
+
+  document.querySelectorAll('.slider-product-topline')
+    .forEach(el => {
+      el.addEventListener('click', function (event) {
+        event = event || window.event
+        event.preventDefault()
+        event.stopPropagation()
+
+        const url = this.dataset.href || null
+
+        if (document.documentElement.clientWidth > 1024) {
+          return event.target.closest('.slider-product').classList.toggle('opened');
+        }
+
+        if (!url) return
+        $.magnificPopup.open({
+          items: { src: url },
+          type: "ajax",
+          overflowY: "scroll",
+          removalDelay: 610,
+          mainClass: "my-mfp-zoom-in",
+          ajax: {
+            tError: "Error. Not valid url",
+          },
+          // @todo добавить везде, где инициализация
+          callbacks: {
+            open: function() {
+              document.documentElement.style.overflow = 'hidden'
+            },
+            close: function() {
+              document.documentElement.style.overflow = ''
+            }
+          }
+        });
+      })
+    })
+})();
+
+(function(){
   if (!document.querySelector('.slider-produc-topline')) return
 
   document.querySelectorAll('.slider-produc-topline')
@@ -30532,11 +30572,8 @@ new Swiper(".main-banners-slider", {
       clickable: true,
   },
   });
-<<<<<<< HEAD
   
 
       
    
   
-=======
->>>>>>> 76ae7cb01fa261c48ccb9dcc0dd9fd0f1fcad9c9
