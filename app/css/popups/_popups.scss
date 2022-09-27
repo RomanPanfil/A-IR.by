@@ -936,6 +936,16 @@ button.mfp-close:hover:after,
   }
 }
 
+.form-mac {
+  // background-color: black
+  box-shadow: 0 0 0 1px #d3d3d3;
+  border-radius: 8px;
+  .input-iconed-input {
+    box-shadow: none;
+    border-radius: none;
+  }
+}
+
 @import "preview";
 @import "sert";
 @import "ofer.scss";
