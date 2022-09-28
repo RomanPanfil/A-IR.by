@@ -333,5 +333,35 @@
         },
       });
     });
+
+    const FARBA = {
+      lazyLibraryLoad(scriptSrc, linkHref, callback) {
+      let script;
+      const domScript = document.querySelector(`script[src="${scriptSrc}"]`);
+      const domLink = document.querySelector(`link[href="${linkHref}"]`);
+
+      if (!domScript) {
+        script = document.createElement("script");
+        script.src = scriptSrc;
+        document.querySelector("#wrapper").after(script);
+      }
+
+      if (linkHref !== "" && !domLink) {
+        let style = document.createElement("link");
+        style.href = linkHref;
+        style.rel = "stylesheet";
+        document.querySelector("link").before(style);
+      }
+
+      if (!domScript) {
+        script.onload = callback;
+      } else {
+        domScript.onload = callback;
+      }
+    }
+  }
+
+  FARBA.lazyLibraryLoad("//yastatic.net/share2/share.js", "", null);
+  
   </script>
 </div>
