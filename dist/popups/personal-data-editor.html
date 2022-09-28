@@ -91,6 +91,10 @@
   </style>
 
     <script>
+
+  FARBA.lazyLibraryLoad("https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css", () => {
+
     $( document ).ready(function() {
       let flag = false;
         $("select").styler();
@@ -232,6 +236,7 @@
 
         $.datetimepicker.setLocale('ru');
     });
+  });
   </script>
 
   <script>
@@ -333,5 +338,34 @@
         },
       });
     });
+
+  //   const FARBA = {
+  //     lazyLibraryLoad(scriptSrc, linkHref, callback) {
+  //     let script;
+  //     const domScript = document.querySelector(`script[src="${scriptSrc}"]`);
+  //     const domLink = document.querySelector(`link[href="${linkHref}"]`);
+
+  //     if (!domScript) {
+  //       script = document.createElement("script");
+  //       script.src = scriptSrc;
+  //       document.querySelector("#wrapper").after(script);
+  //     }
+
+  //     if (linkHref !== "" && !domLink) {
+  //       let style = document.createElement("link");
+  //       style.href = linkHref;
+  //       style.rel = "stylesheet";
+  //       document.querySelector("link").before(style);
+  //     }
+
+  //     if (!domScript) {
+  //       script.onload = callback;
+  //     } else {
+  //       domScript.onload = callback;
+  //     }
+  //   }
+  // }
+
+
   </script>
 </div>
