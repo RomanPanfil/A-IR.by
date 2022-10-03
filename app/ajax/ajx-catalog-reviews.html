@@ -345,54 +345,54 @@
       <a href="#" class="ui-btn ui-btn-secondary ui-btn-block">Все отзывы</a>
     </div>
     <script>
-        setTimeout(() => {
-            (function () {
-  if (!document.querySelector('.catalog-reviews-desktop')) return
-  let slider = null, native = null;
+      setTimeout(() => {
+        (function () {
+          if (!document.querySelector('.catalog-reviews-desktop')) return
+          let slider = null, native = null;
 
-  //desktop
-  if(matchMedia) {
-    var bp = window.matchMedia('(min-width:1024.02px)');
-    bp.addListener(changes);
-    changes(bp);
-  }
-  function changes(bp) {
-    if(bp.matches && !slider) {
-      slider = new Swiper(".catalog-reviews", {
-        slidesPerView: 2,
-        spaceBetween: 24,
-        // shortSwipes: false,
-        navigation: {
-          nextEl: ".catalog-reviews-next",
-          prevEl: ".catalog-reviews-prev",
-        }
-      });
-    }
-    if (!bp.matches && !native) {
-      //mobile
-      const clone = $('.catalog-reviews-desktop .review-card').clone();
-      $('.catalog-reviews-mobile .ui-scroller').prepend(clone)
-      native = true
-    }
-  }
-})();
-        }, 1000);
+          //desktop
+          if(matchMedia) {
+            var bp = window.matchMedia('(min-width:1024.02px)');
+            bp.addListener(changes);
+            changes(bp);
+          }
+          function changes(bp) {
+            if(bp.matches && !slider) {
+              slider = new Swiper(".catalog-reviews", {
+                slidesPerView: 2,
+                spaceBetween: 24,
+                // shortSwipes: false,
+                navigation: {
+                  nextEl: ".catalog-reviews-next",
+                  prevEl: ".catalog-reviews-prev",
+                }
+              });
+            }
+            if (!bp.matches && !native) {
+              //mobile
+              const clone = $('.catalog-reviews-desktop .review-card').clone();
+              $('.catalog-reviews-mobile .ui-scroller').prepend(clone)
+              native = true
+            }
+          }
+        })();
+      }, 1000);
 
-        (function (){
-  if (!$('#catalog_search').length) return;
+      (function (){
+        if (!$('#catalog_search').length) return;
 
-  let catalogProductsSearch = $('#catalog_search');
-  let catalogProductsReniev = $('.catalog-products-reniev')
-  let cardReview = $('#card_review').offset().top;
-  let catalogSerachOffset = catalogProductsSearch.offset().top
+        let catalogProductsSearch = $('#catalog_search');
+        let catalogProductsReniev = $('.catalog-products-reniev')
+        let cardReview = $('#card_review').offset().top;
+        let catalogSerachOffset = catalogProductsSearch.offset().top
 
-  window.addEventListener('scroll',function() {
-    if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
-      catalogProductsReniev.addClass('catalog-search-open')
-    }else {
-      catalogProductsReniev.removeClass('catalog-search-open')
-    }
-  })
-})();
+        window.addEventListener('scroll',function() {
+          if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
+            catalogProductsReniev.addClass('catalog-search-open')
+          }else {
+            catalogProductsReniev.removeClass('catalog-search-open')
+          }
+        })
+      })();
     </script>
   </div><!-- end card-reviews -->

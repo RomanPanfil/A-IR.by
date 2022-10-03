@@ -2136,6 +2136,7 @@ if(el) {
   })();
 }
 
+let flag = false
 
 var scrollLoader = {
   //разметка прелоадера
@@ -2147,41 +2148,47 @@ var scrollLoader = {
   },
   //загружаем контент
   loader(selector) {
-      const that = this;
-      let scroll = $(window).scrollTop();
+    const that = this;
+    let scroll = $(window).scrollTop();
 
-      $(selector).each(function(key,item){
-          const url = $(item).attr('data-href');
+    $(selector).each(function(key,item) {
+      const url = $(item).attr('data-href');
+      let offset = $(item).offset().top;
 
-          if (url === undefined && url === '') return;
+      if (url === undefined && url === '') {
+        return false;
+      }
 
-          let offset = $(item).offset().top;
-          if (scroll + that.screenHeight*1.5 > offset) {
-              $(item).html(that.preloader);
-              $.ajax({
-                  url: url,
-                  method: 'GET',
-                  dataType:"html",
-                  contentType:"application/x-www-form-urlencoded",
-                  success: function(data) {
-                      $(item).attr('data-loaded','true');
-                      $(item).html(data);
-                  },
-                  error: function() {
-                      $(item).attr('data-loaded','true');
-                      $(item).html('<div class="ui-error">Произошла непредвиденная ошибка. Обратитесь в поддержку сайта.</div>')
-                  }
-              })
+      if ($(item).attr('data-is-loading') === undefined && scroll + that.screenHeight*1.5 > offset) {
+        $(item).attr('data-is-loading', 'true');
+        $(item).html(that.preloader);
+        $.ajax({
+          url: url,
+          method: 'GET',
+          dataType:"html",
+          contentType:"application/x-www-form-urlencoded",
+          success: function(data) {
+            $(item).attr('data-loaded','true');
+            $(item).html(data);
+          },
+          error: function() {
+            $(item).attr('data-loaded','true');
+            $(item).html('<div class="ui-error">Произошла непредвиденная ошибка. Обратитесь в поддержку сайта.</div>')
           }
-      });
+        })
+      }
+    });
+
+
   }
 }//scrollLoader
 
 jQuery(window).on('resize',scrollLoader.update);
 jQuery(document).ready(function(){
   jQuery(window).on('scroll',function(){
-      scrollLoader.loader('.ajx-scroll-load[data-loaded="false"]');
+    scrollLoader.loader('.ajx-scroll-load[data-loaded="false"]');
   })
+  scrollLoader.loader('.ajx-scroll-load[data-loaded="false"]');
 });
 
 
@@ -2205,8 +2212,82 @@ new Swiper(".main-banners-slider", {
       clickable: true,
   },
   });
-  
 
-      
-  
-  
+
+
+  (function () {
+    const target = D.querySelectorAll(".ux-gallery");
+    if (!target.length) return;
+
+    const getSelectors = (parent,link) => {
+      parent.querySelectorAll(link).forEach(item => {
+        if (!item.closest('.swiper-slide-duplicate')) {
+          item.classList.add('ux-not-duplicate')
+        } else {
+          item.classList.add('ux-gallery-link-duplicate')
+          item.classList.remove('ux-gallery-link')
+        }
+      })
+    }
+
+    const shadowSelectors = (parent) => {
+      const event = new Event('click')
+
+      D.querySelectorAll('.ux-gallery-link-duplicate')
+      .forEach(item => {
+        item.addEventListener('click',(e)  => {
+          e = e || window.event;
+          e.preventDefault();
+          const src = item.querySelector('img').getAttribute('src')
+
+          const notDuplicate = parent.querySelector(`img[src="${src}"]`).parentElement
+          if (notDuplicate) {
+            notDuplicate.dispatchEvent(event)
+          }
+
+        })
+      })
+    }
+
+    FARBA.lazyLibraryLoad(
+      "//cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js",
+      "//cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css",
+      () => {
+        target.forEach((el) => {
+          el.classList.add("lg-inited");
+
+          el.addEventListener("onAfterOpen", function (event) {
+            const q = D.querySelector("#lg-counter");
+            if (q.childNodes[1] && q.childNodes[1].nodeType === 3) {
+              D.querySelector("#lg-counter").childNodes[1].nodeValue = " из ";
+            }
+
+            setTimeout(()=>{D.querySelector('.lg-outer').classList.add('lg-appear')},550)
+          });
+
+          let selector = 'a.ux-gallery-link'
+          if (el.classList.contains('swiper-rewards-wrp')) {
+            getSelectors(el,'a.ux-gallery-link')
+            shadowSelectors(el)
+            selector = 'a.ux-gallery-link.ux-not-duplicate'
+          }
+
+          lightGallery(el, {
+            download: false,
+            selector: selector,
+            backdropDuration: 500,
+            speed: 1000
+          });
+
+
+          el.addEventListener("onSlideClick",function(){
+            window.lgData[el.getAttribute("lg-uid")].goToNextSlide()
+          })
+
+          el.addEventListener("onBeforeClose",function(){
+            D.querySelector('.lg-outer').classList.remove('lg-appear')
+          })
+        });
+      }
+    );
+  })();

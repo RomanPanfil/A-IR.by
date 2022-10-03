@@ -147,36 +147,37 @@
       </div>
     </div>
     <script>
-         setTimeout(() => {
-            (function () {
-  if (!document.querySelector(".main-article-desktop")) return;
-  let sliderArticle = "no";
+      setTimeout(() => {
+        (function () {
+          if (!document.querySelector(".main-article-desktop")) return;
+          let sliderArticle = "no";
 
-  //mobile
-  const clone = $(".main-article-desktop .main-article-item").clone();
-  $(".main-article-mobile .ui-scroller").prepend(clone);
+          //mobile
+          const clone = $(".main-article-desktop .main-article-item").clone();
+          $(".main-article-mobile .ui-scroller").prepend(clone);
 
-  //desktop
-  if (matchMedia) {
-    var bp = window.matchMedia("(min-width:1024.02px)");
-    bp.addListener(changes);
-    changes(bp);
-  }
-  function changes(bp) {
-    if (bp.matches && sliderArticle === "no") {
-      sliderArticle = new Swiper(".main-article-slider", {
-        slidesPerView: 2,
-        spaceBetween: 24,
-        autoHeight: true,
-        // shortSwipes: false,
-        navigation: {
-          nextEl: ".article-button-next",
-          prevEl: ".article-button-prev",
-        },
-      });
-    }
-  }
-})();
-         },1000)
+          //desktop
+          if (matchMedia) {
+            var bp = window.matchMedia("(min-width:1024.02px)");
+            bp.addListener(changes);
+            changes(bp);
+          }
+
+          function changes(bp) {
+            if (bp.matches && sliderArticle === "no") {
+              sliderArticle = new Swiper(".main-article-slider", {
+                slidesPerView: 2,
+                spaceBetween: 24,
+                autoHeight: true,
+                // shortSwipes: false,
+                navigation: {
+                  nextEl: ".article-button-next",
+                  prevEl: ".article-button-prev",
+                },
+              });
+            }
+          }
+        })();
+      },1000)
     </script>
   </div>
