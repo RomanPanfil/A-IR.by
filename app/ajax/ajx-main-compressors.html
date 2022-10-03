@@ -632,82 +632,80 @@
     </div>
     <script>
       (function(){
-  if (!document.querySelector('.slider-reccomend-topline')) return
+        if (!document.querySelector('.slider-reccomend-topline')) return
 
-  document.querySelectorAll('.slider-reccomend-topline')
-    .forEach(el => {
-      el.addEventListener('click', function (event) {
-        event = event || window.event
-        event.preventDefault()
-        event.stopPropagation()
+        document.querySelectorAll('.slider-reccomend-topline')
+          .forEach(el => {
+            el.addEventListener('click', function (event) {
+              event = event || window.event
+              event.preventDefault()
+              event.stopPropagation()
 
-        const url = this.dataset.href || null
+              const url = this.dataset.href || null
 
-        if (document.documentElement.clientWidth > 1024) {
-          return event.target.closest('.slider-product').classList.toggle('opened');
+              if (document.documentElement.clientWidth > 1024) {
+                return event.target.closest('.slider-product').classList.toggle('opened');
+              }
+
+              if (!url) return
+              $.magnificPopup.open({
+                items: { src: url },
+                type: "ajax",
+                overflowY: "scroll",
+                removalDelay: 610,
+                mainClass: "my-mfp-zoom-in",
+                ajax: {
+                  tError: "Error. Not valid url",
+                },
+                // @todo добавить везде, где инициализация
+                callbacks: {
+                  open: function() {
+                    document.documentElement.style.overflow = 'hidden'
+                  },
+                  close: function() {
+                    document.documentElement.style.overflow = ''
+                  }
+                }
+              });
+            })
+          })
+      })();
+
+      (function () {
+        if (!document.querySelector(".main-compressors-desktop")) return;
+        let slider = null,
+          native = null;
+
+        //desktop
+        if (matchMedia) {
+          var bp = window.matchMedia("(min-width:1024.02px)");
+          bp.addListener(changes);
+          changes(bp);
         }
-
-        if (!url) return
-        $.magnificPopup.open({
-          items: { src: url },
-          type: "ajax",
-          overflowY: "scroll",
-          removalDelay: 610,
-          mainClass: "my-mfp-zoom-in",
-          ajax: {
-            tError: "Error. Not valid url",
-          },
-          // @todo добавить везде, где инициализация
-          callbacks: {
-            open: function() {
-              document.documentElement.style.overflow = 'hidden'
-            },
-            close: function() {
-              document.documentElement.style.overflow = ''
-            }
+        function changes(bp) {
+          if (bp.matches && !slider) {
+            slider = new Swiper(".main-compressors-swiper", {
+              slidesPerView: 3,
+              spaceBetween: 24,
+              // shortSwipes: false,
+              navigation: {
+                nextEl: ".main-compressors-next",
+                prevEl: ".main-compressors-prev",
+              },
+              breakpoints: {
+                1140: {
+                  slidesPerView: 4,
+                },
+              },
+            });
           }
-        });
-      })
-    })
-})();
-        
-            (function () {
-  if (!document.querySelector(".main-compressors-desktop")) return;
-  let slider = null,
-    native = null;
 
-  //desktop
-  if (matchMedia) {
-    var bp = window.matchMedia("(min-width:1024.02px)");
-    bp.addListener(changes);
-    changes(bp);
-  }
-  function changes(bp) {
-    if (bp.matches && !slider) {
-      slider = new Swiper(".main-compressors-swiper", {
-        slidesPerView: 3,
-        spaceBetween: 24,
-        // shortSwipes: false,
-        navigation: {
-          nextEl: ".main-compressors-next",
-          prevEl: ".main-compressors-prev",
-        },
-        breakpoints: {
-          1140: {
-            slidesPerView: 4,
-          },
-        },
-      });
-    }
-
-    if (!bp.matches && !native) {
-      const clone = $(".main-compressors-desktop .slider-product").clone();
-      $(".main-compressors-mobile .ui-scroller").prepend(clone);
-      native = true;
-    }
-  }
-})();
-  
-        
+          if (!bp.matches && !native) {
+            const clone = $(".main-compressors-desktop .slider-product").clone();
+            $(".main-compressors-mobile .ui-scroller").prepend(clone);
+            native = true;
+          }
+        }
+      })();
     </script>
   </div>

@@ -136,61 +136,55 @@
 
   </div>
   <script>
-jQuery(document).ready(function ($) {
-  $(".main-tabs-link").Tabs();
+    jQuery(document).ready(function ($) {
+      $(".main-tabs-link").Tabs();
 
 
-  $(document).on("click", ".tabs-target", function (e) {
-    e.preventDefault();
-    const id = $(this).attr("href");
+      $(document).on("click", ".tabs-target", function (e) {
+        e.preventDefault();
+        const id = $(this).attr("href");
 
 
-if ($(id).length) {
-      $('.main-tabs-link[href="' + id + '"]').click();
-      const offset = $(".main-tabs-body").offset().top;
-      $("html,body").animate({ scrollTop: offset - 160 }, 300);
-    }
-  });
+    if ($(id).length) {
+          $('.main-tabs-link[href="' + id + '"]').click();
+          const offset = $(".main-tabs-body").offset().top;
+          $("html,body").animate({ scrollTop: offset - 160 }, 300);
+        }
+      });
 
-  // Validation for catalog email input
-  $(".main-tabs-link").Tabs();
+      // Validation for catalog email input
+      $(".main-tabs-link").Tabs();
 
-});
-
-
-
-(function () {
-if (!D.querySelector(".main-tabs-link")) return;
-
-D.querySelectorAll(".main-tabs-link").forEach((el) => {
-  const tab = D.querySelector(el.getAttribute("href"));
-  if (tab) {
-    const link = D.createElement("a");
-    link.href = "javascript:void(0)";
-    link.className = "main-tabs-link-mobile";
-    link.textContent = el.textContent;
-    link.dataset.href = el.getAttribute("href");
-    tab.before(link);
-  }
-});
-
-D.querySelectorAll(".main-tabs-link-mobile").forEach((el) =>
-  el.addEventListener("click", function (e) {
-    e = e || window.event;
-    e.preventDefault();
-
-    const tab = D.querySelector(this.dataset.href);
-
-    this.classList.toggle("opened");
-    tab.classList.toggle("opened");
-  })
-);
-})();
+    });
 
 
 
+    (function () {
+    if (!D.querySelector(".main-tabs-link")) return;
 
+    D.querySelectorAll(".main-tabs-link").forEach((el) => {
+      const tab = D.querySelector(el.getAttribute("href"));
+      if (tab) {
+        const link = D.createElement("a");
+        link.href = "javascript:void(0)";
+        link.className = "main-tabs-link-mobile";
+        link.textContent = el.textContent;
+        link.dataset.href = el.getAttribute("href");
+        tab.before(link);
+      }
+    });
 
+    D.querySelectorAll(".main-tabs-link-mobile").forEach((el) =>
+      el.addEventListener("click", function (e) {
+        e = e || window.event;
+        e.preventDefault();
+
+        const tab = D.querySelector(this.dataset.href);
+
+        this.classList.toggle("opened");
+        tab.classList.toggle("opened");
+      })
+    );
+    })();
   </script>
-
 </div>

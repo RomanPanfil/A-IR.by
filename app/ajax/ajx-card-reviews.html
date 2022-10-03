@@ -28,14 +28,14 @@
         </div>
       </div>
     </div>
-  
+
     <div class="card-reviews-mobile ui-screen-less-1024">
       <div class="ui-scroller flex"></div>
       <div class="ui-centered card-reviews-mobile-btn">
         <a href="#" class="ui-btn ui-btn-secondary">Все отзывы</a>
       </div>
     </div><!--.mobile-->
-  
+
     <div class="card-reviews-desktop ui-screen-more-1024">
       <div class="swiper swiper-card-reviews">
         <div class="swiper-wrapper">
@@ -127,7 +127,7 @@
                     >
                       <img src="./images/rev-img.webp" alt="alt" />
                     </a>
-  
+
                     <a class="mfp-frame reviews-video" href="javascript:void(0)" data-href="http://www.youtube.com/watch?v=lTRiuFIWV54">
                       <img
                       loading="lazy"
@@ -143,7 +143,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="swiper-slide">
             <div class="review-card">
               <div class="review-card-header">
@@ -188,7 +188,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="swiper-slide">
             <div class="review-card">
               <div class="review-card-header">
@@ -345,55 +345,54 @@
             </div>
           </div>
         </div>
-  
-  
+
+
         <div class="ui-arrow ui-arrow-prev card-reviews-prev">
           <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-prev"/></svg>
         </div>
-  
+
         <div class="ui-arrow ui-arrow-next card-reviews-next">
           <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
         </div>
       </div>
     </div><!--.desktop-->
-  
+
     <script>
-        
-            (function(){
-  if (!document.querySelector('.card-reviews-desktop')) return
-  let slider = null, native = null;
+      (function(){
+        if (!document.querySelector('.card-reviews-desktop')) return
+        let slider = null, native = null;
 
-  //desktop
-  if(matchMedia) {
-    var bp = window.matchMedia('(min-width:1024.02px)');
-    bp.addListener(changes);
-    changes(bp);
-  }
-  function changes(bp) {
-    if(bp.matches && !slider) {
-      slider = new Swiper(".swiper-card-reviews", {
-        slidesPerView: 2,
-        spaceBetween: 24,
-        // shortSwipes: false,
-        navigation: {
-          nextEl: ".card-reviews-next",
-          prevEl: ".card-reviews-prev",
-        },
-        breakpoints: {
-          1140: {
-            slidesPerView: 3,
-          },
+        //desktop
+        if(matchMedia) {
+          var bp = window.matchMedia('(min-width:1024.02px)');
+          bp.addListener(changes);
+          changes(bp);
         }
-      });
-    }
+        function changes(bp) {
+          if(bp.matches && !slider) {
+            slider = new Swiper(".swiper-card-reviews", {
+              slidesPerView: 2,
+              spaceBetween: 24,
+              // shortSwipes: false,
+              navigation: {
+                nextEl: ".card-reviews-next",
+                prevEl: ".card-reviews-prev",
+              },
+              breakpoints: {
+                1140: {
+                  slidesPerView: 3,
+                },
+              }
+            });
+          }
 
-    if (!bp.matches && !native) {
-      const clone = $('.card-reviews-desktop .review-card').clone();
-      $('.card-reviews-mobile .ui-scroller').prepend(clone)
-      native = true
-    }
-  }
-})();
-        
+          if (!bp.matches && !native) {
+            const clone = $('.card-reviews-desktop .review-card').clone();
+            $('.card-reviews-mobile .ui-scroller').prepend(clone)
+            native = true
+          }
+        }
+      })();
+
     </script>
   </div>
