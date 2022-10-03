@@ -30514,35 +30514,31 @@ var scrollLoader = {
     const that = this;
     let scroll = $(window).scrollTop();
 
-    $(selector).each(function(key,item) {
+    $(selector).each(function(key,item){
       const url = $(item).attr('data-href');
+
+      if ($(item).attr('data-isloaded') === 'true' || url === undefined || url === '') return false;
+
       let offset = $(item).offset().top;
-
-      if (url === undefined && url === '') {
-        return false;
-      }
-
-      if ($(item).attr('data-is-loading') === undefined && scroll + that.screenHeight*1.5 > offset) {
-        $(item).attr('data-is-loading', 'true');
+      if (scroll + that.screenHeight*1.5 > offset) {
+        $(item).attr('data-isloaded','true')
         $(item).html(that.preloader);
         $.ajax({
-          url: url,
-          method: 'GET',
-          dataType:"html",
-          contentType:"application/x-www-form-urlencoded",
-          success: function(data) {
-            $(item).attr('data-loaded','true');
-            $(item).html(data);
-          },
-          error: function() {
-            $(item).attr('data-loaded','true');
-            $(item).html('<div class="ui-error">Произошла непредвиденная ошибка. Обратитесь в поддержку сайта.</div>')
-          }
+            url: url,
+            method: 'GET',
+            dataType:"html",
+            contentType:"application/x-www-form-urlencoded",
+            success: function(data) {
+                $(item).attr('data-loaded','true');
+                $(item).html(data);
+            },
+            error: function() {
+                $(item).attr('data-loaded','true');
+                $(item).html('<div class="ui-error">Произошла непредвиденная ошибка. Обратитесь в поддержку сайта.</div>')
+            }
         })
       }
     });
-
-
   }
 }//scrollLoader
 
