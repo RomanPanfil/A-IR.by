@@ -1,0 +1,111 @@
+.deliveryPay {
+    
+    &-items {
+        max-width: 448px;
+        border: 2px solid #2A4455;
+        border-radius: 8px;
+        margin-bottom: 32px;
+        &-header {
+            padding: 30px 10px;
+            border-bottom: 2px solid #2A4455;
+            font-weight: 700;
+            @include fz(28);
+            text-align: center;
+        }
+        &-item {
+            padding: 48px 32px;
+            border-bottom: 1px solid #D3D3D3;
+            &:last-child {
+                border-bottom: none;
+            }
+            &-icon {
+                margin-bottom: 25px;
+            }
+            &-title {
+                @include fz(22);
+                font-weight: 700;
+                margin-bottom: 9px;
+            }
+            &-text {
+                color: rgba(0, 0, 0, 0.8);
+                margin-bottom: 14px;
+            }
+            &-contact {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-addcontent {
+        margin-bottom: 20px;
+        &-map {
+            padding-left: 16px;
+            margin-bottom: 10px;
+            &-adress {
+                position: relative;
+                margin-bottom: 4px;    
+                font-weight: 600;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 10px;
+                    left: -16px;
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: #FFC100;
+                    border-radius: 50%;
+                }
+            }
+            &-link {
+                @include fz(14);
+            }
+        }
+        &-warning {
+            background: #F5F5F5;
+            border-radius: 5px;
+            padding: 10px 16px;
+            gap: 8px;
+            &-img{
+                flex: 0 0 16px;
+                max-width: 16px;
+            }
+            &-text {
+
+            }
+        }
+        &-number {
+            &-img {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 20px;
+            }
+            &-num {
+                display: inline-block;
+                @include fz(18);
+                font-weight: 600;
+            }
+        }
+    }
+    &-docs {
+        display: block;
+        background: #F5F5F5;
+        border-radius: 5px;
+        padding: 21px 24px;
+        &-img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+    }
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.border-silver {
+    border-color: #D3D3D3;
+}
