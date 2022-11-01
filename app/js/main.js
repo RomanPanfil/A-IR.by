@@ -2287,3 +2287,155 @@ new Swiper(".main-banners-slider", {
       }
     );
   })();
+
+
+  $(function() {
+    var tab = $('#tabs .sign-popup-content > div');
+    tab.hide().filter(':first').show();
+
+    // Клики по вкладкам.
+    $('#tabs .sign-popup-tabs a').click(function(){
+      tab.hide();
+      tab.filter(this.hash).show();
+      $('#tabs .sign-popup-tabs a').removeClass('active');
+      $(this).addClass('active');
+      return false;
+    }).filter(':first').click();
+  });
+
+
+  ymaps.ready(init);
+
+  function init() {
+      var myMap = new ymaps.Map("map", {
+              center: [53.902292, 27.561821],
+              zoom: 10
+          }, {
+              searchControlProvider: 'yandex#search'
+          });
+  
+         var myPolygon = new ymaps.Polygon([
+          // Указываем координаты вершин многоугольника.
+          // Координаты вершин внешнего контура.
+          [
+              [53.947864, 27.274663],
+              [53.944405, 27.270060],
+              [53.917639, 27.355659],
+              // [55.70, 37.70],
+              // [55.70, 37.50]
+          ],
+          // Координаты вершин внутреннего контура.
+          [
+              // [55.75, 37.52],
+              // [55.75, 37.68],
+              // [55.65, 37.60]
+          ]
+      ], {
+          // Описываем свойства геообъекта.
+          // Содержимое балуна.
+          hintContent: "Многоугольник"
+      }, {
+          // Задаем опции геообъекта.
+          // Цвет заливки.
+          fillColor: '#00FF0088',
+          // Ширина обводки.
+          strokeWidth: 5
+      });
+      var myPolygon1 = new ymaps.Polygon([
+        // Указываем координаты вершин многоугольника.
+        // Координаты вершин внешнего контура.
+        [
+            [54.947864, 27.274663],
+            [53.944405, 27.270060],
+            [53.917639, 27.355659],
+            // [55.70, 37.70],
+            // [55.70, 37.50]
+        ],
+        // Координаты вершин внутреннего контура.
+        [
+            // [55.75, 37.52],
+            // [55.75, 37.68],
+            // [55.65, 37.60]
+        ]
+    ], {
+        // Описываем свойства геообъекта.
+        // Содержимое балуна.
+        hintContent: "Многоугольник"
+    }, {
+        // Задаем опции геообъекта.
+        // Цвет заливки.
+        fillColor: '#00FF0088',
+        // Ширина обводки.
+        strokeWidth: 5
+    });
+      // Добавляем многоугольник на карту.
+      myMap.geoObjects.add(myPolygon);
+      myMap.geoObjects.add(myPolygon1);
+  }
+
+
+
+  
+
+//   ymaps.ready(function () {
+//     var myMap = new ymaps.Map('map2', {
+//             center: [55.751574, 37.573856],
+//             zoom: 9
+//         }, {
+//             searchControlProvider: 'yandex#search'
+//         }),
+//         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+//             hintContent: 'Собственный значок метки',
+//             balloonContent: 'Это красивая метка'
+//         }, {
+//             // Опции.
+//             // Необходимо указать данный тип макета.
+//             iconLayout: 'default#image',
+//             // Своё изображение иконки метки.
+//             iconImageHref: 'images/icons/accordion.svg',
+//             // Размеры метки.
+//             iconImageSize: [108, 108],
+
+//             // Смещение левого верхнего угла иконки относительно
+//             // её "ножки" (точки привязки).
+//             iconImageOffset: [-5, -38]
+//         });
+
+//     myMap.geoObjects
+//         .add(myPlacemark)
+// });
+  
+const deliveryCity = [
+  { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
+  { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
+  { coord: [ 34.052235, -118.243683 ], title: 'Другие города', content: 'Другие города' },
+];
+
+ymaps.ready(function() {
+  const map = new ymaps.Map('deliveryPayMap', {
+    zoom: 9,
+    center: deliveryCity[0].coord,
+    controls: [],
+  });
+
+  const marker = new ymaps.Placemark(deliveryCity[0].coord, {
+    balloonContent: balloonContent(deliveryCity[0]),
+  });
+  map.geoObjects.add(marker);
+
+
+  document.querySelectorAll('#citylink li a').forEach((n, i) => {
+    n.addEventListener('click', onClick.bind(n, deliveryCity[i]));
+  });
+
+
+  function onClick(item) {
+    map.setCenter(item.coord);
+    marker.geometry.setCoordinates(item.coord);
+    marker.properties.set('balloonContent', balloonContent(item));
+  }
+
+  function balloonContent(item) {
+    return `<b>${item.content}</b>`;
+  }
+});
