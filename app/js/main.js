@@ -622,17 +622,8 @@ if (document.querySelector(".making-order-validate")) {
   window.addEventListener("load", flipOrSticky);
 }
 
-if (document.querySelector(".making-form")) {
-  // let cardBreackpoint = $("#card-breackpoint").offset().top;
-  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
-  // let cardSticky = $(".making-order-info");
-  // const cardHeight = cardSticky.innerHeight();
-  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
-  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
 
-  // window.addEventListener("resize", function () {
-  //   cardBreackpoint = $("#card-breackpoint").offset().top;
-  // });
+if (document.querySelector(".making-form") ) {
   const stickyBlock = document.querySelector('.cart-order')
   const card = document.querySelector('#card-breackpoint')
 
@@ -655,11 +646,36 @@ if (document.querySelector(".making-form")) {
     } else {
       stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
     }
-    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
-    //   stickyBlock.classList.add("card-breackpoint-open");
-    // } else {
-    //   stickyBlock.classList.remove("card-breackpoint-open");
-    // }
+  }
+
+  window.addEventListener("scroll", flipOrSticky);
+  window.addEventListener("load", flipOrSticky);
+}
+
+let deliveryPay = document.querySelector('.ui-rightbar')
+if (document.querySelector('.ui-rightbar')) {
+  const stickyBlock = document.querySelector('.ui-rightbar')
+  const card = document.querySelector('#card-breackpoint')
+
+  function flipOrSticky() {
+    const box = card.getBoundingClientRect()
+    const stickyBox = stickyBlock.getBoundingClientRect()
+    const boxTop = box.top
+    const boxBottom = box.bottom
+    const stickyBottom = stickyBox.height
+    const py = window.pageYOffset
+
+    if (py > boxTop + py) {
+      if (py < (boxBottom + py - stickyBottom - 100)) {
+        stickyBlock.classList.add("ui-rightbar-sticky");
+        stickyBlock.classList.remove("ui-rightbar-flipbottom");
+      } else {
+        stickyBlock.classList.remove("ui-rightbar-sticky");
+        stickyBlock.classList.add("ui-rightbar-flipbottom");
+      }
+    } else {
+      stickyBlock.classList.remove("ui-rightbar-sticky", "ui-rightbar-flipbottom");
+    }
   }
 
   window.addEventListener("scroll", flipOrSticky);
@@ -2304,107 +2320,81 @@ new Swiper(".main-banners-slider", {
   });
 
 
-  ymaps.ready(init);
+  // ymaps.ready(init);
 
-  function init() {
-      var myMap = new ymaps.Map("map", {
-              center: [53.902292, 27.561821],
-              zoom: 10
-          }, {
-              searchControlProvider: 'yandex#search'
-          });
+  // function init() {
+  //     var myMap = new ymaps.Map("map", {
+  //             center: [53.902292, 27.561821],
+  //             zoom: 10
+  //         }, {
+  //             searchControlProvider: 'yandex#search'
+  //         });
   
-         var myPolygon = new ymaps.Polygon([
-          // Указываем координаты вершин многоугольника.
-          // Координаты вершин внешнего контура.
-          [
-              [53.947864, 27.274663],
-              [53.944405, 27.270060],
-              [53.917639, 27.355659],
-              // [55.70, 37.70],
-              // [55.70, 37.50]
-          ],
-          // Координаты вершин внутреннего контура.
-          [
-              // [55.75, 37.52],
-              // [55.75, 37.68],
-              // [55.65, 37.60]
-          ]
-      ], {
-          // Описываем свойства геообъекта.
-          // Содержимое балуна.
-          hintContent: "Многоугольник"
-      }, {
-          // Задаем опции геообъекта.
-          // Цвет заливки.
-          fillColor: '#00FF0088',
-          // Ширина обводки.
-          strokeWidth: 5
-      });
-      var myPolygon1 = new ymaps.Polygon([
-        // Указываем координаты вершин многоугольника.
-        // Координаты вершин внешнего контура.
-        [
-            [54.947864, 27.274663],
-            [53.944405, 27.270060],
-            [53.917639, 27.355659],
-            // [55.70, 37.70],
-            // [55.70, 37.50]
-        ],
-        // Координаты вершин внутреннего контура.
-        [
-            // [55.75, 37.52],
-            // [55.75, 37.68],
-            // [55.65, 37.60]
-        ]
-    ], {
-        // Описываем свойства геообъекта.
-        // Содержимое балуна.
-        hintContent: "Многоугольник"
-    }, {
-        // Задаем опции геообъекта.
-        // Цвет заливки.
-        fillColor: '#00FF0088',
-        // Ширина обводки.
-        strokeWidth: 5
-    });
-      // Добавляем многоугольник на карту.
-      myMap.geoObjects.add(myPolygon);
-      myMap.geoObjects.add(myPolygon1);
-  }
+  //        var myPolygon = new ymaps.Polygon([
+  //         // Указываем координаты вершин многоугольника.
+  //         // Координаты вершин внешнего контура.
+  //         [
+  //             [53.947864, 27.274663],
+  //             [53.944405, 27.270060],
+  //             [53.917639, 27.355659],
+  //             // [55.70, 37.70],
+  //             // [55.70, 37.50]
+  //         ],
+  //         // Координаты вершин внутреннего контура.
+  //         [
+  //             // [55.75, 37.52],
+  //             // [55.75, 37.68],
+  //             // [55.65, 37.60]
+  //         ]
+  //     ], {
+  //         // Описываем свойства геообъекта.
+  //         // Содержимое балуна.
+  //         hintContent: "Многоугольник"
+  //     }, {
+  //         // Задаем опции геообъекта.
+  //         // Цвет заливки.
+  //         fillColor: '#00FF0088',
+  //         // Ширина обводки.
+  //         strokeWidth: 5
+  //     });
+  //     var myPolygon1 = new ymaps.Polygon([
+  //       // Указываем координаты вершин многоугольника.
+  //       // Координаты вершин внешнего контура.
+  //       [
+  //           [54.947864, 27.274663],
+  //           [53.944405, 27.270060],
+  //           [53.917639, 27.355659],
+  //           // [55.70, 37.70],
+  //           // [55.70, 37.50]
+  //       ],
+  //       // Координаты вершин внутреннего контура.
+  //       [
+  //           // [55.75, 37.52],
+  //           // [55.75, 37.68],
+  //           // [55.65, 37.60]
+  //       ]
+  //   ], {
+  //       // Описываем свойства геообъекта.
+  //       // Содержимое балуна.
+  //       hintContent: "Многоугольник"
+  //   }, {
+  //       // Задаем опции геообъекта.
+  //       // Цвет заливки.
+  //       fillColor: '#00FF0088',
+  //       // Ширина обводки.
+  //       strokeWidth: 5
+  //   });
+  //     // Добавляем многоугольник на карту.
+  //     myMap.geoObjects.add(myPolygon);
+  //     myMap.geoObjects.add(myPolygon1);
+  // }
 
 
 
   
-
-//   ymaps.ready(function () {
-//     var myMap = new ymaps.Map('map2', {
-//             center: [55.751574, 37.573856],
-//             zoom: 9
-//         }, {
-//             searchControlProvider: 'yandex#search'
-//         }),
-//         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-//             hintContent: 'Собственный значок метки',
-//             balloonContent: 'Это красивая метка'
-//         }, {
-//             // Опции.
-//             // Необходимо указать данный тип макета.
-//             iconLayout: 'default#image',
-//             // Своё изображение иконки метки.
-//             iconImageHref: 'images/icons/accordion.svg',
-//             // Размеры метки.
-//             iconImageSize: [108, 108],
-
-//             // Смещение левого верхнего угла иконки относительно
-//             // её "ножки" (точки привязки).
-//             iconImageOffset: [-5, -38]
-//         });
-
-//     myMap.geoObjects
-//         .add(myPlacemark)
-// });
   
+
+//! dfhjsdjfhsk
 const deliveryCity = [
   { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
   { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
