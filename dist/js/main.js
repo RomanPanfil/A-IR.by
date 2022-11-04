@@ -28485,11 +28485,15 @@ $.fn.Tabs = function() {
       $('.card-more-mobile').prepend($('#tabs'))
       $('.card-more-mobile').after($('.card-contacts'))
       $('.col-card-right').append($('.card-services'))
+      $(".deliveryPay-items-matchmedia").appendTo($(".deliveryPay-mathmedia"));
+
     } else {
       //экран более 1024
       $('.card-more-info').prepend($('#tabs'))
       $('.card-features').after($('.card-contacts'))
       $('.card-txt').append($('.card-services'))
+      $('.deliveryPay-wrapper-matchmedia').append($('.deliveryPay-items-matchmedia'))
+
     }
   }
 })();
@@ -28769,8 +28773,10 @@ function changes768(screen768) {
   if (screen768.matches) {
     $(".footer-bottom-socials-wrapper").appendTo($(".footer-top-about"));
     $(".footer-bottom-info").appendTo($(".footer-top-media-wrapper"));
+
   } else {
     $(".footer-bottom-socials-wrapper").appendTo($(".footer-bottom-socials"));
+
   }
 }
 

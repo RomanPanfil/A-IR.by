@@ -1383,7 +1383,10 @@ textarea.ui-input {
       li {
         margin-bottom: 10px;
         a {
-          color: rgba(0, 0, 0, 0.7)
+          color: rgba(0, 0, 0, 0.7);
+          &:hover {
+            color: #000;
+          }
         }
       }
     }
