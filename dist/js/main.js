@@ -30838,11 +30838,25 @@ if(uiSearchSettings) {
     $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
   })
   
-  // $('.ui-search-settings-btn').on('click', () => {
-  //   $('.ui-search-settings-text-content').removeClass('ui-search-settings-open')
-  //   $('.ui-search-settings-img').removeClass('ui-search-settings-img-open')
-  // })
 }
+
+
+// repaircmp.html
+
+let repairTypeBtn = document.querySelector('.repair-type-btn'),
+    repaircmpTypeWrapper = document.querySelector('.repaircmp-type-wrapper'),
+    repaircmpTypeItem = document.querySelectorAll('.repaircmp-type-item');
+
+
+if(repairTypeBtn && repaircmpTypeItem.length > 6) {
+  repairTypeBtn.addEventListener('click', () => {
+    repairTypeBtn.style.display = 'none'
+    repaircmpTypeWrapper.classList.add('repaircmp-type-wrapper-open')
+  })
+} else {
+  repairTypeBtn.style.display = 'none'
+}
+
 
 
 

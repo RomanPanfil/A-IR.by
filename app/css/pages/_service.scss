@@ -1,0 +1,84 @@
+.service {
+    &-top {
+        &-img {
+            height: 100%;
+            margin-bottom: 0;
+            img {
+                max-height: max-content;
+            }
+        }
+        &-text {
+            max-width: 760px;
+        }
+        &-main {
+            margin-bottom: 40px;
+        }
+        &-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 20px 40px;
+            border: 1px solid #D3D3D3;
+            border-radius: 8px;
+            &-text {
+                @include fz(18);
+                font-weight: 600;
+            }
+            &-btn {
+                width: 100%;
+                max-width: 200px;
+                padding: 0px 10px;
+            }
+        }
+    }
+    &-by {
+        &-wrapper {
+            max-width: 540px;
+             @media(max-width:1024.99px) {
+                    max-width: max-content;
+                    margin-bottom: 45px;
+                }
+        }
+        &-images {
+            text-align: center;
+        }
+        &-title {
+            margin-bottom: 10px;
+        }
+        &-text {
+            color: #000000CC;
+            margin-bottom: 28px;
+        }
+        &-item {
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 16px 32px;
+            gap: 30px;
+            margin-bottom: 16px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #D3D3D3;
+             @media(max-width:1024.99px) {
+                    padding: 16px 24px;
+                    gap: 15px;
+                }
+            &-wrap {
+                flex: 1;
+            }
+            &-text {
+                @include fz(14);
+            }
+            &-title {
+                color: #2A4455;
+                font-weight: 700;
+                @include fz(18);
+                margin-bottom: 6px;
+            }
+        }
+    }
+}
