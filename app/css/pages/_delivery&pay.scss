@@ -80,6 +80,11 @@
             }
             &-icon {
                 margin-bottom: 25px;
+                height: 66px;
+                img {
+                    max-height: 66px;
+
+                }
             }
             &-title {
                 @include fz(22);

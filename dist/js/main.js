@@ -29149,6 +29149,7 @@ if (document.querySelector('.ui-rightbar')) {
 (function () {
   if (!document.querySelector('.catalog-reviews-desktop')) return
   let slider = null, native = null;
+  let servicesSwiper = document.querySelector('.services-swiper');
 
   //desktop
   if(matchMedia) {
@@ -29157,6 +29158,17 @@ if (document.querySelector('.ui-rightbar')) {
     changes(bp);
   }
   function changes(bp) {
+    if(bp.matches && !slider && servicesSwiper) {
+      slider = new Swiper(".services-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        // shortSwipes: false,
+        navigation: {
+          nextEl: ".catalog-reviews-next",
+          prevEl: ".catalog-reviews-prev",
+        }
+      });
+    }
     if(bp.matches && !slider) {
       slider = new Swiper(".catalog-reviews", {
         slidesPerView: 2,
@@ -29168,12 +29180,20 @@ if (document.querySelector('.ui-rightbar')) {
         }
       });
     }
+    if (!bp.matches && !native && servicesSwiper) {
+      //mobile
+      const clone = $('.catalog-reviews-desktop .services-card').clone();
+      $('.catalog-reviews-mobile .ui-scroller').prepend(clone)
+      native = true
+    }
+
     if (!bp.matches && !native) {
       //mobile
       const clone = $('.catalog-reviews-desktop .review-card').clone();
       $('.catalog-reviews-mobile .ui-scroller').prepend(clone)
       native = true
     }
+   
   }
 })();
 
@@ -30762,39 +30782,68 @@ new Swiper(".main-banners-slider", {
 
   
   
+//! PART 3 JAVA SCRIPT CODE
 
-//! dfhjsdjfhsk
-const deliveryCity = [
-  { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
-  { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
-  { coord: [ 34.052235, -118.243683 ], title: 'Другие города', content: 'Другие города' },
-];
-
-ymaps.ready(function() {
-  const map = new ymaps.Map('deliveryPayMap', {
-    zoom: 9,
-    center: deliveryCity[0].coord,
-    controls: [],
+//карта на странице delivery&pay
+let deliveryPayMap = document.querySelector('.deliveryPayMap')
+if(deliveryPayMap) {
+  const deliveryCity = [
+    { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
+    { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
+    { coord: [ 34.052235, -118.243683 ], title: 'Другие города', content: 'Другие города' },
+  ];
+  
+  ymaps.ready(function() {
+    const map = new ymaps.Map('deliveryPayMap', {
+      zoom: 9,
+      center: deliveryCity[0].coord,
+      controls: [],
+    });
+  
+    const marker = new ymaps.Placemark(deliveryCity[0].coord, {
+      balloonContent: balloonContent(deliveryCity[0]),
+    });
+    map.geoObjects.add(marker);
+  
+  
+    document.querySelectorAll('#citylink li a').forEach((n, i) => {
+      n.addEventListener('click', onClick.bind(n, deliveryCity[i]));
+    });
+  
+  
+    function onClick(item) {
+      map.setCenter(item.coord);
+      marker.geometry.setCoordinates(item.coord);
+      marker.properties.set('balloonContent', balloonContent(item));
+    }
+  
+    function balloonContent(item) {
+      return `<b>${item.content}</b>`;
+    }
   });
-
-  const marker = new ymaps.Placemark(deliveryCity[0].coord, {
-    balloonContent: balloonContent(deliveryCity[0]),
-  });
-  map.geoObjects.add(marker);
+}
 
 
-  document.querySelectorAll('#citylink li a').forEach((n, i) => {
-    n.addEventListener('click', onClick.bind(n, deliveryCity[i]));
-  });
+let uiSearchSettings = document.querySelector('.ui-search-settings')
 
 
-  function onClick(item) {
-    map.setCenter(item.coord);
-    marker.geometry.setCoordinates(item.coord);
-    marker.properties.set('balloonContent', balloonContent(item));
-  }
+if(uiSearchSettings) {
+  $('.ui-search-settings').on('click', () => {
+    $('.ui-search-settings-text-content').toggleClass('ui-search-settings-open')
+    $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
+    
+  })
+  $('.ressearch-settings-filters').on('click', () => {
+    $('.ui-search-settings-text-content').toggleClass('ui-search-settings-open')
+    $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
+  })
+  
+  // $('.ui-search-settings-btn').on('click', () => {
+  //   $('.ui-search-settings-text-content').removeClass('ui-search-settings-open')
+  //   $('.ui-search-settings-img').removeClass('ui-search-settings-img-open')
+  // })
+}
 
-  function balloonContent(item) {
-    return `<b>${item.content}</b>`;
-  }
-});
+
+
+
