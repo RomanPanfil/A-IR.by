@@ -1,0 +1,97 @@
+.producentpg {
+    &-banner {
+        &-img {
+            width: 100%;
+        }
+    }
+    &-reviews {
+        padding: 21px 16px;
+        border-radius: 8px;
+        border: 1px solid #D3D3D3;
+        margin-bottom: 24px;
+         @media(max-width:1024.99px) {
+                border: none;
+                padding: 0;
+            }
+    }
+    &-swiper {
+        height: 544px;
+        overflow: hidden;
+         @media(max-width:1024.99px) {
+                overflow-x: auto;
+                height: auto;
+
+                .swiper-slide {
+                    max-width: 312px;
+                }
+                .swiper-wrapper {
+                    gap: 24px;
+                }
+            }
+        &-header {
+            position: relative;
+            &-title {
+                font-weight: 600;
+                @include fz(18);
+                 @media(max-width:1024.99px) {
+                        @include fz(28);
+                    }
+            }
+        }
+    }
+    &-filters {
+        &-title {
+            @include fz(18);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+    }
+    &-top {
+        &-content-img {
+             @media(max-width:1024.99px) {
+                    margin-bottom: 24px;
+                }
+        }
+    }
+}
+
+.producentpg-reviews-prev {
+    left: initial;
+    right: 30px;
+    transform: rotate(90deg);
+    background: transparent;
+    box-shadow: none;
+    svg {
+        width: 20px;
+        max-width: 20px;
+        max-height: 20px;
+        height: 20px;
+    }
+     @media(max-width:1024.99px) {
+            display: none;
+        }
+}
+.producentpg-reviews-next {
+    left: initial;
+    right: 0;
+ 
+    transform: rotate(90deg);
+    background: transparent;
+    box-shadow: none;
+    svg {
+        width: 20px;
+        max-width: 20px;
+        max-height: 20px;
+        height: 20px;
+    }
+    @media(max-width:1024.99px) {
+        display: none;
+    }
+}
+
+.ui-arrow-disabled, .ui-arrow.swiper-button-disabled {
+    background-color: transparent;
+    .sprite {
+        fill: #D3D3D3;
+    } 
+}

@@ -787,6 +787,8 @@ if (document.querySelector('.ui-rightbar')) {
   if (!document.querySelector('.catalog-reviews-desktop')) return
   let slider = null, native = null;
   let servicesSwiper = document.querySelector('.services-swiper');
+  let producentpgSwiper = document.querySelector('.producentpg-swiper');
+
 
   //desktop
   if(matchMedia) {
@@ -795,6 +797,19 @@ if (document.querySelector('.ui-rightbar')) {
     changes(bp);
   }
   function changes(bp) {
+    if(bp.matches && !slider && producentpgSwiper) {
+      slider = new Swiper(".producentpg-swiper", {
+        slidesPerView: 2,
+        spaceBetween: 24,
+        direction: "vertical",
+        // autoHeight: true,
+        // shortSwipes: false,
+        navigation: {
+          nextEl: ".producentpg-reviews-next",
+          prevEl: ".producentpg-reviews-prev",
+        }
+      });
+    }
     if(bp.matches && !slider && servicesSwiper) {
       slider = new Swiper(".services-swiper", {
         slidesPerView: 1,
@@ -816,6 +831,12 @@ if (document.querySelector('.ui-rightbar')) {
           prevEl: ".catalog-reviews-prev",
         }
       });
+    }
+    if (!bp.matches && !native && producentpgSwiper) {
+      //mobile
+      const clone = $('.catalog-reviews-desktop .producentpg-swiper').clone();
+      $('.catalog-reviews-mobile .ui-scroller').prepend(clone)
+      native = true
     }
     if (!bp.matches && !native && servicesSwiper) {
       //mobile
@@ -2424,6 +2445,7 @@ new Swiper(".main-banners-slider", {
 //карта на странице delivery&pay
 let deliveryPayMap = document.querySelector('.deliveryPayMap')
 if(deliveryPayMap) {
+
   const deliveryCity = [
     { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
     { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
@@ -2484,17 +2506,61 @@ let repairTypeBtn = document.querySelector('.repair-type-btn'),
     repaircmpTypeWrapper = document.querySelector('.repaircmp-type-wrapper'),
     repaircmpTypeItem = document.querySelectorAll('.repaircmp-type-item');
 
-
-if(repairTypeBtn && repaircmpTypeItem.length > 6) {
-  repairTypeBtn.addEventListener('click', () => {
+if(repairTypeBtn) {
+  if( repaircmpTypeItem.length > 6) {
+    repairTypeBtn.addEventListener('click', () => {
+      repairTypeBtn.style.display = 'none'
+      repaircmpTypeWrapper.classList.add('repaircmp-type-wrapper-open')
+    })
+  } else {
     repairTypeBtn.style.display = 'none'
-    repaircmpTypeWrapper.classList.add('repaircmp-type-wrapper-open')
-  })
-} else {
-  repairTypeBtn.style.display = 'none'
+  }
 }
 
 
 
+//complite.html
 
+let complite = document.querySelector('.complite');
+
+if(complite) {
+  const buildSwiperSlider = sliderElm => {
+    const sliderIdentifier = sliderElm.dataset.id;
+    return new Swiper(`#${sliderElm.id}`, {
+        // navigation: {
+        //     nextEl: `.swiper-button-next-${sliderIdentifier}`,
+        //     prevEl: `.swiper-button-prev-${sliderIdentifier}`
+        // },
+        pagination: {
+            el: `.swiper-pagination-${sliderIdentifier}`,
+            // type: 'progressbar',
+        },
+    });
+}
+const allSliders = document.querySelectorAll('.swiper');
+allSliders.forEach(slider => buildSwiperSlider(slider));
+}
+
+
+
+//producent-page rebuild
+let cardReviewsMediaContainer = document.querySelector('.card-reviews-media-container')
+if(cardReviewsMediaContainer) {
+  (function() {
+    if(matchMedia) {
+      const screen = window.matchMedia('(max-width:1024.99px)');
+      screen.addListener(changes);
+      changes(screen);
+    }
+    function changes(screen) {
+      if(screen.matches) {
+        $(".card-reviews").appendTo($(".card-reviews-media-container"));
+  
+      } else {
+        $('.card-reviews').appendTo($('.catalog-filters'))
+  
+      }
+    }
+  })();
+}
 

@@ -1447,6 +1447,9 @@ textarea.ui-input {
    @media(max-width:1024.99px) {
           display: block;
       }
+     @media(max-width:768.99px) {
+            z-index: 10;
+        }
 }
 .ui-search-settings {
   position: relative;
