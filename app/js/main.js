@@ -2479,8 +2479,121 @@ if(deliveryPayMap) {
     function balloonContent(item) {
       return `<b>${item.content}</b>`;
     }
+
+
+   
   });
 }
+
+let mapContact1 = document.getElementById('mapContact1')
+let mapContact2 = document.getElementById('mapContact2')
+
+if (mapContact1) {
+  ymaps.ready(init);
+  ymaps.ready(init1);
+  function init(){ 
+    var mapContact1 = new ymaps.Map("mapContact1", {
+        center: [53.834601, 28.994249],
+        zoom: 8,
+        controls: [],
+    });
+
+        // Первая метка
+       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+      ),
+      myPlacemarkWithContent = new ymaps.Placemark([53.933166, 27.451803], {
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12'
+      }, {
+
+          iconLayout: 'default#imageWithContent',
+          // Своё изображение иконки метки.
+          // iconImageHref: './images/icons/contacts-location.svg',
+          // Размеры метки.
+          iconImageSize: [48, 48],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
+      });
+
+      // Вторая метка
+      MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
+        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    ),
+    myPlacemarkWithContent1 = new ymaps.Placemark([53.879127, 30.265464], {
+        hintContent: 'Собственный значок метки с контентом',
+        balloonContent: 'А эта — новогодняя',
+        iconContent: '12'
+    }, {
+
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        // iconImageHref: './images/icons/contacts-location.svg',
+        // Размеры метки.
+        iconImageSize: [48, 48],
+        iconImageOffset: [-24, -24],
+        iconContentOffset: [15, 15],
+        iconContentLayout: MyIconContentLayout1
+    });
+
+      mapContact1.geoObjects.add(myPlacemarkWithContent);
+      mapContact1.geoObjects.add(myPlacemarkWithContent1);
+
+  }
+  function init1(){ 
+    var mapContact2 = new ymaps.Map("mapContact2", {
+      center: [53.834601, 28.994249],
+      zoom: 8,
+      controls: [],
+  });
+        // Первая метка
+       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+      ),
+      myPlacemarkWithContent = new ymaps.Placemark([53.933166, 27.451803], {
+          hintContent: 'Собственный значок метки с контентом',
+          balloonContent: 'А эта — новогодняя',
+          iconContent: '12'
+      }, {
+
+          iconLayout: 'default#imageWithContent',
+          // Своё изображение иконки метки.
+          // iconImageHref: './images/icons/contacts-location.svg',
+          // Размеры метки.
+          iconImageSize: [48, 48],
+          iconImageOffset: [-24, -24],
+          iconContentOffset: [15, 15],
+          iconContentLayout: MyIconContentLayout
+      });
+
+      // Вторая метка
+      MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
+        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    ),
+    myPlacemarkWithContent1 = new ymaps.Placemark([53.879127, 30.265464], {
+        hintContent: 'Собственный значок метки с контентом',
+        balloonContent: 'А эта — новогодняя',
+        iconContent: '12'
+    }, {
+
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        // iconImageHref: './images/icons/contacts-location.svg',
+        // Размеры метки.
+        iconImageSize: [48, 48],
+        iconImageOffset: [-24, -24],
+        iconContentOffset: [15, 15],
+        iconContentLayout: MyIconContentLayout1
+    });
+
+      //вторая карта
+      mapContact2.geoObjects.add(myPlacemarkWithContent);
+      mapContact2.geoObjects.add(myPlacemarkWithContent1);
+  }
+}
+
 
 
 let uiSearchSettings = document.querySelector('.ui-search-settings')

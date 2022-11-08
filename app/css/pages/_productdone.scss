@@ -49,6 +49,25 @@
             overflow: hidden;
             margin-bottom: 0;
             margin-right: 24px;
+            transition: 0.3s ease;
+            cursor: pointer;
+            &:hover {
+                filter: brightness(0.5);
+            }
+        }
+    }
+    &-head {
+        margin-bottom: 40px;
+        .ui-block-title {
+            span {
+                @include fz(14);
+                color: #00000080;
+                font-weight: 400;
+                margin-left: 16px;
+                 @media(max-width:410px) {
+                        margin-left: 0;
+                    }
+            }
         }
     }
 }

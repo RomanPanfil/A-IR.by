@@ -37,6 +37,13 @@
     line-height: 1.375;
     padding-top: 2px;
   }
+  &-subtitle {
+    @include fz(18);
+    font-weight: 600;
+    span {
+      color: #1A66AE;
+    }
+  }
   &-btn {
     flex: 0 0 215px;
     max-width: 50%;
