@@ -32,12 +32,16 @@
             @include fz(18);
             font-weight: 700;
             color: #2A4455;
+            &:hover {
+                color: hsla(204, 34%, 25%, 0.5);
+            }
         }
         &-img {
             position: absolute;
             top: 2px;
             left: 0;
             height: 16px;
+            max-width: 16px;
             img {
                 max-height: 16px;
             }

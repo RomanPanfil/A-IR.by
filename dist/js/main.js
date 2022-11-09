@@ -28485,14 +28485,14 @@ $.fn.Tabs = function() {
       $('.card-more-mobile').prepend($('#tabs'))
       $('.card-more-mobile').after($('.card-contacts'))
       $('.col-card-right').append($('.card-services'))
-      $(".deliveryPay-items-matchmedia").appendTo($(".deliveryPay-mathmedia"));
+      $(".deliverypay-items-matchmedia").appendTo($(".deliverypay-mathmedia"));
 
     } else {
       //экран более 1024
       $('.card-more-info').prepend($('#tabs'))
       $('.card-features').after($('.card-contacts'))
       $('.card-txt').append($('.card-services'))
-      $('.deliveryPay-wrapper-matchmedia').append($('.deliveryPay-items-matchmedia'))
+      $('.deliverypay-wrapper-matchmedia').append($('.deliverypay-items-matchmedia'))
 
     }
   }
@@ -29021,7 +29021,7 @@ if (document.querySelector(".making-form") ) {
   window.addEventListener("load", flipOrSticky);
 }
 
-let deliveryPay = document.querySelector('.ui-rightbar')
+let deliverypay = document.querySelector('.ui-rightbar')
 if (document.querySelector('.ui-rightbar')) {
   const stickyBlock = document.querySelector('.ui-rightbar')
   const card = document.querySelector('#card-breackpoint')
@@ -30806,8 +30806,8 @@ new Swiper(".main-banners-slider", {
 //! PART 3 JAVA SCRIPT CODE
 
 //карта на странице delivery&pay
-let deliveryPayMap = document.querySelector('.deliveryPayMap')
-if(deliveryPayMap) {
+let deliverypayMap = document.querySelector('.deliverypayMap')
+if(deliverypayMap) {
 
   const deliveryCity = [
     { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
@@ -30816,7 +30816,7 @@ if(deliveryPayMap) {
   ];
   
   ymaps.ready(function() {
-    const map = new ymaps.Map('deliveryPayMap', {
+    const map = new ymaps.Map('deliverypayMap', {
       zoom: 9,
       center: deliveryCity[0].coord,
       controls: [],
@@ -31040,3 +31040,26 @@ if(cardReviewsMediaContainer) {
   })();
 }
 
+
+//Открываем каталог
+let catalogBtn = document.querySelector('.main-catalog'),
+headerHeightC = document.querySelector('.header').clientHeight,
+navWrapperC = document.querySelector('.nav-wrapper').clientHeight,
+changeIcon = document.querySelector('.main-toggler'),
+catalogItemList = document.querySelectorAll('.catalog-item-list'),
+containerMenu = document.querySelector('.container-menu');
+
+
+catalogBtn.addEventListener('click', () => {
+  changeIcon.classList.toggle('main-toggler-cross')
+  containerMenu.classList.toggle('container-menu-open')
+  containerMenu.style.top = headerHeightC - navWrapperC + 'px'
+
+  catalogItemList.forEach((e) => {
+    console.log(e.clientHeight)
+  })
+})
+
+
+
+// catalog-item-list

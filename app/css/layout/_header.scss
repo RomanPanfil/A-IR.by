@@ -873,3 +873,16 @@
 
   
 }
+
+
+.main-toggler-cross {
+  transform: rotate(45deg) !important;
+  bottom: 5px !important;
+  &::after {
+    display: none !important;
+  }
+  &::before {
+    transform: rotate(275deg) !important;
+    top: auto !important;
+  }
+}
