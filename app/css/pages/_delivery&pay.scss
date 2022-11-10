@@ -1,4 +1,9 @@
 .deliverypay {
+    position: relative;
+    margin-bottom: 88px;
+     @media(max-width:1024.99px) {
+            margin-bottom: 50px;
+        }
     #map {
         width: 100%; 
         height:500px; 
@@ -11,6 +16,7 @@
         padding: 0;
         margin: 0;
     }
+
     .deliverypay-map {
         width: 100%; 
         height:500px; 
@@ -183,11 +189,21 @@
         @media(max-width:1024.99px) {
                 padding: 32px;
         }
+         @media(max-width:576.99px) {
+                padding: 15px;
+                margin: 0px -15px;
+                margin-bottom: 50px;
+            }
         .sign-popup-tabs {
             @media(max-width:1024.99px) {
                 flex-wrap: nowrap; 
                 overflow-x: auto;  
                 gap: 10px;   
+                padding-right: 15px;
+                 margin-right: -15px;
+                &::-webkit-scrollbar {
+                    width: 0px;
+                  }
             }
         }
         .sign-popup-tabs li {
@@ -314,7 +330,7 @@
         }
     }
     &-erip {
-        margin-bottom: 88px;
+        // margin-bottom: 88px;
         &-text {
             margin-bottom: 22px;
         }

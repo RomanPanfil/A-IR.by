@@ -2640,13 +2640,10 @@ if(complite) {
   const buildSwiperSlider = sliderElm => {
     const sliderIdentifier = sliderElm.dataset.id;
     return new Swiper(`#${sliderElm.id}`, {
-        // navigation: {
-        //     nextEl: `.swiper-button-next-${sliderIdentifier}`,
-        //     prevEl: `.swiper-button-prev-${sliderIdentifier}`
-        // },
+
         pagination: {
             el: `.swiper-pagination-${sliderIdentifier}`,
-            // type: 'progressbar',
+         
         },
     });
 }
@@ -2677,26 +2674,82 @@ if(cardReviewsMediaContainer) {
   })();
 }
 
+//header mobile 
+
+  (function() {
+    if(matchMedia) {
+      const screen = window.matchMedia('(max-width:1024.99px)');
+      screen.addListener(changes);
+      changes(screen);
+    }
+    function changes(screen) {
+      if(screen.matches) {
+        $(".mobile-card").appendTo($(".mob-menu"));
+        $(".main-catalog").appendTo($(".mob-menu"));
+
+  
+      } else {
+        $(".mobile-card").appendTo($(".main-catalog-wrapper"));
+        $(".main-catalog").appendTo($(".main-catalog-wrapper"));
+      }
+    }
+  })();
+
 
 //Открываем каталог
 let catalogBtn = document.querySelector('.main-catalog'),
 headerHeightC = document.querySelector('.header').clientHeight,
 navWrapperC = document.querySelector('.nav-wrapper').clientHeight,
 changeIcon = document.querySelector('.main-toggler'),
-catalogItemList = document.querySelectorAll('.catalog-item-list'),
+mainSearchForm = document.querySelector('.main-search-form'),
+// catalogItemList = document.querySelectorAll('.catalog-item-list'),
+mainOpenCatalog = document.querySelector('.main'),
+navWrapperOpenCatalog = document.querySelector('.nav-wrapper'),
+bodyOpenCatalog = document.querySelector('body'),
+
 containerMenu = document.querySelector('.container-menu');
 
+function calcHeight() {
+  
+}
 
 catalogBtn.addEventListener('click', () => {
-  changeIcon.classList.toggle('main-toggler-cross')
-  containerMenu.classList.toggle('container-menu-open')
-  containerMenu.style.top = headerHeightC - navWrapperC + 'px'
+      calcHeight()
+      mainSearchForm.classList.toggle('main-search-form-open');
+      changeIcon.classList.toggle('main-toggler-cross');
+      containerMenu.classList.toggle('container-menu-open'); 
+      mainOpenCatalog.classList.toggle('main-open-catalog');
+      navWrapperOpenCatalog.classList.toggle('nav-wrapper-open-catalog')
+      bodyOpenCatalog.classList.toggle('body-hidden')
+      if(matchMedia) {
+        const screen = window.matchMedia('(max-width:1024.99px)');
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if(screen.matches) {
+          containerMenu.style.top = headerHeightC - navWrapperC + mainSearchForm.clientHeight + 'px';
+        } else {
+          containerMenu.style.top = headerHeightC - navWrapperC + 'px';
 
-  catalogItemList.forEach((e) => {
-    console.log(e.clientHeight)
-  })
+        }
+      }
+
+//проверяем кол-во и высоту
+      let menuLi = document.querySelector('.menu-desktop').children
+      let menuLiHieght = 0;
+      Array.from(menuLi).forEach((e) => {
+        menuLiHieght = menuLiHieght + e.clientHeight
+      })
+
+      if(menuLiHieght > 720) {
+        $('.menu-desktop-ul').css('height', '100vh')
+        $('.menu-desktop-second').css('max-height', '720px')
+      }
+
+})
+//Высота при скроле шапки 
+window.addEventListener('scroll', () => {
+  containerMenu.style.top = mainOpenCatalog.clientHeight + 'px'
 })
 
-
-
-// catalog-item-list
