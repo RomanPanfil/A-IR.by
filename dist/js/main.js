@@ -28415,28 +28415,28 @@ const FARBA = {
 }
 
 $.fn.Tabs = function() {
-	var selector = this;
+  var selector = this;
 
-	this.each(function() {
-		var obj = $(this);
-		$(obj.attr('href')).hide();
-		$(obj).click(function() {
-			$(selector).removeClass('selected');
+  this.each(function() {
+    var obj = $(this);
+    $(obj.attr('href')).hide();
+    $(obj).click(function() {
+      $(selector).removeClass('selected');
 
-			$(selector).each(function(i, element) {
-				$($(element).attr('href')).hide();
-			});
+      $(selector).each(function(i, element) {
+        $($(element).attr('href')).hide();
+      });
 
-			$(this).addClass('selected');
-			$($(this).attr('href')).fadeIn();
-			return false;
-		});
-	});
+      $(this).addClass('selected');
+      $($(this).attr('href')).fadeIn();
+      return false;
+    });
+  });
 
-	$(this).show();
-	$(this).first().click();
-	if(location.hash!='' && $('a[href="' + location.hash + '"]').length)
-		$('a[href="' + location.hash + '"]').click();
+  $(this).show();
+  $(this).first().click();
+  if(location.hash!='' && $('a[href="' + location.hash + '"]').length)
+    $('a[href="' + location.hash + '"]').click();
 };
 
 
@@ -28711,7 +28711,7 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
   });
 
 
-	document.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     const withinBoundaries = e.composedPath().includes(numbers);
     const isArrow = e.composedPath().includes(document.querySelector(".main-contacts-tel-arrow"));
     const isMob = e.composedPath().includes(document.querySelector(".mob-menu-phone"));
@@ -29214,7 +29214,7 @@ if (document.querySelector('.ui-rightbar')) {
       $('.catalog-reviews-mobile .ui-scroller').prepend(clone)
       native = true
     }
-   
+
   }
 })();
 
@@ -30739,7 +30739,7 @@ new Swiper(".main-banners-slider", {
   //         }, {
   //             searchControlProvider: 'yandex#search'
   //         });
-  
+
   //        var myPolygon = new ymaps.Polygon([
   //         // Указываем координаты вершин многоугольника.
   //         // Координаты вершин внешнего контура.
@@ -30801,8 +30801,8 @@ new Swiper(".main-banners-slider", {
 
 
 
-  
-  
+
+
 //! PART 3 JAVA SCRIPT CODE
 
 //карта на странице delivery&pay
@@ -30814,37 +30814,37 @@ if(deliverypayMap) {
     { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
     { coord: [ 34.052235, -118.243683 ], title: 'Другие города', content: 'Другие города' },
   ];
-  
+
   ymaps.ready(function() {
     const map = new ymaps.Map('deliverypayMap', {
       zoom: 9,
       center: deliveryCity[0].coord,
       controls: [],
     });
-  
+
     const marker = new ymaps.Placemark(deliveryCity[0].coord, {
       balloonContent: balloonContent(deliveryCity[0]),
     });
     map.geoObjects.add(marker);
-  
-  
+
+
     document.querySelectorAll('#citylink li a').forEach((n, i) => {
       n.addEventListener('click', onClick.bind(n, deliveryCity[i]));
     });
-  
-  
+
+
     function onClick(item) {
       map.setCenter(item.coord);
       marker.geometry.setCoordinates(item.coord);
       marker.properties.set('balloonContent', balloonContent(item));
     }
-  
+
     function balloonContent(item) {
       return `<b>${item.content}</b>`;
     }
 
 
-   
+
   });
 }
 
@@ -30854,7 +30854,7 @@ let mapContact2 = document.getElementById('mapContact2')
 if (mapContact1) {
   ymaps.ready(init);
   ymaps.ready(init1);
-  function init(){ 
+  function init(){
     var mapContact1 = new ymaps.Map("mapContact1", {
         center: [53.834601, 28.994249],
         zoom: 8,
@@ -30905,7 +30905,7 @@ if (mapContact1) {
       mapContact1.geoObjects.add(myPlacemarkWithContent1);
 
   }
-  function init1(){ 
+  function init1(){
     var mapContact2 = new ymaps.Map("mapContact2", {
       center: [53.834601, 28.994249],
       zoom: 8,
@@ -30966,13 +30966,13 @@ if(uiSearchSettings) {
   $('.ui-search-settings').on('click', () => {
     $('.ui-search-settings-text-content').toggleClass('ui-search-settings-open')
     $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
-    
+
   })
   $('.ressearch-settings-filters').on('click', () => {
     $('.ui-search-settings-text-content').toggleClass('ui-search-settings-open')
     $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
   })
-  
+
 }
 
 
@@ -31031,10 +31031,10 @@ if(cardReviewsMediaContainer) {
     function changes(screen) {
       if(screen.matches) {
         $(".card-reviews").appendTo($(".card-reviews-media-container"));
-  
+
       } else {
         $('.card-reviews').appendTo($('.catalog-filters'))
-  
+
       }
     }
   })();
@@ -31063,3 +31063,326 @@ catalogBtn.addEventListener('click', () => {
 
 
 // catalog-item-list
+
+const serviceReminder = document.querySelector('.service-reminder');
+
+if(serviceReminder) {
+  const txtHeadline = document.querySelector('.sign-company-headline');
+  const txtSteps = document.querySelector('.sign-company-steps span');
+  const firstStep = document.querySelector('.sign-company-first');
+  const secondStep = document.querySelector('.sign-company-second');
+  const progressBar = document.querySelector('.progress-bar');
+  const btnBackStep = document.querySelector('.reminder-btn')
+
+  btnBackStep.addEventListener('click', () => {
+    txtHeadline.textContent = 'Об оборудовании';
+    txtSteps.textContent = '1';
+
+    firstStep.style.display = 'block';
+    secondStep.style.display = 'none';
+    progressBar.style.width = '50%';
+  })
+
+  // validate form
+  $(".sign-sompany-first-form").validate({
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      if(element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
+    },
+
+    rules: {
+      type: {
+        required:true,
+      },
+      num: {
+        required:true,
+        number: true,
+      },
+      date: {
+        required: true,
+      },
+      days: {
+        required: true,
+      },
+      hours: {
+        required: true,
+      },
+    },
+
+    highlight: function(element, errorClass, validClass) {
+      $(element).addClass(errorClass).removeClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .addClass(errorClass).removeClass(validClass);
+    },
+
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).removeClass(errorClass).addClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .removeClass(errorClass).addClass(validClass);
+    },
+
+    errorPlacement: function (error, element) {
+      if (element.attr("name") == "customCheckbox") {
+        error.appendTo(".form-cell-field-send");
+      } else {
+        error.insertAfter(element);
+      }
+
+      if (element.hasClass('catalog-settings-select')) {
+        element.closest('.jq-selectbox').after(error);
+      }
+      if (element.hasClass('ui-checkbox-input')) {
+        element.closest('.ui-checkbox-body').after(error);
+      }
+    },
+
+
+    submitHandler: function(form) {
+      txtHeadline.textContent = 'О получателе';
+      txtSteps.textContent = '2';
+
+      firstStep.style.display = 'none';
+      secondStep.style.display = 'block';
+      progressBar.style.width = '100%';
+
+      return false;
+    },
+
+    messages: {
+      type: {
+        required:"Введите данные",
+      },
+      num: {
+        required:"Введите данные",
+        number:"Введите данные",
+      },
+      days: {
+        required:"Введите данные",
+      },
+      hours: {
+        required:"Введите данные",
+      },
+    },
+  });
+
+  $(".sign-sompany-second-form").validate({
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      if(element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
+    },
+
+    rules: {
+      name: {
+        required: true,
+        lettersonly: true,
+      },
+      phone: {
+        required: true,
+        minlength: 19,
+      },
+    },
+
+    highlight: function(element, errorClass, validClass) {
+      $(element).addClass(errorClass).removeClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .addClass(errorClass).removeClass(validClass);
+    },
+
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).removeClass(errorClass).addClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .removeClass(errorClass).addClass(validClass);
+    },
+
+    messages: {
+      name: {
+        required: "Введите ФИО",
+        lettersonly: "Введите корректные данные",
+      },
+      phone: {
+        required: "Введите данные",
+        minlength: "Введите полный номер",
+      },
+    },
+  });
+
+  jQuery.validator.addMethod(
+    "lettersonly",
+    function (value, element) {
+      return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+    },
+    "Incorrect format"
+  );
+
+  jQuery.validator.addMethod(
+    "emailErr",
+    function (value, element) {
+      if(/123@gmail.com/.test(value))  {
+        return false;
+      } else {
+          return true
+      }
+    },
+    "Incorrect format"
+  );
+
+  var phoneMask = IMask(
+    document.getElementById('phone'), {
+      mask: '+{375} (00) 000 00 00'
+  });
+
+  // datetimepicker
+   FARBA.lazyLibraryLoad("https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css", () => {
+
+    $( document ).ready(function() {
+      let flag = false;
+        $("select").styler();
+
+        $('#datetimepicker').datetimepicker({
+          // value:'12.03.2013',
+          format:'d.m.Y',
+          timepicker: false,
+          // opened: true,
+          closeOnDateSelect:true,
+          lang: 'ru',
+          yearStart: 1940,
+          yearEnd: new Date().getFullYear(),
+          dayOfWeekStart: 1,
+          onGenerate: function() {
+            if(!flag) {
+              let blockOfYears = document.querySelector('.xdsoft_yearselect');
+              let btnYears = document.querySelector('.xdsoft_label.xdsoft_year');
+              let control = document.querySelector('.xdsoft_monthpicker')
+              let blockScroll = blockOfYears.childNodes[0];
+              let scroll = 30 * 9;
+
+              blockScroll.classList.add('blockYears')
+
+              let arrowUp = document.createElement('div');
+              let arrowDown = document.createElement('div');
+
+              arrowUp.classList.add('arrowUp');
+              arrowDown.classList.add('arrowDown');
+
+              blockOfYears.appendChild(arrowUp);
+              blockOfYears.appendChild(arrowDown);
+
+
+              control.addEventListener('click', (e) => {
+                if(e.target.classList[1] === 'xdsoft_year') {
+                  let valueMargin = blockScroll.style.marginTop;
+                  let marginGet = valueMargin.split('px')[0];
+                  let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
+                  let numCurrentYear = +currentYearElement.textContent
+
+                  if(numCurrentYear === 2022) {
+                    blockScroll.style.marginTop = '-2242px'
+                  } else if (numCurrentYear === 1940) {
+                    blockScroll.style.marginTop = '0px'
+                  } else {
+                    blockScroll.style.marginTop = +marginGet + 40 + 'px'
+                  }
+                }
+              })
+
+              arrowUp.addEventListener('click', () => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                if(+marginGet < 0) {
+                  blockScroll.style.marginTop = +marginGet + scroll + 'px';
+
+                  if(+marginGet < -271) {
+                    blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '0px'
+                  }
+                } else {
+                  blockScroll.style.marginTop = '0px'
+                }
+              })
+
+              arrowDown.addEventListener('click', () => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                blockScroll.style.marginTop = +marginGet - scroll + 'px';
+
+                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if(+marginGet > (-$(".blockYears").height() + 540)) {
+                    blockScroll.style.marginTop = +marginGet - scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                  }
+                } else {
+                  blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                }
+              })
+
+              $(document).on('click touchend', '.xdsoft_monthpicker', (e) => {
+                if(e.target.parentElement.classList[1] === 'xdsoft_year') {
+                  let valueMargin = blockScroll.style.marginTop;
+                  let marginGet = valueMargin.split('px')[0];
+                  let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
+                  let numCurrentYear = +currentYearElement.textContent
+
+                  if(numCurrentYear === 2022) {
+                    blockScroll.style.marginTop = '-2242px'
+                  } else if (numCurrentYear === 1940) {
+                    blockScroll.style.marginTop = '0px'
+                  } else {
+                    blockScroll.style.marginTop = +marginGet + 40 + 'px'
+                  }
+                }
+              })
+
+              $(document).on('click touchend', '.arrowUp', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                if(+marginGet < 0) {
+                  blockScroll.style.marginTop = +marginGet + scroll + 'px';
+
+                  if(+marginGet < -271) {
+                    blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '0px'
+                  }
+                } else {
+                  blockScroll.style.marginTop = '0px'
+                }
+              })
+
+              $(document).on('click touchend', '.arrowDown', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if(+marginGet > (-$(".blockYears").height() + 540)) {
+                    blockScroll.style.marginTop = +marginGet - scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                  }
+                } else {
+                  blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                }
+              })
+
+              flag = true;
+            }
+          },
+        });
+
+        $.datetimepicker.setLocale('ru');
+    });
+  });
+}

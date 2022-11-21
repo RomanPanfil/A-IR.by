@@ -117,7 +117,7 @@
     &-checkbox {
         &-input {
             &-data {
-                padding: 13px 24px;
+                padding: 13px 5px;
                 font-weight: 600;
                 line-height: 1.36;
                 border: 1px solid $border;
@@ -126,7 +126,7 @@
                 text-align: center;
 
                 @media(max-width:450px) {
-                    padding: 13px 14px;
+                    padding: 13px 5px;
                 }
 
                 @media(max-width:410px) {
