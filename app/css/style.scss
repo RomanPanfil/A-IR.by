@@ -31,6 +31,9 @@ body {
   padding: 0;
   background-color: #ffffff;
 }
+.body-hidden {
+  overflow: hidden;
+}
 
 #wrapper {
   display: flex;
@@ -129,3 +132,5 @@ body {
 @import "./pages/complite";
 @import "./pages/producentpg";
 @import "./pages/productdone";
+@import "./pages/compare";
+@import "./pages/compare2";

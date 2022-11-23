@@ -1,4 +1,12 @@
 .main {
+  &-open-catalog {
+   box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+    position: relative;
+    z-index: 100;;
+     @media(max-width:1024.99px) {
+            box-shadow: none;
+        }
+  }
   &-banners {
     margin-bottom: 40px;
     
