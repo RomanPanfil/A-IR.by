@@ -1,0 +1,206 @@
+<!--#include file="inc-header.html"-->
+</div>
+
+<div class="service-reminder" id="service-reminder">
+  <div class="container">
+    <div class="ui-breadcrumbs">
+      <a href="#" class="ui-breadcrumbs-link">Главная</a>
+      <a href="#" class="ui-breadcrumbs-link">Сервисный центр</a>
+      <a href="#" class="ui-breadcrumbs-link">Ремонт компрессоров</a>
+      <span>Напоминание о ТО</span>
+    </div>
+
+    <div class="reminder-header">
+      <div class="page-title">
+        Напоминание о техническом обслуживании
+      </div>
+
+      <div class="reminder-subtitle">
+        Чтобы оборудование служило долго и бесперебойно, очень важно своевременно проводить его сервисное обслуживание. Заполните заявку, и мы заблаговременно напомним вам о необходимости обслуживания в любой удобной вам форме.
+      </div>
+    </div>
+  </div>
+
+  <div class="reminder-body">
+    <div class="reminder-form">
+      <div class="mfp-popup-title popup-review-title sign-company">
+        Заявка на получение уведомлений о ТО
+      </div>
+
+      <div class="sign-company-txt">
+        <div class="sign-company-headline">
+          Об оборудовании
+        </div>
+        <div class="sign-company-steps">
+          Шаг <span>1 </span> из 2
+        </div>
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="sign-company-first">
+        <form action="#" class="sign-sompany-first-form">
+          <div class="reminder-fields">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="ui-field">
+                  <label class="ui-label ui-label-mini" for="type">Тип, марка, модель оборудования<span class="ui-color-red">*</span></label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="type" id="type" class="ui-input" placeholder="Винтовой компрессор A1R BB-4FC">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
+                <div class="ui-field margin-0">
+                  <label class="ui-label ui-label-mini" for="num">Серийный номер <span class="ui-color-red">*</span></label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="num" id="num" class="ui-input" placeholder="Номер на шильдике оборудования ">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-ss-6">
+                    <div class="ui-field">
+                      <label class="ui-label ui-label-mini" for="days">Дни работы в неделю <span class="ui-color-red">*</span></label>
+                      <div class="ui-input-wrp">
+                        <label for="days" class="ui-label"></label>
+                        <select name="days" id="days" class="catalog-settings-select" data-placeholder="">
+                          <option value=""></option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-ss-6">
+                    <div class="ui-field">
+                      <label class="ui-label ui-label-mini" for="gender">Часы работы в сутки <span class="ui-color-red">*</span></label>
+                      <div class="ui-input-wrp">
+                        <label for="hours" class="ui-label"></label>
+                        <select name="hours" id="hours" class="catalog-settings-select" data-placeholder="">
+                          <option value=""></option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ui-field margin-0">
+                  <label class="ui-label ui-label-mini" for="date">Дата ввода в эксплуатацию <span class="ui-color-red">*</span></label>
+                  <div class="ui-input-wrp">
+                    <input id="datetimepicker" name="date" type="text" class="ui-input" readonly >
+                    <div class="datetimepicker-img">
+                      <img src="./images/calendar.svg" alt="alt">
+                    </div>
+                    <!-- <div class="popup-icon"></div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reminder-control">
+            <div class="row reverse-none">
+              <div class="col-md-6">
+                <div class="ui-checkbox">
+                  <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked="">
+                  <label for="customCheckbox" class="ui-checkbox-label">
+                    <span class="default-txt">
+                      Нажимая кнопку «Далее» вы соглашаетесь с <a href="#">политикой обработки персональных данных.</a>
+                    </span>
+
+                    <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button type="sumbit" class="ui-btn ui-btn-block ui-btn-blue margin-31 btn-next">Далее</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="sign-company-second">
+        <form action="#" class="sign-sompany-second-form">
+          <div class="reminder-fields">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="ui-field margin-32">
+                  <label class="ui-label ui-label-mini" for="name">Ваше имя<span class="ui-color-red">*</span></label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="name" id="name" class="ui-input" placeholder="Иванов Иван Иванович">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
+
+                <div class="request-checkboxes">
+                  <div class="row">
+                    <div class="col-12 col-us-6">
+                      <label class="request-checkbox">
+                          <input type="radio" name="chose" class="request-checkbox-input" checked="checked">
+                          <div class="request-checkbox-input-data">
+                              Звонок по телефону
+                          </div>
+                      </label>
+                    </div>
+
+                    <div class="col-12 col-us-6">
+                      <label class="request-checkbox">
+                          <input type="radio" name="chose" class="request-checkbox-input">
+                          <div class="request-checkbox-input-data">
+                              Сообщение на Email
+                          </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ui-field margin-0">
+                  <label class="ui-label ui-label-mini" for="phone">Телефон <span class="ui-color-red">*</span></label>
+                  <div class="ui-input-wrp">
+                    <input type="text" name="phone" id="phone" class="ui-input" placeholder="+375 (29) 123-34-45">
+                    <div class="popup-icon"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="ui-field margin-0 margin-15">
+                  <label for="" class="ui-label ui-label-mini">Комментарий</label>
+                  <textarea id="textbox" name="textbox" placeholder="Ваш комментарий" class="ui-input height"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reminder-control">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="reminder-btn">
+                  Вернуться на шаг 1
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button type="submit" class="ui-btn ui-btn-block ui-btn-red">Отправить заявку</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--#include file="inc-footer.html"-->

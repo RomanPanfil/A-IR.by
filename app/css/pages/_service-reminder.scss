@@ -1,0 +1,233 @@
+.reminder {
+  &-header {
+    .page-title {
+      margin-bottom: 21px;
+
+      @media(max-width: 1024.99px) {
+        margin-bottom: 15px;
+      }
+
+      @media(max-width: 576.99px) {
+        margin-bottom: 19px;
+      }
+    }
+  }
+
+  &-subtitle {
+    margin-bottom: 45px;
+
+    @media(max-width: 1024.99px) {
+      margin-bottom: 55px;
+    }
+
+    @media(max-width: 576.99px) {
+      margin-bottom: 37px;
+    }
+  }
+
+  &-body {
+    padding: 88px 0;
+    background: #F5F5F5;
+
+    @media(max-width: 1024.99px) {
+      padding: 56px 0;
+    }
+  }
+
+  &-form {
+    padding: 62px 112px;
+    background-color: #fff;
+    border-radius: 8px;
+    max-width: 1096px;
+    margin: 0px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+
+    @media(max-width: 1024.99px) {
+      padding: 34px 48px;
+      max-width: 520px;
+    }
+
+    @media(max-width: 576.99px) {
+      padding: 56px 15px;
+      max-width: 100%;
+    }
+
+    .popup-review-title.sign-company {
+      text-align: center;
+      margin-bottom: 37px;
+      font-size: 32px;
+
+      @media(max-width: 1024.99px) {
+        font-size: 28px;
+        margin-bottom: 33px;
+      }
+
+      @media(max-width: 576.99px) {
+        font-size: 22px;
+        margin-bottom: 27px;
+      }
+    }
+
+    .sign-company-txt {
+      margin-bottom: 41px;
+
+      @media(max-width: 1024.99px) {
+        margin-bottom: 33px;
+      }
+
+      @media(max-width: 576.99px) {
+        margin-bottom: 31px;
+      }
+    }
+
+    .sign-company-txt::after {
+      left: -112px;
+      right: -112px;
+
+      @media(max-width: 1024.99px) {
+        left: -48px;
+        right: -48px;
+      }
+    }
+
+    .jq-selectbox__select-text {
+      color: #000;
+    }
+
+    .jq-selectbox__select {
+      display: block;
+      height: 40px !important;
+      line-height: 38px !important;
+      width: 100%;
+      max-width: 100%;
+      background: #fff;
+      padding: 0px 16px !important;
+      font-family: "Open Sans";
+      font-weight: 400;
+      font-size: 14px;
+      font-size: 0.875rem;
+      color: rgba(0, 0, 0, 0.5) !important;
+      border: 1px solid #D3D3D3 !important;
+      white-space: nowrap;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      -webkit-transition: 0.3s border, 0.3s color;
+      -o-transition: 0.3s border, 0.3s color;
+      transition: 0.3s border, 0.3s color;
+      border-radius: 5px;
+      outline: none;
+
+      @media(max-width: 576.99px) {
+        height: 48px !important;
+      }
+    }
+
+    .jq-selectbox {
+      display: block !important;
+    }
+
+    .jq-selectbox__trigger-arrow {
+      right: 16px !important;
+    }
+
+    .datetimepicker-img {
+      position: absolute;
+      right: 16px;
+      top: 10px;
+    }
+
+    .request-checkboxes {
+      margin-bottom: 17px;
+
+      @media(max-width: 1024.99px) {
+        margin-bottom: 25px;
+      }
+
+      @media(max-width: 576.99px) {
+        margin-bottom: 31px;
+      }
+    }
+
+    textarea {
+      height: 200px;
+
+      @media(max-width: 1024.99px) {
+        height: 88px;
+      }
+    }
+  }
+
+  &-fields {
+    margin-bottom: 32px;
+
+    @media(max-width: 1024.99px) {
+      margin-bottom: 10px;
+    }
+
+    .ui-field {
+      margin-bottom: 25px;
+
+      @media(max-width: 576.99px) {
+        margin-bottom: 23px;
+      }
+
+      &.margin-0 {
+        margin-bottom: 0;
+
+        @media(max-width: 1024.99px) {
+          margin-bottom: 25px;
+        }
+      }
+
+      &.margin-32 {
+        margin-bottom: 32px;
+      }
+
+      &.margin-15 {
+        @media(max-width: 1024.99px) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  &-control {
+    .row {
+      align-items: center;
+
+      @media(max-width: 1024.99px) {
+        flex-direction: column-reverse;
+
+        &.reverse-none {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .ui-checkbox {
+      @media(max-width: 1024.99px) {
+        margin-bottom: 29px;
+      }
+
+      @media(max-width: 576.99px) {
+        margin-bottom: 25px;
+      }
+    }
+
+    .ui-btn-block {
+      @media(max-width: 1024.99px) {
+        margin-bottom: 23px;
+      }
+    }
+  }
+
+  &-btn {
+    cursor: pointer;
+    color: #1A66AE;
+
+    @media(max-width: 1024.99px) {
+      text-align: center;
+    }
+  }
+}
