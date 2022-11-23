@@ -2964,14 +2964,33 @@ if (removeBtn) {
 if(fixedBtn) {
   fixedBtn.forEach((e) => {
     e.addEventListener('click', (elem) => {
-      allInfo.forEach((aria) => {
-        if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
+      
+      function fixElement() {
+        elem.target.closest('.product-card-fixed').querySelector('.product-card-fixed-text').classList.toggle('product-card-fixed-text-fix')      
+        elem.target.closest('.product-card-fixed').classList.toggle('product-card-fixed-fix')
+      }
+      function removeFixElem() {
+        elem.target.closest('.product-card-fixed').classList.remove('product-card-fixed-fix')      
+      }
 
-        $(aria.closest('.swiper-wrapper')).prepend($(aria))
-
-
-        }
-      })
+      
+      let productFixed = document.querySelectorAll('.product-card-fixed-fix')
+      if(productFixed.length < 3) {
+        fixElement()
+        allInfo.forEach((aria) => {
+          if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
+            // console.log($(aria)[1])
+          $(aria.closest('.swiper-wrapper')).prepend($(aria))
+  
+            swiperCarouselCompare.forEach((swiperSlide) => {
+              swiperSlide.slideTo(0)
+            })
+          }
+        })
+      } else {
+        removeFixElem()
+      }
+     
       
     })
   })

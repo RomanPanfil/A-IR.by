@@ -257,9 +257,35 @@
         z-index: 2;
         top: 0;
         left: 0;
-        width: 20px;
-        height: 20px;
-        background-color: chocolate; 
+        padding: 6px 16px;
+        border: 1px solid #D3D3D3;
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #2A4455;
+        @include fz(14);
+        &-text {
+            &::after {
+                content: 'Закрепить';
+            }
+            &-fix {
+                &::after {
+                    content: 'Закреплено';
+                }
+            }
+        }
+        &:hover {
+            background-color: #f5f5f5;
+        }
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        &-fix {
+            background-color: #f5f5f5;
+            border: 1px solid transparent;
+        }
     }
     .product-card-remove {
         width: 20px;
