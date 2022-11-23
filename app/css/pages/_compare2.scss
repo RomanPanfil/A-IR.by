@@ -12,8 +12,13 @@
     }
     &-grid {
         display: flex;
+        // padding: 20px 0px;
         margin-bottom: 40px;
         gap: 24px;
+        &-sticky {
+            padding: 20px 0px;
+            margin-bottom: 0;
+        }
          @media(max-width:1024.99px) {
                 flex-direction: column;
             }
@@ -25,6 +30,13 @@
             flex-direction: column;
             justify-content: space-between;
             margin-bottom: 24px;
+            &-sticky {
+                justify-content: initial;
+                gap: 15px;
+                &_checkbox {
+                    margin-bottom: 0;
+                }
+            }
              @media(max-width:1024.99px) {
                     flex: 0 0 100%;
                     max-width: 100%;
@@ -243,11 +255,35 @@
     .product-card-remove {
         width: 20px;
         height: 20px;
-        background-color: black;
         position: absolute;
         right: 0;
         top: 0;
         z-index: 2;
+        cursor: pointer;
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 2px;
+            width: 30px;
+            border-radius: 5px;
+            background-color: #848484;
+            transform: translate(-50%,-50%) rotate(45deg);
+            top: 50%;
+            left: 50%;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 2px;
+            width: 30px;
+            border-radius: 5px;
+            background-color: #848484;
+            transform: translate(-50%,-50%) rotate(-45deg);
+            top: 50%;
+            left: 50%;
+        }
     }
 }
 .swiper-carousel-compare {
