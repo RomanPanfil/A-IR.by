@@ -1,0 +1,71 @@
+.ressearch {
+   &-settings {
+    justify-content: space-between;
+    &-content {
+        display: none;
+         @media(max-width:768px) {
+                display: block;
+            }
+    }
+    &-filters {
+        display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+    padding-left: 28px;
+    font-weight: 600;
+    color: rgba(0,0,0,.7);
+    svg {
+        position: absolute;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    width: 16px;
+    height: 18px;
+    }
+    }
+   }
+   &-checkbox-label {
+    @include fz(16);
+    &::after {
+        top: 7px;
+    }
+    &::before {
+        top: 3px;
+    }
+   }
+   &-filter {
+    &-body {
+        width: 100%;
+        top: auto;
+        height: max-content;
+        padding-bottom: 24px;
+    }    
+    &-founded {
+         @media(max-width:768px) {
+                display: none;
+        }
+    }
+    &-title {
+        @media(max-width:768px) {
+            display: none;
+    }
+   
+    }
+    &-btn {
+        @media(max-width:768px) {
+               display: none;
+           }
+   }
+   }
+}
+
+.btn-container-media {
+    display: none;
+     @media(max-width:768px) {
+            display: block;
+        }
+}

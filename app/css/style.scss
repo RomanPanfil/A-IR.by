@@ -31,6 +31,9 @@ body {
   padding: 0;
   background-color: #ffffff;
 }
+.body-hidden {
+  overflow: hidden;
+}
 
 #wrapper {
   display: flex;
@@ -85,12 +88,24 @@ body {
 @import "./components/cardSticky";
 @import "./components/list-li";
 @import "./components/compare";
+@import "./components/catalog-menu";
+
 // Pages
 @import "./pages/pages";
 @import "./pages/reviews-page";
 @import "./pages/making-order";
 @import "./pages/cart";
 @import "./pages/thanks";
+@import "./pages/delivery&pay";
+@import "./pages/producers";
+@import "./pages/repaircmp";
+@import "./pages/service";
+@import "./pages/service-reminder";
+
+
+
+
+
 // @import "./pages/nazz";
 
 // Vendors
@@ -107,3 +122,15 @@ body {
 @import "./pages/order";
 @import "./pages/assistance";
 
+
+// part 3
+@import "./pages/articles";
+@import "./pages/notfound";
+@import "./pages/ressearch";
+@import "./pages/contacts";
+@import "./pages/services";
+@import "./pages/complite";
+@import "./pages/producentpg";
+@import "./pages/productdone";
+@import "./pages/compare";
+@import "./pages/compare2";

@@ -1,0 +1,37 @@
+.producers {
+    .row-gap {
+        row-gap: 16px;
+    }
+    margin-bottom: 88px;
+     @media(max-width:1024px) {
+            margin-bottom: 56px;
+        }
+    &-brands-item {
+        position: relative;
+        width: auto;
+        &:hover {
+            flex-direction: column;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            // height: 120px;
+            .producers-brands-item-title {
+                display: inline-block;
+            }
+        }
+        &-title {
+            display: none;
+            position: absolute;
+            z-index: 99;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            padding: 9px 10px;
+            text-align: center;
+            background-color: #fff;
+            border-top: 1px solid #F5F5F5;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            @include fz(14);
+        }
+    }
+}

@@ -37,6 +37,13 @@
     line-height: 1.375;
     padding-top: 2px;
   }
+  &-subtitle {
+    @include fz(18);
+    font-weight: 600;
+    span {
+      color: #1A66AE;
+    }
+  }
   &-btn {
     flex: 0 0 215px;
     max-width: 50%;
@@ -730,6 +737,9 @@ textarea.ui-input {
       opacity: 0;
       transition: .15s opacity, .15s transform;
     }
+    span {
+      color: #808080;
+    }
   }
   &:hover {
     .ui-checkbox-input + .ui-checkbox-label {
@@ -1339,4 +1349,192 @@ textarea.ui-input {
   @media(max-width: 576px) {
     display: none;
   }
+}
+
+.ui-title {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 45px;
+   @media(max-width:1024.99px) {
+          @include fz(28);
+          margin-bottom: 24px;
+      }
+       @media(max-width:576.99px) {
+              @include fz(22);
+              margin-bottom: 26px;
+          }
+}
+.ui-rightbar {
+  .rightbar-item-list-chose {font-weight: 600;}
+  width: 100%;
+  max-width: 224px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  &-sticky {
+    position: fixed;
+    top: 100px!important;
+  }
+  &-flipbottom {
+    position: absolute;
+    bottom: 0;
+  }
+  &-item {
+    padding: 25px 25px 35px 25px;
+    border-bottom: 1px solid #D3D3D3;
+    &:last-child {
+      border-bottom: none;
+    }
+    &-title {
+      @include fz(14);
+      margin-bottom: 19px;
+      color: #808080;
+    }
+    &-list {
+      li {
+        margin-bottom: 10px;
+        a {
+          color: rgba(0, 0, 0, 0.7);
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+   @media(max-width:768.99px) {
+          display: none;
+      }
+}
+
+.main-menu-services-inactive {
+  use {
+    fill: #D3D3D3;
+  }
+  .main-menu-services-text {
+    color: #D3D3D3;
+  }
+}
+
+[class*="ui-marker-"] {
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+    color: #fff;
+    padding: 6px 16px;
+    font-weight: 600;
+    @include fz(14);
+    @media(max-width:400px) {
+            top: 8px;
+            left: 12px;
+            padding: 3px 8px;
+            @include fz(12);
+        }
+}
+
+.ui-marker-darkblue {
+  background: #2A4455;
+}
+.ui-marker-red {
+  background: #BC0000;
+}
+.ui-marker-blue {
+  background: #1A66AE;
+}
+.ui-marker-green {
+  background: #559E53;
+}
+
+.ui-search {
+  display: none;
+  position: relative;
+  z-index: 9;
+   @media(max-width:1024.99px) {
+          display: block;
+      }
+     @media(max-width:768.99px) {
+            z-index: 10;
+        }
+}
+.ui-search-settings {
+  position: relative;
+  width: 100%;
+  border: 1px solid #D3D3D3;
+  border-radius: 8px;
+  @include fz(18);
+  font-weight: 600;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9;
+  background: #fff;
+  margin-bottom: 32px;
+   @media(max-width:768px) {
+          display: none;
+      }
+      &-header {
+        display: none;
+         @media(max-width:768px) {
+          display: block;
+          padding: 16px 15px 18px;
+          @include fz(22);
+          font-weight: 700;
+          border-bottom: 1px solid #d3d3d3;
+          margin-bottom: 23px;
+          }
+        
+      }
+  &-text-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 90%;
+    padding: 23px 24px;
+    left: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 8;
+     @media(max-width:768px) {
+            position: fixed;
+            bottom: 0;
+            top: auto;
+        }
+    label {
+      @include fz(16);
+    }
+    .ui-checkbox-label::before {
+      top: 3px;
+    }
+    .ui-checkbox-label::after {
+      top: 7px;
+    }
+    .ui-checkbox {
+      margin-bottom: 18px;
+    }
+  }
+  &-open {
+    display: block;
+  }
+  
+}
+.ui-checkbox-container {
+  margin-bottom: 28px;
+}
+.ui-search-settings-img-open {
+  transform: rotate(180deg);
+}
+
+ 
+
+.row-gap-32 {
+  row-gap: 32px;
+   @media(max-width:768.99px) {
+          row-gap: 16px;
+      }
 }

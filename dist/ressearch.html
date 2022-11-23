@@ -1,0 +1,861 @@
+<!--#include file="inc-header.html"-->
+
+<div class="catalog">
+
+    <div class="catalog-products">
+      <div class="row">
+        <div class="col-md-3">
+            <div class="catalog-filters">
+                <div class="catalog-filters-bg"></div>
+              
+                <div class="ressearch-filter-body catalog-filters-body">
+                  <div class="catalog-filters-header">
+                    <div class="catalog-filters-header-title">Найдено в категориях</div>
+                    <div class="catalog-filters-close" onclick=""></div>
+                  </div>
+              
+                  <form class="catalog-filters-form">
+                    <div class="catalog-filters-scroller">
+                      <div class="ressearch-filter-founded catalog-filters-founded" id="catalog_search">
+                        Найдено <span>415 товаров</span>
+                      </div>
+
+                      <div class="catalog-filters-group">
+                        <div class="ressearch-filter-title catalog-filters-title">
+                            Найдено в категориях
+                        </div>
+                
+                        <div class="catalog-filters-filters">
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_1" class="ui-checkbox-input"/>
+                            <label for="res_v_1" class="ressearch-checkbox-label ui-checkbox-label">Винтовые компрессоры <span>123</span></label>
+                          </div>
+                
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_2" class="ui-checkbox-input"/>
+                            <label for="res_v_2" class="ressearch-checkbox-label ui-checkbox-label">Компрессорные масла <span>56</span></label>
+                          </div>
+                
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_3" class="ui-checkbox-input"/>
+                            <label for="res_v_3" class="ressearch-checkbox-label ui-checkbox-label">Запчасти и расходные материалы
+                                для компрессоров <span>16</span></label>
+                          </div>
+                
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_4" class="ui-checkbox-input"/>
+                            <label for="res_v_4" class="ressearch-checkbox-label ui-checkbox-label">Системы подготовки сжатого воздуха <span>23</span></label>
+                          </div>
+
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_5" class="ui-checkbox-input"/>
+                            <label for="res_v_5" class="ressearch-checkbox-label ui-checkbox-label">Ресиверы (воздухосборники) <span>14</span></label>
+                          </div>
+
+                          
+                          
+
+                        </div>
+                      </div><!--.group-->
+                
+                
+                     
+                    </div><!--.scroller-->
+                    
+                    <div class="catalog-filters-submit">
+                        <div class="btn-container-media">
+                            <div class="row">
+                                <div class="col-xs-6 col-12">
+                                    <div class="ui-search-settings-btn ui-btn ui-btn-block ui-btn-blue">Показать товары</div>
+                                </div>
+                                <div class="col-xs-6 col-12">
+                                    <div class="ui-btn ui-btn-block ui-btn-secondary">Очистить</div>
+                                </div>
+                            </div>   
+                         </div>
+                      <button class="ressearch-filter-btn catalog-filters-btn">
+                        Показать <strong>179</strong> товаров
+                        <i class="catalog-filters-btn-icon"><svg class="sprite"><use xlink:href="svg/svg/symbols.svg#reload"/></svg></i>
+                      </button>
+                    </div>
+                  </form>
+                </div><!--.content-->
+              </div>
+        </div>
+
+        <div class="col-md-9">
+           
+              
+              
+              <div class="catalog-settings ressearch-settings">
+                <div class="ressearch-settings-content catalog-settings-filters-col">
+                    <a href="javascript:void(0)" class="catalog-settings-filters">
+                      <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#filters"/></svg>
+                      Фильтры
+                    </a>
+                </div>
+
+                <!-- <div class="ressearch-settings-content catalog-settings-filters-col">
+                    <a href="javascript:void(0)" class="ressearch-settings-filters">
+                      <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#filters"/></svg>
+                      Фильтры
+                    </a>
+                </div> -->
+              
+                <div class="catalog-settings-sort-col">
+                  <select name="catalog-sort" class="catalog-settings-select">
+                    <option value="Сначала популярные">Сначала популярные</option>
+                    <option value="Новинки">Сначала дешевле</option>
+                    <option value="Сначала дороже">Сначала дороже</option>
+                    <option value="С высоким рейтингом">С высоким рейтингом</option>
+                  </select>
+                </div>
+              
+                <div class="catalog-settings-other-col">
+                  <div class="catalog-settings-amount">
+                    <label for="catalog_amount" class="ui-label ui-label-inline">Выводить по:</label>
+                    <select name="catalog_amount" id="catalog_amount" class="catalog-settings-select">
+                      <option value="30">30</option>
+                      <option value="90">90</option>
+                      <option value="120">120</option>
+                      <option value="240">240</option>
+                    </select>
+                  </div>
+              
+                  <div class="catalog-style">
+                    <a href="javascript:void(0)" class="catalog-style-toggler" data-style="line">
+                      <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#style-line"/></svg>
+                    </a>
+                    <a href="javascript:void(0)" class="catalog-style-toggler active" data-style="grid">
+                      <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#style-grid"/></svg>
+                    </a>
+                  </div>
+                </div>
+
+                
+                
+              </div><!--.catalog-settings-->
+              <div class="ui-search">
+                <div class="ui-search-settings">
+                    <div class="ui-search-settings-text">Найдено в категориях</div>
+                   <img loading="lazy" src="./images/icons/articles-arrow-down.svg" alt="alt" class="ui-search-settings-img">
+                    
+                  </div>
+                  <div class="ui-search-settings-text-content">
+                    <div class="ui-search-settings-header">
+                        Найдено в категориях
+                    </div>
+                   
+
+                    <div class="ui-checkbox-container">
+                        <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_6" class="ui-checkbox-input"/>
+                            <label for="res_v_6" class="ui-checkbox-label">Винтовые компрессоры <span>123</span></label>
+                          </div>
+                
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_7" class="ui-checkbox-input"/>
+                            <label for="res_v_7" class="ui-checkbox-label">Компрессорные масла <span>56</span></label>
+                          </div>
+                
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_8" class="ui-checkbox-input"/>
+                            <label for="res_v_8" class="ui-checkbox-label">Запчасти и расходные материалы
+                                для компрессоров <span>16</span></label>
+                          </div>
+                
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_9" class="ui-checkbox-input"/>
+                            <label for="res_v_9" class="ui-checkbox-label">Системы подготовки сжатого воздуха <span>23</span></label>
+                          </div>
+         
+                          <div class="ui-checkbox">
+                            <input type="checkbox" id="res_v_10" class="ui-checkbox-input"/>
+                            <label for="res_v_10" class="ui-checkbox-label">Ресиверы (воздухосборники) <span>14</span></label>
+                          </div>
+                    </div>
+                   
+    
+                     <div class="btn-container">
+                        <div class="row">
+                            <div class="col-xs-6 col-12">
+                                <div class="ui-search-settings-btn ui-btn ui-btn-block ui-btn-blue">Показать товары</div>
+                            </div>
+                            <div class="col-xs-6 col-12">
+                                <div class="ui-btn ui-btn-block ui-btn-secondary">Очистить</div>
+                            </div>
+                        </div>   
+                     </div>
+                 </div>
+              </div>
+              
+              
+              <div class="row catalog-products-grid" id="catalog">
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-blue">Товар недели</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-green">Ременно привод</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="./images/product-img.webp" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">3.7</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">4 - 10 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">7.5 - 20 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price">5 381.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <a href="#" class="product-card-btn ui-btn ui-btn-midi ui-btn-block"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>В корзину</a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+                  </div><!--.product-card-->
+                </div>
+              
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="./images/product2.webp" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">4.9</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">03050304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Винтовой автоматический компрессор Comparo Altessa CCX280-4FC, 300-340 бар</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">8 - 100 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">300 - 340 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price-red">5 381.00 <span class="product-card-price-unit">р</span></div>
+                          <div class="product-card-price-old">5 999.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <a href="#" class="product-card-btn ui-btn ui-btn-midi ui-btn-block ui-btn-blue"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>Оформить</a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like disabled">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare active">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+              
+                  </div><!--.product-card-->
+                </div>
+              
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-green">Ременно привод</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="./images/product3.webp" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">11020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">4.2</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Поршневой компрессор Aco X1, 10 бар</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">4 - 10 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">7.5 - 20 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price">5 381.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <span class="product-card-btn ui-btn ui-btn-midi ui-btn-block disabled"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>В корзину</span>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+                  </div><!--.product-card-->
+                </div>
+              
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-blue">Товар недели</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-green">Ременно привод</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="https://via.placeholder.com//272x180" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">3.7</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Название товара</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">4 - 10 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">7.5 - 20 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price">5 381.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <a href="#" class="product-card-btn ui-btn ui-btn-midi ui-btn-block"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>В корзину</a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+                  </div><!--.product-card-->
+                </div>
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-blue">Товар недели</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-green">Ременно привод</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="./images/product-img.webp" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">3.7</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">4 - 10 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">7.5 - 20 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price">5 381.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <a href="#" class="product-card-btn ui-btn ui-btn-midi ui-btn-block"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>В корзину</a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+                  </div><!--.product-card-->
+                </div>
+              
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="./images/product2.webp" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">4.9</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">03050304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Винтовой автоматический компрессор Comparo Altessa CCX280-4FC, 300-340 бар</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">8 - 100 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">300 - 340 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price-red">5 381.00 <span class="product-card-price-unit">р</span></div>
+                          <div class="product-card-price-old">5 999.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <a href="#" class="product-card-btn ui-btn ui-btn-midi ui-btn-block ui-btn-blue"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>Оформить</a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like disabled">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare active">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+              
+                  </div><!--.product-card-->
+                </div>
+              
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-green">Ременно привод</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="./images/product3.webp" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">11020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">4.2</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Поршневой компрессор Aco X1, 10 бар</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">4 - 10 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">7.5 - 20 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price">5 381.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <a href="#" class="product-card-btn ui-btn ui-btn-midi ui-btn-block"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>В корзину</a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+                  </div><!--.product-card-->
+                </div>
+              
+                <div class="col-product-card col-lg-4">
+                  <div class="product-card">
+                    <div class="product-card-top">
+                      <div class="product-card-topline" onclick="" data-href="./popups/marks.html">
+                        <div class="product-card-sticker">Мега рассрочка 0/24</div>
+                        <div class="product-card-arrow">
+                          <svg class="sprite product-card-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                        </div>
+                        <div class="product-card-stickers">
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-blue">Товар недели</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-green">Ременно привод</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-purple">Умный выбор</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-red">-13%</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-orange">Купи сейчас, плати потом</a>
+                          <a href="#" class="ui-sticker ui-sticker-mini ui-sticker-cyan">Фильтр в подарок</a>
+                        </div>
+                      </div>
+              
+                      <a href="#" class="product-card-img">
+                       <img loading="lazy" src="https://via.placeholder.com//272x180" alt="alt" loading="lazy" />
+                      </a>
+              
+                      <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                    </div><!--top-->
+              
+                    <div class="product-card-mid">
+                      <div class="product-card-info">
+                        <div class="product-card-rateline">
+                          <div class="product-card-rate">
+                            <svg class="sprite ui-inline product-card-rate-icon"><use xlink:href="svg/svg/symbols.svg#star"/></svg>
+                            <span class="product-card-rate-value">3.7</span>
+                          </div>
+              
+                          <div class="product-card-code">Код: <span class="product-card-code-code">01020304</span></div>
+                        </div>
+              
+                        <div class="product-card-title">
+                          <a href="#" class="product-card-title-link">Название товара</a>
+                        </div>
+              
+                        <div class="product-card-characters">
+                          <div class="product-card-character">
+                            Производительность: <span class="product-card-character-value">4 - 10 м3/мин</span>
+                          </div>
+                          <div class="product-card-character">
+                            Максимальное давление: <span class="product-card-character-value">7.5 - 20 Бар</span>
+                          </div>
+                          <div class="product-card-character">
+                            Мощность двигателя: <span class="product-card-character-value">2.2 - 315 кВт</span>
+                          </div>
+                        </div>
+                      </div><!--.info-->
+              
+              
+                      <div class="product-card-store">
+                        <div class="product-card-prices">
+                          <div class="product-card-price">5 381.00 <span class="product-card-price-unit">р</span></div>
+                        </div>
+              
+                        <div class="product-card-btns">
+                          <a href="#" class="product-card-btn ui-btn ui-btn-midi ui-btn-block"><svg class="sprite product-card-btn-icon"><use xlink:href="svg/svg/symbols.svg#cart"/></svg>В корзину</a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-like">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#like"/></svg>
+                          </a>
+                          <a href="javascript:void(0)" class="ui-action ui-action-compare">
+                            <svg class="sprite ui-action-icon"><use xlink:href="svg/svg/symbols.svg#compare"/></svg>
+                          </a>
+                        </div>
+                      </div><!--.store-->
+                    </div><!--.mid-->
+                  </div><!--.product-card-->
+                </div>
+              </div>
+              
+              <div class="ui-pgn">
+                <a href="#" class="ui-btn ui-btn-block ui-btn-secondary">Показать еще</a>
+                <div class="ui-pgn-btns">
+                  <a href="#" class="ui-pgn-arrow">
+                    <svg class="sprite ui-pgn-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-prev"/></svg>
+                  </a>
+                  <a href="#" class="ui-pgn-btn">1</a>
+                  <span class="ui-pgn-btn current">2</span>
+                  <a href="#" class="ui-pgn-btn">3</a>
+                  <span class="ui-pgn-dots">...</span>
+                  <a href="#" class="ui-pgn-btn">47</a>
+                  <a href="#" class="ui-pgn-btn">48</a>
+                  <a href="#" class="ui-pgn-btn">49</a>
+                  <a href="#" class="ui-pgn-arrow">
+                    <svg class="sprite ui-pgn-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+                  </a>
+                </div>
+              </div>
+              
+          
+          <div class="ajx-scroll-load" data-href="./ajax/ajx-catalog-related.html" data-loaded="false"></div>
+
+          <!-- <div class="ajx-scroll-load" data-href="./ajax/ajx-catalog-marks.html" data-loaded="false"></div> -->
+
+    
+
+        </div>
+      </div>
+    </div>
+
+    <div class="card-reviews" id="card_review">
+    </div>
+
+
+    <!-- <div class="ui-setting-modal">
+        <div class="ui-setting-modal-header">
+            Найдено в категориях
+        </div>
+        <div class="ui-setting-modal-main">
+            <div class="ui-setting-modal-maint-content">
+                <div class="ui-checkbox-container">
+                    <div class="ui-checkbox">
+                        <input type="checkbox" id="res_v_6" class="ui-checkbox-input"/>
+                        <label for="res_v_6" class="ui-checkbox-label">Винтовые компрессоры <span>123</span></label>
+                      </div>
+            
+                      <div class="ui-checkbox">
+                        <input type="checkbox" id="res_v_7" class="ui-checkbox-input"/>
+                        <label for="res_v_7" class="ui-checkbox-label">Компрессорные масла <span>56</span></label>
+                      </div>
+            
+                      <div class="ui-checkbox">
+                        <input type="checkbox" id="res_v_8" class="ui-checkbox-input"/>
+                        <label for="res_v_8" class="ui-checkbox-label">Запчасти и расходные материалы
+                            для компрессоров <span>16</span></label>
+                      </div>
+            
+                      <div class="ui-checkbox">
+                        <input type="checkbox" id="res_v_9" class="ui-checkbox-input"/>
+                        <label for="res_v_9" class="ui-checkbox-label">Системы подготовки сжатого воздуха <span>23</span></label>
+                      </div>
+     
+                      <div class="ui-checkbox">
+                        <input type="checkbox" id="res_v_10" class="ui-checkbox-input"/>
+                        <label for="res_v_10" class="ui-checkbox-label">Ресиверы (воздухосборники) <span>14</span></label>
+                      </div>
+                </div>
+               
+
+                 <div class="btn-container">
+                    <div class="row">
+                        <div class="col-xs-6 col-12">
+                            <div class="ui-search-settings-btn ui-btn ui-btn-block ui-btn-blue">Показать товары</div>
+                        </div>
+                        <div class="col-xs-6 col-12">
+                            <div class="ui-btn ui-btn-block ui-btn-secondary">Очистить</div>
+                        </div>
+                    </div>   
+                 </div>
+             </div>
+        </div>
+    </div> -->
+
+
+
+<!--#include file="inc-footer.html"-->
