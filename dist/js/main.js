@@ -31292,44 +31292,54 @@ if(compareSection) {
 let targetElment = document.querySelectorAll('.product-card'),
     removeBtn = document.querySelectorAll('.product-card-remove'),
     allSliders = document.querySelectorAll('.swiper-carousel-compare'),
+    fixedBtn = document.querySelectorAll('.product-card-fixed'),
     allInfo = document.querySelectorAll('.swiper-slide');
 if (removeBtn) {
   removeBtn.forEach((e) => {
     e.addEventListener('click', (elem) => {
-      // console.log(swiperCarouselCompare)
-      // let removeElement =  elem.target.closest('.swiper-slide')
-      if(e === elem.target) {
-        // console.log(e.closest('.swiper-slide'))
-        allSliders.forEach((slider) => {
-          slider.querySelectorAll('.swiper-slide').forEach((elemIndex, i) => {
-            swiperCarouselCompare.forEach((swiper) => {
-              if(elemIndex == elem.target.closest('.swiper-slide')) {
-                swiper.removeSlide(i)
-              }
-            })
+      // if(e === elem.target) {
+      //   allSliders.forEach((slider) => {
+      //     slider.querySelectorAll('.swiper-slide').forEach((elemIndex, i) => {
+            
+      //       swiperCarouselCompare.forEach((swiper) => {
+      //         if(elemIndex == elem.target.closest('.swiper-slide')) {
+      //           swiper.removeSlide(i)
+                
+      //         }
+      //       })
 
 
-          })
-        })
+      //     })
+      //   })
 
-      }
-
-
-
-
-      // console.log(removeElement)
-      // allInfo.forEach((ariaElem) => {
-      //   if(ariaElem.ariaLabel === removeElement) {
-      //     ariaElem.remove()
-      //   }
-
-      // })
-      // removeElement.remove()
+      // }
+      // console.log(elem.target.closest('.swiper-slide').ariaLabel)
+     let removeElement =  elem.target.closest('.swiper-slide').ariaLabel
+      allInfo.forEach((ariaElem) => {
+        if(ariaElem.ariaLabel === removeElement) {
+          ariaElem.remove()
+        }
+      })
 
     })
   })
 }
+if(fixedBtn) {
+  fixedBtn.forEach((e) => {
+    e.addEventListener('click', (elem) => {
+      allInfo.forEach((aria) => {
+        if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
 
+        $(aria.closest('.swiper-wrapper')).prepend($(aria))
+
+
+        }
+      })
+      
+    })
+  })
+ 
+}
 // catalog-item-list
 
 const serviceReminder = document.querySelector('.service-reminder');
@@ -31654,3 +31664,4 @@ if(serviceReminder) {
     });
   });
 }
+

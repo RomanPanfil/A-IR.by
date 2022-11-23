@@ -252,6 +252,15 @@
     .product-card-btn {
         flex:auto;
     }
+    .product-card-fixed {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: chocolate; 
+    }
     .product-card-remove {
         width: 20px;
         height: 20px;
