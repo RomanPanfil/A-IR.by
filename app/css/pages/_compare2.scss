@@ -55,11 +55,9 @@
                 }
         }
         &-main {
-            width: 70%;
-            // flex: 0 0 70%;
-            // max-width: 70%;
-            flex-grow: 1;
-            // padding-left: 20px;
+            flex: 0 0 calc(100% - 312px);
+            max-width: calc(100% - 312px);
+            
             @media(max-width:1024.99px) {
                 flex: 0 0 100%;
                 max-width: 100%;
@@ -323,7 +321,12 @@
 }
 .swiper-carousel-compare {
     padding:10px;
-   
+   .swiper-slide {
+    .product-card {
+        width: 312px ;
+
+    }
+   }
 }
 
 

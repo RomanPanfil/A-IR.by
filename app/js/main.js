@@ -2756,6 +2756,8 @@ catalogBtn.addEventListener('click', () => {
         menuLiHieght = menuLiHieght + e.clientHeight
       })
 
+      // min-высота правой колоник = 100вх - высота шапки - высотаЛого производителя - падинги
+
       if(menuLiHieght > 720) {
         $('.menu-desktop-ul').css('height', 'calc(var(--vh, 1vh) * 100)')
         $('.menu-desktop-second').css('max-height', '720px')
@@ -2833,10 +2835,7 @@ let carouselCompare = document.querySelector('.swiper-carousel-compare');
 
 
 let swiperCarouselCompare = new Swiper(".swiper-carousel-compare", {
-//   pagination: {
-//     el: `.swiper-pagination-${sliderIdentifier}`,
 
-// },
 navigation: {
   nextEl: `.compare-slider-next-carousel-compare_1`,
   prevEl: `.compare-slider-prev-carousel-compare_1`,
@@ -2861,33 +2860,58 @@ breakpoints: {
 // }
 });
 
-swiperCarouselCompare.forEach((swiperSlide) => {
-  swiperSlide.on('touchEnd',function(swiper, event){
-    // swiperSlide.slideTo(2)
-    slideToTouch = swiper.slides.
+// console.log(swiperCarouselCompare)
 
-    console.log(slideToTouch)
-    swiperCarouselCompare.forEach((e) => {
-      // e.activeIndex = swiperSlide.slideTo(slideToTouch)
-      // console.log(e.slideTo(3))
+if(carouselCompare) {
+  swiperCarouselCompare.forEach((swiperSlide) => {
+
+    swiperSlide.on('touchEnd',function(swiper, event){
+      
+      let activeSlide = swiper.activeIndex
+
+      console.log(event.x)
+      console.log(event)
+      // console.log(swiper)
+
+      if(event.x < 1000) {
+        setTimeout(() => {
+          swiperCarouselCompare.forEach((e) => {
+            e.slideTo(activeSlide + 1)
+          })
+        },0)
+      } else {
+        setTimeout(() => {  
+          swiperCarouselCompare.forEach((e) => {
+            e.slideTo(activeSlide - 1)
+          })
+        },0)
+      }
+  
+   
+      // swiperSlide.controller.control = swiper
+      // console.log(swiperSlide.controller.control)
+  
+  
+      
+      // console.log(swiperCarouselCompare)
+      // swiperSlide.slideTo(swiper.activeIndex)
+      // swiperSlide.slideTo(4)
+      // console.log(swiper.params)
+      // swiperSlide.activeIndex = swiper.activeIndex
+      // console.log( + " ---- все свайперы")
+      // console.log( + ' ---- таргет свайпер')
+      
+  
+      // swiperSlide.slideTo = swiper.slideTo($(this).data('slide'))
+      // console.log(swiper.slideTo($(this).data('slide')))
+      // swiperSlide.slideTo( $(this).data('slide') )
+      // swiperSlide.activeIndex = swiper.activeIndex
+      // console.log()
+      // console.log()
     })
-    // console.log(swiperCarouselCompare)
-    // swiperSlide.slideTo(swiper.activeIndex)
-    // swiperSlide.slideTo(4)
-    // console.log(swiper.params)
-    // swiperSlide.activeIndex = swiper.activeIndex
-    // console.log( + " ---- все свайперы")
-    // console.log( + ' ---- таргет свайпер')
-    
-
-    // swiperSlide.slideTo = swiper.slideTo($(this).data('slide'))
-    // console.log(swiper.slideTo($(this).data('slide')))
-    // swiperSlide.slideTo( $(this).data('slide') )
-    // swiperSlide.activeIndex = swiper.activeIndex
-    // console.log()
-    // console.log()
   })
-})
+}
+
 
   
 
@@ -3374,8 +3398,11 @@ mainWatalog = document.querySelector('.main-catalog-wrapper');
   
  
 // })
+mainSearchInput.addEventListener('focus', () => {
+// 
+})
+
 mainSearchInput.addEventListener('keyup', () => {
-  
 
   if(mainSearchInput.value !== '') {
     mainLogo.classList.add('main-logo-close')
@@ -3444,25 +3471,27 @@ $(".services-form").validate({
 
 
 
-
-
-ymaps.ready(function () {
-  var callMap = new ymaps.Map('callMap', {
-          center: [53.924723, 27.511615],
-          zoom: 12,
-          controls: [],
+let callMap = document.querySelector('#callMap')
+if(callMap) {
+  ymaps.ready(function () {
+    var callMap = new ymaps.Map('callMap', {
+            center: [53.924723, 27.511615],
+            zoom: 12,
+            controls: [],
+        }, {
+            searchControlProvider: 'yandex#search'
+        });  
+  
+        callMap.geoObjects
+        .add(new ymaps.Placemark([53.924723, 27.511615], {
+          balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
       }, {
-          searchControlProvider: 'yandex#search'
-      });  
+          preset: 'islands#dotIcon',
+          iconColor: '#E94336'
+      }))
+  });
+}
 
-      callMap.geoObjects
-      .add(new ymaps.Placemark([53.924723, 27.511615], {
-        balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
-    }, {
-        preset: 'islands#dotIcon',
-        iconColor: '#E94336'
-    }))
-});
 
 
 

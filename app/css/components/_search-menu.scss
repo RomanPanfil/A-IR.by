@@ -22,7 +22,7 @@
         padding: 24px 0px 40px 0px;
         // max-height: 70vh;
         height: calc(var(--vh, 1vh) * 70);
-
+        overflow-x: hidden;
     overflow-y: auto;
     }
     &-open {
