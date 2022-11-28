@@ -5,6 +5,7 @@
 }
 .compare {
     &-section {
+        width: 100%;
          @media(max-width:1024.99px) {
             max-width: 1320px;
             width: 100%;
@@ -57,7 +58,7 @@
         &-main {
             flex: 0 0 calc(100% - 312px);
             max-width: calc(100% - 312px);
-            
+
             @media(max-width:1024.99px) {
                 flex: 0 0 100%;
                 max-width: 100%;
@@ -322,6 +323,7 @@
 .swiper-carousel-compare {
     padding:10px;
    .swiper-slide {
+    // touch-action: none;
     .product-card {
         width: 312px ;
 

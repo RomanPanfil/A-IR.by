@@ -239,13 +239,14 @@
     &-card {
         height: auto;
         padding: 40px;
-         @media(max-width:1024.99px) {
-            flex: 0 0 97% !important;
-             max-width: 97% !important;
-        }
+        //  @media(max-width:1024.99px) {
+        //     flex: 0 0 97% !important;
+        //      max-width: 97% !important;
+        // }
          @media(max-width:576.99px) {
                 flex: 0 0 100% !important;
                 max-width: 100% !important;
+                padding: 24px 16px;
             }
         &-col-left {
             flex: 0 0 13%;
@@ -260,6 +261,11 @@
         }
         &-img {
             margin-bottom: 24px;
+             @media(max-width:576px) {
+                    display: flex;
+                    justify-content: space-between;
+                    
+                }
         }
         &-content {
             display: flex;
@@ -297,13 +303,26 @@
                 color: #00000080;
                 font-weight: 400;
                 margin-left: 16px;
-
+                 @media(max-width:576px) {
+                        display: none;
+                        @include fz(14);
+               
+                    }
+                &_mobile {
+                    display: none;
+                    color: #00000080;
+                    font-weight: 400;
+                    margin-left: 16px;
+                     @media(max-width:576px) {
+                            display: block;
+                        }
+                }
             }
             &-text {
                 @include fz(18);
                 font-weight: 600;
                 margin-bottom: 26px;
-                span {
+                a {
                     color: #1A66AE;
                 }
                  @media(max-width:576.99px) {

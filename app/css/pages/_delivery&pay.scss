@@ -84,6 +84,8 @@
             text-align: center;
              @media(max-width:576.99px) {
                     padding: 21px 10px;
+                    @include fz(22);
+                    
                 }
         }
         &-item {
@@ -171,14 +173,17 @@
         }
     }
     &-docs {
-        display: block;
+        position: relative;
+        display: flex;
         background: #F5F5F5;
         border-radius: 5px;
         padding: 21px 24px;
+        gap: 6px;
         &-img {
+            flex: 0 0 20px;
+            max-width: 20px;
             display: inline-block;
             vertical-align: middle;
-            margin-right: 6px;
         }
     }
     &-tabs {

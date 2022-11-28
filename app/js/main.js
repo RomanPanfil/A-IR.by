@@ -2538,6 +2538,7 @@ if (mapContact1) {
         iconContentLayout: MyIconContentLayout1
     });
 
+      mapContact1.behaviors.disable('scrollZoom');
       mapContact1.geoObjects.add(myPlacemarkWithContent);
       mapContact1.geoObjects.add(myPlacemarkWithContent1);
 
@@ -2589,6 +2590,7 @@ if (mapContact1) {
     });
 
       //вторая карта
+      mapContact2.behaviors.disable('scrollZoom');
       mapContact2.geoObjects.add(myPlacemarkWithContent);
       mapContact2.geoObjects.add(myPlacemarkWithContent1);
   }
@@ -2841,7 +2843,7 @@ navigation: {
   prevEl: `.compare-slider-prev-carousel-compare_1`,
 },
 slidesPerView: 2,
-// allowTouchMove: true,
+allowTouchMove: false,
 // slidesPerGroup: 99,
 spaceBetween: 24,
 breakpoints: {
@@ -2860,57 +2862,112 @@ breakpoints: {
 // }
 });
 
-// console.log(swiperCarouselCompare)
+let posXStart = 0;
+let posXEnd = 0;
+let posYStart = 0;
+let posYEnd = 0
 
-if(carouselCompare) {
+
+// swiper-carousel-compare
+let deliverypayTouch = document.querySelector('.deliverypay-content')
+
+carouselCompare.addEventListener('touchstart', ev => {
+    // ev.preventDefault();
+    ev.stopImmediatePropagation();
+
+
+    posXStart = ev.touches[0].clientX;
+    posYStart = ev.touches[0].clientY
+
+
+}, { passive: true });
+
+carouselCompare.addEventListener('touchend', ev => {
+  // ev.preventDefault();
+  ev.stopImmediatePropagation();
+  posXEnd = ev.changedTouches[0].clientX
+  posYEnd = ev.changedTouches[0].clientY
+
+if(posYStart - posYEnd < 20) {
   swiperCarouselCompare.forEach((swiperSlide) => {
 
-    swiperSlide.on('touchEnd',function(swiper, event){
-      
-      let activeSlide = swiper.activeIndex
-
-      console.log(event.x)
-      console.log(event)
-      // console.log(swiper)
-
-      if(event.x < 1000) {
-        setTimeout(() => {
-          swiperCarouselCompare.forEach((e) => {
-            e.slideTo(activeSlide + 1)
-          })
-        },0)
-      } else {
-        setTimeout(() => {  
-          swiperCarouselCompare.forEach((e) => {
-            e.slideTo(activeSlide - 1)
-          })
-        },0)
-      }
-  
-   
-      // swiperSlide.controller.control = swiper
-      // console.log(swiperSlide.controller.control)
-  
-  
-      
-      // console.log(swiperCarouselCompare)
-      // swiperSlide.slideTo(swiper.activeIndex)
-      // swiperSlide.slideTo(4)
-      // console.log(swiper.params)
-      // swiperSlide.activeIndex = swiper.activeIndex
-      // console.log( + " ---- все свайперы")
-      // console.log( + ' ---- таргет свайпер')
-      
-  
-      // swiperSlide.slideTo = swiper.slideTo($(this).data('slide'))
-      // console.log(swiper.slideTo($(this).data('slide')))
-      // swiperSlide.slideTo( $(this).data('slide') )
-      // swiperSlide.activeIndex = swiper.activeIndex
-      // console.log()
-      // console.log()
-    })
+    let activeSlide = swiperSlide.activeIndex
+    if(posXStart - posXEnd > 0) {
+      swiperSlide.slideTo(activeSlide + 1)
+    } else {
+      swiperSlide.slideTo(activeSlide - 1)
+    }
   })
 }
+  
+}, { passive: true });
+
+
+
+// if(carouselCompare) {
+//   swiperCarouselCompare.forEach((swiperSlide) => {
+//     let activeSlide = swiperSlide.activeIndex
+//     if(activeSlide < 200) {
+//       setTimeout(() => {
+//         swiperCarouselCompare.forEach((e) => {
+//           e.slideTo(activeSlide + 1)
+//         })
+//       },0)
+//     } else {
+//       setTimeout(() => {  
+//         swiperCarouselCompare.forEach((e) => {
+//           e.slideTo(activeSlide - 1)
+//         })
+//       },0)
+//     }
+//     // swiperSlide.on('touchEnd',function(swiper, event){
+      
+//     //   let activeSlide = swiper.activeIndex
+
+//     //   // console.log(event.x)
+//     //   // console.log(event)
+//     //   // console.log(swiper)
+
+     
+
+//     //   if(event.x < 500) {
+//     //     setTimeout(() => {
+//     //       swiperCarouselCompare.forEach((e) => {
+//     //         e.slideTo(activeSlide + 1)
+//     //       })
+//     //     },0)
+//     //   } else {
+//     //     setTimeout(() => {  
+//     //       swiperCarouselCompare.forEach((e) => {
+//     //         e.slideTo(activeSlide - 1)
+//     //       })
+//     //     },0)
+//     //   }
+  
+   
+//     //   // swiperSlide.controller.control = swiper
+//     //   // console.log(swiperSlide.controller.control)
+  
+  
+      
+//     //   // console.log(swiperCarouselCompare)
+//     //   // swiperSlide.slideTo(swiper.activeIndex)
+//     //   // swiperSlide.slideTo(4)
+//     //   // console.log(swiper.params)
+//     //   // swiperSlide.activeIndex = swiper.activeIndex
+//     //   // console.log( + " ---- все свайперы")
+//     //   // console.log( + ' ---- таргет свайпер')
+      
+  
+//     //   // swiperSlide.slideTo = swiper.slideTo($(this).data('slide'))
+//     //   // console.log(swiper.slideTo($(this).data('slide')))
+//     //   // swiperSlide.slideTo( $(this).data('slide') )
+//     //   // swiperSlide.activeIndex = swiper.activeIndex
+//     //   // console.log()
+//     //   // console.log()
+//     // })
+//   })
+// }
 
 
   
@@ -3488,7 +3545,8 @@ if(callMap) {
       }, {
           preset: 'islands#dotIcon',
           iconColor: '#E94336'
-      }))
+      }));
+      callMap.behaviors.disable('scrollZoom');
   });
 }
 
@@ -3509,3 +3567,5 @@ mobMenuSearch.addEventListener('click', () => {
    } 
 
 })
+
+
