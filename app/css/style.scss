@@ -31,6 +31,13 @@ body {
   padding: 0;
   background-color: #ffffff;
 }
+.body-hidden {
+  overflow: hidden;
+  &-search {
+  overflow: hidden;
+
+  }
+}
 
 #wrapper {
   display: flex;
@@ -85,6 +92,10 @@ body {
 @import "./components/cardSticky";
 @import "./components/list-li";
 @import "./components/compare";
+@import "./components/catalog-menu";
+@import "./components/search-menu";
+
+
 // Pages
 @import "./pages/pages";
 @import "./pages/reviews-page";
@@ -96,6 +107,7 @@ body {
 @import "./pages/repaircmp";
 @import "./pages/service";
 @import "./pages/entries";
+@import "./pages/service-reminder";
 
 
 
@@ -127,11 +139,5 @@ body {
 @import "./pages/complite";
 @import "./pages/producentpg";
 @import "./pages/productdone";
-
-
-
-
-
-
-
-
+@import "./pages/compare";
+@import "./pages/compare2";

@@ -1,4 +1,13 @@
 .main {
+  &-open-catalog {
+   box-shadow: 0 0 8px rgb(0 0 0 / 10%);
+    position: relative;
+    z-index: 100;
+    padding-bottom: 0px !important;
+     @media(max-width:1024.99px) {
+            box-shadow: none;
+        }
+  }
   &-banners {
     margin-bottom: 40px;
     
@@ -597,6 +606,7 @@
     ul li:last-child {
       border-bottom: none !important;
     }
+   
    }
 
    ul li:last-child{
@@ -613,7 +623,9 @@
     margin: 0 -15px 55px -15px;
    } 
   }
-
+.main-list-link.main-list-link-more:first-child {
+  border-top: none;
+}
   &-about {
     display: flex;
     position: relative;

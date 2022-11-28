@@ -13,6 +13,7 @@
             flex-direction: column;
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
+            // height: 120px;
             .producers-brands-item-title {
                 display: inline-block;
             }
@@ -22,13 +23,12 @@
             position: absolute;
             z-index: 99;
             width: 100%;
-            top: 100%;
+            bottom: 0;
             left: 0;
             padding: 9px 10px;
             text-align: center;
             background-color: #fff;
             border-top: 1px solid #F5F5F5;
-            box-shadow: 0 14px 10px rgb(0 0 0 / 8%);
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
             @include fz(14);

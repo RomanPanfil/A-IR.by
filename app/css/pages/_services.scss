@@ -1,4 +1,5 @@
 .services {
+    
     &-block {
         margin-bottom: 86px;
          @media(max-width:1024.99px) {
@@ -388,3 +389,13 @@
 .ui-field-hm {
     height: 100%;
 }
+
+
+.services-form {
+    #customCheckbox-error {
+        position: absolute;
+        top: 100%;
+        left: 24px;
+    }
+}
+

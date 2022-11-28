@@ -680,6 +680,18 @@
         margin-bottom: 56px;
       }
     }
+    &-wrapper {
+      position: relative;
+      padding-bottom: 37px;
+      border-radius: 8px;
+      overflow: hidden;
+      &:hover {
+        box-shadow: 0 0 14px rgb(0 0 0 / 8%);
+        .producers-brands-item-title {
+          display: block;
+        }
+      }
+    }
     &-item {
       display: flex;
       justify-content: center;

@@ -1,17 +1,23 @@
-.deliveryPay {
+.deliverypay {
+    position: relative;
+    margin-bottom: 88px;
+     @media(max-width:1024.99px) {
+            margin-bottom: 50px;
+        }
     #map {
         width: 100%; 
         height:500px; 
         padding: 0;
         margin: 0;
     }
-    #deliveryPayMap {
+    #deliverypayMap {
         width: 100%; 
         min-height:100%; 
         padding: 0;
         margin: 0;
     }
-    .deliveryPay-map {
+
+    .deliverypay-map {
         width: 100%; 
         height:500px; 
         padding: 0;
@@ -48,6 +54,9 @@
                 margin-bottom: 56px;
 
             }
+            @media(max-width:768.99px) {
+                gap: 24px;
+            }
            
     }
     &-items {
@@ -59,6 +68,9 @@
                 max-width: 100%;
                 flex: 0 0 100%;
             }
+             @media(max-width:768.99px) {
+                    margin-bottom: 0;
+                }
         &-matchmedia {
              @media(max-width:1024.99px) {
                  margin-top: 24px;   
@@ -70,6 +82,9 @@
             font-weight: 700;
             @include fz(28);
             text-align: center;
+             @media(max-width:576.99px) {
+                    padding: 21px 10px;
+                }
         }
         &-item {
             padding: 48px 32px;
@@ -78,6 +93,9 @@
                 border-bottom: none;
              
             }
+             @media(max-width:576.99px) {
+                    padding: 40px 24px;
+                }
             &-icon {
                 margin-bottom: 25px;
                 height: 66px;
@@ -171,11 +189,21 @@
         @media(max-width:1024.99px) {
                 padding: 32px;
         }
+         @media(max-width:576.99px) {
+                padding: 15px;
+                margin: 0px -15px;
+                margin-bottom: 50px;
+            }
         .sign-popup-tabs {
             @media(max-width:1024.99px) {
                 flex-wrap: nowrap; 
                 overflow-x: auto;  
                 gap: 10px;   
+                padding-right: 15px;
+                 margin-right: -15px;
+                &::-webkit-scrollbar {
+                    width: 0px;
+                  }
             }
         }
         .sign-popup-tabs li {
@@ -227,12 +255,13 @@
 
              @media(max-width:1024.99px) {
                     height: auto;
-                    padding: 17px 12px;
+                    padding: 16px 12px;
                     border: 1px solid #D3D3D3;
                     border-radius: 5px;
                     margin-right: 10px;
                     &.active {
-                    border: 2px solid #2A4455;
+                    // border: 2px solid #2A4455;
+                    box-shadow: inset 0px 0px 0px 2px;
                         &::after {
                             display: none;
                         }
@@ -301,7 +330,7 @@
         }
     }
     &-erip {
-        margin-bottom: 88px;
+        // margin-bottom: 88px;
         &-text {
             margin-bottom: 22px;
         }

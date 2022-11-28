@@ -52,28 +52,28 @@ const FARBA = {
 }
 
 $.fn.Tabs = function() {
-	var selector = this;
+  var selector = this;
 
-	this.each(function() {
-		var obj = $(this);
-		$(obj.attr('href')).hide();
-		$(obj).click(function() {
-			$(selector).removeClass('selected');
+  this.each(function() {
+    var obj = $(this);
+    $(obj.attr('href')).hide();
+    $(obj).click(function() {
+      $(selector).removeClass('selected');
 
-			$(selector).each(function(i, element) {
-				$($(element).attr('href')).hide();
-			});
+      $(selector).each(function(i, element) {
+        $($(element).attr('href')).hide();
+      });
 
-			$(this).addClass('selected');
-			$($(this).attr('href')).fadeIn();
-			return false;
-		});
-	});
+      $(this).addClass('selected');
+      $($(this).attr('href')).fadeIn();
+      return false;
+    });
+  });
 
-	$(this).show();
-	$(this).first().click();
-	if(location.hash!='' && $('a[href="' + location.hash + '"]').length)
-		$('a[href="' + location.hash + '"]').click();
+  $(this).show();
+  $(this).first().click();
+  if(location.hash!='' && $('a[href="' + location.hash + '"]').length)
+    $('a[href="' + location.hash + '"]').click();
 };
 
 
@@ -122,14 +122,14 @@ $.fn.Tabs = function() {
       $('.card-more-mobile').prepend($('#tabs'))
       $('.card-more-mobile').after($('.card-contacts'))
       $('.col-card-right').append($('.card-services'))
-      $(".deliveryPay-items-matchmedia").appendTo($(".deliveryPay-mathmedia"));
+      $(".deliverypay-items-matchmedia").appendTo($(".deliverypay-mathmedia"));
 
     } else {
       //экран более 1024
       $('.card-more-info').prepend($('#tabs'))
       $('.card-features').after($('.card-contacts'))
       $('.card-txt').append($('.card-services'))
-      $('.deliveryPay-wrapper-matchmedia').append($('.deliveryPay-items-matchmedia'))
+      $('.deliverypay-wrapper-matchmedia').append($('.deliverypay-items-matchmedia'))
 
     }
   }
@@ -348,7 +348,7 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
   });
 
 
-	document.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
     const withinBoundaries = e.composedPath().includes(numbers);
     const isArrow = e.composedPath().includes(document.querySelector(".main-contacts-tel-arrow"));
     const isMob = e.composedPath().includes(document.querySelector(".mob-menu-phone"));
@@ -658,7 +658,7 @@ if (document.querySelector(".making-form") ) {
   window.addEventListener("load", flipOrSticky);
 }
 
-let deliveryPay = document.querySelector('.ui-rightbar')
+let deliverypay = document.querySelector('.ui-rightbar')
 if (document.querySelector('.ui-rightbar')) {
   const stickyBlock = document.querySelector('.ui-rightbar')
   const card = document.querySelector('#card-breackpoint')
@@ -851,7 +851,7 @@ if (document.querySelector('.ui-rightbar')) {
       $('.catalog-reviews-mobile .ui-scroller').prepend(clone)
       native = true
     }
-   
+
   }
 })();
 
@@ -2376,7 +2376,7 @@ new Swiper(".main-banners-slider", {
   //         }, {
   //             searchControlProvider: 'yandex#search'
   //         });
-  
+
   //        var myPolygon = new ymaps.Polygon([
   //         // Указываем координаты вершин многоугольника.
   //         // Координаты вершин внешнего контура.
@@ -2438,50 +2438,50 @@ new Swiper(".main-banners-slider", {
 
 
 
-  
-  
+
+
 //! PART 3 JAVA SCRIPT CODE
 
 //карта на странице delivery&pay
-let deliveryPayMap = document.querySelector('.deliveryPayMap')
-if(deliveryPayMap) {
+let deliverypayMap = document.querySelector('.deliverypayMap')
+if(deliverypayMap) {
 
   const deliveryCity = [
     { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
     { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
     { coord: [ 34.052235, -118.243683 ], title: 'Другие города', content: 'Другие города' },
   ];
-  
+
   ymaps.ready(function() {
-    const map = new ymaps.Map('deliveryPayMap', {
+    const map = new ymaps.Map('deliverypayMap', {
       zoom: 9,
       center: deliveryCity[0].coord,
       controls: [],
     });
-  
+
     const marker = new ymaps.Placemark(deliveryCity[0].coord, {
       balloonContent: balloonContent(deliveryCity[0]),
     });
     map.geoObjects.add(marker);
-  
-  
+
+
     document.querySelectorAll('#citylink li a').forEach((n, i) => {
       n.addEventListener('click', onClick.bind(n, deliveryCity[i]));
     });
-  
-  
+
+
     function onClick(item) {
       map.setCenter(item.coord);
       marker.geometry.setCoordinates(item.coord);
       marker.properties.set('balloonContent', balloonContent(item));
     }
-  
+
     function balloonContent(item) {
       return `<b>${item.content}</b>`;
     }
 
 
-   
+
   });
 }
 
@@ -2491,7 +2491,7 @@ let mapContact2 = document.getElementById('mapContact2')
 if (mapContact1) {
   ymaps.ready(init);
   ymaps.ready(init1);
-  function init(){ 
+  function init(){
     var mapContact1 = new ymaps.Map("mapContact1", {
         center: [53.834601, 28.994249],
         zoom: 8,
@@ -2542,7 +2542,7 @@ if (mapContact1) {
       mapContact1.geoObjects.add(myPlacemarkWithContent1);
 
   }
-  function init1(){ 
+  function init1(){
     var mapContact2 = new ymaps.Map("mapContact2", {
       center: [53.834601, 28.994249],
       zoom: 8,
@@ -2603,13 +2603,13 @@ if(uiSearchSettings) {
   $('.ui-search-settings').on('click', () => {
     $('.ui-search-settings-text-content').toggleClass('ui-search-settings-open')
     $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
-    
+
   })
   $('.ressearch-settings-filters').on('click', () => {
     $('.ui-search-settings-text-content').toggleClass('ui-search-settings-open')
     $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
   })
-  
+
 }
 
 
@@ -2640,13 +2640,10 @@ if(complite) {
   const buildSwiperSlider = sliderElm => {
     const sliderIdentifier = sliderElm.dataset.id;
     return new Swiper(`#${sliderElm.id}`, {
-        // navigation: {
-        //     nextEl: `.swiper-button-next-${sliderIdentifier}`,
-        //     prevEl: `.swiper-button-prev-${sliderIdentifier}`
-        // },
+
         pagination: {
             el: `.swiper-pagination-${sliderIdentifier}`,
-            // type: 'progressbar',
+
         },
     });
 }
@@ -2668,12 +2665,847 @@ if(cardReviewsMediaContainer) {
     function changes(screen) {
       if(screen.matches) {
         $(".card-reviews").appendTo($(".card-reviews-media-container"));
-  
+
       } else {
         $('.card-reviews').appendTo($('.catalog-filters'))
-  
+
       }
     }
   })();
 }
 
+//header mobile
+
+  (function() {
+    if(matchMedia) {
+      const screen = window.matchMedia('(max-width:1024.99px)');
+      screen.addListener(changes);
+      changes(screen);
+    }
+    function changes(screen) {
+      if(screen.matches) {
+        $(".mobile-card").appendTo($(".mob-menu"));
+        $(".main-catalog").appendTo($(".mob-menu"));
+
+
+      } else {
+        $(".mobile-card").appendTo($(".main-catalog-wrapper"));
+        $(".main-catalog").appendTo($(".main-catalog-wrapper"));
+      }
+    }
+  })();
+
+
+//Открываем каталог
+let catalogBtn = document.querySelector('.main-catalog'),
+headerHeightC = document.querySelector('.header').clientHeight,
+navWrapperC = document.querySelector('.nav-wrapper').clientHeight,
+changeIcon = document.querySelector('.main-toggler'),
+mainSearchForm = document.querySelector('.main-search-form'),
+// catalogItemList = document.querySelectorAll('.catalog-item-list'),
+mainOpenCatalog = document.querySelector('.main'),
+navWrapperOpenCatalog = document.querySelector('.nav-wrapper'),
+bodyOpenCatalog = document.querySelector('body'),
+
+containerMenu = document.querySelector('.container-menu');
+
+let mobMenuImg = document.querySelector('.mob-menu-img')
+let enterMobile = document.querySelector('.enter-mobile')
+//  let mobMenuImg = document.getElementsByClassName('mob-menu-img')
+
+catalogBtn.addEventListener('click', () => {
+  // container-menu container-menu-open
+      if(containerMenu.classList.contains('container-menu-open') == false) {
+        mainSearchForm.classList.add('main-search-form-open');
+        mainOpenCatalog.classList.add('main-open-catalog');
+        
+       } else {
+        mainSearchForm.classList.remove('main-search-form-open');
+          mainOpenCatalog.classList.remove('main-open-catalog');
+
+       }
+       searchMenu.classList.remove('search-menu-open')
+
+      changeIcon.classList.toggle('main-toggler-cross');
+      containerMenu.classList.toggle('container-menu-open');
+
+
+      navWrapperOpenCatalog.classList.toggle('nav-wrapper-open-catalog')
+      bodyOpenCatalog.classList.toggle('body-hidden')
+
+      mobMenuImg.classList.remove('mob-menu-img-open')
+      enterMobile.classList.remove('enter-mobile-open')
+      if(matchMedia) {
+        const screen = window.matchMedia('(max-width:1024.99px)');
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if(screen.matches) {
+          containerMenu.style.top = headerHeightC - navWrapperC + mainSearchForm.clientHeight + 'px';
+        } else {
+          containerMenu.style.top = headerHeightC - navWrapperC + 'px';
+
+        }
+      }
+
+//проверяем кол-во и высоту
+      let menuLi = document.querySelector('.menu-desktop').children
+      let menuLiHieght = 0;
+      Array.from(menuLi).forEach((e) => {
+        menuLiHieght = menuLiHieght + e.clientHeight
+      })
+
+      // min-высота правой колоник = 100вх - высота шапки - высотаЛого производителя - падинги
+
+      if(menuLiHieght > 720) {
+        $('.menu-desktop-ul').css('height', 'calc(var(--vh, 1vh) * 100)')
+        $('.menu-desktop-second').css('max-height', '720px')
+      }
+
+})
+
+
+mobMenuImg.addEventListener('click', () => {
+  mobMenuImg.classList.toggle('mob-menu-img-open')
+  enterMobile.classList.toggle('enter-mobile-open')
+  
+  // hide menu
+  changeIcon.classList.remove('main-toggler-cross')
+  mainSearchForm.classList.remove('main-search-form-open')
+  containerMenu.classList.remove('container-menu-open')
+  mainOpenCatalog.classList.remove('main-open-catalog')
+})
+//Высота при скроле шапки
+window.addEventListener('scroll', () => {
+  containerMenu.style.top = mainOpenCatalog.clientHeight + 'px'
+})
+
+
+
+//COMPARE.html
+// $(function () {
+//   $(".slider-offer-left").click(function (event) {
+//     event.preventDefault();
+//     $(".features").animate(
+//       {
+//         scrollLeft: "-=278px",
+//       },
+//       "slow"
+//     );
+//   });
+
+//   $(".slider-offer-right").click(function (event) {
+//     event.preventDefault();
+//     $(".features").animate(
+//       {
+//         scrollLeft: "+=278px",
+//       },
+//       "slow"
+//     );
+//   });
+// });
+
+//   // clone table
+//   const tableclone = $(".features")
+//     .wrap('<div class="features-clone" />')
+//     .clone();
+//   $(".features-wrap").append(tableclone);
+
+
+// // скрываем элементы
+
+// console.log($('.features-title-arrow').parents('.tbody').children('.tbody-list'))
+
+// let listOfInfo = $('.features-title-arrow').parents('.tbody').children('.tbody-list')
+
+
+
+
+// $('.features-title-arrow').click(function (e) {
+
+// $(e).parents('.tbody').children('.tbody-list').toggleClass('tbody-list-hide')
+// $(this).parents('.tbody').children('.tbody-list').toggleClass('tbody-list-hide')
+// })
+
+// carousel compare.html
+
+let carouselCompare = document.querySelector('.swiper-carousel-compare');
+
+
+
+let swiperCarouselCompare = new Swiper(".swiper-carousel-compare", {
+
+navigation: {
+  nextEl: `.compare-slider-next-carousel-compare_1`,
+  prevEl: `.compare-slider-prev-carousel-compare_1`,
+},
+slidesPerView: 2,
+// allowTouchMove: true,
+// slidesPerGroup: 99,
+spaceBetween: 24,
+breakpoints: {
+  1024: {
+    slidesPerView: 3,
+  },
+
+},
+// on: {
+//   touchMove: function (swiper, event) {
+//     // console.log(event)
+//     // console.log(swiper)
+//     // console.log(event.x)
+//     // event.x =
+//   }
+// }
+});
+
+// console.log(swiperCarouselCompare)
+
+if(carouselCompare) {
+  swiperCarouselCompare.forEach((swiperSlide) => {
+
+    swiperSlide.on('touchEnd',function(swiper, event){
+      
+      let activeSlide = swiper.activeIndex
+
+      console.log(event.x)
+      console.log(event)
+      // console.log(swiper)
+
+      if(event.x < 1000) {
+        setTimeout(() => {
+          swiperCarouselCompare.forEach((e) => {
+            e.slideTo(activeSlide + 1)
+          })
+        },0)
+      } else {
+        setTimeout(() => {  
+          swiperCarouselCompare.forEach((e) => {
+            e.slideTo(activeSlide - 1)
+          })
+        },0)
+      }
+  
+   
+      // swiperSlide.controller.control = swiper
+      // console.log(swiperSlide.controller.control)
+  
+  
+      
+      // console.log(swiperCarouselCompare)
+      // swiperSlide.slideTo(swiper.activeIndex)
+      // swiperSlide.slideTo(4)
+      // console.log(swiper.params)
+      // swiperSlide.activeIndex = swiper.activeIndex
+      // console.log( + " ---- все свайперы")
+      // console.log( + ' ---- таргет свайпер')
+      
+  
+      // swiperSlide.slideTo = swiper.slideTo($(this).data('slide'))
+      // console.log(swiper.slideTo($(this).data('slide')))
+      // swiperSlide.slideTo( $(this).data('slide') )
+      // swiperSlide.activeIndex = swiper.activeIndex
+      // console.log()
+      // console.log()
+    })
+  })
+}
+
+
+  
+
+//touchMove
+// if(carouselCompare) {
+//   const buildSwiperSlider = sliderElm => {
+//     const sliderIdentifier = sliderElm.dataset.id;
+//     return new Swiper(`#${sliderElm.id}`, {
+
+//         pagination: {
+//             el: `.swiper-pagination-${sliderIdentifier}`,
+
+//         },
+//         navigation: {
+//           nextEl: `.compare-slider-next-${sliderIdentifier}`,
+//           prevEl: `.compare-slider-prev-${sliderIdentifier}`,
+//         },
+//         slidesPerView: 2,
+//         allowTouchMove: true,
+//         // slidesPerGroup: 99,
+//         spaceBetween: 24,
+//         breakpoints: {
+//           1024: {
+//             slidesPerView: 3,
+//           },
+
+//         },
+//         on: {
+//           touchMove: function (swiper, event) {
+//             // console.log(event)
+//             // console.log(swiper)
+//             // console.log(event.x)
+//             // event.x =
+//           }
+//         }
+//     });
+// }
+// const allSliders = document.querySelectorAll('.swiper');
+// allSliders.forEach(slider => buildSwiperSlider(slider));
+// }
+
+let compareSection = document.querySelectorAll('.compare-table-section-head')
+
+if(compareSection) {
+  compareSection.forEach((e) => {
+    e.addEventListener('click', (elem) => {
+      let clickElem = elem.target.closest('.compare-table-section')
+      let closeElem =  clickElem.querySelector('.compare-table-section-body')
+      let closeIcon =  clickElem.querySelector('.compare-table-section-head_arrow')
+
+      closeElem.classList.toggle('compare-table-section-body_close')
+      closeIcon.classList.toggle('compare-table-section-head_arrow_close')
+    })
+  })
+}
+
+
+
+//compary-body mobile
+(function() {
+  if(matchMedia) {
+    const screen = window.matchMedia('(max-width:1024.99px)');
+    screen.addListener(changes);
+    changes(screen);
+  }
+  function changes(screen) {
+    if(screen.matches) {
+      $(".compare-btn-clear").appendTo($(".compare-grid-aside-container"));
+    } else {
+      $(".compare-btn-clear").appendTo($(".compare-aside-clear"));
+    }
+  }
+})();
+
+
+
+
+// удаляем элементы по клику на крестик
+
+let targetElment = document.querySelectorAll('.product-card'),
+    removeBtn = document.querySelectorAll('.product-card-remove'),
+    allSliders = document.querySelectorAll('.swiper-carousel-compare'),
+    fixedBtn = document.querySelectorAll('.product-card-fixed'),
+    allInfo = document.querySelectorAll('.swiper-slide');
+if (removeBtn) {
+  removeBtn.forEach((e) => {
+    e.addEventListener('click', (elem) => {
+      // if(e === elem.target) {
+      //   allSliders.forEach((slider) => {
+      //     slider.querySelectorAll('.swiper-slide').forEach((elemIndex, i) => {
+            
+      //       swiperCarouselCompare.forEach((swiper) => {
+      //         if(elemIndex == elem.target.closest('.swiper-slide')) {
+      //           swiper.removeSlide(i)
+                
+      //         }
+      //       })
+
+
+      //     })
+      //   })
+
+      // }
+      // console.log(elem.target.closest('.swiper-slide').ariaLabel)
+     let removeElement =  elem.target.closest('.swiper-slide').ariaLabel
+      allInfo.forEach((ariaElem) => {
+        if(ariaElem.ariaLabel === removeElement) {
+          ariaElem.remove()
+        }
+      })
+
+    })
+  })
+}
+if(fixedBtn) {
+  fixedBtn.forEach((e) => {
+    e.addEventListener('click', (elem) => {
+      function fixElement() {
+        elem.target.closest('.product-card-fixed').classList.toggle('product-card-fixed-fix')
+      }
+      function removeFixElem() {
+        elem.target.closest('.product-card-fixed').classList.remove('product-card-fixed-fix')      
+      }
+
+      
+      let productFixed = document.querySelectorAll('.product-card-fixed-fix')
+      if(productFixed.length < 3) {
+        fixElement()
+        allInfo.forEach((aria) => {
+          if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
+
+          $(aria.closest('.swiper-wrapper')).prepend($(aria))
+  
+            swiperCarouselCompare.forEach((swiperSlide) => {
+              swiperSlide.slideTo(0)
+            })
+          }
+        })
+      } else {
+        removeFixElem()
+      }
+     
+      
+    })
+  })
+ 
+}
+// catalog-item-list
+
+const serviceReminder = document.querySelector('.service-reminder');
+
+if(serviceReminder) {
+  const txtHeadline = document.querySelector('.sign-company-headline');
+  const txtSteps = document.querySelector('.sign-company-steps span');
+  const firstStep = document.querySelector('.sign-company-first');
+  const secondStep = document.querySelector('.sign-company-second');
+  const progressBar = document.querySelector('.progress-bar');
+  const btnBackStep = document.querySelector('.reminder-btn')
+
+  btnBackStep.addEventListener('click', () => {
+    txtHeadline.textContent = 'Об оборудовании';
+    txtSteps.textContent = '1';
+
+    firstStep.style.display = 'block';
+    secondStep.style.display = 'none';
+    progressBar.style.width = '50%';
+  })
+
+  // validate form
+  $(".sign-sompany-first-form").validate({
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      if(element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
+    },
+
+    rules: {
+      type: {
+        required:true,
+      },
+      num: {
+        required:true,
+        number: true,
+      },
+      date: {
+        required: true,
+      },
+      days: {
+        required: true,
+      },
+      hours: {
+        required: true,
+      },
+    },
+
+    highlight: function(element, errorClass, validClass) {
+      $(element).addClass(errorClass).removeClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .addClass(errorClass).removeClass(validClass);
+    },
+
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).removeClass(errorClass).addClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .removeClass(errorClass).addClass(validClass);
+    },
+
+    errorPlacement: function (error, element) {
+      if (element.attr("name") == "customCheckbox") {
+        error.appendTo(".form-cell-field-send");
+      } else {
+        error.insertAfter(element);
+      }
+
+      if (element.hasClass('catalog-settings-select')) {
+        element.closest('.jq-selectbox').after(error);
+      }
+      if (element.hasClass('ui-checkbox-input')) {
+        element.closest('.ui-checkbox-body').after(error);
+      }
+    },
+
+
+    submitHandler: function(form) {
+      txtHeadline.textContent = 'О получателе';
+      txtSteps.textContent = '2';
+
+      firstStep.style.display = 'none';
+      secondStep.style.display = 'block';
+      progressBar.style.width = '100%';
+
+      return false;
+    },
+
+    messages: {
+      type: {
+        required:"Введите данные",
+      },
+      num: {
+        required:"Введите данные",
+        number:"Введите данные",
+      },
+      days: {
+        required:"Введите данные",
+      },
+      hours: {
+        required:"Введите данные",
+      },
+    },
+  });
+
+  $(".sign-sompany-second-form").validate({
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      if(element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
+    },
+
+    rules: {
+      name: {
+        required: true,
+        lettersonly: true,
+      },
+      phone: {
+        required: true,
+        minlength: 19,
+      },
+    },
+
+    highlight: function(element, errorClass, validClass) {
+      $(element).addClass(errorClass).removeClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .addClass(errorClass).removeClass(validClass);
+    },
+
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).removeClass(errorClass).addClass(validClass);
+      $(element).closest('.ui-field').find('.popup-icon')
+        .removeClass(errorClass).addClass(validClass);
+    },
+
+    messages: {
+      name: {
+        required: "Введите ФИО",
+        lettersonly: "Введите корректные данные",
+      },
+      phone: {
+        required: "Введите данные",
+        minlength: "Введите полный номер",
+      },
+    },
+  });
+
+  jQuery.validator.addMethod(
+    "lettersonly",
+    function (value, element) {
+      return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+    },
+    "Incorrect format"
+  );
+
+  jQuery.validator.addMethod(
+    "emailErr",
+    function (value, element) {
+      if(/123@gmail.com/.test(value))  {
+        return false;
+      } else {
+          return true
+      }
+    },
+    "Incorrect format"
+  );
+
+  var phoneMask = IMask(
+    document.getElementById('phone'), {
+      mask: '+{375} (00) 000 00 00'
+  });
+
+  // datetimepicker
+   FARBA.lazyLibraryLoad("https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css", () => {
+
+    $( document ).ready(function() {
+      let flag = false;
+        $("select").styler();
+
+        $('#datetimepicker').datetimepicker({
+          // value:'12.03.2013',
+          format:'d.m.Y',
+          timepicker: false,
+          // opened: true,
+          closeOnDateSelect:true,
+          lang: 'ru',
+          yearStart: 1940,
+          yearEnd: new Date().getFullYear(),
+          dayOfWeekStart: 1,
+          onGenerate: function() {
+            if(!flag) {
+              let blockOfYears = document.querySelector('.xdsoft_yearselect');
+              let btnYears = document.querySelector('.xdsoft_label.xdsoft_year');
+              let control = document.querySelector('.xdsoft_monthpicker')
+              let blockScroll = blockOfYears.childNodes[0];
+              let scroll = 30 * 9;
+
+              blockScroll.classList.add('blockYears')
+
+              let arrowUp = document.createElement('div');
+              let arrowDown = document.createElement('div');
+
+              arrowUp.classList.add('arrowUp');
+              arrowDown.classList.add('arrowDown');
+
+              blockOfYears.appendChild(arrowUp);
+              blockOfYears.appendChild(arrowDown);
+
+
+              control.addEventListener('click', (e) => {
+                if(e.target.classList[1] === 'xdsoft_year') {
+                  let valueMargin = blockScroll.style.marginTop;
+                  let marginGet = valueMargin.split('px')[0];
+                  let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
+                  let numCurrentYear = +currentYearElement.textContent
+
+                  if(numCurrentYear === 2022) {
+                    blockScroll.style.marginTop = '-2242px'
+                  } else if (numCurrentYear === 1940) {
+                    blockScroll.style.marginTop = '0px'
+                  } else {
+                    blockScroll.style.marginTop = +marginGet + 40 + 'px'
+                  }
+                }
+              })
+
+              arrowUp.addEventListener('click', () => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                if(+marginGet < 0) {
+                  blockScroll.style.marginTop = +marginGet + scroll + 'px';
+
+                  if(+marginGet < -271) {
+                    blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '0px'
+                  }
+                } else {
+                  blockScroll.style.marginTop = '0px'
+                }
+              })
+
+              arrowDown.addEventListener('click', () => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                blockScroll.style.marginTop = +marginGet - scroll + 'px';
+
+                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if(+marginGet > (-$(".blockYears").height() + 540)) {
+                    blockScroll.style.marginTop = +marginGet - scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                  }
+                } else {
+                  blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                }
+              })
+
+              $(document).on('click touchend', '.xdsoft_monthpicker', (e) => {
+                if(e.target.parentElement.classList[1] === 'xdsoft_year') {
+                  let valueMargin = blockScroll.style.marginTop;
+                  let marginGet = valueMargin.split('px')[0];
+                  let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
+                  let numCurrentYear = +currentYearElement.textContent
+
+                  if(numCurrentYear === 2022) {
+                    blockScroll.style.marginTop = '-2242px'
+                  } else if (numCurrentYear === 1940) {
+                    blockScroll.style.marginTop = '0px'
+                  } else {
+                    blockScroll.style.marginTop = +marginGet + 40 + 'px'
+                  }
+                }
+              })
+
+              $(document).on('click touchend', '.arrowUp', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                if(+marginGet < 0) {
+                  blockScroll.style.marginTop = +marginGet + scroll + 'px';
+
+                  if(+marginGet < -271) {
+                    blockScroll.style.marginTop = +marginGet + scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = '0px'
+                  }
+                } else {
+                  blockScroll.style.marginTop = '0px'
+                }
+              })
+
+              $(document).on('click touchend', '.arrowDown', (e) => {
+                let valueMargin = blockScroll.style.marginTop;
+                let marginGet = valueMargin.split('px')[0];
+
+                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if(+marginGet > (-$(".blockYears").height() + 540)) {
+                    blockScroll.style.marginTop = +marginGet - scroll + 'px';
+                  } else {
+                    blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                  }
+                } else {
+                  blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
+                }
+              })
+
+              flag = true;
+            }
+          },
+        });
+
+        $.datetimepicker.setLocale('ru');
+    });
+  });
+}
+
+
+//input script
+
+let mainSearchInput = document.querySelector('.main-search-input'),
+mainLogo = document.querySelector('.main-logo'),
+searchMenu = document.querySelector('.search-menu'),
+mainHeight = document.querySelector('.main'),
+menuHeight = document.querySelector('.menu'),
+mainWatalog = document.querySelector('.main-catalog-wrapper');
+
+// mainSearchInput.addEventListener('focus', (e) => {
+  
+ 
+// })
+mainSearchInput.addEventListener('focus', () => {
+// 
+})
+
+mainSearchInput.addEventListener('keyup', () => {
+
+  if(mainSearchInput.value !== '') {
+    mainLogo.classList.add('main-logo-close')
+    mainWatalog.classList.add('main-catalog-wrapper-close')
+    searchMenu.classList.add('search-menu-open')
+    bodyOpenCatalog.classList.add('body-hidden-search')
+    topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
+    $(searchMenu).css('top', `${topSum}px`)
+  } 
+  else {
+    mainLogo.classList.remove('main-logo-close')
+    mainWatalog.classList.remove('main-catalog-wrapper-close')
+    searchMenu.classList.remove('search-menu-open')
+    bodyOpenCatalog.classList.remove('body-hidden-search')
+
+  }
+
+
+  // if(containerMenu.classList.contains('container-menu-open') == false){
+  //   bodyOpenCatalog.classList.remove('body-hidden')
+  // } 
+})
+
+
+
+
+// services.htmk validate form
+
+$(".services-form").validate({
+  errorElement: "span",
+  rules: {
+    name: {
+      required: true,
+    },
+    textbox: {
+      required: true,
+    },
+    telephone: {
+      required: true,
+    },
+    model: {
+      required: true,
+    },
+    customCheckbox: {
+      required: true,
+    },
+  },
+  messages: {
+    name: {
+      required: 'Заполните поле',
+    },
+    textbox: {
+      required: 'Заполните поле',
+    },
+    telephone: {
+      required: 'Заполните поле',
+    },
+    model: {
+      required: 'Заполните поле',
+    },
+    customCheckbox: {
+      required: 'Заполните поле',
+    },
+  },
+});
+
+
+
+let callMap = document.querySelector('#callMap')
+if(callMap) {
+  ymaps.ready(function () {
+    var callMap = new ymaps.Map('callMap', {
+            center: [53.924723, 27.511615],
+            zoom: 12,
+            controls: [],
+        }, {
+            searchControlProvider: 'yandex#search'
+        });  
+  
+        callMap.geoObjects
+        .add(new ymaps.Placemark([53.924723, 27.511615], {
+          balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+      }, {
+          preset: 'islands#dotIcon',
+          iconColor: '#E94336'
+      }))
+  });
+}
+
+
+
+
+
+let mobMenuSearch = document.querySelector('.mob-menu-search');
+
+mobMenuSearch.addEventListener('click', () => {
+ 
+
+  if(containerMenu.classList.contains('container-menu-open') == false) {
+    mainSearchForm.classList.toggle('main-search-form-open')
+    mainOpenCatalog.classList.toggle('main-open-catalog')
+    // search-menu search-menu-open
+    searchMenu.classList.remove('search-menu-open')
+   } 
+
+})
