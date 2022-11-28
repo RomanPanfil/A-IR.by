@@ -33,6 +33,10 @@ body {
 }
 .body-hidden {
   overflow: hidden;
+  &-search {
+  overflow: hidden;
+
+  }
 }
 
 #wrapper {
@@ -89,6 +93,8 @@ body {
 @import "./components/list-li";
 @import "./components/compare";
 @import "./components/catalog-menu";
+@import "./components/search-menu";
+
 
 // Pages
 @import "./pages/pages";

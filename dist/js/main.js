@@ -31074,18 +31074,30 @@ containerMenu = document.querySelector('.container-menu');
 
 let mobMenuImg = document.querySelector('.mob-menu-img')
 let enterMobile = document.querySelector('.enter-mobile')
-
+//  let mobMenuImg = document.getElementsByClassName('mob-menu-img')
 
 catalogBtn.addEventListener('click', () => {
-      mainSearchForm.classList.toggle('main-search-form-open');
+  // container-menu container-menu-open
+      if(containerMenu.classList.contains('container-menu-open') == false) {
+        mainSearchForm.classList.add('main-search-form-open');
+        mainOpenCatalog.classList.add('main-open-catalog');
+        
+       } else {
+        mainSearchForm.classList.remove('main-search-form-open');
+          mainOpenCatalog.classList.remove('main-open-catalog');
+
+       }
+       searchMenu.classList.remove('search-menu-open')
+
       changeIcon.classList.toggle('main-toggler-cross');
       containerMenu.classList.toggle('container-menu-open');
-      mainOpenCatalog.classList.toggle('main-open-catalog');
+
+
       navWrapperOpenCatalog.classList.toggle('nav-wrapper-open-catalog')
       bodyOpenCatalog.classList.toggle('body-hidden')
 
       mobMenuImg.classList.remove('mob-menu-img-open')
-  enterMobile.classList.remove('enter-mobile-open')
+      enterMobile.classList.remove('enter-mobile-open')
       if(matchMedia) {
         const screen = window.matchMedia('(max-width:1024.99px)');
         screen.addListener(changes);
@@ -31108,7 +31120,7 @@ catalogBtn.addEventListener('click', () => {
       })
 
       if(menuLiHieght > 720) {
-        $('.menu-desktop-ul').css('height', '100vh')
+        $('.menu-desktop-ul').css('height', 'calc(var(--vh, 1vh) * 100)')
         $('.menu-desktop-second').css('max-height', '720px')
       }
 
@@ -31118,7 +31130,7 @@ catalogBtn.addEventListener('click', () => {
 mobMenuImg.addEventListener('click', () => {
   mobMenuImg.classList.toggle('mob-menu-img-open')
   enterMobile.classList.toggle('enter-mobile-open')
-
+  
   // hide menu
   changeIcon.classList.remove('main-toggler-cross')
   mainSearchForm.classList.remove('main-search-form-open')
@@ -31193,7 +31205,7 @@ navigation: {
   prevEl: `.compare-slider-prev-carousel-compare_1`,
 },
 slidesPerView: 2,
-allowTouchMove: true,
+// allowTouchMove: true,
 // slidesPerGroup: 99,
 spaceBetween: 24,
 breakpoints: {
@@ -31202,15 +31214,45 @@ breakpoints: {
   },
 
 },
-on: {
-  touchMove: function (swiper, event) {
-    // console.log(event)
-    // console.log(swiper)
-    // console.log(event.x)
-    // event.x =
-  }
-}
+// on: {
+//   touchMove: function (swiper, event) {
+//     // console.log(event)
+//     // console.log(swiper)
+//     // console.log(event.x)
+//     // event.x =
+//   }
+// }
 });
+
+swiperCarouselCompare.forEach((swiperSlide) => {
+  swiperSlide.on('touchEnd',function(swiper, event){
+    // swiperSlide.slideTo(2)
+    slideToTouch = swiper.slides.
+
+    console.log(slideToTouch)
+    swiperCarouselCompare.forEach((e) => {
+      // e.activeIndex = swiperSlide.slideTo(slideToTouch)
+      // console.log(e.slideTo(3))
+    })
+    // console.log(swiperCarouselCompare)
+    // swiperSlide.slideTo(swiper.activeIndex)
+    // swiperSlide.slideTo(4)
+    // console.log(swiper.params)
+    // swiperSlide.activeIndex = swiper.activeIndex
+    // console.log( + " ---- все свайперы")
+    // console.log( + ' ---- таргет свайпер')
+    
+
+    // swiperSlide.slideTo = swiper.slideTo($(this).data('slide'))
+    // console.log(swiper.slideTo($(this).data('slide')))
+    // swiperSlide.slideTo( $(this).data('slide') )
+    // swiperSlide.activeIndex = swiper.activeIndex
+    // console.log()
+    // console.log()
+  })
+})
+
+  
 
 //touchMove
 // if(carouselCompare) {
@@ -31284,7 +31326,6 @@ if(compareSection) {
 })();
 
 
-//prepend -> insert
 
 
 // удаляем элементы по клику на крестик
@@ -31327,9 +31368,7 @@ if (removeBtn) {
 if(fixedBtn) {
   fixedBtn.forEach((e) => {
     e.addEventListener('click', (elem) => {
-      
       function fixElement() {
-        elem.target.closest('.product-card-fixed').querySelector('.product-card-fixed-text').classList.toggle('product-card-fixed-text-fix')      
         elem.target.closest('.product-card-fixed').classList.toggle('product-card-fixed-fix')
       }
       function removeFixElem() {
@@ -31342,7 +31381,7 @@ if(fixedBtn) {
         fixElement()
         allInfo.forEach((aria) => {
           if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
-            // console.log($(aria)[1])
+
           $(aria.closest('.swiper-wrapper')).prepend($(aria))
   
             swiperCarouselCompare.forEach((swiperSlide) => {
@@ -31684,3 +31723,123 @@ if(serviceReminder) {
   });
 }
 
+
+//input script
+
+let mainSearchInput = document.querySelector('.main-search-input'),
+mainLogo = document.querySelector('.main-logo'),
+searchMenu = document.querySelector('.search-menu'),
+mainHeight = document.querySelector('.main'),
+menuHeight = document.querySelector('.menu'),
+mainWatalog = document.querySelector('.main-catalog-wrapper');
+
+// mainSearchInput.addEventListener('focus', (e) => {
+  
+ 
+// })
+mainSearchInput.addEventListener('keyup', () => {
+  
+
+  if(mainSearchInput.value !== '') {
+    mainLogo.classList.add('main-logo-close')
+    mainWatalog.classList.add('main-catalog-wrapper-close')
+    searchMenu.classList.add('search-menu-open')
+    bodyOpenCatalog.classList.add('body-hidden-search')
+    topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
+    $(searchMenu).css('top', `${topSum}px`)
+  } 
+  else {
+    mainLogo.classList.remove('main-logo-close')
+    mainWatalog.classList.remove('main-catalog-wrapper-close')
+    searchMenu.classList.remove('search-menu-open')
+    bodyOpenCatalog.classList.remove('body-hidden-search')
+
+  }
+
+
+  // if(containerMenu.classList.contains('container-menu-open') == false){
+  //   bodyOpenCatalog.classList.remove('body-hidden')
+  // } 
+})
+
+
+
+
+// services.htmk validate form
+
+$(".services-form").validate({
+  errorElement: "span",
+  rules: {
+    name: {
+      required: true,
+    },
+    textbox: {
+      required: true,
+    },
+    telephone: {
+      required: true,
+    },
+    model: {
+      required: true,
+    },
+    customCheckbox: {
+      required: true,
+    },
+  },
+  messages: {
+    name: {
+      required: 'Заполните поле',
+    },
+    textbox: {
+      required: 'Заполните поле',
+    },
+    telephone: {
+      required: 'Заполните поле',
+    },
+    model: {
+      required: 'Заполните поле',
+    },
+    customCheckbox: {
+      required: 'Заполните поле',
+    },
+  },
+});
+
+
+
+
+
+ymaps.ready(function () {
+  var callMap = new ymaps.Map('callMap', {
+          center: [53.924723, 27.511615],
+          zoom: 12,
+          controls: [],
+      }, {
+          searchControlProvider: 'yandex#search'
+      });  
+
+      callMap.geoObjects
+      .add(new ymaps.Placemark([53.924723, 27.511615], {
+        balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+    }, {
+        preset: 'islands#dotIcon',
+        iconColor: '#E94336'
+    }))
+});
+
+
+
+
+let mobMenuSearch = document.querySelector('.mob-menu-search');
+
+mobMenuSearch.addEventListener('click', () => {
+ 
+
+  if(containerMenu.classList.contains('container-menu-open') == false) {
+    mainSearchForm.classList.toggle('main-search-form-open')
+    mainOpenCatalog.classList.toggle('main-open-catalog')
+    // search-menu search-menu-open
+    searchMenu.classList.remove('search-menu-open')
+   } 
+
+})
