@@ -9,11 +9,14 @@
         &-content {
             margin-bottom: 60px;
              @media(max-width:576.99px) {
-                    margin-bottom: 35px;
+                    margin-bottom: 0px;
                 }
         }
         &-nb{
             border-bottom: none;
+             @media(max-width:576px) {
+                    margin-bottom: 0;
+                }
         }
          @media(max-width:1024.99px) {
                 padding-bottom: 52px;
@@ -83,6 +86,12 @@
             position: relative;
             padding-left: 24px;
             margin-bottom: 20px;
+             @media(max-width:576px) {
+                    margin-bottom: 18px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
             &-text {
                 @include fz(16);
             }
@@ -104,6 +113,9 @@
         @media(max-width:1024.99px) {
                 margin-top: 0;
         }
+         @media(max-width:576px) {
+                height: 320px;
+            }
     }
     &-details {
         &-title {

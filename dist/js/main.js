@@ -29652,58 +29652,92 @@ $(function () {
     wrapperFixed = $(".wrapper"),
     footerBreackpoint = $("#footer"),
     footerHeight = $('#footer').innerHeight();
-  const headerOffset = $('header .main').offset().top
+  const headerOffset = $('header .main').offset().top;
+  const swipercontaer = document.querySelector(".swiper-carousel-compare")
 
 
-  $(window).scroll(function () {
-    let cardBreackpointOpen = $('.card-breackpoint-open');
-    let headerCardFixedHeight = $('.header_fixed .main').innerHeight();
-    const headerHeight = $('header .main').outerHeight(true);
-
-    let offsetFooter = footerBreackpoint.offset().top
-
-
+    $(window).scroll(function () {
+      let cardBreackpointOpen = $('.card-breackpoint-open');
+      let headerCardFixedHeight = $('.header_fixed .main').innerHeight();
+      const headerHeight = $('header .main').outerHeight(true);
+  
+      let offsetFooter = footerBreackpoint.offset().top
+    
     if (matchMedia) {
       var screen678 = window.matchMedia("(max-width:678px)");
       screen678.addListener(changes);
       changes(screen678);
     }
     function changes(screen678) {
-      if (screen678.matches) {
-        // cardBreackpointOpen.css({
-        //   'top': 'initial',
-        //   'bottom': 0
-        // })
+   
+    if (screen678.matches) {
+      if (offsetFooter < document.documentElement.clientHeight + window.scrollY) {
+                    D.querySelector('#middle').classList.remove("panel-is-float")
+                    if(swipercontaer) {
+                      cardBreackpointOpen.css({
+                        'top': headerCardFixedHeight + 'px',
+                        'position': 'fixed',
+                        'bottom': 'initial',
+                      }) 
+                    } else {
+                      cardBreackpointOpen.css({
+                        'position': 'relative',
+                      })
+                    }
+                   
+                  
+                
+              } else {
+                D.querySelector('#middle').classList.add("panel-is-float")
+              
+                  $('.main').removeClass('compare-remove-shadow')
+                if(swipercontaer) {
+                  cardBreackpointOpen.css({
+                                'top': headerCardFixedHeight + 'px',
+                                'position': 'fixed',
+                                'bottom': 'initial',
+                              }) 
+                } else {
+                  cardBreackpointOpen.css({
+                    'top': 'initial',
+                    'position': 'fixed',
+                    'bottom': 0,
+                  })
+                }
+                  
+                
+                  
+                
+                
+              }
 
-        if (offsetFooter < document.documentElement.clientHeight + window.scrollY) {
-          D.querySelector('#middle').classList.remove("panel-is-float")
-          cardBreackpointOpen.css({
-            'position': 'relative',
-          })
-        } else {
-          D.querySelector('#middle').classList.add("panel-is-float")
-          cardBreackpointOpen.css({
-            'top': 'initial',
-            'position': 'fixed',
-            'bottom': 0,
-          })
-        }
-      } else {
-        cardBreackpointOpen.css('top', headerCardFixedHeight + 'px')
-        cardBreackpointOpen.css('bottom', 'initial')
-      }
-    }
-
-    if ($(this).scrollTop() > headerOffset) {
-      wrapperFixed.css('paddingTop', headerHeight + 'px')
-      header.addClass("header_fixed");
-      wrapperFixed.addClass("wrapper_fixed");
+  
     } else {
-      wrapperFixed.css('paddingTop', 0)
-      header.removeClass("header_fixed");
-      wrapperFixed.removeClass("wrapper_fixed");
+      cardBreackpointOpen.css('top', headerCardFixedHeight + 'px')
+      cardBreackpointOpen.css('bottom', 'initial')
     }
-  });
+  }
+    
+     
+        
+   
+  
+      
+      
+  
+      if ($(this).scrollTop() > headerOffset) {
+        wrapperFixed.css('paddingTop', headerHeight + 'px')
+        header.addClass("header_fixed");
+        wrapperFixed.addClass("wrapper_fixed");
+      } else {
+        wrapperFixed.css('paddingTop', 0)
+        header.removeClass("header_fixed");
+        wrapperFixed.removeClass("wrapper_fixed");
+      }
+    });
+
+
+  
 });
 
 
@@ -30731,72 +30765,9 @@ new Swiper(".main-banners-slider", {
 
 
   // ymaps.ready(init);
-
+ 
   // function init() {
-  //     var myMap = new ymaps.Map("map", {
-  //             center: [53.902292, 27.561821],
-  //             zoom: 10
-  //         }, {
-  //             searchControlProvider: 'yandex#search'
-  //         });
-
-  //        var myPolygon = new ymaps.Polygon([
-  //         // Указываем координаты вершин многоугольника.
-  //         // Координаты вершин внешнего контура.
-  //         [
-  //             [53.947864, 27.274663],
-  //             [53.944405, 27.270060],
-  //             [53.917639, 27.355659],
-  //             // [55.70, 37.70],
-  //             // [55.70, 37.50]
-  //         ],
-  //         // Координаты вершин внутреннего контура.
-  //         [
-  //             // [55.75, 37.52],
-  //             // [55.75, 37.68],
-  //             // [55.65, 37.60]
-  //         ]
-  //     ], {
-  //         // Описываем свойства геообъекта.
-  //         // Содержимое балуна.
-  //         hintContent: "Многоугольник"
-  //     }, {
-  //         // Задаем опции геообъекта.
-  //         // Цвет заливки.
-  //         fillColor: '#00FF0088',
-  //         // Ширина обводки.
-  //         strokeWidth: 5
-  //     });
-  //     var myPolygon1 = new ymaps.Polygon([
-  //       // Указываем координаты вершин многоугольника.
-  //       // Координаты вершин внешнего контура.
-  //       [
-  //           [54.947864, 27.274663],
-  //           [53.944405, 27.270060],
-  //           [53.917639, 27.355659],
-  //           // [55.70, 37.70],
-  //           // [55.70, 37.50]
-  //       ],
-  //       // Координаты вершин внутреннего контура.
-  //       [
-  //           // [55.75, 37.52],
-  //           // [55.75, 37.68],
-  //           // [55.65, 37.60]
-  //       ]
-  //   ], {
-  //       // Описываем свойства геообъекта.
-  //       // Содержимое балуна.
-  //       hintContent: "Многоугольник"
-  //   }, {
-  //       // Задаем опции геообъекта.
-  //       // Цвет заливки.
-  //       fillColor: '#00FF0088',
-  //       // Ширина обводки.
-  //       strokeWidth: 5
-  //   });
-  //     // Добавляем многоугольник на карту.
-  //     myMap.geoObjects.add(myPolygon);
-  //     myMap.geoObjects.add(myPolygon1);
+      
   // }
 
 
@@ -30826,6 +30797,7 @@ if(deliverypayMap) {
       balloonContent: balloonContent(deliveryCity[0]),
     });
     map.geoObjects.add(marker);
+    map.behaviors.disable('scrollZoom');
 
 
     document.querySelectorAll('#citylink li a').forEach((n, i) => {
@@ -30866,19 +30838,13 @@ if (mapContact1) {
           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
       ),
       myPlacemarkWithContent = new ymaps.Placemark([53.933166, 27.451803], {
-          hintContent: 'Собственный значок метки с контентом',
-          balloonContent: 'А эта — новогодняя',
-          iconContent: '12'
+          // hintContent: 'Собственный значок метки с контентом',
+          // balloonContent: 'А эта — новогодняя',
+          // iconContent: '12'
       }, {
 
-          iconLayout: 'default#imageWithContent',
-          // Своё изображение иконки метки.
-          // iconImageHref: './images/icons/contacts-location.svg',
-          // Размеры метки.
-          iconImageSize: [48, 48],
-          iconImageOffset: [-24, -24],
-          iconContentOffset: [15, 15],
-          iconContentLayout: MyIconContentLayout
+        preset: 'islands#dotIcon',
+        iconColor: '#4A95F7'
       });
 
       // Вторая метка
@@ -30886,19 +30852,13 @@ if (mapContact1) {
         '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
     ),
     myPlacemarkWithContent1 = new ymaps.Placemark([53.879127, 30.265464], {
-        hintContent: 'Собственный значок метки с контентом',
-        balloonContent: 'А эта — новогодняя',
-        iconContent: '12'
+        // hintContent: 'Собственный значок метки с контентом',
+        // balloonContent: 'А эта — новогодняя',
+        // iconContent: '12'
     }, {
 
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        // iconImageHref: './images/icons/contacts-location.svg',
-        // Размеры метки.
-        iconImageSize: [48, 48],
-        iconImageOffset: [-24, -24],
-        iconContentOffset: [15, 15],
-        iconContentLayout: MyIconContentLayout1
+      preset: 'islands#dotIcon',
+      iconColor: '#4A95F7'
     });
 
       mapContact1.behaviors.disable('scrollZoom');
@@ -30912,46 +30872,33 @@ if (mapContact1) {
       zoom: 8,
       controls: [],
   });
-        // Первая метка
+    //     // Первая метка
        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
       ),
       myPlacemarkWithContent = new ymaps.Placemark([53.933166, 27.451803], {
-          hintContent: 'Собственный значок метки с контентом',
-          balloonContent: 'А эта — новогодняя',
-          iconContent: '12'
+          // hintContent: 'Собственный значок метки с контентом',
+          // balloonContent: 'А эта — новогодняя',
+          // iconContent: '12'
       }, {
-
-          iconLayout: 'default#imageWithContent',
-          // Своё изображение иконки метки.
-          // iconImageHref: './images/icons/contacts-location.svg',
-          // Размеры метки.
-          iconImageSize: [48, 48],
-          iconImageOffset: [-24, -24],
-          iconContentOffset: [15, 15],
-          iconContentLayout: MyIconContentLayout
+        preset: 'islands#dotIcon',
+        iconColor: '#4A95F7'
       });
 
-      // Вторая метка
+    //   // Вторая метка
       MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
         '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
     ),
     myPlacemarkWithContent1 = new ymaps.Placemark([53.879127, 30.265464], {
-        hintContent: 'Собственный значок метки с контентом',
-        balloonContent: 'А эта — новогодняя',
-        iconContent: '12'
+        // hintContent: 'Собственный значок метки с контентом',
+        // balloonContent: 'А эта — новогодняя',
+        // iconContent: '12'
     }, {
 
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        // iconImageHref: './images/icons/contacts-location.svg',
-        // Размеры метки.
-        iconImageSize: [48, 48],
-        iconImageOffset: [-24, -24],
-        iconContentOffset: [15, 15],
-        iconContentLayout: MyIconContentLayout1
+      preset: 'islands#dotIcon',
+      iconColor: '#4A95F7'
     });
-
+  
       //вторая карта
       mapContact2.behaviors.disable('scrollZoom');
       mapContact2.geoObjects.add(myPlacemarkWithContent);
@@ -31077,7 +31024,13 @@ containerMenu = document.querySelector('.container-menu');
 let mobMenuImg = document.querySelector('.mob-menu-img')
 let enterMobile = document.querySelector('.enter-mobile')
 //  let mobMenuImg = document.getElementsByClassName('mob-menu-img')
-
+containerMenu.addEventListener('click', (e) => {
+  // console.log(e.target.classList)
+  if(e.target.classList.value == 'container-menu container-menu-open') {
+      changeIcon.classList.remove('main-toggler-cross');
+      containerMenu.classList.remove('container-menu-open');
+  }
+})
 catalogBtn.addEventListener('click', () => {
   // container-menu container-menu-open
       if(containerMenu.classList.contains('container-menu-open') == false) {
@@ -31107,26 +31060,17 @@ catalogBtn.addEventListener('click', () => {
       }
       function changes(screen) {
         if(screen.matches) {
-          containerMenu.style.top = headerHeightC - navWrapperC + mainSearchForm.clientHeight + 'px';
+          // containerMenu.style.top = headerHeightC - navWrapperC + mainSearchForm.clientHeight + 'px';
+          containerMenu.style.top = $('.main').outerHeight()
         } else {
           containerMenu.style.top = headerHeightC - navWrapperC + 'px';
 
         }
       }
 
-//проверяем кол-во и высоту
-      let menuLi = document.querySelector('.menu-desktop').children
-      let menuLiHieght = 0;
-      Array.from(menuLi).forEach((e) => {
-        menuLiHieght = menuLiHieght + e.clientHeight
-      })
-
-      // min-высота правой колоник = 100вх - высота шапки - высотаЛого производителя - падинги
-
-      if(menuLiHieght > 720) {
-        $('.menu-desktop-ul').css('height', 'calc(var(--vh, 1vh) * 100)')
-        $('.menu-desktop-second').css('max-height', '720px')
-      }
+      // let vhMenu = document.documentElement.clientHeight
+      // $('.menu-desktop').css('min-height', `${vhMenu - header.clientHeight - 30}px` )
+      // $('.menu-desktop-second').css('min-height', `${vhMenu - header.clientHeight - 30 - 122}px` )
 
 })
 
@@ -31140,11 +31084,14 @@ mobMenuImg.addEventListener('click', () => {
   mainSearchForm.classList.remove('main-search-form-open')
   containerMenu.classList.remove('container-menu-open')
   mainOpenCatalog.classList.remove('main-open-catalog')
+  bodyOpenCatalog.classList.remove('body-hidden')
+
 })
 //Высота при скроле шапки
 window.addEventListener('scroll', () => {
   containerMenu.style.top = mainOpenCatalog.clientHeight + 'px'
 })
+
 
 
 
@@ -31205,13 +31152,14 @@ navigation: {
   nextEl: `.compare-slider-next-carousel-compare_1`,
   prevEl: `.compare-slider-prev-carousel-compare_1`,
 },
-slidesPerView: 2,
+slidesPerView: 'auto',
 allowTouchMove: false,
 // slidesPerGroup: 99,
 spaceBetween: 24,
 breakpoints: {
   1024: {
     slidesPerView: 3,
+
   },
 
 },
@@ -31233,29 +31181,28 @@ let posYEnd = 0
 
 // swiper-carousel-compare
 let deliverypayTouch = document.querySelector('.deliverypay-content')
-
-carouselCompare.addEventListener('touchstart', ev => {
+let stickyTouch = document.querySelector('.compare-sticky-body')
+if(carouselCompare) {
+  deliverypayTouch.addEventListener('touchstart', ev => {
     // ev.preventDefault();
     ev.stopImmediatePropagation();
-
-
     posXStart = ev.touches[0].clientX;
     posYStart = ev.touches[0].clientY
 
 
 }, { passive: true });
 
-carouselCompare.addEventListener('touchend', ev => {
+deliverypayTouch.addEventListener('touchend', ev => {
   // ev.preventDefault();
   ev.stopImmediatePropagation();
   posXEnd = ev.changedTouches[0].clientX
   posYEnd = ev.changedTouches[0].clientY
-
+ 
 if(posYStart - posYEnd < 20) {
   swiperCarouselCompare.forEach((swiperSlide) => {
 
     let activeSlide = swiperSlide.activeIndex
-    if(posXStart - posXEnd > 0) {
+    if(posXStart - posXEnd > 20) {
       swiperSlide.slideTo(activeSlide + 1)
     } else {
       swiperSlide.slideTo(activeSlide - 1)
@@ -31264,114 +31211,42 @@ if(posYStart - posYEnd < 20) {
 }
   
 }, { passive: true });
+// Mobile touch
+
+stickyTouch.addEventListener('touchstart', ev => {
+  ev.preventDefault();
+  ev.stopImmediatePropagation();
+  posXStart = ev.touches[0].clientX;
+  posYStart = ev.touches[0].clientY
+
+
+}, { passive: true });
+
+stickyTouch.addEventListener('touchend', ev => {
+ev.preventDefault();
+ev.stopImmediatePropagation();
+posXEnd = ev.changedTouches[0].clientX
+posYEnd = ev.changedTouches[0].clientY
+
+if(posYStart - posYEnd < 20) {
+swiperCarouselCompare.forEach((swiperSlide) => {
+
+  let activeSlide = swiperSlide.activeIndex
+  if(posXStart - posXEnd > 0) {
+    swiperSlide.slideTo(activeSlide + 1)
+  } else {
+    swiperSlide.slideTo(activeSlide - 1)
+  }
+})
+}
+
+}, { passive: true });
+
+}
 
 
 
-// if(carouselCompare) {
-//   swiperCarouselCompare.forEach((swiperSlide) => {
-//     let activeSlide = swiperSlide.activeIndex
-//     if(activeSlide < 200) {
-//       setTimeout(() => {
-//         swiperCarouselCompare.forEach((e) => {
-//           e.slideTo(activeSlide + 1)
-//         })
-//       },0)
-//     } else {
-//       setTimeout(() => {  
-//         swiperCarouselCompare.forEach((e) => {
-//           e.slideTo(activeSlide - 1)
-//         })
-//       },0)
-//     }
-//     // swiperSlide.on('touchEnd',function(swiper, event){
-      
-//     //   let activeSlide = swiper.activeIndex
 
-//     //   // console.log(event.x)
-//     //   // console.log(event)
-//     //   // console.log(swiper)
-
-     
-
-//     //   if(event.x < 500) {
-//     //     setTimeout(() => {
-//     //       swiperCarouselCompare.forEach((e) => {
-//     //         e.slideTo(activeSlide + 1)
-//     //       })
-//     //     },0)
-//     //   } else {
-//     //     setTimeout(() => {  
-//     //       swiperCarouselCompare.forEach((e) => {
-//     //         e.slideTo(activeSlide - 1)
-//     //       })
-//     //     },0)
-//     //   }
-  
-   
-//     //   // swiperSlide.controller.control = swiper
-//     //   // console.log(swiperSlide.controller.control)
-  
-  
-      
-//     //   // console.log(swiperCarouselCompare)
-//     //   // swiperSlide.slideTo(swiper.activeIndex)
-//     //   // swiperSlide.slideTo(4)
-//     //   // console.log(swiper.params)
-//     //   // swiperSlide.activeIndex = swiper.activeIndex
-//     //   // console.log( + " ---- все свайперы")
-//     //   // console.log( + ' ---- таргет свайпер')
-      
-  
-//     //   // swiperSlide.slideTo = swiper.slideTo($(this).data('slide'))
-//     //   // console.log(swiper.slideTo($(this).data('slide')))
-//     //   // swiperSlide.slideTo( $(this).data('slide') )
-//     //   // swiperSlide.activeIndex = swiper.activeIndex
-//     //   // console.log()
-//     //   // console.log()
-//     // })
-//   })
-// }
-
-
-  
-
-//touchMove
-// if(carouselCompare) {
-//   const buildSwiperSlider = sliderElm => {
-//     const sliderIdentifier = sliderElm.dataset.id;
-//     return new Swiper(`#${sliderElm.id}`, {
-
-//         pagination: {
-//             el: `.swiper-pagination-${sliderIdentifier}`,
-
-//         },
-//         navigation: {
-//           nextEl: `.compare-slider-next-${sliderIdentifier}`,
-//           prevEl: `.compare-slider-prev-${sliderIdentifier}`,
-//         },
-//         slidesPerView: 2,
-//         allowTouchMove: true,
-//         // slidesPerGroup: 99,
-//         spaceBetween: 24,
-//         breakpoints: {
-//           1024: {
-//             slidesPerView: 3,
-//           },
-
-//         },
-//         on: {
-//           touchMove: function (swiper, event) {
-//             // console.log(event)
-//             // console.log(swiper)
-//             // console.log(event.x)
-//             // event.x =
-//           }
-//         }
-//     });
-// }
-// const allSliders = document.querySelectorAll('.swiper');
-// allSliders.forEach(slider => buildSwiperSlider(slider));
-// }
 
 let compareSection = document.querySelectorAll('.compare-table-section-head')
 
@@ -31440,6 +31315,12 @@ if (removeBtn) {
       allInfo.forEach((ariaElem) => {
         if(ariaElem.ariaLabel === removeElement) {
           ariaElem.remove()
+          fixedbtn()
+
+          swiperCarouselCompare.forEach((swiper) => {
+            swiper.update()
+          })
+
         }
       })
 
@@ -31448,18 +31329,26 @@ if (removeBtn) {
 }
 if(fixedBtn) {
   fixedBtn.forEach((e) => {
+    
+
     e.addEventListener('click', (elem) => {
+    
+      // elem.stopPropagation();
+
       function fixElement() {
         elem.target.closest('.product-card-fixed').classList.toggle('product-card-fixed-fix')
       }
       function removeFixElem() {
         elem.target.closest('.product-card-fixed').classList.remove('product-card-fixed-fix')      
+        
       }
 
       
       let productFixed = document.querySelectorAll('.product-card-fixed-fix')
-      if(productFixed.length < 3) {
+      if(productFixed.length < 2) {
         fixElement()
+        console.log(e)
+        e.children[1].classList.toggle('product-card-fixed-text-fix')
         allInfo.forEach((aria) => {
           if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
 
@@ -31576,6 +31465,9 @@ if(serviceReminder) {
       num: {
         required:"Введите данные",
         number:"Введите данные",
+      },
+      date: {
+        required: 'Введите данные',
       },
       days: {
         required:"Введите данные",
@@ -31805,6 +31697,7 @@ if(serviceReminder) {
 }
 
 
+
 //input script
 
 let mainSearchInput = document.querySelector('.main-search-input'),
@@ -31812,6 +31705,7 @@ mainLogo = document.querySelector('.main-logo'),
 searchMenu = document.querySelector('.search-menu'),
 mainHeight = document.querySelector('.main'),
 menuHeight = document.querySelector('.menu'),
+// headerConatins = document.querySelector('.header').classList.contains('.header_fixed'),
 mainWatalog = document.querySelector('.main-catalog-wrapper');
 
 // mainSearchInput.addEventListener('focus', (e) => {
@@ -31829,8 +31723,14 @@ mainSearchInput.addEventListener('keyup', () => {
     mainWatalog.classList.add('main-catalog-wrapper-close')
     searchMenu.classList.add('search-menu-open')
     bodyOpenCatalog.classList.add('body-hidden-search')
+
     topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
+    if($('.header').hasClass('header_fixed')) {
+      $(searchMenu).css('top', `${mainHeight.offsetHeight}px`)
+    } else {
     $(searchMenu).css('top', `${topSum}px`)
+
+    }
   } 
   else {
     mainLogo.classList.remove('main-logo-close')
@@ -31904,7 +31804,7 @@ if(callMap) {
   
         callMap.geoObjects
         .add(new ymaps.Placemark([53.924723, 27.511615], {
-          balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+          // balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
       }, {
           preset: 'islands#dotIcon',
           iconColor: '#E94336'
@@ -31932,3 +31832,119 @@ mobMenuSearch.addEventListener('click', () => {
 })
 
 
+//LightGallery
+
+lightGallery(document.getElementById('productGallery'), {
+  // plugins: [lgZoom, lgThumbnail],
+  licenseKey: 'your_license_key',
+  speed: 500,
+});
+
+
+
+
+
+//Показать только отличия compare2.html
+let inputSame = document.getElementById('f_v_1')
+let inputSame2 = document.getElementById('f_v_2')
+
+
+
+$(".compare-checkbox").on("click", function () {
+  if ($(this).is(":checked")) {
+    
+      inputSame2.checked = true
+      inputSame.checked = true
+
+      $('.swiper-slide-same').addClass('swiper-slide-same-hidden')
+  } else {
+      inputSame2.checked = false
+      inputSame.checked = false
+
+      $('.swiper-slide-same').removeClass('swiper-slide-same-hidden')
+  }
+})
+
+
+
+//Добавляем\убираем кнопку заерпить в зависимости от кол-во элементов
+if(carouselCompare) {
+  function fixedbtn() {
+    if($('.swiper-carousel-compare-main').find('.swiper-slide').length > 3) {
+      $('.product-card-fixed').addClass('product-card-fixed-f')
+    } else {
+      $('.product-card-fixed').removeClass('product-card-fixed-f')
+  
+    }
+  }
+  
+  fixedbtn()
+}
+
+//скролл
+$("a.scroll-to").on("click", function(e){
+  e.preventDefault();
+  var anchor = $(this).attr('href');
+  $('html, body').stop().animate({
+      scrollTop: $(anchor).offset().top - 100
+  }, 800);
+});
+
+
+
+//Открываем меню
+
+/*
+$(document).ready(function() {
+  let menudesktopLi = document.querySelectorAll('.menu-desktop li')
+  // menu-desktop-ul
+  
+  menudesktopLi.forEach((elem) => {
+    // console.log($(elem).find('.menu-desktop-ul')[0])
+    // let move = $(elem).find('.menu-desktop-ul')[0].classList
+    // console.log(move)
+    // document.querySelector(`${elem} menu-desktop-ul`)
+    let liA = $(elem).children('.menu-desktop-ul')
+    // console.log(liA)
+  // console.log($(elem).children('.menu-desktop-ul')[0])
+  if($(liA[0]).hasClass('menu-desktop-ul')) {
+   let liAx =  $(liA)[0]
+    console.log(liAx)
+    if(matchMedia) {
+        const screen = window.matchMedia('(max-width:1024px)');
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if(screen.matches) {
+          //экран менее 1024
+          // liAx.prepend($('body'))
+          
+        } else {
+          //экран более 1024
+          // $('.card-more-info').prepend($('#tabs'))
+         
+        }
+      }
+  } 
+  
+  // console.log($(elem).children('.menu-desktop-ul')[0].classList[0])
+    elem.addEventListener('click', (t) => {
+      elem.children[0].classList.toggle('menu-desktop-open')
+    })
+  
+    // $(elem).click(function(){
+    //   if($(this).hasClass("list-open")) {
+    //     $(this).removeClass('list-open');
+    //   } else {
+    //     $(this).addClass('list-open');
+    //   }
+    // });
+  
+     
+  
+  
+  })
+})
+
+*/

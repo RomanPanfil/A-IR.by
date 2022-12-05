@@ -5,6 +5,11 @@
          @media(max-width:1024.99px) {
                 margin-bottom: 58px;
             }
+         @media(max-width:576px) {
+                // margin: 0px -15px;
+                // margin-bottom: 58px;
+
+            }
     }
     &-cards {
         &-item {
@@ -20,7 +25,6 @@
             &-img {
                 flex: 0 0 72px;
                 max-width: 72px;
-                height: 72px;
                 img {
                     max-height: 72px;
                 }
@@ -49,7 +53,6 @@
             margin-bottom: 0px;
             
             &-img {
-                height: 57px;
                 img {
                     max-height: 57px;
                 }
@@ -97,6 +100,10 @@
         }
     }
     &-team {
+         @media(max-width:576px) {
+                margin: 0;
+                margin-bottom: 58px;
+            }
         &-item {
             display: flex;
             flex-wrap: wrap;
@@ -117,9 +124,13 @@
                 flex: 0 0 112px;
                 max-width: 112px;
                 background-image: url(./../images/services-teamNoFoto.webp);
-                background-size: cover;
+                background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
+                 @media(max-width:576px) {
+                background-position: top;
+                height: 100%;
+                    }
                 img {
                     max-height: 112px;
                     
@@ -139,6 +150,11 @@
                 @include fz(14);
                 margin-bottom: 13px;
             }
+            &-expirience {
+                 @media(max-width:576px) {
+                        margin-bottom: 10px;
+                    }
+            }
         }
     }
     &-form {
@@ -147,11 +163,16 @@
         padding: 62px 112px;
          @media(max-width:1024.99px) {
                 padding: 42px 48px;
+                max-width: 520px;
+
             }
          @media(max-width:576.99px) {
-                margin: 0px -15px;
                 padding: 56px 15px;
             }
+             @media(max-width:450px) {
+                margin: 0px -15px;
+                    
+                }
         &-wrap {
             display: flex;
             flex-direction: column;
@@ -162,7 +183,11 @@
         }
         &-form {
             height: calc(100% - 24px) !important;
+            // height: 209px !important;
             resize: none;
+            &.error {
+             height: calc(100% - 47px) !important;
+            }
         }
         &-wrapper {
             max-width: 870px;
@@ -356,12 +381,20 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
         border-radius: 8px;
         overflow: hidden;
+         @media(max-width:576px) {
+                margin: 0px -15px;
+                border-radius: 0;
+                margin-bottom: 58px;
+            }
         &-cart {
             height: 100%;
             width: 100%;
             background-color: chocolate;
              @media(max-width:1024.99px) {
                     height: 524px;
+                }
+             @media(max-width:576px) {
+                    height: 312px;
                 }
         }
         &-title {
@@ -386,6 +419,9 @@
         }
         &-contacts {
             margin-bottom: 62px;
+             @media(max-width:576px) {
+                    margin-bottom: 38px;
+                }
         }
         &-adress {
             margin-bottom: 42px;
@@ -411,6 +447,7 @@
 
 
 .services-form {
+
     #customCheckbox-error {
         position: absolute;
         top: 100%;
@@ -418,3 +455,10 @@
     }
 }
 
+
+
+.service-service-wrap {
+    @media(max-width:679px) {
+       margin-bottom: 0;
+       }
+}

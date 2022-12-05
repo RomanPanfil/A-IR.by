@@ -722,7 +722,7 @@
 
   @media (min-width: 1025px) {
     .main {
-      padding: 17px 0px;
+      // padding: 17px 0px;
     }
   }
   
@@ -945,6 +945,7 @@
     padding-bottom: 18px;
     border-top: 1px solid #d3d3d3;
     line-height: 1.42;
+    color: #000;
     &-sprite {
       display: inline-block !important;
       vertical-align: middle;

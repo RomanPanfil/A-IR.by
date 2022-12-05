@@ -4,12 +4,7 @@
      @media(max-width:1024.99px) {
             margin-bottom: 50px;
         }
-    #map {
-        width: 100%; 
-        height:500px; 
-        padding: 0;
-        margin: 0;
-    }
+    
     #deliverypayMap {
         width: 100%; 
         min-height:100%; 
@@ -198,6 +193,7 @@
                 padding: 15px;
                 margin: 0px -15px;
                 margin-bottom: 50px;
+                border-radius: 0;
             }
         .sign-popup-tabs {
             @media(max-width:1024.99px) {
@@ -206,6 +202,8 @@
                 gap: 10px;   
                 padding-right: 15px;
                  margin-right: -15px;
+                 margin-left: -15px;
+                 padding-left: 15px;
                 &::-webkit-scrollbar {
                     width: 0px;
                   }
@@ -246,6 +244,7 @@
                 }
             &.active {
               color: #2A4455;
+              border: 1px solid transparent;
               &::after {
                 content: "";
                   position: absolute;

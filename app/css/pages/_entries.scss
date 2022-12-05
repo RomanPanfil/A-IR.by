@@ -82,11 +82,19 @@
         }
         
         &-time {
+            &-wrap {
+                display: flex;
+                gap: 20px;
+                 @media(max-width:400px) {
+                        gap: 0;
+                        justify-content: space-between;
+                    }
+            }
             display: flex;
             align-items:center;
-            margin-right: 20px;
+            // margin-right: 20px;
             color: $gray;
-
+            white-space: nowrap;
             @media(max-width:576.99px) {
                 display: inline-block;
             }
@@ -105,6 +113,9 @@
             &-txt {
                 display: inline-block;
                 vertical-align: middle;
+                 @media(max-width:400px) {
+                        @include fz(14);
+                    }
             }
         }
 
