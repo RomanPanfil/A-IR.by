@@ -735,21 +735,9 @@
       }
       &-content {
         padding: 0px 24px 20px 24px;
-        height: calc(100% - 200px);
-        display: flex;
         flex-direction: column;
         justify-content: space-between;
-         @media(max-width:768px) {
-          height: calc(100% - 160px);
-            }
-             @media(max-width:576.99px) {
-        height: calc(100% - 200px);
-                    
-                }
-                 @media(max-width:350px) {
-          height: calc(100% - 160px);
-                        
-                    }
+        
       }
       
       &-date {

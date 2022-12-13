@@ -30832,6 +30832,22 @@ if (mapContact1) {
         zoom: 8,
         controls: [],
     });
+    // mapContact1.setZoom(7)
+  
+    (function() {
+      if(matchMedia) {
+        const screen = window.matchMedia('(max-width:1024.99px)');
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if(screen.matches) {
+             mapContact1.setZoom(7)
+        } else {
+              mapContact1.setZoom(8)
+        }
+      }
+    })();
 
         // Первая метка
        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
@@ -30872,6 +30888,22 @@ if (mapContact1) {
       zoom: 8,
       controls: [],
   });
+  (function() {
+    if(matchMedia) {
+      const screen = window.matchMedia('(max-width:1024.99px)');
+      screen.addListener(changes);
+      changes(screen);
+    }
+    function changes(screen) {
+      if(screen.matches) {
+           mapContact2.setZoom(7)
+      } else {
+            mapContact2.setZoom(8)
+      }
+    }
+  })();
+
+  
     //     // Первая метка
        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
@@ -30904,6 +30936,7 @@ if (mapContact1) {
       mapContact2.geoObjects.add(myPlacemarkWithContent);
       mapContact2.geoObjects.add(myPlacemarkWithContent1);
   }
+ 
 }
 
 
@@ -31032,7 +31065,11 @@ containerMenu.addEventListener('click', (e) => {
   }
 })
 catalogBtn.addEventListener('click', () => {
-  // container-menu container-menu-open
+  //open first li on menu
+  let menuZero = $('.menu-desktop-ul')[0]
+  menuZero.classList.add('menu-desktop-ul-open')
+  
+
       if(containerMenu.classList.contains('container-menu-open') == false) {
         mainSearchForm.classList.add('main-search-form-open');
         mainOpenCatalog.classList.add('main-open-catalog');
@@ -31068,10 +31105,10 @@ catalogBtn.addEventListener('click', () => {
         }
       }
 
-      // let vhMenu = document.documentElement.clientHeight
-      // $('.menu-desktop').css('min-height', `${vhMenu - header.clientHeight - 30}px` )
-      // $('.menu-desktop-second').css('min-height', `${vhMenu - header.clientHeight - 30 - 122}px` )
-
+      //устанавливаем минимальную высоту подменю
+      let menuDesktopHeight = document.querySelector('.menu-desktop').clientHeight;
+      $('.menu-desktop-second').css('min-height', `${menuDesktopHeight - 115 - 40 + 5}px`)
+    
 })
 
 
@@ -31347,7 +31384,6 @@ if(fixedBtn) {
       let productFixed = document.querySelectorAll('.product-card-fixed-fix')
       if(productFixed.length < 2) {
         fixElement()
-        console.log(e)
         e.children[1].classList.toggle('product-card-fixed-text-fix')
         allInfo.forEach((aria) => {
           if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
@@ -31948,3 +31984,15 @@ $(document).ready(function() {
 })
 
 */
+
+
+//убираем активный пункт в меню 
+let menuDesktopHover = document.querySelectorAll('.menu-desktop li')
+
+menuDesktopHover.forEach((e) => {
+  e.addEventListener('mouseover', (mouse) => {
+    if(mouse.target){
+    $('.menu-desktop-ul').removeClass('menu-desktop-ul-open')
+    } 
+  })
+})

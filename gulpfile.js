@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const webp = require('gulp-webp');
 const del = require('del');
 
+
 let dist = "dist",
   app = "app";
 
@@ -109,7 +110,11 @@ function js() {
 
 function imgWebp() {
   return src(path.src.webpImg)
-  .pipe(webp())
+  .pipe(webp(
+    {
+      quality: 60,
+    }
+  ))
   .pipe(dest(path.build.webpImg))
 }
 

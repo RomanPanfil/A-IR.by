@@ -45,6 +45,7 @@
     position: fixed;
     // position: absolute;
     overflow-y: scroll;
+    overflow-x: hidden;
     z-index: 13;
     top: 53px;
     width: 100%;
@@ -84,6 +85,25 @@
         display: block;
 
     }
+
+    .main-list-drop-link {
+         @media(max-width:1024.99px) {
+                padding-left: 83px;
+            }
+         @media(max-width:768.99px) {
+                padding-left: 103px;
+            }
+    }
+    .main-list-drop {
+         @media(max-width:1024.99px) {
+                margin: 0 -40px;
+            }
+    }
+    .list-open .main-list-drop {
+         @media(max-width:1024.99px) {
+                box-shadow: none;
+            }
+    }
 }
 // .container-menu:hover {
 //     display: block;
@@ -95,6 +115,7 @@
     position: relative;
     background-color: #F5F5F5;
     position: relative;
+    padding-bottom: 40px;
     // height: 720px;
     padding-top: 25px;
     // overflow-y: auto;
@@ -249,7 +270,7 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     // height: 100%;
-    min-height: calc((var(--vh, 1vh) * 100) - 115px - 30px);
+    min-height: calc((var(--vh, 1vh) * 100) - 115px - 30px - 114px);
 
     // max-height: 550px;
     overflow-y: auto;
@@ -312,6 +333,9 @@
 
 .catalog-item-wraper {
     margin-bottom: 50px;
+    ul li a {
+        color: #000000;
+    }
 }
 .catalog-item-list {
     width: 100%;
@@ -320,6 +344,8 @@
 
     &-title {
         @include fz(18);
+        display: block;
+        color: #000;
         margin-bottom: 18px;
         font-weight: 600;
     }
