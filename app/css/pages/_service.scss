@@ -71,7 +71,9 @@
                 flex: 1;
             }
             &-text {
+                color: rgba(0, 0, 0, 0.8);
                 @include fz(14);
+                font-weight: 400;
             }
             &-title {
                 color: #2A4455;

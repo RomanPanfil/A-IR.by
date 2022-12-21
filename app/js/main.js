@@ -3381,14 +3381,15 @@ menuHeight = document.querySelector('.menu'),
 // headerConatins = document.querySelector('.header').classList.contains('.header_fixed'),
 mainWatalog = document.querySelector('.main-catalog-wrapper');
 
-// mainSearchInput.addEventListener('focus', (e) => {
-  
- 
-// })
-mainSearchInput.addEventListener('focus', () => {
-// 
-})
 
+searchMenu.addEventListener('click', (e) => {
+  if(e.target.classList[1] == 'search-menu-open') {
+    mainLogo.classList.remove('main-logo-close')
+    mainWatalog.classList.remove('main-catalog-wrapper-close')
+    searchMenu.classList.remove('search-menu-open')
+    bodyOpenCatalog.classList.remove('body-hidden-search')
+  }
+})
 mainSearchInput.addEventListener('keyup', () => {
 
   if(mainSearchInput.value !== '') {
@@ -3494,7 +3495,6 @@ let mobMenuSearch = document.querySelector('.mob-menu-search');
 
 mobMenuSearch.addEventListener('click', () => {
  
-
   if(containerMenu.classList.contains('container-menu-open') == false) {
     mainSearchForm.classList.toggle('main-search-form-open')
     mainOpenCatalog.classList.toggle('main-open-catalog')

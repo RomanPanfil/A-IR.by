@@ -759,9 +759,12 @@
       }
       &-link {
         position: absolute;
-        bottom: 10px;
+        bottom: 20px;
         font-weight: 600;
         color: $colorBlue;
+         @media(max-width:576.99px) {
+                bottom: 10px;
+            }
         &:hover {
           text-decoration: underline;
         }

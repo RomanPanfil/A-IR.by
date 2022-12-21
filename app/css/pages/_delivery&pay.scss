@@ -116,10 +116,16 @@
             &-contact {
                 margin-bottom: 0;
             }
+            &-call {
+                padding-bottom: 35px;
+            }
         }
     }
     &-addcontent {
         margin-bottom: 20px;
+        &-call {
+            margin-bottom: 0;
+        }
         &-map {
             padding-left: 16px;
             margin-bottom: 10px;
@@ -238,13 +244,15 @@
             margin-bottom: 6px;
             background-color: transparent;
             color: #808080;
+            border-bottom: 1px solid #ffffff00;
+
              @media(max-width:1024.99px) {
                     white-space: nowrap;
                     margin-bottom: 0;
                 }
             &.active {
               color: #2A4455;
-              border: 1px solid transparent;
+              border-bottom: 1px solid transparent;
               &::after {
                 content: "";
                   position: absolute;

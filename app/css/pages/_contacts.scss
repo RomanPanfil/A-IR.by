@@ -8,6 +8,9 @@
         font-size: 0;
         &-content {
             margin-bottom: 60px;
+             @media(max-width:1024.99px) {
+                    margin-bottom: 10px;
+                }
              @media(max-width:576.99px) {
                     margin-bottom: 0px;
                 }
