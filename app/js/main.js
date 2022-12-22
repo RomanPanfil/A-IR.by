@@ -2625,7 +2625,7 @@ if(complite) {
 
         pagination: {
             el: `.swiper-pagination-${sliderIdentifier}`,
-
+            clickable: true,
         },
     });
 }
@@ -3378,9 +3378,19 @@ mainLogo = document.querySelector('.main-logo'),
 searchMenu = document.querySelector('.search-menu'),
 mainHeight = document.querySelector('.main'),
 menuHeight = document.querySelector('.menu'),
+closeInput = document.querySelector('.main-search-input-close')
 // headerConatins = document.querySelector('.header').classList.contains('.header_fixed'),
 mainWatalog = document.querySelector('.main-catalog-wrapper');
 
+closeInput.addEventListener('click', () => {
+  mainSearchInput.value = ''
+
+  mainLogo.classList.remove('main-logo-close')
+  mainWatalog.classList.remove('main-catalog-wrapper-close')
+  searchMenu.classList.remove('search-menu-open')
+  bodyOpenCatalog.classList.remove('body-hidden-search')
+  closeInput.classList.remove('main-search-input-close-open')
+})
 
 searchMenu.addEventListener('click', (e) => {
   if(e.target.classList[1] == 'search-menu-open') {
@@ -3392,11 +3402,14 @@ searchMenu.addEventListener('click', (e) => {
 })
 mainSearchInput.addEventListener('keyup', () => {
 
+  closeInput.classList.remove('main-search-input-close-open')
+
   if(mainSearchInput.value !== '') {
     mainLogo.classList.add('main-logo-close')
     mainWatalog.classList.add('main-catalog-wrapper-close')
     searchMenu.classList.add('search-menu-open')
     bodyOpenCatalog.classList.add('body-hidden-search')
+    closeInput.classList.add('main-search-input-close-open')
 
     topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
     if($('.header').hasClass('header_fixed')) {
@@ -3507,11 +3520,21 @@ mobMenuSearch.addEventListener('click', () => {
 
 //LightGallery
 
-lightGallery(document.getElementById('productGallery'), {
-  // plugins: [lgZoom, lgThumbnail],
-  licenseKey: 'your_license_key',
-  speed: 500,
-});
+// lightGallery(document.getElementById('productGallery'), {
+//   licenseKey: 'your_license_key',
+//   speed: 500,
+  
+// });
+
+var lg = document.getElementById('productGallery');
+ 
+// lg.addEventListener('onBeforeOpen.lg', function(e){
+//   console.log('asdasd')
+// }, false);
+ 
+lightGallery(lg);
+
+
 
 
 
