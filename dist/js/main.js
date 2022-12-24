@@ -29786,6 +29786,7 @@ jQuery(document).ready(function($){
 
   $(document).on('click','.tabs-target',function(e){
     e.preventDefault();
+
     const id = $(this).attr('href');
 
     if ($(id).length) {
@@ -30749,12 +30750,18 @@ new Swiper(".main-banners-slider", {
   })();
 
 
+  let pageTitleCategory = document.querySelector('.page-title-category');
   $(function() {
     var tab = $('#tabs .sign-popup-content > div');
     tab.hide().filter(':first').show();
 
     // Клики по вкладкам.
-    $('#tabs .sign-popup-tabs a').click(function(){
+    $('#tabs .sign-popup-tabs a').click(function(e){
+      if(pageTitleCategory) {
+        let newCategory = e.target.innerHTML
+        pageTitleCategory.innerHTML = newCategory;
+      }
+     
       tab.hide();
       tab.filter(this.hash).show();
       $('#tabs .sign-popup-tabs a').removeClass('active');
@@ -31347,7 +31354,7 @@ if (removeBtn) {
       //   })
 
       // }
-      // console.log(elem.target.closest('.swiper-slide').ariaLabel)
+      console.log(elem.target.closest('.swiper-slide').ariaLabel)
      let removeElement =  elem.target.closest('.swiper-slide').ariaLabel
       allInfo.forEach((ariaElem) => {
         if(ariaElem.ariaLabel === removeElement) {
@@ -31369,41 +31376,179 @@ if(fixedBtn) {
     
 
     e.addEventListener('click', (elem) => {
-    
-      // elem.stopPropagation();
+let productCardBox = document.querySelector('.product-card');
+let WidthProduct = productCardBox.clientWidth;
+let fixedContainer = document.querySelector('.test-position');
+
+// if(productCardBox) {
+//   let HeightProduct = productCardBox.clientHeight;
+
+//   console.log($('.test-position').children())
+//   // $('.test-position').children().css({
+//   //   'height': HeightProduct,
+//   //   'width': WidthProduct,
+//   // })
+
+
+// }
+      
+      elem.preventDefault();
 
       function fixElement() {
         elem.target.closest('.product-card-fixed').classList.toggle('product-card-fixed-fix')
       }
       function removeFixElem() {
-        elem.target.closest('.product-card-fixed').classList.remove('product-card-fixed-fix')      
-        
+        if(elem.target.closest('.product-card-fixed').classList[2] == 'product-card-fixed-fix') {
+          elem.target.closest('.product-card-fixed').classList.remove('product-card-fixed-fix')      
+
+        }
+
       }
 
       
       let productFixed = document.querySelectorAll('.product-card-fixed-fix')
-      if(productFixed.length < 2) {
+      if(productFixed.length < 4) {
+       
         fixElement()
         e.children[1].classList.toggle('product-card-fixed-text-fix')
+
+       
+        
         allInfo.forEach((aria) => {
           if(aria.ariaLabel === elem.target.closest('.swiper-slide').ariaLabel) {
-
           $(aria.closest('.swiper-wrapper')).prepend($(aria))
-  
+       
+          //! $(aria).closest('.compare-row-main').children('.test-position-info')[0] - то куда класть элемент
+          let copyContainer = $(aria).closest('.compare-row-main').children('.test-position-info')[0];
+         
+          $(aria).clone().appendTo(copyContainer)
+     
+        
+         
             swiperCarouselCompare.forEach((swiperSlide) => {
               swiperSlide.slideTo(0)
             })
+
           }
         })
+        $(e).closest('.swiper-slide').clone().appendTo('.test-position')
+        $(e).closest('.product-card').addClass('product-card-invivsible')
+      
+       
+
+  
+   
+
+      //Кнопка закрепить - открепляем продукт
+      
+      let wrapPosition = document.querySelector('.test-position');
+      let children_wrapPosition = wrapPosition.querySelectorAll('.swiper-slide')
+      
+      children_wrapPosition.forEach((card) => {
+        removeFix = $(card).find('.product-card-fixed')[0];
+        deleteFix = $(card).find('.product-card-remove')[0];
+
+        //удаляем закрепленные элементы по нажатию на крестик
+        deleteFix.addEventListener(('click'), () => {
+          let allAriaId = document.querySelectorAll('.swiper-slide')
+         
+          
+          allAriaId.forEach((ariaId) => {
+            if(card.ariaLabel == ariaId.ariaLabel) {
+             
+
+              swiperCarouselCompare.forEach((swiperSlide) => {
+                swiperSlide.slideTo(0)
+                swiperSlide.update()
+              })
+              ariaId.remove()
+             
+            }
+           
+          })
+          console.log(card)
+          // console.log('asd')
+          let mainSlider = document.querySelector('.swiper-carousel-compare-main');
+          // console.log($(mainSlider).find('.swiper-slide')[0].ariaLabel);
+          let newFirstIndex =  $(mainSlider).find('.swiper-slide')[0].ariaLabel
+          //  console.log(newFirstIndex)
+          //  console.log(children_wrapPosition[0])
+           children_wrapPosition[0].setAttribute('aria-label', newFirstIndex)
+           console.log(children_wrapPosition[0])
+         
+          //  let updateFirstCopyIndex = children_wrapPosition[0]
+          //  updateFirstCopyIndex.setAttribute('aria-label', newFirstIndex)
+
+          
+        
+        })
+
+        removeFix.addEventListener('click', () => {
+
+              //удаляем копированные значения 
+              let warPositionTest = document.querySelectorAll('.test-position-info')
+              warPositionTest.forEach((elemOfText) => {
+                let children_elemOfText = elemOfText.querySelectorAll('.swiper-slide');
+        
+                children_elemOfText.forEach((slideText) => {
+               
+                  if(card.ariaLabel == slideText.ariaLabel) {
+                    slideText.remove();
+                  }
+                })
+            })
+
+
+          card.remove()
+         $(e).closest('.product-card').removeClass('product-card-invivsible')
+          e.children[1].classList.remove('product-card-fixed-text-fix')
+          elem.target.closest('.product-card-fixed').classList.remove('product-card-fixed-fix') 
+
+
+          swiperCarouselCompare.forEach((swiperSlide) => {
+            swiperSlide.slideTo(0)
+          })
+
+        })
+      })
+    
+
       } else {
         removeFixElem()
+        e.children[1].classList.remove('product-card-fixed-text-fix')
       }
-     
-      
+
     })
   })
  
 }
+
+
+
+//Добавляем\убираем кнопку закрепить в зависимости от кол-во элементов
+let product_c = document.querySelectorAll('.product-card');
+let wrapPosition = document.querySelector('.test-position');
+let wrapPositionText = document.querySelectorAll('.test-position-info')
+
+if(carouselCompare) {
+  function fixedbtn() {
+    if($('.swiper-carousel-compare-main').find('.swiper-slide').length > 3) {
+      $('.product-card-fixed').addClass('product-card-fixed-f')
+    } else {
+      $('.product-card-fixed').removeClass('product-card-fixed-f')
+      product_c.forEach((product) => {
+        $(product).removeClass('product-card-invivsible')
+      })
+      wrapPositionText.forEach((deleteText) => {
+        deleteText.remove()
+      })
+      wrapPosition.remove()
+    }
+  }
+  
+  fixedbtn()
+}
+
 // catalog-item-list
 
 const serviceReminder = document.querySelector('.service-reminder');
@@ -31926,19 +32071,6 @@ $(".compare-checkbox").on("click", function () {
 
 
 
-//Добавляем\убираем кнопку заерпить в зависимости от кол-во элементов
-if(carouselCompare) {
-  function fixedbtn() {
-    if($('.swiper-carousel-compare-main').find('.swiper-slide').length > 3) {
-      $('.product-card-fixed').addClass('product-card-fixed-f')
-    } else {
-      $('.product-card-fixed').removeClass('product-card-fixed-f')
-  
-    }
-  }
-  
-  fixedbtn()
-}
 
 //скролл
 $("a.scroll-to").on("click", function(e){
@@ -32019,3 +32151,6 @@ menuDesktopHover.forEach((e) => {
     } 
   })
 })
+
+
+

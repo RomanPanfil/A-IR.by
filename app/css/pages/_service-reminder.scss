@@ -2,7 +2,9 @@
   &-header {
     .page-title {
       margin-bottom: 21px;
-
+      &-category {
+        display: inline-block;
+      }
       @media(max-width: 1024.99px) {
         margin-bottom: 15px;
       }

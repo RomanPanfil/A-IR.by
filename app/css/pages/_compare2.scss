@@ -35,6 +35,9 @@
             justify-content: space-between;
             margin-bottom: 24px;
             margin-right: 24px;
+             @media(max-width:576.99px) {
+                    margin-right: 0;
+                }
             &-sticky {
                 justify-content: initial;
                 gap: 15px;
@@ -84,7 +87,7 @@
                 width: 100%;
             }
              @media(max-width:576px) {
-                    padding: 0 15px;
+                    // padding: 0 15px;
                 }
         }
     }
@@ -105,6 +108,7 @@
             flex-shrink: 0;
             color: #000000B2;
             padding: 17px 24px;
+            margin-right: 24px;
             @media(max-width:1024.99px) {
                 flex: 0 0 100%;
                 max-width: 100%;
@@ -116,6 +120,7 @@
             }
         }
         &-main {
+            position: relative;
             width: 70%;
             // flex: 0 0 70%;
             // max-width: 70%;
@@ -131,6 +136,10 @@
         }
     }
     &-table {
+        margin: 0 -15px;
+        &-wrap {
+            padding: 0 15px;
+        }
         &-section {
             margin-bottom: 16px;
             &-head {
@@ -269,6 +278,7 @@
     }
 }
 .carousel-compare-main {
+    width: 100%;
     position: relative;
     margin: -10px;
     .ui-arrow-disabled, .ui-arrow.swiper-button-disabled {
@@ -448,4 +458,83 @@
 
 .swiper-slide-same-hidden {
     display: none;
+}
+
+
+
+.carousel-compare-row {
+    margin: 0px -10px;
+     @media(max-width:576.99px) {
+            margin: 0;
+        }
+}
+
+.compare-checkbox + label{
+     @media(max-width:576.99px) {
+        &::before {
+            height: 24px;
+            width: 24px;
+            top: -3px !important;
+            left: -5px;
+        }
+        }
+}
+
+.compare-tooltip {
+    .ui-tooltip-icon {
+        width: 20px;
+        height: 20px;
+        line-height: 18px;
+    }
+   
+}
+
+
+
+
+.test-position {
+    position: absolute;
+    display: flex;
+    // width: 400px;
+    // height: 500px;
+    background: #fff;
+    left: 10px;
+    top: 10px;
+    z-index: 2;
+    .product-card {
+        height: 100%;
+        width: 100%;
+        margin-right: 24px;
+        // display: block;
+         @media(max-width:1024.99px) {
+                display: block;
+            }
+            .product-card-top {
+                 @media(max-width:1024.99px) {
+                max-width: 100%;
+            }
+            }
+        //  @media(max-width:300.99px) {
+            
+        // }
+    }
+    
+}
+
+.test-position-info {
+    position: absolute;
+    display: flex;
+    // width: 200px;
+    // height: 50px;
+    background: #fff;
+    // left: 10px;
+    transform: translateY(-50%);
+    top: 50%;
+    z-index: 2;
+}
+
+.product-card-invivsible {
+    * {
+        opacity: 0;
+    }
 }
