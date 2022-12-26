@@ -495,8 +495,7 @@
 .test-position {
     position: absolute;
     display: flex;
-    // width: 400px;
-    // height: 500px;
+
     background: #fff;
     left: 10px;
     top: 10px;
@@ -536,5 +535,21 @@
 .product-card-invivsible {
     * {
         opacity: 0;
+    }
+}
+
+
+.unvisible-card {
+    position: relative;
+    z-index: -99;
+    opacity: 0;
+    font-size: 0;
+    line-height: 0;
+    .product-card {
+        position: relative;
+    z-index: -99;
+    opacity: 0;
+    font-size: 0;
+    line-height: 0;
     }
 }
