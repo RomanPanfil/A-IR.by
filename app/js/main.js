@@ -2953,7 +2953,6 @@ if (removeBtn) {
       //   })
 
       // }
-      console.log(elem.target.closest(".swiper-slide").ariaLabel);
       let removeElement = elem.target.closest(".swiper-slide").ariaLabel;
       allInfo.forEach((ariaElem) => {
         if (ariaElem.ariaLabel === removeElement) {
@@ -3007,18 +3006,14 @@ if (fixedBtn) {
               .closest(".compare-row-main")
               .children(".test-position-info")[0];
 
-               $(aria).clone().appendTo(copyContainer);
+            $(aria).clone().appendTo(copyContainer);
 
             swiperCarouselCompare.forEach((swiperSlide) => {
               swiperSlide.slideTo(0);
-              // swiperSlide.update();
             });
           }
         });
-        $('.test-position').prepend($(e).closest(".swiper-slide").clone())
-        // $(e).closest(".swiper-slide").clone().appendTo(".test-position");
-
-
+        $(e).closest(".swiper-slide").clone().appendTo(".test-position");
         $(e).closest(".product-card").addClass("product-card-invivsible");
 
         //!---------------------------------
@@ -3031,10 +3026,11 @@ if (fixedBtn) {
         children_wrapPosition.forEach((card) => {
           removeFix = $(card).find(".product-card-fixed")[0];
           deleteFix = $(card).find(".product-card-remove")[0];
-          
+          // console.log("forEach");
           //удаляем закрепленные элементы по нажатию на крестик
           deleteFix.addEventListener("click", () => {
             // console.log("Listener");
+            
             let allAriaId = document.querySelectorAll(".swiper-slide");
 
             allAriaId.forEach((ariaId) => {
@@ -3062,14 +3058,12 @@ if (fixedBtn) {
             });
             //!--------------
           });
-          //открепить
+
           removeFix.addEventListener("click", () => {
             //удаляем копированные значения
             let warPositionTest = document.querySelectorAll(
               ".test-position-info"
             );
-
-            
             warPositionTest.forEach((elemOfText) => {
               let children_elemOfText =
                 elemOfText.querySelectorAll(".swiper-slide");
@@ -3081,19 +3075,8 @@ if (fixedBtn) {
               });
             });
 
-            //Добавляем класс по нажатию на открепить 
-            // $(card).addClass('unvisible-card');
-            // let Unvisible = card.closest('.test-position');
-            // let allUnvisible = Unvisible.querySelectorAll('.unvisible-card');
-            
-            // if(allUnvisible.length >= 2) {
-            //   console.log('remove')
-            //   allUnvisible.forEach((removeAllCard) => {
-            //     removeAllCard.remove()
-            //   })
-            // }
-           card.remove()
-       
+            card.remove();
+
             $(e)
               .closest(".product-card")
               .removeClass("product-card-invivsible");
@@ -3105,7 +3088,6 @@ if (fixedBtn) {
             swiperCarouselCompare.forEach((swiperSlide) => {
               swiperSlide.slideTo(0);
             });
-
           });
         });
 
@@ -3135,7 +3117,7 @@ if (carouselCompare) {
       wrapPositionText.forEach((deleteText) => {
         deleteText.remove();
       });
-      wrapPosition.remove();
+      // wrapPosition.remove();
     }
   }
 
