@@ -253,6 +253,7 @@
                 font-weight: 700;
                 background: #2A4455;
                 clip-path: polygon(32% 0, 100% 50%, 32% 100%, 0 100%, 1% 0);
+                border-radius: 8px 0px 0px 8px;
             }
             &-title {
                 font-weight: 700;
@@ -394,6 +395,8 @@
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
         border-radius: 8px;
         overflow: hidden;
+        transform: translate3d(0,0,0);
+        
          @media(max-width:576px) {
                 margin: 0px -15px;
                 border-radius: 0;

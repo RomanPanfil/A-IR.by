@@ -653,11 +653,12 @@ if (document.querySelector(".making-form")) {
   window.addEventListener("load", flipOrSticky);
 }
 
-let deliverypay = document.querySelector(".ui-rightbar");
-if (document.querySelector(".ui-rightbar")) {
+
+(function () {
+  if (!document.querySelector(".ui-rightbar")) return
   const stickyBlock = document.querySelector(".ui-rightbar");
   const card = document.querySelector("#card-breackpoint");
-
+  
   function flipOrSticky() {
     const box = card.getBoundingClientRect();
     const stickyBox = stickyBlock.getBoundingClientRect();
@@ -666,7 +667,7 @@ if (document.querySelector(".ui-rightbar")) {
     const stickyBottom = stickyBox.height;
     const py = window.pageYOffset;
 
-    if (py > boxTop + py) {
+    if (py > boxTop + py - 100) {
       if (py < boxBottom + py - stickyBottom - 100) {
         stickyBlock.classList.add("ui-rightbar-sticky");
         stickyBlock.classList.remove("ui-rightbar-flipbottom");
@@ -684,7 +685,8 @@ if (document.querySelector(".ui-rightbar")) {
 
   window.addEventListener("scroll", flipOrSticky);
   window.addEventListener("load", flipOrSticky);
-}
+})();
+
 
 (function () {
   if (!D.querySelector(".catalog-marks")) return;
@@ -1561,7 +1563,7 @@ jQuery(document).ready(function ($) {
 
       marker.setMap(map);
     }
-  }
+  }//end
 
   if (document.getElementById("map-address")) {
     mapContactInit();
@@ -3618,21 +3620,19 @@ mobMenuSearch.addEventListener("click", () => {
   }
 });
 
-//LightGallery
 
-// lightGallery(document.getElementById('productGallery'), {
-//   licenseKey: 'your_license_key',
-//   speed: 500,
 
-// });
+if (document.getElementById("productGallery")) {
+  FARBA.lazyLibraryLoad(
+    '//cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/lightgallery.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/css/lightgallery.min.css',
+    () => {
+      var lg = document.getElementById("productGallery");
+      lightGallery(lg);
+    }
+  )
+}
 
-var lg = document.getElementById("productGallery");
-
-// lg.addEventListener('onBeforeOpen.lg', function(e){
-//   console.log('asdasd')
-// }, false);
-
-lightGallery(lg);
 
 //Показать только отличия compare2.html
 let inputSame = document.getElementById("f_v_1");
