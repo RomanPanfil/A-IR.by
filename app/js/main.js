@@ -3015,12 +3015,14 @@ if (fixedBtn) {
             });
           }
         });
-        $(e).closest(".swiper-slide").clone().appendTo(".test-position");
+
+        //*Создаем клон карточки и кладем в "test-position"
+        // $(e).closest(".swiper-slide").clone().appendTo(".test-position");
+        $(".test-position").prepend($(e).closest(".swiper-slide").clone())
         $(e).closest(".product-card").addClass("product-card-invivsible");
 
-        //!---------------------------------
-        //Кнопка закрепить - открепляем продукт
-
+      
+        //*Кнопка закрепить - открепляем продукт
         let wrapPositionT = document.querySelector(".test-position");
         let children_wrapPosition =
           wrapPositionT.querySelectorAll(".swiper-slide");
@@ -3028,11 +3030,10 @@ if (fixedBtn) {
         children_wrapPosition.forEach((card) => {
           removeFix = $(card).find(".product-card-fixed")[0];
           deleteFix = $(card).find(".product-card-remove")[0];
-          // console.log("forEach");
-          //удаляем закрепленные элементы по нажатию на крестик
+         
+          //*удаляем закрепленные элементы по нажатию на крестик
           deleteFix.addEventListener("click", () => {
-            // console.log("Listener");
-            
+
             let allAriaId = document.querySelectorAll(".swiper-slide");
 
             allAriaId.forEach((ariaId) => {
@@ -3040,7 +3041,7 @@ if (fixedBtn) {
                 ariaId.remove();
               }
             });
-            //!-------------
+         
             let mainSlider = document.querySelector(
               ".swiper-carousel-compare-main"
             );
@@ -3049,7 +3050,7 @@ if (fixedBtn) {
               $(mainSlider).find(".swiper-slide")[0].ariaLabel;
 
             children_wrapPosition[0].setAttribute("aria-label", newFirstIndex);
-            console.log(children_wrapPosition[0]);
+            // console.log(children_wrapPosition[0]);
 
             let updateFirstCopyIndex = children_wrapPosition[0];
             updateFirstCopyIndex.setAttribute("aria-label", newFirstIndex);
@@ -3058,11 +3059,12 @@ if (fixedBtn) {
               swiperSlide.slideTo(0);
               swiperSlide.update();
             });
-            //!--------------
+           
           });
-
+          //*удаляем закрепленные элементы по нажатию на "Закреплено"
           removeFix.addEventListener("click", () => {
-            //удаляем копированные значения
+          
+
             let warPositionTest = document.querySelectorAll(
               ".test-position-info"
             );
@@ -3071,6 +3073,7 @@ if (fixedBtn) {
                 elemOfText.querySelectorAll(".swiper-slide");
 
               children_elemOfText.forEach((slideText) => {
+                
                 if (card.ariaLabel == slideText.ariaLabel) {
                   slideText.remove();
                 }
@@ -3078,7 +3081,7 @@ if (fixedBtn) {
             });
 
             card.remove();
-
+            
             $(e)
               .closest(".product-card")
               .removeClass("product-card-invivsible");
@@ -3088,6 +3091,27 @@ if (fixedBtn) {
               .classList.remove("product-card-fixed-fix");
 
             swiperCarouselCompare.forEach((swiperSlide) => {
+              
+              //! Тут тоже всплывает ошибка 2-го клика, из-за этого по 1 клику открывается сразу 2 оригинельные карточки вмсето 1-ой
+              //! Баг можно получить закрепив 2-е карточки => открепить 2-ю
+              console.log('Двойной клик')
+              //меняем оригинальные слайдера местами по их aria-label
+              let swiperSlideEl = $(swiperSlide)[0].$el.find(`.swiper-slide`)
+              swiperSlideEl.forEach((findAriaLabel) => {
+                if(findAriaLabel.ariaLabel === card.ariaLabel) {
+                  
+                  $(findAriaLabel).closest('.swiper-wrapper').prepend($(findAriaLabel))
+                  
+                }
+              })
+              // swiperSlide.querySelectorAll('swiper-slide')
+              // console.log(swiperSlide.querySelectorAll('swiper-slide'))
+              // console.log(swiperSlideEl)
+              //! insertAfter
+              // console.log($(swiperSlideEl).find('.swiper-slide[aria-label="+card.ariaLabel+"]'))
+              // $(swiperSlideEl).find('.swiper-slide[aria-label="+card.ariaLabel+"]')[0].addClass('zxczxczxczxczxcz')
+              // $(swiperSlide).find('.swiper-slide[aria-label="+card.ariaLabel+"]')
+              // console.log($(swiperSlide).find('.swiper-slide'))
               swiperSlide.slideTo(0);
             });
           });
