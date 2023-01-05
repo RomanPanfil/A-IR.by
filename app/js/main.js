@@ -3117,7 +3117,6 @@ if (fixedBtn) {
           });
         });
 
-        //!=================================
       } else {
         removeFixElem();
         // e.children[1].classList.remove('product-card-fixed-text-fix')
