@@ -10,6 +10,9 @@
         min-height:100%; 
         padding: 0;
         margin: 0;
+         @media(max-width:1024.99px) {
+                height: 400px;
+            }
     }
 
     .deliverypay-map {
@@ -274,6 +277,7 @@
                     &.active {
                     // border: 2px solid #2A4455;
                     box-shadow: inset 0px 0px 0px 2px;
+                    border-color: transparent;
                         &::after {
                             display: none;
                         }

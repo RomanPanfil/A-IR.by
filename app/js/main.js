@@ -1,5 +1,8 @@
 const D = document;
 
+
+
+
 const FARBA = {
   //lazy load для сторонних либ
   lazyLibraryLoad(scriptSrc, linkHref, callback) {
@@ -50,6 +53,24 @@ const FARBA = {
     });
   },
 };
+
+
+function safariFnc(selector) {
+  var ua = navigator.userAgent.toLowerCase(); 
+
+  if (ua.indexOf('safari') != -1) { 
+    if (ua.indexOf('chrome') > -1) {
+      $(selector).styler();
+      console.log('google')
+    } else {
+      $(selector).addClass('safari-select')
+      console.log('safar')
+    }
+  }
+}
+
+safariFnc('select');
+
 
 $.fn.Tabs = function () {
   var selector = this;
@@ -1406,7 +1427,7 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  $("select").styler();
+
 
   $(document).on("click", ".mfp-link", function () {
     var a = $(this);
@@ -2407,175 +2428,9 @@ $(function () {
 //! PART 3 JAVA SCRIPT CODE
 
 //карта на странице delivery&pay
-let deliverypayMap = document.querySelector(".deliverypayMap");
-if (deliverypayMap) {
-  const deliveryCity = [
-    { coord: [53.902735, 27.555696], title: "Минск", content: "Минск" },
-    { coord: [53.894548, 30.330654], title: "Могилёв", content: "Могилёв" },
-    {
-      coord: [34.052235, -118.243683],
-      title: "Другие города",
-      content: "Другие города",
-    },
-  ];
 
-  ymaps.ready(function () {
-    const map = new ymaps.Map("deliverypayMap", {
-      zoom: 9,
-      center: deliveryCity[0].coord,
-      controls: [],
-    });
 
-    const marker = new ymaps.Placemark(deliveryCity[0].coord, {
-      balloonContent: balloonContent(deliveryCity[0]),
-    });
-    map.geoObjects.add(marker);
-    map.behaviors.disable("scrollZoom");
 
-    document.querySelectorAll("#citylink li a").forEach((n, i) => {
-      n.addEventListener("click", onClick.bind(n, deliveryCity[i]));
-    });
-
-    function onClick(item) {
-      map.setCenter(item.coord);
-      marker.geometry.setCoordinates(item.coord);
-      marker.properties.set("balloonContent", balloonContent(item));
-    }
-
-    function balloonContent(item) {
-      return `<b>${item.content}</b>`;
-    }
-  });
-}
-
-let mapContact1 = document.getElementById("mapContact1");
-let mapContact2 = document.getElementById("mapContact2");
-
-if (mapContact1) {
-  ymaps.ready(init);
-  ymaps.ready(init1);
-  function init() {
-    var mapContact1 = new ymaps.Map("mapContact1", {
-      center: [53.834601, 28.994249],
-      zoom: 8,
-      controls: [],
-    });
-    // mapContact1.setZoom(7)
-
-    (function () {
-      if (matchMedia) {
-        const screen = window.matchMedia("(max-width:1024.99px)");
-        screen.addListener(changes);
-        changes(screen);
-      }
-      function changes(screen) {
-        if (screen.matches) {
-          mapContact1.setZoom(7);
-        } else {
-          mapContact1.setZoom(8);
-        }
-      }
-    })();
-
-    // Первая метка
-    (MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent = new ymaps.Placemark(
-        [53.933166, 27.451803],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
-
-    // Вторая метка
-    (MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent1 = new ymaps.Placemark(
-        [53.879127, 30.265464],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
-
-    mapContact1.behaviors.disable("scrollZoom");
-    mapContact1.geoObjects.add(myPlacemarkWithContent);
-    mapContact1.geoObjects.add(myPlacemarkWithContent1);
-  }
-  function init1() {
-    var mapContact2 = new ymaps.Map("mapContact2", {
-      center: [53.834601, 28.994249],
-      zoom: 8,
-      controls: [],
-    });
-    (function () {
-      if (matchMedia) {
-        const screen = window.matchMedia("(max-width:1024.99px)");
-        screen.addListener(changes);
-        changes(screen);
-      }
-      function changes(screen) {
-        if (screen.matches) {
-          mapContact2.setZoom(7);
-        } else {
-          mapContact2.setZoom(8);
-        }
-      }
-    })();
-
-    //     // Первая метка
-    (MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent = new ymaps.Placemark(
-        [53.933166, 27.451803],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
-
-    //   // Вторая метка
-    (MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent1 = new ymaps.Placemark(
-        [53.879127, 30.265464],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
-
-    //вторая карта
-    mapContact2.behaviors.disable("scrollZoom");
-    mapContact2.geoObjects.add(myPlacemarkWithContent);
-    mapContact2.geoObjects.add(myPlacemarkWithContent1);
-  }
-}
 
 let uiSearchSettings = document.querySelector(".ui-search-settings");
 
@@ -2940,21 +2795,7 @@ let targetElment = document.querySelectorAll(".product-card"),
 if (removeBtn) {
   removeBtn.forEach((e) => {
     e.addEventListener("click", (elem) => {
-      // if(e === elem.target) {
-      //   allSliders.forEach((slider) => {
-      //     slider.querySelectorAll('.swiper-slide').forEach((elemIndex, i) => {
-
-      //       swiperCarouselCompare.forEach((swiper) => {
-      //         if(elemIndex == elem.target.closest('.swiper-slide')) {
-      //           swiper.removeSlide(i)
-
-      //         }
-      //       })
-
-      //     })
-      //   })
-
-      // }
+     
       let removeElement = elem.target.closest(".swiper-slide").ariaLabel;
       allInfo.forEach((ariaElem) => {
         if (ariaElem.ariaLabel === removeElement) {
@@ -2969,162 +2810,328 @@ if (removeBtn) {
     });
   });
 }
-if (fixedBtn) {
-  fixedBtn.forEach((e) => {
-    e.addEventListener("click", (elem) => {
-      // let productCardBox = document.querySelector('.product-card');
-      elem.preventDefault();
+// if (fixedBtn) {
+//   fixedBtn.forEach((e) => {
+//     e.addEventListener("click", (elem) => {
+//       // let productCardBox = document.querySelector('.product-card');
+//       elem.preventDefault();
 
-      function fixElement() {
-        elem.target
-          .closest(".product-card-fixed")
-          .classList.toggle("product-card-fixed-fix");
-      }
-      function removeFixElem() {
-        if (
-          elem.target.closest(".product-card-fixed").classList[2] ==
-          "product-card-fixed-fix"
-        ) {
-          elem.target
-            .closest(".product-card-fixed")
-            .classList.remove("product-card-fixed-fix");
-          e.children[1].classList.remove("product-card-fixed-text-fix");
-        }
-      }
+//       function fixElement() {
+//         elem.target
+//           .closest(".product-card-fixed")
+//           .classList.toggle("product-card-fixed-fix");
+//       }
+//       function removeFixElem() {
+//         if (
+//           elem.target.closest(".product-card-fixed").classList[2] ==
+//           "product-card-fixed-fix"
+//         ) {
+//           elem.target
+//             .closest(".product-card-fixed")
+//             .classList.remove("product-card-fixed-fix");
+//           e.children[1].classList.remove("product-card-fixed-text-fix");
+//         }
+//       }
 
-      let productFixed = document.querySelectorAll(".product-card-fixed-fix");
-      if (productFixed.length < 4) {
-        fixElement();
-        e.children[1].classList.toggle("product-card-fixed-text-fix");
+//       let productFixed = document.querySelectorAll(".product-card-fixed-fix");
+//       if (productFixed.length < 4) {
+//         fixElement();
+//         e.children[1].classList.toggle("product-card-fixed-text-fix");
 
-        allInfo.forEach((aria) => {
-          if (
-            aria.ariaLabel === elem.target.closest(".swiper-slide").ariaLabel
-          ) {
-            $(aria.closest(".swiper-wrapper")).prepend($(aria));
+//         allInfo.forEach((aria) => {
+//           if (
+//             aria.ariaLabel === elem.target.closest(".swiper-slide").ariaLabel
+//           ) {
+//             $(aria.closest(".swiper-wrapper")).prepend($(aria));
 
-            //! $(aria).closest('.compare-row-main').children('.test-position-info')[0] - то куда класть элемент
-            let copyContainer = $(aria)
-              .closest(".compare-row-main")
-              .children(".test-position-info")[0];
+//             //! $(aria).closest('.compare-row-main').children('.test-position-info')[0] - то куда класть элемент
+//             let copyContainer = $(aria)
+//               .closest(".compare-row-main")
+//               .children(".test-position-info")[0];
 
-            $(aria).clone().appendTo(copyContainer);
+//             $(aria).clone().appendTo(copyContainer);
 
-            swiperCarouselCompare.forEach((swiperSlide) => {
-              swiperSlide.slideTo(0);
-            });
-          }
-        });
+//             swiperCarouselCompare.forEach((swiperSlide) => {
+//               swiperSlide.slideTo(0);
+//             });
+//           }
+//         });
 
-        //*Создаем клон карточки и кладем в "test-position"
-        // $(e).closest(".swiper-slide").clone().appendTo(".test-position");
-        $(".test-position").prepend($(e).closest(".swiper-slide").clone())
-        $(e).closest(".product-card").addClass("product-card-invivsible");
+//         //*Создаем клон карточки и кладем в "test-position"
+//         // $(e).closest(".swiper-slide").clone().appendTo(".test-position");
+//         $(".test-position").prepend($(e).closest(".swiper-slide").clone())
+//         $(e).closest(".product-card").addClass("product-card-invivsible");
 
       
-        //*Кнопка закрепить - открепляем продукт
-        let wrapPositionT = document.querySelector(".test-position");
-        let children_wrapPosition =
-          wrapPositionT.querySelectorAll(".swiper-slide");
+//         //*Кнопка закрепить - открепляем продукт
+//         let wrapPositionT = document.querySelector(".test-position");
+//         let children_wrapPosition =
+//           wrapPositionT.querySelectorAll(".swiper-slide");
 
-        children_wrapPosition.forEach((card) => {
-          removeFix = $(card).find(".product-card-fixed")[0];
-          deleteFix = $(card).find(".product-card-remove")[0];
+//         children_wrapPosition.forEach((card) => {
+//           removeFix = $(card).find(".product-card-fixed")[0];
+//           deleteFix = $(card).find(".product-card-remove")[0];
          
-          //*удаляем закрепленные элементы по нажатию на крестик
-          deleteFix.addEventListener("click", () => {
+//           //*удаляем закрепленные элементы по нажатию на крестик
+//           deleteFix.addEventListener("click", () => {
 
-            let allAriaId = document.querySelectorAll(".swiper-slide");
+//             let allAriaId = document.querySelectorAll(".swiper-slide");
 
-            allAriaId.forEach((ariaId) => {
-              if (card.ariaLabel == ariaId.ariaLabel) {
-                ariaId.remove();
-              }
-            });
+//             allAriaId.forEach((ariaId) => {
+//               if (card.ariaLabel == ariaId.ariaLabel) {
+//                 ariaId.remove();
+//               }
+//             });
          
-            let mainSlider = document.querySelector(
-              ".swiper-carousel-compare-main"
-            );
+//             let mainSlider = document.querySelector(
+//               ".swiper-carousel-compare-main"
+//             );
 
-            let newFirstIndex =
-              $(mainSlider).find(".swiper-slide")[0].ariaLabel;
+//             let newFirstIndex =
+//               $(mainSlider).find(".swiper-slide")[0].ariaLabel;
 
-            children_wrapPosition[0].setAttribute("aria-label", newFirstIndex);
-            // console.log(children_wrapPosition[0]);
+//             children_wrapPosition[0].setAttribute("aria-label", newFirstIndex);
+//             // console.log(children_wrapPosition[0]);
 
-            let updateFirstCopyIndex = children_wrapPosition[0];
-            updateFirstCopyIndex.setAttribute("aria-label", newFirstIndex);
+//             let updateFirstCopyIndex = children_wrapPosition[0];
+//             updateFirstCopyIndex.setAttribute("aria-label", newFirstIndex);
 
-            swiperCarouselCompare.forEach((swiperSlide) => {
-              swiperSlide.slideTo(0);
-              swiperSlide.update();
-            });
+//             swiperCarouselCompare.forEach((swiperSlide) => {
+//               swiperSlide.slideTo(0);
+//               swiperSlide.update();
+//             });
            
-          });
-          //*удаляем закрепленные элементы по нажатию на "Закреплено"
-          removeFix.addEventListener("click", () => {
+//           });
+//           //*удаляем закрепленные элементы по нажатию на "Закреплено"
+//           removeFix.addEventListener("click", () => {
           
 
-            let warPositionTest = document.querySelectorAll(
-              ".test-position-info"
-            );
-            warPositionTest.forEach((elemOfText) => {
-              let children_elemOfText =
-                elemOfText.querySelectorAll(".swiper-slide");
+//             let warPositionTest = document.querySelectorAll(
+//               ".test-position-info"
+//             );
+//             warPositionTest.forEach((elemOfText) => {
+//               let children_elemOfText =
+//                 elemOfText.querySelectorAll(".swiper-slide");
 
-              children_elemOfText.forEach((slideText) => {
+//               children_elemOfText.forEach((slideText) => {
                 
-                if (card.ariaLabel == slideText.ariaLabel) {
-                  slideText.remove();
-                }
-              });
-            });
+//                 if (card.ariaLabel == slideText.ariaLabel) {
+//                   slideText.remove();
+//                 }
+//               });
+//             });
 
-            card.remove();
+//             card.remove();
             
-            $(e)
-              .closest(".product-card")
-              .removeClass("product-card-invivsible");
-            e.children[1].classList.remove("product-card-fixed-text-fix");
-            elem.target
-              .closest(".product-card-fixed")
-              .classList.remove("product-card-fixed-fix");
+//             $(e)
+//               .closest(".product-card")
+//               .removeClass("product-card-invivsible");
+//             e.children[1].classList.remove("product-card-fixed-text-fix");
+//             elem.target
+//               .closest(".product-card-fixed")
+//               .classList.remove("product-card-fixed-fix");
 
-            swiperCarouselCompare.forEach((swiperSlide) => {
+//             swiperCarouselCompare.forEach((swiperSlide) => {
               
-              //! Тут тоже всплывает ошибка 2-го клика, из-за этого по 1 клику открывается сразу 2 оригинельные карточки вмсето 1-ой
-              //! Баг можно получить закрепив 2-е карточки => открепить 2-ю
-              console.log('Двойной клик')
-              //меняем оригинальные слайдера местами по их aria-label
-              let swiperSlideEl = $(swiperSlide)[0].$el.find(`.swiper-slide`)
-              swiperSlideEl.forEach((findAriaLabel) => {
-                if(findAriaLabel.ariaLabel === card.ariaLabel) {
+//               //! Тут тоже всплывает ошибка 2-го клика, из-за этого по 1 клику открывается сразу 2 оригинельные карточки вмсето 1-ой
+//               //! Баг можно получить закрепив 2-е карточки => открепить 2-ю
+//               console.log('Двойной клик')
+//               //меняем оригинальные слайдера местами по их aria-label
+//               let swiperSlideEl = $(swiperSlide)[0].$el.find(`.swiper-slide`)
+//               swiperSlideEl.forEach((findAriaLabel) => {
+//                 if(findAriaLabel.ariaLabel === card.ariaLabel) {
                   
-                  $(findAriaLabel).closest('.swiper-wrapper').prepend($(findAriaLabel))
+//                   $(findAriaLabel).closest('.swiper-wrapper').prepend($(findAriaLabel))
                   
-                }
-              })
-              // swiperSlide.querySelectorAll('swiper-slide')
-              // console.log(swiperSlide.querySelectorAll('swiper-slide'))
-              // console.log(swiperSlideEl)
-              //! insertAfter
-              // console.log($(swiperSlideEl).find('.swiper-slide[aria-label="+card.ariaLabel+"]'))
-              // $(swiperSlideEl).find('.swiper-slide[aria-label="+card.ariaLabel+"]')[0].addClass('zxczxczxczxczxcz')
-              // $(swiperSlide).find('.swiper-slide[aria-label="+card.ariaLabel+"]')
-              // console.log($(swiperSlide).find('.swiper-slide'))
-              swiperSlide.slideTo(0);
+//                 }
+//               })
+//               // swiperSlide.querySelectorAll('swiper-slide')
+//               // console.log(swiperSlide.querySelectorAll('swiper-slide'))
+//               // console.log(swiperSlideEl)
+//               //! insertAfter
+//               // console.log($(swiperSlideEl).find('.swiper-slide[aria-label="+card.ariaLabel+"]'))
+//               // $(swiperSlideEl).find('.swiper-slide[aria-label="+card.ariaLabel+"]')[0].addClass('zxczxczxczxczxcz')
+//               // $(swiperSlide).find('.swiper-slide[aria-label="+card.ariaLabel+"]')
+//               // console.log($(swiperSlide).find('.swiper-slide'))
+//               swiperSlide.slideTo(0);
+//             });
+//           });
+//         });
+
+//       } else {
+//         removeFixElem();
+//         // e.children[1].classList.remove('product-card-fixed-text-fix')
+//       }
+//     });
+//   });
+// }
+// console.log(window.matchMedia("(max-width:1024.99px)").matches)
+// console.log('asd')
+if (fixedBtn.length) {
+  //фиксируем слайд
+  fixedBtn.forEach(el => {
+    
+    //фиксируем слайд
+    el.addEventListener('click',(event) => {   
+
+      event.preventDefault()
+      event.stopPropagation()
+
+      // проверяем на кол-во закрепленных продуктов
+      let productFixed = document.querySelectorAll(".fixed");
+      let productMaxFix = 2;
+    if(window.matchMedia("(max-width:1024.99px)").matches == true) {
+      productMaxFix = 1
+    }
+     if(productFixed.length <= productMaxFix) {
+      // Меняем надпись на кнопке
+      el.querySelector('.product-card-fixed-text').classList.add('product-card-fixed-text-fix')
+
+      
+
+      const parentSlide = el.closest('.swiper-slide')
+      const parentSlideIndex = parseInt(parentSlide.ariaLabel.split('/')[0], 10)
+
+
+      const allChooseSlide = document.querySelectorAll('.swiper-slide')
+      allChooseSlide.forEach((slide) => {
+
+        if(slide.ariaLabel == null) return false
+
+        const slideLabel = parseInt(slide.ariaLabel.split('/')[0], 10)
+
+        if(slideLabel == parentSlideIndex) {
+         const cloneWrapper = $(slide).closest('.compare-row-main').children('.test-position-info')[0]
+         slide.classList.add('fixed-slide')
+
+         const cloneSlide =  $(slide).clone()
+         $(cloneWrapper).append($(cloneSlide))
+
+         const parentcloneSlide = $(slide).parent()
+         parentcloneSlide.prepend($(slide))
+        }
+      })
+
+      if (el.classList.contains('fixed')) return
+        
+      el.classList.add('fixed')
+      parentSlide.classList.add('fixed-slide')
+
+      const cloneParentSlide = $(parentSlide).clone()
+      $(".test-position").append($(cloneParentSlide))
+
+      const parentSlideParent = $(parentSlide).parent()
+      parentSlideParent.prepend($(parentSlide))
+
+      //задаем ширену копированному элементу в зависимости от высоты оригина 
+      let originElement = document.querySelector('.swiper-slide');
+      let originElementWidth = originElement.offsetWidth;
+
+      let fixedSlide = document.querySelector('.test-position')
+      let fixedSlides = fixedSlide.querySelectorAll('.swiper-slide')
+     
+      console.log(originElementWidth)
+      console.log(fixedSlides)
+      fixedSlides.forEach((elem) => {
+        elem.style.width = originElementWidth
+      });
+    }
+    }, false)
+  })
+
+  //возвращаем слайд на место
+  const allCopyWrapper = document.querySelectorAll('.test-position-info')
+
+  document.querySelector('.test-position').addEventListener('click',(e) => {
+    const target = e.target
+    
+    
+      // Удаление элемента (крестик)
+      if(target.classList.contains('product-card-remove')) {
+        
+        const removeTarget = target.closest('.swiper-slide')
+        const removeTargetLabel = removeTarget.ariaLabel
+
+        document.querySelectorAll('.swiper-slide').forEach((Slide) => {
+      
+
+          if(removeTargetLabel == Slide.ariaLabel) {
+            Slide.remove()
+
+            swiperCarouselCompare.forEach((swiper) => {
+              swiper.update();
             });
-          });
-        });
+          }
+        })
+        
+      } 
+    
+      if (!target.closest('.product-card-fixed')) return false
 
-      } else {
-        removeFixElem();
-        // e.children[1].classList.remove('product-card-fixed-text-fix')
-      }
-    });
-  });
+     
+
+    const parentSlide = target.closest('.swiper-slide')
+    const parentSlideArea = parentSlide.ariaLabel
+    const parentSlideIndex = parseInt(parentSlide.ariaLabel.split('/')[0], 10)
+
+ 
+    //удаляем слайд из псевдо-закрепленного блока
+    parentSlide.remove()
+
+    //Удаляем все остальные псевдо-слaйды
+    allCopyWrapper.forEach((cloneSlide) => {
+      const slideInCloneWrapper = cloneSlide.querySelectorAll('.swiper-slide');
+        slideInCloneWrapper.forEach((clone) => {
+          clone.remove()
+        })
+    })
+
+  
+
+    document.querySelectorAll(".swiper-carousel-compare").forEach((swiper) => {
+      //внешняя переменная для результата
+      let slideToInsert = false
+
+
+      //ищем слайд в каждой карусели, перед которым нужно вставить открепляемый
+      swiper.querySelectorAll('.swiper-slide').forEach(slide => {
+       
+        const realIndex = parseInt(slide.ariaLabel.split('/')[0], 10)
+        //прекращаем цикл, если уже нашли искомый элемент
+        if (slideToInsert) return
+
+        if (parentSlideIndex < realIndex && !slide.classList.contains('fixed-slide')) {
+          slideToInsert = slide
+      
+
+          return
+        }
+      })
+
+
+
+      
+      //вставляем слайд на исходное место в каждой карусели
+      swiper.querySelectorAll('.swiper-slide[aria-label="'+parentSlideArea+'"]').forEach(slide => {
+        $(slide).insertBefore($(slideToInsert))
+       
+        //Меня обратно надпись на кнопке
+        if(slide.querySelector('.product-card-fixed-text') == null) return false
+        slide.querySelector('.product-card-fixed-text').classList.remove('product-card-fixed-text-fix')
+       
+
+        //удаляем блокирующий клик класс
+        $(slide).find('.product-card-fixed').removeClass('fixed')
+        // slide.querySelector('.product-card-fixed').classList.remove('fixed')
+        slide.classList.remove('fixed-slide')
+      })
+    })
+
+  })
+ 
+
+  
 }
-
 //Добавляем\убираем кнопку закрепить в зависимости от кол-во элементов
 let product_c = document.querySelectorAll(".product-card");
 letT = document.querySelector(".test-position");
@@ -3346,7 +3353,11 @@ if (serviceReminder) {
     () => {
       $(document).ready(function () {
         let flag = false;
-        $("select").styler();
+       
+        // if(!IsSafari()) {
+        //   $("select").styler();
+        //   console.log('Safari')
+        // }    
 
         $("#datetimepicker").datetimepicker({
           // value:'12.03.2013',
@@ -3601,36 +3612,7 @@ $(".services-form").validate({
   },
 });
 
-let callMap = document.querySelector("#callMap");
-if (callMap) {
-  ymaps.ready(function () {
-    var callMap = new ymaps.Map(
-      "callMap",
-      {
-        center: [53.924723, 27.511615],
-        zoom: 12,
-        controls: [],
-      },
-      {
-        searchControlProvider: "yandex#search",
-      }
-    );
 
-    callMap.geoObjects.add(
-      new ymaps.Placemark(
-        [53.924723, 27.511615],
-        {
-          // balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#E94336",
-        }
-      )
-    );
-    callMap.behaviors.disable("scrollZoom");
-  });
-}
 
 let mobMenuSearch = document.querySelector(".mob-menu-search");
 
@@ -3689,62 +3671,6 @@ $("a.scroll-to").on("click", function (e) {
     );
 });
 
-//Открываем меню
-
-/*
-$(document).ready(function() {
-  let menudesktopLi = document.querySelectorAll('.menu-desktop li')
-  // menu-desktop-ul
-  
-  menudesktopLi.forEach((elem) => {
-    // console.log($(elem).find('.menu-desktop-ul')[0])
-    // let move = $(elem).find('.menu-desktop-ul')[0].classList
-    // console.log(move)
-    // document.querySelector(`${elem} menu-desktop-ul`)
-    let liA = $(elem).children('.menu-desktop-ul')
-    // console.log(liA)
-  // console.log($(elem).children('.menu-desktop-ul')[0])
-  if($(liA[0]).hasClass('menu-desktop-ul')) {
-   let liAx =  $(liA)[0]
-    console.log(liAx)
-    if(matchMedia) {
-        const screen = window.matchMedia('(max-width:1024px)');
-        screen.addListener(changes);
-        changes(screen);
-      }
-      function changes(screen) {
-        if(screen.matches) {
-          //экран менее 1024
-          // liAx.prepend($('body'))
-          
-        } else {
-          //экран более 1024
-          // $('.card-more-info').prepend($('#tabs'))
-         
-        }
-      }
-  } 
-  
-  // console.log($(elem).children('.menu-desktop-ul')[0].classList[0])
-    elem.addEventListener('click', (t) => {
-      elem.children[0].classList.toggle('menu-desktop-open')
-    })
-  
-    // $(elem).click(function(){
-    //   if($(this).hasClass("list-open")) {
-    //     $(this).removeClass('list-open');
-    //   } else {
-    //     $(this).addClass('list-open');
-    //   }
-    // });
-  
-     
-  
-  
-  })
-})
-
-*/
 
 //убираем активный пункт в меню
 let menuDesktopHover = document.querySelectorAll(".menu-desktop li");
@@ -3756,3 +3682,231 @@ menuDesktopHover.forEach((e) => {
     }
   });
 });
+
+
+if (document.querySelector("#callMap")) {
+  function callMap_Ymap() {
+    ymaps.ready(function () {
+      var callMap = new ymaps.Map(
+        "callMap",
+        {
+          center: [53.924723, 27.511615],
+          zoom: 12,
+          controls: [],
+        },
+        {
+          searchControlProvider: "yandex#search",
+        }
+      );
+
+      callMap.geoObjects.add(
+        new ymaps.Placemark(
+          [53.924723, 27.511615],
+          {
+            // balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
+          },
+          {
+            preset: "islands#dotIcon",
+            iconColor: "#E94336",
+          }
+        )
+      );
+      callMap.behaviors.disable("scrollZoom");
+    });
+  }
+  FARBA.lazyLibraryLoad(
+    "//api-maps.yandex.ru/2.1/?lang=ru_RU",
+    "",
+    callMap_Ymap
+  )
+}
+
+
+if (document.querySelector(".deliverypayMap")) {
+  function deliverypayMap_Ymap(){
+    const deliveryCity = [
+      { coord: [53.902735, 27.555696], title: "Минск", content: "Минск" },
+      { coord: [53.894548, 30.330654], title: "Могилёв", content: "Могилёв" },
+      {
+        coord: [34.052235, -118.243683],
+        title: "Другие города",
+        content: "Другие города",
+      },
+    ];
+
+    ymaps.ready(function () {
+      const map = new ymaps.Map("deliverypayMap", {
+        zoom: 9,
+        center: deliveryCity[0].coord,
+        controls: [],
+      });
+
+      const marker = new ymaps.Placemark(deliveryCity[0].coord, {
+        balloonContent: balloonContent(deliveryCity[0]),
+      });
+      map.geoObjects.add(marker);
+      map.behaviors.disable("scrollZoom");
+
+      document.querySelectorAll("#citylink li a").forEach((n, i) => {
+        n.addEventListener("click", onClick.bind(n, deliveryCity[i]));
+      });
+
+      function onClick(item) {
+        map.setCenter(item.coord);
+        marker.geometry.setCoordinates(item.coord);
+        marker.properties.set("balloonContent", balloonContent(item));
+      }
+
+      function balloonContent(item) {
+        return `<b>${item.content}</b>`;
+      }
+    });
+  }
+  FARBA.lazyLibraryLoad(
+    "//api-maps.yandex.ru/2.1/?lang=ru_RU",
+    "",
+    deliverypayMap_Ymap
+  )
+}
+
+
+let mapContact1 = document.getElementById("mapContact1");
+let mapContact2 = document.getElementById("mapContact2");
+
+if (mapContact1) {
+  function mapContact_Ymaps() {
+  ymaps.ready(init);
+  ymaps.ready(init1);
+  function init() {
+    var mapContact1 = new ymaps.Map("mapContact1", {
+      center: [53.834601, 28.994249],
+      zoom: 8,
+      controls: [],
+    });
+    // mapContact1.setZoom(7)
+
+    (function () {
+      if (matchMedia) {
+        const screen = window.matchMedia("(max-width:1024.99px)");
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if (screen.matches) {
+          mapContact1.setZoom(7);
+        } else {
+          mapContact1.setZoom(8);
+        }
+      }
+    })();
+
+    // Первая метка
+    (MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    )),
+      (myPlacemarkWithContent = new ymaps.Placemark(
+        [53.933166, 27.451803],
+        {
+          // hintContent: 'Собственный значок метки с контентом',
+          // balloonContent: 'А эта — новогодняя',
+          // iconContent: '12'
+        },
+        {
+          preset: "islands#dotIcon",
+          iconColor: "#4A95F7",
+        }
+      ));
+
+    // Вторая метка
+    (MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
+      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    )),
+      (myPlacemarkWithContent1 = new ymaps.Placemark(
+        [53.879127, 30.265464],
+        {
+          // hintContent: 'Собственный значок метки с контентом',
+          // balloonContent: 'А эта — новогодняя',
+          // iconContent: '12'
+        },
+        {
+          preset: "islands#dotIcon",
+          iconColor: "#4A95F7",
+        }
+      ));
+
+    mapContact1.behaviors.disable("scrollZoom");
+    mapContact1.geoObjects.add(myPlacemarkWithContent);
+    mapContact1.geoObjects.add(myPlacemarkWithContent1);
+  }
+  function init1() {
+    var mapContact2 = new ymaps.Map("mapContact2", {
+      center: [53.834601, 28.994249],
+      zoom: 8,
+      controls: [],
+    });
+    (function () {
+      if (matchMedia) {
+        const screen = window.matchMedia("(max-width:1024.99px)");
+        screen.addListener(changes);
+        changes(screen);
+      }
+      function changes(screen) {
+        if (screen.matches) {
+          mapContact2.setZoom(7);
+        } else {
+          mapContact2.setZoom(8);
+        }
+      }
+    })();
+
+    //     // Первая метка
+    (MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    )),
+      (myPlacemarkWithContent = new ymaps.Placemark(
+        [53.933166, 27.451803],
+        {
+          // hintContent: 'Собственный значок метки с контентом',
+          // balloonContent: 'А эта — новогодняя',
+          // iconContent: '12'
+        },
+        {
+          preset: "islands#dotIcon",
+          iconColor: "#4A95F7",
+        }
+      ));
+
+    //   // Вторая метка
+    (MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
+      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    )),
+      (myPlacemarkWithContent1 = new ymaps.Placemark(
+        [53.879127, 30.265464],
+        {
+          // hintContent: 'Собственный значок метки с контентом',
+          // balloonContent: 'А эта — новогодняя',
+          // iconContent: '12'
+        },
+        {
+          preset: "islands#dotIcon",
+          iconColor: "#4A95F7",
+        }
+      ));
+
+    //вторая карта
+    mapContact2.behaviors.disable("scrollZoom");
+    mapContact2.geoObjects.add(myPlacemarkWithContent);
+    mapContact2.geoObjects.add(myPlacemarkWithContent1);
+  }
+}
+  FARBA.lazyLibraryLoad(
+    "//api-maps.yandex.ru/2.1/?lang=ru_RU",
+    "",
+    mapContact_Ymaps
+  )
+}
+
+
+
+
+

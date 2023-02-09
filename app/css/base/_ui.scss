@@ -350,7 +350,7 @@ svg.sprite {
   text-align: center;
   font-size: 0;
   outline: none;
-
+  user-select: none;
   &-prev {
     left: 15px;
   }

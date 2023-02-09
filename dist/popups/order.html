@@ -94,28 +94,11 @@
       }
     }
   </style>
-
   <script>
+    
+    
     $( document ).ready(function() {
-        $("select").styler();
-
-        $('#datetimepicker').datetimepicker({
-          // value:'12.03.2013',
-          format:'d.m.Y',
-          timepicker: false,
-          // opened: true,
-          lang: 'ru',
-        });
-
-        $.datetimepicker.setLocale('ru');
-
-
-    });
-  </script>
-
-  <script>
-    $( document ).ready(function() {
-      // validate form
+      safariFnc('.mfp-popup select');
       $(".order-form").validate({
         errorElement: "span",
 
@@ -176,6 +159,9 @@
           },
         },
       });
+
     });
   </script>
+
+
 <button title="Close (Esc)" type="button" class="mfp-close">×</button></div>

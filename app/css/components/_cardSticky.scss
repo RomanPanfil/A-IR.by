@@ -6,12 +6,14 @@
 
 
 .card-sticky {
-  display: none;
+  opacity: 0;
+  z-index: -999;
+  transform: translateY(-100%);
+  display: block;
   position: fixed;
   background: #fff;
   left: 0;
   right: 0;
-  z-index: 10;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 
@@ -190,7 +192,9 @@
 }
 
 .card-breackpoint-open {
-  display: block;
+  opacity: 1;
+  z-index: 10;
+  transform: translateY(0);
 }
 
 @media (max-width: 679px) {

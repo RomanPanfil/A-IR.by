@@ -21,9 +21,9 @@
     &-wrapper {
         padding: 24px 0px 40px 0px;
         // max-height: 70vh;
-        // height: calc(var(--vh, 1vh) * 70);
+        height: calc((var(--vh, 10vh) * 100) - 136px);
         overflow-x: hidden;
-    overflow-y: auto;
+        overflow-y: auto;
     }
     &-open {
         display: block;
@@ -95,6 +95,9 @@
             img {
                 max-height: 64px;
             }
+        }
+        &-wrapper {
+            flex: auto;
         }
         &-title {
             font-weight: 600;
