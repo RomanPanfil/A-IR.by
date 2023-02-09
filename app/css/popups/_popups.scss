@@ -335,6 +335,7 @@ button.mfp-close:hover:after,
   }
 }
 
+
 .popup-icon {
   position: absolute;
   top: 11px;
@@ -342,6 +343,9 @@ button.mfp-close:hover:after,
   width: 18px;
   height: 18px;
   z-index: 2;
+  @media(max-width:576px) {
+      top: 15px;    
+  }
 }
 .popup-icon.valid {
   background-image: url(.././images/icons/accept-form-icon.svg);

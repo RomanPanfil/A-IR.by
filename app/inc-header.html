@@ -12,6 +12,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/css/lightgallery.min.css" integrity="sha512-F2E+YYE1gkt0T5TVajAslgDfTEUQKtlu4ralVq78ViNxhKXQLrgQLLie8u1tVdG2vWnB3ute4hcdbiBtvJQh0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/css/lightgallery-bundle.min.css" integrity="sha512-nUqPe0+ak577sKSMThGcKJauRI7ENhKC2FQAOOmdyCYSrUh0GnwLsZNYqwilpMmplN+3nO3zso8CWUgu33BDag==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -55,8 +57,8 @@
   <div class="main">
     <div class="container">
       <div class="main-container flex valign-center space-between">
-        <a href="#" class="main-logo">
-          <div class="main-logo-img">
+        <div class="main-logo">
+          <a href="#" class="main-logo-img">
             <picture>
               <source
                 media="(max-width: 768px)"
@@ -64,7 +66,7 @@
               />
               <img src="./images/icons/main-logo.svg" alt="alt" />
             </picture>
-          </div>
+          </a>
           <div class="mob-menu">
             <div class="mob-menu-img">
               <img src="./images/icons/user-mob.svg" alt="alt" />
@@ -72,20 +74,20 @@
             <div class="mob-menu-img mob-menu-phone">
               <img src="./images/icons/phone-mob.svg" alt="alt" />
             </div>
-            <div class="mob-menu-img">
+            <div class="mob-menu-img mob-menu-search">
               <img src="./images/icons/search-mob.svg" alt="alt" />
             </div>
             <div class="enter-mobile">
               
-                <div class="enter-mobile-btn ui-btn">Вход</div>
-                <div class="enter-mobile-favour">
+                <a class="enter-mobile-btn ui-btn mfp-link" href="javascript:void(0)" data-href="./popups/sign-in.html">Вход</a>
+                <a href="#" class="enter-mobile-favour">
                   <svg class="enter-mobile-favour-sprite sprite"><use xlink:href="svg/svg/symbols.svg#menu-like"></use></svg>
                   Избранное
-                </div>
+                </a>
             </div>
          
           </div>
-        </a>
+        </div>
 
         <!-- <div class="mobile-separ"></div> -->
       
@@ -107,6 +109,7 @@
             type="text"
             placeholder="Введите свой запрос"
           />
+          <button title="Close (Esc)" type="button" class="main-search-input-close">×</button>
           <button class="main-search-btn">
             <div class="main-search-btn-img">
               <img src="./images/icons/main-search.svg" alt="alt" />
@@ -282,6 +285,8 @@
     </div>
   </div>
     <!--#include file="inc-catalog-menu.html"-->
+    <!--#include file="inc-search-menu.html"-->
+
   
 
 </header>

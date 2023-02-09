@@ -4,17 +4,15 @@
      @media(max-width:1024.99px) {
             margin-bottom: 50px;
         }
-    #map {
-        width: 100%; 
-        height:500px; 
-        padding: 0;
-        margin: 0;
-    }
+    
     #deliverypayMap {
         width: 100%; 
         min-height:100%; 
         padding: 0;
         margin: 0;
+         @media(max-width:1024.99px) {
+                height: 400px;
+            }
     }
 
     .deliverypay-map {
@@ -84,6 +82,8 @@
             text-align: center;
              @media(max-width:576.99px) {
                     padding: 21px 10px;
+                    @include fz(22);
+                    
                 }
         }
         &-item {
@@ -119,10 +119,16 @@
             &-contact {
                 margin-bottom: 0;
             }
+            &-call {
+                padding-bottom: 35px;
+            }
         }
     }
     &-addcontent {
         margin-bottom: 20px;
+        &-call {
+            margin-bottom: 0;
+        }
         &-map {
             padding-left: 16px;
             margin-bottom: 10px;
@@ -171,14 +177,17 @@
         }
     }
     &-docs {
-        display: block;
+        position: relative;
+        display: flex;
         background: #F5F5F5;
         border-radius: 5px;
         padding: 21px 24px;
+        gap: 6px;
         &-img {
+            flex: 0 0 20px;
+            max-width: 20px;
             display: inline-block;
             vertical-align: middle;
-            margin-right: 6px;
         }
     }
     &-tabs {
@@ -193,6 +202,7 @@
                 padding: 15px;
                 margin: 0px -15px;
                 margin-bottom: 50px;
+                border-radius: 0;
             }
         .sign-popup-tabs {
             @media(max-width:1024.99px) {
@@ -201,6 +211,8 @@
                 gap: 10px;   
                 padding-right: 15px;
                  margin-right: -15px;
+                 margin-left: -15px;
+                 padding-left: 15px;
                 &::-webkit-scrollbar {
                     width: 0px;
                   }
@@ -235,12 +247,15 @@
             margin-bottom: 6px;
             background-color: transparent;
             color: #808080;
+            border-bottom: 1px solid #ffffff00;
+
              @media(max-width:1024.99px) {
                     white-space: nowrap;
                     margin-bottom: 0;
                 }
             &.active {
               color: #2A4455;
+              border-bottom: 1px solid transparent;
               &::after {
                 content: "";
                   position: absolute;
@@ -262,6 +277,7 @@
                     &.active {
                     // border: 2px solid #2A4455;
                     box-shadow: inset 0px 0px 0px 2px;
+                    border-color: transparent;
                         &::after {
                             display: none;
                         }
