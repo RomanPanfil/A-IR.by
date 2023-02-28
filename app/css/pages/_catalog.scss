@@ -477,11 +477,39 @@
   transition: .3s border,.3s color;
   border-radius: 5px;
   outline: 0;
-      -webkit-appearance: none;
+  -webkit-appearance: none;
   background-image: url(../images/svg/toggler-arrow.svg);
   background-repeat: no-repeat;
   background-position-x: 95%;
   background-position-y: center;
+  &-search {
+    height: 24px!important;
+    line-height: 24px!important;
+    max-width: 100%;
+    background: #fff;
+    padding: 0 16px!important;
+    padding-left: 0px !important;
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 16px;
+
+    color: rgba(0,0,0,.7)!important;
+    border: none;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-transition: .3s border,.3s color;
+    -o-transition: .3s border,.3s color;
+    transition: .3s border,.3s color;
+    border-radius: 5px;
+    outline: 0;
+    -webkit-appearance: none;
+    background-image: url(../images/svg/toggler-arrow.svg);
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+  }
 }
 
 .catalog-marks {
@@ -2123,3 +2151,12 @@ input[type="range"]::-moz-range-thumb {
     }
   }
 }
+
+
+.catalog-settings-sort-col {
+  .catalog-settings-select.safari-select-search {
+    padding-right: 25px !important;
+    background: url(../images/icons/catalog-products-arrows.svg) right center no-repeat !important;
+  }
+}
+

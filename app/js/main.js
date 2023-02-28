@@ -63,8 +63,12 @@ function safariFnc(selector) {
       $(selector).styler();
       console.log('google')
     } else {
-      $(selector).addClass('safari-select')
-      console.log('safar')
+      if(document.querySelector('.catalog-settings')) {
+        $(selector).addClass('safari-select-search')
+      } else {
+        $(selector).addClass('safari-select')
+      }
+      
     }
   }
 }
