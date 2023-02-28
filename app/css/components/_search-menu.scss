@@ -24,6 +24,9 @@
         height: calc((var(--vh, 10vh) * 100) - 136px);
         overflow-x: hidden;
         overflow-y: auto;
+         @media(max-width:1024px) {
+                height: auto;
+            }
     }
     &-open {
         display: block;
