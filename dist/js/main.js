@@ -28398,7 +28398,7 @@ const FARBA = {
     link.forEach(el => {
       const target = D.querySelector(el.dataset.target)
       if (target) {
-        el.addEventListener('click',(e)=> {
+        el.addEventListener('click', (e) => {
           e = e || window.event
           e.preventDefault()
           // target.scrollIntoView({
@@ -28407,23 +28407,23 @@ const FARBA = {
           window.scrollTo({
             top: target.offsetTop,
             behavior: "smooth"
-        });
+          });
         })
       }
     })
   }
 }
 
-$.fn.Tabs = function() {
+$.fn.Tabs = function () {
   var selector = this;
 
-  this.each(function() {
+  this.each(function () {
     var obj = $(this);
     $(obj.attr('href')).hide();
-    $(obj).click(function() {
+    $(obj).click(function () {
       $(selector).removeClass('selected');
 
-      $(selector).each(function(i, element) {
+      $(selector).each(function (i, element) {
         $($(element).attr('href')).hide();
       });
 
@@ -28435,7 +28435,7 @@ $.fn.Tabs = function() {
 
   $(this).show();
   $(this).first().click();
-  if(location.hash!='' && $('a[href="' + location.hash + '"]').length)
+  if (location.hash != '' && $('a[href="' + location.hash + '"]').length)
     $('a[href="' + location.hash + '"]').click();
 };
 
@@ -28460,7 +28460,7 @@ $.fn.Tabs = function() {
 
   D
     .querySelectorAll('.card-tabs-link-mobile')
-    .forEach(el => el.addEventListener('click', function(e) {
+    .forEach(el => el.addEventListener('click', function (e) {
       e = e || window.event;
       e.preventDefault();
 
@@ -28473,14 +28473,14 @@ $.fn.Tabs = function() {
 
 
 //card rebuild
-(function() {
-  if(matchMedia) {
+(function () {
+  if (matchMedia) {
     const screen = window.matchMedia('(max-width:1024px)');
     screen.addListener(changes);
     changes(screen);
   }
   function changes(screen) {
-    if(screen.matches) {
+    if (screen.matches) {
       //экран менее 1024
       $('.card-more-mobile').prepend($('#tabs'))
       $('.card-more-mobile').after($('.card-contacts'))
@@ -28500,7 +28500,7 @@ $.fn.Tabs = function() {
 
 
 //card carousels
-(function() {
+(function () {
   if (!D.querySelector('.swiper-card-imgs')) return
 
   if (D.querySelectorAll('.card-imgs-link').length <= 1) {
@@ -28517,7 +28517,7 @@ $.fn.Tabs = function() {
   $('.card-imgs').append(imgsClone)
   $('.swiper-mobile-imgs').wrap('<div class="mobile-imgs"></div>')
 
-  const cardMini = new Swiper('.swiper-mobile-imgs',{
+  const cardMini = new Swiper('.swiper-mobile-imgs', {
     slidesPerView: 3,
     // shortSwipes: false,
     spaceBetween: 10,
@@ -28532,7 +28532,7 @@ $.fn.Tabs = function() {
     }
   })
 
-  const cardSwiper = new Swiper('.swiper-card-imgs',{
+  const cardSwiper = new Swiper('.swiper-card-imgs', {
     slidesPerView: 1,
     // shortSwipes: false,
     autoHeight: true,
@@ -28552,7 +28552,7 @@ $.fn.Tabs = function() {
     }
   })
 
-  $(document).on('click','.mobile-imgs-link',function(e) {
+  $(document).on('click', '.mobile-imgs-link', function (e) {
     e.preventDefault();
 
     const index = $(this).closest('.swiper-slide').index()
@@ -28561,7 +28561,7 @@ $.fn.Tabs = function() {
     $(this).addClass('active');
   })
 
-  cardSwiper.on('slideChange',function(swiper){
+  cardSwiper.on('slideChange', function (swiper) {
     const index = swiper.realIndex
     cardMini.slideTo(index)
     $('.mobile-imgs-link').removeClass('active');
@@ -28582,12 +28582,12 @@ const changeCatalogStyle = (style) => {
   })
 }
 
-(function(){
+(function () {
   if (!document.querySelector('.catalog-style-toggler')) return;
 
   document.querySelectorAll('.catalog-style-toggler')
     .forEach(el => {
-      el.addEventListener('click', function(e) {
+      el.addEventListener('click', function (e) {
         e = e || window.event
         e.preventDefault();
 
@@ -28603,7 +28603,7 @@ const changeCatalogStyle = (style) => {
 
 
 
-(function (){
+(function () {
   if (!$('#catalog_search').length) return;
 
   let catalogProductsSearch = $('#catalog_search');
@@ -28611,10 +28611,10 @@ const changeCatalogStyle = (style) => {
   let cardReview = $('#card_review').offset().top;
   let catalogSerachOffset = catalogProductsSearch.offset().top
 
-  window.addEventListener('scroll',function() {
-    if(window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
       catalogProductsReniev.addClass('catalog-search-open')
-    }else {
+    } else {
       catalogProductsReniev.removeClass('catalog-search-open')
     }
   })
@@ -28624,8 +28624,8 @@ const changeCatalogStyle = (style) => {
 // counter
 $(document).on("click", ".btn-plus", function () {
   let input = $(this).prev("input"),
-      minus = input.prev('.btn-minus'),
-      val = parseInt(input.val(), 10);
+    minus = input.prev('.btn-minus'),
+    val = parseInt(input.val(), 10);
 
   if (isNaN(val)) { return input.val(1); }
 
@@ -28655,7 +28655,7 @@ $(document).on("click", ".btn-minus", function (e) {
 
 $(document).on("change", ".card-counter-input", function (e) {
   let val = parseInt($(this).val(), 10),
-      minus = $(this).prev('.btn-minus');
+    minus = $(this).prev('.btn-minus');
   if (val < 0) {
     $(this).val(0);
   }
@@ -28696,7 +28696,7 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
 
 
 
-(function(){
+(function () {
   let arrows = document.querySelectorAll(".main-contacts-tel-arrow, .mob-menu-phone");
   let numbers = document.querySelector(".main-contacts-drop");
   if (!arrows.length || !numbers) return
@@ -28716,7 +28716,7 @@ new Swiper(".product-swiper-desc-dear .product-swiper ", {
     const isArrow = e.composedPath().includes(document.querySelector(".main-contacts-tel-arrow"));
     const isMob = e.composedPath().includes(document.querySelector(".mob-menu-phone"));
 
-    if ( !withinBoundaries && !isArrow && !isMob) {
+    if (!withinBoundaries && !isArrow && !isMob) {
       numbers.classList.remove("numbers-open");
       document.querySelector(".main-contacts-tel-arrow").classList.remove('opened')
       document.querySelector(".mob-menu-phone").classList.remove('opened')
@@ -28847,30 +28847,28 @@ if (document.querySelector(".catalog-products-field-btn")) {
   });
 }
 
-
-
 // ion range input
 $(".slider-wrapper").each(function () {
   var $range = $(".js-range-slider", this),
     $inputFrom = $(".js-input-from", this),
     $inputTo = $(".js-input-to", this),
     instance,
-    min_1 = $inputFrom[0].dataset.min,
-    max_1 = $inputTo[0].dataset.max,
-    from_1 = $inputFrom[0].dataset.min,
-    to_1 = $inputTo[0].dataset.max,
+    min = $inputFrom[0].dataset.min,
+    max = $inputTo[0].dataset.max,
+    from = $inputFrom[0].dataset.min,
+    to = $inputTo[0].dataset.max,
     steps = $range[0].dataset.steps;
 
   $range.ionRangeSlider({
     skin: "round",
     type: "double",
-    min: min_1,
-    max: max_1,
-    from: from_1,
-    to: to_1,
+    min: min,
+    max: max,
+    from: from,
+    to: to,
     step: steps,
     onStart: updateInputs,
-    onChange: updateInputs,
+    onChange: updateInputs
   });
 
   instance = $range.data("ionRangeSlider");
@@ -28894,7 +28892,7 @@ $(".slider-wrapper").each(function () {
     }
 
     instance.update({
-      from: val,
+      from: val
     });
   });
 
@@ -28909,10 +28907,10 @@ $(".slider-wrapper").each(function () {
     }
 
     instance.update({
-      to: val,
+      to: val
     });
   });
-});
+})
 
 $(document).on("click", ".catalog-question-item-title", function (e) {
 
@@ -28924,75 +28922,29 @@ $(document).on("click", ".catalog-question-item-title", function (e) {
 
 if (document.getElementById("card-breackpoint")) {
   // $(document).ready(function () {
-    let cardBreackpoint = $("#card-breackpoint").offset().top;
-    // let footerBreackpoint = $("#footer").offset().top;
-    let cardSticky = $(".card-sticky");
-    let headerCard = $(".header");
-    // let footerHeight = $('#footer').innerHeight();
+  let cardBreackpoint = $("#card-breackpoint").offset().top;
+  // let footerBreackpoint = $("#footer").offset().top;
+  let cardSticky = $(".card-sticky");
+  let headerCard = $(".header");
+  // let footerHeight = $('#footer').innerHeight();
 
-    window.addEventListener("resize", function () {
-      cardBreackpoint = $("#card-breackpoint").offset().top;
-    });
-    window.addEventListener("scroll", function () {
-      // console.log(footerBreackpoint)
-      // console.log(window.scrollY)
-      if (window.scrollY < cardBreackpoint) {
-        headerCard.removeClass("headerCard_fixed");
-        cardSticky.removeClass("card-breackpoint-open");
-      } else {
-        headerCard.addClass("headerCard_fixed");
-        cardSticky.addClass("card-breackpoint-open");
-      }
-    });
-  // });
-}
-
-if (document.querySelector(".making-order-validate")) {
-  // let cardBreackpoint = $("#card-breackpoint").offset().top;
-  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
-  // let cardSticky = $(".making-order-info");
-  // const cardHeight = cardSticky.innerHeight();
-  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
-  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
-
-  // window.addEventListener("resize", function () {
-  //   cardBreackpoint = $("#card-breackpoint").offset().top;
-  // });
-  const stickyBlock = document.querySelector('.making-order-info')
-  const card = document.querySelector('#card-breackpoint')
-
-  function flipOrSticky() {
-    const box = card.getBoundingClientRect()
-    const stickyBox = stickyBlock.getBoundingClientRect()
-    const boxTop = box.top
-    const boxBottom = box.bottom
-    const stickyBottom = stickyBox.height
-    const py = window.pageYOffset
-
-    if (py > boxTop + py) {
-      if (py < (boxBottom + py - stickyBottom - 100)) {
-        stickyBlock.classList.add("sticky-box");
-        stickyBlock.classList.remove("card-breackpoint-flipbottom");
-      } else {
-        stickyBlock.classList.remove("sticky-box");
-        stickyBlock.classList.add("card-breackpoint-flipbottom");
-      }
+  window.addEventListener("resize", function () {
+    cardBreackpoint = $("#card-breackpoint").offset().top;
+  });
+  window.addEventListener("scroll", function () {
+    if (window.scrollY < cardBreackpoint) {
+      headerCard.removeClass("headerCard_fixed");
+      cardSticky.removeClass("card-breackpoint-open");
     } else {
-      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
+      headerCard.addClass("headerCard_fixed");
+      cardSticky.addClass("card-breackpoint-open");
     }
-    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
-    //   stickyBlock.classList.add("card-breackpoint-open");
-    // } else {
-    //   stickyBlock.classList.remove("card-breackpoint-open");
-    // }
-  }
-
-  window.addEventListener("scroll", flipOrSticky);
-  window.addEventListener("load", flipOrSticky);
+  });
+  // });
 }
 
 
-if (document.querySelector(".making-form") ) {
+if (document.querySelector(".making-form")) {
   const stickyBlock = document.querySelector('.cart-order')
   const card = document.querySelector('#card-breackpoint')
 
@@ -29051,16 +29003,16 @@ if (document.querySelector('.ui-rightbar')) {
   window.addEventListener("load", flipOrSticky);
 }
 
-(function (){
+(function () {
   if (!D.querySelector('.catalog-marks')) return;
 
-  const wrapBtn =D.querySelector('.catalog-marks-toggler');
+  const wrapBtn = D.querySelector('.catalog-marks-toggler');
   const wrapSettings = D.querySelector('.catalog-marks-list')
 
   function resSetting() {
     const wrapSettingContainer = document.querySelector('.catalog-marks-height').clientHeight;
 
-    if (wrapSettingContainer <= 80){
+    if (wrapSettingContainer <= 80) {
       wrapSettings.classList.add("opened");
       wrapBtn.classList.add('ui-hidden');
     }
@@ -29074,13 +29026,13 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function (){
+(function () {
   if (!D.querySelector('.ux-collapsible-toggler')) return;
 
   D
     .querySelectorAll('.ux-collapsible-toggler')
     .forEach(el => {
-      el.addEventListener('click',function(e) {
+      el.addEventListener('click', function (e) {
         e = e || window.event
         e.preventDefault()
         e.stopPropagation()
@@ -29109,13 +29061,13 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function (){
+(function () {
   if (!D.querySelector('.ui-spoiler')) return;
 
   D
     .querySelectorAll('.ui-spoiler-toggler')
     .forEach(el => {
-      el.addEventListener('click',function(e) {
+      el.addEventListener('click', function (e) {
         e = e || window.event
         e.preventDefault()
         e.stopPropagation()
@@ -29154,13 +29106,13 @@ if (document.querySelector('.ui-rightbar')) {
 
 
   //desktop
-  if(matchMedia) {
+  if (matchMedia) {
     var bp = window.matchMedia('(min-width:1024.02px)');
     bp.addListener(changes);
     changes(bp);
   }
   function changes(bp) {
-    if(bp.matches && !slider && producentpgSwiper) {
+    if (bp.matches && !slider && producentpgSwiper) {
       slider = new Swiper(".producentpg-swiper", {
         slidesPerView: 2,
         spaceBetween: 24,
@@ -29173,7 +29125,7 @@ if (document.querySelector('.ui-rightbar')) {
         }
       });
     }
-    if(bp.matches && !slider && servicesSwiper) {
+    if (bp.matches && !slider && servicesSwiper) {
       slider = new Swiper(".services-swiper", {
         slidesPerView: 1,
         spaceBetween: 24,
@@ -29184,7 +29136,7 @@ if (document.querySelector('.ui-rightbar')) {
         }
       });
     }
-    if(bp.matches && !slider) {
+    if (bp.matches && !slider) {
       slider = new Swiper(".catalog-reviews", {
         slidesPerView: 2,
         spaceBetween: 24,
@@ -29227,13 +29179,13 @@ if (document.querySelector('.ui-rightbar')) {
   $('.catalog-articles-mobile .ui-scroller').prepend(clone)
 
   //desktop
-  if(matchMedia) {
+  if (matchMedia) {
     var bp = window.matchMedia('(min-width:1024.02px)');
     bp.addListener(changes);
     changes(bp);
   }
   function changes(bp) {
-    if(bp.matches && sliderArticle === 'no') {
+    if (bp.matches && sliderArticle === 'no') {
       sliderArticle = new Swiper(".slider_article", {
         slidesPerView: 1,
         spaceBetween: 24,
@@ -29248,18 +29200,18 @@ if (document.querySelector('.ui-rightbar')) {
   }
 })();
 
-(function(){
+(function () {
   if (!document.querySelector('.catalog-related-desktop')) return
   let slider = null, native = null;
 
   //desktop
-  if(matchMedia) {
+  if (matchMedia) {
     var bp = window.matchMedia('(min-width:1024.02px)');
     bp.addListener(changes);
     changes(bp);
   }
   function changes(bp) {
-    if(bp.matches && !slider) {
+    if (bp.matches && !slider) {
       slider = new Swiper(".catalog-related-swiper", {
         slidesPerView: 2,
         spaceBetween: 24,
@@ -29285,18 +29237,18 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function(){
+(function () {
   if (!document.querySelector('.card-related-desktop')) return
   let slider = null, native = null;
 
   //desktop
-  if(matchMedia) {
+  if (matchMedia) {
     var bp = window.matchMedia('(min-width:1024.02px)');
     bp.addListener(changes);
     changes(bp);
   }
   function changes(bp) {
-    if(bp.matches && !slider) {
+    if (bp.matches && !slider) {
       slider = new Swiper(".swiper-card-related", {
         slidesPerView: 3,
         spaceBetween: 24,
@@ -29322,18 +29274,18 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function(){
+(function () {
   if (!document.querySelector('.card-reviews-desktop')) return
   let slider = null, native = null;
 
   //desktop
-  if(matchMedia) {
+  if (matchMedia) {
     var bp = window.matchMedia('(min-width:1024.02px)');
     bp.addListener(changes);
     changes(bp);
   }
   function changes(bp) {
-    if(bp.matches && !slider) {
+    if (bp.matches && !slider) {
       slider = new Swiper(".swiper-card-reviews", {
         slidesPerView: 2,
         spaceBetween: 24,
@@ -29359,18 +29311,18 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function(){
+(function () {
   if (!document.querySelector('.card-interest-desktop')) return
   let slider = null, native = null;
 
   //desktop
-  if(matchMedia) {
+  if (matchMedia) {
     var bp = window.matchMedia('(min-width:1024.02px)');
     bp.addListener(changes);
     changes(bp);
   }
   function changes(bp) {
-    if(bp.matches && !slider) {
+    if (bp.matches && !slider) {
       slider = new Swiper(".swiper-card-interest", {
         slidesPerView: 3,
         spaceBetween: 24,
@@ -29396,7 +29348,7 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function(){
+(function () {
   if (!document.querySelector('.slider-product-topline')) return
 
   document.querySelectorAll('.slider-product-topline')
@@ -29424,10 +29376,10 @@ if (document.querySelector('.ui-rightbar')) {
           },
           // @todo добавить везде, где инициализация
           callbacks: {
-            open: function() {
+            open: function () {
               document.documentElement.style.overflow = 'hidden'
             },
-            close: function() {
+            close: function () {
               document.documentElement.style.overflow = ''
             }
           }
@@ -29436,7 +29388,7 @@ if (document.querySelector('.ui-rightbar')) {
     })
 })();
 
-(function(){
+(function () {
   if (!document.querySelector('.slider-produc-topline')) return
 
   document.querySelectorAll('.slider-produc-topline')
@@ -29464,10 +29416,10 @@ if (document.querySelector('.ui-rightbar')) {
           },
           // @todo добавить везде, где инициализация
           callbacks: {
-            open: function() {
+            open: function () {
               document.documentElement.style.overflow = 'hidden'
             },
-            close: function() {
+            close: function () {
               document.documentElement.style.overflow = ''
             }
           }
@@ -29476,7 +29428,7 @@ if (document.querySelector('.ui-rightbar')) {
     })
 })();
 
-(function(){
+(function () {
   if (!document.querySelector('.product-card-topline')) return
 
   document.querySelectorAll('.product-card-topline')
@@ -29504,11 +29456,11 @@ if (document.querySelector('.ui-rightbar')) {
           },
 
           callbacks: {
-            open: function() {
+            open: function () {
               document.documentElement.style.overflow = 'hidden'
             },
 
-            close: function() {
+            close: function () {
               document.documentElement.style.overflow = ''
             }
           }
@@ -29518,7 +29470,7 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function(){
+(function () {
   if (!document.querySelector('.catalog-filters-toggler')) return
 
   document
@@ -29554,13 +29506,13 @@ if (document.querySelector('.ui-rightbar')) {
 
 
 //fixing submit btn in filters
-(function(){
+(function () {
   if (!document.querySelector('.catalog-filters-submit')) return
 
   const filters = document.querySelector('.catalog-filters')
   const submit = filters.querySelector('.catalog-filters-submit')
 
-  document.addEventListener('scroll',() => {
+  document.addEventListener('scroll', () => {
     if (document.documentElement.clientWidth < 1024) return;
 
     const sc = window.pageYOffset;
@@ -29586,43 +29538,43 @@ if (document.querySelector('.ui-rightbar')) {
 })();
 
 
-(function() {
+(function () {
   if (!document.querySelector('.catalog-filters-close')) return
 
   document
     .querySelector('.catalog-filters-close')
-    .addEventListener('click',() => {
+    .addEventListener('click', () => {
       document.documentElement.classList.remove('no-overflow');
       document.querySelector('.catalog-filters').classList.remove('opened');
     })
 })();
 
 
-(function() {
+(function () {
   if (!document.querySelector('.catalog-filters-bg')) return
 
   document
     .querySelector('.catalog-filters-bg')
-    .addEventListener('click',() => {
+    .addEventListener('click', () => {
       document.documentElement.classList.remove('no-overflow');
       document.querySelector('.catalog-filters').classList.remove('opened');
     })
 })();
 
 
-(function() {
+(function () {
   if (!document.querySelector('.catalog-settings-filters')) return
 
   document
     .querySelector('.catalog-settings-filters')
-    .addEventListener('click',() => {
+    .addEventListener('click', () => {
       document.documentElement.classList.add('no-overflow');
       document.querySelector('.catalog-filters').classList.add('opened');
     })
 })();
 
-$('.main-list-li').click(function(){
-  if($(this).hasClass("list-open")) {
+$('.main-list-li').click(function () {
+  if ($(this).hasClass("list-open")) {
     $(this).removeClass('list-open');
   } else {
     $(this).addClass('list-open');
@@ -29633,13 +29585,13 @@ let arrStars = document.querySelectorAll('.ui-rating-star');
 let arrBlock = document.querySelectorAll('.ui-rating');
 
 arrBlock.forEach((e) => {
-  if(arrStars.length !== 0) {
+  if (arrStars.length !== 0) {
     let arrLength = e.children[0].children.length;
     let elValue = e.children[1].textContent;
     let numValue = Math.round(elValue);
     let countRating = arrLength - (arrLength - numValue);
 
-    for(let i = 0; i < countRating; i++) {
+    for (let i = 0; i < countRating; i++) {
       e.children[0].children[i].classList.add('active');
     }
   }
@@ -29708,7 +29660,7 @@ $(function () {
 
 
 //фиксируем блок с картинками при скроле на планшетах
-function fixCardImgsTablet(card,imgs,section) {
+function fixCardImgsTablet(card, imgs, section) {
   let dw = document.documentElement.clientWidth
   if (dw > 1024 || dw < 768) return;
 
@@ -29725,7 +29677,7 @@ function fixCardImgsTablet(card,imgs,section) {
     imgs.classList.add('fixed')
     imgs.classList.remove('fixed-bottom')
     imgs.style.width = w + 'px'
-  } else if (sc + vh -  (vh - ih - to) > offset + rect.height) {
+  } else if (sc + vh - (vh - ih - to) > offset + rect.height) {
     imgs.classList.add('fixed-bottom')
     imgs.classList.remove('fixed')
     imgs.style.width = w + 'px'
@@ -29736,28 +29688,28 @@ function fixCardImgsTablet(card,imgs,section) {
   }
 }
 
-(function() {
+(function () {
   const card = document.querySelector('.card')
   const imgs = document.querySelector('.card-imgs')
   const section = document.querySelector('.card-section')
 
-  if(!card) return
-  document.addEventListener('scroll',fixCardImgsTablet.bind(null,card,imgs,section))
-  window.addEventListener('resize',fixCardImgsTablet.bind(null,card,imgs,section))
+  if (!card) return
+  document.addEventListener('scroll', fixCardImgsTablet.bind(null, card, imgs, section))
+  window.addEventListener('resize', fixCardImgsTablet.bind(null, card, imgs, section))
 })();
 
 
-jQuery(document).ready(function($){
+jQuery(document).ready(function ($) {
   $('.card-tabs-link').Tabs();
 
-  $(document).on('click','.tabs-target',function(e){
+  $(document).on('click', '.tabs-target', function (e) {
     e.preventDefault();
     const id = $(this).attr('href');
 
     if ($(id).length) {
-      $('.card-tabs-link[href="'+id+'"]').click();
+      $('.card-tabs-link[href="' + id + '"]').click();
       const offset = $('.card-tabs-body').offset().top
-      $('html,body').animate({scrollTop: offset-160},300)
+      $('html,body').animate({ scrollTop: offset - 160 }, 300)
     }
   })
 
@@ -29776,19 +29728,19 @@ jQuery(document).ready(function($){
       },
       callbacks: {
         open: function () {
-          setTimeout(function(){
+          setTimeout(function () {
             $('.mfp-wrap').addClass('not_delay');
             $('.mfp-popup').addClass('not_delay');
-          },700);
+          }, 700);
         }
       },
 
       callbacks: {
-        open: function() {
+        open: function () {
           document.documentElement.style.overflow = 'hidden'
         },
 
-        close: function() {
+        close: function () {
           document.documentElement.style.overflow = ''
         }
       }
@@ -29796,7 +29748,7 @@ jQuery(document).ready(function($){
     return false;
   });
 
-  $('.video-card-link, .mfp-frame').on('click',function(e){
+  $('.video-card-link, .mfp-frame').on('click', function (e) {
     e.preventDefault();
 
     const url = $(this).attr('data-href') || null
@@ -29832,404 +29784,113 @@ jQuery(document).ready(function($){
 
   $('.card-tabs-link').Tabs();
 
-  $(document).on('click','.mfp-custom-close',function(e){
+  $(document).on('click', '.mfp-custom-close', function (e) {
     e.preventDefault()
     $.magnificPopup.close()
   })
 
-  $(function() {
-    let tabOrder = $('#making-order-pickup .making-order-content > div');
-    let tabPayment = $('#making-order-payment .making-order-content > div');
-
-    tabOrder.hide().filter(':first').show();
-
-    // Клики по вкладкам.
-    $('#making-order-pickup .making-order-tabs a').click(function(){
-      tabOrder.hide();
-      tabOrder.filter(this.hash).show();
-      $('#making-order-pickup .making-order-tabs a').removeClass('active');
-      $(this).addClass('active');
-      return false;
-    }).filter(':first').click();
-
-    // Клики по вкладкам.
-    $('#making-order-payment .making-order-tabs a').click(function(){
-      tabPayment.hide();
-      tabPayment.filter(this.hash).show();
-      $('#making-order-payment .making-order-tabs a').removeClass('active');
-      $(this).addClass('active');
-      return false;
-    }).filter(':first').click();
-  });
-
-  function mapContactInit() {
-  var mapOptions = {
-    zoom: 17,
-    center: new google.maps.LatLng(53.924723, 27.511615),
-    mapTypeControl:false,
-    scrollwheel: false,
-    zoomControl: false,
-    scaleControl:false,
-    disableDefaultUI: true,
-
-    mapTypeControlOptions: {
-        mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-    },
-
-    navigationControlOptions: {
-        style: google.maps.NavigationControlStyle.SMALL
-    },
-  }
-
-  // initial map
-  var map = new google.maps.Map(document.getElementById('map-address'), mapOptions);
-  var myCenter = new google.maps.LatLng(53.924723, 27.511615);
-  var marker = new google.maps.Marker({position:myCenter});
-
-  marker.setMap(map);
-
-  // for select
-  let minsk = document.getElementById('minsk');
-  let mogilev = document.getElementById('mogilev');
-
-  minsk.addEventListener('click', () => {
-    location(minsk)
-  })
-
-  mogilev.addEventListener('click', () => {
-    location(mogilev)
-  })
-
-  function location(town) {
-    let thsLat = town.dataset.lat;
-    let thsLng = town.dataset.lng
-
-    map.setCenter(new google.maps.LatLng(thsLat, thsLng));
-
-    var myCenter = new google.maps.LatLng(thsLat, thsLng);
-    var marker = new google.maps.Marker({position:myCenter});
-
-    marker.setMap(map);
-  }
-}
-
-if(document.getElementById('map-address')) {
-  mapContactInit();
-}
-
-  let header = document.querySelector('.making-order-header');
-  let list = document.querySelector('.making-order-list');
-
-  if(header) {
-    header.addEventListener('click', () => {
-      list.classList.toggle('active')
-      header.classList.toggle('opened')
-    })
-  }
-
-  let orderForm = document.querySelector('.making-order-payment .making-order-form');
-
-  $(function () {
-    $('.making-order-payment #tab-2 input[type=radio]').change(function() {
-      if($(this).val() === 'Безналичный расчёт') {
-        orderForm.classList.add('active');
+  jQuery.validator.addMethod(
+    "emailErrPerson",
+    function (value, element) {
+      if (/123@gmail.com/.test(value)) {
+        return false;
       } else {
-        orderForm.classList.remove('active')
+        return true
+      }
+    },
+    "Incorrect format"
+  );
+
+  let inputPhone = document.getElementById('telephone');
+
+  if (inputPhone) {
+    var phoneMask = IMask(
+      document.getElementById('telephone'), {
+      mask: '+{375} (00) 000 00 00'
+    });
+  }
+
+  jQuery.validator.addMethod(
+    "lettersonly",
+    function (value, element) {
+      return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
+    },
+    "Incorrect format"
+  );
+
+  (function () {
+    if (matchMedia) {
+      const screen1024 = window.matchMedia('(max-width:1024px)');
+      screen1024.addListener(changes);
+      changes(screen1024);
+    }
+
+    function changes(screen) {
+      let block = document.querySelectorAll('.cart-item-info');
+
+      for (let i = 0; i < block.length; i++) {
+        let header = block[i].querySelectorAll('.cart-item-headline')[0];
+        let remove = block[i].querySelectorAll('.cart-item-remove')[0];
+        let control = block[i].querySelectorAll('.cart-item-control')[0];
+
+        if (screen.matches) {
+          header.after(remove)
+        } else {
+          control.prepend(remove)
+        }
+      }
+    }
+  })();
+
+
+
+  let deleteSelected = document.querySelector('.cart-delete-btn');
+  let deleteCheckBoxAll = document.querySelector('.cart-delete input[name=customCheckbox]');
+  let itemList = document.querySelector('.cart-list');
+
+  if (itemList) {
+    itemList.addEventListener('click', (e) => {
+      if (e.target.classList[0] === 'cart-item-remove') {
+        e.target.closest('.cart-item').remove()
       }
     })
-  })
+  }
 
-  //cal-arr
+  if (deleteCheckBoxAll) {
+    deleteCheckBoxAll.addEventListener('click', (e) => {
+      let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]');
 
-  // validate for marking-order.html
-   $(".making-order-validate").validate({
-      errorElement: "span",
-      rules: {
-        name: {
-            required: true,
-            lettersonly: true,
-        },
-
-        email: {
-            required: true,
-            email: true,
-            // emailErr: true,
-        },
-
-        telephone: {
-          required: true,
-          minlength: 19,
-          // telephone: true,
-        },
-
-        locality: {
-          required: true,
-          lettersonly: true,
-        },
-
-        street: {
-          required: true,
-          lettersonly: true,
-        },
-
-        house: {
-          required: true,
-          number: true,
-        },
-
-        company: {
-          required: true,
-          lettersonly: true,
-        },
-
-        inn: {
-          required:true,
-          number: true,
-        },
-
-        address: {
-          required: true,
-          lettersonly: true,
-        },
-
-        bank: {
-          required: true,
-          lettersonly: true,
-        },
-
-        bik: {
-          required: true,
-          // number: true,
-        },
-
-        iban: {
-          required: true,
-          // number: true,
-        },
-
-        test: {
-          required: true,
-          number: true,
-        },
-      },
-
-      highlight: function(element, errorClass, validClass) {
-        $(element).addClass(errorClass).removeClass(validClass);
-        $(element).closest('.ui-field').find('.popup-icon')
-          .addClass(errorClass).removeClass(validClass);
-
-      },
-      unhighlight: function(element, errorClass, validClass) {
-        $(element).removeClass(errorClass).addClass(validClass);
-        $(element).closest('.ui-field').find('.popup-icon')
-          .removeClass(errorClass).addClass(validClass);
-      },
-
-      errorPlacement: function (error, element) {
-        if (element.attr("name") == "customCheckbox") {
-          error.appendTo(".form-cell-field-send");
+      for (let i = 0; i < checkedInput.length; i++) {
+        if (deleteCheckBoxAll.checked === true) {
+          checkedInput[i].checked = true
         } else {
-          error.insertAfter(element);
-        }
-      },
-
-      messages: {
-        name: {
-          required: "Введите своё ФИО",
-          lettersonly: "Введите корректное ФИО",
-        },
-
-        email: {
-          required: "Введите свой email",
-          email: "Введите корректный email",
-        },
-
-        telephone: {
-          required: "Введите данные",
-          minlength: "Введите полный номер",
-        },
-
-        locality: {
-          required: "Введите населенный пункт",
-          lettersonly: "Введите данные",
-        },
-
-        street: {
-          required: "Введите улицу",
-          lettersonly: "Введите данные",
-        },
-
-        house: {
-          required: "Введите номер дома",
-          number: "Введите данные",
-        },
-
-        company: {
-          required: "Введите название",
-          lettersonly: "Введите данные",
-        },
-
-        inn: {
-          required:"Введите свой ИНН",
-          number: 'Введите корректный ИНН',
-        },
-
-        address: {
-          required: "Введите адрес",
-          lettersonly: "Введите данные",
-        },
-
-        bank: {
-          required: "Введите название банка",
-          lettersonly: "Введите данные",
-        },
-
-        bik: {
-          required: "Введите данные БИК",
-          // number: "Введите корректные данные",
-        },
-
-        iban: {
-          required: "Введите расчётный счет IBAN",
-          // number: "Введите корректные данные",
-        },
-
-        test: {
-          required: "Введите данные",
-          number: "Введите корректные данные",
-        },
-      },
-    });
-
-    jQuery.validator.addMethod(
-      "emailErrPerson",
-      function (value, element) {
-        if(/123@gmail.com/.test(value))  {
-          return false;
-        } else {
-            return true
-        }
-      },
-      "Incorrect format"
-    );
-
-    let inputPhone = document.getElementById('telephone');
-
-    if(inputPhone) {
-      var phoneMask = IMask(
-        document.getElementById('telephone'), {
-          mask: '+{375} (00) 000 00 00'
-        });
-    }
-
-    jQuery.validator.addMethod(
-        "lettersonly",
-        function (value, element) {
-          return this.optional(element) || /^[a-zA-ZА-Яа-я\s,ё]+$/i.test(value);
-        },
-        "Incorrect format"
-      );
-
-    (function() {
-      if(matchMedia) {
-        const screen1024 = window.matchMedia('(max-width:1024px)');
-        screen1024.addListener(changes);
-        changes(screen1024);
-      }
-
-      function changes(screen) {
-        let block = document.querySelectorAll('.cart-item-info');
-
-        for(let i = 0; i < block.length; i++) {
-          let header = block[i].querySelectorAll('.cart-item-headline')[0];
-          let remove = block[i].querySelectorAll('.cart-item-remove')[0];
-          let control = block[i].querySelectorAll('.cart-item-control')[0];
-
-          if(screen.matches) {
-            header.after(remove)
-          } else {
-            control.prepend(remove)
-          }
+          checkedInput[i].checked = false
         }
       }
-    })();
+    })
+  }
 
-    (function() {
-      if(matchMedia) {
-        const screen576 = window.matchMedia('(max-width:576px)');
-        screen576.addListener(changes);
-        changes(screen576);
+  if (deleteSelected) {
+    deleteSelected.addEventListener('click', (e) => {
+      let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]:checked')
+
+      for (let i = 0; i < checkedInput.length; i++) {
+        checkedInput[i].closest('.cart-item').remove()
       }
+    })
+  }
 
-      function changes(screen) {
-        if(screen.matches) {
-          $('.making-order-comment.self-call').before($('#map-address'));
-        } else {
-          $('.col-xs-6.map').append($('#map-address'))
-        }
-      }
-    })();
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    let allInputs = document.querySelector('.making-order-myAddress');
-    let otherAddressForm = document.querySelector('.making-order-pickup .making-order-form');
-
-    if(allInputs && otherAddressForm) {
-      allInputs.addEventListener('click', (e) => {
-        if(e.target.classList[0] === 'other') {
-          otherAddressForm.style.display = 'block';
-        } else {
-          otherAddressForm.style.display = 'none';
-        }
-      })
-    }
-
-    let deleteSelected = document.querySelector('.cart-delete-btn');
-    let deleteCheckBoxAll = document.querySelector('.cart-delete input[name=customCheckbox]');
-    let itemList = document.querySelector('.cart-list');
-
-    if(itemList) {
-      itemList.addEventListener('click', (e) => {
-        if(e.target.classList[0] === 'cart-item-remove') {
-          e.target.closest('.cart-item').remove()
-        }
-      })
-    }
-
-    if(deleteCheckBoxAll) {
-      deleteCheckBoxAll.addEventListener('click', (e) => {
-        let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]');
-
-        for(let i = 0; i < checkedInput.length; i++) {
-          if(deleteCheckBoxAll.checked === true) {
-            checkedInput[i].checked = true
-          } else {
-            checkedInput[i].checked = false
-          }
-        }
-      })
-    }
-
-    if(deleteSelected) {
-      deleteSelected.addEventListener('click', (e) => {
-        let checkedInput = document.querySelectorAll('.cart-list input[name=customCheckbox]:checked')
-
-        for(let i = 0; i < checkedInput.length; i++) {
-          checkedInput[i].closest('.cart-item').remove()
-        }
-      })
-    }
-
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  // We listen to the resize event
+  window.addEventListener('resize', () => {
+    // We execute the same script as before
     let vh = window.innerHeight * 0.01;
-    // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-    // We listen to the resize event
-    window.addEventListener('resize', () => {
-      // We execute the same script as before
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
+  });
 });//ready
 
 
@@ -30271,7 +29932,7 @@ new Swiper(".main-trust-slider", {
   pagination: {
     el: ".main-trust-pagintaion",
     clickable: true,
-    dynamicBullets:true,
+    dynamicBullets: true,
     // dynamicMainBullets:3,
   },
 
@@ -30320,7 +29981,7 @@ new Swiper(".main-trust-slider", {
       native = true;
     }
   }
-  })();
+})();
 
 // (function () {
 //   if (!document.querySelector(".main-compressors-desktop")) return;
@@ -30431,11 +30092,11 @@ new Swiper(".main-trust-slider", {
   }
 })();
 
-$('.waitList-item-remove-link').click(function(){
+$('.waitList-item-remove-link').click(function () {
   $(this).closest($('div.waitList-item')).remove();
 });
 
-$('.profile-setup-delete').click(function(){
+$('.profile-setup-delete').click(function () {
   $(this).closest($('div.profile-setup-wrapper')).remove();
 });
 
@@ -30476,13 +30137,13 @@ $(document).ready(function () {
         required: "Введите данные",
       }
     },
-    highlight: function(element, errorClass, validClass) {
+    highlight: function (element, errorClass, validClass) {
       $(element).addClass(errorClass).removeClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .addClass(errorClass).removeClass(validClass);
 
     },
-    unhighlight: function(element, errorClass, validClass) {
+    unhighlight: function (element, errorClass, validClass) {
       $(element).removeClass(errorClass).addClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .removeClass(errorClass).addClass(validClass);
@@ -30519,14 +30180,14 @@ $(document).ready(function () {
       },
 
 
-},
-    highlight: function(element, errorClass, validClass) {
+    },
+    highlight: function (element, errorClass, validClass) {
       $(element).addClass(errorClass).removeClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .addClass(errorClass).removeClass(validClass);
 
     },
-    unhighlight: function(element, errorClass, validClass) {
+    unhighlight: function (element, errorClass, validClass) {
       $(element).removeClass(errorClass).addClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .removeClass(errorClass).addClass(validClass);
@@ -30535,14 +30196,14 @@ $(document).ready(function () {
 })
 
 $(document).ready(function () {
-  $('.check-comment').click(function(){
-    $(this).hasClass("has-comment")?$(this).removeClass("has-comment"):$(this).addClass("has-comment");
+  $('.check-comment').click(function () {
+    $(this).hasClass("has-comment") ? $(this).removeClass("has-comment") : $(this).addClass("has-comment");
   });
 })
 
 let el = document.querySelector(".favorites-grid");
 
-if(el) {
+if (el) {
   (function () {
     if (matchMedia) {
       const screen = window.matchMedia("(max-width:1024px)");
@@ -30570,44 +30231,44 @@ var scrollLoader = {
   //высота экрана + апдейт при ресайзе
   screenHeight: document.documentElement.clientHeight,
   update() {
-      this.screenHeight = document.documentElement.clientHeight;
+    this.screenHeight = document.documentElement.clientHeight;
   },
   //загружаем контент
   loader(selector) {
     const that = this;
     let scroll = $(window).scrollTop();
 
-    $(selector).each(function(key,item){
+    $(selector).each(function (key, item) {
       const url = $(item).attr('data-href');
 
       if ($(item).attr('data-isloaded') === 'true' || url === undefined || url === '') return false;
 
       let offset = $(item).offset().top;
-      if (scroll + that.screenHeight*1.5 > offset) {
-        $(item).attr('data-isloaded','true')
+      if (scroll + that.screenHeight * 1.5 > offset) {
+        $(item).attr('data-isloaded', 'true')
         $(item).html(that.preloader);
         $.ajax({
-            url: url,
-            method: 'GET',
-            dataType:"html",
-            contentType:"application/x-www-form-urlencoded",
-            success: function(data) {
-                $(item).attr('data-loaded','true');
-                $(item).html(data);
-            },
-            error: function() {
-                $(item).attr('data-loaded','true');
-                $(item).html('<div class="ui-error">Произошла непредвиденная ошибка. Обратитесь в поддержку сайта.</div>')
-            }
+          url: url,
+          method: 'GET',
+          dataType: "html",
+          contentType: "application/x-www-form-urlencoded",
+          success: function (data) {
+            $(item).attr('data-loaded', 'true');
+            $(item).html(data);
+          },
+          error: function () {
+            $(item).attr('data-loaded', 'true');
+            $(item).html('<div class="ui-error">Произошла непредвиденная ошибка. Обратитесь в поддержку сайта.</div>')
+          }
         })
       }
     });
   }
 }//scrollLoader
 
-jQuery(window).on('resize',scrollLoader.update);
-jQuery(document).ready(function(){
-  jQuery(window).on('scroll',function(){
+jQuery(window).on('resize', scrollLoader.update);
+jQuery(document).ready(function () {
+  jQuery(window).on('scroll', function () {
     scrollLoader.loader('.ajx-scroll-load[data-loaded="false"]');
   })
   scrollLoader.loader('.ajx-scroll-load[data-loaded="false"]');
@@ -30621,43 +30282,43 @@ new Swiper(".main-banners-slider", {
   // pagination:true,
 
   breakpoints: {
-      421: {
+    421: {
       slidesPerView: "auto",
       // pagination:true,
-      },
+    },
   },
 
   // shortSwipes: false,
 
   pagination: {
-      el: ".main-banners-pagintaion",
-      clickable: true,
+    el: ".main-banners-pagintaion",
+    clickable: true,
   },
-  });
+});
 
 
 
-  (function () {
-    const target = D.querySelectorAll(".ux-gallery");
-    if (!target.length) return;
+(function () {
+  const target = D.querySelectorAll(".ux-gallery");
+  if (!target.length) return;
 
-    const getSelectors = (parent,link) => {
-      parent.querySelectorAll(link).forEach(item => {
-        if (!item.closest('.swiper-slide-duplicate')) {
-          item.classList.add('ux-not-duplicate')
-        } else {
-          item.classList.add('ux-gallery-link-duplicate')
-          item.classList.remove('ux-gallery-link')
-        }
-      })
-    }
+  const getSelectors = (parent, link) => {
+    parent.querySelectorAll(link).forEach(item => {
+      if (!item.closest('.swiper-slide-duplicate')) {
+        item.classList.add('ux-not-duplicate')
+      } else {
+        item.classList.add('ux-gallery-link-duplicate')
+        item.classList.remove('ux-gallery-link')
+      }
+    })
+  }
 
-    const shadowSelectors = (parent) => {
-      const event = new Event('click')
+  const shadowSelectors = (parent) => {
+    const event = new Event('click')
 
-      D.querySelectorAll('.ux-gallery-link-duplicate')
+    D.querySelectorAll('.ux-gallery-link-duplicate')
       .forEach(item => {
-        item.addEventListener('click',(e)  => {
+        item.addEventListener('click', (e) => {
           e = e || window.event;
           e.preventDefault();
           const src = item.querySelector('img').getAttribute('src')
@@ -30669,277 +30330,203 @@ new Swiper(".main-banners-slider", {
 
         })
       })
-    }
+  }
 
-    FARBA.lazyLibraryLoad(
-      "//cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js",
-      "//cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css",
-      () => {
-        target.forEach((el) => {
-          el.classList.add("lg-inited");
+  FARBA.lazyLibraryLoad(
+    "//cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js",
+    "//cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css",
+    () => {
+      target.forEach((el) => {
+        el.classList.add("lg-inited");
 
-          el.addEventListener("onAfterOpen", function (event) {
-            const q = D.querySelector("#lg-counter");
-            if (q.childNodes[1] && q.childNodes[1].nodeType === 3) {
-              D.querySelector("#lg-counter").childNodes[1].nodeValue = " из ";
-            }
-
-            setTimeout(()=>{D.querySelector('.lg-outer').classList.add('lg-appear')},550)
-          });
-
-          let selector = 'a.ux-gallery-link'
-          if (el.classList.contains('swiper-rewards-wrp')) {
-            getSelectors(el,'a.ux-gallery-link')
-            shadowSelectors(el)
-            selector = 'a.ux-gallery-link.ux-not-duplicate'
+        el.addEventListener("onAfterOpen", function (event) {
+          const q = D.querySelector("#lg-counter");
+          if (q.childNodes[1] && q.childNodes[1].nodeType === 3) {
+            D.querySelector("#lg-counter").childNodes[1].nodeValue = " из ";
           }
 
-          lightGallery(el, {
-            download: false,
-            selector: selector,
-            backdropDuration: 500,
-            speed: 1000
-          });
-
-
-          el.addEventListener("onSlideClick",function(){
-            window.lgData[el.getAttribute("lg-uid")].goToNextSlide()
-          })
-
-          el.addEventListener("onBeforeClose",function(){
-            D.querySelector('.lg-outer').classList.remove('lg-appear')
-          })
+          setTimeout(() => { D.querySelector('.lg-outer').classList.add('lg-appear') }, 550)
         });
-      }
-    );
-  })();
+
+        let selector = 'a.ux-gallery-link'
+        if (el.classList.contains('swiper-rewards-wrp')) {
+          getSelectors(el, 'a.ux-gallery-link')
+          shadowSelectors(el)
+          selector = 'a.ux-gallery-link.ux-not-duplicate'
+        }
+
+        lightGallery(el, {
+          download: false,
+          selector: selector,
+          backdropDuration: 500,
+          speed: 1000
+        });
 
 
-  $(function() {
-    var tab = $('#tabs .sign-popup-content > div');
-    tab.hide().filter(':first').show();
+        el.addEventListener("onSlideClick", function () {
+          window.lgData[el.getAttribute("lg-uid")].goToNextSlide()
+        })
 
-    // Клики по вкладкам.
-    $('#tabs .sign-popup-tabs a').click(function(){
-      tab.hide();
-      tab.filter(this.hash).show();
-      $('#tabs .sign-popup-tabs a').removeClass('active');
-      $(this).addClass('active');
-      return false;
-    }).filter(':first').click();
-  });
+        el.addEventListener("onBeforeClose", function () {
+          D.querySelector('.lg-outer').classList.remove('lg-appear')
+        })
+      });
+    }
+  );
+})();
 
 
-  // ymaps.ready(init);
+$(function () {
+  var tab = $('#tabs .sign-popup-content > div');
+  tab.hide().filter(':first').show();
 
-  // function init() {
-  //     var myMap = new ymaps.Map("map", {
-  //             center: [53.902292, 27.561821],
-  //             zoom: 10
-  //         }, {
-  //             searchControlProvider: 'yandex#search'
-  //         });
-
-  //        var myPolygon = new ymaps.Polygon([
-  //         // Указываем координаты вершин многоугольника.
-  //         // Координаты вершин внешнего контура.
-  //         [
-  //             [53.947864, 27.274663],
-  //             [53.944405, 27.270060],
-  //             [53.917639, 27.355659],
-  //             // [55.70, 37.70],
-  //             // [55.70, 37.50]
-  //         ],
-  //         // Координаты вершин внутреннего контура.
-  //         [
-  //             // [55.75, 37.52],
-  //             // [55.75, 37.68],
-  //             // [55.65, 37.60]
-  //         ]
-  //     ], {
-  //         // Описываем свойства геообъекта.
-  //         // Содержимое балуна.
-  //         hintContent: "Многоугольник"
-  //     }, {
-  //         // Задаем опции геообъекта.
-  //         // Цвет заливки.
-  //         fillColor: '#00FF0088',
-  //         // Ширина обводки.
-  //         strokeWidth: 5
-  //     });
-  //     var myPolygon1 = new ymaps.Polygon([
-  //       // Указываем координаты вершин многоугольника.
-  //       // Координаты вершин внешнего контура.
-  //       [
-  //           [54.947864, 27.274663],
-  //           [53.944405, 27.270060],
-  //           [53.917639, 27.355659],
-  //           // [55.70, 37.70],
-  //           // [55.70, 37.50]
-  //       ],
-  //       // Координаты вершин внутреннего контура.
-  //       [
-  //           // [55.75, 37.52],
-  //           // [55.75, 37.68],
-  //           // [55.65, 37.60]
-  //       ]
-  //   ], {
-  //       // Описываем свойства геообъекта.
-  //       // Содержимое балуна.
-  //       hintContent: "Многоугольник"
-  //   }, {
-  //       // Задаем опции геообъекта.
-  //       // Цвет заливки.
-  //       fillColor: '#00FF0088',
-  //       // Ширина обводки.
-  //       strokeWidth: 5
-  //   });
-  //     // Добавляем многоугольник на карту.
-  //     myMap.geoObjects.add(myPolygon);
-  //     myMap.geoObjects.add(myPolygon1);
-  // }
+  // Клики по вкладкам.
+  $('#tabs .sign-popup-tabs a').click(function () {
+    tab.hide();
+    tab.filter(this.hash).show();
+    $('#tabs .sign-popup-tabs a').removeClass('active');
+    $(this).addClass('active');
+    return false;
+  }).filter(':first').click();
+});
 
 
+// ymaps.ready(init);
 
+// function init() {
+//     var myMap = new ymaps.Map("map", {
+//             center: [53.902292, 27.561821],
+//             zoom: 10
+//         }, {
+//             searchControlProvider: 'yandex#search'
+//         });
 
+//        var myPolygon = new ymaps.Polygon([
+//         // Указываем координаты вершин многоугольника.
+//         // Координаты вершин внешнего контура.
+//         [
+//             [53.947864, 27.274663],
+//             [53.944405, 27.270060],
+//             [53.917639, 27.355659],
+//             // [55.70, 37.70],
+//             // [55.70, 37.50]
+//         ],
+//         // Координаты вершин внутреннего контура.
+//         [
+//             // [55.75, 37.52],
+//             // [55.75, 37.68],
+//             // [55.65, 37.60]
+//         ]
+//     ], {
+//         // Описываем свойства геообъекта.
+//         // Содержимое балуна.
+//         hintContent: "Многоугольник"
+//     }, {
+//         // Задаем опции геообъекта.
+//         // Цвет заливки.
+//         fillColor: '#00FF0088',
+//         // Ширина обводки.
+//         strokeWidth: 5
+//     });
+//     var myPolygon1 = new ymaps.Polygon([
+//       // Указываем координаты вершин многоугольника.
+//       // Координаты вершин внешнего контура.
+//       [
+//           [54.947864, 27.274663],
+//           [53.944405, 27.270060],
+//           [53.917639, 27.355659],
+//           // [55.70, 37.70],
+//           // [55.70, 37.50]
+//       ],
+//       // Координаты вершин внутреннего контура.
+//       [
+//           // [55.75, 37.52],
+//           // [55.75, 37.68],
+//           // [55.65, 37.60]
+//       ]
+//   ], {
+//       // Описываем свойства геообъекта.
+//       // Содержимое балуна.
+//       hintContent: "Многоугольник"
+//   }, {
+//       // Задаем опции геообъекта.
+//       // Цвет заливки.
+//       fillColor: '#00FF0088',
+//       // Ширина обводки.
+//       strokeWidth: 5
+//   });
+//     // Добавляем многоугольник на карту.
+//     myMap.geoObjects.add(myPolygon);
+//     myMap.geoObjects.add(myPolygon1);
+// }
 
-//! PART 3 JAVA SCRIPT CODE
+// map for tab\radio\select
 
-//карта на странице delivery&pay
-let deliverypayMap = document.querySelector('.deliverypayMap')
-if(deliverypayMap) {
+function initMapTarget(selector, id) {
+  const town = document.querySelectorAll(selector);
 
-  const deliveryCity = [
-    { coord: [ 53.902735, 27.555696 ], title: 'Минск', content: 'Минск' },
-    { coord: [ 53.894548, 30.330654 ], title: 'Могилёв', content: 'Могилёв' },
-    { coord: [ 34.052235, -118.243683 ], title: 'Другие города', content: 'Другие города' },
-  ];
-
-  ymaps.ready(function() {
-    const map = new ymaps.Map('deliverypayMap', {
+  ymaps.ready(function () {
+    const map = new ymaps.Map(id, {
       zoom: 9,
-      center: deliveryCity[0].coord,
+      center: [53.924723, 27.511615],
       controls: [],
     });
 
-    const marker = new ymaps.Placemark(deliveryCity[0].coord, {
-      balloonContent: balloonContent(deliveryCity[0]),
-    });
+    const marker = new ymaps.Placemark([53.924723, 27.511615]);
     map.geoObjects.add(marker);
 
+    town.forEach(item => {
+      const mapJSON = item.dataset.map;
+      const mapObj = JSON.parse(mapJSON);
 
-    document.querySelectorAll('#citylink li a').forEach((n, i) => {
-      n.addEventListener('click', onClick.bind(n, deliveryCity[i]));
-    });
-
-
-    function onClick(item) {
-      map.setCenter(item.coord);
-      marker.geometry.setCoordinates(item.coord);
-      marker.properties.set('balloonContent', balloonContent(item));
-    }
-
-    function balloonContent(item) {
-      return `<b>${item.content}</b>`;
-    }
-
-
-
-  });
+      item.addEventListener('click', () => {
+        map.setCenter(mapObj.coordinates);
+        marker.geometry.setCoordinates(mapObj.coordinates);
+      })
+    })
+  })
 }
 
-let mapContact1 = document.getElementById('mapContact1')
-let mapContact2 = document.getElementById('mapContact2')
+// map for single init map
+function initSingleMap(id, mapJSON) {
+  let mapObj = JSON.parse(mapJSON);
 
-if (mapContact1) {
-  ymaps.ready(init);
-  ymaps.ready(init1);
-  function init(){
-    var mapContact1 = new ymaps.Map("mapContact1", {
-        center: [53.834601, 28.994249],
-        zoom: 8,
-        controls: [],
-    });
-
-        // Первая метка
-       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-      ),
-      myPlacemarkWithContent = new ymaps.Placemark([53.933166, 27.451803], {
-          hintContent: 'Собственный значок метки с контентом',
-          balloonContent: 'А эта — новогодняя',
-          iconContent: '12'
-      }, {
-
-          iconLayout: 'default#imageWithContent',
-          // Своё изображение иконки метки.
-          // iconImageHref: './images/icons/contacts-location.svg',
-          // Размеры метки.
-          iconImageSize: [48, 48],
-          iconImageOffset: [-24, -24],
-          iconContentOffset: [15, 15],
-          iconContentLayout: MyIconContentLayout
-      });
-
-      // Вторая метка
-      MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
-        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    ),
-    myPlacemarkWithContent1 = new ymaps.Placemark([53.879127, 30.265464], {
-        hintContent: 'Собственный значок метки с контентом',
-        balloonContent: 'А эта — новогодняя',
-        iconContent: '12'
-    }, {
-
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        // iconImageHref: './images/icons/contacts-location.svg',
-        // Размеры метки.
-        iconImageSize: [48, 48],
-        iconImageOffset: [-24, -24],
-        iconContentOffset: [15, 15],
-        iconContentLayout: MyIconContentLayout1
-    });
-
-      mapContact1.geoObjects.add(myPlacemarkWithContent);
-      mapContact1.geoObjects.add(myPlacemarkWithContent1);
-
-  }
-  function init1(){
-    var mapContact2 = new ymaps.Map("mapContact2", {
-      center: [53.834601, 28.994249],
+  ymaps.ready(function () {
+    var map = new ymaps.Map(id, {
+      center: mapObj.coordinates,
       zoom: 8,
       controls: [],
-  });
-        // Первая метка
-       MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-          '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-      ),
-      myPlacemarkWithContent = new ymaps.Placemark([53.933166, 27.451803], {
-          hintContent: 'Собственный значок метки с контентом',
-          balloonContent: 'А эта — новогодняя',
-          iconContent: '12'
+    });
+
+    // Первая метка
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    ),
+      myPlacemarkWithContent = new ymaps.Placemark(mapObj.mark1, {
+        hintContent: 'Собственный значок метки с контентом',
+        balloonContent: mapObj.mark1Info,
+        iconContent: '12'
       }, {
 
-          iconLayout: 'default#imageWithContent',
-          // Своё изображение иконки метки.
-          // iconImageHref: './images/icons/contacts-location.svg',
-          // Размеры метки.
-          iconImageSize: [48, 48],
-          iconImageOffset: [-24, -24],
-          iconContentOffset: [15, 15],
-          iconContentLayout: MyIconContentLayout
+        iconLayout: 'default#imageWithContent',
+        // Своё изображение иконки метки.
+        // iconImageHref: './images/icons/contacts-location.svg',
+        // Размеры метки.
+        iconImageSize: [48, 48],
+        iconImageOffset: [-24, -24],
+        iconContentOffset: [15, 15],
+        iconContentLayout: MyIconContentLayout
       });
 
-      // Вторая метка
-      MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
-        '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+    // Вторая метка
+    MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
+      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
     ),
-    myPlacemarkWithContent1 = new ymaps.Placemark([53.879127, 30.265464], {
+      myPlacemarkWithContent1 = new ymaps.Placemark(mapObj.mark2, {
         hintContent: 'Собственный значок метки с контентом',
-        balloonContent: 'А эта — новогодняя',
+        balloonContent: mapObj.mark2Info,
         iconContent: '12'
-    }, {
+      }, {
 
         iconLayout: 'default#imageWithContent',
         // Своё изображение иконки метки.
@@ -30949,20 +30536,17 @@ if (mapContact1) {
         iconImageOffset: [-24, -24],
         iconContentOffset: [15, 15],
         iconContentLayout: MyIconContentLayout1
-    });
+      });
 
-      //вторая карта
-      mapContact2.geoObjects.add(myPlacemarkWithContent);
-      mapContact2.geoObjects.add(myPlacemarkWithContent1);
-  }
+    map.geoObjects.add(myPlacemarkWithContent);
+    map.geoObjects.add(myPlacemarkWithContent1);
+  });
 }
-
-
 
 let uiSearchSettings = document.querySelector('.ui-search-settings')
 
 
-if(uiSearchSettings) {
+if (uiSearchSettings) {
   $('.ui-search-settings').on('click', () => {
     $('.ui-search-settings-text-content').toggleClass('ui-search-settings-open')
     $('.ui-search-settings-img').toggleClass('ui-search-settings-img-open')
@@ -30979,11 +30563,11 @@ if(uiSearchSettings) {
 // repaircmp.html
 
 let repairTypeBtn = document.querySelector('.repair-type-btn'),
-    repaircmpTypeWrapper = document.querySelector('.repaircmp-type-wrapper'),
-    repaircmpTypeItem = document.querySelectorAll('.repaircmp-type-item');
+  repaircmpTypeWrapper = document.querySelector('.repaircmp-type-wrapper'),
+  repaircmpTypeItem = document.querySelectorAll('.repaircmp-type-item');
 
-if(repairTypeBtn) {
-  if( repaircmpTypeItem.length > 6) {
+if (repairTypeBtn) {
+  if (repaircmpTypeItem.length > 6) {
     repairTypeBtn.addEventListener('click', () => {
       repairTypeBtn.style.display = 'none'
       repaircmpTypeWrapper.classList.add('repaircmp-type-wrapper-open')
@@ -30999,34 +30583,34 @@ if(repairTypeBtn) {
 
 let complite = document.querySelector('.complite');
 
-if(complite) {
+if (complite) {
   const buildSwiperSlider = sliderElm => {
     const sliderIdentifier = sliderElm.dataset.id;
     return new Swiper(`#${sliderElm.id}`, {
 
-        pagination: {
-            el: `.swiper-pagination-${sliderIdentifier}`,
+      pagination: {
+        el: `.swiper-pagination-${sliderIdentifier}`,
 
-        },
+      },
     });
-}
-const allSliders = document.querySelectorAll('.swiper');
-allSliders.forEach(slider => buildSwiperSlider(slider));
+  }
+  const allSliders = document.querySelectorAll('.swiper');
+  allSliders.forEach(slider => buildSwiperSlider(slider));
 }
 
 
 
 //producent-page rebuild
 let cardReviewsMediaContainer = document.querySelector('.card-reviews-media-container')
-if(cardReviewsMediaContainer) {
-  (function() {
-    if(matchMedia) {
+if (cardReviewsMediaContainer) {
+  (function () {
+    if (matchMedia) {
       const screen = window.matchMedia('(max-width:1024.99px)');
       screen.addListener(changes);
       changes(screen);
     }
     function changes(screen) {
-      if(screen.matches) {
+      if (screen.matches) {
         $(".card-reviews").appendTo($(".card-reviews-media-container"));
 
       } else {
@@ -31039,78 +30623,78 @@ if(cardReviewsMediaContainer) {
 
 //header mobile
 
-  (function() {
-    if(matchMedia) {
-      const screen = window.matchMedia('(max-width:1024.99px)');
-      screen.addListener(changes);
-      changes(screen);
-    }
-    function changes(screen) {
-      if(screen.matches) {
-        $(".mobile-card").appendTo($(".mob-menu"));
-        $(".main-catalog").appendTo($(".mob-menu"));
+(function () {
+  if (matchMedia) {
+    const screen = window.matchMedia('(max-width:1024.99px)');
+    screen.addListener(changes);
+    changes(screen);
+  }
+  function changes(screen) {
+    if (screen.matches) {
+      $(".mobile-card").appendTo($(".mob-menu"));
+      $(".main-catalog").appendTo($(".mob-menu"));
 
 
-      } else {
-        $(".mobile-card").appendTo($(".main-catalog-wrapper"));
-        $(".main-catalog").appendTo($(".main-catalog-wrapper"));
-      }
+    } else {
+      $(".mobile-card").appendTo($(".main-catalog-wrapper"));
+      $(".main-catalog").appendTo($(".main-catalog-wrapper"));
     }
-  })();
+  }
+})();
 
 
 //Открываем каталог
 let catalogBtn = document.querySelector('.main-catalog'),
-headerHeightC = document.querySelector('.header').clientHeight,
-navWrapperC = document.querySelector('.nav-wrapper').clientHeight,
-changeIcon = document.querySelector('.main-toggler'),
-mainSearchForm = document.querySelector('.main-search-form'),
-// catalogItemList = document.querySelectorAll('.catalog-item-list'),
-mainOpenCatalog = document.querySelector('.main'),
-navWrapperOpenCatalog = document.querySelector('.nav-wrapper'),
-bodyOpenCatalog = document.querySelector('body'),
+  headerHeightC = document.querySelector('.header'),
+  navWrapperC = document.querySelector('.nav-wrapper') || document.querySelector('.nav-body'),
+  changeIcon = document.querySelector('.main-toggler'),
+  mainSearchForm = document.querySelector('.main-search-form'),
+  // catalogItemList = document.querySelectorAll('.catalog-item-list'),
+  mainOpenCatalog = document.querySelector('.main'),
+  navWrapperOpenCatalog = document.querySelector('.nav-wrapper') || document.querySelector('.nav-body'),
+  bodyOpenCatalog = document.querySelector('body'),
 
-containerMenu = document.querySelector('.container-menu');
+  containerMenu = document.querySelector('.container-menu');
 
 let mobMenuImg = document.querySelector('.mob-menu-img')
 let enterMobile = document.querySelector('.enter-mobile')
 
 
 catalogBtn.addEventListener('click', () => {
-      mainSearchForm.classList.toggle('main-search-form-open');
-      changeIcon.classList.toggle('main-toggler-cross');
-      containerMenu.classList.toggle('container-menu-open');
-      mainOpenCatalog.classList.toggle('main-open-catalog');
-      navWrapperOpenCatalog.classList.toggle('nav-wrapper-open-catalog')
-      bodyOpenCatalog.classList.toggle('body-hidden')
+  mainSearchForm.classList.toggle('main-search-form-open');
+  changeIcon.classList.toggle('main-toggler-cross');
+  containerMenu.classList.toggle('container-menu-open');
+  mainOpenCatalog.classList.toggle('main-open-catalog');
+  navWrapperOpenCatalog.classList.toggle('nav-wrapper-open-catalog')
+  bodyOpenCatalog.classList.toggle('body-hidden')
 
-      mobMenuImg.classList.remove('mob-menu-img-open')
+  mobMenuImg.classList.remove('mob-menu-img-open')
   enterMobile.classList.remove('enter-mobile-open')
-      if(matchMedia) {
-        const screen = window.matchMedia('(max-width:1024.99px)');
-        screen.addListener(changes);
-        changes(screen);
-      }
-      function changes(screen) {
-        if(screen.matches) {
-          containerMenu.style.top = headerHeightC - navWrapperC + mainSearchForm.clientHeight + 'px';
-        } else {
-          containerMenu.style.top = headerHeightC - navWrapperC + 'px';
+  if (matchMedia) {
+    const screen = window.matchMedia('(max-width:1024.99px)');
+    screen.addListener(changes);
+    changes(screen);
+  }
+  function changes(screen) {
+    if (screen.matches) {
+      // containerMenu.style.top = headerHeightC.clientHeight - navWrapperC.clientHeight + mainSearchForm.clientHeight + 'px';
+      containerMenu.style.top = headerHeightC.clientHeight + 'px';
+    } else {
+      containerMenu.style.top = headerHeightC.clientHeight - navWrapperC.clientHeight + 'px';
+    }
+  }
 
-        }
-      }
+  //проверяем кол-во и высоту
+  let menuLi = document.querySelector('.menu-desktop').children
+  let menuLiHieght = 0;
+  Array.from(menuLi).forEach((e) => {
+    menuLiHieght = menuLiHieght + e.clientHeight
+  })
 
-//проверяем кол-во и высоту
-      let menuLi = document.querySelector('.menu-desktop').children
-      let menuLiHieght = 0;
-      Array.from(menuLi).forEach((e) => {
-        menuLiHieght = menuLiHieght + e.clientHeight
-      })
-
-      if(menuLiHieght > 720) {
-        $('.menu-desktop-ul').css('height', '100vh')
-        $('.menu-desktop-second').css('max-height', '720px')
-      }
+  if (menuLiHieght > 720) {
+    $('.menu-desktop-ul').css('height', '100vh')
+    $('.menu-desktop-second').css('max-height', '720px')
+  }
 
 })
 
@@ -31184,80 +30768,39 @@ let carouselCompare = document.querySelector('.swiper-carousel-compare');
 
 
 let swiperCarouselCompare = new Swiper(".swiper-carousel-compare", {
-//   pagination: {
-//     el: `.swiper-pagination-${sliderIdentifier}`,
+  //   pagination: {
+  //     el: `.swiper-pagination-${sliderIdentifier}`,
 
-// },
-navigation: {
-  nextEl: `.compare-slider-next-carousel-compare_1`,
-  prevEl: `.compare-slider-prev-carousel-compare_1`,
-},
-slidesPerView: 2,
-allowTouchMove: true,
-// slidesPerGroup: 99,
-spaceBetween: 24,
-breakpoints: {
-  1024: {
-    slidesPerView: 3,
+  // },
+  navigation: {
+    nextEl: `.compare-slider-next-carousel-compare_1`,
+    prevEl: `.compare-slider-prev-carousel-compare_1`,
   },
+  slidesPerView: 2,
+  allowTouchMove: true,
+  // slidesPerGroup: 99,
+  spaceBetween: 24,
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+    },
 
-},
-on: {
-  touchMove: function (swiper, event) {
-    // console.log(event)
-    // console.log(swiper)
-    // console.log(event.x)
-    // event.x =
+  },
+  on: {
+    touchMove: function (swiper, event) {
+
+    }
   }
-}
 });
-
-//touchMove
-// if(carouselCompare) {
-//   const buildSwiperSlider = sliderElm => {
-//     const sliderIdentifier = sliderElm.dataset.id;
-//     return new Swiper(`#${sliderElm.id}`, {
-
-//         pagination: {
-//             el: `.swiper-pagination-${sliderIdentifier}`,
-
-//         },
-//         navigation: {
-//           nextEl: `.compare-slider-next-${sliderIdentifier}`,
-//           prevEl: `.compare-slider-prev-${sliderIdentifier}`,
-//         },
-//         slidesPerView: 2,
-//         allowTouchMove: true,
-//         // slidesPerGroup: 99,
-//         spaceBetween: 24,
-//         breakpoints: {
-//           1024: {
-//             slidesPerView: 3,
-//           },
-
-//         },
-//         on: {
-//           touchMove: function (swiper, event) {
-//             // console.log(event)
-//             // console.log(swiper)
-//             // console.log(event.x)
-//             // event.x =
-//           }
-//         }
-//     });
-// }
-// const allSliders = document.querySelectorAll('.swiper');
-// allSliders.forEach(slider => buildSwiperSlider(slider));
-// }
 
 let compareSection = document.querySelectorAll('.compare-table-section-head')
 
-if(compareSection) {
+if (compareSection) {
   compareSection.forEach((e) => {
     e.addEventListener('click', (elem) => {
       let clickElem = elem.target.closest('.compare-table-section')
-      let closeElem =  clickElem.querySelector('.compare-table-section-body')
-      let closeIcon =  clickElem.querySelector('.compare-table-section-head_arrow')
+      let closeElem = clickElem.querySelector('.compare-table-section-body')
+      let closeIcon = clickElem.querySelector('.compare-table-section-head_arrow')
 
       closeElem.classList.toggle('compare-table-section-body_close')
       closeIcon.classList.toggle('compare-table-section-head_arrow_close')
@@ -31268,14 +30811,14 @@ if(compareSection) {
 
 
 //compary-body mobile
-(function() {
-  if(matchMedia) {
+(function () {
+  if (matchMedia) {
     const screen = window.matchMedia('(max-width:1024.99px)');
     screen.addListener(changes);
     changes(screen);
   }
   function changes(screen) {
-    if(screen.matches) {
+    if (screen.matches) {
       $(".compare-btn-clear").appendTo($(".compare-grid-aside-container"));
     } else {
       $(".compare-btn-clear").appendTo($(".compare-aside-clear"));
@@ -31290,20 +30833,18 @@ if(compareSection) {
 // удаляем элементы по клику на крестик
 
 let targetElment = document.querySelectorAll('.product-card'),
-    removeBtn = document.querySelectorAll('.product-card-remove'),
-    allSliders = document.querySelectorAll('.swiper-carousel-compare'),
-    allInfo = document.querySelectorAll('.swiper-slide');
+  removeBtn = document.querySelectorAll('.product-card-remove'),
+  allSliders = document.querySelectorAll('.swiper-carousel-compare'),
+  allInfo = document.querySelectorAll('.swiper-slide');
 if (removeBtn) {
   removeBtn.forEach((e) => {
     e.addEventListener('click', (elem) => {
-      // console.log(swiperCarouselCompare)
       // let removeElement =  elem.target.closest('.swiper-slide')
-      if(e === elem.target) {
-        // console.log(e.closest('.swiper-slide'))
+      if (e === elem.target) {
         allSliders.forEach((slider) => {
           slider.querySelectorAll('.swiper-slide').forEach((elemIndex, i) => {
             swiperCarouselCompare.forEach((swiper) => {
-              if(elemIndex == elem.target.closest('.swiper-slide')) {
+              if (elemIndex == elem.target.closest('.swiper-slide')) {
                 swiper.removeSlide(i)
               }
             })
@@ -31313,19 +30854,6 @@ if (removeBtn) {
         })
 
       }
-
-
-
-
-      // console.log(removeElement)
-      // allInfo.forEach((ariaElem) => {
-      //   if(ariaElem.ariaLabel === removeElement) {
-      //     ariaElem.remove()
-      //   }
-
-      // })
-      // removeElement.remove()
-
     })
   })
 }
@@ -31334,7 +30862,7 @@ if (removeBtn) {
 
 const serviceReminder = document.querySelector('.service-reminder');
 
-if(serviceReminder) {
+if (serviceReminder) {
   const txtHeadline = document.querySelector('.sign-company-headline');
   const txtSteps = document.querySelector('.sign-company-steps span');
   const firstStep = document.querySelector('.sign-company-first');
@@ -31355,7 +30883,7 @@ if(serviceReminder) {
   $(".sign-sompany-first-form").validate({
     errorElement: 'span',
     errorPlacement: function (error, element) {
-      if(element.attr("type") == "checkbox") {
+      if (element.attr("type") == "checkbox") {
         return element.next('label').append(error);
       }
 
@@ -31364,10 +30892,10 @@ if(serviceReminder) {
 
     rules: {
       type: {
-        required:true,
+        required: true,
       },
       num: {
-        required:true,
+        required: true,
         number: true,
       },
       date: {
@@ -31381,13 +30909,13 @@ if(serviceReminder) {
       },
     },
 
-    highlight: function(element, errorClass, validClass) {
+    highlight: function (element, errorClass, validClass) {
       $(element).addClass(errorClass).removeClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .addClass(errorClass).removeClass(validClass);
     },
 
-    unhighlight: function(element, errorClass, validClass) {
+    unhighlight: function (element, errorClass, validClass) {
       $(element).removeClass(errorClass).addClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .removeClass(errorClass).addClass(validClass);
@@ -31409,7 +30937,7 @@ if(serviceReminder) {
     },
 
 
-    submitHandler: function(form) {
+    submitHandler: function (form) {
       txtHeadline.textContent = 'О получателе';
       txtSteps.textContent = '2';
 
@@ -31422,17 +30950,17 @@ if(serviceReminder) {
 
     messages: {
       type: {
-        required:"Введите данные",
+        required: "Введите данные",
       },
       num: {
-        required:"Введите данные",
-        number:"Введите данные",
+        required: "Введите данные",
+        number: "Введите данные",
       },
       days: {
-        required:"Введите данные",
+        required: "Введите данные",
       },
       hours: {
-        required:"Введите данные",
+        required: "Введите данные",
       },
     },
   });
@@ -31440,7 +30968,7 @@ if(serviceReminder) {
   $(".sign-sompany-second-form").validate({
     errorElement: 'span',
     errorPlacement: function (error, element) {
-      if(element.attr("type") == "checkbox") {
+      if (element.attr("type") == "checkbox") {
         return element.next('label').append(error);
       }
 
@@ -31458,13 +30986,13 @@ if(serviceReminder) {
       },
     },
 
-    highlight: function(element, errorClass, validClass) {
+    highlight: function (element, errorClass, validClass) {
       $(element).addClass(errorClass).removeClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .addClass(errorClass).removeClass(validClass);
     },
 
-    unhighlight: function(element, errorClass, validClass) {
+    unhighlight: function (element, errorClass, validClass) {
       $(element).removeClass(errorClass).addClass(validClass);
       $(element).closest('.ui-field').find('.popup-icon')
         .removeClass(errorClass).addClass(validClass);
@@ -31493,10 +31021,10 @@ if(serviceReminder) {
   jQuery.validator.addMethod(
     "emailErr",
     function (value, element) {
-      if(/123@gmail.com/.test(value))  {
+      if (/123@gmail.com/.test(value)) {
         return false;
       } else {
-          return true
+        return true
       }
     },
     "Incorrect format"
@@ -31504,29 +31032,29 @@ if(serviceReminder) {
 
   var phoneMask = IMask(
     document.getElementById('phone'), {
-      mask: '+{375} (00) 000 00 00'
+    mask: '+{375} (00) 000 00 00'
   });
 
   // datetimepicker
-   FARBA.lazyLibraryLoad("https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css", () => {
+  FARBA.lazyLibraryLoad("https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css", () => {
 
-    $( document ).ready(function() {
-      let flag = false;
+      $(document).ready(function () {
+        let flag = false;
         $("select").styler();
 
         $('#datetimepicker').datetimepicker({
           // value:'12.03.2013',
-          format:'d.m.Y',
+          format: 'd.m.Y',
           timepicker: false,
           // opened: true,
-          closeOnDateSelect:true,
+          closeOnDateSelect: true,
           lang: 'ru',
           yearStart: 1940,
           yearEnd: new Date().getFullYear(),
           dayOfWeekStart: 1,
-          onGenerate: function() {
-            if(!flag) {
+          onGenerate: function () {
+            if (!flag) {
               let blockOfYears = document.querySelector('.xdsoft_yearselect');
               let btnYears = document.querySelector('.xdsoft_label.xdsoft_year');
               let control = document.querySelector('.xdsoft_monthpicker')
@@ -31546,13 +31074,13 @@ if(serviceReminder) {
 
 
               control.addEventListener('click', (e) => {
-                if(e.target.classList[1] === 'xdsoft_year') {
+                if (e.target.classList[1] === 'xdsoft_year') {
                   let valueMargin = blockScroll.style.marginTop;
                   let marginGet = valueMargin.split('px')[0];
                   let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
                   let numCurrentYear = +currentYearElement.textContent
 
-                  if(numCurrentYear === 2022) {
+                  if (numCurrentYear === 2022) {
                     blockScroll.style.marginTop = '-2242px'
                   } else if (numCurrentYear === 1940) {
                     blockScroll.style.marginTop = '0px'
@@ -31566,10 +31094,10 @@ if(serviceReminder) {
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
-                if(+marginGet < 0) {
+                if (+marginGet < 0) {
                   blockScroll.style.marginTop = +marginGet + scroll + 'px';
 
-                  if(+marginGet < -271) {
+                  if (+marginGet < -271) {
                     blockScroll.style.marginTop = +marginGet + scroll + 'px';
                   } else {
                     blockScroll.style.marginTop = '0px'
@@ -31585,8 +31113,8 @@ if(serviceReminder) {
 
                 blockScroll.style.marginTop = +marginGet - scroll + 'px';
 
-                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
-                  if(+marginGet > (-$(".blockYears").height() + 540)) {
+                if (+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if (+marginGet > (-$(".blockYears").height() + 540)) {
                     blockScroll.style.marginTop = +marginGet - scroll + 'px';
                   } else {
                     blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
@@ -31597,13 +31125,13 @@ if(serviceReminder) {
               })
 
               $(document).on('click touchend', '.xdsoft_monthpicker', (e) => {
-                if(e.target.parentElement.classList[1] === 'xdsoft_year') {
+                if (e.target.parentElement.classList[1] === 'xdsoft_year') {
                   let valueMargin = blockScroll.style.marginTop;
                   let marginGet = valueMargin.split('px')[0];
                   let currentYearElement = document.querySelector('.xdsoft_year .xdsoft_current');
                   let numCurrentYear = +currentYearElement.textContent
 
-                  if(numCurrentYear === 2022) {
+                  if (numCurrentYear === 2022) {
                     blockScroll.style.marginTop = '-2242px'
                   } else if (numCurrentYear === 1940) {
                     blockScroll.style.marginTop = '0px'
@@ -31617,10 +31145,10 @@ if(serviceReminder) {
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
-                if(+marginGet < 0) {
+                if (+marginGet < 0) {
                   blockScroll.style.marginTop = +marginGet + scroll + 'px';
 
-                  if(+marginGet < -271) {
+                  if (+marginGet < -271) {
                     blockScroll.style.marginTop = +marginGet + scroll + 'px';
                   } else {
                     blockScroll.style.marginTop = '0px'
@@ -31634,8 +31162,8 @@ if(serviceReminder) {
                 let valueMargin = blockScroll.style.marginTop;
                 let marginGet = valueMargin.split('px')[0];
 
-                if(+marginGet > (-$(".blockYears").height() + 250)) { //-2490
-                  if(+marginGet > (-$(".blockYears").height() + 540)) {
+                if (+marginGet > (-$(".blockYears").height() + 250)) { //-2490
+                  if (+marginGet > (-$(".blockYears").height() + 540)) {
                     blockScroll.style.marginTop = +marginGet - scroll + 'px';
                   } else {
                     blockScroll.style.marginTop = `${(-$(".blockYears").height() + 250)}px`
@@ -31651,6 +31179,6 @@ if(serviceReminder) {
         });
 
         $.datetimepicker.setLocale('ru');
+      });
     });
-  });
 }

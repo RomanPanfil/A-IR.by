@@ -62,55 +62,19 @@
   <div class="main">
     <div class="container">
       <div class="main-container flex valign-center space-between">
-        <div href="#" class="main-logo">
-          <a href="#">
-            <div class="main-logo-img">
-              <picture>
-                <source
-                  media="(max-width: 768px)"
-                  srcset="./images/icons/header-logo-mob.svg"
-                />
-                <img src="./images/icons/main-logo.svg" alt="alt" />
-              </picture>
-            </div>
-          </a>
-          <!-- ////////////////////////////////// -->
+        <a href="#" class="main-logo">
+          <div class="main-logo-img">
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset="./images/icons/header-logo-mob.svg"
+              />
+              <img src="./images/icons/main-logo.svg" alt="alt" />
+            </picture>
+          </div>
           <div class="mob-menu">
-            <div class="mob-menu-img profile-menu">
+            <div class="mob-menu-img">
               <img src="./images/icons/user-mob.svg" alt="alt" />
-              <ul class="profile-menu-ul">
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Мой аккаунт</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Моё оборудование</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Мои заказы</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Лист ожидания <span class="nav-account-link-label">1</span></a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Запрос товаров</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Избранное</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Помощь</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Выйти</a>
-                </li>
-              </ul>
             </div>
             <div class="mob-menu-img mob-menu-phone">
               <img src="./images/icons/phone-mob.svg" alt="alt" />
@@ -118,20 +82,31 @@
             <div class="mob-menu-img">
               <img src="./images/icons/search-mob.svg" alt="alt" />
             </div>
-          </div>
-        </div>
+            <div class="enter-mobile">
 
-        <div class="mobile-separ"></div>
+                <div class="enter-mobile-btn ui-btn">Вход</div>
+                <div class="enter-mobile-favour">
+                  <svg class="enter-mobile-favour-sprite sprite"><use xlink:href="svg/svg/symbols.svg#menu-like"></use></svg>
+                  Избранное
+                </div>
+            </div>
 
-        <div class="main-catalog-wrapper">
-          <div class="mobile-card">
-            <img src="./images/icons/main-card-mob.svg" alt="alt" />
           </div>
-          <div class="main-catalog">
-            <div class="main-toggler"></div>
-            <div class="main-catalog-text">Каталог</div>
+        </a>
+
+        <!-- <div class="mobile-separ"></div> -->
+
+          <div class="main-catalog-wrapper">
+            <div class="mobile-card">
+              <img src="./images/icons/main-card-mob.svg" alt="alt" />
+            </div>
+            <div class="main-catalog">
+              <div class="main-toggler"></div>
+              <div class="main-catalog-text">Каталог</div>
+            </div>
           </div>
-        </div>
+
+
 
         <form class="main-search-form">
           <input
@@ -263,51 +238,17 @@
             tech@irand.by
           </a>
         </div>
-<!-- //////////////////////////////////// -->
+
+
+
         <div class="main-menu">
-          <div href="#" class="main-menu-services profile-menu">
+          <a href="#" class="main-menu-services mfp-link" href="javascript:void(0)" data-href="./popups/sign-in.html">
             <div class="main-menu-services-img">
               <svg class="sprite"><use xlink:href="svg/svg/symbols.svg#menu-user"/></svg>
             </div>
 
-            <div class="main-menu-services-text">Профиль</div>
-
-
-              <ul class="profile-menu-ul">
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Мой аккаунт</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Моё оборудование</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Мои заказы</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Лист ожидания <span class="nav-account-link-label">1</span></a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Запрос товаров</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Избранное</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Помощь</a>
-                </li>
-
-                <li class="profile-menu-li">
-                  <a href="#" class="profile-menu-li-link">Выйти</a>
-                </li>
-              </ul>
-
-            </div>
+            <div class="main-menu-services-text">Войти</div>
+          </a>
 
           <a href="#" class="main-menu-services">
             <div class="main-menu-services-img">
@@ -348,6 +289,8 @@
       </div>
     </div>
   </div>
+
+  <!--#include file="inc-catalog-menu.html"-->
 </header>
 
 <div class="middle" id="middle">

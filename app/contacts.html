@@ -1,8 +1,8 @@
 <!--#include file="inc-header.html"-->
 <div class="contacts" id="card-breackpoint">
 
-  
-  
+
+
     <div class="row">
       <div class="col-md-3 col-sm-4">
         <div class="ui-rightbar">
@@ -147,7 +147,7 @@
                         <div class="contacts-block-images">
                            <img loading="lazy" src="./images/icons/footer-telegram.svg" alt="alt">
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -182,7 +182,7 @@
               <div class="col-md-4">
                   <div class="contacts-map">
                       <div class="contacts-map-title">
-                          Склад 
+                          Склад
                       </div>
                       <div class="contacts-map-info">
                           <div class="contacts-map-info-text">г. Минск, ул. Каменногорская 45</div>
@@ -198,14 +198,33 @@
                       </div>
                   </div>
               </div>
-              
+
           </div>
           </div>
-          <div class="contacts-ymap" id="mapContact1"></div>
+          <div class="contacts-ymap" id="mapContact1"
+            data-map='{"coordinates": [53.834601, 28.994249], "mark1": [53.933166, 27.451803], "mark2": [53.879127, 30.265464], "mark1Info": "Первая метка", "mark2Info": "Вторая метка"}'>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              jQuery(document).ready(function ($) {
+                let mapContact1 = document.getElementById('mapContact1')
+                let mapContact2 = document.getElementById('mapContact2')
+
+                if(mapContact1) {
+                  initSingleMap('mapContact1', mapContact1.dataset.map)
+                }
+
+                if(mapContact2) {
+                  initSingleMap('mapContact2', mapContact1.dataset.map)
+                }
+              })
+            })
+          </script>
 
         </div>
         <div class="contacts-wrap contacts-wrap-nb">
-          
+
           <div class="contacts-wrap-content">
             <div class="row">
               <div class="col-md-4">
@@ -235,7 +254,7 @@
               <div class="col-md-4">
                   <div class="contacts-map">
                       <div class="contacts-map-title">
-                          Склад 
+                          Склад
                       </div>
                       <div class="contacts-map-info">
                           <div class="contacts-map-info-text">г. Могилёв, ул. Челюскинцев 172</div>
@@ -251,10 +270,10 @@
                       </div>
                   </div>
               </div>
-              
+
           </div>
           </div>
-          <div class="contacts-ymap" id="mapContact2"></div>
+          <div class="contacts-ymap" id="mapContact2" data-map='{"coordinates": [53.834601, 28.994249], "mark1": [53.933166, 27.451803], "mark2": [53.879127, 30.265464], "mark1Info": "Первая метка", "mark2Info": "Вторая метка"}'></div>
 
         </div>
         <div class="row">
@@ -265,15 +284,15 @@
             </div>
             <div class="col-md-8">
                 <div class="contacts-details-block">
-                  <div>ООО «Инструмент-Ресурс»</div>  
-                  <div>Юридический адрес: 212012, г. Могилёв, ул. Челюскинцев, д. 172</div> 
-                  <div>Почтовый адрес: 212012, г. Могилёв, ул. Челюскинцев, д. 172</div>  
+                  <div>ООО «Инструмент-Ресурс»</div>
+                  <div>Юридический адрес: 212012, г. Могилёв, ул. Челюскинцев, д. 172</div>
+                  <div>Почтовый адрес: 212012, г. Могилёв, ул. Челюскинцев, д. 172</div>
                 </div>
                 <div class="contacts-details-block">
-                   <div>УНП 790379199</div> 
-                   <div>Р/С BY29MMBN30121107200109330000</div> 
-                   <div>ОАО «Банк Дабрабыт»</div> 
-                   <div>БИК MMBNBY22</div> 
+                   <div>УНП 790379199</div>
+                   <div>Р/С BY29MMBN30121107200109330000</div>
+                   <div>ОАО «Банк Дабрабыт»</div>
+                   <div>БИК MMBNBY22</div>
                 </div>
                 <div class="contacts-details-block">
                     Свидетельство о государственной регистрации №8-12 выдано Могилёвским облисполкомом от 20.04.2007.
@@ -282,15 +301,15 @@
                 </div>
             </div>
         </div>
-        
+
       </div>
-     
-  
-  
+
+
+
     </div>
-  
-    
-  
+
+
+
 </div>
 <div class="contactback">
     <div class="row">
@@ -366,4 +385,3 @@
     </div>
   </div>
     <!--#include file="inc-footer.html"-->
-    
