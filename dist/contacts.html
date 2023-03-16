@@ -54,10 +54,10 @@
         </div>
       </div>
       <div class="col-md-9 col-sm-8 col-ss-12">
-        <div class="ui-breadcrumbs">
+        <!-- <div class="ui-breadcrumbs">
           <a href="#" class="ui-breadcrumbs-link">Главная</a>
           <span>Контакты</span>
-        </div>
+        </div> -->
         <div class="ui-title">
           Контакты
         </div>
@@ -201,22 +201,18 @@
 
           </div>
           </div>
-          <div class="contacts-ymap" id="mapContact1"
-            data-map='{"coordinates": [53.834601, 28.994249], "mark1": [53.933166, 27.451803], "mark2": [53.879127, 30.265464], "mark1Info": "Первая метка", "mark2Info": "Вторая метка"}'>
+          <div class="contacts-ymap js-map-target" id="mapContact1"
+            data-map='{"coordinates": [53.931451, 27.465532], "defaultCoordinates": [53.834622, 28.994212]}'>
           </div>
 
           <script>
             document.addEventListener("DOMContentLoaded", () => {
               jQuery(document).ready(function ($) {
-                let mapContact1 = document.getElementById('mapContact1')
-                let mapContact2 = document.getElementById('mapContact2')
+                let allMap = document.querySelectorAll('.js-map-target')
 
-                if(mapContact1) {
-                  initSingleMap('mapContact1', mapContact1.dataset.map)
-                }
-
-                if(mapContact2) {
-                  initSingleMap('mapContact2', mapContact1.dataset.map)
+                if(allMap.length !== 0) {
+                  initSingleMap('mapContact1', allMap)
+                  initSingleMap('mapContact2', allMap)
                 }
               })
             })
@@ -273,7 +269,7 @@
 
           </div>
           </div>
-          <div class="contacts-ymap" id="mapContact2" data-map='{"coordinates": [53.834601, 28.994249], "mark1": [53.933166, 27.451803], "mark2": [53.879127, 30.265464], "mark1Info": "Первая метка", "mark2Info": "Вторая метка"}'></div>
+          <div class="contacts-ymap js-map-target" id="mapContact2" data-map='{"coordinates": [53.879127, 30.265464], "defaultCoordinates": [53.834622, 28.994212]}'></div>
 
         </div>
         <div class="row">

@@ -2136,83 +2136,47 @@ $(function () {
 
 function initMapTarget(selector, id) {
   const town = document.querySelectorAll(selector);
+  const defaultTown = JSON.parse(town[0].dataset.map);
 
   ymaps.ready(function () {
     const map = new ymaps.Map(id, {
       zoom: 9,
-      center: [53.924723, 27.511615],
+      center: defaultTown.coordinates,
       controls: [],
     });
 
-    const marker = new ymaps.Placemark([53.924723, 27.511615]);
-    map.geoObjects.add(marker);
-
     town.forEach(item => {
-      const mapJSON = item.dataset.map;
-      const mapObj = JSON.parse(mapJSON);
+      const mapObj = JSON.parse(item.dataset.map);
+
+      myPlacemark = new ymaps.Placemark(mapObj.coordinates);
+      map.geoObjects.add(myPlacemark);
 
       item.addEventListener('click', () => {
         map.setCenter(mapObj.coordinates);
-        marker.geometry.setCoordinates(mapObj.coordinates);
       })
     })
   })
 }
 
 // map for single init map
-function initSingleMap(id, mapJSON) {
-  let mapObj = JSON.parse(mapJSON);
+function initSingleMap(id, allMap) {
+  const defaultTown = JSON.parse(allMap[0].dataset.map)
+  const idMap = document.getElementById(id)
 
   ymaps.ready(function () {
-    var map = new ymaps.Map(id, {
-      center: mapObj.coordinates,
+    const map = new ymaps.Map(idMap, {
       zoom: 8,
+      center: defaultTown.defaultCoordinates,
       controls: [],
     });
 
-    // Первая метка
-    MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    ),
-      myPlacemarkWithContent = new ymaps.Placemark(mapObj.mark1, {
-        hintContent: 'Собственный значок метки с контентом',
-        balloonContent: mapObj.mark1Info,
-        iconContent: '12'
-      }, {
+    allMap.forEach(item => {
+      const mapObj = JSON.parse(item.dataset.map);
 
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        // iconImageHref: './images/icons/contacts-location.svg',
-        // Размеры метки.
-        iconImageSize: [48, 48],
-        iconImageOffset: [-24, -24],
-        iconContentOffset: [15, 15],
-        iconContentLayout: MyIconContentLayout
-      });
-
-    // Вторая метка
-    MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    ),
-      myPlacemarkWithContent1 = new ymaps.Placemark(mapObj.mark2, {
-        hintContent: 'Собственный значок метки с контентом',
-        balloonContent: mapObj.mark2Info,
-        iconContent: '12'
-      }, {
-
-        iconLayout: 'default#imageWithContent',
-        // Своё изображение иконки метки.
-        // iconImageHref: './images/icons/contacts-location.svg',
-        // Размеры метки.
-        iconImageSize: [48, 48],
-        iconImageOffset: [-24, -24],
-        iconContentOffset: [15, 15],
-        iconContentLayout: MyIconContentLayout1
-      });
-
-    map.geoObjects.add(myPlacemarkWithContent);
-    map.geoObjects.add(myPlacemarkWithContent1);
-  });
+      myPlacemark = new ymaps.Placemark(mapObj.coordinates);
+      map.geoObjects.add(myPlacemark);
+    })
+  })
 }
 
 let uiSearchSettings = document.querySelector('.ui-search-settings')
