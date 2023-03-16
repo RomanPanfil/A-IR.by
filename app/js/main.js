@@ -1051,7 +1051,7 @@ if (document.querySelector('.ui-rightbar')) {
           ajax: {
             tError: "Error. Not valid url",
           },
-          // @todo добавить везде, где инициализация
+
           callbacks: {
             open: function () {
               document.documentElement.style.overflow = 'hidden'
@@ -1065,46 +1065,81 @@ if (document.querySelector('.ui-rightbar')) {
     })
 })();
 
-(function () {
-  if (!document.querySelector('.product-card-topline')) return
+document.body.addEventListener('click', openSticker)
 
-  document.querySelectorAll('.product-card-topline')
-    .forEach(el => {
-      el.addEventListener('click', function (event) {
-        event = event || window.event
-        event.preventDefault()
-        event.stopPropagation()
+function openSticker(e) {
+  if (e.target.classList.contains("product-card-arrow")) {
+    const cardTopline = e.target.closest(".product-card-topline")
+    const url = cardTopline.dataset.href || null
 
-        const url = this.dataset.href || null
+    if (document.documentElement.clientWidth > 1024) {
+      return e.target.closest('.product-card').classList.toggle('opened');
+    }
 
-        if (document.documentElement.clientWidth > 1024) {
-          return event.target.closest('.product-card').classList.toggle('opened');
+    if (!url) return
+    $.magnificPopup.open({
+      items: { src: url },
+      type: "ajax",
+      overflowY: "scroll",
+      removalDelay: 610,
+      mainClass: "my-mfp-zoom-in",
+      ajax: {
+        tError: "Error. Not valid url",
+      },
+
+      callbacks: {
+        open: function () {
+          document.documentElement.style.overflow = 'hidden'
+        },
+
+        close: function () {
+          document.documentElement.style.overflow = ''
         }
+      }
+    });
+  }
+}
 
-        if (!url) return
-        $.magnificPopup.open({
-          items: { src: url },
-          type: "ajax",
-          overflowY: "scroll",
-          removalDelay: 610,
-          mainClass: "my-mfp-zoom-in",
-          ajax: {
-            tError: "Error. Not valid url",
-          },
+// (function () {
+//   if (!document.querySelector('.product-card-topline')) return
 
-          callbacks: {
-            open: function () {
-              document.documentElement.style.overflow = 'hidden'
-            },
+//   document.querySelectorAll('.product-card-topline')
+//     .forEach(el => {
+//       el.addEventListener('click', function (event) {
+//         event = event || window.event
+//         event.preventDefault()
+//         event.stopPropagation()
 
-            close: function () {
-              document.documentElement.style.overflow = ''
-            }
-          }
-        });
-      })
-    })
-})();
+//         const url = this.dataset.href || null
+
+//         if (document.documentElement.clientWidth > 1024) {
+//           return event.target.closest('.product-card').classList.toggle('opened');
+//         }
+
+//         if (!url) return
+//         $.magnificPopup.open({
+//           items: { src: url },
+//           type: "ajax",
+//           overflowY: "scroll",
+//           removalDelay: 610,
+//           mainClass: "my-mfp-zoom-in",
+//           ajax: {
+//             tError: "Error. Not valid url",
+//           },
+
+//           callbacks: {
+//             open: function () {
+//               document.documentElement.style.overflow = 'hidden'
+//             },
+
+//             close: function () {
+//               document.documentElement.style.overflow = ''
+//             }
+//           }
+//         });
+//       })
+//     })
+// })();
 
 
 (function () {
@@ -1403,20 +1438,20 @@ jQuery(document).ready(function ($) {
   })
 
 
-  // Validation for catalog email input
-  $(".catalog-search-form").validate({
-    errorElement: "span",
-    rules: {
-      email: {
-        email: true,
-      },
-    },
-    messages: {
-      email: {
-        email: "Пожалуйста, введите корректный Email",
-      },
-    },
-  });
+  // // Validation for catalog email input
+  // $(".catalog-search-form").validate({
+  //   errorElement: "span",
+  //   rules: {
+  //     email: {
+  //       email: true,
+  //     },
+  //   },
+  //   messages: {
+  //     email: {
+  //       email: "Пожалуйста, введите корректный Email",
+  //     },
+  //   },
+  // });
 
 
   $('.card-tabs-link').Tabs();
@@ -1737,100 +1772,100 @@ $('.profile-setup-delete').click(function () {
   $(this).closest($('div.profile-setup-wrapper')).remove();
 });
 
-$(document).ready(function () {
-  $(".request-body-wrap-form").validate({
-    errorElement: "span",
-    rules: {
-      name: {
-        required: true,
-        // lettersonly: true,
-      },
+// $(document).ready(function () {
+//   $(".request-body-wrap-form").validate({
+//     errorElement: "span",
+//     rules: {
+//       name: {
+//         required: true,
+//         // lettersonly: true,
+//       },
 
-      textbox: {
-        required: true,
-        maxlength: 500,
-      },
+//       textbox: {
+//         required: true,
+//         maxlength: 500,
+//       },
 
-      url: {
-        url: true,
-        required: true,
-        // email: true,
-      },
+//       url: {
+//         url: true,
+//         required: true,
+//         // email: true,
+//       },
 
-    },
+//     },
 
-    messages: {
-      name: {
-        required: "Пожалуйста, введите ваше Наименование",
-        name: " ",
-      },
+//     messages: {
+//       name: {
+//         required: "Пожалуйста, введите ваше Наименование",
+//         name: " ",
+//       },
 
-      textbox: {
-        required: "Пожалуйста, оставьте свой комментарий",
-        maxlength: "Комментарий не должен превышать 500 символов",
-      },
+//       textbox: {
+//         required: "Пожалуйста, оставьте свой комментарий",
+//         maxlength: "Комментарий не должен превышать 500 символов",
+//       },
 
-      url: {
-        required: "Введите данные",
-      }
-    },
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .addClass(errorClass).removeClass(validClass);
+//       url: {
+//         required: "Введите данные",
+//       }
+//     },
+//     highlight: function (element, errorClass, validClass) {
+//       $(element).addClass(errorClass).removeClass(validClass);
+//       $(element).closest('.ui-field').find('.popup-icon')
+//         .addClass(errorClass).removeClass(validClass);
 
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .removeClass(errorClass).addClass(validClass);
-    }
-  });
-})
+//     },
+//     unhighlight: function (element, errorClass, validClass) {
+//       $(element).removeClass(errorClass).addClass(validClass);
+//       $(element).closest('.ui-field').find('.popup-icon')
+//         .removeClass(errorClass).addClass(validClass);
+//     }
+//   });
+// })
 
-$(document).ready(function () {
-  $(".assistance-form").validate({
-    errorElement: "span",
-    rules: {
-      topic: {
-        required: true,
-      },
+// $(document).ready(function () {
+//   $(".assistance-form").validate({
+//     errorElement: "span",
+//     rules: {
+//       topic: {
+//         required: true,
+//       },
 
-      textbox: {
-        required: true,
-        maxlength: 500,
-      },
-
-
-
-    },
-
-    messages: {
-      topic: {
-        required: "Пожалуйста, введите ваше тему обращения",
-        name: " ",
-      },
-
-      textbox: {
-        required: "Пожалуйста, оставьте свой комментарий",
-        maxlength: "Комментарий не должен превышать 500 символов",
-      },
+//       textbox: {
+//         required: true,
+//         maxlength: 500,
+//       },
 
 
-    },
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .addClass(errorClass).removeClass(validClass);
 
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .removeClass(errorClass).addClass(validClass);
-    }
-  });
-})
+//     },
+
+//     messages: {
+//       topic: {
+//         required: "Пожалуйста, введите ваше тему обращения",
+//         name: " ",
+//       },
+
+//       textbox: {
+//         required: "Пожалуйста, оставьте свой комментарий",
+//         maxlength: "Комментарий не должен превышать 500 символов",
+//       },
+
+
+//     },
+//     highlight: function (element, errorClass, validClass) {
+//       $(element).addClass(errorClass).removeClass(validClass);
+//       $(element).closest('.ui-field').find('.popup-icon')
+//         .addClass(errorClass).removeClass(validClass);
+
+//     },
+//     unhighlight: function (element, errorClass, validClass) {
+//       $(element).removeClass(errorClass).addClass(validClass);
+//       $(element).closest('.ui-field').find('.popup-icon')
+//         .removeClass(errorClass).addClass(validClass);
+//     }
+//   });
+// })
 
 $(document).ready(function () {
   $('.check-comment').click(function () {
@@ -2517,135 +2552,135 @@ if (serviceReminder) {
   })
 
   // validate form
-  $(".sign-sompany-first-form").validate({
-    errorElement: 'span',
-    errorPlacement: function (error, element) {
-      if (element.attr("type") == "checkbox") {
-        return element.next('label').append(error);
-      }
+  // $(".sign-sompany-first-form").validate({
+  //   errorElement: 'span',
+  //   errorPlacement: function (error, element) {
+  //     if (element.attr("type") == "checkbox") {
+  //       return element.next('label').append(error);
+  //     }
 
-      error.insertAfter($(element));
-    },
+  //     error.insertAfter($(element));
+  //   },
 
-    rules: {
-      type: {
-        required: true,
-      },
-      num: {
-        required: true,
-        number: true,
-      },
-      date: {
-        required: true,
-      },
-      days: {
-        required: true,
-      },
-      hours: {
-        required: true,
-      },
-    },
+  //   rules: {
+  //     type: {
+  //       required: true,
+  //     },
+  //     num: {
+  //       required: true,
+  //       number: true,
+  //     },
+  //     date: {
+  //       required: true,
+  //     },
+  //     days: {
+  //       required: true,
+  //     },
+  //     hours: {
+  //       required: true,
+  //     },
+  //   },
 
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .addClass(errorClass).removeClass(validClass);
-    },
+  //   highlight: function (element, errorClass, validClass) {
+  //     $(element).addClass(errorClass).removeClass(validClass);
+  //     $(element).closest('.ui-field').find('.popup-icon')
+  //       .addClass(errorClass).removeClass(validClass);
+  //   },
 
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .removeClass(errorClass).addClass(validClass);
-    },
+  //   unhighlight: function (element, errorClass, validClass) {
+  //     $(element).removeClass(errorClass).addClass(validClass);
+  //     $(element).closest('.ui-field').find('.popup-icon')
+  //       .removeClass(errorClass).addClass(validClass);
+  //   },
 
-    errorPlacement: function (error, element) {
-      if (element.attr("name") == "customCheckbox") {
-        error.appendTo(".form-cell-field-send");
-      } else {
-        error.insertAfter(element);
-      }
+  //   errorPlacement: function (error, element) {
+  //     if (element.attr("name") == "customCheckbox") {
+  //       error.appendTo(".form-cell-field-send");
+  //     } else {
+  //       error.insertAfter(element);
+  //     }
 
-      if (element.hasClass('catalog-settings-select')) {
-        element.closest('.jq-selectbox').after(error);
-      }
-      if (element.hasClass('ui-checkbox-input')) {
-        element.closest('.ui-checkbox-body').after(error);
-      }
-    },
+  //     if (element.hasClass('catalog-settings-select')) {
+  //       element.closest('.jq-selectbox').after(error);
+  //     }
+  //     if (element.hasClass('ui-checkbox-input')) {
+  //       element.closest('.ui-checkbox-body').after(error);
+  //     }
+  //   },
 
 
-    submitHandler: function (form) {
-      txtHeadline.textContent = 'О получателе';
-      txtSteps.textContent = '2';
+  //   submitHandler: function (form) {
+  //     txtHeadline.textContent = 'О получателе';
+  //     txtSteps.textContent = '2';
 
-      firstStep.style.display = 'none';
-      secondStep.style.display = 'block';
-      progressBar.style.width = '100%';
+  //     firstStep.style.display = 'none';
+  //     secondStep.style.display = 'block';
+  //     progressBar.style.width = '100%';
 
-      return false;
-    },
+  //     return false;
+  //   },
 
-    messages: {
-      type: {
-        required: "Введите данные",
-      },
-      num: {
-        required: "Введите данные",
-        number: "Введите данные",
-      },
-      days: {
-        required: "Введите данные",
-      },
-      hours: {
-        required: "Введите данные",
-      },
-    },
-  });
+  //   messages: {
+  //     type: {
+  //       required: "Введите данные",
+  //     },
+  //     num: {
+  //       required: "Введите данные",
+  //       number: "Введите данные",
+  //     },
+  //     days: {
+  //       required: "Введите данные",
+  //     },
+  //     hours: {
+  //       required: "Введите данные",
+  //     },
+  //   },
+  // });
 
-  $(".sign-sompany-second-form").validate({
-    errorElement: 'span',
-    errorPlacement: function (error, element) {
-      if (element.attr("type") == "checkbox") {
-        return element.next('label').append(error);
-      }
+  // $(".sign-sompany-second-form").validate({
+  //   errorElement: 'span',
+  //   errorPlacement: function (error, element) {
+  //     if (element.attr("type") == "checkbox") {
+  //       return element.next('label').append(error);
+  //     }
 
-      error.insertAfter($(element));
-    },
+  //     error.insertAfter($(element));
+  //   },
 
-    rules: {
-      name: {
-        required: true,
-        lettersonly: true,
-      },
-      phone: {
-        required: true,
-        minlength: 19,
-      },
-    },
+  //   rules: {
+  //     name: {
+  //       required: true,
+  //       lettersonly: true,
+  //     },
+  //     phone: {
+  //       required: true,
+  //       minlength: 19,
+  //     },
+  //   },
 
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .addClass(errorClass).removeClass(validClass);
-    },
+  //   highlight: function (element, errorClass, validClass) {
+  //     $(element).addClass(errorClass).removeClass(validClass);
+  //     $(element).closest('.ui-field').find('.popup-icon')
+  //       .addClass(errorClass).removeClass(validClass);
+  //   },
 
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element).closest('.ui-field').find('.popup-icon')
-        .removeClass(errorClass).addClass(validClass);
-    },
+  //   unhighlight: function (element, errorClass, validClass) {
+  //     $(element).removeClass(errorClass).addClass(validClass);
+  //     $(element).closest('.ui-field').find('.popup-icon')
+  //       .removeClass(errorClass).addClass(validClass);
+  //   },
 
-    messages: {
-      name: {
-        required: "Введите ФИО",
-        lettersonly: "Введите корректные данные",
-      },
-      phone: {
-        required: "Введите данные",
-        minlength: "Введите полный номер",
-      },
-    },
-  });
+  //   messages: {
+  //     name: {
+  //       required: "Введите ФИО",
+  //       lettersonly: "Введите корректные данные",
+  //     },
+  //     phone: {
+  //       required: "Введите данные",
+  //       minlength: "Введите полный номер",
+  //     },
+  //   },
+  // });
 
   jQuery.validator.addMethod(
     "lettersonly",

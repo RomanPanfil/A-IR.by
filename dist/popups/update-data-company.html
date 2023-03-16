@@ -424,29 +424,6 @@
           }
         },
       });
-
-      jQuery.validator.addMethod(
-        "emailErrPerson",
-        function (value, element) {
-          if(/123@gmail.com/.test(value))  {
-            return false;
-          } else {
-              return true
-          }
-        },
-        "Incorrect format"
-      );
-      jQuery.validator.addMethod(
-        "emailErrCompany",
-        function (value, element) {
-          if(/123@gmail.com/.test(value))  {
-            return false;
-          } else {
-              return true
-          }
-        },
-        "Incorrect format"
-      );
     });
   </script>
 </div>

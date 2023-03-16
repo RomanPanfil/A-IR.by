@@ -4,10 +4,10 @@
         По запросу <span>Frosp</span> нет результатов
     </div>
     <div class="notfound-text">
-        Попробуйте ввести название бренда и/или название модели. 
-        Также вы можете воспользоваться нашим <a href="#">каталогом.</a> 
+        Попробуйте ввести название бренда и/или название модели.
+        Также вы можете воспользоваться нашим <a href="#">каталогом.</a>
     </div>
-    
+
 </div>
 <div class="subcats">
     <div class="page-title">Популярные категории</div>
@@ -48,8 +48,8 @@
         </div>
         <div class="subcats-item-title">Масло для компрессоров</div>
       </a>
-    
-   
+
+
     </div>
   </div>
   <div class="contactback">
@@ -114,6 +114,26 @@
             </button>
           </form>
 
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              jQuery(document).ready(function ($) {
+                $(".catalog-search-form").validate({
+                  errorElement: "span",
+                  rules: {
+                    email: {
+                      email: true,
+                    },
+                  },
+                  messages: {
+                    email: {
+                      email: "Пожалуйста, введите корректный Email",
+                    },
+                  },
+                });
+              })
+            })
+          </script>
+
           <div class="contactback-item-info">
             Нажимая кнопку, я соглашаюсь с
             <a href="#">политикой конфеденциальности.</a>
@@ -126,4 +146,3 @@
     </div>
   </div>
   <!--#include file="inc-footer.html"-->
-  
