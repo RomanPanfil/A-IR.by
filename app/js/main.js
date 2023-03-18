@@ -56,19 +56,18 @@ const FARBA = {
 
 
 function safariFnc(selector) {
-  var ua = navigator.userAgent.toLowerCase(); 
+  var ua = navigator.userAgent.toLowerCase();
 
-  if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('safari') != -1) {
     if (ua.indexOf('chrome') > -1) {
       $(selector).styler();
-      console.log('google')
     } else {
       if(document.querySelector('.catalog-settings')) {
         $(selector).addClass('safari-select-search')
       } else {
         $(selector).addClass('safari-select')
       }
-      
+
     }
   }
 }
@@ -683,7 +682,7 @@ if (document.querySelector(".making-form")) {
   if (!document.querySelector(".ui-rightbar")) return
   const stickyBlock = document.querySelector(".ui-rightbar");
   const card = document.querySelector("#card-breackpoint");
-  
+
   function flipOrSticky() {
     const box = card.getBoundingClientRect();
     const stickyBox = stickyBlock.getBoundingClientRect();
@@ -2799,7 +2798,7 @@ let targetElment = document.querySelectorAll(".product-card"),
 if (removeBtn) {
   removeBtn.forEach((e) => {
     e.addEventListener("click", (elem) => {
-     
+
       let removeElement = elem.target.closest(".swiper-slide").ariaLabel;
       allInfo.forEach((ariaElem) => {
         if (ariaElem.ariaLabel === removeElement) {
@@ -2866,7 +2865,7 @@ if (removeBtn) {
 //         $(".test-position").prepend($(e).closest(".swiper-slide").clone())
 //         $(e).closest(".product-card").addClass("product-card-invivsible");
 
-      
+
 //         //*Кнопка закрепить - открепляем продукт
 //         let wrapPositionT = document.querySelector(".test-position");
 //         let children_wrapPosition =
@@ -2875,7 +2874,7 @@ if (removeBtn) {
 //         children_wrapPosition.forEach((card) => {
 //           removeFix = $(card).find(".product-card-fixed")[0];
 //           deleteFix = $(card).find(".product-card-remove")[0];
-         
+
 //           //*удаляем закрепленные элементы по нажатию на крестик
 //           deleteFix.addEventListener("click", () => {
 
@@ -2886,7 +2885,7 @@ if (removeBtn) {
 //                 ariaId.remove();
 //               }
 //             });
-         
+
 //             let mainSlider = document.querySelector(
 //               ".swiper-carousel-compare-main"
 //             );
@@ -2904,11 +2903,11 @@ if (removeBtn) {
 //               swiperSlide.slideTo(0);
 //               swiperSlide.update();
 //             });
-           
+
 //           });
 //           //*удаляем закрепленные элементы по нажатию на "Закреплено"
 //           removeFix.addEventListener("click", () => {
-          
+
 
 //             let warPositionTest = document.querySelectorAll(
 //               ".test-position-info"
@@ -2918,7 +2917,7 @@ if (removeBtn) {
 //                 elemOfText.querySelectorAll(".swiper-slide");
 
 //               children_elemOfText.forEach((slideText) => {
-                
+
 //                 if (card.ariaLabel == slideText.ariaLabel) {
 //                   slideText.remove();
 //                 }
@@ -2926,7 +2925,7 @@ if (removeBtn) {
 //             });
 
 //             card.remove();
-            
+
 //             $(e)
 //               .closest(".product-card")
 //               .removeClass("product-card-invivsible");
@@ -2936,7 +2935,7 @@ if (removeBtn) {
 //               .classList.remove("product-card-fixed-fix");
 
 //             swiperCarouselCompare.forEach((swiperSlide) => {
-              
+
 //               //! Тут тоже всплывает ошибка 2-го клика, из-за этого по 1 клику открывается сразу 2 оригинельные карточки вмсето 1-ой
 //               //! Баг можно получить закрепив 2-е карточки => открепить 2-ю
 //               console.log('Двойной клик')
@@ -2944,9 +2943,9 @@ if (removeBtn) {
 //               let swiperSlideEl = $(swiperSlide)[0].$el.find(`.swiper-slide`)
 //               swiperSlideEl.forEach((findAriaLabel) => {
 //                 if(findAriaLabel.ariaLabel === card.ariaLabel) {
-                  
+
 //                   $(findAriaLabel).closest('.swiper-wrapper').prepend($(findAriaLabel))
-                  
+
 //                 }
 //               })
 //               // swiperSlide.querySelectorAll('swiper-slide')
@@ -2974,9 +2973,9 @@ if (removeBtn) {
 if (fixedBtn.length) {
   //фиксируем слайд
   fixedBtn.forEach(el => {
-    
+
     //фиксируем слайд
-    el.addEventListener('click',(event) => {   
+    el.addEventListener('click',(event) => {
 
       event.preventDefault()
       event.stopPropagation()
@@ -2991,7 +2990,7 @@ if (fixedBtn.length) {
       // Меняем надпись на кнопке
       el.querySelector('.product-card-fixed-text').classList.add('product-card-fixed-text-fix')
 
-      
+
 
       const parentSlide = el.closest('.swiper-slide')
       const parentSlideIndex = parseInt(parentSlide.ariaLabel.split('/')[0], 10)
@@ -3017,7 +3016,7 @@ if (fixedBtn.length) {
       })
 
       if (el.classList.contains('fixed')) return
-        
+
       el.classList.add('fixed')
       parentSlide.classList.add('fixed-slide')
 
@@ -3027,13 +3026,13 @@ if (fixedBtn.length) {
       const parentSlideParent = $(parentSlide).parent()
       parentSlideParent.prepend($(parentSlide))
 
-      //задаем ширену копированному элементу в зависимости от высоты оригина 
+      //задаем ширену копированному элементу в зависимости от высоты оригина
       let originElement = document.querySelector('.swiper-slide');
       let originElementWidth = originElement.offsetWidth;
 
       let fixedSlide = document.querySelector('.test-position')
       let fixedSlides = fixedSlide.querySelectorAll('.swiper-slide')
-     
+
       console.log(originElementWidth)
       console.log(fixedSlides)
       fixedSlides.forEach((elem) => {
@@ -3048,16 +3047,16 @@ if (fixedBtn.length) {
 
   document.querySelector('.test-position').addEventListener('click',(e) => {
     const target = e.target
-    
-    
+
+
       // Удаление элемента (крестик)
       if(target.classList.contains('product-card-remove')) {
-        
+
         const removeTarget = target.closest('.swiper-slide')
         const removeTargetLabel = removeTarget.ariaLabel
 
         document.querySelectorAll('.swiper-slide').forEach((Slide) => {
-      
+
 
           if(removeTargetLabel == Slide.ariaLabel) {
             Slide.remove()
@@ -3067,18 +3066,18 @@ if (fixedBtn.length) {
             });
           }
         })
-        
-      } 
-    
+
+      }
+
       if (!target.closest('.product-card-fixed')) return false
 
-     
+
 
     const parentSlide = target.closest('.swiper-slide')
     const parentSlideArea = parentSlide.ariaLabel
     const parentSlideIndex = parseInt(parentSlide.ariaLabel.split('/')[0], 10)
 
- 
+
     //удаляем слайд из псевдо-закрепленного блока
     parentSlide.remove()
 
@@ -3090,7 +3089,7 @@ if (fixedBtn.length) {
         })
     })
 
-  
+
 
     document.querySelectorAll(".swiper-carousel-compare").forEach((swiper) => {
       //внешняя переменная для результата
@@ -3099,14 +3098,14 @@ if (fixedBtn.length) {
 
       //ищем слайд в каждой карусели, перед которым нужно вставить открепляемый
       swiper.querySelectorAll('.swiper-slide').forEach(slide => {
-       
+
         const realIndex = parseInt(slide.ariaLabel.split('/')[0], 10)
         //прекращаем цикл, если уже нашли искомый элемент
         if (slideToInsert) return
 
         if (parentSlideIndex < realIndex && !slide.classList.contains('fixed-slide')) {
           slideToInsert = slide
-      
+
 
           return
         }
@@ -3114,15 +3113,15 @@ if (fixedBtn.length) {
 
 
 
-      
+
       //вставляем слайд на исходное место в каждой карусели
       swiper.querySelectorAll('.swiper-slide[aria-label="'+parentSlideArea+'"]').forEach(slide => {
         $(slide).insertBefore($(slideToInsert))
-       
+
         //Меня обратно надпись на кнопке
         if(slide.querySelector('.product-card-fixed-text') == null) return false
         slide.querySelector('.product-card-fixed-text').classList.remove('product-card-fixed-text-fix')
-       
+
 
         //удаляем блокирующий клик класс
         $(slide).find('.product-card-fixed').removeClass('fixed')
@@ -3132,9 +3131,9 @@ if (fixedBtn.length) {
     })
 
   })
- 
 
-  
+
+
 }
 //Добавляем\убираем кнопку закрепить в зависимости от кол-во элементов
 let product_c = document.querySelectorAll(".product-card");
@@ -3357,11 +3356,11 @@ if (serviceReminder) {
     () => {
       $(document).ready(function () {
         let flag = false;
-       
+
         // if(!IsSafari()) {
         //   $("select").styler();
         //   console.log('Safari')
-        // }    
+        // }
 
         $("#datetimepicker").datetimepicker({
           // value:'12.03.2013',
@@ -3909,8 +3908,3 @@ if (mapContact1) {
     mapContact_Ymaps
   )
 }
-
-
-
-
-
