@@ -1064,82 +1064,81 @@ if (document.querySelector('.ui-rightbar')) {
     })
 })();
 
-// @note: here
-// document.body.addEventListener('click', openSticker)
+document.body.addEventListener('click', openSticker)
 
-// function openSticker(e) {
-//   if (e.target.classList.contains("product-card-arrow")) {
-//     const cardTopline = e.target.closest(".product-card-topline")
-//     const url = cardTopline.dataset.href || null
+function openSticker(e) {
+  if (e.target.classList.contains("product-card-arrow")) {
+    const cardTopline = e.target.closest(".product-card-topline")
+    const url = cardTopline.dataset.href || null
 
-//     if (document.documentElement.clientWidth > 1024) {
-//       return e.target.closest('.product-card').classList.toggle('opened');
-//     }
+    if (document.documentElement.clientWidth > 1024) {
+      return e.target.closest('.product-card').classList.toggle('opened');
+    }
 
-//     if (!url) return
-//     $.magnificPopup.open({
-//       items: { src: url },
-//       type: "ajax",
-//       overflowY: "scroll",
-//       removalDelay: 610,
-//       mainClass: "my-mfp-zoom-in",
-//       ajax: {
-//         tError: "Error. Not valid url",
-//       },
+    if (!url) return
+    $.magnificPopup.open({
+      items: { src: url },
+      type: "ajax",
+      overflowY: "scroll",
+      removalDelay: 610,
+      mainClass: "my-mfp-zoom-in",
+      ajax: {
+        tError: "Error. Not valid url",
+      },
 
-//       callbacks: {
-//         open: function () {
-//           document.documentElement.style.overflow = 'hidden'
-//         },
+      callbacks: {
+        open: function () {
+          document.documentElement.style.overflow = 'hidden'
+        },
 
-//         close: function () {
-//           document.documentElement.style.overflow = ''
-//         }
-//       }
-//     });
-//   }
-// }
-
-(function () {
-  if (!document.querySelector('.product-card-topline')) return
-
-  document.querySelectorAll('.product-card-topline')
-    .forEach(el => {
-      el.addEventListener('click', function (event) {
-        event = event || window.event
-        event.preventDefault()
-        event.stopPropagation()
-
-        const url = this.dataset.href || null
-
-        if (document.documentElement.clientWidth > 1024) {
-          return event.target.closest('.product-card').classList.toggle('opened');
+        close: function () {
+          document.documentElement.style.overflow = ''
         }
+      }
+    });
+  }
+}
 
-        if (!url) return
-        $.magnificPopup.open({
-          items: { src: url },
-          type: "ajax",
-          overflowY: "scroll",
-          removalDelay: 610,
-          mainClass: "my-mfp-zoom-in",
-          ajax: {
-            tError: "Error. Not valid url",
-          },
+// (function () {
+//   if (!document.querySelector('.product-card-topline')) return
 
-          callbacks: {
-            open: function () {
-              document.documentElement.style.overflow = 'hidden'
-            },
+//   document.querySelectorAll('.product-card-topline')
+//     .forEach(el => {
+//       el.addEventListener('click', function (event) {
+//         event = event || window.event
+//         event.preventDefault()
+//         event.stopPropagation()
 
-            close: function () {
-              document.documentElement.style.overflow = ''
-            }
-          }
-        });
-      })
-    })
-})();
+//         const url = this.dataset.href || null
+
+//         if (document.documentElement.clientWidth > 1024) {
+//           return event.target.closest('.product-card').classList.toggle('opened');
+//         }
+
+//         if (!url) return
+//         $.magnificPopup.open({
+//           items: { src: url },
+//           type: "ajax",
+//           overflowY: "scroll",
+//           removalDelay: 610,
+//           mainClass: "my-mfp-zoom-in",
+//           ajax: {
+//             tError: "Error. Not valid url",
+//           },
+
+//           callbacks: {
+//             open: function () {
+//               document.documentElement.style.overflow = 'hidden'
+//             },
+
+//             close: function () {
+//               document.documentElement.style.overflow = ''
+//             }
+//           }
+//         });
+//       })
+//     })
+// })();
 
 
 (function () {
