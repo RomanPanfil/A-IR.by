@@ -28666,10 +28666,6 @@ $(document).on("change", ".card-counter-input", function (e) {
   }
 });
 
-
-
-
-
 const productSliderMarkUpdear = $(".slider-dear")
   .clone()
   .removeClass("slider-adaptive-none");
