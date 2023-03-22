@@ -67,14 +67,28 @@
           </div>
           <div class="mob-menu">
             <div class="mob-menu-img">
-              <img src="./images/icons/user-mob.svg" alt="alt" />
+              <img src="./images/icons/user-mob.svg"
+                   alt="alt" />
             </div>
             <div class="mob-menu-img mob-menu-phone">
-              <img src="./images/icons/phone-mob.svg" alt="alt" />
+              <img src="./images/icons/phone-mob.svg"
+                   alt="alt" />
             </div>
-            <div class="mob-menu-img">
-              <img src="./images/icons/search-mob.svg" alt="alt" />
+            <div class="mob-menu-img mob-menu-search">
+              <img src="./images/icons/search-mob.svg"
+                   alt="alt" />
             </div>
+            <div class="enter-mobile">
+
+              <div class="enter-mobile-btn ui-btn">Вход</div>
+              <div class="enter-mobile-favour">
+                <svg class="enter-mobile-favour-sprite sprite">
+                  <use xlink:href="svg/svg/symbols.svg#menu-like"></use>
+                </svg>
+                Избранное
+              </div>
+            </div>
+
           </div>
         </a>
 
@@ -96,6 +110,9 @@
             type="text"
             placeholder="Введите свой запрос"
           />
+          <button title="Close (Esc)"
+                  type="button"
+                  class="main-search-input-close">×</button>
           <button class="main-search-btn">
             <div class="main-search-btn-img">
               <img src="./images/icons/main-search.svg" alt="alt" />
@@ -268,6 +285,8 @@
       </div>
     </div>
   </div>
+  <!--#include file="inc-catalog-menu.html"-->
+  <!--#include file="inc-search-menu.html"-->
 </header>
 
 <div class="middle" id="middle">
