@@ -2317,33 +2317,6 @@ searchMenu.addEventListener("click", (e) => {
     bodyOpenCatalog.classList.remove("body-hidden-search");
   }
 });
-mainSearchInput.addEventListener("keyup", () => {
-  closeInput.classList.remove("main-search-input-close-open");
-
-  if (mainSearchInput.value !== "") {
-    mainLogo.classList.add("main-logo-close");
-    mainWatalog.classList.add("main-catalog-wrapper-close");
-    searchMenu.classList.add("search-menu-open");
-    bodyOpenCatalog.classList.add("body-hidden-search");
-    closeInput.classList.add("main-search-input-close-open");
-
-    topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
-    if ($(".header").hasClass("header_fixed")) {
-      $(searchMenu).css("top", `${mainHeight.offsetHeight}px`);
-    } else {
-      $(searchMenu).css("top", `${topSum}px`);
-    }
-  } else {
-    mainLogo.classList.remove("main-logo-close");
-    mainWatalog.classList.remove("main-catalog-wrapper-close");
-    searchMenu.classList.remove("search-menu-open");
-    bodyOpenCatalog.classList.remove("body-hidden-search");
-  }
-
-  // if(containerMenu.classList.contains('container-menu-open') == false){
-  //   bodyOpenCatalog.classList.remove('body-hidden')
-  // }
-});
 
 let mobMenuSearch = document.querySelector(".mob-menu-search");
 
