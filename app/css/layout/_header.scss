@@ -307,7 +307,11 @@
         align-items: center;
         // margin-bottom: 16px;
       }
-
+      &-close {
+         @media(min-width:1024.99px) {
+          display: none;
+        }
+      }
       &-img {
         height: 40px;
       }
@@ -347,6 +351,10 @@
             flex: 0 0 108px;
             padding-left: 12px;
           }
+
+        }
+        &-close {
+          display: none;
         }
       }
       &-text {
@@ -760,7 +768,9 @@
     top: 0;
     right: 0;
     border-radius: 0 5px 5px 0;
-
+     @media(max-width:576.99px) {
+            height: 48px;
+        }
     &-img {
       max-width: 24px;
       height: 24px;
@@ -790,7 +800,7 @@
 
   @media (min-width: 1025px) {
     .main {
-      padding: 17px 0px;
+      // padding: 17px 0px;
     }
   }
 

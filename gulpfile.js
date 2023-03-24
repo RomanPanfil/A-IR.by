@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify');
 const webp = require('gulp-webp');
 const del = require('del');
 
+
 let dist = "dist",
   app = "app";
 
@@ -128,8 +129,12 @@ function makingOrder() {
 
 function imgWebp() {
   return src(path.src.webpImg)
-    .pipe(webp())
-    .pipe(dest(path.build.webpImg))
+  .pipe(webp(
+    {
+      quality: 60,
+    }
+  ))
+  .pipe(dest(path.build.webpImg))
 }
 
 function fonts() {

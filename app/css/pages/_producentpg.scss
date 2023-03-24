@@ -47,6 +47,11 @@
         }
     }
     &-top {
+        &-content {
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
         &-content-img {
              @media(max-width:1024.99px) {
                     margin-bottom: 24px;
@@ -95,3 +100,5 @@
         fill: #D3D3D3;
     } 
 }
+
+

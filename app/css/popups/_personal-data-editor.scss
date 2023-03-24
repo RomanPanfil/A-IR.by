@@ -105,6 +105,7 @@
     .catalog-settings-select {
       width: 100%;
     }
+    
 
     .jq-selectbox__trigger-arrow {
       right: 16px;
@@ -207,6 +208,10 @@
       font-size: 14px;
     }
   }
+}
+
+.jq-selectbox__dropdown ul {
+  max-height: 210px !important;
 }
 
 input[type=date]::-webkit-calendar-picker-indicator {

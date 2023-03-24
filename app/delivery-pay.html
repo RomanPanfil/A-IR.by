@@ -78,7 +78,7 @@
                   <div class="deliverypay-addcontent-map-adress">
                     г. Минск,улица Каменногорская, 45
                   </div>
-                  <a href="#" class="deliverypay-addcontent-map-link">
+                  <a href="javascript:void(0)" data-href="./popups/delivery-map.html" class="deliverypay-addcontent-map-link mfp-link">
                     Карта проезда
                   </a>
                 </div>
@@ -86,7 +86,7 @@
                   <div class="deliverypay-addcontent-map-adress">
                     г. Могилёв, улица Челюскинцев, 172
                   </div>
-                  <a href="#" class="deliverypay-addcontent-map-link">
+                  <a href="javascript:void(0)" data-href="./popups/delivery-map.html" class="deliverypay-addcontent-map-link mfp-link">
                     Карта проезда
                   </a>
                 </div>
@@ -135,14 +135,14 @@
           <div class="deliverypay-items-matchmedia">
             <div class="deliverypay-items  border-silver mb-24">
 
-              <div class="deliverypay-items-item">
+              <div class="deliverypay-items-item deliverypay-items-item-call">
                 <div class="deliverypay-items-item-title">
                   Возможны другие виды систем оплаты и доставки
                 </div>
                 <div class="deliverypay-items-item-text">
                   За информацией просим обращаться по ниже указанному телефону или заказать обратный звонок:
                 </div>
-                <div class="deliverypay-addcontent">
+                <div class="deliverypay-addcontent deliverypay-addcontent-call">
                  <div class="deliverypay-addcontent-number">
                   <div class="deliverypay-addcontent-number-img">
                    <img loading="lazy" src="./images/icons/main-phone.svg" alt="alt">
@@ -155,7 +155,7 @@
                 </div>
               </div>
               <div class="deliverypay-items-item">
-                <a href="javascript:void(0)" class="deliverypay-items-item-contact card-contact mfp-link" data-href="./popups/backcall.html">
+                <a href="javascript:void(0)" class="deliverypay-items-item-contact card-contact mfp-link" data-href="./popups/backcall-nt.html">
                   <div class="card-contact-txt">
                     Закажите звонок!
                     <span class="card-contact-span">
@@ -173,7 +173,7 @@
               <div class="deliverypay-docs-img">
                <img loading="lazy" src="./images/icons/docs-icon.svg" alt="alt">
               </div>
-              Образцы документов, подтверждающих оплату
+              <div class="deliverypay-docs-text">Образцы документов, подтверждающих оплату</div>
             </a>
           </div>
 
@@ -243,7 +243,7 @@
             <div class="deliverypay-items-item-text">
               Позволяет оплатить услуги интернет-магазина в любом удобном месте, в удобное время, в удобном пункте банковского обслуживания – интернет-банкинге, М-банкинге, инфокиосках, кассах банков, банкоматах. Совершить оплату можно наличными, электронными деньгами, картой Visa/MasterCard/Белкарт в пунктах банковского обслуживания банков, оказывающих услуги по приему платежей, а также посредством инструментов дистанционного банковского обслуживания.
             </div>
-            <a href="#" class="deliverypay-items-item-link">Инструкция по оплате через ЕРИП</a>
+            <a href="#erip" class="deliverypay-items-item-link scroll-to">Инструкция по оплате через ЕРИП</a>
           </div>
           <div class="deliverypay-items-item">
             <div class="deliverypay-items-item-icon">
@@ -346,7 +346,6 @@
                 </div>
                 <ul>
                   <li>Наличные</li>
-                  <li>Банк. карта</li>
                   <li>Безналичный расчёт</li>
                   <li>ЕРИП</li>
 
@@ -388,7 +387,6 @@
                   <ul>
                     <li>Транспортной компанией</li>
                     <li>Доставка курьером</li>
-                    <li>Самовывоз со склада</li>
                   </ul>
               </div>
               <div class="deliverypay-tabs-list">
@@ -398,7 +396,6 @@
                 </div>
                 <ul>
                   <li>Наличные</li>
-                  <li>Банк. карта</li>
                   <li>Безналичный расчёт</li>
                   <li>ЕРИП</li>
 
@@ -463,8 +460,10 @@
           </li>
 
         </ul>
+
       </div>
-      <div class="deliverypay-erip">
+
+      <div class="deliverypay-erip" id="erip">
         <div class="page-title">
           Порядок проведения платежа в системе «Расчет» (ЕРИП)
         </div>
@@ -489,10 +488,10 @@
     </div>
 
 
-
-    </div>
   </div>
 
+
+  </div>
 
 
   </div>

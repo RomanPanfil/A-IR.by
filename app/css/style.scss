@@ -33,6 +33,10 @@ body {
 }
 .body-hidden {
   overflow: hidden;
+  &-search {
+  overflow: hidden;
+
+  }
 }
 
 #wrapper {
@@ -66,6 +70,11 @@ body {
     padding-left: 15px;
   }
 }
+
+img[loading] {
+  min-height: 1px;
+}
+
 
 @import "./base/typography";
 
@@ -101,6 +110,7 @@ body {
 @import "./pages/producers";
 @import "./pages/repaircmp";
 @import "./pages/service";
+@import "./pages/entries";
 @import "./pages/service-reminder";
 
 

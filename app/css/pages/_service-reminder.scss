@@ -2,7 +2,9 @@
   &-header {
     .page-title {
       margin-bottom: 21px;
-
+      &-category {
+        display: inline-block;
+      }
       @media(max-width: 1024.99px) {
         margin-bottom: 15px;
       }
@@ -135,6 +137,9 @@
       position: absolute;
       right: 16px;
       top: 10px;
+       @media(max-width:576px) {
+              top: 15px;
+          }
     }
 
     .request-checkboxes {
