@@ -31318,44 +31318,6 @@ menuDesktopHover.forEach((e) => {
   });
 });
 
-
-// if (document.querySelector("#callMap")) {
-//   function callMap_Ymap() {
-//     ymaps.ready(function () {
-//       var callMap = new ymaps.Map(
-//         "callMap",
-//         {
-//           center: [53.924723, 27.511615],
-//           zoom: 12,
-//           controls: [],
-//         },
-//         {
-//           searchControlProvider: "yandex#search",
-//         }
-//       );
-
-//       callMap.geoObjects.add(
-//         new ymaps.Placemark(
-//           [53.924723, 27.511615],
-//           {
-//             // balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
-//           },
-//           {
-//             preset: "islands#dotIcon",
-//             iconColor: "#E94336",
-//           }
-//         )
-//       );
-//       callMap.behaviors.disable("scrollZoom");
-//     });
-//   }
-//   FARBA.lazyLibraryLoad(
-//     "//api-maps.yandex.ru/2.1/?lang=ru_RU",
-//     "",
-//     callMap_Ymap
-//   )
-// }
-
 // check & unchecked radio input
 $('.features-btn-input').on('mousedown', function (e) {
   if ($(this).prop("checked") === true) {
@@ -31449,3 +31411,29 @@ function initSingleMap(id, allMap) {
     })
   })
 }
+
+$(document).on('mouseup', function (e) {
+  if ($('.container-menu').has(e.target).length === 0 && $('.main-catalog').has(e.target).length === 0 && $('.main-catalog-wrapper').has(e.target).length === 0 && $('.main-search-form').has(e.target).length === 0) {
+    mainSearchForm.classList.remove('main-search-form-open');
+    changeIcon.classList.remove('main-toggler-cross');
+    containerMenu.classList.remove('container-menu-open');
+    mainOpenCatalog.classList.remove('main-open-catalog');
+    navWrapperOpenCatalog.classList.remove('nav-wrapper-open-catalog')
+    bodyOpenCatalog.classList.remove('body-hidden')
+  }
+});
+
+$(document).on('mouseup', function (e) {
+  if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0 && $('.mob-menu-phone').has(e.target).length === 0) {
+    $('.main-contacts-drop').removeClass('numbers-open')
+    $('.main-contacts-tel-arrow').removeClass('opened')
+    $('.mob-menu-phone').removeClass('opened')
+  }
+});
+
+$(document).on('mouseup', function (e) {
+  if ($('.enter-mobile').has(e.target).length === 0 && $('.mob-menu-img').has(e.target).length === 0) {
+    $('.enter-mobile').removeClass('enter-mobile-open')
+    $('.mob-menu-img').removeClass('mob-menu-img-open')
+  }
+});
