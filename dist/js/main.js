@@ -30745,9 +30745,10 @@ $(document).on('mouseup', function (e) {
 });
 
 $(document).on('mouseup', function (e) {
-  if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0) {
+  if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0 && $('.mob-menu-phone').has(e.target).length === 0) {
     $('.main-contacts-drop').removeClass('numbers-open')
     $('.main-contacts-tel-arrow').removeClass('opened')
+    $('.mob-menu-phone').removeClass('opened')
   }
 });
 

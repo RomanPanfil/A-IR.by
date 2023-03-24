@@ -124,6 +124,15 @@
                 line-height: 40px;
                 max-width: 84px;
                 padding: initial;
+
+                &.added {
+                    background: #2A4455;
+
+                    &:hover {
+                        background: #3F5766;
+                    }
+                }
+
                 svg {
                     display: inline-block;
                     vertical-align: middle;
