@@ -31482,6 +31482,8 @@ function closeCategory(elementBtn, elementCheckbox, elementMenu, removeClass) {
   })
 }
 
-closeCategory('.ui-btn-secondary.js-close-mob', '.catalog-filters-filters .ui-checkbox-input', '.catalog-filters', 'opened')
+if (document.querySelector('.catalog-filters-form')) {
+  closeCategory('.ui-btn-secondary.js-close-mob', '.catalog-filters-filters .ui-checkbox-input', '.catalog-filters', 'opened')
 
-closeCategory('.ui-btn-secondary.js-close-tablet', '.ui-checkbox-container .ui-checkbox-input', '.ui-search-settings-text-content', 'ui-search-settings-open')
+  closeCategory('.ui-btn-secondary.js-close-tablet', '.ui-checkbox-container .ui-checkbox-input', '.ui-search-settings-text-content', 'ui-search-settings-open')
+}
