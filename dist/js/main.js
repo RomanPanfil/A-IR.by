@@ -31437,3 +31437,18 @@ $(document).on('mouseup', function (e) {
     $('.mob-menu-img').removeClass('mob-menu-img-open')
   }
 });
+
+const categoryCloseBtn = document.querySelector('.ui-btn-secondary.js-close')
+
+if(categoryCloseBtn) {
+  categoryCloseBtn.addEventListener('click', () => {
+    const allCheckbox = document.querySelectorAll('.ui-checkbox-container .ui-checkbox-input')
+    const menuCategory = document.querySelector('.ui-search-settings-text-content')
+
+    allCheckbox.forEach(item => {
+      item.checked = false
+    })
+
+    menuCategory.classList.remove('ui-search-settings-open')
+  })
+}
