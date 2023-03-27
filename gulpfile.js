@@ -15,6 +15,7 @@ let path = {
     html: dist + "/",
     css: dist + "/css/",
     js: dist + "/js/",
+    makingOrder: dist + "/js/",
     images: dist + "/images/",
     svg: dist + "/images/svg",
     popups: dist + "/popups/",
@@ -28,6 +29,7 @@ let path = {
     html: app + "/*.html",
     css: app + "/css/*.scss",
     js: app + "/js/*.js",
+    makingOrder: app + "/js/*.js",
     images: ["!app/images/svg/**/*", app + "/images/**/*.{gif,ico,webp,svg}"],
     svg: app + "/images/svg/*.svg",
     popups: app + "/popups/*.html",
@@ -41,6 +43,7 @@ let path = {
     html: app + "/**/*.html",
     css: app + "/css/**/*.scss",
     js: app + "/js/**/*.js",
+    makingOrder: app + "/js/**/*.js",
     // images: app + "/images/**/*.{jpg,png,gif,ico,webp}",
     images: ["!app/images/svg/**/*", app + "/images/**/*.{gif,ico,webp}"],
     svg: app + "/images/svg/*.svg",
@@ -79,7 +82,7 @@ function html() {
 }
 
 function htaccess() {
-  return src(path.src.htaccess, {dots: true})
+  return src(path.src.htaccess, { dots: true })
     .pipe(dest(path.build.htaccess))
 }
 
@@ -101,12 +104,28 @@ function css() {
 
 function js() {
   return src(['app/js/min.js', 'app/js/main.js'])
-  .pipe(fileinclude())
-  .pipe (uglify ())
-  .pipe(concat('main.js'))
-  .pipe(dest(path.build.js));
+    .pipe(fileinclude())
+    // .pipe (uglify ())
+    .pipe(concat('main.js'))
+    .pipe(dest(path.build.js));
   // .pipe(browsersync.stream());
 }
+function makingOrder() {
+  return src(['app/js/making-order.js'])
+    .pipe(fileinclude())
+    // .pipe (uglify ())
+    .pipe(concat('making-order.js'))
+    .pipe(dest(path.build.js));
+  // .pipe(browsersync.stream());
+}
+
+// export const makingOrder = () => {
+//   return src(['app/js/making-order.js'])
+//     .pipe(fileinclude())
+//     // .pipe(uglify())
+//     .pipe(concat('making-order.js'))
+//     .pipe(dest(path.build.js));
+// }
 
 function imgWebp() {
   return src(path.src.webpImg)
@@ -155,10 +174,10 @@ function media() {
 function svg(cb) {
   return src(path.src.svg)
     .pipe(svgSprite({
-        mode: 'symbols',
-        svg: {
-          svgPath: "../svg/svg/%f"
-        }
+      mode: 'symbols',
+      svg: {
+        svgPath: "../svg/svg/%f"
+      }
     }))
     .pipe(dest("dist/svg"));
 
@@ -166,13 +185,14 @@ function svg(cb) {
 }
 
 const clean = async () => {
-    return del.sync(dist);
+  return del.sync(dist);
 }
 
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
+  gulp.watch([path.watch.makingOrder], makingOrder);
   gulp.watch([path.watch.fonts], fonts);
   gulp.watch([path.watch.media], media);
   gulp.watch(path.watch.images, images);
@@ -185,13 +205,14 @@ function watchFiles() {
 
 let build = gulp.series(
   clean,
-  gulp.parallel(js, css, html, htaccess, ajaxDist, images, imgWebp, popups, fonts, media, svg)
+  gulp.parallel(js, makingOrder, css, html, htaccess, ajaxDist, images, imgWebp, popups, fonts, media, svg)
 );
 let watch = gulp.parallel(build, watchFiles);
 // let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.images = images;
 exports.js = js;
+exports.makingOrder = makingOrder;
 exports.css = css;
 exports.html = html;
 exports.fonts = fonts;

@@ -80,6 +80,10 @@
     cursor: pointer;
     transition: border .15s;
 
+    svg {
+      pointer-events: none;
+    }
+
     &-icon {
       position: absolute;
       left: 50%;
@@ -117,7 +121,7 @@
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
-    
+
     &-icon {
       position: relative;
       top: -2px;

@@ -43,7 +43,7 @@
     //     }
     background-color: #fff;
     // overflow: hidden;
-    
+
 }
 .container-menu {
     display: none;
@@ -57,7 +57,7 @@
     // height: 720px;
     // height: 100%;
     max-height: calc((var(--vh, 1vh) * 100) - 114px);
-    
+
     // overflow-y: auto;
     // max-width: 1390px;
     margin: 0 auto;
@@ -125,7 +125,7 @@
     padding-top: 25px;
     // overflow-y: auto;
     // margin: 0 -40px;
-    
+
     &::after {
         content: '';
         display: block;
@@ -213,7 +213,7 @@
         margin-right: 16px;
         width: 26px;
         height: 26px;
-    } 
+    }
 }
 
 .sub-info {
@@ -361,7 +361,7 @@
 }
 
 
-// .menu-desktop-ul:hover 
+// .menu-desktop-ul:hover
 
 .menu-desktop-open {
     display: block;

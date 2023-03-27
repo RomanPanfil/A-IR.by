@@ -56,19 +56,18 @@ const FARBA = {
 
 
 function safariFnc(selector) {
-  var ua = navigator.userAgent.toLowerCase(); 
+  var ua = navigator.userAgent.toLowerCase();
 
-  if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('safari') != -1) {
     if (ua.indexOf('chrome') > -1) {
       $(selector).styler();
-      console.log('google')
     } else {
-      if(document.querySelector('.catalog-settings')) {
+      if (document.querySelector('.catalog-settings')) {
         $(selector).addClass('safari-select-search')
       } else {
         $(selector).addClass('safari-select')
       }
-      
+
     }
   }
 }
@@ -515,22 +514,22 @@ $(".slider-wrapper").each(function () {
     $inputFrom = $(".js-input-from", this),
     $inputTo = $(".js-input-to", this),
     instance,
-    min_1 = $inputFrom[0].dataset.min,
-    max_1 = $inputTo[0].dataset.max,
-    from_1 = $inputFrom[0].dataset.min,
-    to_1 = $inputTo[0].dataset.max,
+    min = $inputFrom[0].dataset.min,
+    max = $inputTo[0].dataset.max,
+    from = $inputFrom[0].dataset.min,
+    to = $inputTo[0].dataset.max,
     steps = $range[0].dataset.steps;
 
   $range.ionRangeSlider({
     skin: "round",
     type: "double",
-    min: min_1,
-    max: max_1,
-    from: from_1,
-    to: to_1,
+    min: min,
+    max: max,
+    from: from,
+    to: to,
     step: steps,
     onStart: updateInputs,
-    onChange: updateInputs,
+    onChange: updateInputs
   });
 
   instance = $range.data("ionRangeSlider");
@@ -592,8 +591,6 @@ if (document.getElementById("card-breackpoint")) {
     cardBreackpoint = $("#card-breackpoint").offset().top;
   });
   window.addEventListener("scroll", function () {
-    // console.log(footerBreackpoint)
-    // console.log(window.scrollY)
     if (window.scrollY < cardBreackpoint) {
       headerCard.removeClass("headerCard_fixed");
       cardSticky.removeClass("card-breackpoint-open");
@@ -603,50 +600,6 @@ if (document.getElementById("card-breackpoint")) {
     }
   });
   // });
-}
-
-if (document.querySelector(".making-order-validate")) {
-  // let cardBreackpoint = $("#card-breackpoint").offset().top;
-  // var offBottom = $("#card-breackpoint").offset().top + $("#card-breackpoint").outerHeight();
-  // let cardSticky = $(".making-order-info");
-  // const cardHeight = cardSticky.innerHeight();
-  // const box = document.querySelector('#card-breackpoint').getBoundingClientRect()
-  // const stickyBox = document.querySelector('.making-order-info').getBoundingClientRect()
-
-  // window.addEventListener("resize", function () {
-  //   cardBreackpoint = $("#card-breackpoint").offset().top;
-  // });
-  const stickyBlock = document.querySelector(".making-order-info");
-  const card = document.querySelector("#card-breackpoint");
-
-  function flipOrSticky() {
-    const box = card.getBoundingClientRect();
-    const stickyBox = stickyBlock.getBoundingClientRect();
-    const boxTop = box.top;
-    const boxBottom = box.bottom;
-    const stickyBottom = stickyBox.height;
-    const py = window.pageYOffset;
-
-    if (py > boxTop + py) {
-      if (py < boxBottom + py - stickyBottom - 100) {
-        stickyBlock.classList.add("sticky-box");
-        stickyBlock.classList.remove("card-breackpoint-flipbottom");
-      } else {
-        stickyBlock.classList.remove("sticky-box");
-        stickyBlock.classList.add("card-breackpoint-flipbottom");
-      }
-    } else {
-      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
-    }
-    // if (py > boxTop + py && py < (boxBottom + py - stickyBottom - 185)) {
-    //   stickyBlock.classList.add("card-breackpoint-open");
-    // } else {
-    //   stickyBlock.classList.remove("card-breackpoint-open");
-    // }
-  }
-
-  window.addEventListener("scroll", flipOrSticky);
-  window.addEventListener("load", flipOrSticky);
 }
 
 if (document.querySelector(".making-form")) {
@@ -683,7 +636,7 @@ if (document.querySelector(".making-form")) {
   if (!document.querySelector(".ui-rightbar")) return
   const stickyBlock = document.querySelector(".ui-rightbar");
   const card = document.querySelector("#card-breackpoint");
-  
+
   function flipOrSticky() {
     const box = card.getBoundingClientRect();
     const stickyBox = stickyBlock.getBoundingClientRect();
@@ -1135,46 +1088,6 @@ if (document.querySelector(".making-form")) {
 })();
 
 (function () {
-  if (!document.querySelector(".product-card-topline")) return;
-
-  document.querySelectorAll(".product-card-topline").forEach((el) => {
-    el.addEventListener("click", function (event) {
-      event = event || window.event;
-      event.preventDefault();
-      event.stopPropagation();
-
-      const url = this.dataset.href || null;
-
-      if (document.documentElement.clientWidth > 1024) {
-        return event.target.closest(".product-card").classList.toggle("opened");
-      }
-
-      if (!url) return;
-      $.magnificPopup.open({
-        items: { src: url },
-        type: "ajax",
-        overflowY: "scroll",
-        removalDelay: 610,
-        mainClass: "my-mfp-zoom-in",
-        ajax: {
-          tError: "Error. Not valid url",
-        },
-
-        callbacks: {
-          open: function () {
-            document.documentElement.style.overflow = "hidden";
-          },
-
-          close: function () {
-            document.documentElement.style.overflow = "";
-          },
-        },
-      });
-    });
-  });
-})();
-
-(function () {
   if (!document.querySelector(".catalog-filters-toggler")) return;
 
   document.querySelectorAll(".catalog-filters-toggler").forEach((el) =>
@@ -1483,306 +1396,11 @@ jQuery(document).ready(function ($) {
     });
   });
 
-  // Validation for catalog email input
-  $(".catalog-search-form").validate({
-    errorElement: "span",
-    rules: {
-      email: {
-        email: true,
-      },
-    },
-    messages: {
-      email: {
-        email: "Пожалуйста, введите корректный Email",
-      },
-    },
-  });
-
   $(".card-tabs-link").Tabs();
 
   $(document).on("click", ".mfp-custom-close", function (e) {
     e.preventDefault();
     $.magnificPopup.close();
-  });
-
-  $(function () {
-    let tabOrder = $("#making-order-pickup .making-order-content > div");
-    let tabPayment = $("#making-order-payment .making-order-content > div");
-
-    tabOrder.hide().filter(":first").show();
-
-    // Клики по вкладкам.
-    $("#making-order-pickup .making-order-tabs a")
-      .click(function () {
-        tabOrder.hide();
-        tabOrder.filter(this.hash).show();
-        $("#making-order-pickup .making-order-tabs a").removeClass("active");
-        $(this).addClass("active");
-        return false;
-      })
-      .filter(":first")
-      .click();
-
-    // Клики по вкладкам.
-    $("#making-order-payment .making-order-tabs a")
-      .click(function () {
-        tabPayment.hide();
-        tabPayment.filter(this.hash).show();
-        $("#making-order-payment .making-order-tabs a").removeClass("active");
-        $(this).addClass("active");
-        return false;
-      })
-      .filter(":first")
-      .click();
-  });
-
-  function mapContactInit() {
-    var mapOptions = {
-      zoom: 17,
-      center: new google.maps.LatLng(53.924723, 27.511615),
-      mapTypeControl: false,
-      scrollwheel: false,
-      zoomControl: false,
-      scaleControl: false,
-      disableDefaultUI: true,
-
-      mapTypeControlOptions: {
-        mapTypeIds: [google.maps.MapTypeId.ROADMAP, "map_style"],
-      },
-
-      navigationControlOptions: {
-        style: google.maps.NavigationControlStyle.SMALL,
-      },
-    };
-
-    // initial map
-    var map = new google.maps.Map(
-      document.getElementById("map-address"),
-      mapOptions
-    );
-    var myCenter = new google.maps.LatLng(53.924723, 27.511615);
-    var marker = new google.maps.Marker({ position: myCenter });
-
-    marker.setMap(map);
-
-    // for select
-    let minsk = document.getElementById("minsk");
-    let mogilev = document.getElementById("mogilev");
-
-    minsk.addEventListener("click", () => {
-      location(minsk);
-    });
-
-    mogilev.addEventListener("click", () => {
-      location(mogilev);
-    });
-
-    function location(town) {
-      let thsLat = town.dataset.lat;
-      let thsLng = town.dataset.lng;
-
-      map.setCenter(new google.maps.LatLng(thsLat, thsLng));
-
-      var myCenter = new google.maps.LatLng(thsLat, thsLng);
-      var marker = new google.maps.Marker({ position: myCenter });
-
-      marker.setMap(map);
-    }
-  }//end
-
-  if (document.getElementById("map-address")) {
-    mapContactInit();
-  }
-
-  let header = document.querySelector(".making-order-header");
-  let list = document.querySelector(".making-order-list");
-
-  if (header) {
-    header.addEventListener("click", () => {
-      list.classList.toggle("active");
-      header.classList.toggle("opened");
-    });
-  }
-
-  let orderForm = document.querySelector(
-    ".making-order-payment .making-order-form"
-  );
-
-  $(function () {
-    $(".making-order-payment #tab-2 input[type=radio]").change(function () {
-      if ($(this).val() === "Безналичный расчёт") {
-        orderForm.classList.add("active");
-      } else {
-        orderForm.classList.remove("active");
-      }
-    });
-  });
-
-  //cal-arr
-
-  // validate for marking-order.html
-  $(".making-order-validate").validate({
-    errorElement: "span",
-    rules: {
-      name: {
-        required: true,
-        lettersonly: true,
-      },
-
-      email: {
-        required: true,
-        email: true,
-        // emailErr: true,
-      },
-
-      telephone: {
-        required: true,
-        minlength: 19,
-        // telephone: true,
-      },
-
-      locality: {
-        required: true,
-        lettersonly: true,
-      },
-
-      street: {
-        required: true,
-        lettersonly: true,
-      },
-
-      house: {
-        required: true,
-        number: true,
-      },
-
-      company: {
-        required: true,
-        lettersonly: true,
-      },
-
-      inn: {
-        required: true,
-        number: true,
-      },
-
-      address: {
-        required: true,
-        lettersonly: true,
-      },
-
-      bank: {
-        required: true,
-        lettersonly: true,
-      },
-
-      bik: {
-        required: true,
-        // number: true,
-      },
-
-      iban: {
-        required: true,
-        // number: true,
-      },
-
-      test: {
-        required: true,
-        number: true,
-      },
-    },
-
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .addClass(errorClass)
-        .removeClass(validClass);
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .removeClass(errorClass)
-        .addClass(validClass);
-    },
-
-    errorPlacement: function (error, element) {
-      if (element.attr("name") == "customCheckbox") {
-        error.appendTo(".form-cell-field-send");
-      } else {
-        error.insertAfter(element);
-      }
-    },
-
-    messages: {
-      name: {
-        required: "Введите своё ФИО",
-        lettersonly: "Введите корректное ФИО",
-      },
-
-      email: {
-        required: "Введите свой email",
-        email: "Введите корректный email",
-      },
-
-      telephone: {
-        required: "Введите данные",
-        minlength: "Введите полный номер",
-      },
-
-      locality: {
-        required: "Введите населенный пункт",
-        lettersonly: "Введите данные",
-      },
-
-      street: {
-        required: "Введите улицу",
-        lettersonly: "Введите данные",
-      },
-
-      house: {
-        required: "Введите номер дома",
-        number: "Введите данные",
-      },
-
-      company: {
-        required: "Введите название",
-        lettersonly: "Введите данные",
-      },
-
-      inn: {
-        required: "Введите свой ИНН",
-        number: "Введите корректный ИНН",
-      },
-
-      address: {
-        required: "Введите адрес",
-        lettersonly: "Введите данные",
-      },
-
-      bank: {
-        required: "Введите название банка",
-        lettersonly: "Введите данные",
-      },
-
-      bik: {
-        required: "Введите данные БИК",
-        // number: "Введите корректные данные",
-      },
-
-      iban: {
-        required: "Введите расчётный счет IBAN",
-        // number: "Введите корректные данные",
-      },
-
-      test: {
-        required: "Введите данные",
-        number: "Введите корректные данные",
-      },
-    },
   });
 
   jQuery.validator.addMethod(
@@ -1836,37 +1454,6 @@ jQuery(document).ready(function ($) {
       }
     }
   })();
-
-  (function () {
-    if (matchMedia) {
-      const screen576 = window.matchMedia("(max-width:576px)");
-      screen576.addListener(changes);
-      changes(screen576);
-    }
-
-    function changes(screen) {
-      if (screen.matches) {
-        $(".making-order-comment.self-call").before($("#map-address"));
-      } else {
-        $(".col-xs-6.map").append($("#map-address"));
-      }
-    }
-  })();
-
-  let allInputs = document.querySelector(".making-order-myAddress");
-  let otherAddressForm = document.querySelector(
-    ".making-order-pickup .making-order-form"
-  );
-
-  if (allInputs && otherAddressForm) {
-    allInputs.addEventListener("click", (e) => {
-      if (e.target.classList[0] === "other") {
-        otherAddressForm.style.display = "block";
-      } else {
-        otherAddressForm.style.display = "none";
-      }
-    });
-  }
 
   let deleteSelected = document.querySelector(".cart-delete-btn");
   let deleteCheckBoxAll = document.querySelector(
@@ -2113,105 +1700,6 @@ $(".waitList-item-remove-link").click(function () {
 
 $(".profile-setup-delete").click(function () {
   $(this).closest($("div.profile-setup-wrapper")).remove();
-});
-
-$(document).ready(function () {
-  $(".request-body-wrap-form").validate({
-    errorElement: "span",
-    rules: {
-      name: {
-        required: true,
-        // lettersonly: true,
-      },
-
-      textbox: {
-        required: true,
-        maxlength: 500,
-      },
-
-      url: {
-        url: true,
-        required: true,
-        // email: true,
-      },
-    },
-
-    messages: {
-      name: {
-        required: "Пожалуйста, введите ваше Наименование",
-        name: " ",
-      },
-
-      textbox: {
-        required: "Пожалуйста, оставьте свой комментарий",
-        maxlength: "Комментарий не должен превышать 500 символов",
-      },
-
-      url: {
-        required: "Введите данные",
-      },
-    },
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .addClass(errorClass)
-        .removeClass(validClass);
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .removeClass(errorClass)
-        .addClass(validClass);
-    },
-  });
-});
-
-$(document).ready(function () {
-  $(".assistance-form").validate({
-    errorElement: "span",
-    rules: {
-      topic: {
-        required: true,
-      },
-
-      textbox: {
-        required: true,
-        maxlength: 500,
-      },
-    },
-
-    messages: {
-      topic: {
-        required: "Пожалуйста, введите ваше тему обращения",
-        name: " ",
-      },
-
-      textbox: {
-        required: "Пожалуйста, оставьте свой комментарий",
-        maxlength: "Комментарий не должен превышать 500 символов",
-      },
-    },
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .addClass(errorClass)
-        .removeClass(validClass);
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .removeClass(errorClass)
-        .addClass(validClass);
-    },
-  });
 });
 
 $(document).ready(function () {
@@ -2799,7 +2287,7 @@ let targetElment = document.querySelectorAll(".product-card"),
 if (removeBtn) {
   removeBtn.forEach((e) => {
     e.addEventListener("click", (elem) => {
-     
+
       let removeElement = elem.target.closest(".swiper-slide").ariaLabel;
       allInfo.forEach((ariaElem) => {
         if (ariaElem.ariaLabel === removeElement) {
@@ -2866,7 +2354,7 @@ if (removeBtn) {
 //         $(".test-position").prepend($(e).closest(".swiper-slide").clone())
 //         $(e).closest(".product-card").addClass("product-card-invivsible");
 
-      
+
 //         //*Кнопка закрепить - открепляем продукт
 //         let wrapPositionT = document.querySelector(".test-position");
 //         let children_wrapPosition =
@@ -2875,7 +2363,7 @@ if (removeBtn) {
 //         children_wrapPosition.forEach((card) => {
 //           removeFix = $(card).find(".product-card-fixed")[0];
 //           deleteFix = $(card).find(".product-card-remove")[0];
-         
+
 //           //*удаляем закрепленные элементы по нажатию на крестик
 //           deleteFix.addEventListener("click", () => {
 
@@ -2886,7 +2374,7 @@ if (removeBtn) {
 //                 ariaId.remove();
 //               }
 //             });
-         
+
 //             let mainSlider = document.querySelector(
 //               ".swiper-carousel-compare-main"
 //             );
@@ -2904,11 +2392,11 @@ if (removeBtn) {
 //               swiperSlide.slideTo(0);
 //               swiperSlide.update();
 //             });
-           
+
 //           });
 //           //*удаляем закрепленные элементы по нажатию на "Закреплено"
 //           removeFix.addEventListener("click", () => {
-          
+
 
 //             let warPositionTest = document.querySelectorAll(
 //               ".test-position-info"
@@ -2918,7 +2406,7 @@ if (removeBtn) {
 //                 elemOfText.querySelectorAll(".swiper-slide");
 
 //               children_elemOfText.forEach((slideText) => {
-                
+
 //                 if (card.ariaLabel == slideText.ariaLabel) {
 //                   slideText.remove();
 //                 }
@@ -2926,7 +2414,7 @@ if (removeBtn) {
 //             });
 
 //             card.remove();
-            
+
 //             $(e)
 //               .closest(".product-card")
 //               .removeClass("product-card-invivsible");
@@ -2936,7 +2424,7 @@ if (removeBtn) {
 //               .classList.remove("product-card-fixed-fix");
 
 //             swiperCarouselCompare.forEach((swiperSlide) => {
-              
+
 //               //! Тут тоже всплывает ошибка 2-го клика, из-за этого по 1 клику открывается сразу 2 оригинельные карточки вмсето 1-ой
 //               //! Баг можно получить закрепив 2-е карточки => открепить 2-ю
 //               console.log('Двойной клик')
@@ -2944,9 +2432,9 @@ if (removeBtn) {
 //               let swiperSlideEl = $(swiperSlide)[0].$el.find(`.swiper-slide`)
 //               swiperSlideEl.forEach((findAriaLabel) => {
 //                 if(findAriaLabel.ariaLabel === card.ariaLabel) {
-                  
+
 //                   $(findAriaLabel).closest('.swiper-wrapper').prepend($(findAriaLabel))
-                  
+
 //                 }
 //               })
 //               // swiperSlide.querySelectorAll('swiper-slide')
@@ -2974,9 +2462,9 @@ if (removeBtn) {
 if (fixedBtn.length) {
   //фиксируем слайд
   fixedBtn.forEach(el => {
-    
+
     //фиксируем слайд
-    el.addEventListener('click',(event) => {   
+    el.addEventListener('click', (event) => {
 
       event.preventDefault()
       event.stopPropagation()
@@ -2984,113 +2472,113 @@ if (fixedBtn.length) {
       // проверяем на кол-во закрепленных продуктов
       let productFixed = document.querySelectorAll(".fixed");
       let productMaxFix = 2;
-    if(window.matchMedia("(max-width:1024.99px)").matches == true) {
-      productMaxFix = 1
-    }
-     if(productFixed.length <= productMaxFix) {
-      // Меняем надпись на кнопке
-      el.querySelector('.product-card-fixed-text').classList.add('product-card-fixed-text-fix')
-
-      
-
-      const parentSlide = el.closest('.swiper-slide')
-      const parentSlideIndex = parseInt(parentSlide.ariaLabel.split('/')[0], 10)
+      if (window.matchMedia("(max-width:1024.99px)").matches == true) {
+        productMaxFix = 1
+      }
+      if (productFixed.length <= productMaxFix) {
+        // Меняем надпись на кнопке
+        el.querySelector('.product-card-fixed-text').classList.add('product-card-fixed-text-fix')
 
 
-      const allChooseSlide = document.querySelectorAll('.swiper-slide')
-      allChooseSlide.forEach((slide) => {
 
-        if(slide.ariaLabel == null) return false
+        const parentSlide = el.closest('.swiper-slide')
+        const parentSlideIndex = parseInt(parentSlide.ariaLabel.split('/')[0], 10)
 
-        const slideLabel = parseInt(slide.ariaLabel.split('/')[0], 10)
 
-        if(slideLabel == parentSlideIndex) {
-         const cloneWrapper = $(slide).closest('.compare-row-main').children('.test-position-info')[0]
-         slide.classList.add('fixed-slide')
+        const allChooseSlide = document.querySelectorAll('.swiper-slide')
+        allChooseSlide.forEach((slide) => {
 
-         const cloneSlide =  $(slide).clone()
-         $(cloneWrapper).append($(cloneSlide))
+          if (slide.ariaLabel == null) return false
 
-         const parentcloneSlide = $(slide).parent()
-         parentcloneSlide.prepend($(slide))
-        }
-      })
+          const slideLabel = parseInt(slide.ariaLabel.split('/')[0], 10)
 
-      if (el.classList.contains('fixed')) return
-        
-      el.classList.add('fixed')
-      parentSlide.classList.add('fixed-slide')
+          if (slideLabel == parentSlideIndex) {
+            const cloneWrapper = $(slide).closest('.compare-row-main').children('.test-position-info')[0]
+            slide.classList.add('fixed-slide')
 
-      const cloneParentSlide = $(parentSlide).clone()
-      $(".test-position").append($(cloneParentSlide))
+            const cloneSlide = $(slide).clone()
+            $(cloneWrapper).append($(cloneSlide))
 
-      const parentSlideParent = $(parentSlide).parent()
-      parentSlideParent.prepend($(parentSlide))
+            const parentcloneSlide = $(slide).parent()
+            parentcloneSlide.prepend($(slide))
+          }
+        })
 
-      //задаем ширену копированному элементу в зависимости от высоты оригина 
-      let originElement = document.querySelector('.swiper-slide');
-      let originElementWidth = originElement.offsetWidth;
+        if (el.classList.contains('fixed')) return
 
-      let fixedSlide = document.querySelector('.test-position')
-      let fixedSlides = fixedSlide.querySelectorAll('.swiper-slide')
-     
-      console.log(originElementWidth)
-      console.log(fixedSlides)
-      fixedSlides.forEach((elem) => {
-        elem.style.width = originElementWidth
-      });
-    }
+        el.classList.add('fixed')
+        parentSlide.classList.add('fixed-slide')
+
+        const cloneParentSlide = $(parentSlide).clone()
+        $(".test-position").append($(cloneParentSlide))
+
+        const parentSlideParent = $(parentSlide).parent()
+        parentSlideParent.prepend($(parentSlide))
+
+        //задаем ширену копированному элементу в зависимости от высоты оригина
+        let originElement = document.querySelector('.swiper-slide');
+        let originElementWidth = originElement.offsetWidth;
+
+        let fixedSlide = document.querySelector('.test-position')
+        let fixedSlides = fixedSlide.querySelectorAll('.swiper-slide')
+
+        console.log(originElementWidth)
+        console.log(fixedSlides)
+        fixedSlides.forEach((elem) => {
+          elem.style.width = originElementWidth
+        });
+      }
     }, false)
   })
 
   //возвращаем слайд на место
   const allCopyWrapper = document.querySelectorAll('.test-position-info')
 
-  document.querySelector('.test-position').addEventListener('click',(e) => {
+  document.querySelector('.test-position').addEventListener('click', (e) => {
     const target = e.target
-    
-    
-      // Удаление элемента (крестик)
-      if(target.classList.contains('product-card-remove')) {
-        
-        const removeTarget = target.closest('.swiper-slide')
-        const removeTargetLabel = removeTarget.ariaLabel
 
-        document.querySelectorAll('.swiper-slide').forEach((Slide) => {
-      
 
-          if(removeTargetLabel == Slide.ariaLabel) {
-            Slide.remove()
+    // Удаление элемента (крестик)
+    if (target.classList.contains('product-card-remove')) {
 
-            swiperCarouselCompare.forEach((swiper) => {
-              swiper.update();
-            });
-          }
-        })
-        
-      } 
-    
-      if (!target.closest('.product-card-fixed')) return false
+      const removeTarget = target.closest('.swiper-slide')
+      const removeTargetLabel = removeTarget.ariaLabel
 
-     
+      document.querySelectorAll('.swiper-slide').forEach((Slide) => {
+
+
+        if (removeTargetLabel == Slide.ariaLabel) {
+          Slide.remove()
+
+          swiperCarouselCompare.forEach((swiper) => {
+            swiper.update();
+          });
+        }
+      })
+
+    }
+
+    if (!target.closest('.product-card-fixed')) return false
+
+
 
     const parentSlide = target.closest('.swiper-slide')
     const parentSlideArea = parentSlide.ariaLabel
     const parentSlideIndex = parseInt(parentSlide.ariaLabel.split('/')[0], 10)
 
- 
+
     //удаляем слайд из псевдо-закрепленного блока
     parentSlide.remove()
 
     //Удаляем все остальные псевдо-слaйды
     allCopyWrapper.forEach((cloneSlide) => {
       const slideInCloneWrapper = cloneSlide.querySelectorAll('.swiper-slide');
-        slideInCloneWrapper.forEach((clone) => {
-          clone.remove()
-        })
+      slideInCloneWrapper.forEach((clone) => {
+        clone.remove()
+      })
     })
 
-  
+
 
     document.querySelectorAll(".swiper-carousel-compare").forEach((swiper) => {
       //внешняя переменная для результата
@@ -3099,14 +2587,14 @@ if (fixedBtn.length) {
 
       //ищем слайд в каждой карусели, перед которым нужно вставить открепляемый
       swiper.querySelectorAll('.swiper-slide').forEach(slide => {
-       
+
         const realIndex = parseInt(slide.ariaLabel.split('/')[0], 10)
         //прекращаем цикл, если уже нашли искомый элемент
         if (slideToInsert) return
 
         if (parentSlideIndex < realIndex && !slide.classList.contains('fixed-slide')) {
           slideToInsert = slide
-      
+
 
           return
         }
@@ -3114,15 +2602,15 @@ if (fixedBtn.length) {
 
 
 
-      
+
       //вставляем слайд на исходное место в каждой карусели
-      swiper.querySelectorAll('.swiper-slide[aria-label="'+parentSlideArea+'"]').forEach(slide => {
+      swiper.querySelectorAll('.swiper-slide[aria-label="' + parentSlideArea + '"]').forEach(slide => {
         $(slide).insertBefore($(slideToInsert))
-       
+
         //Меня обратно надпись на кнопке
-        if(slide.querySelector('.product-card-fixed-text') == null) return false
+        if (slide.querySelector('.product-card-fixed-text') == null) return false
         slide.querySelector('.product-card-fixed-text').classList.remove('product-card-fixed-text-fix')
-       
+
 
         //удаляем блокирующий клик класс
         $(slide).find('.product-card-fixed').removeClass('fixed')
@@ -3132,9 +2620,9 @@ if (fixedBtn.length) {
     })
 
   })
- 
 
-  
+
+
 }
 //Добавляем\убираем кнопку закрепить в зависимости от кол-во элементов
 let product_c = document.querySelectorAll(".product-card");
@@ -3181,151 +2669,6 @@ if (serviceReminder) {
     progressBar.style.width = "50%";
   });
 
-  // validate form
-  $(".sign-sompany-first-form").validate({
-    errorElement: "span",
-    errorPlacement: function (error, element) {
-      if (element.attr("type") == "checkbox") {
-        return element.next("label").append(error);
-      }
-
-      error.insertAfter($(element));
-    },
-
-    rules: {
-      type: {
-        required: true,
-      },
-      num: {
-        required: true,
-        number: true,
-      },
-      date: {
-        required: true,
-      },
-      days: {
-        required: true,
-      },
-      hours: {
-        required: true,
-      },
-    },
-
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .addClass(errorClass)
-        .removeClass(validClass);
-    },
-
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .removeClass(errorClass)
-        .addClass(validClass);
-    },
-
-    errorPlacement: function (error, element) {
-      if (element.attr("name") == "customCheckbox") {
-        error.appendTo(".form-cell-field-send");
-      } else {
-        error.insertAfter(element);
-      }
-
-      if (element.hasClass("catalog-settings-select")) {
-        element.closest(".jq-selectbox").after(error);
-      }
-      if (element.hasClass("ui-checkbox-input")) {
-        element.closest(".ui-checkbox-body").after(error);
-      }
-    },
-
-    submitHandler: function (form) {
-      txtHeadline.textContent = "О получателе";
-      txtSteps.textContent = "2";
-
-      firstStep.style.display = "none";
-      secondStep.style.display = "block";
-      progressBar.style.width = "100%";
-
-      return false;
-    },
-
-    messages: {
-      type: {
-        required: "Введите данные",
-      },
-      num: {
-        required: "Введите данные",
-        number: "Введите данные",
-      },
-      date: {
-        required: "Введите данные",
-      },
-      days: {
-        required: "Введите данные",
-      },
-      hours: {
-        required: "Введите данные",
-      },
-    },
-  });
-
-  $(".sign-sompany-second-form").validate({
-    errorElement: "span",
-    errorPlacement: function (error, element) {
-      if (element.attr("type") == "checkbox") {
-        return element.next("label").append(error);
-      }
-
-      error.insertAfter($(element));
-    },
-
-    rules: {
-      name: {
-        required: true,
-        lettersonly: true,
-      },
-      phone: {
-        required: true,
-        minlength: 19,
-      },
-    },
-
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass(errorClass).removeClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .addClass(errorClass)
-        .removeClass(validClass);
-    },
-
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass(errorClass).addClass(validClass);
-      $(element)
-        .closest(".ui-field")
-        .find(".popup-icon")
-        .removeClass(errorClass)
-        .addClass(validClass);
-    },
-
-    messages: {
-      name: {
-        required: "Введите ФИО",
-        lettersonly: "Введите корректные данные",
-      },
-      phone: {
-        required: "Введите данные",
-        minlength: "Введите полный номер",
-      },
-    },
-  });
-
   jQuery.validator.addMethod(
     "lettersonly",
     function (value, element) {
@@ -3357,11 +2700,11 @@ if (serviceReminder) {
     () => {
       $(document).ready(function () {
         let flag = false;
-       
+
         // if(!IsSafari()) {
         //   $("select").styler();
         //   console.log('Safari')
-        // }    
+        // }
 
         $("#datetimepicker").datetimepicker({
           // value:'12.03.2013',
@@ -3441,14 +2784,12 @@ if (serviceReminder) {
                   if (+marginGet > -$(".blockYears").height() + 540) {
                     blockScroll.style.marginTop = +marginGet - scroll + "px";
                   } else {
-                    blockScroll.style.marginTop = `${
-                      -$(".blockYears").height() + 250
-                    }px`;
+                    blockScroll.style.marginTop = `${-$(".blockYears").height() + 250
+                      }px`;
                   }
                 } else {
-                  blockScroll.style.marginTop = `${
-                    -$(".blockYears").height() + 250
-                  }px`;
+                  blockScroll.style.marginTop = `${-$(".blockYears").height() + 250
+                    }px`;
                 }
               });
 
@@ -3497,14 +2838,12 @@ if (serviceReminder) {
                   if (+marginGet > -$(".blockYears").height() + 540) {
                     blockScroll.style.marginTop = +marginGet - scroll + "px";
                   } else {
-                    blockScroll.style.marginTop = `${
-                      -$(".blockYears").height() + 250
-                    }px`;
+                    blockScroll.style.marginTop = `${-$(".blockYears").height() + 250
+                      }px`;
                   }
                 } else {
-                  blockScroll.style.marginTop = `${
-                    -$(".blockYears").height() + 250
-                  }px`;
+                  blockScroll.style.marginTop = `${-$(".blockYears").height() + 250
+                    }px`;
                 }
               });
 
@@ -3548,75 +2887,6 @@ searchMenu.addEventListener("click", (e) => {
     bodyOpenCatalog.classList.remove("body-hidden-search");
   }
 });
-mainSearchInput.addEventListener("keyup", () => {
-  closeInput.classList.remove("main-search-input-close-open");
-
-  if (mainSearchInput.value !== "") {
-    mainLogo.classList.add("main-logo-close");
-    mainWatalog.classList.add("main-catalog-wrapper-close");
-    searchMenu.classList.add("search-menu-open");
-    bodyOpenCatalog.classList.add("body-hidden-search");
-    closeInput.classList.add("main-search-input-close-open");
-
-    topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
-    if ($(".header").hasClass("header_fixed")) {
-      $(searchMenu).css("top", `${mainHeight.offsetHeight}px`);
-    } else {
-      $(searchMenu).css("top", `${topSum}px`);
-    }
-  } else {
-    mainLogo.classList.remove("main-logo-close");
-    mainWatalog.classList.remove("main-catalog-wrapper-close");
-    searchMenu.classList.remove("search-menu-open");
-    bodyOpenCatalog.classList.remove("body-hidden-search");
-  }
-
-  // if(containerMenu.classList.contains('container-menu-open') == false){
-  //   bodyOpenCatalog.classList.remove('body-hidden')
-  // }
-});
-
-// services.htmk validate form
-
-$(".services-form").validate({
-  errorElement: "span",
-  rules: {
-    name: {
-      required: true,
-    },
-    textbox: {
-      required: true,
-    },
-    telephone: {
-      required: true,
-    },
-    model: {
-      required: true,
-    },
-    customCheckbox: {
-      required: true,
-    },
-  },
-  messages: {
-    name: {
-      required: "Заполните поле",
-    },
-    textbox: {
-      required: "Заполните поле",
-    },
-    telephone: {
-      required: "Заполните поле",
-    },
-    model: {
-      required: "Заполните поле",
-    },
-    customCheckbox: {
-      required: "Заполните поле",
-    },
-  },
-});
-
-
 
 let mobMenuSearch = document.querySelector(".mob-menu-search");
 
@@ -3628,8 +2898,6 @@ mobMenuSearch.addEventListener("click", () => {
     searchMenu.classList.remove("search-menu-open");
   }
 });
-
-
 
 if (document.getElementById("productGallery")) {
   FARBA.lazyLibraryLoad(
@@ -3687,230 +2955,170 @@ menuDesktopHover.forEach((e) => {
   });
 });
 
-
-if (document.querySelector("#callMap")) {
-  function callMap_Ymap() {
-    ymaps.ready(function () {
-      var callMap = new ymaps.Map(
-        "callMap",
-        {
-          center: [53.924723, 27.511615],
-          zoom: 12,
-          controls: [],
-        },
-        {
-          searchControlProvider: "yandex#search",
-        }
-      );
-
-      callMap.geoObjects.add(
-        new ymaps.Placemark(
-          [53.924723, 27.511615],
-          {
-            // balloonContent: 'цвет <strong>воды пляжа бонди</strong>'
-          },
-          {
-            preset: "islands#dotIcon",
-            iconColor: "#E94336",
-          }
-        )
-      );
-      callMap.behaviors.disable("scrollZoom");
-    });
+// check & unchecked radio input
+$('.features-btn-input').on('mousedown', function (e) {
+  if ($(this).prop("checked") === true) {
+    $(this).prop("checked", false);
+  } else {
+    $(this).prop("checked", true);
   }
-  FARBA.lazyLibraryLoad(
-    "//api-maps.yandex.ru/2.1/?lang=ru_RU",
-    "",
-    callMap_Ymap
-  )
-}
+});
 
+$('.features-btn-input').on('click', function (e) {
+  e.preventDefault();
+});
 
-if (document.querySelector(".deliverypayMap")) {
-  function deliverypayMap_Ymap(){
-    const deliveryCity = [
-      { coord: [53.902735, 27.555696], title: "Минск", content: "Минск" },
-      { coord: [53.894548, 30.330654], title: "Могилёв", content: "Могилёв" },
-      {
-        coord: [34.052235, -118.243683],
-        title: "Другие города",
-        content: "Другие города",
+document.body.addEventListener('click', openSticker)
+
+function openSticker(e) {
+  if (e.target.classList.contains("product-card-arrow")) {
+    const cardTopline = e.target.closest(".product-card-topline")
+    const url = cardTopline.dataset.href || null
+
+    if (document.documentElement.clientWidth > 1024) {
+      return e.target.closest('.product-card').classList.toggle('opened');
+    }
+
+    if (!url) return
+    $.magnificPopup.open({
+      items: { src: url },
+      type: "ajax",
+      overflowY: "scroll",
+      removalDelay: 610,
+      mainClass: "my-mfp-zoom-in",
+      ajax: {
+        tError: "Error. Not valid url",
       },
-    ];
 
-    ymaps.ready(function () {
-      const map = new ymaps.Map("deliverypayMap", {
-        zoom: 9,
-        center: deliveryCity[0].coord,
-        controls: [],
-      });
+      callbacks: {
+        open: function () {
+          document.documentElement.style.overflow = 'hidden'
+        },
 
-      const marker = new ymaps.Placemark(deliveryCity[0].coord, {
-        balloonContent: balloonContent(deliveryCity[0]),
-      });
-      map.geoObjects.add(marker);
-      map.behaviors.disable("scrollZoom");
-
-      document.querySelectorAll("#citylink li a").forEach((n, i) => {
-        n.addEventListener("click", onClick.bind(n, deliveryCity[i]));
-      });
-
-      function onClick(item) {
-        map.setCenter(item.coord);
-        marker.geometry.setCoordinates(item.coord);
-        marker.properties.set("balloonContent", balloonContent(item));
-      }
-
-      function balloonContent(item) {
-        return `<b>${item.content}</b>`;
+        close: function () {
+          document.documentElement.style.overflow = ''
+        }
       }
     });
   }
-  FARBA.lazyLibraryLoad(
-    "//api-maps.yandex.ru/2.1/?lang=ru_RU",
-    "",
-    deliverypayMap_Ymap
-  )
 }
 
+// map for tab\radio\select
+function initMapTarget(selector, id) {
+  const town = document.querySelectorAll(selector);
+  const defaultTown = JSON.parse(town[0].dataset.map);
 
-let mapContact1 = document.getElementById("mapContact1");
-let mapContact2 = document.getElementById("mapContact2");
-
-if (mapContact1) {
-  function mapContact_Ymaps() {
-  ymaps.ready(init);
-  ymaps.ready(init1);
-  function init() {
-    var mapContact1 = new ymaps.Map("mapContact1", {
-      center: [53.834601, 28.994249],
-      zoom: 8,
+  ymaps.ready(function () {
+    const map = new ymaps.Map(id, {
+      zoom: 9,
+      center: defaultTown.coordinates,
       controls: [],
     });
-    // mapContact1.setZoom(7)
 
-    (function () {
-      if (matchMedia) {
-        const screen = window.matchMedia("(max-width:1024.99px)");
-        screen.addListener(changes);
-        changes(screen);
-      }
-      function changes(screen) {
-        if (screen.matches) {
-          mapContact1.setZoom(7);
-        } else {
-          mapContact1.setZoom(8);
-        }
-      }
-    })();
+    town.forEach(item => {
+      const mapObj = JSON.parse(item.dataset.map);
 
-    // Первая метка
-    (MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent = new ymaps.Placemark(
-        [53.933166, 27.451803],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
+      myPlacemark = new ymaps.Placemark(mapObj.coordinates);
+      map.geoObjects.add(myPlacemark);
 
-    // Вторая метка
-    (MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent1 = new ymaps.Placemark(
-        [53.879127, 30.265464],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
+      item.addEventListener('click', () => {
+        map.setCenter(mapObj.coordinates);
+      })
+    })
+  })
+}
 
-    mapContact1.behaviors.disable("scrollZoom");
-    mapContact1.geoObjects.add(myPlacemarkWithContent);
-    mapContact1.geoObjects.add(myPlacemarkWithContent1);
-  }
-  function init1() {
-    var mapContact2 = new ymaps.Map("mapContact2", {
-      center: [53.834601, 28.994249],
-      zoom: 8,
+// map for single init map
+function initSingleMap(id, allMap) {
+  const defaultTown = JSON.parse(allMap[0].dataset.map)
+  const idMap = document.getElementById(id)
+
+  ymaps.ready(function () {
+    const map = new ymaps.Map(idMap, {
+      zoom: defaultTown.zoom,
+      center: defaultTown.defaultCoordinates,
       controls: [],
     });
-    (function () {
-      if (matchMedia) {
-        const screen = window.matchMedia("(max-width:1024.99px)");
-        screen.addListener(changes);
-        changes(screen);
-      }
-      function changes(screen) {
-        if (screen.matches) {
-          mapContact2.setZoom(7);
-        } else {
-          mapContact2.setZoom(8);
-        }
-      }
-    })();
 
-    //     // Первая метка
-    (MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent = new ymaps.Placemark(
-        [53.933166, 27.451803],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
+    allMap.forEach(item => {
+      const mapObj = JSON.parse(item.dataset.map);
 
-    //   // Вторая метка
-    (MyIconContentLayout1 = ymaps.templateLayoutFactory.createClass(
-      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    )),
-      (myPlacemarkWithContent1 = new ymaps.Placemark(
-        [53.879127, 30.265464],
-        {
-          // hintContent: 'Собственный значок метки с контентом',
-          // balloonContent: 'А эта — новогодняя',
-          // iconContent: '12'
-        },
-        {
-          preset: "islands#dotIcon",
-          iconColor: "#4A95F7",
-        }
-      ));
+      myPlacemark = new ymaps.Placemark(mapObj.coordinates);
+      map.geoObjects.add(myPlacemark);
+    })
+  })
+}
 
-    //вторая карта
-    mapContact2.behaviors.disable("scrollZoom");
-    mapContact2.geoObjects.add(myPlacemarkWithContent);
-    mapContact2.geoObjects.add(myPlacemarkWithContent1);
+$(document).on('mouseup', function (e) {
+  if ($('.container-menu').has(e.target).length === 0 && $('.main-catalog').has(e.target).length === 0 && $('.main-catalog-wrapper').has(e.target).length === 0 && $('.main-search-form').has(e.target).length === 0) {
+    mainSearchForm.classList.remove('main-search-form-open');
+    changeIcon.classList.remove('main-toggler-cross');
+    containerMenu.classList.remove('container-menu-open');
+    mainOpenCatalog.classList.remove('main-open-catalog');
+    navWrapperOpenCatalog.classList.remove('nav-wrapper-open-catalog')
+    bodyOpenCatalog.classList.remove('body-hidden')
   }
+});
+
+$(document).on('mouseup', function (e) {
+  if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0 && $('.mob-menu-phone').has(e.target).length === 0) {
+    $('.main-contacts-drop').removeClass('numbers-open')
+    $('.main-contacts-tel-arrow').removeClass('opened')
+    $('.mob-menu-phone').removeClass('opened')
+  }
+});
+
+$(document).on('mouseup', function (e) {
+  if ($('.enter-mobile').has(e.target).length === 0 && $('.mob-menu-img').has(e.target).length === 0) {
+    $('.enter-mobile').removeClass('enter-mobile-open')
+    $('.mob-menu-img').removeClass('mob-menu-img-open')
+  }
+});
+
+// const categoryCloseBtnTablet = document.querySelector('.ui-btn-secondary.js-close-tablet')
+
+// if(categoryCloseBtnTablet) {
+//   categoryCloseBtnTablet.addEventListener('click', () => {
+//     const allCheckbox = document.querySelectorAll('.ui-checkbox-container .ui-checkbox-input')
+//     const menuCategory = document.querySelector('.ui-search-settings-text-content')
+
+//     allCheckbox.forEach(item => {
+//       item.checked = false
+//     })
+
+//     menuCategory.classList.remove('ui-search-settings-open')
+//   })
+// }
+
+// const categoryCloseBtnMob = document.querySelector('.ui-btn-secondary.js-close-mob')
+
+// if(categoryCloseBtnMob) {
+//   categoryCloseBtnMob.addEventListener('click', () => {
+//     const allCheckbox = document.querySelectorAll('.catalog-filters-filters .ui-checkbox-input')
+//     const menuCategory = document.querySelector('.catalog-filters')
+
+//     allCheckbox.forEach(item => {
+//       item.checked = false
+//     })
+
+//     menuCategory.classList.remove('opened')
+//   })
+// }
+
+function closeCategory(elementBtn, elementCheckbox, elementMenu, removeClass) {
+  const categoryCloseBtn = document.querySelector(elementBtn)
+  const allCheckbox = document.querySelectorAll(elementCheckbox)
+  const menuCategory = document.querySelector(elementMenu)
+
+  categoryCloseBtn.addEventListener('click', () => {
+    allCheckbox.forEach(item => {
+      item.checked = false
+    })
+
+    menuCategory.classList.remove(removeClass)
+  })
 }
-  FARBA.lazyLibraryLoad(
-    "//api-maps.yandex.ru/2.1/?lang=ru_RU",
-    "",
-    mapContact_Ymaps
-  )
-}
 
+closeCategory('.ui-btn-secondary.js-close-mob', '.catalog-filters-filters .ui-checkbox-input', '.catalog-filters', 'opened')
 
-
-
-
+closeCategory('.ui-btn-secondary.js-close-tablet', '.ui-checkbox-container .ui-checkbox-input', '.ui-search-settings-text-content', 'ui-search-settings-open')
