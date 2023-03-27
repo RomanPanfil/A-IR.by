@@ -67,14 +67,28 @@
           </div>
           <div class="mob-menu">
             <div class="mob-menu-img">
-              <img src="./images/icons/user-mob.svg" alt="alt" />
+              <img src="./images/icons/user-mob.svg"
+                   alt="alt" />
             </div>
             <div class="mob-menu-img mob-menu-phone">
-              <img src="./images/icons/phone-mob.svg" alt="alt" />
+              <img src="./images/icons/phone-mob.svg"
+                   alt="alt" />
             </div>
-            <div class="mob-menu-img">
-              <img src="./images/icons/search-mob.svg" alt="alt" />
+            <div class="mob-menu-img mob-menu-search">
+              <img src="./images/icons/search-mob.svg"
+                   alt="alt" />
             </div>
+            <div class="enter-mobile">
+
+              <div class="enter-mobile-btn ui-btn">Вход</div>
+              <div class="enter-mobile-favour">
+                <svg class="enter-mobile-favour-sprite sprite">
+                  <use xlink:href="svg/svg/symbols.svg#menu-like"></use>
+                </svg>
+                Избранное
+              </div>
+            </div>
+
           </div>
         </a>
 
@@ -96,6 +110,9 @@
             type="text"
             placeholder="Введите свой запрос"
           />
+          <button title="Close (Esc)"
+                  type="button"
+                  class="main-search-input-close">×</button>
           <button class="main-search-btn">
             <div class="main-search-btn-img">
               <img src="./images/icons/main-search.svg" alt="alt" />
@@ -268,7 +285,49 @@
       </div>
     </div>
   </div>
+  <!--#include file="inc-catalog-menu.html"-->
+  <!--#include file="inc-search-menu.html"-->
 </header>
 
 <div class="middle" id="middle">
 <div class="container">
+  <div class="ui-breadcrumbs">
+    <a href="#"
+       class="ui-breadcrumbs-link">Главная</a>
+    <a href="#"
+       class="ui-breadcrumbs-link">Компрессоры</a>
+    <a href="#"
+       class="ui-breadcrumbs-link">Винтовые</a>
+    <span>Винтовой компрессор A1R BB-4FC, 10 бар</span>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      jQuery(document).ready(function ($) {
+        mainSearchInput.addEventListener("keyup", () => {
+          closeInput.classList.remove("main-search-input-close-open");
+
+          if (mainSearchInput.value !== "") {
+            mainLogo.classList.add("main-logo-close");
+            mainWatalog.classList.add("main-catalog-wrapper-close");
+            searchMenu.classList.add("search-menu-open");
+            bodyOpenCatalog.classList.add("body-hidden-search");
+            closeInput.classList.add("main-search-input-close-open");
+
+            topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
+
+            if ($(".header").hasClass("header_fixed")) {
+              $(searchMenu).css("top", `${mainHeight.offsetHeight}px`);
+            } else {
+              $(searchMenu).css("top", `${topSum}px`);
+            }
+          } else {
+            mainLogo.classList.remove("main-logo-close");
+            mainWatalog.classList.remove("main-catalog-wrapper-close");
+            searchMenu.classList.remove("search-menu-open");
+            bodyOpenCatalog.classList.remove("body-hidden-search");
+          }
+        });
+      })
+    })
+  </script>

@@ -60,6 +60,26 @@
             </button>
           </form>
 
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              jQuery(document).ready(function ($) {
+                $(".catalog-search-form").validate({
+                  errorElement: "span",
+                  rules: {
+                    email: {
+                      email: true,
+                    },
+                  },
+                  messages: {
+                    email: {
+                      email: "Пожалуйста, введите корректный Email",
+                    },
+                  },
+                });
+              })
+            })
+          </script>
+
           <div class="contactback-item-info">
             Нажимая кнопку, я соглашаюсь с
             <a href="#">политикой конфеденциальности.</a>

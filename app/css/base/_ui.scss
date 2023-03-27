@@ -1486,7 +1486,7 @@ textarea.ui-input {
           border-bottom: 1px solid #d3d3d3;
           margin-bottom: 23px;
           }
-        
+
       }
   &-text-content {
     display: none;
@@ -1517,11 +1517,11 @@ textarea.ui-input {
     .ui-checkbox {
       margin-bottom: 18px;
     }
+    &.opened {
+      display: block;
+    }
   }
-  &-open {
-    display: block;
-  }
-  
+
 }
 .ui-checkbox-container {
   margin-bottom: 28px;
@@ -1530,7 +1530,7 @@ textarea.ui-input {
   transform: rotate(180deg);
 }
 
- 
+
 
 .row-gap-32 {
   row-gap: 32px;

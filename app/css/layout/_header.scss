@@ -173,7 +173,7 @@
       color: $secondary;
     }
   }
-  
+
   &-wrapp {
     gap: 8px;
     border: none;
@@ -181,7 +181,7 @@
     padding-bottom: 0;
     padding-left: 0;
   }
-  
+
   &-mail {
     color: #1a66ae;
     font-weight: 400;
@@ -236,7 +236,7 @@
         &:hover {
           color: $secondary;
         }
-        
+
       }
     }
     &-wrap {
@@ -338,7 +338,7 @@
         width: 48px;
         line-height: 48px;
       }
-    
+
       &-wrapper {
         @media (max-width: 1024.99px) {
           display: flex;
@@ -351,7 +351,7 @@
             flex: 0 0 108px;
             padding-left: 12px;
           }
-          
+
         }
         &-close {
           display: none;
@@ -444,7 +444,7 @@
       @media (max-width: 1024.99px) {
         display: none;
       }
-      
+
 
       &-services {
         display: inline-block;
@@ -454,6 +454,26 @@
 
         @media (max-width: 1170px) {
           margin-left: 10px;
+        }
+
+        &.profile {
+          position: relative;
+
+          &:hover {
+            .profile-menu-ul {
+              display: block;
+            }
+
+            &::before {
+              display: block;
+            }
+          }
+          &::before {
+            content: "";
+            display: none;
+            padding: 50px 150px 50px 0;
+            position: absolute;
+          }
         }
 
         &-img {
@@ -466,7 +486,7 @@
             fill: #000;
           }
         }
-        
+
         &:hover {
           color: $secondary;
 
@@ -514,7 +534,7 @@
       &-open-catalog{
         display: none;
       }
-    } 
+    }
 
     &-item {
       display: flex;
@@ -549,7 +569,7 @@
       color: $colorRed;
     }
   }
-  .mob-menu {
+.mob-menu {
     display: none;
     line-height: 0;
 
@@ -619,7 +639,7 @@
   display: none;
   max-width: 32px;
   line-height: 0;
-  
+
   img {
     max-height: 32px;
     @media (max-width: 350px) {
@@ -657,7 +677,7 @@
 
 // Input
 .main-search {
-  &-input-close {
+    &-input-close {
     display: none;
     position: absolute;
     font-size: 0;
@@ -783,7 +803,7 @@
       // padding: 17px 0px;
     }
   }
-  
+
 }
 
 .wrapper_fixed {
@@ -814,7 +834,7 @@
   @media(max-width:420.99px){
     // margin-bottom: 35px;
    }
-  
+
     &-link {
       position: relative;
       display: flex;
@@ -904,7 +924,7 @@
 
 
     &:last-child {
-      
+
     }
 
     &:hover {
@@ -951,7 +971,7 @@
     }
   }
 
-  
+
 }
 
 
@@ -969,10 +989,10 @@
 
 
 .main-open-catalog {
-   @media(max-width:1024.99px) {
-    .main-logo {
+  .main-logo {
+    @media(max-width: 1024.99px) {
       margin-bottom: 16px;
-    }  
+    }
   }
 }
 

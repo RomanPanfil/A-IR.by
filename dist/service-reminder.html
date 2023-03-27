@@ -3,13 +3,6 @@
 
 <div class="service-reminder" id="service-reminder">
   <div class="container">
-    <div class="ui-breadcrumbs">
-      <a href="#" class="ui-breadcrumbs-link">Главная</a>
-      <a href="#" class="ui-breadcrumbs-link">Сервисный центр</a>
-      <a href="#" class="ui-breadcrumbs-link">Ремонт компрессоров</a>
-      <span>Напоминание о ТО</span>
-    </div>
-
     <div class="reminder-header">
       <div class="page-title">
         Напоминание о техническом обслуживании
@@ -138,6 +131,97 @@
             </div>
           </div>
         </form>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            jQuery(document).ready(function ($) {
+              $(".sign-sompany-first-form").validate({
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                  if (element.attr("type") == "checkbox") {
+                    return element.next('label').append(error);
+                  }
+
+                  error.insertAfter($(element));
+                },
+
+                rules: {
+                  type: {
+                    required: true,
+                  },
+                  num: {
+                    required: true,
+                    number: true,
+                  },
+                  date: {
+                    required: true,
+                  },
+                  days: {
+                    required: true,
+                  },
+                  hours: {
+                    required: true,
+                  },
+                },
+
+                highlight: function (element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+                  $(element).closest('.ui-field').find('.popup-icon')
+                    .addClass(errorClass).removeClass(validClass);
+                },
+
+                unhighlight: function (element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+                  $(element).closest('.ui-field').find('.popup-icon')
+                    .removeClass(errorClass).addClass(validClass);
+                },
+
+                errorPlacement: function (error, element) {
+                  if (element.attr("name") == "customCheckbox") {
+                    error.appendTo(".form-cell-field-send");
+                  } else {
+                    error.insertAfter(element);
+                  }
+
+                  if (element.hasClass('catalog-settings-select')) {
+                    element.closest('.jq-selectbox').after(error);
+                  }
+                  if (element.hasClass('ui-checkbox-input')) {
+                    element.closest('.ui-checkbox-body').after(error);
+                  }
+                },
+
+
+                submitHandler: function (form) {
+                  txtHeadline.textContent = 'О получателе';
+                  txtSteps.textContent = '2';
+
+                  firstStep.style.display = 'none';
+                  secondStep.style.display = 'block';
+                  progressBar.style.width = '100%';
+
+                  return false;
+                },
+
+                messages: {
+                  type: {
+                    required: "Введите данные",
+                  },
+                  num: {
+                    required: "Введите данные",
+                    number: "Введите данные",
+                  },
+                  days: {
+                    required: "Введите данные",
+                  },
+                  hours: {
+                    required: "Введите данные",
+                  },
+                },
+              });
+            })
+          })
+        </script>
       </div>
 
       <div class="sign-company-second">
@@ -207,6 +291,57 @@
             </div>
           </div>
         </form>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            jQuery(document).ready(function ($) {
+              $(".sign-sompany-second-form").validate({
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                  if (element.attr("type") == "checkbox") {
+                    return element.next('label').append(error);
+                  }
+
+                  error.insertAfter($(element));
+                },
+
+                rules: {
+                  name: {
+                    required: true,
+                    lettersonly: true,
+                  },
+                  phone: {
+                    required: true,
+                    minlength: 19,
+                  },
+                },
+
+                highlight: function (element, errorClass, validClass) {
+                  $(element).addClass(errorClass).removeClass(validClass);
+                  $(element).closest('.ui-field').find('.popup-icon')
+                    .addClass(errorClass).removeClass(validClass);
+                },
+
+                unhighlight: function (element, errorClass, validClass) {
+                  $(element).removeClass(errorClass).addClass(validClass);
+                  $(element).closest('.ui-field').find('.popup-icon')
+                    .removeClass(errorClass).addClass(validClass);
+                },
+
+                messages: {
+                  name: {
+                    required: "Введите ФИО",
+                    lettersonly: "Введите корректные данные",
+                  },
+                  phone: {
+                    required: "Введите данные",
+                    minlength: "Введите полный номер",
+                  },
+                },
+              });
+            })
+          })
+        </script>
       </div>
     </div>
   </div>
