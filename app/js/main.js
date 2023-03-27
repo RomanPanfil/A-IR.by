@@ -1929,13 +1929,13 @@ let uiSearchSettings = document.querySelector(".ui-search-settings");
 if (uiSearchSettings) {
   $(".ui-search-settings").on("click", () => {
     $(".ui-search-settings-text-content").toggleClass(
-      "ui-search-settings-open"
+      "opened"
     );
     $(".ui-search-settings-img").toggleClass("ui-search-settings-img-open");
   });
   $(".ressearch-settings-filters").on("click", () => {
     $(".ui-search-settings-text-content").toggleClass(
-      "ui-search-settings-open"
+      "opened"
     );
     $(".ui-search-settings-img").toggleClass("ui-search-settings-img-open");
   });
@@ -3075,52 +3075,18 @@ $(document).on('mouseup', function (e) {
   }
 });
 
-// const categoryCloseBtnTablet = document.querySelector('.ui-btn-secondary.js-close-tablet')
+if (document.querySelector('.catalog-products')) {
+  const categoryBtnClose = document.querySelectorAll('.js-close')
 
-// if(categoryCloseBtnTablet) {
-//   categoryCloseBtnTablet.addEventListener('click', () => {
-//     const allCheckbox = document.querySelectorAll('.ui-checkbox-container .ui-checkbox-input')
-//     const menuCategory = document.querySelector('.ui-search-settings-text-content')
+  categoryBtnClose.forEach(item => {
+    item.addEventListener('click', () => {
+      const allCheckbox = document.querySelectorAll('.js-checkbox')
 
-//     allCheckbox.forEach(item => {
-//       item.checked = false
-//     })
+      allCheckbox.forEach(item => {
+        item.checked = false
+      })
 
-//     menuCategory.classList.remove('ui-search-settings-open')
-//   })
-// }
-
-// const categoryCloseBtnMob = document.querySelector('.ui-btn-secondary.js-close-mob')
-
-// if(categoryCloseBtnMob) {
-//   categoryCloseBtnMob.addEventListener('click', () => {
-//     const allCheckbox = document.querySelectorAll('.catalog-filters-filters .ui-checkbox-input')
-//     const menuCategory = document.querySelector('.catalog-filters')
-
-//     allCheckbox.forEach(item => {
-//       item.checked = false
-//     })
-
-//     menuCategory.classList.remove('opened')
-//   })
-// }
-
-function closeCategory(elementBtn, elementCheckbox, elementMenu, removeClass) {
-  const categoryCloseBtn = document.querySelector(elementBtn)
-  const allCheckbox = document.querySelectorAll(elementCheckbox)
-  const menuCategory = document.querySelector(elementMenu)
-
-  categoryCloseBtn.addEventListener('click', () => {
-    allCheckbox.forEach(item => {
-      item.checked = false
+      item.closest('.js-menu').classList.remove('opened')
     })
-
-    menuCategory.classList.remove(removeClass)
   })
-}
-
-if (document.querySelector('.catalog-filters-form')) {
-  closeCategory('.ui-btn-secondary.js-close-mob', '.catalog-filters-filters .ui-checkbox-input', '.catalog-filters', 'opened')
-
-  closeCategory('.ui-btn-secondary.js-close-tablet', '.ui-checkbox-container .ui-checkbox-input', '.ui-search-settings-text-content', 'ui-search-settings-open')
 }
