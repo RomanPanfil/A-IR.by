@@ -31438,17 +31438,50 @@ $(document).on('mouseup', function (e) {
   }
 });
 
-const categoryCloseBtn = document.querySelector('.ui-btn-secondary.js-close')
+// const categoryCloseBtnTablet = document.querySelector('.ui-btn-secondary.js-close-tablet')
 
-if(categoryCloseBtn) {
+// if(categoryCloseBtnTablet) {
+//   categoryCloseBtnTablet.addEventListener('click', () => {
+//     const allCheckbox = document.querySelectorAll('.ui-checkbox-container .ui-checkbox-input')
+//     const menuCategory = document.querySelector('.ui-search-settings-text-content')
+
+//     allCheckbox.forEach(item => {
+//       item.checked = false
+//     })
+
+//     menuCategory.classList.remove('ui-search-settings-open')
+//   })
+// }
+
+// const categoryCloseBtnMob = document.querySelector('.ui-btn-secondary.js-close-mob')
+
+// if(categoryCloseBtnMob) {
+//   categoryCloseBtnMob.addEventListener('click', () => {
+//     const allCheckbox = document.querySelectorAll('.catalog-filters-filters .ui-checkbox-input')
+//     const menuCategory = document.querySelector('.catalog-filters')
+
+//     allCheckbox.forEach(item => {
+//       item.checked = false
+//     })
+
+//     menuCategory.classList.remove('opened')
+//   })
+// }
+
+function closeCategory(elementBtn, elementCheckbox, elementMenu, removeClass) {
+  const categoryCloseBtn = document.querySelector(elementBtn)
+  const allCheckbox = document.querySelectorAll(elementCheckbox)
+  const menuCategory = document.querySelector(elementMenu)
+
   categoryCloseBtn.addEventListener('click', () => {
-    const allCheckbox = document.querySelectorAll('.ui-checkbox-container .ui-checkbox-input')
-    const menuCategory = document.querySelector('.ui-search-settings-text-content')
-
     allCheckbox.forEach(item => {
       item.checked = false
     })
 
-    menuCategory.classList.remove('ui-search-settings-open')
+    menuCategory.classList.remove(removeClass)
   })
 }
+
+closeCategory('.ui-btn-secondary.js-close-mob', '.catalog-filters-filters .ui-checkbox-input', '.catalog-filters', 'opened')
+
+closeCategory('.ui-btn-secondary.js-close-tablet', '.ui-checkbox-container .ui-checkbox-input', '.ui-search-settings-text-content', 'ui-search-settings-open')
