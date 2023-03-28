@@ -1,0 +1,37 @@
+.map-leasing {
+  max-width: 696px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+
+  &-body {
+    padding-left: 48px;
+    padding-right: 48px;
+    margin-bottom: 35px;
+  }
+
+  .mfp-popup-list {
+    li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 2px;
+      font-weight: 600;
+      font-size: 16px;
+
+      span {
+        font-weight: 400;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #2A4455;
+      }
+    }
+  }
+}

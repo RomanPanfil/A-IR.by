@@ -129,25 +129,21 @@
       errFile.textContent = 'Превышен максимально допустимый размер файла: 20 мб';
 
       files.forEach((file, index) => {
-        const size = file.size
+        const fileSize = file.size
         const maxSize = 20971520
-        const name = file.name
+        const fileName = file.name
         const reader = new FileReader();
 
-        if(size < maxSize) {
+        if(fileSize < maxSize) {
           reader.readAsText(file);
 
           load.classList.add('success')
 
-          txtBlock.textContent = name
+          txtBlock.textContent = fileName
 
           iconFile.setAttribute('href', 'svg/svg/symbols.svg#document-success')
 
           inputBlock.append(deleteBtn)
-
-          reader.onload = function () {
-            console.log(reader.result);
-          };
         } else {
           uploadFile.append(errFile)
 
