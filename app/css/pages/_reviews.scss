@@ -1,0 +1,111 @@
+.reviews {
+  .ui-headline {
+    margin-bottom: 30px;
+  }
+
+  &-list {
+    margin-bottom: 32px;
+  }
+
+  &-card {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 40px 36px 40px 48px;
+
+    .ui-btn {
+      display: none;
+
+      @media(max-width: 576px) {
+        display: block;
+      }
+    }
+
+    &-content {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: calc(100% + 80px);
+        right: 0;
+        top: -40px;
+        background: #f5f5f5;
+      }
+    }
+
+    &-txt {
+      position: relative;
+      padding-left: 49px;
+
+      &::before {
+        content: '';
+        background-image: url('../../images/icons/reviews-icon.svg');
+        background-repeat: no-repeat;
+        background-size: 32px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &-logo {
+      margin-bottom: 24px;
+      line-height: 0;
+    }
+
+    &-name {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 26px;
+    }
+
+    &-date {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+      margin-bottom: 3px;
+    }
+
+    &-msg {
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    &-delivery {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 27px;
+    }
+
+    &-product {
+      padding: 5px 16px;
+      background: #F5F5F5;
+      border-radius: 5px;
+      color: #2A4455;
+      margin-bottom: 16px;
+      display: inline-block;
+
+      a {
+        margin-right: 5px;
+        font-weight: 600;
+      }
+    }
+
+    &-img {
+      padding: 12px;
+      line-height: 0;
+      border-radius: 8px;
+      display: inline-block;
+      transition: 0.3s box-shadow;
+
+      @media(max-width: 576px) {
+        display: none;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+}
