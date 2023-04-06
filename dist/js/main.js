@@ -31453,3 +31453,35 @@ if (document.querySelector('.catalog-products')) {
     })
   })
 }
+
+setTimeout(() => {
+  new Swiper(".main-trust-slider", {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    loop: true,
+
+    breakpoints: {
+      421: {
+        slidesPerView: "auto",
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1140: {
+        slidesPerView: 4,
+      },
+    },
+
+    pagination: {
+      el: ".main-trust-pagintaion",
+      clickable: true,
+      dynamicBullets: true,
+      // dynamicMainBullets:3,
+    },
+
+    navigation: {
+      nextEl: ".main-trust-next",
+      prevEl: ".main-trust-prev",
+    },
+  });
+}, 1000)

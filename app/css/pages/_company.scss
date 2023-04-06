@@ -1,0 +1,230 @@
+.company {
+  .ui-headline {
+    margin-bottom: 30px;
+  }
+
+  &-main-img {
+    line-height: 0;
+    margin-bottom: 142px;
+  }
+
+  &-experts {
+    margin-bottom: 145px;
+
+    .ui-title-highlighted {
+      max-width: 536px;
+    }
+
+    &-point {
+      margin-bottom: 43px;
+      padding-left: 50px;
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url('../../images/icons/company-check.svg');
+        background-repeat: no-repeat;
+        background-size: 34px 26px;
+        width: 34px;
+        height: 26px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 22px;
+    }
+  }
+
+  &-benefit {
+    margin-bottom: 144px;
+
+    .ui-title-highlighted {
+      margin-bottom: 47px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    &-point {
+      padding: 39px 0;
+      border-top: 1px solid #D3D3D3;
+
+      &:last-child {
+        border-bottom: 1px solid #D3D3D3;
+      }
+    }
+  }
+
+  &-achievements {
+    padding: 85px 0 88px 0;
+    background: #F5F5F5;
+    margin-bottom: 142px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1000px;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      background-color: #F5F5F5;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -1000px;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      background-color: #F5F5F5;
+      z-index: -1;
+    }
+
+    &-listing {
+      margin-bottom: 109px;
+    }
+
+    .ui-title-highlighted {
+      margin-bottom: 62px;
+    }
+
+    &-icon {
+      line-height: 0;
+      margin-bottom: 15px;
+      height: 32px;
+    }
+  }
+
+  &-expertise {
+    padding: 42px 40px 48px 40px;
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    &-title {
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    &-txt {
+      margin-bottom: 34px;
+    }
+
+    &-btn {
+      display: flex;
+      max-width: 416px;
+
+      a {
+        margin-right: 16px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &-service {
+    margin-bottom: 136px;
+
+    .ui-title-highlighted {
+      margin-bottom: 5px;
+    }
+
+    .main-trust {
+      margin-bottom: 140px;
+    }
+
+    &-txt {
+      margin-bottom: 59px;
+    }
+
+    &-content {
+      margin-bottom: 66px;
+      .row {
+        align-items: center;
+      }
+    }
+
+    &-block {
+      color: #000;
+      border-radius: 8px;
+      padding: 22px 10px 27px 40px;
+      border: 1px solid #D3D3D3;
+
+      &.red {
+        padding: 45px 43px 45px 40px;
+        color: #FFFFFF;
+        background: #BC0000;
+        border: none;
+      }
+    }
+
+    &-slider {
+      .ui-title-highlighted {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 32px;
+    }
+  }
+
+  &-info {
+    padding: 110px 0 106px 0;
+    background: #F5F5F5;
+    position: relative;
+    margin-bottom: 150px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1000px;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      background-color: #F5F5F5;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -1000px;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      background-color: #F5F5F5;
+      z-index: -1;
+    }
+
+    .ui-title-highlighted {
+      margin-bottom: 62px;
+      max-width: 538px;
+    }
+  }
+
+  &-work {
+    margin-bottom: 139px;
+
+    .ui-title-highlighted {
+      margin-bottom: 13px;
+    }
+
+    &-txt {
+      max-width: 984px;
+      margin-bottom: 68px;
+    }
+  }
+}

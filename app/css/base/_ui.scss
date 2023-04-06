@@ -1401,7 +1401,7 @@ textarea.ui-input {
       }
     }
   }
-   @media(max-width:768.99px) {
+   @media(max-width:1024px) {
           display: none;
       }
 }
@@ -1542,4 +1542,21 @@ textarea.ui-input {
 .ui-headline {
   font-weight: 700;
   font-size: 32px;
+
+  @media(max-width: 1024px) {
+    font-size: 28px;
+  }
+
+  @media(max-width: 576px) {
+    font-size: 22px;
+  }
+}
+
+.ui-title-highlighted {
+  font-weight: 700;
+  font-size: 32px;
+
+  span {
+    color: #BC0000;
+  }
 }
