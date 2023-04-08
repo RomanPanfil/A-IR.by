@@ -1,4 +1,128 @@
 .rent {
+  &-solution {
+    margin-bottom: 56px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .ui-input {
+      max-width: 184px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 17px;
+
+      a {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    &-txt {
+      margin-bottom: 19px;
+    }
+
+    &-product {
+      align-items: center;
+      padding: 16px 32px;
+      border: 1px solid #D3D3D3;
+      border-radius: 8px;
+      position: relative;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.checked {
+        border: 2px solid #2A4455;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+        border-radius: 10px 10px 0 0;
+        border: none;
+
+        .rent-solution-cost {
+          display: flex;
+        }
+      }
+    }
+
+    &-img {
+      max-width: 72px;
+      flex: 0 0 72px;
+      margin-right: 24px;
+      line-height: 0;
+    }
+
+    &-name {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    &-specifications {
+      span {
+        padding-right: 8px;
+        padding-left: 8px;
+        border-right: 1px solid #D3D3D3;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+          border-right: none;
+        }
+      }
+    }
+
+    &-info {
+      max-width: calc(100% - 120px);
+      flex: 0 0 calc(100% - 120px);
+    }
+
+    &-cost {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background: #fff;
+      width: 100%;
+      border-top: 1px solid #D3D3D3;
+      border-radius: 0px 0px 10px 10px;
+      padding: 18px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+    }
+
+    &-total {
+      margin-right: 66px;
+    }
+
+    &-price {
+      font-weight: 400;
+      font-size: 12px;
+      color: #808080;
+      margin-bottom: 5px;
+    }
+
+    &-amount {
+      font-weight: 700;
+      font-size: 22px;
+
+      span {
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+  }
+
   &-advantage {
     padding: 42px 48px 63px 48px;
     background: #F5F5F5;

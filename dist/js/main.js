@@ -31545,3 +31545,17 @@ $( document ).ready(function() {
     })
   }
 });
+
+const rentCheckbox = document.querySelectorAll('.ui-checkbox-input')
+
+rentCheckbox.forEach(item => {
+  item.addEventListener('change', () => {
+    const parent = item.closest('.rent-solution-product')
+
+    if(item.checked) {
+      parent.classList.add('checked')
+    } else {
+      parent.classList.remove('checked')
+    }
+  })
+})
