@@ -1,0 +1,76 @@
+.rent {
+  &-advantage {
+    padding: 42px 48px 63px 48px;
+    background: #F5F5F5;
+    border-radius: 8px;
+    margin-bottom: 88px;
+
+    &-heading {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 47px;
+    }
+
+    &-ability {
+      padding-left: 35px;
+      position: relative;
+
+      &::before {
+        content: '';
+        background-image: url('../../images/icons/ability.svg');
+        background-repeat: no-repeat;
+        background-size: 24px;
+        width: 24px;
+        height: 24px;
+        left: 0;
+        top: 2px;
+        position: absolute;
+      }
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &-reason {
+    margin-bottom: 45px;
+
+    &-heading {
+      font-weight: 700;
+      font-size: 32px;
+      margin-bottom: 21px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 17px;
+    }
+
+    &-list {
+      li {
+        position: relative;
+        padding-left: 16px;
+        margin-bottom: 20px;
+
+        span {
+          font-weight: 600;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.5em;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #ffc100;
+        }
+      }
+    }
+  }
+}

@@ -96,6 +96,8 @@
   }
 
   &-img {
+    line-height: 0;
+
     @media(max-width: 1024.99px) {
       text-align: center;
       margin-bottom: 50px;

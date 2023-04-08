@@ -1556,6 +1556,14 @@ textarea.ui-input {
   font-weight: 700;
   font-size: 32px;
 
+  @media(max-width: 1024px) {
+    font-size: 28px;
+  }
+
+  @media(max-width: 576px) {
+    font-size: 22px;
+  }
+
   span {
     color: #BC0000;
   }

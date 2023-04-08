@@ -3122,3 +3122,30 @@ setTimeout(() => {
     },
   });
 }, 1000)
+
+const swiper = new Swiper('.swiper.service', {
+  spaceBetween: 24,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.service-button-next',
+    prevEl: '.service-button-prev',
+  },
+
+  breakpoints: {
+    1140: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+
+    300: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    }
+  }
+});

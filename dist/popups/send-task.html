@@ -7,79 +7,49 @@
     Пожалуйста, заполните поля формы ниже, а мы перезвоним в ближайшее время!
   </div>
 
-  <form class="form-backcall">
+  <form class="form-task">
     <div class="mfp-popup-fields">
       <div class="ui-field">
-        <label class="ui-label ui-label-mini"
-               for="name">
+        <label class="ui-label ui-label-mini" for="name">
           Ваше имя <span class="ui-color-red">*</span>
         </label>
         <div class="ui-input-wrp">
-          <input type="text"
-                 name="name"
-                 id="name"
-                 class="ui-input"
-                 placeholder="Иванов Иван Иванович" />
+          <input type="text" name="name" id="name" class="ui-input" placeholder="Иванов Иван Иванович" />
           <div class="popup-icon"></div>
         </div>
       </div>
 
       <div class="ui-field">
-        <label class="ui-label ui-label-mini"
-               for="telephone">
+        <label class="ui-label ui-label-mini" for="telephone">
           Телефон <span class="ui-color-red">*</span>
         </label>
         <div class="ui-input-wrp">
-          <input type="text"
-                 name="telephone"
-                 id="telephone"
-                 class="ui-input"
-                 placeholder="+375 (33) 398-18-18" />
+          <input type="text" name="telephone" id="telephone" class="ui-input" placeholder="+375 (33) 398-18-18" />
           <div class="popup-icon"></div>
         </div>
       </div>
 
       <div class="ui-field">
-        <label class="ui-label ui-label-mini"
-               for="email">
+        <label class="ui-label ui-label-mini" for="email">
           Email <span class="ui-color-red">*</span>
         </label>
         <div class="ui-input-wrp">
-          <input type="text"
-                 name="email"
-                 id="email"
-                 class="ui-input"
-                 placeholder="123@gmail.com">
+          <input type="text" name="email" id="email" class="ui-input" placeholder="123@gmail.com">
           <div class="popup-icon"></div>
         </div>
       </div>
     </div>
 
     <div class="ui-field form-cell-field-load">
-      <label for="popup-review-file"
-             class="ui-file load-file">
-        <div class="ui-file-icon">
-          <svg class="sprite">
-            <use xlink:href="svg/svg/symbols.svg#document"></use>
-          </svg>
-        </div>
+      <label for="popup-review-file" class="ui-file load-file">
         <span class="ui-file-txt">Добавить техническое задание</span>
-        <input type="file"
-               id="popup-review-file"
-               name="file"
-               class="ui-file-input file"
-               accept=".txt,.doc,.docx,.pdf">
+        <input type="file" id="popup-review-file" name="file" class="ui-file-input file" accept=".txt,.doc,.docx,.pdf">
       </label>
-      <div class="all-files"></div>
     </div>
 
     <div class="ui-checkbox">
-      <input type="checkbox"
-             id="customCheckbox"
-             class="ui-checkbox-input"
-             checked>
-      <label for="customCheckbox"
-             class="ui-checkbox-label">
+      <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked>
+      <label for="customCheckbox" class="ui-checkbox-label">
         <span class="default-txt">
           Нажимая кнопку «Отправить запрос» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a>
         </span>
@@ -88,8 +58,7 @@
       </label>
     </div>
 
-    <button type="submit"
-            class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
+    <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
   </form>
 
   <style>
@@ -108,64 +77,152 @@
   </style>
 
   <script>
-    // @note: проблема с иконкой при длинном названии файла
-    const inputBlock = document.querySelector('.form-cell-field-load')
-    const input = document.getElementById("popup-review-file");
-    const uploadFile = document.querySelector(".form-cell-field-load");
-    const load = document.querySelector(".load-file");
-    const txtBlock = document.querySelector('.ui-file-txt')
-    const iconFile = document.querySelector('.ui-file-icon svg use')
+    $(document).ready(function () {
+      $(".form-task").validate({
+        errorElement: "span",
 
-    input.addEventListener("change", btnUploadFile);
+        rules: {
+          name: {
+            required: true,
+            lettersonly: true
+          },
+          telephone: {
+            required: true,
+            telephone: true
+          },
+          email: {
+            required: true,
+            email: true,
+          },
+        },
 
-    function btnUploadFile(e) {
-      const files = Array.from(event.target.files)
-      const deleteBtn = document.createElement('div')
-      const errFile = document.createElement("span")
-
-      deleteBtn.classList.add('delete-btn')
-      errFile.classList.add("error-file")
-
-      errFile.textContent = 'Превышен максимально допустимый размер файла: 20 мб';
-
-      files.forEach((file, index) => {
-        const fileSize = file.size
-        const maxSize = 20971520
-        const fileName = file.name
-        const reader = new FileReader();
-
-        if(fileSize < maxSize) {
-          reader.readAsText(file);
-
-          load.classList.add('success')
-
-          txtBlock.textContent = fileName
-
-          iconFile.setAttribute('href', 'svg/svg/symbols.svg#document-success')
-
-          inputBlock.append(deleteBtn)
-        } else {
-          uploadFile.append(errFile)
-
-          load.classList.add('fail')
+        messages: {
+          email: {
+            email: 'Введите корректный email'
+          }
         }
-      })
+      });
 
-      deleteFile(deleteBtn)
-    }
+      $.validator.messages.required = 'Пожалуйста, введите данные';
 
-    function deleteFile(btn) {
-      btn.addEventListener('click', () => {
-        input.value = ''
+      jQuery.validator.addMethod("lettersonly", function (value, element) {
+        return this.optional(element) || /^([а-яё ]+|[a-z ]+)$/i.test(value);
+      }, "Поле может состоять из букв и пробелов, без цифр");
 
-        txtBlock.textContent = 'Добавить техническое задание'
+      if (document.getElementById('telephone')) {
+        let phone = document.getElementById('telephone')
 
-        load.classList.remove('success')
+        let phoneMask = IMask(phone, {
+          mask: [
+            {
+              mask: '+{375} (00) 000-00-00',
+              startsWith: '375',
+              overwrite: true,
+              lazy: false,
+              placeholderChar: '_',
+            },
+            {
+              mask: '+{7} (000) 000-00-00',
+              startsWith: '7',
+              overwrite: true,
+              lazy: false,
+              placeholderChar: '_',
+            },
+            {
+              mask: '0000000000000',
+              startsWith: '',
+              country: 'unknown'
+            }
+          ],
 
-        iconFile.setAttribute('href', 'svg/svg/symbols.svg#document')
+          dispatch: function (appended, dynamicMasked) {
+            var number = (dynamicMasked.value + appended).replace(/\D/g, '');
 
-        btn.remove()
-      })
-    }
+            return dynamicMasked.compiledMasks.find(function (m) {
+              return number.indexOf(m.startsWith) === 0;
+            });
+          }
+        })
+      }
+
+      jQuery.validator.addMethod("telephone", function (value, element) {
+        if (value.startsWith('+375')) {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){12}(\s*)?$/i.test(value);
+        } else if (value.startsWith('+7')) {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/i.test(value);
+        } else {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,14}(\s*)?$/i.test(value);
+        }
+      }, "Введите полный номер");
+
+      // @note: проблема с иконкой при длинном названии файла
+      const inputBlockLoad = document.querySelector('.form-cell-field-load')
+      const label = document.querySelector('.load-file')
+      const input = document.getElementById("popup-review-file");
+      const uploadFile = document.querySelector(".form-cell-field-load");
+      const load = document.querySelector(".load-file");
+      const txtBlock = document.querySelector('.ui-file-txt')
+      const iconFile = document.querySelector('.ui-file-icon svg use')
+
+      input.addEventListener("change", btnUploadFile);
+
+      function btnUploadFile(e) {
+        const files = Array.from(event.target.files)
+        const deleteBtn = document.createElement('div')
+        const errFile = document.createElement("span")
+
+        deleteBtn.classList.add('delete-btn')
+        errFile.classList.add("error-file")
+
+        console.log(load)
+
+        errFile.textContent = 'Превышен максимально допустимый размер файла: 20 мб';
+
+        files.forEach((file, index) => {
+          const fileSize = file.size
+          const maxSize = 20971520 //20971520
+          const fileName = file.name
+          const reader = new FileReader();
+
+          if(fileSize < maxSize) {
+            reader.readAsText(file);
+
+            load.classList.add('success')
+            txtBlock.classList.add('success')
+
+            txtBlock.textContent = fileName
+
+            label.append(deleteBtn)
+          } else {
+            uploadFile.append(errFile)
+
+            load.classList.add('fail')
+            txtBlock.classList.add('fail')
+          }
+        })
+
+        deleteFile(deleteBtn)
+      }
+
+      function deleteFile(btn) {
+        btn.addEventListener('click', () => {
+          input.value = ''
+
+          txtBlock.textContent = 'Добавить техническое задание'
+
+          if(load.classList.contains('success')) {
+            load.classList.remove('success')
+            txtBlock.classList.remove('success')
+          }
+
+          if(load.classList.contains('fail')) {
+            load.classList.remove('fail')
+            txtBlock.classList.remove('fail')
+          }
+
+          btn.remove()
+        })
+      }
+    });
   </script>
 </div>
