@@ -606,29 +606,31 @@ if (document.querySelector(".making-form")) {
   const stickyBlock = document.querySelector(".cart-order");
   const card = document.querySelector("#card-breackpoint");
 
-  function flipOrSticky() {
-    const box = card.getBoundingClientRect();
-    const stickyBox = stickyBlock.getBoundingClientRect();
-    const boxTop = box.top;
-    const boxBottom = box.bottom;
-    const stickyBottom = stickyBox.height;
-    const py = window.pageYOffset;
+  if(card) {
+    function flipOrSticky() {
+      const box = card.getBoundingClientRect();
+      const stickyBox = stickyBlock.getBoundingClientRect();
+      const boxTop = box.top;
+      const boxBottom = box.bottom;
+      const stickyBottom = stickyBox.height;
+      const py = window.pageYOffset;
 
-    if (py > boxTop + py) {
-      if (py < boxBottom + py - stickyBottom - 100) {
-        stickyBlock.classList.add("sticky-box");
-        stickyBlock.classList.remove("card-breackpoint-flipbottom");
+      if (py > boxTop + py) {
+        if (py < boxBottom + py - stickyBottom - 100) {
+          stickyBlock.classList.add("sticky-box");
+          stickyBlock.classList.remove("card-breackpoint-flipbottom");
+        } else {
+          stickyBlock.classList.remove("sticky-box");
+          stickyBlock.classList.add("card-breackpoint-flipbottom");
+        }
       } else {
-        stickyBlock.classList.remove("sticky-box");
-        stickyBlock.classList.add("card-breackpoint-flipbottom");
+        stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
       }
-    } else {
-      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
     }
-  }
 
-  window.addEventListener("scroll", flipOrSticky);
-  window.addEventListener("load", flipOrSticky);
+    window.addEventListener("scroll", flipOrSticky);
+    window.addEventListener("load", flipOrSticky);
+  }
 }
 
 
@@ -637,32 +639,34 @@ if (document.querySelector(".making-form")) {
   const stickyBlock = document.querySelector(".ui-rightbar");
   const card = document.querySelector("#card-breackpoint");
 
-  function flipOrSticky() {
-    const box = card.getBoundingClientRect();
-    const stickyBox = stickyBlock.getBoundingClientRect();
-    const boxTop = box.top;
-    const boxBottom = box.bottom;
-    const stickyBottom = stickyBox.height;
-    const py = window.pageYOffset;
+  if(card) {
+    function flipOrSticky() {
+      const box = card.getBoundingClientRect();
+      const stickyBox = stickyBlock.getBoundingClientRect();
+      const boxTop = box.top;
+      const boxBottom = box.bottom;
+      const stickyBottom = stickyBox.height;
+      const py = window.pageYOffset;
 
-    if (py > boxTop + py - 100) {
-      if (py < boxBottom + py - stickyBottom - 100) {
-        stickyBlock.classList.add("ui-rightbar-sticky");
-        stickyBlock.classList.remove("ui-rightbar-flipbottom");
+      if (py > boxTop + py - 100) {
+        if (py < boxBottom + py - stickyBottom - 100) {
+          stickyBlock.classList.add("ui-rightbar-sticky");
+          stickyBlock.classList.remove("ui-rightbar-flipbottom");
+        } else {
+          stickyBlock.classList.remove("ui-rightbar-sticky");
+          stickyBlock.classList.add("ui-rightbar-flipbottom");
+        }
       } else {
-        stickyBlock.classList.remove("ui-rightbar-sticky");
-        stickyBlock.classList.add("ui-rightbar-flipbottom");
+        stickyBlock.classList.remove(
+          "ui-rightbar-sticky",
+          "ui-rightbar-flipbottom"
+        );
       }
-    } else {
-      stickyBlock.classList.remove(
-        "ui-rightbar-sticky",
-        "ui-rightbar-flipbottom"
-      );
     }
-  }
 
-  window.addEventListener("scroll", flipOrSticky);
-  window.addEventListener("load", flipOrSticky);
+    window.addEventListener("scroll", flipOrSticky);
+    window.addEventListener("load", flipOrSticky);
+  }
 })();
 
 
@@ -3123,7 +3127,7 @@ setTimeout(() => {
   });
 }, 1000)
 
-const swiper = new Swiper('.swiper.service', {
+const swiperService = new Swiper('.swiper.service', {
   spaceBetween: 24,
 
   // Navigation arrows
@@ -3148,6 +3152,24 @@ const swiper = new Swiper('.swiper.service', {
       spaceBetween: 16,
     }
   }
+});
+
+const swiperRent = new Swiper('.swiper.slider-rent', {
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});
+
+const swiperReviews = new Swiper('.swiper.swiper-reviews', {
+  slidesPerView: 6,
+  spaceBetween: 24,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
 
 
@@ -3181,18 +3203,52 @@ $( document ).ready(function() {
       })();
     })
   }
-});
 
-const rentCheckbox = document.querySelectorAll('.ui-checkbox-input')
+  const rentCheckbox = document.querySelectorAll('.ui-checkbox-input')
 
-rentCheckbox.forEach(item => {
-  item.addEventListener('change', () => {
-    const parent = item.closest('.rent-solution-product')
+  rentCheckbox.forEach(item => {
+    const parent = item.closest('.rent-solution-product') || item.closest('.rent-solution-services')
 
-    if(item.checked) {
-      parent.classList.add('checked')
-    } else {
-      parent.classList.remove('checked')
-    }
+    item.addEventListener('change', () => {
+
+      if(item.checked) {
+        parent.classList.add('checked')
+      } else {
+        parent.classList.remove('checked')
+      }
+    })
   })
-})
+
+  function showPopup() {
+    $.magnificPopup.open({
+      items: { src: './popups/zaglushka-phone.html' },
+      type: 'ajax',
+      overflowY: 'scroll',
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in',
+      ajax: {
+        tError: 'Ошибка. <a href="%url%">Контент</a> не может быть загружен',
+      },
+      callbacks: {
+        open: function () {
+          setTimeout(function () {
+            $('.mfp-wrap').addClass('not_delay');
+            $('.white-popup').addClass('not_delay');
+          }, 700);
+        }
+      }
+    });
+  }
+
+  var tab = $('#tabs .tabs-items > div');
+	tab.hide().filter(':first').show();
+
+	// Клики по вкладкам.
+	$('#tabs .tabs-nav a').click(function(){
+		tab.hide();
+		tab.filter(this.hash).show();
+		$('#tabs .tabs-nav a').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	}).filter(':first').click();
+});

@@ -53,404 +53,730 @@
     </div>
 
     <div class="col-md-6">
-      <div class="ui-title">Аренда винтовых компрессоров</div>
+      <div class="rent-settings">
+        <div class="ui-title">Аренда винтовых компрессоров</div>
 
-      <div class="rent-solution">
-        <div class="rent-solution-txt">
-          <div class="rent-solution-title">1. Срок аренды</div>
-          <div class="rent-solution-subtitle">Пожалуйста, укажите желаемое количество месяцев аренды компрессора.</div>
-        </div>
+        <div id="tabs">
+          <!-- Кнопки -->
+          <div class="tabs-nav flex">
+            <a href="#tab-1" class="rent-tab">Аренда от 1-го месяца</a>
+            <a href="#tab-2" class="rent-tab">Аренда от 1-го года</a>
+          </div>
 
-        <input type="text" class="ui-input" placeholder="1">
-      </div>
+          <!-- Контент -->
+          <div class="tabs-items">
+            <div class="tabs-item" id="tab-1">
+              <div class="rent-solution">
+                <div class="rent-solution-txt">
+                  <div class="rent-solution-title">1. Срок аренды</div>
+                  <div class="rent-solution-subtitle">Пожалуйста, укажите желаемое количество месяцев аренды компрессора.</div>
+                </div>
 
-      <div class="rent-solution">
-        <div class="rent-solution-txt">
-          <div class="rent-solution-title">2. Какой компрессор вам нужен? <a href="#">Помощь в выборе</a></div>
-          <div class="rent-solution-subtitle">Пожалуйста, укажите желаемое количество месяцев аренды компрессора.</div>
-        </div>
-
-        <div class="rent-solution-list">
-          <div class="rent-solution-product flex">
-            <div class="rent-solution-img">
-              <img src="./images/solution-product-1.webp" alt="alt">
-            </div>
-
-            <div class="rent-solution-info">
-              <div class="rent-solution-name">Винтовой компрессор A1R BD-30FC, 10 бар</div>
-
-              <div class="rent-solution-specifications"><span>142 м3/мин</span><span>10 Бар</span><span>11 кВт</span><span>380~400 В</span></div>
-            </div>
-
-            <div class="rent-solution-checkbox">
-              <div class="ui-checkbox">
-                <input type="checkbox" name="customCheckbox" id="customCheckbox1" class="ui-checkbox-input">
-                <label for="customCheckbox1" class="ui-checkbox-label"></label>
-              </div>
-            </div>
-
-            <div class="rent-solution-cost flex">
-              <div class="rent-solution-total">
-                <div class="rent-solution-price">Цена за 1 месяц аренды</div>
-                <div class="rent-solution-amount">800.00 <span>р.</span></div>
+                <input type="text" class="ui-input period" placeholder="1" value="1">
               </div>
 
-              <div class="rent-solution-total">
-                <div class="rent-solution-price">Цена покупки</div>
-                <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
+              <div class="rent-solution">
+                <div class="rent-solution-title mb-34">2. Какой компрессор вам нужен? <a class="mfp-link" href="javascript:void(0)" data-href="./popups/help-choice.html">Помощь в выборе</a></div>
+
+                <div class="rent-solution-list">
+                  <div class="rent-solution-product flex checked">
+                    <div class="rent-solution-img">
+                      <img src="./images/solution-product-1.webp" alt="alt">
+                    </div>
+
+                    <div class="rent-solution-info">
+                      <div class="rent-solution-name">Винтовой компрессор Ingersoll Rand R11i</div>
+
+                      <div class="rent-solution-specifications"><span>142 м3/мин</span><span>10 Бар</span><span>11 кВт</span><span>380~400 В</span></div>
+                    </div>
+
+                    <div class="rent-solution-checkbox">
+                      <div class="ui-checkbox">
+                        <input type="checkbox" name="customCheckbox" id="customCheckbox1" class="ui-checkbox-input" checked>
+                        <label for="customCheckbox1" class="ui-checkbox-label"></label>
+                      </div>
+                    </div>
+
+                    <div class="rent-solution-cost flex">
+                      <div class="rent-solution-pricing flex">
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена за 1 месяц аренды</div>
+                          <div class="rent-solution-amount month">800.00 <span>р.</span></div>
+                        </div>
+
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена покупки</div>
+                          <div class="rent-solution-amount">1900.00 <span>р.</span></div>
+                        </div>
+                      </div>
+
+                      <a href="./card.html" target="_blank" class="rent-solution-link">
+                        <div class="rent-solution-source">Карточка товара</div>
+                        <div class="rent-solution-icon">
+                          <img src="./images/icons/rent-link.svg" alt="alt">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="rent-solution-product flex">
+                    <div class="rent-solution-img">
+                      <img src="./images/solution-product-2.webp" alt="alt">
+                    </div>
+
+                    <div class="rent-solution-info">
+                      <div class="rent-solution-name">Винтовой компрессор A1R BD-30FC, 10 бар</div>
+
+                      <div class="rent-solution-specifications"><span>142 м3/мин</span><span>10 Бар</span><span>11 кВт</span><span>380~400 В</span></div>
+                    </div>
+
+                    <div class="rent-solution-checkbox">
+                      <div class="ui-checkbox">
+                        <input type="checkbox" name="customCheckbox" id="customCheckbox2" class="ui-checkbox-input">
+                        <label for="customCheckbox2" class="ui-checkbox-label"></label>
+                      </div>
+                    </div>
+
+                    <div class="rent-solution-cost flex">
+                      <div class="rent-solution-total">
+                        <div class="rent-solution-price">Цена за 1 месяц аренды</div>
+                        <div class="rent-solution-amount month">900.00 <span>р.</span></div>
+                      </div>
+
+                      <div class="rent-solution-total">
+                        <div class="rent-solution-price">Цена покупки</div>
+                        <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
+                      </div>
+
+                      <a href="./card.html" target="_blank" class="rent-solution-link">
+                        <div class="rent-solution-source">Карточка товара</div>
+                        <div class="rent-solution-icon">
+                          <img src="./images/icons/rent-link.svg" alt="alt">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <a href="#">Карточка товара</a>
+              <div class="rent-solution">
+                <div class="rent-solution-title mb-34">3. Дополнительные услуги и оборудование</div>
+
+                <div class="rent-solution-services">
+                  Осушитель сжатого воздуха
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services1" class="ui-checkbox-input">
+                    <label for="services1" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+
+                <div class="rent-solution-services">
+                  Магистральные фильтры
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services2" class="ui-checkbox-input">
+                    <label for="services2" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+
+                <div class="rent-solution-services">
+                  Ресивер сжатого воздуха
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services3" class="ui-checkbox-input">
+                    <label for="services3" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+
+                <div class="rent-solution-services">
+                  Диагностика имеющегося компрессорного оборудования
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services4" class="ui-checkbox-input">
+                    <label for="services4" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tabs-item" id="tab-2">
+              <div class="rent-solution">
+                <div class="rent-solution-txt">
+                  <div class="rent-solution-title">1. Срок аренды</div>
+                  <div class="rent-solution-subtitle">Пожалуйста, укажите желаемое количество лет аренды компрессора.</div>
+                </div>
+
+                <input type="text" class="ui-input period" placeholder="1" value="1">
+              </div>
+
+              <div class="rent-solution">
+                <div class="rent-solution-title mb-34">2. Какой компрессор вам нужен? <a class="mfp-link" href="javascript:void(0)" data-href="./popups/help-choice.html">Помощь в выборе</a></div>
+
+                <div class="rent-solution-list">
+                  <div class="rent-solution-product flex checked">
+                    <div class="rent-solution-img">
+                      <img src="./images/solution-product-1.webp" alt="alt">
+                    </div>
+
+                    <div class="rent-solution-info">
+                      <div class="rent-solution-name">Винтовой компрессор Ingersoll Rand R11i</div>
+
+                      <div class="rent-solution-specifications"><span>142 м3/мин</span><span>10 Бар</span><span>11 кВт</span><span>380~400 В</span></div>
+                    </div>
+
+                    <div class="rent-solution-checkbox">
+                      <div class="ui-checkbox">
+                        <input type="checkbox" name="customCheckbox" id="customCheckbox1" class="ui-checkbox-input" checked>
+                        <label for="customCheckbox1" class="ui-checkbox-label"></label>
+                      </div>
+                    </div>
+
+                    <div class="rent-solution-cost flex">
+                      <div class="rent-solution-total">
+                        <div class="rent-solution-price">Цена за 1 год аренды</div>
+                        <div class="rent-solution-amount month">800.00 <span>р.</span></div>
+                      </div>
+
+                      <div class="rent-solution-total">
+                        <div class="rent-solution-price">Цена покупки</div>
+                        <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
+                      </div>
+
+                      <a href="./card.html" target="_blank" class="rent-solution-link">
+                        <div class="rent-solution-source">Карточка товара</div>
+                        <div class="rent-solution-icon">
+                          <img src="./images/icons/rent-link.svg" alt="alt">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="rent-solution-product flex">
+                    <div class="rent-solution-img">
+                      <img src="./images/solution-product-2.webp" alt="alt">
+                    </div>
+
+                    <div class="rent-solution-info">
+                      <div class="rent-solution-name">Винтовой компрессор A1R BD-30FC, 10 бар</div>
+
+                      <div class="rent-solution-specifications"><span>142 м3/мин</span><span>10 Бар</span><span>11 кВт</span><span>380~400 В</span></div>
+                    </div>
+
+                    <div class="rent-solution-checkbox">
+                      <div class="ui-checkbox">
+                        <input type="checkbox" name="customCheckbox" id="customCheckbox2" class="ui-checkbox-input">
+                        <label for="customCheckbox2" class="ui-checkbox-label"></label>
+                      </div>
+                    </div>
+
+                    <div class="rent-solution-cost flex">
+                      <div class="rent-solution-total">
+                        <div class="rent-solution-price">Цена за 1 год аренды</div>
+                        <div class="rent-solution-amount month">900.00 <span>р.</span></div>
+                      </div>
+
+                      <div class="rent-solution-total">
+                        <div class="rent-solution-price">Цена покупки</div>
+                        <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
+                      </div>
+
+                      <a href="./card.html" target="_blank" class="rent-solution-link">
+                        <div class="rent-solution-source">Карточка товара</div>
+                        <div class="rent-solution-icon">
+                          <img src="./images/icons/rent-link.svg" alt="alt">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rent-solution">
+                <div class="rent-solution-title mb-34">3. Дополнительные услуги и оборудование</div>
+
+                <div class="rent-solution-services">
+                  Осушитель сжатого воздуха
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services1" class="ui-checkbox-input">
+                    <label for="services1" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+
+                <div class="rent-solution-services">
+                  Магистральные фильтры
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services2" class="ui-checkbox-input">
+                    <label for="services2" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+
+                <div class="rent-solution-services">
+                  Ресивер сжатого воздуха
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services3" class="ui-checkbox-input">
+                    <label for="services3" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+
+                <div class="rent-solution-services">
+                  Диагностика имеющегося компрессорного оборудования
+
+                  <div class="ui-checkbox">
+                    <input type="checkbox" name="customCheckbox" id="services4" class="ui-checkbox-input">
+                    <label for="services4" class="ui-checkbox-label"></label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="rent-solution-product flex">
-            <div class="rent-solution-img">
-              <img src="./images/solution-product-1.webp" alt="alt">
-            </div>
-
-            <div class="rent-solution-info">
-              <div class="rent-solution-name">Винтовой компрессор A1R BD-30FC, 10 бар</div>
-
-              <div class="rent-solution-specifications"><span>142 м3/мин</span><span>10 Бар</span><span>11 кВт</span><span>380~400 В</span></div>
-            </div>
-
-            <div class="rent-solution-checkbox">
-              <div class="ui-checkbox">
-                <input type="checkbox" name="customCheckbox" id="customCheckbox1" class="ui-checkbox-input">
-                <label for="customCheckbox1" class="ui-checkbox-label"></label>
-              </div>
-            </div>
-
-            <div class="rent-solution-cost flex">
-              <div class="rent-solution-total">
-                <div class="rent-solution-price">Цена за 1 месяц аренды</div>
-                <div class="rent-solution-amount">800.00 <span>р.</span></div>
-              </div>
-
-              <div class="rent-solution-total">
-                <div class="rent-solution-price">Цена покупки</div>
-                <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
-              </div>
-
-              <a href="#">Карточка товара</a>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <div class="rent-solution">
-        <div class="rent-solution-title">3. Дополнительные услуги и оборудование</div>
-
-        <input type="text" class="ui-input" placeholder="1">
       </div>
     </div>
 
-    <div class="col-md-2">
-      <div class="test">
-        ssdf
+    <div class="col-md-3">
+      <div class="rent-calculation-head active">Ваш комплект для аренды</div>
+
+      <div class="rent-calculation active">
+        <form action="#">
+          <div class="row">
+            <div class="col-md-12 col-xs-6">
+              <div class="rent-calculation-slider">
+                <!-- Slider main container -->
+                <div class="swiper slider-rent">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      <div class="rent-calculation-img">
+                        <img src="./images/solution-product-large-1.webp" alt="alt">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-xs-6">
+              <div class="rent-calculation-title">Стоимость аренды</div>
+
+              <div class="rent-calculation-list">
+                <div class="rent-calculation-enabled">Включено:</div>
+
+                <ul>
+                  <li>Пусконаладочные работы</li>
+                </ul>
+              </div>
+
+              <div class="rent-calculation-total">5 381.00 <span>р.</span></div>
+
+              <button class="ui-btn ui-btn-block">Заказать</button>
+
+              <div class="rent-calculation-desc">*Стоимость указана без учета дополнительных услуг и оборудования</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services-block">
+  <div class="card-reviews" id="card_review">
+    <div class="ui-block-head">
+      <div class="ui-block-title">Завершённые проекты</div>
+      <div class="ui-block-btn ui-screen-more-576">
+        <a href="./complite.html" class="ui-btn ui-btn-secondary ui-btn-block">Все проекты</a>
+      </div>
+    </div>
+
+    <div class="catalog-reviews-mobile ui-screen-less-1024"><div class="ui-scroller flex"></div></div><!--.mobile-->
+
+    <div class="catalog-reviews-desktop ui-screen-more-1024">
+      <div class="swiper catalog-reviews services-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="review-card services-card">
+                <div class="row">
+                    <div class="services-card-col-left">
+                        <div class="services-card-img">
+
+                            <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
+                            <span class="services-card-main-titledata_mobile">07.05.2020</span>
+                        </div>
+                    </div>
+                    <div class="services-card-col-right">
+                        <div class="services-card-content">
+                            <div class="services-card-main">
+                                <div class="services-card-main-title">
+                                    ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
+                                </div>
+                                <div class="services-card-main-text">
+                                    Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
+                                </div>
+                                <div class="ui-list services-card-main-list">
+                                    <div class="services-card-main-list-title">Были выполнены работы:</div>
+                                    <ul>
+                                        <li>подбор оборудования под требования заказчика;</li>
+                                        <li>проектирование и монтаж пневмосети;</li>
+                                        <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
+                                        <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
+                                    </ul>
+                                    <a href="#" class="services-card-main-list-link">Читать далее</a>
+                                </div>
+                            </div>
+                            <div class="services-card-product">
+                                <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="review-card services-card">
+                <div class="row">
+                    <div class="services-card-col-left">
+                        <div class="services-card-img">
+
+                            <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
+                            <span class="services-card-main-titledata_mobile">07.05.2020</span>
+                        </div>
+                    </div>
+                    <div class="services-card-col-right">
+                        <div class="services-card-content">
+                            <div class="services-card-main">
+                                <div class="services-card-main-title">
+                                    ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
+                                </div>
+                                <div class="services-card-main-text">
+                                    Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
+                                </div>
+                                <div class="ui-list services-card-main-list">
+                                    <div class="services-card-main-list-title">Были выполнены работы:</div>
+                                    <ul>
+                                        <li>подбор оборудования под требования заказчика;</li>
+                                        <li>проектирование и монтаж пневмосети;</li>
+                                        <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
+                                        <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
+                                    </ul>
+                                    <a href="#" class="services-card-main-list-link">Читать далее</a>
+                                </div>
+                            </div>
+                            <div class="services-card-product">
+                                <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="review-card services-card">
+                <div class="row">
+                    <div class="services-card-col-left">
+                        <div class="services-card-img">
+
+                            <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
+                            <span class="services-card-main-titledata_mobile">07.05.2020</span>
+                        </div>
+                    </div>
+                    <div class="services-card-col-right">
+                        <div class="services-card-content">
+                            <div class="services-card-main">
+                                <div class="services-card-main-title">
+                                    ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
+                                </div>
+                                <div class="services-card-main-text">
+                                    Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
+                                </div>
+                                <div class="ui-list services-card-main-list">
+                                    <div class="services-card-main-list-title">Были выполнены работы:</div>
+                                    <ul>
+                                        <li>подбор оборудования под требования заказчика;</li>
+                                        <li>проектирование и монтаж пневмосети;</li>
+                                        <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
+                                        <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
+                                    </ul>
+                                    <a href="#" class="services-card-main-list-link">Читать далее</a>
+                                </div>
+                            </div>
+                            <div class="services-card-product">
+                                <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="review-card services-card">
+                <div class="row">
+                    <div class="services-card-col-left">
+                        <div class="services-card-img">
+
+                            <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
+                            <span class="services-card-main-titledata_mobile">07.05.2020</span>
+                        </div>
+                    </div>
+                    <div class="services-card-col-right">
+                        <div class="services-card-content">
+                            <div class="services-card-main">
+                                <div class="services-card-main-title">
+                                    ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
+                                </div>
+                                <div class="services-card-main-text">
+                                    Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
+                                </div>
+                                <div class="ui-list services-card-main-list">
+                                    <div class="services-card-main-list-title">Были выполнены работы:</div>
+                                    <ul>
+                                        <li>подбор оборудования под требования заказчика;</li>
+                                        <li>проектирование и монтаж пневмосети;</li>
+                                        <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
+                                        <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
+                                    </ul>
+                                    <a href="#" class="services-card-main-list-link">Читать далее</a>
+                                </div>
+                            </div>
+                            <div class="services-card-product">
+                                <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="review-card services-card">
+                <div class="row">
+                    <div class="services-card-col-left">
+                        <div class="services-card-img">
+
+                            <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
+                            <span class="services-card-main-titledata_mobile">07.05.2020</span>
+                        </div>
+                    </div>
+                    <div class="services-card-col-right">
+                        <div class="services-card-content">
+                            <div class="services-card-main">
+                                <div class="services-card-main-title">
+                                    ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
+                                </div>
+                                <div class="services-card-main-text">
+                                    Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
+                                </div>
+                                <div class="ui-list services-card-main-list">
+                                    <div class="services-card-main-list-title">Были выполнены работы:</div>
+                                    <ul>
+                                        <li>подбор оборудования под требования заказчика;</li>
+                                        <li>проектирование и монтаж пневмосети;</li>
+                                        <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
+                                        <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
+                                    </ul>
+                                    <a href="#" class="services-card-main-list-link">Читать далее</a>
+                                </div>
+                            </div>
+                            <div class="services-card-product">
+                                <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="review-card services-card">
+                <div class="row">
+                    <div class="services-card-col-left">
+                        <div class="services-card-img">
+                            <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
+                            <span class="services-card-main-titledata_mobile">07.05.2020</span>
+                        </div>
+                    </div>
+                    <div class="services-card-col-right">
+                        <div class="services-card-content">
+                            <div class="services-card-main">
+                                <div class="services-card-main-title">
+                                    ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
+                                </div>
+                                <div class="services-card-main-text">
+                                    Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
+                                </div>
+                                <div class="ui-list services-card-main-list">
+                                    <div class="services-card-main-list-title">Были выполнены работы:</div>
+                                    <ul>
+                                        <li>подбор оборудования под требования заказчика;</li>
+                                        <li>проектирование и монтаж пневмосети;</li>
+                                        <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
+                                        <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
+                                    </ul>
+                                    <a href="#" class="services-card-main-list-link">Читать далее</a>
+                                </div>
+                            </div>
+                            <div class="services-card-product">
+                                <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="ui-arrow ui-arrow-prev catalog-reviews-prev">
+          <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-prev"/></svg>
+        </div>
+
+        <div class="ui-arrow ui-arrow-next catalog-reviews-next">
+          <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
+        </div>
+      </div>
+    </div><!--.desktop-->
+
+    <div class="ui-screen-less-576">
+      <a href="#" class="ui-btn ui-btn-secondary ui-btn-block">Все проекты</a>
+    </div>
+  </div>
+</div>
+
+<div class="rent-reviews">
+  <div class="ui-block-head">
+    <div class="ui-block-title">Отзывы наших клиентов</div>
+    <div class="ui-block-btn ui-screen-more-576">
+      <a href="./reviews.html" class="ui-btn ui-btn-secondary ui-btn-block">Все отзывы</a>
+    </div>
+  </div>
+
+  <div class="rent-reviews-slider">
+    <!-- Slider main container -->
+    <div class="swiper swiper-reviews">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-1.webp" alt="alt">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-2.webp" alt="alt">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-1.webp" alt="alt">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-1.webp" alt="alt">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-1.webp" alt="alt">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-1.webp" alt="alt">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-1.webp" alt="alt">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="rent-reviews-img">
+            <img src="./images/reviews-1.webp" alt="alt">
+          </div>
+        </div>
+      </div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <div class="card-interest-mobile ui-screen-less-1024">
+    <div class="ui-scroller">
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-1.webp" alt="alt">
+      </div>
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-2.webp" alt="alt">
+      </div>
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-1.webp" alt="alt">
+      </div>
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-1.webp" alt="alt">
+      </div>
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-1.webp" alt="alt">
+      </div>
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-1.webp" alt="alt">
+      </div>
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-1.webp" alt="alt">
+      </div>
+      <div class="rent-reviews-img">
+        <img src="./images/reviews-1.webp" alt="alt">
       </div>
     </div>
   </div>
 
-  <div class="services-block">
-    <div class="card-reviews" id="card_review">
-      <div class="ui-block-head">
-        <div class="ui-block-title">Завершённые проекты</div>
-        <div class="ui-block-btn ui-screen-more-576">
-          <a href="#" class="ui-btn ui-btn-secondary ui-btn-block">Все проекты</a>
-        </div>
-      </div>
+  <div class="ui-screen-less-576">
+    <a href="#" class="ui-btn ui-btn-secondary ui-btn-block">Все отзывы</a>
+  </div>
+</div>
 
-      <div class="catalog-reviews-mobile ui-screen-less-1024"><div class="ui-scroller flex"></div></div><!--.mobile-->
+<div class="rent-reason">
+  <div class="rent-reason-heading">Аренда винтовых электрических компрессоров</div>
+  <p>У нас вы можете не только купить, но также арендовать винтовой компрессор. Это позволяет быстро эффективно решить целый ряд проблем, а заодно сэкономить.</p>
 
-      <div class="catalog-reviews-desktop ui-screen-more-1024">
-        <div class="swiper catalog-reviews services-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="review-card services-card">
-                  <div class="row">
-                      <div class="services-card-col-left">
-                          <div class="services-card-img">
+  <div class="rent-reason-title">Зачем нужна аренда винтового компрессора</div>
 
-                              <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
-                              <span class="services-card-main-titledata_mobile">07.05.2020</span>
-                          </div>
-                      </div>
-                      <div class="services-card-col-right">
-                          <div class="services-card-content">
-                              <div class="services-card-main">
-                                  <div class="services-card-main-title">
-                                      ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
-                                  </div>
-                                  <div class="services-card-main-text">
-                                      Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
-                                  </div>
-                                  <div class="ui-list services-card-main-list">
-                                      <div class="services-card-main-list-title">Были выполнены работы:</div>
-                                      <ul>
-                                          <li>подбор оборудования под требования заказчика;</li>
-                                          <li>проектирование и монтаж пневмосети;</li>
-                                          <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
-                                          <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
-                                      </ul>
-                                      <a href="#" class="services-card-main-list-link">Читать далее</a>
-                                  </div>
-                              </div>
-                              <div class="services-card-product">
-                                  <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review-card services-card">
-                  <div class="row">
-                      <div class="services-card-col-left">
-                          <div class="services-card-img">
+  <div class="rent-reason-list">
+    <ul>
+      <li><span>Временная замена.</span> Поломка винтового компрессора может остановить целое предприятие. К сожалению, далеко не всегда есть возможность отремонтировать оборудование быстро. Аренда позволит вам быстро вернуться к работе и не терять деньги из-за простоя.</li>
+      <li><span>Сезонные работы.</span> Иногда покупка винтового компрессора нецелесообразна. Это дорогое оборудование, которое требует профессионального обслуживания и места для хранения. Если оно не нужно вам круглый год, то выгоднее взять его в аренду.</li>
+      <li><span>Тест-драйв.</span> Не знаете, подойдет ли вам та или иная модель? Тогда не рискуйте. Просто возьмите приглянувшийся агрегат в аренду и поработайте с ним пару дней. Обычно этого достаточно, чтобы принять правильное решение.</li>
+      <li><span>Пуско-наладочные работы.</span> При создании нового производства приходится время от времени тестировать пневмосистемы. Если у вас пока нет собственного компрессора, то вы можете взять его в аренду.</li>
+    </ul>
+  </div>
+</div>
 
-                              <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
-                              <span class="services-card-main-titledata_mobile">07.05.2020</span>
-                          </div>
-                      </div>
-                      <div class="services-card-col-right">
-                          <div class="services-card-content">
-                              <div class="services-card-main">
-                                  <div class="services-card-main-title">
-                                      ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
-                                  </div>
-                                  <div class="services-card-main-text">
-                                      Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
-                                  </div>
-                                  <div class="ui-list services-card-main-list">
-                                      <div class="services-card-main-list-title">Были выполнены работы:</div>
-                                      <ul>
-                                          <li>подбор оборудования под требования заказчика;</li>
-                                          <li>проектирование и монтаж пневмосети;</li>
-                                          <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
-                                          <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
-                                      </ul>
-                                      <a href="#" class="services-card-main-list-link">Читать далее</a>
-                                  </div>
-                              </div>
-                              <div class="services-card-product">
-                                  <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
+<div class="rent-advantage">
+  <div class="rent-advantage-heading">Почему лучше обратиться к нам</div>
 
-            <div class="swiper-slide">
-              <div class="review-card services-card">
-                  <div class="row">
-                      <div class="services-card-col-left">
-                          <div class="services-card-img">
-
-                              <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
-                              <span class="services-card-main-titledata_mobile">07.05.2020</span>
-                          </div>
-                      </div>
-                      <div class="services-card-col-right">
-                          <div class="services-card-content">
-                              <div class="services-card-main">
-                                  <div class="services-card-main-title">
-                                      ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
-                                  </div>
-                                  <div class="services-card-main-text">
-                                      Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
-                                  </div>
-                                  <div class="ui-list services-card-main-list">
-                                      <div class="services-card-main-list-title">Были выполнены работы:</div>
-                                      <ul>
-                                          <li>подбор оборудования под требования заказчика;</li>
-                                          <li>проектирование и монтаж пневмосети;</li>
-                                          <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
-                                          <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
-                                      </ul>
-                                      <a href="#" class="services-card-main-list-link">Читать далее</a>
-                                  </div>
-                              </div>
-                              <div class="services-card-product">
-                                  <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="review-card services-card">
-                  <div class="row">
-                      <div class="services-card-col-left">
-                          <div class="services-card-img">
-
-                              <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
-                              <span class="services-card-main-titledata_mobile">07.05.2020</span>
-                          </div>
-                      </div>
-                      <div class="services-card-col-right">
-                          <div class="services-card-content">
-                              <div class="services-card-main">
-                                  <div class="services-card-main-title">
-                                      ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
-                                  </div>
-                                  <div class="services-card-main-text">
-                                      Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
-                                  </div>
-                                  <div class="ui-list services-card-main-list">
-                                      <div class="services-card-main-list-title">Были выполнены работы:</div>
-                                      <ul>
-                                          <li>подбор оборудования под требования заказчика;</li>
-                                          <li>проектирование и монтаж пневмосети;</li>
-                                          <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
-                                          <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
-                                      </ul>
-                                      <a href="#" class="services-card-main-list-link">Читать далее</a>
-                                  </div>
-                              </div>
-                              <div class="services-card-product">
-                                  <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review-card services-card">
-                  <div class="row">
-                      <div class="services-card-col-left">
-                          <div class="services-card-img">
-
-                              <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
-                              <span class="services-card-main-titledata_mobile">07.05.2020</span>
-                          </div>
-                      </div>
-                      <div class="services-card-col-right">
-                          <div class="services-card-content">
-                              <div class="services-card-main">
-                                  <div class="services-card-main-title">
-                                      ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
-                                  </div>
-                                  <div class="services-card-main-text">
-                                      Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
-                                  </div>
-                                  <div class="ui-list services-card-main-list">
-                                      <div class="services-card-main-list-title">Были выполнены работы:</div>
-                                      <ul>
-                                          <li>подбор оборудования под требования заказчика;</li>
-                                          <li>проектирование и монтаж пневмосети;</li>
-                                          <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
-                                          <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
-                                      </ul>
-                                      <a href="#" class="services-card-main-list-link">Читать далее</a>
-                                  </div>
-                              </div>
-                              <div class="services-card-product">
-                                  <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="review-card services-card">
-                  <div class="row">
-                      <div class="services-card-col-left">
-                          <div class="services-card-img">
-                              <img loading="lazy" src="./images/icons/Belavia-logo.svg" alt="alt">
-                              <span class="services-card-main-titledata_mobile">07.05.2020</span>
-                          </div>
-                      </div>
-                      <div class="services-card-col-right">
-                          <div class="services-card-content">
-                              <div class="services-card-main">
-                                  <div class="services-card-main-title">
-                                      ОАО «Авиакомпания "Белавиа"» <span class="services-card-main-titledata">07.05.2020</span>
-                                  </div>
-                                  <div class="services-card-main-text">
-                                      Проектирование и монтаж пневмосети. Поставка, настройка и запуск компрессора <a href="#">Fini Micro</a>  с системой осушения и подготовки воздуха.
-                                  </div>
-                                  <div class="ui-list services-card-main-list">
-                                      <div class="services-card-main-list-title">Были выполнены работы:</div>
-                                      <ul>
-                                          <li>подбор оборудования под требования заказчика;</li>
-                                          <li>проектирование и монтаж пневмосети;</li>
-                                          <li>поставка, настройка и запуск винтового компрессора Fini Micro;</li>
-                                          <li>поставка, настройка и запуск системы осушения и подготовки воздуха.</li>
-                                      </ul>
-                                      <a href="#" class="services-card-main-list-link">Читать далее</a>
-                                  </div>
-                              </div>
-                              <div class="services-card-product">
-                                  <img loading="lazy" src="./images/services-complite-item.webp" srcset="./images/services-complite-item@2x.webp 2x" alt="alt">
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="ui-arrow ui-arrow-prev catalog-reviews-prev">
-            <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-prev"/></svg>
-          </div>
-
-          <div class="ui-arrow ui-arrow-next catalog-reviews-next">
-            <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"/></svg>
-          </div>
-        </div>
-      </div><!--.desktop-->
-
-      <div class="ui-screen-less-576">
-        <a href="#" class="ui-btn ui-btn-secondary ui-btn-block">Все отзывы</a>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="rent-advantage-ability">
+        <div class="rent-advantage-title">Подготовка к работе</div>
+        <div class="rent-advantage-subtitle">Наши специалисты проводят полную диагностику и подготовку оборудования к эксплуатации.</div>
       </div>
     </div>
-  </div>
-
-  <div class="rent-reason">
-    <div class="rent-reason-heading">Аренда винтовых электрических компрессоров</div>
-    <p>У нас вы можете не только купить, но также арендовать винтовой компрессор. Это позволяет быстро эффективно решить целый ряд проблем, а заодно сэкономить.</p>
-
-    <div class="rent-reason-title">Зачем нужна аренда винтового компрессора</div>
-
-    <div class="rent-reason-list">
-      <ul>
-        <li><span>Временная замена.</span> Поломка винтового компрессора может остановить целое предприятие. К сожалению, далеко не всегда есть возможность отремонтировать оборудование быстро. Аренда позволит вам быстро вернуться к работе и не терять деньги из-за простоя.</li>
-        <li><span>Сезонные работы.</span> Иногда покупка винтового компрессора нецелесообразна. Это дорогое оборудование, которое требует профессионального обслуживания и места для хранения. Если оно не нужно вам круглый год, то выгоднее взять его в аренду.</li>
-        <li><span>Тест-драйв.</span> Не знаете, подойдет ли вам та или иная модель? Тогда не рискуйте. Просто возьмите приглянувшийся агрегат в аренду и поработайте с ним пару дней. Обычно этого достаточно, чтобы принять правильное решение.</li>
-        <li><span>Пуско-наладочные работы.</span> При создании нового производства приходится время от времени тестировать пневмосистемы. Если у вас пока нет собственного компрессора, то вы можете взять его в аренду.</li>
-      </ul>
+    <div class="col-md-4">
+      <div class="rent-advantage-ability">
+        <div class="rent-advantage-title">Быстрая доставка</div>
+        <div class="rent-advantage-subtitle">Вам не придется долго ждать винтовой компрессор. Мы доставим все оборудование в кратчайшие сроки.</div>
+      </div>
     </div>
-  </div>
-
-  <div class="rent-advantage">
-    <div class="rent-advantage-heading">Почему лучше обратиться к нам</div>
-
-    <div class="row">
-      <div class="col-md-4">
-        <div class="rent-advantage-ability">
-          <div class="rent-advantage-title">Подготовка к работе</div>
-          <div class="rent-advantage-subtitle">Наши специалисты проводят полную диагностику и подготовку оборудования к эксплуатации.</div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="rent-advantage-ability">
-          <div class="rent-advantage-title">Быстрая доставка</div>
-          <div class="rent-advantage-subtitle">Вам не придется долго ждать винтовой компрессор. Мы доставим все оборудование в кратчайшие сроки.</div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="rent-advantage-ability">
-          <div class="rent-advantage-title">Введение в эксплуатацию</div>
-          <div class="rent-advantage-subtitle">В случае необходимости наши сотрудники помогут вам с установкой и подключением компрессора.</div>
-        </div>
+    <div class="col-md-4">
+      <div class="rent-advantage-ability">
+        <div class="rent-advantage-title">Введение в эксплуатацию</div>
+        <div class="rent-advantage-subtitle">В случае необходимости наши сотрудники помогут вам с установкой и подключением компрессора.</div>
       </div>
     </div>
   </div>

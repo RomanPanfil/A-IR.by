@@ -73,7 +73,11 @@
             required: true,
             telephone: true
           },
-        }
+        },
+
+        submitHandler: function (form) {
+          showPopup()
+        },
       });
 
       $.validator.messages.required = 'Пожалуйста, введите данные';
