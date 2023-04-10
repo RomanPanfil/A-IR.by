@@ -5,6 +5,22 @@
     margin-bottom: 56px;
   }
 
+  #tabs {
+    max-width: 616px;
+
+    @media(max-width: 1024px) {
+      max-width: 100%;
+    }
+  }
+
+  .card-sticky {
+    display: none;
+
+    @media(max-width: 1024px) {
+      display: block;
+    }
+  }
+
   &-settings {
     @media(max-width: 1024px) {
       margin-bottom: 56px;
@@ -216,10 +232,9 @@
 
       @media(max-width: 576px) {
         margin-right: 42px;
-      }
-
-      &:last-child {
-        margin-right: 0;
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
 
@@ -241,7 +256,7 @@
     }
 
     &-services {
-      padding: 16px 32px 18px 32px;
+      padding: 16px 50px 18px 32px;
       border: 1px solid #D3D3D3;
       border-radius: 8px;
       position: relative;
@@ -249,6 +264,7 @@
 
       @media(max-width: 576px) {
         padding: 16px;
+        padding-right: 50px;
       }
 
       &:last-child {
@@ -295,6 +311,12 @@
       margin: 0 -16px;
     }
 
+    &-empty {
+      &.hidden {
+        display: none;
+      }
+    }
+
     .row {
       @media(max-width: 1024px) {
         align-items: center;
@@ -311,9 +333,22 @@
 
     &-slider {
       text-align: center;
+      margin-bottom: 13px;
+
+      &.hidden {
+        display: none;
+      }
+
+      @media(max-width: 1024px) {
+        margin-bottom: 0;
+      }
 
       @media(max-width: 576px) {
         margin-bottom: 39px;
+      }
+
+      .swiper-pagination {
+        position: static;
       }
     }
 
@@ -411,6 +446,10 @@
       @media(max-width: 1024px) {
         font-size: 28px;
         margin-bottom: 16px;
+      }
+
+      &.hidden {
+        display: none;
       }
 
       span {
@@ -598,6 +637,10 @@
 
     @media(max-width: 576px) {
       margin-bottom: 56px;
+    }
+
+    .ui-arrow.swiper-button-disabled {
+      background: #fff;
     }
 
     .ui-block-head {

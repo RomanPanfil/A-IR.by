@@ -1,4 +1,4 @@
-<!--#include file="inc-header.html"-->
+<!--#include file="inc-header-account.html"-->
 
 <div class="rent" id="rent">
   <div class="row">
@@ -80,7 +80,7 @@
 
                 <div class="rent-solution-list">
                   <div class="rent-solution-product flex checked">
-                    <div class="rent-solution-img">
+                    <div class="rent-solution-img" data-img="./images/solution-product-large-1.webp">
                       <img src="./images/solution-product-1.webp" alt="alt">
                     </div>
 
@@ -118,8 +118,9 @@
                       </a>
                     </div>
                   </div>
+
                   <div class="rent-solution-product flex">
-                    <div class="rent-solution-img">
+                    <div class="rent-solution-img" data-img="./images/solution-product-large-1.webp">
                       <img src="./images/solution-product-2.webp" alt="alt">
                     </div>
 
@@ -137,14 +138,16 @@
                     </div>
 
                     <div class="rent-solution-cost flex">
-                      <div class="rent-solution-total">
-                        <div class="rent-solution-price">Цена за 1 месяц аренды</div>
-                        <div class="rent-solution-amount month">900.00 <span>р.</span></div>
-                      </div>
+                      <div class="rent-solution-pricing flex">
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена за 1 месяц аренды</div>
+                          <div class="rent-solution-amount month">800.00 <span>р.</span></div>
+                        </div>
 
-                      <div class="rent-solution-total">
-                        <div class="rent-solution-price">Цена покупки</div>
-                        <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена покупки</div>
+                          <div class="rent-solution-amount">1900.00 <span>р.</span></div>
+                        </div>
                       </div>
 
                       <a href="./card.html" target="_blank" class="rent-solution-link">
@@ -198,6 +201,7 @@
                 </div>
               </div>
             </div>
+
             <div class="tabs-item" id="tab-2">
               <div class="rent-solution">
                 <div class="rent-solution-txt">
@@ -212,7 +216,7 @@
                 <div class="rent-solution-title mb-34">2. Какой компрессор вам нужен? <a class="mfp-link" href="javascript:void(0)" data-href="./popups/help-choice.html">Помощь в выборе</a></div>
 
                 <div class="rent-solution-list">
-                  <div class="rent-solution-product flex checked">
+                  <div class="rent-solution-product flex">
                     <div class="rent-solution-img">
                       <img src="./images/solution-product-1.webp" alt="alt">
                     </div>
@@ -225,8 +229,8 @@
 
                     <div class="rent-solution-checkbox">
                       <div class="ui-checkbox">
-                        <input type="checkbox" name="customCheckbox" id="customCheckbox1" class="ui-checkbox-input" checked>
-                        <label for="customCheckbox1" class="ui-checkbox-label"></label>
+                        <input type="checkbox" name="customCheckbox" id="customCheckbox3" class="ui-checkbox-input">
+                        <label for="customCheckbox3" class="ui-checkbox-label"></label>
                       </div>
                     </div>
 
@@ -262,8 +266,8 @@
 
                     <div class="rent-solution-checkbox">
                       <div class="ui-checkbox">
-                        <input type="checkbox" name="customCheckbox" id="customCheckbox2" class="ui-checkbox-input">
-                        <label for="customCheckbox2" class="ui-checkbox-label"></label>
+                        <input type="checkbox" name="customCheckbox" id="customCheckbox4" class="ui-checkbox-input">
+                        <label for="customCheckbox4" class="ui-checkbox-label"></label>
                       </div>
                     </div>
 
@@ -339,6 +343,10 @@
 
       <div class="rent-calculation active">
         <form action="#">
+          <div class="rent-calculation-empty">
+            <img src="./images/solution-product-none.webp" alt="alt">
+          </div>
+
           <div class="row">
             <div class="col-md-12 col-xs-6">
               <div class="rent-calculation-slider">
@@ -347,11 +355,7 @@
                   <!-- Additional required wrapper -->
                   <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide">
-                      <div class="rent-calculation-img">
-                        <img src="./images/solution-product-large-1.webp" alt="alt">
-                      </div>
-                    </div>
+
                   </div>
                   <!-- If we need pagination -->
                   <div class="swiper-pagination"></div>
@@ -372,7 +376,7 @@
 
               <div class="rent-calculation-total">5 381.00 <span>р.</span></div>
 
-              <button class="ui-btn ui-btn-block">Заказать</button>
+              <button class="ui-btn ui-btn-block" id="card-breackpoint">Заказать</button>
 
               <div class="rent-calculation-desc">*Стоимость указана без учета дополнительных услуг и оборудования</div>
             </div>
@@ -702,8 +706,12 @@
       </div>
 
       <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="ui-arrow ui-arrow-prev reviews-button-prev">
+        <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-prev"></use></svg>
+      </div>
+      <div class="ui-arrow ui-arrow-next reviews-button-next">
+        <svg class="sprite ui-arrow-icon"><use xlink:href="svg/svg/symbols.svg#ui-arrow-next"></use></svg>
+      </div>
     </div>
   </div>
 
@@ -781,5 +789,7 @@
     </div>
   </div>
 </div>
+
+<!--#include file="inc-cardSticky-rent.html"-->
 
 <!--#include file="inc-footer.html"-->

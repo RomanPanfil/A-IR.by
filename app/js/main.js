@@ -3158,6 +3158,7 @@ const swiperRent = new Swiper('.swiper.slider-rent', {
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
 });
 
@@ -3167,8 +3168,8 @@ const swiperReviews = new Swiper('.swiper.swiper-reviews', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.reviews-button-next',
+    prevEl: '.reviews-button-prev',
   },
 });
 
@@ -3206,18 +3207,21 @@ $( document ).ready(function() {
 
   const rentCheckbox = document.querySelectorAll('.ui-checkbox-input')
 
-  rentCheckbox.forEach(item => {
-    const parent = item.closest('.rent-solution-product') || item.closest('.rent-solution-services')
+  if(rentCheckbox.length) {
 
-    item.addEventListener('change', () => {
+    rentCheckbox.forEach(item => {
+      const parent = item.closest('.rent-solution-product') || item.closest('.rent-solution-services')
 
-      if(item.checked) {
-        parent.classList.add('checked')
-      } else {
-        parent.classList.remove('checked')
-      }
+      item.addEventListener('change', () => {
+
+        if(item.checked) {
+          parent.classList.add('checked')
+        } else {
+          parent.classList.remove('checked')
+        }
+      })
     })
-  })
+  }
 
   function showPopup() {
     $.magnificPopup.open({
@@ -3246,9 +3250,140 @@ $( document ).ready(function() {
 	// Клики по вкладкам.
 	$('#tabs .tabs-nav a').click(function(){
 		tab.hide();
+    tab.removeClass('active')
+    tab.filter(this.hash).addClass('active')
 		tab.filter(this.hash).show();
 		$('#tabs .tabs-nav a').removeClass('active');
 		$(this).addClass('active');
 		return false;
 	}).filter(':first').click();
+
+  // rent
+  const rentProductCheckbox = document.querySelectorAll('.tabs-item.active .rent-solution-product .ui-checkbox-input');
+  const rentInput = document.querySelector('.tabs-item.active .ui-input.period')
+  const totalBlock = document.querySelector('.rent-calculation-total')
+  const emptyBlock = document.querySelector('.rent-calculation-empty')
+  const list = document.querySelector('.rent-calculation-list ul')
+  const rentSlider = document.querySelector('.rent-calculation-slider')
+  const rentBtn = document.querySelector('.rent-calculation .ui-btn')
+  const rentTabs = document.querySelectorAll('.rent-tab')
+
+  rentTabs.forEach(item => {
+    item.addEventListener('click', () => {
+      rentTab = document.querySelector('.tabs-item.active')
+      rentProductCheckbox = rentTab.querySelectorAll('.rent-solution-product .ui-checkbox-input');
+      rentInput = rentTab.querySelector('.ui-input.period')
+    })
+  })
+
+  function checkProducts() {
+    let allPrice = []
+
+    const checked = Array.from(rentProductCheckbox).filter(item => {
+      return item.checked
+    })
+
+    if(checked.length !== 0) {
+      emptyBlock.classList.add('hidden')
+
+      rentSlider.classList.remove('hidden')
+      totalBlock.classList.remove('hidden')
+
+      rentBtn.disabled = false
+    } else {
+      emptyBlock.classList.remove('hidden')
+
+      rentSlider.classList.add('hidden')
+      totalBlock.classList.add('hidden')
+
+      rentBtn.disabled = true
+    }
+
+    checked.forEach(item => {
+      const parent = item.closest('.rent-solution-product')
+      const priceBlock = parent.querySelector('.rent-solution-amount.month').innerHTML
+      const price = priceBlock.split(' ')[0]
+
+      return allPrice.push(+price)
+    })
+
+    rentCalculation(allPrice)
+  }
+
+  function rentCalculation(allPrice) {
+    const rent = rentInput.value
+
+    if(rent !== '' && +rent !== 0) {
+      const sum = allPrice.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
+      const total = sum * rent
+
+      totalBlock.innerHTML = `${total} <span>р.</span>`
+    } else {
+      totalBlock.classList.add('hidden')
+
+      rentBtn.disabled = true
+    }
+  }
+
+  function rentImgSlider() {
+    const checked = Array.from(rentProductCheckbox).filter(item => {
+      return item.checked
+    })
+
+    checked.forEach(item => {
+      const parent = item.closest('.rent-solution-product')
+      const imgBlock = parent.querySelector('.rent-solution-img')
+      const imgPath = imgBlock.dataset.img
+
+      swiperRent.appendSlide(`
+        <div class="swiper-slide">
+          <div class="rent-calculation-img">
+            <img src="${imgPath}" alt="alt">
+          </div>
+        </div>`)
+      swiperRent.update(true)
+    })
+  }
+
+  rentImgSlider()
+
+  checkProducts()
+
+  rentInput.addEventListener('keyup', () => {
+    checkProducts()
+  })
+
+  rentProductCheckbox.forEach((item, index) => {
+    const parent = item.closest('.rent-solution-product')
+    const name = parent.querySelector('.rent-solution-name').textContent
+    const imgBlock = parent.querySelector('.rent-solution-img')
+    const imgPath = imgBlock.dataset.img
+    let li = document.createElement("li")
+    li.append(name)
+
+    if(item.checked) {
+      list.prepend(li)
+    }
+
+    item.addEventListener('change', () => {
+      checkProducts()
+
+      if(item.checked) {
+        list.prepend(li)
+
+        swiperRent.appendSlide(`
+          <div class="swiper-slide">
+            <div class="rent-calculation-img">
+              <img src="${imgPath}" alt="alt">
+            </div>
+          </div>`)
+
+        swiperRent.update(true)
+      } else {
+        li.remove(name)
+
+        swiperRent.removeSlide(index);
+      }
+    })
+  })
 });
