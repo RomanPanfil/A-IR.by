@@ -121,9 +121,11 @@ if (allInputs && otherAddressForm) {
 
 let rentCalcTab = document.querySelector('.rent-calculation-head')
 
-rentCalcTab.addEventListener('click', () => {
-  const rentCalcBody = document.querySelector('.rent-calculation')
+if(rentCalcTab !== null && rentCalcTab !== undefined) {
+  rentCalcTab.addEventListener('click', () => {
+    const rentCalcBody = document.querySelector('.rent-calculation')
 
-  rentCalcBody.classList.toggle('active')
-  rentCalcTab.classList.toggle('active')
-})
+    rentCalcBody.classList.toggle('active')
+    rentCalcTab.classList.toggle('active')
+  })
+}

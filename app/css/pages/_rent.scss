@@ -345,9 +345,13 @@
 
       .ui-checkbox {
         position: absolute;
-        right: 25px;
+        right: 22px;
         top: 50%;
         transform: translate(0, -50%);
+
+        @media(max-width: 576px) {
+          right: 8px;
+        }
       }
 
       .ui-checkbox-label::before {
@@ -443,7 +447,7 @@
 
       &::before {
         content: '';
-        background-image: url('../../images/icons/rent-toggle.svg');
+        background-image: url('../images/icons/rent-toggle.svg');
         background-repeat: no-repeat;
         right: 46px;
         top: 50%;
@@ -583,7 +587,7 @@
 
       &::before {
         content: '';
-        background-image: url('../../images/icons/ability.svg');
+        background-image: url('../images/icons/ability.svg');
         background-repeat: no-repeat;
         background-size: 24px;
         width: 24px;
