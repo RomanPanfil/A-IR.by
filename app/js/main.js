@@ -3259,20 +3259,38 @@ $( document ).ready(function() {
 	}).filter(':first').click();
 
   // rent
-  const rentProductCheckbox = document.querySelectorAll('.tabs-item.active .rent-solution-product .ui-checkbox-input');
-  const rentInput = document.querySelector('.tabs-item.active .ui-input.period')
+  let rentProductCheckbox
+  let rentInput
   const totalBlock = document.querySelector('.rent-calculation-total')
   const emptyBlock = document.querySelector('.rent-calculation-empty')
   const list = document.querySelector('.rent-calculation-list ul')
   const rentSlider = document.querySelector('.rent-calculation-slider')
   const rentBtn = document.querySelector('.rent-calculation .ui-btn')
   const rentTabs = document.querySelectorAll('.rent-tab')
+  const cardStickyRent = document.querySelector('.rent.card-price-current')
+
+  console.log(cardStickyRent)
 
   rentTabs.forEach(item => {
+    if(item.classList.contains('active')) {
+      rentTab = document.querySelector('.tabs-item.active')
+      rentProductCheckbox = rentTab.querySelectorAll('.rent-solution-product .ui-checkbox-input');
+      rentInput = rentTab.querySelector('.ui-input.period')
+    }
+
     item.addEventListener('click', () => {
       rentTab = document.querySelector('.tabs-item.active')
       rentProductCheckbox = rentTab.querySelectorAll('.rent-solution-product .ui-checkbox-input');
       rentInput = rentTab.querySelector('.ui-input.period')
+
+      $('li.product').remove();
+
+      checkProducts()
+      rentList()
+      rentImgSlider()
+      rentAdd()
+
+      swiperRent.update(true)
     })
   })
 
@@ -3318,72 +3336,72 @@ $( document ).ready(function() {
       const total = sum * rent
 
       totalBlock.innerHTML = `${total} <span>р.</span>`
+      cardStickyRent.innerHTML = `${total} BYN`
     } else {
       totalBlock.classList.add('hidden')
 
       rentBtn.disabled = true
     }
+
+    rentInput.addEventListener('keyup', () => {
+      checkProducts()
+    })
   }
 
   function rentImgSlider() {
-    const checked = Array.from(rentProductCheckbox).filter(item => {
-      return item.checked
-    })
-
-    checked.forEach(item => {
+    rentProductCheckbox.forEach((item, index) => {
       const parent = item.closest('.rent-solution-product')
       const imgBlock = parent.querySelector('.rent-solution-img')
       const imgPath = imgBlock.dataset.img
 
-      swiperRent.appendSlide(`
-        <div class="swiper-slide">
-          <div class="rent-calculation-img">
-            <img src="${imgPath}" alt="alt">
-          </div>
-        </div>`)
-      swiperRent.update(true)
-    })
-  }
-
-  rentImgSlider()
-
-  checkProducts()
-
-  rentInput.addEventListener('keyup', () => {
-    checkProducts()
-  })
-
-  rentProductCheckbox.forEach((item, index) => {
-    const parent = item.closest('.rent-solution-product')
-    const name = parent.querySelector('.rent-solution-name').textContent
-    const imgBlock = parent.querySelector('.rent-solution-img')
-    const imgPath = imgBlock.dataset.img
-    let li = document.createElement("li")
-    li.append(name)
-
-    if(item.checked) {
-      list.prepend(li)
-    }
-
-    item.addEventListener('change', () => {
-      checkProducts()
+      swiperRent.removeSlide(index);
 
       if(item.checked) {
-        list.prepend(li)
-
         swiperRent.appendSlide(`
           <div class="swiper-slide">
             <div class="rent-calculation-img">
               <img src="${imgPath}" alt="alt">
             </div>
           </div>`)
-
         swiperRent.update(true)
-      } else {
-        li.remove(name)
-
-        swiperRent.removeSlide(index);
       }
     })
-  })
+  }
+
+  function rentList() {
+    let test = list.querySelectorAll('li.product')
+
+    test.forEach(item => {
+      item.remove()
+    })
+
+    rentProductCheckbox.forEach((item, index) => {
+      const parent = item.closest('.rent-solution-product')
+      const name = parent.querySelector('.rent-solution-name').textContent
+      let li = document.createElement("li")
+
+      if(item.checked) {
+        li.classList.add('product')
+        li.append(name)
+        list.prepend(li)
+      }
+    })
+  }
+
+  function rentAdd() {
+    rentProductCheckbox.forEach((item, index) => {
+      item.addEventListener('change', () => {
+        swiperRent.update(true)
+        checkProducts()
+        rentImgSlider()
+        rentList()
+      })
+    })
+  }
+
+  rentList()
+  rentImgSlider()
+  rentList()
+  checkProducts()
+  rentAdd()
 });

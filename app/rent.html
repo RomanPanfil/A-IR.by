@@ -201,12 +201,11 @@
                 </div>
               </div>
             </div>
-
             <div class="tabs-item" id="tab-2">
               <div class="rent-solution">
                 <div class="rent-solution-txt">
                   <div class="rent-solution-title">1. Срок аренды</div>
-                  <div class="rent-solution-subtitle">Пожалуйста, укажите желаемое количество лет аренды компрессора.</div>
+                  <div class="rent-solution-subtitle">Пожалуйста, укажите желаемое количество месяцев аренды компрессора.</div>
                 </div>
 
                 <input type="text" class="ui-input period" placeholder="1" value="1">
@@ -216,8 +215,8 @@
                 <div class="rent-solution-title mb-34">2. Какой компрессор вам нужен? <a class="mfp-link" href="javascript:void(0)" data-href="./popups/help-choice.html">Помощь в выборе</a></div>
 
                 <div class="rent-solution-list">
-                  <div class="rent-solution-product flex">
-                    <div class="rent-solution-img">
+                  <div class="rent-solution-product flex checked">
+                    <div class="rent-solution-img" data-img="./images/solution-product-large-1.webp">
                       <img src="./images/solution-product-1.webp" alt="alt">
                     </div>
 
@@ -229,20 +228,22 @@
 
                     <div class="rent-solution-checkbox">
                       <div class="ui-checkbox">
-                        <input type="checkbox" name="customCheckbox" id="customCheckbox3" class="ui-checkbox-input">
+                        <input type="checkbox" name="customCheckbox" id="customCheckbox3" class="ui-checkbox-input" checked>
                         <label for="customCheckbox3" class="ui-checkbox-label"></label>
                       </div>
                     </div>
 
                     <div class="rent-solution-cost flex">
-                      <div class="rent-solution-total">
-                        <div class="rent-solution-price">Цена за 1 год аренды</div>
-                        <div class="rent-solution-amount month">800.00 <span>р.</span></div>
-                      </div>
+                      <div class="rent-solution-pricing flex">
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена за 1 месяц аренды</div>
+                          <div class="rent-solution-amount month">800.00 <span>р.</span></div>
+                        </div>
 
-                      <div class="rent-solution-total">
-                        <div class="rent-solution-price">Цена покупки</div>
-                        <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена покупки</div>
+                          <div class="rent-solution-amount">1900.00 <span>р.</span></div>
+                        </div>
                       </div>
 
                       <a href="./card.html" target="_blank" class="rent-solution-link">
@@ -253,8 +254,9 @@
                       </a>
                     </div>
                   </div>
+
                   <div class="rent-solution-product flex">
-                    <div class="rent-solution-img">
+                    <div class="rent-solution-img" data-img="./images/solution-product-large-1.webp">
                       <img src="./images/solution-product-2.webp" alt="alt">
                     </div>
 
@@ -272,14 +274,16 @@
                     </div>
 
                     <div class="rent-solution-cost flex">
-                      <div class="rent-solution-total">
-                        <div class="rent-solution-price">Цена за 1 год аренды</div>
-                        <div class="rent-solution-amount month">900.00 <span>р.</span></div>
-                      </div>
+                      <div class="rent-solution-pricing flex">
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена за 1 месяц аренды</div>
+                          <div class="rent-solution-amount month">800.00 <span>р.</span></div>
+                        </div>
 
-                      <div class="rent-solution-total">
-                        <div class="rent-solution-price">Цена покупки</div>
-                        <div class="rent-solution-amount">19 000.00 <span>р.</span></div>
+                        <div class="rent-solution-total">
+                          <div class="rent-solution-price">Цена покупки</div>
+                          <div class="rent-solution-amount">1900.00 <span>р.</span></div>
+                        </div>
                       </div>
 
                       <a href="./card.html" target="_blank" class="rent-solution-link">
@@ -370,6 +374,8 @@
                 <div class="rent-calculation-enabled">Включено:</div>
 
                 <ul>
+                  <li class="product">1</li>
+                  <li class="product">1</li>
                   <li>Пусконаладочные работы</li>
                 </ul>
               </div>

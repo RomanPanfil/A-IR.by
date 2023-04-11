@@ -5,6 +5,69 @@
     margin-bottom: 56px;
   }
 
+  // &.card-sticky {
+  //   padding: 13px 45px;
+  //   background: #fff;
+  // }
+
+  .card-sticky-prices {
+    flex: 0 0 calc(100% - 140px);
+    max-width: calc(100% - 140px);
+  }
+
+  &.card-price-current {
+    color: #000;
+    margin-right: 52px;
+
+    @media(max-width: 576px) {
+      margin-right: 0;
+    }
+  }
+
+  .card-sticky-row {
+    height: auto;
+  }
+
+  .card-wrap {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media(max-width: 576px) {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &-card-txt {
+    max-width: 288px;
+    margin-right: 86px;
+    margin-bottom: 8px;
+
+    @media(max-width: 576px) {
+      margin-bottom: 5px;
+      margin-right: 0;
+    }
+  }
+
+  &-card-head {
+    font-weight: 700;
+    font-size: 18px;
+
+    @media(max-width: 576px) {
+      font-weight: 400;
+      font-size: 16px;;
+    }
+  }
+
+  &-card-subtitle {
+    font-weight: 400;
+    font-size: 12px;
+
+    @media(max-width: 576px) {
+      display: none;
+    }
+  }
+
   #tabs {
     max-width: 616px;
 
@@ -283,7 +346,17 @@
       .ui-checkbox {
         position: absolute;
         right: 25px;
-        top: 18px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      .ui-checkbox-label::before {
+        top: 50%;
+        transform: translate(0, -50%);
+      }
+
+      .ui-checkbox-label::after {
+        top: -3px;
       }
     }
   }
