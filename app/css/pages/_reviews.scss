@@ -1,4 +1,4 @@
-.reviews {
+.feedback {
   margin-bottom: 88px;
 
   @media(max-width: 1024px) {
@@ -21,6 +21,7 @@
     overflow: hidden;
     align-items: center;
     border: none;
+    margin-bottom: 24px;
 
     @media(max-width: 1024px) {
       padding: 48px;

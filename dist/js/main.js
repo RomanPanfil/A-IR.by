@@ -31539,13 +31539,13 @@ const swiperReviews = new Swiper('.swiper.swiper-reviews', {
 
 $( document ).ready(function() {
   // Handler for .ready() called.
-  const reviewsCard = document.querySelectorAll('.reviews-card');
+  const reviewsCard = document.querySelectorAll('.feedback-card');
 
   if(reviewsCard.length) {
     reviewsCard.forEach(card => {
-      const reviewsCardCompany = card.querySelector('.reviews-card-company');
-      const reviewsCardContent = card.querySelector('.reviews-card-content');
-      const reviewsCardImg = card.querySelector('.reviews-card-img');
+      const reviewsCardCompany = card.querySelector('.feedback-card-company');
+      const reviewsCardContent = card.querySelector('.feedback-card-content');
+      const reviewsCardImg = card.querySelector('.feedback-card-img');
 
       (function () {
         if (matchMedia) {

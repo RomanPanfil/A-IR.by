@@ -1,4 +1,7 @@
 .leasing {
+  margin-bottom: 88px;
+  position: relative;
+
   &-opportunities {
     padding: 24px;
     padding-bottom: 28px;
@@ -95,6 +98,7 @@
       font-weight: 700;
       font-size: 20px;
       margin-bottom: 25px;
+      border-radius: 4px 4px 0px 0px;
     }
 
     &-body {
@@ -230,7 +234,7 @@
   }
 
   &-sequence {
-    margin-bottom: 88px;
+    // margin-bottom: 88px;
 
     @media(max-width: 576px) {
       display: none;

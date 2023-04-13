@@ -51,6 +51,10 @@
         position: absolute;
         top: 0;
         left: 0;
+
+        @media(max-width: 576px) {
+          top: 5px;
+        }
       }
 
       &:last-child {
@@ -65,6 +69,10 @@
     &-title {
       font-weight: 700;
       font-size: 22px;
+
+      @media(max-width: 576px) {
+        font-size: 18px;
+      }
     }
   }
 
