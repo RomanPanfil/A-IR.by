@@ -29891,35 +29891,35 @@ new Swiper(".main-slider-swiper", {
   },
 });
 
-new Swiper(".main-trust-slider", {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  loop: true,
+// new Swiper(".main-trust-slider", {
+//   slidesPerView: 1,
+//   spaceBetween: 24,
+//   loop: true,
 
-  breakpoints: {
-    421: {
-      slidesPerView: "auto",
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-    1140: {
-      slidesPerView: 4,
-    },
-  },
+//   breakpoints: {
+//     421: {
+//       slidesPerView: "auto",
+//     },
+//     1024: {
+//       slidesPerView: 3,
+//     },
+//     1140: {
+//       slidesPerView: 4,
+//     },
+//   },
 
-  pagination: {
-    el: ".main-trust-pagintaion",
-    clickable: true,
-    dynamicBullets: true,
-    // dynamicMainBullets:3,
-  },
+//   pagination: {
+//     el: ".main-trust-pagintaion",
+//     clickable: true,
+//     dynamicBullets: true,
+//     // dynamicMainBullets:3,
+//   },
 
-  navigation: {
-    nextEl: ".main-trust-next",
-    prevEl: ".main-trust-prev",
-  },
-});
+//   navigation: {
+//     nextEl: ".main-trust-next",
+//     prevEl: ".main-trust-prev",
+//   },
+// });
 
 (function () {
   if (!document.querySelector(".main-recommend-desktop")) return;
@@ -31416,24 +31416,24 @@ function initSingleMap(id, allMap) {
   })
 }
 
-$(document).on('mouseup', function (e) {
-  if ($('.container-menu').has(e.target).length === 0 && $('.main-catalog').has(e.target).length === 0 && $('.main-catalog-wrapper').has(e.target).length === 0 && $('.main-search-form').has(e.target).length === 0) {
-    mainSearchForm.classList.remove('main-search-form-open');
-    changeIcon.classList.remove('main-toggler-cross');
-    containerMenu.classList.remove('container-menu-open');
-    mainOpenCatalog.classList.remove('main-open-catalog');
-    navWrapperOpenCatalog.classList.remove('nav-wrapper-open-catalog')
-    bodyOpenCatalog.classList.remove('body-hidden')
-  }
-});
+// $(document).on('mouseup', function (e) {
+//   if ($('.container-menu').has(e.target).length === 0 && $('.main-catalog').has(e.target).length === 0 && $('.main-catalog-wrapper').has(e.target).length === 0 && $('.main-search-form').has(e.target).length === 0) {
+//     mainSearchForm.classList.remove('main-search-form-open');
+//     changeIcon.classList.remove('main-toggler-cross');
+//     containerMenu.classList.remove('container-menu-open');
+//     mainOpenCatalog.classList.remove('main-open-catalog');
+//     navWrapperOpenCatalog.classList.remove('nav-wrapper-open-catalog')
+//     bodyOpenCatalog.classList.remove('body-hidden')
+//   }
+// });
 
-$(document).on('mouseup', function (e) {
-  if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0 && $('.mob-menu-phone').has(e.target).length === 0) {
-    $('.main-contacts-drop').removeClass('numbers-open')
-    $('.main-contacts-tel-arrow').removeClass('opened')
-    $('.mob-menu-phone').removeClass('opened')
-  }
-});
+// $(document).on('mouseup', function (e) {
+//   if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0 && $('.mob-menu-phone').has(e.target).length === 0) {
+//     $('.main-contacts-drop').removeClass('numbers-open')
+//     $('.main-contacts-tel-arrow').removeClass('opened')
+//     $('.mob-menu-phone').removeClass('opened')
+//   }
+// });
 
 $(document).on('mouseup', function (e) {
   if ($('.enter-mobile').has(e.target).length === 0 && $('.mob-menu-img').has(e.target).length === 0) {
@@ -31458,37 +31458,51 @@ if (document.querySelector('.catalog-products')) {
   })
 }
 
-setTimeout(() => {
-  new Swiper(".main-trust-slider", {
-    slidesPerView: 1,
-    spaceBetween: 24,
-    loop: true,
+let mainTrustSwiper = new Swiper(".main-trust-slider", {
+  spaceBetween: 24,
+  loop: true,
 
-    breakpoints: {
-      421: {
-        slidesPerView: "auto",
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-      1140: {
-        slidesPerView: 4,
-      },
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+
+      pagination: {
+        dynamicBullets: true,
+        dynamicMainBullets: 2,
+      }
     },
 
-    pagination: {
-      el: ".main-trust-pagintaion",
-      clickable: true,
-      dynamicBullets: true,
-      // dynamicMainBullets:3,
+
+    420: {
+      slidesPerView: 2,
+
+      pagination: {
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
+      }
     },
 
-    navigation: {
-      nextEl: ".main-trust-next",
-      prevEl: ".main-trust-prev",
+    300: {
+      slidesPerView: 1,
+
+      pagination: {
+        dynamicBullets: true,
+        dynamicMainBullets:4,
+      }
     },
-  });
-}, 1000)
+  },
+
+  pagination: {
+    el: ".swiper-pagination.swiper-adaptive-trust",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".main-trust-next",
+    prevEl: ".main-trust-prev",
+  },
+});
+
 
 const swiperService = new Swiper('.swiper.service', {
   spaceBetween: 24,
@@ -31769,5 +31783,12 @@ $( document ).ready(function() {
     rentList()
     checkProducts()
     rentAdd()
+  }
+});
+
+$('.mfp-img').magnificPopup({
+  type: 'image',
+  gallery:{
+    enabled:false
   }
 });

@@ -1568,3 +1568,36 @@ textarea.ui-input {
     color: #BC0000;
   }
 }
+
+
+// .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+//   position: static !important;
+//   display: block !important;
+//   margin: 0px auto !important;
+//   width: 150px !important;
+// }
+
+.swiper-pagination-wrapper {
+  width: 235px !important;
+  margin: 0px auto;
+  overflow: hidden;
+  display: none;
+
+  @media(max-width: 1024.99px) {
+    display: block;
+  }
+}
+
+.main-trust .swiper-pagination {
+  display: flex;
+  position: static;
+  justify-content: center;
+}
+
+.main-trust .swiper-pagination-bullet {
+  flex: 0 0 40px !important;
+}
+
+// span.swiper-pagination-bullet.swiper-pagination-bullet-active-prev {
+//   display: none !important;
+// }

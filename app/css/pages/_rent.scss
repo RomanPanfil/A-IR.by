@@ -146,7 +146,8 @@
     &-product {
       align-items: center;
       padding: 16px 32px;
-      outline: 1px solid #D3D3D3;
+      // outline: 1px solid #D3D3D3;
+      box-shadow: 0 0 0 1px #D3D3D3;
       border-radius: 8px;
       position: relative;
       margin-bottom: 8px;
@@ -160,25 +161,30 @@
       }
 
       &.checked {
-        outline: 2px solid #2A4455;
+        // outline: 2px solid #2A4455;
+        box-shadow: 0 0 0 1px #2a4455;
       }
 
       &:hover {
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
         border-radius: 10px 10px 0 0;
-        outline: 1px solid transparent;
+        // outline: 1px solid transparent;
+        box-shadow: 0 0 0 1px transparent;
 
         .rent-solution-cost {
           display: flex;
         }
 
         &.checked {
-          outline: 2px solid #2A4455;
+          // outline: 2px solid #2A4455;
+          box-shadow: 0 0 0 1px #2a4455;
+
 
           &:hover {
             .rent-solution-cost {
               display: flex;
-              outline: 2px solid #2A4455;
+              // outline: 2px solid #2A4455;
+              box-shadow: 0 0 0 1px #2a4455;
             }
           }
         }
@@ -336,12 +342,14 @@
       }
 
       &:hover {
-        outline: 1px solid #808080;
+        // outline: 1px solid #808080;
+        box-shadow: 0 0 0 1px #808080;
         border-color: transparent;
       }
 
       &.checked {
-        outline: 2px solid #2a4455;
+        // outline: 2px solid #2a4455;
+        box-shadow: 0 0 0 1px #2a4455;
       }
 
       .ui-checkbox {
@@ -701,7 +709,7 @@
 
     &.active {
       border-color: transparent;
-      outline: 2px solid #2A4455;
+      box-shadow: 0 0 0 2px #2a4455;
       color: #2A4455;
     }
   }
