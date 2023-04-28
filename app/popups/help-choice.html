@@ -1,0 +1,151 @@
+<div class="mfp-popup mfp-anim popup-bottom">
+  <div class="mfp-popup-header">
+    <div class="mfp-popup-title">Помощь в выборе</div>
+  </div>
+
+  <div class="mfp-popup-subtitle">
+    Напишите Ваш номер телефона и мы прямо сейчас перезвоним!
+  </div>
+
+  <form class="form-choice">
+    <div class="mfp-popup-fields">
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini"
+               for="name">
+          Ваше имя <span class="ui-color-red">*</span>
+        </label>
+        <div class="ui-input-wrp">
+          <input type="text"
+                 name="name"
+                 id="name"
+                 class="ui-input"
+                 placeholder="Иванов Иван Иванович" />
+          <div class="popup-icon"></div>
+        </div>
+      </div>
+
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini"
+               for="telephone">
+          Телефон <span class="ui-color-red">*</span>
+        </label>
+        <div class="ui-input-wrp">
+          <input type="text"
+                 name="telephone"
+                 id="telephone"
+                 class="ui-input"
+                 placeholder="+375 (33) 398-18-18" />
+          <div class="popup-icon"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui-checkbox">
+      <input type="checkbox"
+             id="customCheckbox"
+             class="ui-checkbox-input"
+             checked>
+      <label for="customCheckbox"
+             class="ui-checkbox-label">
+        <span class="default-txt">
+          Нажимая кнопку «Отправить запрос» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a>
+        </span>
+
+        <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+      </label>
+    </div>
+
+    <button type="submit"
+            class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
+  </form>
+
+  <script>
+    $(document).ready(function () {
+      $(".form-choice").validate({
+        errorElement: "span",
+
+        rules: {
+          name: {
+            required: true,
+            lettersonly: true
+          },
+          telephone: {
+            required: true,
+            telephone: true
+          },
+        },
+
+        submitHandler: function (form) {
+          showPopup()
+        },
+      });
+
+      $.validator.messages.required = 'Пожалуйста, введите данные';
+
+      jQuery.validator.addMethod("lettersonly", function (value, element) {
+        return this.optional(element) || /^([а-яё ]+|[a-z ]+)$/i.test(value);
+      }, "Поле может состоять из букв и пробелов, без цифр");
+
+      if (document.getElementById('telephone')) {
+        let phone = document.getElementById('telephone')
+
+        let phoneMask = IMask(phone, {
+          mask: [
+            {
+              mask: '+{375} (00) 000-00-00',
+              startsWith: '375',
+              overwrite: true,
+              lazy: false,
+              placeholderChar: '_',
+            },
+            {
+              mask: '+{7} (000) 000-00-00',
+              startsWith: '7',
+              overwrite: true,
+              lazy: false,
+              placeholderChar: '_',
+            },
+            {
+              mask: '0000000000000',
+              startsWith: '',
+              country: 'unknown'
+            }
+          ],
+
+          dispatch: function (appended, dynamicMasked) {
+            var number = (dynamicMasked.value + appended).replace(/\D/g, '');
+
+            return dynamicMasked.compiledMasks.find(function (m) {
+              return number.indexOf(m.startsWith) === 0;
+            });
+          }
+        })
+      }
+
+      jQuery.validator.addMethod("telephone", function (value, element) {
+        if (value.startsWith('+375')) {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){12}(\s*)?$/i.test(value);
+        } else if (value.startsWith('+7')) {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/i.test(value);
+        } else {
+          return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11,14}(\s*)?$/i.test(value);
+        }
+      }, "Введите полный номер");
+    });
+  </script>
+
+  <style>
+    @media (max-width: 576.99px) {
+      .mfp-container:before {
+        content: none;
+      }
+
+      .mfp-content {
+        min-height: 100vh;
+        height: -webkit-fill-available;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  </style>
+</div>

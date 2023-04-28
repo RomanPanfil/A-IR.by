@@ -606,29 +606,31 @@ if (document.querySelector(".making-form")) {
   const stickyBlock = document.querySelector(".cart-order");
   const card = document.querySelector("#card-breackpoint");
 
-  function flipOrSticky() {
-    const box = card.getBoundingClientRect();
-    const stickyBox = stickyBlock.getBoundingClientRect();
-    const boxTop = box.top;
-    const boxBottom = box.bottom;
-    const stickyBottom = stickyBox.height;
-    const py = window.pageYOffset;
+  if(card) {
+    function flipOrSticky() {
+      const box = card.getBoundingClientRect();
+      const stickyBox = stickyBlock.getBoundingClientRect();
+      const boxTop = box.top;
+      const boxBottom = box.bottom;
+      const stickyBottom = stickyBox.height;
+      const py = window.pageYOffset;
 
-    if (py > boxTop + py) {
-      if (py < boxBottom + py - stickyBottom - 100) {
-        stickyBlock.classList.add("sticky-box");
-        stickyBlock.classList.remove("card-breackpoint-flipbottom");
+      if (py > boxTop + py) {
+        if (py < boxBottom + py - stickyBottom - 100) {
+          stickyBlock.classList.add("sticky-box");
+          stickyBlock.classList.remove("card-breackpoint-flipbottom");
+        } else {
+          stickyBlock.classList.remove("sticky-box");
+          stickyBlock.classList.add("card-breackpoint-flipbottom");
+        }
       } else {
-        stickyBlock.classList.remove("sticky-box");
-        stickyBlock.classList.add("card-breackpoint-flipbottom");
+        stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
       }
-    } else {
-      stickyBlock.classList.remove("sticky-box", "card-breackpoint-flipbottom");
     }
-  }
 
-  window.addEventListener("scroll", flipOrSticky);
-  window.addEventListener("load", flipOrSticky);
+    window.addEventListener("scroll", flipOrSticky);
+    window.addEventListener("load", flipOrSticky);
+  }
 }
 
 
@@ -637,32 +639,34 @@ if (document.querySelector(".making-form")) {
   const stickyBlock = document.querySelector(".ui-rightbar");
   const card = document.querySelector("#card-breackpoint");
 
-  function flipOrSticky() {
-    const box = card.getBoundingClientRect();
-    const stickyBox = stickyBlock.getBoundingClientRect();
-    const boxTop = box.top;
-    const boxBottom = box.bottom;
-    const stickyBottom = stickyBox.height;
-    const py = window.pageYOffset;
+  if(card) {
+    function flipOrSticky() {
+      const box = card.getBoundingClientRect();
+      const stickyBox = stickyBlock.getBoundingClientRect();
+      const boxTop = box.top;
+      const boxBottom = box.bottom;
+      const stickyBottom = stickyBox.height;
+      const py = window.pageYOffset;
 
-    if (py > boxTop + py - 100) {
-      if (py < boxBottom + py - stickyBottom - 100) {
-        stickyBlock.classList.add("ui-rightbar-sticky");
-        stickyBlock.classList.remove("ui-rightbar-flipbottom");
+      if (py > boxTop + py - 100) {
+        if (py < boxBottom + py - stickyBottom - 100) {
+          stickyBlock.classList.add("ui-rightbar-sticky");
+          stickyBlock.classList.remove("ui-rightbar-flipbottom");
+        } else {
+          stickyBlock.classList.remove("ui-rightbar-sticky");
+          stickyBlock.classList.add("ui-rightbar-flipbottom");
+        }
       } else {
-        stickyBlock.classList.remove("ui-rightbar-sticky");
-        stickyBlock.classList.add("ui-rightbar-flipbottom");
+        stickyBlock.classList.remove(
+          "ui-rightbar-sticky",
+          "ui-rightbar-flipbottom"
+        );
       }
-    } else {
-      stickyBlock.classList.remove(
-        "ui-rightbar-sticky",
-        "ui-rightbar-flipbottom"
-      );
     }
-  }
 
-  window.addEventListener("scroll", flipOrSticky);
-  window.addEventListener("load", flipOrSticky);
+    window.addEventListener("scroll", flipOrSticky);
+    window.addEventListener("load", flipOrSticky);
+  }
 })();
 
 
@@ -1524,35 +1528,35 @@ new Swiper(".main-slider-swiper", {
   },
 });
 
-new Swiper(".main-trust-slider", {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  loop: true,
+// new Swiper(".main-trust-slider", {
+//   slidesPerView: 1,
+//   spaceBetween: 24,
+//   loop: true,
 
-  breakpoints: {
-    421: {
-      slidesPerView: "auto",
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-    1140: {
-      slidesPerView: 4,
-    },
-  },
+//   breakpoints: {
+//     421: {
+//       slidesPerView: "auto",
+//     },
+//     1024: {
+//       slidesPerView: 3,
+//     },
+//     1140: {
+//       slidesPerView: 4,
+//     },
+//   },
 
-  pagination: {
-    el: ".main-trust-pagintaion",
-    clickable: true,
-    dynamicBullets: true,
-    // dynamicMainBullets:3,
-  },
+//   pagination: {
+//     el: ".main-trust-pagintaion",
+//     clickable: true,
+//     dynamicBullets: true,
+//     // dynamicMainBullets:3,
+//   },
 
-  navigation: {
-    nextEl: ".main-trust-next",
-    prevEl: ".main-trust-prev",
-  },
-});
+//   navigation: {
+//     nextEl: ".main-trust-next",
+//     prevEl: ".main-trust-prev",
+//   },
+// });
 
 (function () {
   if (!document.querySelector(".main-recommend-desktop")) return;
@@ -3050,25 +3054,6 @@ function initSingleMap(id, allMap) {
 }
 
 $(document).on('mouseup', function (e) {
-  if ($('.container-menu').has(e.target).length === 0 && $('.main-catalog').has(e.target).length === 0 && $('.main-catalog-wrapper').has(e.target).length === 0 && $('.main-search-form').has(e.target).length === 0) {
-    mainSearchForm.classList.remove('main-search-form-open');
-    changeIcon.classList.remove('main-toggler-cross');
-    containerMenu.classList.remove('container-menu-open');
-    mainOpenCatalog.classList.remove('main-open-catalog');
-    navWrapperOpenCatalog.classList.remove('nav-wrapper-open-catalog')
-    bodyOpenCatalog.classList.remove('body-hidden')
-  }
-});
-
-$(document).on('mouseup', function (e) {
-  if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0 && $('.mob-menu-phone').has(e.target).length === 0) {
-    $('.main-contacts-drop').removeClass('numbers-open')
-    $('.main-contacts-tel-arrow').removeClass('opened')
-    $('.mob-menu-phone').removeClass('opened')
-  }
-});
-
-$(document).on('mouseup', function (e) {
   if ($('.enter-mobile').has(e.target).length === 0 && $('.mob-menu-img').has(e.target).length === 0) {
     $('.enter-mobile').removeClass('enter-mobile-open')
     $('.mob-menu-img').removeClass('mob-menu-img-open')
@@ -3090,3 +3075,339 @@ if (document.querySelector('.catalog-products')) {
     })
   })
 }
+
+let mainTrustSwiper = new Swiper(".main-trust-slider", {
+  spaceBetween: 24,
+  loop: true,
+
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+
+      pagination: {
+        dynamicBullets: true,
+        dynamicMainBullets: 2,
+      }
+    },
+
+
+    420: {
+      slidesPerView: 2,
+
+      pagination: {
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
+      }
+    },
+
+    300: {
+      slidesPerView: 1,
+
+      pagination: {
+        dynamicBullets: true,
+        dynamicMainBullets:4,
+      }
+    },
+  },
+
+  pagination: {
+    el: ".swiper-pagination.swiper-adaptive-trust",
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: ".main-trust-next",
+    prevEl: ".main-trust-prev",
+  },
+});
+
+const swiperRent = new Swiper('.swiper.slider-rent', {
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
+
+const swiperService = new Swiper('.swiper.service', {
+  spaceBetween: 24,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.service-button-next',
+    prevEl: '.service-button-prev',
+  },
+
+  breakpoints: {
+    1140: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+
+    300: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    }
+  }
+});
+
+
+
+const swiperReviews = new Swiper('.swiper.swiper-reviews', {
+  slidesPerView: 6,
+  spaceBetween: 24,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.reviews-button-next',
+    prevEl: '.reviews-button-prev',
+  },
+});
+
+
+$( document ).ready(function() {
+  // Handler for .ready() called.
+  const reviewsCard = document.querySelectorAll('.feedback-card');
+
+  if(reviewsCard.length) {
+    reviewsCard.forEach(card => {
+      const reviewsCardCompany = card.querySelector('.feedback-card-company');
+      const reviewsCardContent = card.querySelector('.feedback-card-content');
+      const reviewsCardImg = card.querySelector('.feedback-card-img');
+
+      (function () {
+        if (matchMedia) {
+          const screen = window.matchMedia("(max-width:1024px)");
+          screen.addListener(changes);
+          changes(screen);
+        }
+        function changes(screen) {
+          if (screen.matches) {
+            //экран менее 1024
+            card.prepend(reviewsCardCompany);
+            reviewsCardContent.append(reviewsCardImg);
+          } else {
+            //экран более 1024
+            card.append(reviewsCardImg);
+            reviewsCardContent.prepend(reviewsCardCompany);
+          }
+        }
+      })();
+    })
+  }
+
+  const rentCheckbox = document.querySelectorAll('.ui-checkbox-input')
+
+  if(rentCheckbox.length) {
+    rentCheckbox.forEach(item => {
+      const parent = item.closest('.rent-solution-product') || item.closest('.rent-solution-services')
+
+      item.addEventListener('change', () => {
+
+        if(item.checked) {
+          parent.classList.add('checked')
+        } else {
+          parent.classList.remove('checked')
+        }
+      })
+    })
+  }
+
+  function showPopup() {
+    $.magnificPopup.open({
+      items: { src: './popups/zaglushka-phone.html' },
+      type: 'ajax',
+      overflowY: 'scroll',
+      removalDelay: 300,
+      mainClass: 'my-mfp-zoom-in',
+      ajax: {
+        tError: 'Ошибка. <a href="%url%">Контент</a> не может быть загружен',
+      },
+      callbacks: {
+        open: function () {
+          setTimeout(function () {
+            $('.mfp-wrap').addClass('not_delay');
+            $('.white-popup').addClass('not_delay');
+          }, 700);
+        }
+      }
+    });
+  }
+
+  var tab = $('#tabs .tabs-items > div');
+	tab.hide().filter(':first').show();
+
+	// Клики по вкладкам.
+	$('#tabs .tabs-nav a').click(function(){
+		tab.hide();
+    tab.removeClass('active')
+    tab.filter(this.hash).addClass('active')
+		tab.filter(this.hash).show();
+		$('#tabs .tabs-nav a').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	}).filter(':first').click();
+
+  // rent
+  const rentTabs = document.querySelectorAll('.rent-tab')
+
+  if(rentTabs.length !== 0 && rentTabs !== undefined) {
+    let rentProductCheckbox
+    let rentInput
+    const totalBlock = document.querySelector('.rent-calculation-total')
+    const emptyBlock = document.querySelector('.rent-calculation-empty')
+    const list = document.querySelector('.rent-calculation-list ul')
+    const rentSlider = document.querySelector('.rent-calculation-slider')
+    const rentBtn = document.querySelector('.rent-calculation .ui-btn')
+    const cardStickyRent = document.querySelector('.rent.card-price-current')
+
+    rentTabs.forEach(item => {
+      if(item.classList.contains('active')) {
+        rentTab = document.querySelector('.tabs-item.active')
+        rentProductCheckbox = rentTab.querySelectorAll('.rent-solution-product .ui-checkbox-input');
+        rentInput = rentTab.querySelector('.ui-input.period')
+      }
+
+      item.addEventListener('click', () => {
+        rentTab = document.querySelector('.tabs-item.active')
+        rentProductCheckbox = rentTab.querySelectorAll('.rent-solution-product .ui-checkbox-input');
+        rentInput = rentTab.querySelector('.ui-input.period')
+
+        $('li.product').remove();
+
+        checkProducts()
+        rentList()
+        rentImgSlider()
+        rentAdd()
+
+        swiperRent.update(true)
+      })
+    })
+
+    function checkProducts() {
+      let allPrice = []
+
+      const checked = Array.from(rentProductCheckbox).filter(item => {
+        return item.checked
+      })
+
+      if(checked.length !== 0) {
+        emptyBlock.classList.add('hidden')
+
+        rentSlider.classList.remove('hidden')
+        totalBlock.classList.remove('hidden')
+
+        rentBtn.disabled = false
+      } else {
+        emptyBlock.classList.remove('hidden')
+
+        rentSlider.classList.add('hidden')
+        totalBlock.classList.add('hidden')
+
+        rentBtn.disabled = true
+      }
+
+      checked.forEach(item => {
+        const parent = item.closest('.rent-solution-product')
+        const priceBlock = parent.querySelector('.rent-solution-amount.month').innerHTML
+        const price = priceBlock.split(' ')[0]
+
+        return allPrice.push(+price)
+      })
+
+      rentCalculation(allPrice)
+    }
+
+    function rentCalculation(allPrice) {
+      const rent = rentInput.value
+
+      if(rent !== '' && +rent !== 0) {
+        const sum = allPrice.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
+        const total = sum * rent
+
+        totalBlock.innerHTML = `${total} <span>р.</span>`
+        cardStickyRent.innerHTML = `${total} BYN`
+      } else {
+        totalBlock.classList.add('hidden')
+
+        rentBtn.disabled = true
+      }
+
+      rentInput.addEventListener('keyup', () => {
+        checkProducts()
+      })
+    }
+
+    function rentImgSlider() {
+      rentProductCheckbox.forEach((item, index) => {
+        const parent = item.closest('.rent-solution-product')
+        const imgBlock = parent.querySelector('.rent-solution-img')
+        const imgPath = imgBlock.dataset.img
+
+        swiperRent.removeSlide(index);
+
+        if(item.checked) {
+          swiperRent.appendSlide(`
+            <div class="swiper-slide">
+              <div class="rent-calculation-img">
+                <img src="${imgPath}" alt="alt">
+              </div>
+            </div>`)
+          swiperRent.update(true)
+        } else {
+          swiperRent.removeSlide(index);
+        }
+      })
+    }
+
+    function rentList() {
+      let test = list.querySelectorAll('li.product')
+
+      test.forEach(item => {
+        item.remove()
+      })
+
+      rentProductCheckbox.forEach((item, index) => {
+        const parent = item.closest('.rent-solution-product')
+        const name = parent.querySelector('.rent-solution-name').textContent
+        let li = document.createElement("li")
+
+        if(item.checked) {
+          li.classList.add('product')
+          li.append(name)
+          list.prepend(li)
+        }
+      })
+    }
+
+    function rentAdd() {
+      rentProductCheckbox.forEach((item, index) => {
+        item.addEventListener('change', () => {
+          swiperRent.update(true)
+          checkProducts()
+          rentImgSlider()
+          rentList()
+        })
+      })
+    }
+
+    rentList()
+    rentImgSlider()
+    rentList()
+    checkProducts()
+    rentAdd()
+  }
+});
+
+$('.mfp-img').magnificPopup({
+  type: 'image',
+  gallery:{
+    enabled:false
+  }
+});

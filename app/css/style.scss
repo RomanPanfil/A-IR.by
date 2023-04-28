@@ -112,6 +112,10 @@ img[loading] {
 @import "./pages/service";
 @import "./pages/entries";
 @import "./pages/service-reminder";
+@import "./pages/leasing";
+@import "./pages/reviews";
+@import "./pages/company";
+@import "./pages/rent";
 
 
 
@@ -145,3 +149,6 @@ img[loading] {
 @import "./pages/productdone";
 @import "./pages/compare";
 @import "./pages/compare2";
+
+// part 4
+@import "./pages/page-404";

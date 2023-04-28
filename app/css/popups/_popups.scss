@@ -344,7 +344,7 @@ button.mfp-close:hover:after,
   height: 18px;
   z-index: 2;
   @media(max-width:576px) {
-      top: 15px;    
+      top: 15px;
   }
 }
 .popup-icon.valid {
@@ -974,3 +974,5 @@ button.mfp-close:hover:after,
 @import "account-company.scss";
 @import "company-phone-editor.scss";
 @import "order.scss";
+@import "send-task.scss";
+@import "map-leasing.scss";

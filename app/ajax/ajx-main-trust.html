@@ -92,8 +92,10 @@
           </svg>
         </div>
 
-        <div class="swiper-pagination swiper-adaptive-trust">
-          <span class="main-trust-pagintaion"></span>
+        <div class="swiper-pagination-wrapper">
+          <div class="swiper-pagination swiper-adaptive-trust">
+            <!-- <span class="main-trust-pagintaion"></span> -->
+          </div>
         </div>
         <!-- <div class="swiper-pagination"></div> -->
       </div>
@@ -101,41 +103,53 @@
     </div>
 
     <script>
+      setTimeout(() => {
+        (function () {
+          let mainTrustSwiper = new Swiper(".main-trust-slider", {
+            spaceBetween: 24,
+            loop: true,
 
-        setTimeout(() => {
+            breakpoints: {
+              768: {
+                slidesPerView: 3,
 
-            new Swiper(".main-trust-slider", {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  loop: true,
+                pagination: {
+                  dynamicBullets: true,
+                  dynamicMainBullets: 2,
+                }
+              },
 
 
+              420: {
+                slidesPerView: 2,
 
-  breakpoints: {
-    421: {
-      slidesPerView: "auto",
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-    1140: {
-      slidesPerView: 4,
-    },
-  },
+                pagination: {
+                  dynamicBullets: true,
+                  dynamicMainBullets: 3,
+                }
+              },
 
-  pagination: {
-    el: ".main-trust-pagintaion",
-    clickable: true,
-    dynamicBullets:true,
-    // dynamicMainBullets:3,
-  },
+              300: {
+                slidesPerView: 1,
 
-  navigation: {
-    nextEl: ".main-trust-next",
-    prevEl: ".main-trust-prev",
-  },
-});
-        },1000)
+                pagination: {
+                  dynamicBullets: true,
+                  dynamicMainBullets:4,
+                }
+              },
+            },
 
+            pagination: {
+              el: ".swiper-pagination.swiper-adaptive-trust",
+              clickable: true,
+            },
+
+            navigation: {
+              nextEl: ".main-trust-next",
+              prevEl: ".main-trust-prev",
+            },
+          });
+        })();
+      },0)
     </script>
   </div>
