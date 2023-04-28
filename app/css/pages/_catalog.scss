@@ -777,9 +777,12 @@
     }
     &-item {
       box-shadow: $shadow;
-      border-radius: 8px;
-      overflow: hidden;
       min-height: 100%;
+
+      @media(max-width: 1024.99px) {
+        border-radius: 8px;
+        overflow: hidden;
+      }
 
       &-img {
         line-height: 0;
@@ -829,6 +832,11 @@
           text-decoration: underline;
         }
       }
+    }
+
+    &-desktop {
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     @media (max-width: 576px) {
