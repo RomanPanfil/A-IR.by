@@ -3053,25 +3053,6 @@ function initSingleMap(id, allMap) {
   })
 }
 
-// $(document).on('mouseup', function (e) {
-//   if ($('.container-menu').has(e.target).length === 0 && $('.main-catalog').has(e.target).length === 0 && $('.main-catalog-wrapper').has(e.target).length === 0 && $('.main-search-form').has(e.target).length === 0) {
-//     mainSearchForm.classList.remove('main-search-form-open');
-//     changeIcon.classList.remove('main-toggler-cross');
-//     containerMenu.classList.remove('container-menu-open');
-//     mainOpenCatalog.classList.remove('main-open-catalog');
-//     navWrapperOpenCatalog.classList.remove('nav-wrapper-open-catalog')
-//     bodyOpenCatalog.classList.remove('body-hidden')
-//   }
-// });
-
-// $(document).on('mouseup', function (e) {
-//   if ($('.main-contacts-drop').has(e.target).length === 0 && $('.main-contacts-tel-arrow').has(e.target).length === 0 && $('.mob-menu-phone').has(e.target).length === 0) {
-//     $('.main-contacts-drop').removeClass('numbers-open')
-//     $('.main-contacts-tel-arrow').removeClass('opened')
-//     $('.mob-menu-phone').removeClass('opened')
-//   }
-// });
-
 $(document).on('mouseup', function (e) {
   if ($('.enter-mobile').has(e.target).length === 0 && $('.mob-menu-img').has(e.target).length === 0) {
     $('.enter-mobile').removeClass('enter-mobile-open')
@@ -3140,6 +3121,14 @@ let mainTrustSwiper = new Swiper(".main-trust-slider", {
   },
 });
 
+const swiperRent = new Swiper('.swiper.slider-rent', {
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
 
 const swiperService = new Swiper('.swiper.service', {
   spaceBetween: 24,
@@ -3168,13 +3157,7 @@ const swiperService = new Swiper('.swiper.service', {
   }
 });
 
-const swiperRent = new Swiper('.swiper.slider-rent', {
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-});
+
 
 const swiperReviews = new Swiper('.swiper.swiper-reviews', {
   slidesPerView: 6,
@@ -3222,7 +3205,6 @@ $( document ).ready(function() {
   const rentCheckbox = document.querySelectorAll('.ui-checkbox-input')
 
   if(rentCheckbox.length) {
-
     rentCheckbox.forEach(item => {
       const parent = item.closest('.rent-solution-product') || item.closest('.rent-solution-services')
 
