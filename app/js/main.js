@@ -275,16 +275,20 @@ const changeCatalogStyle = (style) => {
 
   let catalogProductsSearch = $("#catalog_search");
   let catalogProductsReniev = $(".catalog-products-reniev");
-  let cardReview = $("#card_review").offset().top;
-  let catalogSerachOffset = catalogProductsSearch.offset().top;
+  let cardReview = $("#card_review");
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > catalogSerachOffset && window.scrollY < cardReview) {
-      catalogProductsReniev.addClass("catalog-search-open");
-    } else {
-      catalogProductsReniev.removeClass("catalog-search-open");
-    }
-  });
+  if(cardReview.length) {
+    let cardReviewTop = $("#card_review").offset().top;
+    let catalogSerachOffset = catalogProductsSearch.offset().top;
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > catalogSerachOffset && window.scrollY < cardReviewTop) {
+        catalogProductsReniev.addClass("catalog-search-open");
+      } else {
+        catalogProductsReniev.removeClass("catalog-search-open");
+      }
+    });
+  }
 })();
 
 // counter
@@ -514,11 +518,12 @@ $(".slider-wrapper").each(function () {
     $inputFrom = $(".js-input-from", this),
     $inputTo = $(".js-input-to", this),
     instance,
-    min = $inputFrom[0].dataset.min,
-    max = $inputTo[0].dataset.max,
-    from = $inputFrom[0].dataset.min,
-    to = $inputTo[0].dataset.max,
-    steps = $range[0].dataset.steps;
+    min = +$inputFrom[0].dataset.min,
+    max = +$inputTo[0].dataset.max,
+    from = +$inputFrom[0].value,
+    to = +$inputTo[0].value,
+    steps = +$range[0].dataset.steps;
+
 
   $range.ionRangeSlider({
     skin: "round",
@@ -543,7 +548,7 @@ $(".slider-wrapper").each(function () {
   }
 
   $inputFrom.on("input", function () {
-    var val = $(this).prop("value");
+    var val = +$(this).prop("value");
 
     // validate
     if (val < min) {
@@ -558,14 +563,17 @@ $(".slider-wrapper").each(function () {
   });
 
   $inputTo.on("input", function () {
-    var val = $(this).prop("value");
-
+    var val = +$(this).prop("value");
+    console.log(val)
     // validate
     if (val < from) {
       val = from;
     } else if (val > max) {
       val = max;
     }
+    console.log(val)
+    console.log(from)
+    console.log(max)
 
     instance.update({
       to: val,
@@ -2023,7 +2031,8 @@ if (cardReviewsMediaContainer) {
 //Открываем каталог
 let catalogBtn = document.querySelector(".main-catalog"),
   headerHeightC = document.querySelector(".header").clientHeight,
-  navWrapperC = document.querySelector(".nav-wrapper").clientHeight,
+  navWrapperC = document.querySelector(".nav-wrapper") || document.querySelector(".nav-body"),
+  navWrapperCHeight = navWrapperC.clientHeight,
   changeIcon = document.querySelector(".main-toggler"),
   mainSearchForm = document.querySelector(".main-search-form"),
   // catalogItemList = document.querySelectorAll('.catalog-item-list'),
@@ -2042,6 +2051,7 @@ containerMenu.addEventListener("click", (e) => {
     containerMenu.classList.remove("container-menu-open");
   }
 });
+
 catalogBtn.addEventListener("click", () => {
   //open first li on menu
   let menuZero = $(".menu-desktop-ul")[0];
@@ -2074,7 +2084,7 @@ catalogBtn.addEventListener("click", () => {
       // containerMenu.style.top = headerHeightC - navWrapperC + mainSearchForm.clientHeight + 'px';
       containerMenu.style.top = $(".main").outerHeight();
     } else {
-      containerMenu.style.top = headerHeightC - navWrapperC + "px";
+      containerMenu.style.top = headerHeightC - navWrapperCHeight + "px";
     }
   }
 
@@ -3409,5 +3419,40 @@ $('.mfp-img').magnificPopup({
   type: 'image',
   gallery:{
     enabled:false
+  }
+});
+
+function openSearchMenu() {
+  closeInput.classList.remove("main-search-input-close-open");
+
+  mainLogo.classList.add("main-logo-close");
+  mainWatalog.classList.add("main-catalog-wrapper-close");
+  searchMenu.classList.add("search-menu-open");
+  bodyOpenCatalog.classList.add("body-hidden-search");
+  closeInput.classList.add("main-search-input-close-open");
+
+  topSum = menuHeight.offsetHeight + mainHeight.offsetHeight;
+
+  if ($(".header").hasClass("header_fixed")) {
+    $(searchMenu).css("top", `${mainHeight.offsetHeight}px`);
+  } else {
+    $(searchMenu).css("top", `${topSum}px`);
+  }
+}
+
+
+document.addEventListener('click', (event) => {
+  const ignoredBlock = document.querySelector('.search-menu');
+  const ignoredBlock2 = document.querySelector('.main-search-form');
+
+  const isClickInsideIgnoredBlock = ignoredBlock.contains(event.target);
+  const isClickInsideIgnoredBlock2 = ignoredBlock2.contains(event.target);
+
+  if (!isClickInsideIgnoredBlock && !isClickInsideIgnoredBlock2) {
+    // Код для обработки клика вне блока
+    mainLogo.classList.remove("main-logo-close");
+    mainWatalog.classList.remove("main-catalog-wrapper-close");
+    searchMenu.classList.remove("search-menu-open");
+    bodyOpenCatalog.classList.remove("body-hidden-search");
   }
 });
