@@ -54,11 +54,11 @@
       </div>
     </div>
     <div class="ui-field form-cell-field-load">
-      <label for="popup-review-file" class="ui-file load-file">
+      <label for="file" class="ui-file load-file">
         <span class="ui-file-txt">Добавить файл моего резюме</span>
         <input
           type="file"
-          id="popup-review-file"
+          id="file"
           name="file"
           class="ui-file-input file"
           accept=".txt,.doc,.docx,.pdf"
@@ -116,11 +116,17 @@
               required: true,
               email: true,
             },
+            file: {
+              required: true,
+            }
           },
   
           messages: {
             email: {
               email: 'Введите корректный email'
+            },
+            file: {
+              required: '',              
             }
           }
         });
@@ -129,18 +135,18 @@
   
         jQuery.validator.addMethod("lettersonly", function (value, element) {
           return this.optional(element) || /^([а-яё ]+|[a-z ]+)$/i.test(value);
-        }, "Поле может состоять из букв и пробелов, без цифр");        
-  
+        }, "Поле может состоять из букв и пробелов, без цифр");
+          
         // @note: проблема с иконкой при длинном названии файла
         const inputBlockLoad = document.querySelector('.form-cell-field-load')
         const label = document.querySelector('.load-file')
-        const input = document.getElementById("popup-review-file");
+        const input = document.getElementById("file");
         const uploadFile = document.querySelector(".form-cell-field-load");
         const load = document.querySelector(".load-file");
         const txtBlock = document.querySelector('.ui-file-txt')
         const iconFile = document.querySelector('.ui-file-icon svg use')
   
-        input.addEventListener("change", btnUploadFile);
+        input.addEventListener("change", btnUploadFile);  
   
         function btnUploadFile(e) {
           const files = Array.from(event.target.files)
@@ -184,7 +190,7 @@
           btn.addEventListener('click', () => {
             input.value = ''
   
-            txtBlock.textContent = 'Добавить техническое задание'
+            txtBlock.textContent = 'Добавить файл моего резюме'
   
             if(load.classList.contains('success')) {
               load.classList.remove('success')

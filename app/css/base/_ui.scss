@@ -1209,6 +1209,18 @@ textarea.ui-input {
   color: $secondary;
   cursor: pointer;
 
+  &.load-file:has(> .ui-file-input.error) {
+    border: 1px solid $colorRed !important;
+
+    .ui-file-txt {
+      color: $colorRed;
+
+      &::before {
+        background-image: url('../images/svg/document-fail.svg');
+      }
+    }
+  }  
+
   &-icon {
     position: absolute;
     left: 16px;
