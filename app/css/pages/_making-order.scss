@@ -76,6 +76,14 @@
     position: relative;
     margin-bottom: 8px;
 
+    &.hidden {
+      display: none;
+    }
+
+    &.not-available {
+      display: none;
+    }
+
     // input[type='radio'] {
     //   accent-color: #2A4455;
     //   width: 16px;
@@ -137,7 +145,7 @@
         outline: 1px solid #808080;
         border-color: transparent;
       }
-    }
+    }    
 
     .custom-radio.block+label {
       display: inline-flex;
@@ -224,6 +232,53 @@
       font-size: 14px;
       margin-top: 7px;
       color: rgba(0, 0, 0, 0.5);
+    }
+
+    &__leasing {
+      .custom-radio+label {
+        padding: 17px 78px 17px 20px;
+
+        @media(max-width:1024.99px) {
+          flex-wrap: wrap;
+          padding: 17px 0 17px 14px;
+        }
+
+        @media(max-width: 576px) {
+          padding: 14px 0 14px 8px;
+        }
+      }
+
+      .custom-radio+label::before {
+        top: 30px;
+        right: 24px;
+
+        @media(max-width:1024.99px) {
+          top: 24px;
+          right: 16px;
+        }
+
+        @media(max-width: 576px) {
+          display: inherit;
+          top: 12px;
+          right: 10px;    
+        }
+      }
+
+      .custom-radio:checked+label::after {
+        top: 34px;
+        right: 36px;
+
+        @media(max-width:1024.99px) {
+          top: 28px;
+          right: 28px;
+        }
+
+        @media(max-width: 576px) {
+          display: inherit;
+          top: 16px;
+          right: 22px;
+        }
+      }
     }
   }
 

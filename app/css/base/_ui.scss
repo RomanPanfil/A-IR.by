@@ -204,6 +204,15 @@ button {
     }
   }
 
+  &-ozon {
+    background-color: $ozon;
+
+    &:hover {
+      background-color: $ozon_hover;
+      color: #fff;
+    }
+  }
+
   &-midi {
     height: 40px;
     line-height: 40px;
@@ -286,7 +295,7 @@ button {
       }
     }
     &-1024 {
-      @media (max-width: 1024.99px) {
+      @media (max-width: 1025px) {
         display: block;
         visibility: visible;
       }
@@ -318,10 +327,13 @@ button {
   overflow-y: hidden;
   overflow-x: auto;
   scrollbar-width: 0;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 }
 .ui-scroller::-webkit-scrollbar {
   width: 0;
   height: 0;
+  display: none;
 }
 
 svg.sprite {
@@ -1601,3 +1613,189 @@ textarea.ui-input {
 // span.swiper-pagination-bullet.swiper-pagination-bullet-active-prev {
 //   display: none !important;
 // }
+
+.ui-switcher {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+
+  @media (max-width: 768px) {
+    width: 56px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:focus {
+      -webkit-tap-highlight-color: transparent;
+  }
+  }
+
+  input:checked + .ui-switcher-slider {
+    background-color: #2A4455;
+
+    &:hover {
+      background-color: #3F5766;
+    }
+  }
+  input:disabled + .ui-switcher-slider {
+    background-color: #F5F5F5;
+    cursor: not-allowed;
+  }
+
+  input:checked:disabled + .ui-switcher-slider {
+    background-color: #8CB2D6;
+    cursor: not-allowed;
+  }
+  
+  input:focus + .ui-switcher-slider {
+    box-shadow: 0 0 1px #2A4455;
+  }  
+  
+  input:checked + .ui-switcher-slider:before {
+    transform: translateX(20px);
+
+    @media (max-width: 768px) {
+      transform: translateX(22px);
+    }
+  }
+
+  &-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #D3D3D3;
+    transition: .3s;
+    border-radius: 34px;
+
+    &:hover {
+      background-color: #808080;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .3s;
+      border-radius: 50%;
+
+      @media (max-width: 768px) {
+        height: 26px;
+        width: 26px;
+        left: 4px;
+      }
+    }
+  }
+}
+
+.accordion {
+  &-item {
+    margin-bottom: 8px;
+    &.opened {
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.08);
+
+      .accordion-item-head {
+        &::before {
+          transform: translateY(-50%) rotate(90deg);
+        }
+      }
+
+      .accordion-item-body {
+        height: inherit;
+        padding: 32px 48px 50px 48px;
+        max-height: inherit;
+
+        &__padding-56 {
+          padding: 40px 56px;
+        }
+
+        @media (max-width: 576px) {
+          padding: 32px 16px;
+        }
+      }
+    }
+    &-head {
+      background-color: #F5F5F5;
+      border-radius: 8px;
+      padding: 17px 48px;
+      cursor: pointer;
+      font-weight: 600;
+      position: relative; 
+
+      &__padding-56 {
+        padding: 17px 56px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 23px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 16px;
+        border-radius: 2px;
+        background-color: $yellow;
+        transition: transform 0.3s;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        width: 16px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: $yellow;
+      }
+
+      &__padding-56 {
+        padding: 17px 56px;
+
+        @media(max-width: 576px) {
+          padding: 16px 48px;
+        }
+
+        &::before {         
+          left: 30px;
+          @media(max-width: 576px) {
+            left: 22px;
+          }
+        }
+  
+        &::after {         
+          left: 23px;
+          @media(max-width: 576px) {
+            left: 15px;
+          }   
+        }
+      }
+    }
+
+    &-body {
+      height: 0;
+      overflow: hidden;
+      padding: 0;
+      max-height: 0;
+    }
+  }
+}
+
+.semi-bold {
+  font-weight: 600;
+}

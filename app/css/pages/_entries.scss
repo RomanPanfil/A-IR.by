@@ -176,6 +176,9 @@
             }
 
             .articles-main-item {
+                flex: 0 0 calc(33.33% - 18px);
+                max-width: calc(33.33% - 18px);
+
                 @media(max-width:1024.99px) {
                     flex: 0 0 456px;
                     max-width: 456px;
@@ -184,8 +187,11 @@
                 @media(max-width:576.99px) {
                     flex: 0 0 340px;
                     max-width: 340px;
-                }
-                
+                }                
+            }
+
+            .articles-item-img img {
+                aspect-ratio: 2.5;
             }
         }
         

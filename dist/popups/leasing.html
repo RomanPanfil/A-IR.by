@@ -1,0 +1,589 @@
+<div class="mfp-popup mfp-anim popup-bottom popup-leasing">
+  <div class="popup-leasing-title ui-screen-less-576">
+    Лизинг
+  </div>
+  <form class="popup-leasing-top">
+    <div class="popup-leasing-top-left">
+      <div class="leasing-card">
+        <div class="leasing-card-img">
+          <a href="#" class="leasing-card-img-link">
+            <img src="./images/product-img.webp" alt="alt">
+          </a>
+        </div>
+        <div class="leasing-card-info">
+          <div class="leasing-card-code">
+            Код: <span class="leasing-card-code-code">01020304</span>
+          </div>
+          <div class="leasing-card-title">
+            <a href="#" class="leasing-card-title-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup-leasing-top-right">
+      <div class="popup-leasing-payment">
+        <div class="popup-leasing-payment-img">
+          <img src="./images/icons/chart.svg" alt="alt" />
+        </div>
+        <div class="popup-leasing-payment-txt">
+          <span class="popup-leasing-payment-sum" id="monthlyPayment">500,00 BYN</span>                
+          <span class="popup-leasing-payment-span">
+            ваш ежемесячный платёж
+          </span>
+        </div>
+      </div>
+      <div class="popup-leasing-sums">
+        <div class="popup-leasing-sum">
+          <span class="popup-leasing-sum-num" id="firstPayment">
+            500,00 BYN
+          </span>
+          <span class="popup-leasing-sum-description">
+            Первый взнос
+          </span>
+        </div>
+        <div class="popup-leasing-sum">
+          <span class="popup-leasing-sum-num" id="TotalSum">
+           0,00 BYN
+          </span>
+          <span class="popup-leasing-sum-description">
+            Итого в лизинг
+          </span>
+        </div>
+        <div class="popup-leasing-sum">
+          <span class="popup-leasing-sum-num" id="currentSum">
+            5000,00 BYN
+          </span>
+          <span class="popup-leasing-sum-description">
+            Текущая цена
+          </span>
+        </div>
+      </div>
+      <div class="calculation">
+        <div class="calculation-group">
+          <div class="calculation-group-title">
+            Вид лица
+          </div>
+          <div class="calculation-btns calculation-btns-gap-16" id="entityType">
+            <label class="calculation-btn calculation-btn-2" data-value="1">
+              <input type="radio" name="v_t" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">Физическое</div>
+              </div>
+            </label>
+            <label class="calculation-btn calculation-btn-2" data-value="2">
+              <input type="radio" name="v_t" class="calculation-btn-input"/>
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">Юридическое</div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="calculation-group">
+          <div class="calculation-group-title">
+            Первый взнос
+          </div>
+          <div class="calculation-btns" id="contribution">
+            <label class="calculation-btn" data-value="0">
+              <input type="radio" name="v_f" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">0%</div>
+              </div>
+            </label>
+            <label class="calculation-btn" data-value="10">
+              <input type="radio" name="v_f" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">10%</div>
+              </div>
+            </label>
+            <label class="calculation-btn" data-value="20">
+              <input type="radio" name="v_f" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">20%</div>
+              </div>
+            </label>
+            <label class="calculation-btn" data-value="30">
+              <input type="radio" name="v_f" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">30%</div>
+              </div>
+            </label>
+            <label class="calculation-btn" data-value="40">
+              <input type="radio" name="v_f" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">40%</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="calculation-group">
+          <div class="calculation-group-title">
+            Период оплаты
+          </div>
+          <div class="calculation-btns calculation-btns-gap-10" id="period">
+            <label class="calculation-btn calculation-btn-6-10" data-value="6">
+              <input type="radio" name="v_p" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">6</div>
+                <div class="calculation-btn-unit">мес</div>
+              </div>
+            </label>
+            <label class="calculation-btn calculation-btn-6-10" data-value="12">
+              <input type="radio" name="v_p" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">12</div>
+                <div class="calculation-btn-unit">мес</div>
+              </div>
+            </label>
+            <label class="calculation-btn calculation-btn-6-10" data-value="18">
+              <input type="radio" name="v_p" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">18</div>
+                <div class="calculation-btn-unit">мес</div>
+              </div>
+            </label>
+            <label class="calculation-btn calculation-btn-6-10" data-value="24">
+              <input type="radio" name="v_p" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">24</div>
+                <div class="calculation-btn-unit">мес</div>
+              </div>
+            </label>
+            <label class="calculation-btn calculation-btn-6-10" data-value="36">
+              <input type="radio" name="v_p" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">36</div>
+                <div class="calculation-btn-unit">мес</div>
+              </div>
+            </label>
+            <label class="calculation-btn calculation-btn-6-10" data-value="48">
+              <input type="radio" name="v_p" class="calculation-btn-input" />
+              <div class="calculation-btn-data">
+                <div class="calculation-btn-value">48</div>
+                <div class="calculation-btn-unit">мес</div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="popup-leasing-middle">
+    <div class="leasing-variants">
+      <div class="making-order-select making-order-select__leasing" data-card-type="2">
+        <input type="radio" class="custom-radio" id="select1" name="select" data-max-payment="Infinity" data-period-start="6" data-period-end="12" data-contribution-start="20" data-contribution-end="40" data-percent="2">
+        <label for="select1" class="leasing-variants-label">
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Рассрочка
+            </div>
+            <div class="leasing-variants-col-value">
+              от 500,00 BYN в месяц
+            </div>
+          </div>
+          <div class="leasing-variants-col">            
+            <div class="leasing-variants-col-title">
+              Срок
+            </div>
+            <div class="leasing-variants-col-value">
+              до 12 месяцев
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Первый взнос
+            </div>
+            <div class="leasing-variants-col-value">
+              от 20%
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Действие программы
+            </div>
+            <div class="leasing-variants-col-value">
+              вся Беларусь
+            </div>
+          </div>
+          
+        </label>
+      </div>
+
+      <div class="making-order-select making-order-select__leasing" data-card-type="2">
+        <input type="radio" class="custom-radio" id="select2" name="select" data-max-payment="Infinity" data-period-start="12" data-period-end="36" data-contribution-start="20" data-contribution-end="40" data-percent="1.7">
+        <label for="select2" class="leasing-variants-label">
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Лизинг
+            </div>
+            <div class="leasing-variants-col-value">
+              от 500,00 BYN в месяц
+            </div>
+          </div>
+          <div class="leasing-variants-col">            
+            <div class="leasing-variants-col-title">
+              Срок
+            </div>
+            <div class="leasing-variants-col-value">
+              от 12 до 36 месяцев
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Первый взнос
+            </div>
+            <div class="leasing-variants-col-value">
+              от 20 до 40%
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Действие программы
+            </div>
+            <div class="leasing-variants-col-value">
+              вся Беларусь
+            </div>
+          </div>
+          
+        </label>
+      </div>
+
+      <div class="making-order-select making-order-select__leasing" data-card-type="2">
+        <input type="radio" class="custom-radio" id="select3" name="select" data-max-payment="5000" data-period-start="6" data-period-end="12" data-contribution-start="0" data-contribution-end="40" data-percent="1.3">
+        <label for="select3" class="leasing-variants-label">
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Лизинг за 1 рубль
+            </div>
+            <div class="leasing-variants-col-value">
+              от 500,00 BYN в месяц
+            </div>
+          </div>
+          <div class="leasing-variants-col">            
+            <div class="leasing-variants-col-title">
+              Срок
+            </div>
+            <div class="leasing-variants-col-value">
+              до 12 месяцев
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Первый взнос
+            </div>
+            <div class="leasing-variants-col-value">
+              от 0 до 40%
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Действие программы
+            </div>
+            <a href="#" class="leasing-variants-col-value leasing-variants-col-value__map">
+              смотреть на карте
+            </a>
+          </div>
+          
+        </label>
+      </div>
+
+      <div class="making-order-select making-order-select__leasing" data-card-type="1">
+        <input type="radio" class="custom-radio" id="select4" checked name="select" data-max-payment="15000" data-period-start="6" data-period-end="6" data-contribution-start="0" data-contribution-end="40" data-percent="1.3">
+        <label for="select4" class="leasing-variants-label">
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Рассрочка
+            </div>
+            <div class="leasing-variants-col-value">
+              от 500,00 BYN в месяц
+            </div>
+          </div>
+          <div class="leasing-variants-col">            
+            <div class="leasing-variants-col-title">
+              Срок
+            </div>
+            <div class="leasing-variants-col-value">
+              до 6 месяцев
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Первый взнос
+            </div>
+            <div class="leasing-variants-col-value">
+              0%
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Действие программы
+            </div>
+            <div class="leasing-variants-col-value">
+              Вся Беларусь
+            </div>
+          </div>          
+        </label>
+      </div>
+
+      <div class="making-order-select making-order-select__leasing" data-card-type="1">
+        <input type="radio" class="custom-radio" id="select5" name="select" data-max-payment="15000" data-period-start="6" data-period-end="48" data-contribution-start="0" data-contribution-end="40" data-percent="1.3">
+        <label for="select5" class="leasing-variants-label">
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Экспресс-Кредит
+            </div>
+            <div class="leasing-variants-col-value">
+              от 500,00 BYN в месяц
+            </div>
+          </div>
+          <div class="leasing-variants-col">            
+            <div class="leasing-variants-col-title">
+              Срок
+            </div>
+            <div class="leasing-variants-col-value">
+              до 40 месяцев
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Первый взнос
+            </div>
+            <div class="leasing-variants-col-value">
+              0%
+            </div>
+          </div>
+          <div class="leasing-variants-col">
+            <div class="leasing-variants-col-title">
+              Действие программы
+            </div>
+            <div class="leasing-variants-col-value">
+              Вся Беларусь
+            </в>
+          </div>          
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup-leasing-bottom">
+    <div class="row valign-center popup-leasing-bottom-inner">
+      <div class="col-md-9 col-sm-8">
+        <div class="popup-leasing-bottom-info">
+          <span class="ui-tooltip compare-tooltip">
+            <div class="ui-tooltip-icon">?</div>
+            <span class="ui-tooltip-answer">
+              Тестовый короткий текст подсказки для теста тест.
+            </span>
+          </span>
+          <span class="popup-leasing-bottom-txt">
+            Расчёты носят ознакомительный характер. Подробная информация <a href="#">находится здесь</a>.
+          </span>          
+        </div>        
+      </div>
+      <div class="col-md-3 col-sm-4">
+        <a href="#" class="ui-btn ui-btn-block">
+          Оплатить частями
+        </a>
+      </div>
+    </div>
+  </div>
+  
+    <style>
+      @media (max-width: 576.99px) {
+        .mfp-container:before {
+          content: none;
+        }
+        .mfp-content {
+          min-height: 100vh;
+          height: -webkit-fill-available;
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        let currentSum = parseFloat(document.getElementById('currentSum').textContent.replace(/\s/g, "").replace(",", "."));
+        let firstPayment = parseFloat(document.getElementById('firstPayment').textContent.replace(/\s/g, "").replace(",", "."));
+        let percent;
+        // Получаем все инпуты с атрибутом data-period-start
+        const inputs = document.querySelectorAll('input[data-period-start]');
+        const calculationButtonsContribution = document.querySelectorAll('#contribution .calculation-btn');
+        const calculationButtonsPeriod = document.querySelectorAll('#period .calculation-btn');
+        const entityTypeButtons = document.querySelectorAll('#entityType .calculation-btn-input');
+        const leasingTypeSelects = document.querySelectorAll('.making-order-select__leasing');
+        const leasingTypeSelectsOne = document.querySelectorAll('.making-order-select__leasing[data-card-type="1"]');
+        const leasingTypeSelectsTwo = document.querySelectorAll('.making-order-select__leasing[data-card-type="2"]');        
+
+        if(entityTypeButtons) {       
+          entityTypeButtons[0].click();
+
+          const selectedType = entityTypeButtons[0].closest('.calculation-btn').getAttribute('data-value');
+          leasingTypeSelects.forEach(select => { 
+            const maxSelectPayment = Number(select.querySelector('input').getAttribute('data-max-payment'));
+
+            if(currentSum > maxSelectPayment) {
+              select.classList.add('not-available');
+            }
+
+            if(select.getAttribute('data-card-type') !== selectedType) {
+              select.classList.add('hidden');
+            } else {
+              select.classList.remove('hidden');
+            }
+          }); 
+        }
+
+        entityTypeButtons.forEach(button => {
+          button.addEventListener('click', handleEntityTypeChange);
+        })     
+
+        function handleEntityTypeChange(ev) {
+          const selectedType = ev.target.closest('.calculation-btn').getAttribute('data-value');
+
+          leasingTypeSelects.forEach(select => { 
+            if(select.getAttribute('data-card-type') !== selectedType) {
+              select.classList.add('hidden');
+            } else {
+              select.classList.remove('hidden');
+            }           
+          }); 
+          
+          if( ev.target.closest('.calculation-btn').getAttribute('data-value') === '1') {
+            leasingTypeSelectsOne[0].querySelector('input').click();
+          } else {
+            leasingTypeSelectsTwo[0].querySelector('input').click();
+          }
+        }
+      
+
+        function handleInputChange() {
+          handleContributionChange();         
+
+          // Находим выбранный инпут
+          let selectedInput;
+          inputs.forEach((input) => {
+              if (input.checked) {
+                selectedInput = input;   
+              }
+          });
+
+          if (selectedInput) {
+            const periodStart = parseFloat(selectedInput.getAttribute('data-period-start'));
+            const periodEnd = parseFloat(selectedInput.getAttribute('data-period-end'));
+            percent = selectedInput.getAttribute('data-percent');
+            
+            handlePeriodChange();
+
+            // Фильтруем кнопки по значениям атрибута value
+            Array.from(calculationButtonsPeriod).filter((button) => {
+              button.classList.remove('hidden');
+              const buttonValue = parseFloat(button.getAttribute('data-value'));        
+              
+              if(buttonValue < periodStart || buttonValue > periodEnd) {
+                button.classList.add('hidden');
+              }
+
+              if(buttonValue === periodStart) {  
+                button.click();
+              }
+            });
+
+            const contributionStart = parseFloat(selectedInput.getAttribute('data-contribution-start'));
+            const contributionEnd = parseFloat(selectedInput.getAttribute('data-contribution-end'));
+
+            // Фильтруем кнопки по значениям атрибута value
+            Array.from(calculationButtonsContribution).filter((button) => {
+              button.classList.remove('hidden');
+              const buttonValue = parseFloat(button.getAttribute('data-value'));
+              
+              if(buttonValue < contributionStart || buttonValue > contributionEnd) {
+                button.classList.add('hidden');
+              }
+
+              if(buttonValue === contributionStart) {
+                button.click();
+              }
+            });
+          } 
+        }
+
+        handleInputChange();
+
+        inputs.forEach((input) => {
+            input.addEventListener('change', handleInputChange);
+        });
+
+        // расчет первого взноса
+        function handleContributionChange() {     
+          let selectedButton; 
+          calculationButtonsContribution.forEach((button, index) => {
+            if (button.querySelector('.calculation-btn-input').checked) {
+              selectedButton = button;             
+            }
+          });
+
+          if(selectedButton) {
+            const value = selectedButton.getAttribute('data-value');
+
+            const firstPaymentSum = (currentSum / 100) * value;
+
+            document.getElementById('firstPayment').textContent = firstPaymentSum.toFixed(2).replace('.', ',') + ' BYN';
+          }
+        }
+
+        handleContributionChange();
+
+        calculationButtonsContribution.forEach((button) => {
+          button.querySelector('.calculation-btn-input').addEventListener('change', handleContributionChange);
+        });
+
+        // расчет ежемесячного платежа и итоговой суммы
+        function handlePeriodChange() {        
+          let selectedButton;          
+        
+          calculationButtonsPeriod.forEach((button, index) => {
+            if (button.querySelector('.calculation-btn-input').checked) {
+              selectedButton = button;             
+            }
+          });
+
+          if(selectedButton) {
+            const value = parseFloat(selectedButton.getAttribute('data-value'));
+            let firstPayment = parseFloat(document.getElementById('firstPayment').textContent.replace(/\s/g, "").replace(",", "."));   
+
+            // let persent;
+            // calculationButtonsContribution.forEach((button) => {
+            //   if(button.querySelector('.calculation-btn-input').checked) {             
+            //     persent = parseFloat(button.getAttribute('data-value'))
+            //   }
+            // })
+
+            // ежемесячный платёж
+            // const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * (persent / 100)) / 12;
+            const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * percent) / 12;
+            // итого в лизинг
+            // const totalSum = currentSum - firstPayment + monthlyPaymentSum * value;   
+            const totalSum = monthlyPaymentSum * value;         
+
+            document.getElementById('monthlyPayment').textContent = monthlyPaymentSum.toFixed(2).replace('.', ',') + ' BYN';
+            document.getElementById('TotalSum').textContent = totalSum.toFixed(2).replace('.', ',') + ' BYN';
+          }
+        }
+
+        handlePeriodChange();
+
+        calculationButtonsPeriod.forEach((button) => {
+          button.querySelector('.calculation-btn-input').addEventListener('change', handlePeriodChange);
+        });
+
+        calculationButtonsContribution.forEach((button) => {
+          button.querySelector('.calculation-btn-input').addEventListener('change', handlePeriodChange);
+        });
+       
+
+      });
+    </script>
+
+    
+  </div>

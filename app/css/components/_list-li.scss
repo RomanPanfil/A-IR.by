@@ -14,5 +14,19 @@
             background-color: #ffc100;
         }
     }
+
+    &-title {
+        @include fz(18);
+        font-weight: 600;
+        margin-bottom: 16px;
+        
+        &__important {
+            padding-left: 22px;
+            background-image: url(../images/flash.webp);
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: center left;
+        }
+    }
 }
 

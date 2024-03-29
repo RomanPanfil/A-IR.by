@@ -1,0 +1,204 @@
+<div class="mfp-popup mfp-anim popup-bottom send-task">
+  <div class="mfp-popup-header">
+    <div class="mfp-popup-title">Я хочу работать в Инструмент-Ресурс!</div>
+  </div>
+  <div class="mfp-popup-subtitle">
+    Готовы присоединиться к нашей компанде? Отправьте нам свое резюме.
+  </div>
+  <form class="form-task">
+    <div class="mfp-popup-fields">
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini" for="name">
+          Ваше имя
+          <span class="ui-color-red">*</span>
+        </label>
+        <div class="ui-input-wrp">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="ui-input"
+            placeholder="Иванов Иван Иванович"
+          >
+          <div class="popup-icon"></div>
+        </div>
+      </div>
+      <div class="ui-field">
+        <label class="ui-label ui-label-mini" for="email">
+          Email
+          <span class="ui-color-red">*</span>
+        </label>
+        <div class="ui-input-wrp">
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="ui-input"
+            placeholder="123@gmail.com"
+          >
+          <div class="popup-icon"></div>
+        </div>
+      </div>
+      <div class="ui-field">
+        <label for="" class="ui-label ui-label-mini">
+          Сопроводительное письмо
+          <span class="ui-color-red">*</span>
+        </label>
+        <textarea
+          id="textbox"
+          name="textbox"
+          placeholder="Текст письма"
+          class="ui-input"
+          rows="5"
+        ></textarea>
+      </div>
+    </div>
+    <div class="ui-field form-cell-field-load">
+      <label for="popup-review-file" class="ui-file load-file">
+        <span class="ui-file-txt">Добавить файл моего резюме</span>
+        <input
+          type="file"
+          id="popup-review-file"
+          name="file"
+          class="ui-file-input file"
+          accept=".txt,.doc,.docx,.pdf"
+        >
+      </label>
+    </div>
+    <div class="ui-checkbox">
+      <input
+        type="checkbox"
+        id="customCheckbox"
+        class="ui-checkbox-input"
+        checked
+      >
+      <label for="customCheckbox" class="ui-checkbox-label">
+        <span class="default-txt">
+          Нажимая кнопку «Отправить запрос» вы соглашаетесь
+          <a href="#">с политикой обработки персональных данных.</a>
+        </span>
+        <span class="mob-txt">
+          Я соглашаюсь с
+          <a href="#">политикой обработки персональных данных.</a>
+        </span>
+      </label>
+    </div>
+    <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
+  </form>
+  <style>
+      @media (max-width: 576.99px) {
+        .mfp-container:before {
+          content: none;
+        }
+  
+        .mfp-content {
+          min-height: 100vh;
+          height: -webkit-fill-available;
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+  </style>
+  <script>
+      $(document).ready(function () {
+        $(".form-task").validate({
+          errorElement: "span",
+  
+          rules: {
+            name: {
+              required: true,
+              lettersonly: true
+            },
+            textbox: {
+              required: true,
+            },
+            email: {
+              required: true,
+              email: true,
+            },
+          },
+  
+          messages: {
+            email: {
+              email: 'Введите корректный email'
+            }
+          }
+        });
+  
+        $.validator.messages.required = 'Пожалуйста, введите данные';
+  
+        jQuery.validator.addMethod("lettersonly", function (value, element) {
+          return this.optional(element) || /^([а-яё ]+|[a-z ]+)$/i.test(value);
+        }, "Поле может состоять из букв и пробелов, без цифр");        
+  
+        // @note: проблема с иконкой при длинном названии файла
+        const inputBlockLoad = document.querySelector('.form-cell-field-load')
+        const label = document.querySelector('.load-file')
+        const input = document.getElementById("popup-review-file");
+        const uploadFile = document.querySelector(".form-cell-field-load");
+        const load = document.querySelector(".load-file");
+        const txtBlock = document.querySelector('.ui-file-txt')
+        const iconFile = document.querySelector('.ui-file-icon svg use')
+  
+        input.addEventListener("change", btnUploadFile);
+  
+        function btnUploadFile(e) {
+          const files = Array.from(event.target.files)
+          const deleteBtn = document.createElement('div')
+          const errFile = document.createElement("span")
+  
+          deleteBtn.classList.add('delete-btn')
+          errFile.classList.add("error-file")
+  
+          console.log(load)
+  
+          errFile.textContent = 'Превышен максимально допустимый размер файла: 20 мб';
+  
+          files.forEach((file, index) => {
+            const fileSize = file.size
+            const maxSize = 20971520 //20971520
+            const fileName = file.name
+            const reader = new FileReader();
+  
+            if(fileSize < maxSize) {
+              reader.readAsText(file);
+  
+              load.classList.add('success')
+              txtBlock.classList.add('success')
+  
+              txtBlock.textContent = fileName
+  
+              label.append(deleteBtn)
+            } else {
+              uploadFile.append(errFile)
+  
+              load.classList.add('fail')
+              txtBlock.classList.add('fail')
+            }
+          })
+  
+          deleteFile(deleteBtn)
+        }
+  
+        function deleteFile(btn) {
+          btn.addEventListener('click', () => {
+            input.value = ''
+  
+            txtBlock.textContent = 'Добавить техническое задание'
+  
+            if(load.classList.contains('success')) {
+              load.classList.remove('success')
+              txtBlock.classList.remove('success')
+            }
+  
+            if(load.classList.contains('fail')) {
+              load.classList.remove('fail')
+              txtBlock.classList.remove('fail')
+            }
+  
+            btn.remove()
+          })
+        }
+      });
+  </script>
+</div>

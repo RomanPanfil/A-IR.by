@@ -129,6 +129,15 @@
         display: inline-block !important;
         fill: #FFF;
       }
+
+      &__ozon {
+        padding: 8px 4px;
+        @include fz(14);
+        color: #fff;
+        white-space: unset;
+        line-height: 1.4;
+        height: 56px;  
+      }
     }
 
     &-item {
@@ -187,6 +196,10 @@
     }
     &-btn {
       padding: 0px 30px;
+
+      &__ozon {
+        padding: 8px 4px;
+      }
     }
   }
 }

@@ -52,6 +52,22 @@
   justify-content: space-between;
 }
 
+.self-bottom {
+  -webkit-align-self: flex-end;
+  -ms-align-self: flex-end;
+  align-self: flex-end;
+}
+.self-top {
+  -webkit-align-self: flex-start;
+  -ms-align-self: flex-start;
+  align-self: flex-start;
+}
+.self-center {
+  -webkit-align-self: center;
+  -ms-align-self: center;
+  align-self: center;
+}
+
 .text-right {
   text-align: right;
 }

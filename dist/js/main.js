@@ -29883,6 +29883,87 @@ jQuery(document).ready(function ($) {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
+
+  // Выстраивание в колонки картичек на странице "Ремонт компрессоров"
+  (function() {
+    let elem = document.querySelector('.services-list');
+    let iso;
+
+    if (!elem) return   
+
+    function setGutter() {
+      let gutter = 24;
+      if (window.innerWidth < 1366) {
+        gutter = 16;
+      }      
+
+      // Проверяем разрешение экрана
+      if (window.innerWidth >= 679) {
+        // Инициализируем Isotope, если он еще не инициализирован
+        if (!iso) {
+          iso = new Isotope(elem, {
+            itemSelector: '.services-list-item',
+            layoutMode: 'masonry',
+            masonry: {
+              columnWidth: '.services-list-item',
+              gutter: gutter
+            }
+          });
+        }
+      } else {
+        // Отключаем Isotope, если он инициализирован
+        if (iso) {
+          iso.destroy();
+          iso = null;
+        }
+      }
+    }
+
+    setGutter();
+    $(window).resize(setGutter);
+
+  })();
+
+    // Выстраивание в колонки картичек на странице "Вакансии"
+    (function() {
+      let elem = document.querySelector('.proud-list');
+      let iso;
+  
+      if (!elem) return   
+  
+      function setGutter() {
+        let gutter = 24;
+        if (window.innerWidth < 1366) {
+          gutter = 16;
+        }      
+  
+        // Проверяем разрешение экрана
+        if (window.innerWidth > 1024) {
+          // Инициализируем Isotope, если он еще не инициализирован
+          if (!iso) {
+            iso = new Isotope(elem, {
+              itemSelector: '.proud-list-item',
+              layoutMode: 'masonry',
+              masonry: {
+                columnWidth: '.proud-list-item',
+                gutter: gutter
+              }
+            });
+          }
+        } else {
+          // Отключаем Isotope, если он инициализирован
+          if (iso) {
+            iso.destroy();
+            iso = null;
+          }
+        }
+      }
+  
+      setGutter();
+      $(window).resize(setGutter);
+  
+    })();
+  
 }); //ready
 
 new Swiper(".main-slider-swiper", {
@@ -31530,6 +31611,34 @@ const swiperService = new Swiper('.swiper.service', {
   }
 });
 
+const swiperRepair = new Swiper('.swiper.repair', {
+  spaceBetween: 24,
+  slidesPerView: 'auto',
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.repair-button-next',
+    prevEl: '.repair-button-prev',
+  },
+
+  breakpoints: {
+    1140: {
+      // slidesPerView: 3,
+      spaceBetween: 24,
+    },
+
+    768: {
+      // slidesPerView: 2.13,
+      spaceBetween: 24,
+    },
+
+    300: {
+      // slidesPerView: 1.2,
+      spaceBetween: 16,
+    }
+  }
+});
+
 
 
 const swiperReviews = new Swiper('.swiper.swiper-reviews', {
@@ -31775,7 +31884,256 @@ $( document ).ready(function() {
     rentList()
     checkProducts()
     rentAdd()
-  }
+  };
+
+  // cookie
+  (function() {
+    const cookie = document.querySelector('.cookie');
+    const accept = document.querySelector('.cookie-btns-accept');
+    const cookiesInfo = localStorage.getItem('cookies');
+
+    if (!cookie && !accept) return
+    
+    if (cookiesInfo === 'yes') {
+      // Если есть информация о "cookies", скрываем блок с сообщением       
+      cookie.classList.add('closed');     
+    } else {
+      cookie.classList.remove('closed'); 
+    }
+
+    accept.addEventListener('click', () => {
+      localStorage.setItem('cookies', 'yes');
+      cookie.classList.add('closed');
+    })
+  })();
+
+  // калькулятор оплаты по частям
+  (function() {
+    const leasingCalck = document.getElementById('leasingCalck');
+    const leasinCards = document.querySelectorAll('.leasing-calc-card');
+    const entityTypeButtons = document.querySelectorAll('#entityType .calculation-btn-input');  
+
+    let selectedSum = '0';
+    let firstPaymentSum = '0';
+    let selectedPeriod = '6';
+
+    entityTypeButtons.forEach(button => {
+      button.addEventListener('change', handleEntityTypeChange);
+    })
+
+    function handleEntityTypeChange(ev) {
+      const selectedType = ev.target.closest('.calculation-btn').getAttribute('data-value');
+
+      leasinCards.forEach(card => { 
+        if(card.getAttribute('data-card-type') !== selectedType) {
+          card.classList.add('hidden');
+        } else {
+          card.classList.remove('hidden');
+        }
+      });
+
+      cardsOrder();
+    }
+
+    // первый взнос
+    let selectedFirstPayment = '0';
+    const firstPaymentButtons = document.querySelectorAll('#contribution .calculation-btn-input');
+
+    firstPaymentButtons.forEach((button) => {
+      if (button.checked) {
+        selectedFirstPayment = button.closest('.calculation-btn').getAttribute('data-value');
+      }
+
+      button.addEventListener('change', handleFirstPaymentChange)
+    });
+
+    function handleFirstPaymentChange(ev) {
+      selectedFirstPayment = ev.target.closest('.calculation-btn').getAttribute('data-value');
+
+      firstPaymentSum = (selectedSum / 100) * selectedFirstPayment; 
+
+      monthlyPayment();
+      cardsOrder();
+    }
+
+    // период оплаты    
+    const periodButtons = document.querySelectorAll('#period .calculation-btn-input');
+
+    periodButtons.forEach((button) => {
+      if (button.checked) {
+        selectedPeriod = button.closest('.calculation-btn').getAttribute('data-value');
+      }
+
+      button.addEventListener('change', handlePeriodChange)
+    });
+
+    function handlePeriodChange(ev) {
+      selectedPeriod = ev.target.closest('.calculation-btn').getAttribute('data-value');
+
+      monthlyPayment();
+      cardsOrder();
+    }
+
+    // расчет значений в зависимости от выбранных условий    
+    const paymentInput = document.querySelector('#payment .ui-input');
+
+    if(paymentInput) {
+      paymentInput.addEventListener('input', handlePaymentChange)
+    }
+
+    function handlePaymentChange(ev) {
+      selectedSum = ev.target.value;
+      firstPaymentSum = (selectedSum / 100) * selectedFirstPayment;   
+
+      monthlyPayment();
+      cardsOrder();
+    }
+
+    // функция рассчета ежемесячного платежа
+    function monthlyPayment() {
+      leasinCards.forEach(card => {      
+        const percent = card.getAttribute('data-percent');  
+        const monthlyPaymentSum = ((selectedSum - firstPaymentSum) / selectedPeriod) + ((selectedSum - firstPaymentSum) * (percent / 12)) / 12;
+        const totalSum = monthlyPaymentSum * selectedPeriod
+        
+        card.querySelector('.leasing-calc-value-payment').textContent = monthlyPaymentSum.toFixed(2).replace('.', ',') + ' BYN';
+        card.querySelector('.leasing-calc-total').textContent = totalSum.toFixed(2).replace('.', ',') + ' BYN';
+        card.querySelector('.leasing-calc-first-payment').textContent = parseFloat(firstPaymentSum).toFixed(2).replace('.', ',') + ' BYN';
+      })
+    }
+
+    // порядок и отображение карточек в зависимости от условий
+    function cardsOrder() {
+      let minValue = Infinity;
+      let bestCard = null;
+
+      leasinCards.forEach(card => {
+        const cardPeriodStart = parseInt(card.getAttribute('data-period-start'));
+        const cardPeriodEnd = parseInt(card.getAttribute('data-period-end'));
+        const cardFirstPaymentStart = parseInt(card.getAttribute('data-contribution-start'));
+        const cardFirstPaymentEnd = parseInt(card.getAttribute('data-contribution-end'));
+        const cardMaxPayment = Number(card.getAttribute('data-max-payment'));
+    
+        // Преобразуем selectedFirstPayment и selectedPeriod в числа
+        const numSelectedFirstPayment = parseInt(selectedFirstPayment);
+        const numSelectedPeriod = parseInt(selectedPeriod);
+    
+        // Проверяем, находится ли selectedFirstPayment в пределах cardFirstPaymentStart и cardFirstPaymentEnd
+        const isValidFirstPayment = !isNaN(numSelectedFirstPayment) && !isNaN(cardFirstPaymentStart) && !isNaN(cardFirstPaymentEnd) && numSelectedFirstPayment >= cardFirstPaymentStart && numSelectedFirstPayment <= cardFirstPaymentEnd;
+    
+        // Проверяем, находится ли selectedPeriod в пределах cardPeriodStart и cardPeriodEnd
+        const isValidPeriod = !isNaN(numSelectedPeriod) && !isNaN(cardPeriodStart) && !isNaN(cardPeriodEnd) && numSelectedPeriod >= cardPeriodStart && numSelectedPeriod <= cardPeriodEnd;
+
+        // Проверяем не превышает ли максимальную стоимость
+        let isValidMaxPayment = Number(selectedSum) <= cardMaxPayment;
+    
+        // Сбрасываем класс "not-available" у всех карточек
+        card.classList.remove('not-available');
+    
+        // Если карточка скрыта или не соответствует условиям периода и первоначального взноса, добавляем класс "not-available"
+        if (card.classList.contains('hidden') || !isValidFirstPayment || !isValidPeriod || !isValidMaxPayment) {
+          card.classList.add('not-available');
+          return;
+        }  
+    
+        const value = parseFloat(card.querySelector('.leasing-calc-value-payment').textContent.replace(/\s/g, ''));
+    
+        if (!isNaN(value) && value < minValue) {
+          minValue = value;
+          bestCard = card;
+        }
+      });
+    
+      // Удаляем класс "best" у всех карточек
+      leasinCards.forEach(card => card.classList.remove('best'));
+    
+      // Добавляем класс "best" к карточке с минимальным значением
+      if (bestCard) {
+        bestCard.classList.add('best');
+      }
+    }
+    
+
+    if(leasingCalck) {
+      monthlyPayment();
+      cardsOrder();
+    }
+
+
+
+  })();
+
+  // конструктор пневмосети
+  (function() {
+    document.querySelectorAll('.pneumatic-constructor .trigger').forEach(function(trigger) {
+      trigger.addEventListener('mouseover', function() {
+        let triggerIndex = this.classList.value.match(/trigger-(\d+)/)[1];
+        document.querySelectorAll('.line').forEach(function(line) {
+          let lineIndex = line.classList.value.match(/line-(\d+)/)[1];
+          if (lineIndex === triggerIndex) {
+            line.classList.add('active');
+          }
+        });
+      });
+  
+      trigger.addEventListener('mouseout', function() {
+        let triggerIndex = this.classList.value.match(/trigger-(\d+)/)[1];
+        document.querySelectorAll('.line').forEach(function(line) {
+          let lineIndex = line.classList.value.match(/line-(\d+)/)[1];
+          if (lineIndex === triggerIndex) {
+            line.classList.remove('active');
+          }
+        });
+      });
+    });
+  })();
+
+  // аккордион
+  (function() {
+    document.querySelectorAll('.accordion-item-head').forEach(item => {
+      item.addEventListener('click', event => {
+        let parent = event.target.closest('.accordion-item');
+
+        if(parent) {
+          parent.classList.toggle('opened');
+        }        
+      });
+    });  
+  })();
+
+  // скролл вакансии
+  (function () {
+    if (!document.querySelector('.vacancies-header-scroller') || !document.querySelector('#vacanciesLst')) return
+
+    document.querySelector('.vacancies-header-scroller').addEventListener('click', (e) => {
+      e.preventDefault()
+      document.querySelector('#vacanciesLst').scrollIntoView({behavior: "smooth"})
+    })
+  
+  }());
+
+  (function() {
+    let items = document.querySelectorAll('.vacancies-list-item');
+
+    items.forEach((item) => {
+      let salaryElement = item.querySelector('.vacancies-list-salary');
+      
+      if (salaryElement) {
+        let salaryText = salaryElement.textContent;
+        
+        // Проверяем текст на наличие цифр
+        if (/\d/.test(salaryText)) {
+          let headSalaryElement = item.querySelector('.vacancies-list-head-salary');
+          
+          if (headSalaryElement) {
+            headSalaryElement.textContent = salaryText;
+          }
+        }
+      }
+    });
+
+  })();
+  
 });
 
 $('.mfp-img').magnificPopup({

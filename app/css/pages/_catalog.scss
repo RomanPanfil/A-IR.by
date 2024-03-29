@@ -2130,6 +2130,7 @@ input[type="range"]::-moz-range-thumb {
     @media (min-width: 1025px) {
       .slider-product-stickers {
         display: block;
+        min-width: 90%;
       }
       .slider-product-arrow-icon {
         transform: translate(-50%, -50%) rotate(180deg);
@@ -2158,6 +2159,78 @@ input[type="range"]::-moz-range-thumb {
       display: none;
     }
   }
+}
+
+.slider-sales {
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: $shadow;
+  border-radius: 10px; 
+
+  &-img {    
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 100%;
+    padding-bottom: Min(100%,392px);
+    
+    img {
+      border-radius: 8px;      
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      max-height: 100%;
+      max-width: 100%;     
+    }
+  }  
+  
+  &-arrow {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 36px;
+    height: 24px;
+    line-height: 22px;
+    border: 1px solid $border;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: border .15s;
+
+    &-icon {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      fill: $border;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      transition: transform .15s;
+    }
+
+    &:hover {
+      border-color: $colorDark;
+
+      .slider-product-arrow-icon {
+        fill: $colorDark;
+      }
+    }
+  }
+
+  &-title {
+    @include fz(16);    
+    line-height: 1.375;
+    
+    &-name {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    &-city {
+      font-weight: 400;
+    }
+  }  
 }
 
 

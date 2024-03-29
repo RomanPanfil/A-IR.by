@@ -1,0 +1,111 @@
+<form class="mfp-popup mfp-anim popup-cookie cookie-popup">
+  <div class="popup-cookie-head">
+    <div class="mfp-popup-title popup-cookie-title">
+      Настройка файлов cookie
+    </div>
+    <div class="popup-cookie-description">
+      <p>
+        Наш сайт использует файлы cookie для улучшения пользовательского опыта, сбора статистики и предоставления персонализированных рекомендаций.
+      </p>
+      <p>
+        Вы можете настроить удобные для вас файлы cookie, кроме необходимых. Отмена некоторых cookie может повлиять на работоспособность сайта.
+      </p>
+    </div>
+  </div>
+  <div class="popup-cookie-body">
+    <div class="popup-cookie-item">
+      <div class="popup-cookie-item-head">
+        <div class="popup-cookie-item-title">
+          Необходимые файлы cookie 
+        </div>
+        <label class="ui-switcher">
+          <input id="cookieNecessary" type="checkbox" name="cookieNecessary" checked disabled>
+          <span class="ui-switcher-slider"></span>  
+        </label>
+      </div>
+      <div class="popup-cookie-item-description">
+        <div class="popup-cookie-item-text">
+          <p>
+            Эти файлы cookie необходимы для функционирования веб-сайта и не могут быть отключены в наших системах.
+            Вы можете настроить браузер таким образом, чтобы он блокировал эти файлы cookie или уведомлял вас об их использовании,
+            но в таком случае возможно, что некоторые разделы веб-сайта не будут работать.
+          </p>          
+        </div>
+        <a href="#" class="popup-cookie-item-more">
+          Показать описание
+        </a>
+      </div>
+    </div>
+
+    <div class="popup-cookie-item">
+      <div class="popup-cookie-item-head">
+        <div class="popup-cookie-item-title">
+          Целевые файлы cookie
+        </div>
+        <label class="ui-switcher">
+          <input id="cookieTarget" type="checkbox" name="cookieTarget" checked>
+          <span class="ui-switcher-slider"></span>  
+        </label>
+      </div>
+      <div class="popup-cookie-item-description">
+        <div class="popup-cookie-item-text">
+          <p>
+            Эти файлы cookie настраиваются через наш веб-сайт нашими партнерами.
+            Они могут использоваться для сбора данных о ваших интересах, посещаемых страницах и источниках трафика,
+            чтобы оценивать и улучшать работу нашего веб-сайта. Также файлы cookie нужны для функционирования онлайн-чата
+            и формы «Замена и возврат товара».
+          </p>          
+        </div>
+        <a href="#" class="popup-cookie-item-more">
+          Показать описание
+        </a>
+      </div>
+    </div>
+   
+  </div>
+  <div class="popup-cookie-confirm">
+    <div class="row">
+      <div class="col-sm-6 flex valign-center">
+        <span class="popup-cookie-confirm-text">
+          Нажав «Принять», вы даете согласие на обработку файлов cookie в соответствии с
+          <a href="#">политикой обработки персональных данных.</a>
+        </span>
+      </div>
+
+      <div class="col-sm-6">
+        <button type="submit" class="ui-btn ui-btn-block ui-btn-blue popup-cookie-accept-btn">Принять</button>
+      </div>
+    </div>
+  </div> 
+  
+  <script>
+$(document).ready(function() {
+  const showMoreButtons = document.querySelectorAll('.popup-cookie-item-more');
+
+  showMoreButtons.forEach(button => {
+    button.addEventListener('click', (event) => {
+      const textElement = event.target.parentElement.querySelector('.popup-cookie-item-text');
+      const isOpened = textElement.classList.contains('opened');
+
+      if (isOpened) {        
+        event.target.textContent = 'Показать описание';
+      } else {        
+        event.target.textContent = 'Скрыть описание';
+      }
+
+      textElement.classList.toggle('opened');
+    });
+  });
+
+  const acceptPopup = document.querySelector('.popup-cookie-accept-btn');
+  const cookie = document.querySelector('.cookie');
+
+  acceptPopup.addEventListener('click', function () {
+    localStorage.setItem('cookies', 'yes');
+    $.magnificPopup.close();
+    cookie.classList.add('closed');
+});
+});
+
+  </script>
+</form>
