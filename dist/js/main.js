@@ -32033,6 +32033,10 @@ $( document ).ready(function() {
         // Если карточка скрыта или не соответствует условиям периода и первоначального взноса, добавляем класс "not-available"
         if (card.classList.contains('hidden') || !isValidFirstPayment || !isValidPeriod || !isValidMaxPayment) {
           card.classList.add('not-available');
+          card.querySelector('.leasing-calc-value-payment').textContent = '0,00 BYN';
+          card.querySelector('.leasing-calc-first-payment').textContent = '0,00 BYN';
+          card.querySelector('.leasing-calc-total').textContent = '0,00 BYN';          
+          
           return;
         }  
     

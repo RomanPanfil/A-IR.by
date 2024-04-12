@@ -299,34 +299,6 @@
             @media(max-width:1024.99px) {
                 @include fz(22);
             }
-
-            @media(max-width:768px) {               
-                display: none;
-            }
-
-            &__mobile {
-                display: none;
-
-                @media(max-width:768px) {
-                    display: block;
-                    width: 1320px;
-                }
-            }
-        }
-
-        &-txt {
-            @media(max-width:768px) {                
-                display: none;
-            }
-
-            &__mobile {
-                display: none;
-
-                @media(max-width:768px) {
-                    display: block;
-                    width: 1320px;
-                }
-            }
         }
 
         .font-14 {

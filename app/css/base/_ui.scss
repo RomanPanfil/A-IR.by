@@ -811,6 +811,7 @@ textarea.ui-input {
     font-size: 10px;
     text-align: center;
     line-height: 14px;
+    flex-shrink: 0;
   }
   &-answer {
     position: absolute;

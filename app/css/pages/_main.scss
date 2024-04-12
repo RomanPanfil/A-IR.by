@@ -1414,6 +1414,8 @@
   }
 
   &-card {
+    display: block;
+    color: $font;
     background-color: #F5F5F5;
     border-radius: 8px;
     padding: 14px 18px;
