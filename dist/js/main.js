@@ -32097,12 +32097,17 @@ $( document ).ready(function() {
     document.querySelectorAll('.accordion-item-head').forEach(item => {
       item.addEventListener('click', event => {
         let parent = event.target.closest('.accordion-item');
-
-        if(parent) {
+        if (parent) {
           parent.classList.toggle('opened');
-        }        
+
+          parent.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+          });
+        }
       });
-    });  
+    });
   })();
 
   // скролл вакансии
