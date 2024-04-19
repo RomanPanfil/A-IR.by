@@ -636,11 +636,7 @@
             // const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * (persent / 100)) / 12;
             // const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * percent) / 12;
             const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * (percent ? percent : 1)) / 12;
-
-            console.log(currentSum)
-            console.log(firstPayment)
-            console.log(value)
-            console.log(percent)
+    
             // итого в лизинг
             // const totalSum = currentSum - firstPayment + monthlyPaymentSum * value;   
             const totalSum = monthlyPaymentSum * value;         
