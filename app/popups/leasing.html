@@ -325,7 +325,7 @@
           data-period-end="6"
           data-contribution-start="0"
           data-contribution-end="40"
-          data-percent="1.3"
+          data-percent="1"
         >
         <label for="select4" class="leasing-variants-label">
           <div class="leasing-variants-col">
@@ -635,7 +635,7 @@
             // ежемесячный платёж
             // const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * (persent / 100)) / 12;
             // const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * percent) / 12;
-            const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * (percent ? percent : 1)) / 12;
+            const monthlyPaymentSum = ((currentSum - firstPayment) / value) + ((currentSum - firstPayment) * (percent ? percent / 100 : 0)) / 12;
     
             // итого в лизинг
             // const totalSum = currentSum - firstPayment + monthlyPaymentSum * value;   

@@ -3630,8 +3630,14 @@ $( document ).ready(function() {
     function monthlyPayment() {
       leasinCards.forEach(card => {      
         const percent = card.getAttribute('data-percent');  
-        const monthlyPaymentSum = ((selectedSum - firstPaymentSum) / selectedPeriod) + ((selectedSum - firstPaymentSum) * percent) / 12;
-        const totalSum = monthlyPaymentSum * selectedPeriod
+        // const monthlyPaymentSum = ((Number(selectedSum) - Number(firstPaymentSum)) / Number(selectedPeriod)) + ((Number(selectedSum) - Number(firstPaymentSum)) * Number(percent)) / 12;
+        const monthlyPaymentSum = (
+          (Number(selectedSum) - Number(firstPaymentSum)) / Number(selectedPeriod)
+        ) + (
+          (Number(selectedSum) - Number(firstPaymentSum)) * (Number(percent) / 100)
+        ) / 12;
+
+        const totalSum = monthlyPaymentSum * selectedPeriod;
         
         card.querySelector('.leasing-calc-value-payment').textContent = monthlyPaymentSum.toFixed(2).replace('.', ',') + ' BYN';
         card.querySelector('.leasing-calc-total').textContent = totalSum.toFixed(2).replace('.', ',') + ' BYN';
