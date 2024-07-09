@@ -3630,13 +3630,11 @@ $( document ).ready(function() {
     function monthlyPayment() {
       leasinCards.forEach(card => {      
         const percent = card.getAttribute('data-percent');  
-        // const monthlyPaymentSum = ((Number(selectedSum) - Number(firstPaymentSum)) / Number(selectedPeriod)) + ((Number(selectedSum) - Number(firstPaymentSum)) * Number(percent)) / 12;
-        const monthlyPaymentSum = (
-          (Number(selectedSum) - Number(firstPaymentSum)) / Number(selectedPeriod)
-        ) + (
-          (Number(selectedSum) - Number(firstPaymentSum)) * (Number(percent) / 100)
-        ) / 12;
+        const increase = card.getAttribute('data-increase') || 1;       
 
+        // const monthlyPaymentSum = ((Number(selectedSum) - Number(firstPaymentSum)) / Number(selectedPeriod)) + ((Number(selectedSum) - Number(firstPaymentSum)) * Number(percent)) / 12;
+        const monthlyPaymentSum = ((Number(selectedSum) - Number(firstPaymentSum)) / Number(selectedPeriod)) + ((Number(selectedSum) - Number(firstPaymentSum)) * (Number(percent) / 100)) / 12 * Number(selectedPeriod) * Number(increase);
+        
         const totalSum = monthlyPaymentSum * selectedPeriod;
         
         card.querySelector('.leasing-calc-value-payment').textContent = monthlyPaymentSum.toFixed(2).replace('.', ',') + ' BYN';
@@ -3656,6 +3654,7 @@ $( document ).ready(function() {
         const cardFirstPaymentStart = parseInt(card.getAttribute('data-contribution-start'));
         const cardFirstPaymentEnd = parseInt(card.getAttribute('data-contribution-end'));
         const cardMaxPayment = Number(card.getAttribute('data-max-payment'));
+        const cardMinPayment = Number(card.getAttribute('data-min-payment'));
     
         // Преобразуем selectedFirstPayment и selectedPeriod в числа
         const numSelectedFirstPayment = parseInt(selectedFirstPayment);
@@ -3669,12 +3668,15 @@ $( document ).ready(function() {
 
         // Проверяем не превышает ли максимальную стоимость
         let isValidMaxPayment = Number(selectedSum) <= cardMaxPayment;
+
+        // Проверяем не превышает ли минимальную стоимость
+        let isValidMinPayment = Number(selectedSum) >= cardMinPayment;
     
         // Сбрасываем класс "not-available" у всех карточек
         card.classList.remove('not-available');
     
         // Если карточка скрыта или не соответствует условиям периода и первоначального взноса, добавляем класс "not-available"
-        if (card.classList.contains('hidden') || !isValidFirstPayment || !isValidPeriod || !isValidMaxPayment) {
+        if (card.classList.contains('hidden') || !isValidFirstPayment || !isValidPeriod || !isValidMaxPayment || !isValidMinPayment) {
           card.classList.add('not-available');
           card.querySelector('.leasing-calc-value-payment').textContent = '0,00 BYN';
           card.querySelector('.leasing-calc-first-payment').textContent = '0,00 BYN';
@@ -3829,3 +3831,32 @@ document.addEventListener('click', (event) => {
     bodyOpenCatalog.classList.remove("body-hidden-search");
   }
 });
+
+// Аналогичные товары
+(function() {
+  function adjustAnalogParamHeights() {
+    const currentCard = document.querySelector('.analog-card.analog-current');
+    const otherCards = document.querySelectorAll('.analog-card:not(.analog-current)');
+  
+    if (!currentCard || otherCards.length === 0) return;
+  
+    const currentParams = currentCard.querySelectorAll('.analog-param');
+  
+    currentParams.forEach((param, index) => {
+      const height = param.getBoundingClientRect().height;
+      
+      otherCards.forEach(card => {
+        const correspondingParam = card.querySelectorAll('.analog-param')[index];
+        if (correspondingParam) {
+          correspondingParam.style.height = `${height}px`;
+        }
+      });
+    });
+  }
+  
+  // Вызываем функцию при загрузке страницы
+  window.addEventListener('load', adjustAnalogParamHeights);
+  
+  // Вызываем функцию при изменении размера окна
+  window.addEventListener('resize', adjustAnalogParamHeights);
+})();

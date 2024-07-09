@@ -1,0 +1,269 @@
+.analog {
+    margin-bottom: 86px;
+
+    @media(max-width: 992px) {
+        margin-bottom: 56px;
+    }
+
+    &-head {
+        flex-wrap: wrap;
+
+        @media(max-width: 599px) {
+            flex-direction: column;
+            row-gap: 16px;
+        }
+    }
+    &-cards {
+        display: flex;
+        width: 100%;
+    }
+
+    &-card {
+        position: relative;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;     
+
+        &-ticket {
+            position: absolute;
+            left: 20px;
+            top: 16px;
+            background-color: $colorDark;
+            @include fz(14);
+            font-weight: 600;
+            color: #fff;
+            padding: 2px 16px;
+            border-radius: 5px;
+            z-index: 2;
+
+            @media(max-width: 599px) {
+                display: none;
+            }
+        }
+
+        &-img {
+            padding-top: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 8px;      
+            padding-bottom: min(100%, 272px) !important;
+
+            @media(max-width: 599px) {
+                aspect-ratio: 1;
+                margin-top: 16px;
+                margin-bottom: 16px;
+                padding-top: unset !important;
+                padding-bottom: unset !important;
+                max-height: 104px;
+                width: 100%;
+            }
+
+            @media(max-width: 375px) {
+                padding-left: 12px;
+                padding-right: 12px;
+            }   
+        }
+        &-code {
+            @include fz(14);
+            color: $gray_trn;
+            white-space: nowrap;           
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 8px;
+
+            &-code {
+            font-weight: 600;
+            }
+        }
+
+        &-title {
+            @include fz(16);         
+            font-weight: 700;
+            line-height: 1.375;
+            margin-bottom: 6px;
+            height: 44px;
+            overflow: hidden;
+
+            &-link {
+                color: #000;
+                transition: color .3s;
+            }
+        }
+
+        &-info {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 32px;
+
+            @media(max-width: 375px) {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    }
+
+    &-current {
+        width: 25%;
+        flex: 0 0 25%;
+        border: 2px solid $colorDark;
+        border-radius: 8px;
+        
+
+        @media(max-width: 1140px) {
+            width: 33.33%;
+            flex: 0 0 33.33%;
+        }
+
+        @media(max-width: 960px) {
+            width: 50%;
+            flex: 0 0 50%;
+        }
+    }
+
+    &-other {
+        // width: 75%;
+        // flex: 0 0 75%;
+        // display: flex;
+        flex-grow: 1;
+        position: relative;
+
+        @media(max-width: 1140px) {
+            width: 66.66%;
+            flex: 0 0 66.66%;
+        }
+
+        @media(max-width: 960px) {
+            width: 50%;
+            flex: 0 0 50%;
+        }
+
+        &-navigation {   
+            display: flex;
+            align-items: center;
+            column-gap: 16px;
+
+            @media(min-width: 1141px) {
+                display: none;
+            }
+
+            @media(max-width: 599px) {
+                justify-content: space-between;
+            }
+            
+            .swiper-pagination {
+                position: static;
+                display: flex;
+                width: max-content;
+            }
+
+            .swiper-button-prev, .swiper-button-next {
+                position: static;
+            }
+        }
+    }
+
+    &-button {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .08);
+        cursor: pointer;
+
+        &.swiper-button-disabled {
+            background-color: #F5F5F5;
+
+            .analog-button-icon {
+                fill: #d3d3d3;
+            }
+        }
+
+        &-icon {
+            width: 8px;
+            height: 14px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &-params {
+        @media(max-width: 599px) {
+            border-top: 1px solid $border;
+        }
+    }
+
+    &-param {
+        border-top: 1px solid $border;
+        padding: 8px 20px;  
+        display: flex;
+        flex-direction: column;
+
+        &:nth-last-child(4) {
+            @media(max-width: 599px) {
+                border-bottom: 1px solid $border;
+                margin-bottom: 20px;
+            }           
+        }
+
+        @media(max-width: 375px) {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        &:nth-last-child(2), &:nth-last-child(3) {
+            @media(max-width: 599px) {
+                display: none;
+            }
+        }
+
+        
+
+        &-title {
+            @include fz(14);
+            margin-bottom: 4px;
+
+            @media(max-width: 375px) {
+                @include fz(13);
+            }
+
+            @media(max-width: 360px) {
+                @include fz(12);
+            }
+        }
+
+        &-value {
+            font-weight: 600;
+            margin-top: auto;
+
+            @media(max-width: 375px) {
+                @include fz(15);
+            }
+        }
+    }
+
+    &-btn {
+        &__desktop {
+            @media(max-width: 599px) {
+                display: none;
+            }
+        }
+        &__mobile {
+            display: none;
+
+            @media(max-width: 599px) {
+                display: block;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                max-width: unset !important;
+            }
+        }
+    }
+
+    // &-card {
+    //     width: 33.33%;
+    //     flex: 0 0 33.33%;
+    // }
+}
