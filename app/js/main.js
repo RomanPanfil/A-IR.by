@@ -3276,6 +3276,57 @@ const swiperRepair = new Swiper('.swiper.repair', {
   }
 });
 
+(function() {
+  let swiperAuditExamples;
+
+  function initSwiper() {
+    if (window.innerWidth >= 576 && !swiperAuditExamples) {
+      swiperAuditExamples = new Swiper('.swiper.audit-examples', {
+        spaceBetween: 24,
+        slidesPerView: 'auto',
+        navigation: {
+          nextEl: '.audit-examples-button-next',
+          prevEl: '.audit-examples-button-prev',
+        },
+        breakpoints: {
+          1024: {
+            // slidesPerView: 3,   
+            spaceBetween: 24,
+            autoHeight: false,
+          },
+      
+          
+      
+          576: {
+            slidesPerView: 1.05,
+            spaceBetween: 24,
+          }
+        }
+      });
+    } else if (window.innerWidth <= 1024 && swiperAuditExamples) {
+      swiperAuditExamples.destroy(true, true);
+      swiperAuditExamples = null;
+    }
+  }
+
+  // Инициализация при загрузке страницы
+  initSwiper();
+
+  // Обработка изменения размера окна
+  window.addEventListener('resize', initSwiper);
+})();
+
+// const swiperAuditExamples = new Swiper('.swiper.audit-examples', {
+//   spaceBetween: 24,
+//   slidesPerView: 'auto',
+
+//   // Navigation arrows
+//   navigation: {
+//     nextEl: '.audit-examples-button-next',
+//     prevEl: '.audit-examples-button-prev',
+//   },
+// });
+
 
 
 const swiperReviews = new Swiper('.swiper.swiper-reviews', {
@@ -3859,4 +3910,100 @@ document.addEventListener('click', (event) => {
   
   // Вызываем функцию при изменении размера окна
   window.addEventListener('resize', adjustAnalogParamHeights);
+})();
+
+// фиксированная плашка "узнать цену"
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const stickyTrigger = document.querySelector('.sticky-trigger');
+    const stickyBottom = document.querySelector('.sticky-bottom');
+    const header = document.querySelector('.header .main');
+    const middle = document.querySelector('.middle');
+
+    if(!stickyTrigger || !stickyBottom || !header || !middle) return
+    
+    let stickyTriggerRect, headerRect, middleRect;
+    let stickyBottomOriginalTop = stickyBottom.offsetTop;
+    let isSticky = false;
+
+    function updateSticky() {
+        stickyTriggerRect = stickyTrigger.getBoundingClientRect();
+        headerRect = header.getBoundingClientRect();
+        middleRect = middle.getBoundingClientRect();
+
+        const shouldStick = stickyTriggerRect.bottom <= headerRect.bottom &&
+                            middleRect.bottom > window.innerHeight;
+
+        if (shouldStick && !isSticky) {
+            stickyBottom.classList.add('fixed-bottom');
+            isSticky = true;
+        } else if ((!shouldStick || middleRect.bottom <= window.innerHeight) && isSticky) {
+            stickyBottom.classList.remove('fixed-bottom');
+            isSticky = false;
+        }
+
+        // Проверяем, не выходит ли sticky-bottom за пределы middle
+        if (isSticky) {
+            const stickyBottomRect = stickyBottom.getBoundingClientRect();
+            if (stickyBottomRect.top <= middleRect.top) {
+                stickyBottom.style.position = 'absolute';
+                stickyBottom.style.bottom = '';
+                stickyBottom.style.top = '0';
+            }
+        }
+    }
+
+    window.addEventListener('scroll', updateSticky);
+    window.addEventListener('resize', updateSticky);
+    updateSticky();
+  });
+})();
+
+// скрытие/раскрытие примеров на странице аудита пневмосистемы
+(function() {
+  const moreButton = document.querySelector('.audit-examples-more');
+  const cards = document.querySelectorAll('.audit-examples-slide');
+  const parentSlides = document.querySelectorAll('.swiper-slide');
+
+  if (!moreButton || cards.length === 0 || parentSlides.length === 0) return;
+
+  function updateVisibility() {
+    const isMobile = window.innerWidth < 576;
+
+    cards.forEach((card, index) => {
+      const parent = card.closest('.swiper-slide');
+      if (index !== 0) {
+        card.style.display = isMobile ? 'none' : 'block';
+        if (parent) {
+          parent.style.margin = isMobile ? '0' : '';
+          parent.style.padding = isMobile ? '0' : '';
+        }
+      }
+    });
+
+    moreButton.textContent = isMobile ? 'Показать больше' : 'Скрыть';
+  }
+
+  // Изначально показываем только первую карточку
+  updateVisibility();
+
+  moreButton.addEventListener('click', () => {
+    const isExpanded = moreButton.textContent === 'Скрыть';
+
+    cards.forEach((card, index) => {
+      if (index !== 0) {
+        card.style.display = isExpanded ? 'none' : 'block';
+        const parent = card.closest('.swiper-slide');
+        if (parent) {
+          parent.style.margin = isExpanded ? '0' : '';
+          parent.style.padding = isExpanded ? '0' : '';
+        }
+      }
+    });
+
+    moreButton.textContent = isExpanded ? 'Показать больше' : 'Скрыть';
+  });
+
+  // Обновляем видимость при изменении размера окна
+  window.addEventListener('resize', updateVisibility);
 })();

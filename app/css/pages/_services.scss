@@ -402,6 +402,14 @@
         border-radius: 8px;
         overflow: hidden;
         transform: translate3d(0,0,0);
+
+        &.padding {
+            padding-bottom: 86px;
+
+            @media(max-width:1024.99px) {
+                padding-bottom: 58px;
+            }
+        }
         
          @media(max-width:576px) {
                 margin: 0px -15px;

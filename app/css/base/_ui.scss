@@ -24,9 +24,33 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 1024.99px) {
+      margin-bottom: 8px;
+    }
+
+    &.wrap {
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+
+      @media (max-width: 768.99px) {
+        flex-direction: column;
+      }
+
+      .ui-goto {
+        @media (max-width: 768.99px) {
+          width: 100%;
+        }
+      }
+    }
+
     .ui-block-title {
       margin-bottom: 0;
       padding-right: 25px;
+
+      @media (max-width: 576.99px) {
+        padding-right: 0;
+      }
     }
   }
   &-title {
@@ -1811,4 +1835,28 @@ textarea.ui-input {
 
 .semi-bold {
   font-weight: 600;
+}
+
+.ui-hint {
+  position: relative;
+  padding: 16px 16px 16px 48px;
+  background: #EEF6F3;
+  border-radius: 8px;
+
+  &::before {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/icons/info.svg);
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+  }
+}
+
+.ui-goto {
+  padding-left: 28px;
+  padding-right: 28px;
 }
