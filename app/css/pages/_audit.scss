@@ -200,6 +200,7 @@
         &-info {
             padding-left: 64px;
             padding-right: 40px;
+            max-width: 568px;
 
             @media(max-width:1024px) {
                 padding-left: 32px;

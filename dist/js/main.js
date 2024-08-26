@@ -31645,21 +31645,17 @@ const swiperRepair = new Swiper('.swiper.repair', {
   function initSwiper() {
     if (window.innerWidth >= 576 && !swiperAuditExamples) {
       swiperAuditExamples = new Swiper('.swiper.audit-examples', {
-        spaceBetween: 24,
-        slidesPerView: 'auto',
+        spaceBetween: 0,
+        slidesPerView: 1,
         navigation: {
           nextEl: '.audit-examples-button-next',
           prevEl: '.audit-examples-button-prev',
         },
         breakpoints: {
           1024: {
-            // slidesPerView: 3,   
-            spaceBetween: 24,
-            autoHeight: false,
+            slidesPerView: 1,  
+            spaceBetween: 0,          
           },
-      
-          
-      
           576: {
             slidesPerView: 1.05,
             spaceBetween: 24,
@@ -31681,7 +31677,7 @@ const swiperRepair = new Swiper('.swiper.repair', {
 
 // const swiperAuditExamples = new Swiper('.swiper.audit-examples', {
 //   spaceBetween: 24,
-//   slidesPerView: 'auto',
+//   slidesPerView: 1,
 
 //   // Navigation arrows
 //   navigation: {
