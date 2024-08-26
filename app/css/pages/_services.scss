@@ -403,11 +403,11 @@
         overflow: hidden;
         transform: translate3d(0,0,0);
 
-        &.padding {
-            padding-bottom: 86px;
+        &.padding {             
+            margin-bottom: 172px;        
 
             @media(max-width:1024.99px) {
-                padding-bottom: 58px;
+                margin-bottom: 116px;               
             }
         }
         

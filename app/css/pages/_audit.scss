@@ -26,8 +26,21 @@
         }
         
          td, th {
-            border: 1px solid #F5F5F5;
+            // border: 1px solid #D3D3D3;
 
+            border-bottom: 1px solid #D3D3D3;
+
+            &:first-child {
+                border-right: 1px solid #D3D3D3;
+            }
+        }
+
+        tr {
+            &:last-of-type {
+                td {
+                    border-bottom: none;
+                }
+            }
         }
         th {
             @include fz(22);

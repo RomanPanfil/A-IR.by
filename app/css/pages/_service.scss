@@ -26,12 +26,24 @@
             border: 1px solid #D3D3D3;
             border-radius: 8px;
 
-            @media(max-width:1024.99px) {
-                gap: 24px;
-            }
+            
 
-            @media(max-width:1024.99px) {
-                gap: 16px;
+            &-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                gap: 40px;
+
+                @media(max-width:1024.99px) {
+                    gap: 24px;
+                }
+    
+                @media(max-width:599.99px) {
+                    gap: 16px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }                
             }
 
             &.sticky-bottom {
@@ -41,6 +53,7 @@
                 left: 0;
                 right: 0;
                 background-color: #fff;
+                border: none;
                 z-index: 99;              
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.08);
                 border-radius: 0;
