@@ -2290,11 +2290,35 @@ input[type="range"]::-moz-range-thumb {
       @media(max-width:1024.99px) {
         margin-right: auto;
       }
-    }   
+    }
+
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+
+        // @media(max-width:1024.99px) {
+        //   margin-bottom: 32px;
+        // }
+      }
+    }
+
+    &-info {
+      ul {
+        margin-bottom: 8px !important;
+      }
+
+      @media(max-width:1024.99px) {
+        margin-bottom: 32px;
+      }
+    }
   }
 
   &-reasons {
     margin-bottom: 64px;
+
+    @media(max-width:576px) {
+      margin-bottom: 40px;
+    }
   }
 
   &-reason {     
@@ -2302,6 +2326,9 @@ input[type="range"]::-moz-range-thumb {
     border: 1px solid $border;
     border-radius: 8px;
     height: calc(100% - 16px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media(max-width:1024.99px) {
       padding: 32px;
@@ -2377,8 +2404,8 @@ input[type="range"]::-moz-range-thumb {
     }
 
     &-title {       
-      font-weight: 700;
-      font-size: 72px;
+      font-weight: 700;  
+      @include fz(72);
       color: $valid;
       margin-bottom: 8px;
     }
@@ -2386,8 +2413,59 @@ input[type="range"]::-moz-range-thumb {
     &-text {      
       font-weight: 600;
       font-size: 18px;
+      @include fz(18);
       line-height: 133%;
       color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &-industries {
+    padding: 40px;
+    border: 1px solid $border;
+    border-radius: 8px;
+    height: calc(100% - 16px);
+    margin-bottom: 16px;
+
+    @media(max-width:1024px) {
+      padding: 32px;
+    }
+
+    &-list {
+      margin-bottom: 24px;
+
+      @media(max-width:1024px) {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+      }
+
+      @media(max-width:576px) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &-item {     
+      font-weight: 600;     
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;     
+
+      @media(max-width:1024px) {
+        width: calc(50% - 12px);
+        flex: 0 0 calc(50% - 12px);
+      }
+
+      @media(max-width:576px) {
+        width: 100%;
+        flex: 100%;
+      }
+      
+      &-icon {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 32px;  
+        margin-right: 8px;
+      }
     }
   }
   

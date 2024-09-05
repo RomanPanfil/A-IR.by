@@ -50,7 +50,7 @@
 
       @media (max-width: 576.99px) {
         padding-right: 0;
-      }
+      }      
     }
   }
   &-title {
@@ -59,7 +59,15 @@
     color: $font;
     margin-bottom: 22px;
     line-height: 1.375;
-    padding-top: 2px;
+    padding-top: 8px;
+
+    .sub {
+      display: block;     
+      @include fz(16);
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.8);
+      margin-top: 4px;
+    }
   }
   &-subtitle {
     @include fz(18);
@@ -1835,6 +1843,10 @@ textarea.ui-input {
 
 .semi-bold {
   font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .ui-hint {

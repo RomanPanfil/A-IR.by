@@ -31641,6 +31641,7 @@ const swiperRepair = new Swiper('.swiper.repair', {
 
 (function() {
   let swiperAuditExamples;
+  if(!document.querySelector('.swiper.audit-examples')) return;
 
   function initSwiper() {
     if (window.innerWidth >= 576 && !swiperAuditExamples) {
@@ -31686,6 +31687,26 @@ const swiperRepair = new Swiper('.swiper.repair', {
 //   },
 // });
 
+const swiperMonitoringResults = new Swiper('.swiper.monitoring-results-slider', {
+  slidesPerView: 1.22,
+  spaceBetween: 16,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.monitoring-results-next',
+    prevEl: '.monitoring-results-prev',
+  },
+  breakpoints: {
+    1025: {
+      slidesPerView: 1,  
+      spaceBetween: 0,          
+    },
+    576: {
+      slidesPerView: 1.15,
+      spaceBetween: 24,
+    }
+  }
+});
 
 
 const swiperReviews = new Swiper('.swiper.swiper-reviews', {
@@ -32365,4 +32386,46 @@ document.addEventListener('click', (event) => {
 
   // Обновляем видимость при изменении размера окна
   window.addEventListener('resize', updateVisibility);
+})();
+
+// Переносы знаков равенства в формулах
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const formulaBlocks = document.querySelectorAll('.formula-block');
+
+    if(!formulaBlocks.length) return;
+
+    function updateFirstInRowClass() {
+      // Сбрасываем значения для первого элемента при каждом вызове функции
+      let prevFirstElementHeight = formulaBlocks[0].offsetHeight;
+      let prevFirstElementY = formulaBlocks[0].offsetTop;
+
+      formulaBlocks.forEach((block, index) => {
+        const currentTop = block.offsetTop;
+        const currentHeight = block.offsetHeight;
+
+        // Сначала удаляем класс со всех элементов
+        block.classList.remove('first-in-row');
+
+        // Если это первый элемент или текущая позиция Y плюс высота текущего элемента
+        // больше, чем предыдущая позиция Y, значит мы перешли на новую строку
+        if (index === 0 || currentTop + currentHeight > prevFirstElementY + prevFirstElementHeight) {
+          block.classList.add('first-in-row');
+          // Обновляем высоту и позицию Y первого элемента в новой строке
+          prevFirstElementHeight = currentHeight;
+          prevFirstElementY = currentTop;
+        }
+      });
+    }
+
+    // Вызываем функцию при первичной загрузке страницы
+    updateFirstInRowClass();
+
+    // Добавляем небольшую задержку перед вызовом функции при изменении размера окна
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateFirstInRowClass, 250);
+    });
+  });
 })();
