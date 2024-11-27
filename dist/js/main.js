@@ -29980,6 +29980,80 @@ new Swiper(".main-slider-swiper", {
   },
 });
 
+// new Swiper(".work-slider-swiper", {
+//   slidesPerView: 1.01,
+//   spaceBetween: 24,
+
+//   // shortSwipes: false,
+//   navigation: {
+//     nextEl: ".work-slider-swiper .ui-arrow-next",
+//     prevEl: ".work-slider-swiper .ui-arrow-prev",
+//   },
+
+//   breakpoints: {
+//     1024: {
+//       slidesPerView: 1,
+//     },
+//   },
+// });
+
+
+new Swiper(".work-slider-swiper", {
+  slidesPerView: 1,
+  spaceBetween: 24,
+
+  navigation: {
+    nextEl: ".work-reviews-next",
+    prevEl: ".work-reviews-prev",
+  },
+
+  breakpoints: {
+    599: {
+      slidesPerView: 1.05,
+      spaceBetween: 24,
+    },
+    769: {
+      slidesPerView: 1.01,
+      spaceBetween: 24,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 24,
+    },
+  },
+
+  // Отключение слайдера на разрешении до 599px
+  on: {
+    init: function () {   
+      if (window.innerWidth < 599) {
+        this.destroy(true, true);
+      }
+    },
+    resize: function () {
+      if (window.innerWidth < 599 && !this.destroyed) {
+        this.destroy(true, true);
+      } else if (window.innerWidth >= 599 && this.destroyed) {
+        this.init();
+      }
+    },
+  },
+});
+
+
+document.querySelectorAll('.work-image-slider').forEach(slider => {
+  let swiperSlider = slider.querySelector('.work-image-slider-swiper');
+  let pagination = slider.querySelector('.main-slider-pagintaion');
+
+  new Swiper(swiperSlider, {
+    slidesPerView: 1,
+    autoplay: true,  
+    pagination: {
+      el: pagination,
+      clickable: true,
+    },
+  });
+});
+
 // new Swiper(".main-trust-slider", {
 //   slidesPerView: 1,
 //   spaceBetween: 24,
@@ -32428,4 +32502,71 @@ document.addEventListener('click', (event) => {
       resizeTimer = setTimeout(updateFirstInRowClass, 250);
     });
   });
+})();
+
+// работы нашего сервиса. Показать еще
+(function() {
+  const items = document.querySelectorAll('.work-slider-swiper .work-slider-swiper-slide');
+  const moreBtn = document.querySelector('.work-slider-more');
+  
+  if (!items.length || !moreBtn) return;
+
+  // Функция для управления отображением карточек
+  function manageSliderVisibility() {  
+    const isMobile = window.innerWidth <= 599;
+
+    if (isMobile) {
+      // Изначально показываем только первую карточку
+      for (let i = 1; i < items.length; i++) {
+        items[i].classList.add('hidden');
+      }
+
+      // Текущий индекс отображаемых карточек
+      let currentVisibleIndex = 1;
+
+      // Очищаем предыдущий обработчик, если он был
+      moreBtn.removeEventListener('click', clickHandler);
+
+      // Создаем новый обработчик
+      function clickHandler() {
+        // Находим следующую скрытую карточку
+        const nextHiddenItem = Array.from(items).find((item, index) => 
+          index > currentVisibleIndex - 1 && item.classList.contains('hidden')
+        );
+
+        if (nextHiddenItem) {
+          // Показываем следующую карточку
+          nextHiddenItem.classList.remove('hidden');
+          currentVisibleIndex++;
+
+          // Проверяем, все ли карточки показаны
+          const allVisibleCount = Array.from(items).filter(item => !item.classList.contains('hidden')).length;
+          
+          if (allVisibleCount === items.length) {            
+            moreBtn.textContent = 'Скрыть';
+          }
+        } else { 
+          for (let i = 1; i < items.length; i++) {
+            items[i].classList.add('hidden');
+          }          
+
+          moreBtn.textContent = 'Показать еще';          
+
+          currentVisibleIndex = 1;
+        }
+      }
+
+      moreBtn.addEventListener('click', clickHandler);
+
+      // Показываем кнопку
+      moreBtn.style.display = 'block';
+    } else {
+      // На больших экранах показываем все карточки и скрываем кнопку
+      items.forEach(item => item.classList.remove('hidden'));
+      moreBtn.style.display = 'none';
+    }
+  }
+
+  manageSliderVisibility();
+  window.addEventListener('resize', manageSliderVisibility);
 })();
