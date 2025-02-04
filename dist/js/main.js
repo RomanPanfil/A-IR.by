@@ -32086,6 +32086,7 @@ $( document ).ready(function() {
     const cookie = document.querySelector('.cookie');
     const accept = document.querySelector('.cookie-btns-accept');
     const cookiesInfo = localStorage.getItem('cookies');
+    const close = document.querySelector('.cookie-close');
 
     if (!cookie && !accept) return
     
@@ -32093,11 +32094,17 @@ $( document ).ready(function() {
       // Если есть информация о "cookies", скрываем блок с сообщением       
       cookie.classList.add('closed');     
     } else {
-      cookie.classList.remove('closed'); 
+      setTimeout(() => {
+        cookie.classList.remove('closed'); 
+      }, 5000); // 5000 миллисекунд = 5 секунд
     }
 
     accept.addEventListener('click', () => {
       localStorage.setItem('cookies', 'yes');
+      cookie.classList.add('closed');
+    })
+
+    close.addEventListener('click', () => {     
       cookie.classList.add('closed');
     })
   })();

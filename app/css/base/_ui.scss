@@ -1872,3 +1872,44 @@ textarea.ui-input {
   padding-left: 28px;
   padding-right: 28px;
 }
+
+.close-icon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  align-self: center;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 26px;
+    height: 1.6px;
+    border-radius: 1.6px;
+    background-color: #848484;
+    transition: transform 0.5s;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      background-color: $secondary;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+      background-color: $secondary;
+    }
+  }
+}
