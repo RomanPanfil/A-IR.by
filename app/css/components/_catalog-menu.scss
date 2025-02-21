@@ -83,7 +83,7 @@
             box-shadow: none;
             background: #fff;
             // max-height: calc((var(--vh, 1vh) * 100));
-            top: 135px;
+            top: 135px !important;
 
         }
     &-open {

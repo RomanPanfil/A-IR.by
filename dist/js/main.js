@@ -32096,7 +32096,7 @@ $( document ).ready(function() {
     } else {
       setTimeout(() => {
         cookie.classList.remove('closed'); 
-      }, 5000); // 5000 миллисекунд = 5 секунд
+      }, 5000);
     }
 
     accept.addEventListener('click', () => {
