@@ -1663,7 +1663,44 @@ textarea.ui-input {
   position: relative;
   display: inline-block;
   width: 44px;
+  flex: 0 0 44px;
   height: 24px;
+
+  &.min {
+    width: 31px;
+    flex: 0 0 31px;
+    height: 16px;
+
+    @media (max-width: 768px) {
+      width: 44px;
+      flex: 0 0 44px;
+      height: 24px;
+    }
+
+    .ui-switcher-slider {  
+      &:before {       
+        height: 12px;
+        width: 12px;
+        left: 2px;
+        bottom: 2px;
+
+        @media (max-width: 768px) {
+          height: 18px;
+          width: 18px;
+          left: 3px;
+          bottom: 3px;
+        }
+      }
+    }
+
+    input:checked + .ui-switcher-slider:before {
+      transform: translateX(15px);
+
+      @media (max-width: 768px) {
+        transform: translateX(19px);
+      }
+    }
+  }
 
   @media (max-width: 768px) {
     width: 56px;
@@ -1699,6 +1736,28 @@ textarea.ui-input {
   }
   
   input:focus + .ui-switcher-slider {
+    box-shadow: 0 0 1px #2A4455;
+  }  
+
+
+  input:checked + .ui-switcher-slider.green {
+    background-color: #559E53;
+
+    &:hover {
+      background-color: #9CC19B;
+    }
+  }
+  input:disabled + .ui-switcher-slider.green {
+    background-color: #F5F5F5;
+    cursor: not-allowed;
+  }
+
+  input:checked:disabled + .ui-switcher-slider.green {
+    background-color: #9CC19B;
+    cursor: not-allowed;
+  }
+  
+  input:focus + .ui-switcher-slider.green {
     box-shadow: 0 0 1px #2A4455;
   }  
   

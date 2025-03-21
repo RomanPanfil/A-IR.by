@@ -1,0 +1,130 @@
+<div class="mfp-popup mfp-anim popup-bottom popup-commercial">
+    <div class="mfp-popup-header">
+        <div class="mfp-popup-title">Отслеживать</div>
+        <div class="mfp-popup-product">
+            <span class="mfp-popup-product-label">Товар:</span>
+            <a href="#" class="mfp-popup-product-link">Винтовой компрессор A1R BB-4FC, 10 бар</a>
+        </div>
+    </div><!--.header-->
+
+    <div class="mfp-popup-subtitle">
+        Напишите Ваш номер телефона и мы прямо сейчас перезвоним!
+    </div>
+
+    <form class="form-query">
+        <div class="mfp-popup-fields">
+            <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="name">Ваше имя <span class="ui-color-red">*</span></label>
+                <div class="ui-input-wrp">
+                    <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="ui-input"
+                            placeholder="Иванов Иван Иванович"
+                    />
+                    <div class="popup-icon"></div>
+                </div>
+            </div>
+
+            <div class="ui-field">
+                <label class="ui-label ui-label-mini" for="email">Email <span class="ui-color-red">*</span></label>
+                <div class="ui-input-wrp">
+                    <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            class="ui-input"
+                            placeholder="123@gmail.com"
+                    />
+                    <div class="popup-icon"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ui-checkbox">
+            <input type="checkbox" id="customCheckbox" class="ui-checkbox-input" checked>
+            <label for="customCheckbox" class="ui-checkbox-label">
+        <span class="default-txt">
+          Нажимая кнопку «Отправить запрос» вы соглашаетесь <a href="#">с политикой обработки персональных данных.</a>
+        </span>
+
+                <span class="mob-txt">Я соглашаюсь с <a href="#">политикой обработки персональных данных.</a></span>
+            </label>
+        </div>
+
+        <button type="submit" class="ui-btn ui-btn-blue ui-btn-block">Отправить запрос</button>
+    </form>
+    <style>
+        @media (max-width: 576.99px) {
+            .mfp-container:before {
+                content: none;
+            }
+            .mfp-content {
+                min-height: 100vh;
+                height: -webkit-fill-available;
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".form-query").validate({
+                errorElement: "span",
+                rules: {
+                    email: {
+                        required: true,
+                        email: true,
+                    },
+                    name: {
+                        required: true,
+                        lettersonlyName: true,
+                    },
+                },
+                messages: {
+                    email: {
+                        required: "Введите данные",
+                    },
+                    name: {
+                        required: "Введите данные",
+                    },
+                },
+                highlight: function(element, errorClass, validClass) {
+                    $(element).addClass(errorClass).removeClass(validClass);
+                    $(element).closest('.ui-field').find('.popup-icon')
+                        .addClass(errorClass).removeClass(validClass);
+
+                },
+                unhighlight: function(element, errorClass, validClass) {
+                    $(element).removeClass(errorClass).addClass(validClass);
+                    $(element).closest('.ui-field').find('.popup-icon')
+                        .removeClass(errorClass).addClass(validClass);
+                }
+            });
+        });
+
+        jQuery.validator.addMethod(
+            "lettersonlyName",
+            function (value, element) {
+                return this.optional(element) || /^[a-zA-ZА-Яа-я\s]+$/i.test(value);
+            },
+            " "
+        );
+
+        jQuery.validator.addMethod(
+            "email",
+            function (value, element) {
+                return (
+                    this.optional(element) ||
+                    /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/i.test(
+                        value
+                    )
+                );
+            },
+            " "
+        );
+
+    </script>
+</div>

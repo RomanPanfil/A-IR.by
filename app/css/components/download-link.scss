@@ -14,15 +14,19 @@
   font-weight: 600;
   color: #000;
 
+  @media (max-width: 1025px) {
+    padding: 8px 8px 8px 16px;
+  }
+
   &-title {
     width: 70%;
     font-weight: 600;
     font-size: rem(14);
     width: 100%;
 
-    @media (max-width: 1355px) {
-      width: 178px;
-    }
+    //@media (max-width: 1355px) {
+    //  width: 178px;
+    //}
   }
 
   &-format {
@@ -33,7 +37,7 @@
     color: rgba(0, 0, 0, 0.5);
     font-weight: 400;
 
-    @media (max-width: 1140px) {
+    @media (max-width: 768px) {
       display: none;
     }
   }

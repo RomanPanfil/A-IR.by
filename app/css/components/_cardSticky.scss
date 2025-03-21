@@ -39,8 +39,8 @@
   }
   &-item {
     &-img {
-      flex: 0 0 72px;
-      max-width: 72px;
+      flex: 0 0 62px;
+      max-width: 62px;
       margin-right: 24px;
 
       img {
@@ -53,6 +53,19 @@
       font-weight: 600;
       color: rgba(0, 0, 0, 0.7);
       margin-bottom: 2px;
+
+      &.black {
+        color: #000;
+      }
+    }
+
+    &-code {
+      font-size: rem(14);
+
+      @media (max-width: 1100px) {
+        display: none;
+        visibility: hidden;
+      }
     }
 
     .card-rating {
@@ -113,9 +126,17 @@
       flex: 0 0 60%;
       max-width: 60%;
     }
+    &-title {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
     &-prices {
       flex: 0 0 calc(40% - 140px);
       max-width: calc(40% - 140px);
+    }
+    &-price {
+      flex: 0 0 calc(50% - 140px);
+      max-width: calc(50% - 140px);
     }
     &-btns {
       flex: 0 0 140px;
@@ -163,6 +184,17 @@
     }
   }
 
+  @media (max-width: 768px) {
+    &-title {
+      display: none;
+      visibility: hidden;
+    }
+    &-price {
+      flex: 0 0 calc(100% - 140px);
+      max-width: calc(100% - 140px);
+    }
+  }
+
   @media (max-width: 678px) {
     &-product {
       display: none;
@@ -185,8 +217,16 @@
   @media (max-width: 360px) {
     .card-price-current {
       @include fz(24);
+
+      span {
+        @include fz(18);
+      }
     }
     &-prices {
+      flex: 0 0 calc(100% - 116px);
+      max-width: calc(100% - 116px);
+    }
+    &-price {
       flex: 0 0 calc(100% - 116px);
       max-width: calc(100% - 116px);
     }

@@ -1238,11 +1238,17 @@ $(function () {
 
     let offsetFooter = footerBreackpoint.offset().top;
 
-    if (matchMedia) {
-      var screen678 = window.matchMedia("(max-width:678px)");
+    // if (matchMedia) {
+    //   var screen678 = window.matchMedia("(max-width:678px)");
+    //   screen678.addListener(changes);
+    //   changes(screen678);
+    // }
+    if (matchMedia || $("#card-breackpoint").hasClass("card-sticky-bottom")) {
+      var screen678 = window.matchMedia("(min-width:300px)");
       screen678.addListener(changes);
       changes(screen678);
     }
+
     function changes(screen678) {
       if (screen678.matches) {
         if (
@@ -4078,6 +4084,7 @@ document.addEventListener('click', (event) => {
     let isSticky = false;
 
     function updateSticky() {
+      console.log(123)
         stickyTriggerRect = stickyTrigger.getBoundingClientRect();
         headerRect = header.getBoundingClientRect();
         middleRect = middle.getBoundingClientRect();
@@ -4266,4 +4273,155 @@ document.addEventListener('click', (event) => {
 
   manageSliderVisibility();
   window.addEventListener('resize', manageSliderVisibility);
+})();
+
+(function ($) {
+  $(document).ready(function() {
+    // Клонирование табов с добавлением префикса Mob
+    const $cardTabs = $('.card-more-info .card-tabs');
+    const $cardMoreResp = $('.card-more-resp');
+
+    if ($cardTabs.length && $cardMoreResp.length) {
+      // Удаляем предыдущий клон, если он есть
+      $cardMoreResp.find('.card-tabs').remove();
+
+      // Клонируем и добавляем в .card-more-resp
+      const $clonedTabs = $cardTabs.clone();
+      $cardMoreResp.append($clonedTabs);
+
+      // Модифицируем href и id в клонированных элементах
+      $clonedTabs.find('.card-tabs-link').each(function() {
+        const originalHref = $(this).attr('href'); // Например, #tab1
+        const newHref = '#Mob' + originalHref.substring(1); // #Mobtab1
+        $(this).attr('href', newHref);
+      });
+
+      $clonedTabs.find('.card-tabs-tab').each(function() {
+        const originalId = $(this).attr('id'); // Например, tab1
+        const newId = 'Mob' + originalId; // Mobtab1
+        $(this).attr('id', newId);
+      });
+
+      // Находим все табы и ссылки в .card-more-resp
+      const $tabs = $clonedTabs.find('.card-tabs-tab');
+      const $tabLinks = $clonedTabs.find('.card-tabs-link');
+
+      // Скрываем все табы изначально
+      $tabs.css({
+        'display': 'none',
+        'opacity': '0'
+      });
+
+      // Показываем первый таб с анимацией
+      if ($tabLinks.length > 0) {
+        const $firstLink = $tabLinks.first();
+        const firstTabId = $firstLink.attr('href').substring(1); // Убираем #, получаем Mobtab1
+        $firstLink.addClass('selected');
+        $(`#${firstTabId}`).css({ 'display': 'block' }).animate({ 'opacity': '1' }, 300); // Плавное появление
+      }
+
+      // Обработчик клика по ссылкам табов
+      $tabLinks.on('click', function(e) {
+        e.preventDefault();
+
+        // Получаем текущий таб и его ID
+        const $this = $(this);
+        const tabId = $this.attr('href').substring(1); // Например, Mobtab1
+        const $targetTab = $(`#${tabId}`);
+
+        // Если таб уже активен, ничего не делаем
+        if ($this.hasClass('selected')) return;
+
+        // Скрываем все табы с анимацией
+        $tabs.not($targetTab).css({ 'display': 'block' }).animate({ 'opacity': '0' }, 300, function() {
+          $(this).css({ 'display': 'none' });
+        });
+
+        // Убираем класс selected у всех ссылок
+        $tabLinks.removeClass('selected');
+
+        // Показываем выбранный таб с анимацией
+        $this.addClass('selected');
+        $targetTab.css({ 'display': 'block' }).animate({ 'opacity': '1' }, 300);
+      });
+    }
+  });
+})(jQuery);
+
+(function () {
+  /**
+   * Плавный скролл к элементу с указанным id
+   * @param {Event} event - Событие клика
+   */
+  function smoothScroll(event) {
+    const targetId = this.getAttribute('href');
+
+    if (targetId.length > 1) {
+      event.preventDefault();
+
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  const scrollLinks = document.querySelectorAll('a[href^="#"]');
+
+  scrollLinks.forEach(link => {
+    link.addEventListener('click', smoothScroll);
+  });
+})();
+
+// сворачивание и разворачивание контструктора товара
+(function () {
+  const triggers = document.querySelectorAll('.card-features-trigger');
+
+  document.querySelectorAll('.card-features-content').forEach(content => {
+    content.style.maxHeight = content.scrollHeight + 'px';
+    content.closest('.card-block').classList.add('active');
+  });
+
+  triggers.forEach(trigger => {
+    if (trigger.classList.contains('card-features-trigger__text')) {
+      const openText = trigger.getAttribute('data-open') || 'Скрыть';
+      trigger.firstChild.textContent = openText.trim() + ' ';
+    }
+
+    trigger.addEventListener('click', () => {
+      const card = trigger.closest('.card-block');
+      const content = card.querySelector('.card-features-content');
+      const title = card.querySelector('.card-features-title');
+
+      card.classList.toggle('active');
+
+      if (trigger.classList.contains('card-features-trigger__text')) {
+        const openText = trigger.getAttribute('data-open') || 'Скрыть';
+        const closeText = trigger.getAttribute('data-close') || 'Показать';
+        if (card.classList.contains('active')) {
+          trigger.firstChild.textContent = openText.trim() + ' ';
+        } else {
+          trigger.firstChild.textContent = closeText.trim() + ' ';
+        }
+      }
+
+      if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        content.style.maxHeight = '0px';
+        setTimeout(() => {
+          if (!card.classList.contains('active')) {
+            title.style.marginBottom = '0';
+          }
+        }, 300);
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        title.style.marginBottom = '';
+      }
+    });
+  });
 })();
