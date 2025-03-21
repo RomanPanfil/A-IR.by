@@ -4397,7 +4397,7 @@ document.addEventListener('click', (event) => {
     trigger.addEventListener('click', () => {
       const card = trigger.closest('.card-block');
       const content = card.querySelector('.card-features-content');
-      const title = card.querySelector('.card-features-title');
+      const title = card.querySelector('.card-features-title:not(.simple)');
 
       card.classList.toggle('active');
 
