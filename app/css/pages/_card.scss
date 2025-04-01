@@ -1072,6 +1072,7 @@
   &-txt {
     margin-right: 16px;
     align-self: center;
+    flex-grow: 1;
   }
 
   &-span {
@@ -1158,7 +1159,8 @@
 }
 
 .card-btns {
-  padding-top: 24px;
+  //padding-top: 24px;
+  margin-top: 24px;
   // padding-bottom: 16px;
   position: relative;
   // margin: 18px 0 4px;
@@ -1168,17 +1170,17 @@
     margin-bottom: 8px;
   }
 
-  &:before {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background: #fff;
-    left: -24px;
-    right: -24px;
-  }
-  &:before {
-    top: 0;
-  }
+  //&:before {
+  //  content: "";
+  //  position: absolute;
+  //  height: 2px;
+  //  background: #fff;
+  //  left: -24px;
+  //  right: -24px;
+  //}
+  //&:before {
+  //  top: 0;
+  //}
 
   @media (max-width: 768.99px) and (min-width: 410px) {
   }

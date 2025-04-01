@@ -29721,11 +29721,9 @@ jQuery(document).ready(function ($) {
     if ($(id).length) {
       $('.card-tabs-link[href="' + id + '"]').click();
       const offset = $(".card-tabs-body").offset().top;
-      $("html,body").animate({ scrollTop: offset - 160 }, 300);
+      $("html,body").animate({ scrollTop: offset - 160 }, 1000);
     }
   });
-
-
 
   $(document).on("click", ".mfp-link", function () {
     var a = $(this);
@@ -32680,7 +32678,7 @@ document.addEventListener('click', (event) => {
         const $firstLink = $tabLinks.first();
         const firstTabId = $firstLink.attr('href').substring(1); // Убираем #, получаем Mobtab1
         $firstLink.addClass('selected');
-        $(`#${firstTabId}`).css({ 'display': 'block' }).animate({ 'opacity': '1' }, 300); // Плавное появление
+        $(`#${firstTabId}`).css({ 'display': 'block' }).animate({ 'opacity': '1' }, 10); // Плавное появление
       }
 
       // Обработчик клика по ссылкам табов
@@ -32696,7 +32694,7 @@ document.addEventListener('click', (event) => {
         if ($this.hasClass('selected')) return;
 
         // Скрываем все табы с анимацией
-        $tabs.not($targetTab).css({ 'display': 'block' }).animate({ 'opacity': '0' }, 300, function() {
+        $tabs.not($targetTab).css({ 'display': 'block' }).animate({ 'opacity': '0' }, 10, function() {
           $(this).css({ 'display': 'none' });
         });
 
@@ -32705,7 +32703,7 @@ document.addEventListener('click', (event) => {
 
         // Показываем выбранный таб с анимацией
         $this.addClass('selected');
-        $targetTab.css({ 'display': 'block' }).animate({ 'opacity': '1' }, 300);
+        $targetTab.css({ 'display': 'block' }).animate({ 'opacity': '1' }, 10);
       });
     }
   });
@@ -32746,15 +32744,14 @@ document.addEventListener('click', (event) => {
 (function () {
   const triggers = document.querySelectorAll('.card-features-trigger');
 
-  document.querySelectorAll('.card-features-content').forEach(content => {
-    content.style.maxHeight = content.scrollHeight + 'px';
-    content.closest('.card-block').classList.add('active');
+    document.querySelectorAll('.card-features-content').forEach(content => {
+    content.style.maxHeight = '0px';
   });
 
   triggers.forEach(trigger => {
     if (trigger.classList.contains('card-features-trigger__text')) {
-      const openText = trigger.getAttribute('data-open') || 'Скрыть';
-      trigger.firstChild.textContent = openText.trim() + ' ';
+      const closeText = trigger.getAttribute('data-close') || 'Показать';
+      trigger.firstChild.textContent = closeText.trim() + ' ';
     }
 
     trigger.addEventListener('click', () => {
