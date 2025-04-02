@@ -32744,8 +32744,13 @@ document.addEventListener('click', (event) => {
 (function () {
   const triggers = document.querySelectorAll('.card-features-trigger');
 
-    document.querySelectorAll('.card-features-content').forEach(content => {
-    content.style.maxHeight = '0px';
+  document.querySelectorAll('.card-features-content').forEach(content => {
+    content.style.maxHeight = '0px'; // Контент скрыт
+    const card = content.closest('.card-block');
+    const title = card.querySelector('.card-features-title:not(.simple)');
+    if (title) {
+      title.style.marginBottom = '0';
+    }
   });
 
   triggers.forEach(trigger => {
