@@ -29064,6 +29064,39 @@ if (document.querySelector(".making-form")) {
   window.addEventListener("resize", resSetting);
 })();
 
+// Анимация прокрутки брендов
+(function() {  
+  function duplicateLineItems(line) {
+    const items = Array.from(line.children);
+    const itemsToAdd = [];    
+  
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        itemsToAdd.push(clone);
+    });    
+   
+    itemsToAdd.forEach(item => {
+        line.appendChild(item);
+    });
+  }
+
+  // Функция для инициализации анимации брендов
+  function initBrandsAnimation() {     
+    const brandBlocks = document.querySelectorAll('.main-brands-wrapper');
+    
+    brandBlocks.forEach(wrapper => {        
+      const lines = wrapper.querySelectorAll('.main-brands-line');
+      
+      lines.forEach(line => {
+        duplicateLineItems(line);
+      });
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    initBrandsAnimation();
+  });
+})();
+
 (function () {
   if (!D.querySelector(".ux-collapsible-toggler")) return;
 
@@ -29293,6 +29326,7 @@ if (document.querySelector(".making-form")) {
         breakpoints: {
           1140: {
             slidesPerView: 4,
+            spaceBetween: 24,
           },
         },
       });
@@ -29303,6 +29337,187 @@ if (document.querySelector(".making-form")) {
       $(".card-related-mobile .ui-scroller").prepend(clone);
       native = true;
     }
+  }
+})();
+
+(function() {
+  if (document.querySelector(".swiper-recomend")) {
+    slider = new Swiper(".swiper-recomend", {
+      slidesPerView: 3,
+      spaceBetween: 24,  
+      navigation: {
+        nextEl: ".swiper-recomend-next",
+        prevEl: ".swiper-recomend-prev",
+      },
+      breakpoints: {       
+        1140: {
+          slidesPerView: 4,         
+        },
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".swiper-card-reviews")) {
+    slider = new Swiper(".swiper-card-reviews", {
+      slidesPerView: 1.6,
+      spaceBetween: 16,
+      // shortSwipes: false,
+      navigation: {
+        nextEl: ".card-reviews-next",
+        prevEl: ".card-reviews-prev",
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 3.3,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },
+        800: {
+          slidesPerView: 4.3,
+          spaceBetween: 16
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 16
+        },
+        1140: {
+          slidesPerView: 6,
+          spaceBetween: 24,
+        },
+      },
+    });
+  }
+})();
+
+// swiper-articles, swiper-news, swiper-videos одинаковые
+(function() {
+  if (document.querySelector(".swiper-articles")) {
+    slider = new Swiper(".swiper-articles", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      // shortSwipes: false,
+      navigation: {
+        nextEl: ".swiper-articles-next",
+        prevEl: ".swiper-articles-prev",
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 2.4,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },      
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },
+        1140: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          centeredSlides: false,
+        },
+      },
+      pagination: {
+        el: ".swiper-articles-pagintaion",
+        clickable: true,
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".swiper-news")) {
+    slider = new Swiper(".swiper-news", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      // shortSwipes: false,
+      navigation: {
+        nextEl: ".swiper-news-next",
+        prevEl: ".swiper-news-prev",
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 2.4,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },      
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },
+        1140: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          centeredSlides: false,
+        },
+      },
+      pagination: {
+        el: ".swiper-news-pagintaion",
+        clickable: true,
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".swiper-videos")) {
+    slider = new Swiper(".swiper-videos", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      // shortSwipes: false,
+      navigation: {
+        nextEl: ".swiper-videos-next",
+        prevEl: ".swiper-videos-prev",
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 2.4,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },      
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },
+        1140: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          centeredSlides: false,
+        },
+      },
+      pagination: {
+        el: ".swiper-videos-pagintaion",
+        clickable: true,
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".swiper-card-services")) {
+    slider = new Swiper(".swiper-card-services", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      breakpoints: {       
+        600: {
+          slidesPerView: 'auto',
+          spaceBetween: 24,
+          centeredSlides: false,
+        },
+      },
+      pagination: {
+        el: ".swiper-card-services-pagintaion",
+        clickable: true,
+      },
+    });
   }
 })();
 
@@ -29416,6 +29631,33 @@ if (document.querySelector(".making-form")) {
             document.documentElement.style.overflow = "";
           },
         },
+      });
+    });
+  });
+})();
+
+// переключение табов
+(function() {
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.ui-tabs-item');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {        
+        document.querySelectorAll('.ui-tabs-item').forEach(item => item.classList.remove('active'));
+        document.querySelectorAll('.ui-tabs-content').forEach(content => content.classList.remove('active'));
+        document.querySelectorAll('.ui-tabs-link').forEach(link => link.classList.remove('active'));
+  
+        const tabId = tab.dataset.tab;
+        tab.classList.add('active');
+        
+        const activeContent = document.querySelector(`.ui-tabs-content[data-tab="${tabId}"]`);
+        const activeLink = document.querySelector(`.ui-tabs-link[data-tab="${tabId}"]`);
+        if (activeContent) {
+          activeContent.classList.add('active');
+        }
+        if (activeLink) {
+          activeLink.classList.add('active');
+        }
       });
     });
   });
@@ -29971,7 +30213,27 @@ jQuery(document).ready(function ($) {
 }); //ready
 
 new Swiper(".main-slider-swiper", {
-  slidesPerView: 1,
+  slidesPerView: 'auto',
+  centeredSlides: true,
+  spaceBetween: 16,
+
+  breakpoints: {  
+    600: {
+      slidesPerView: 2.3,
+      spaceBetween: 16,
+      centeredSlides: false,
+    },
+    800: {
+      slidesPerView: 3.3,
+      spaceBetween: 16,
+      centeredSlides: false,
+    },
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      centeredSlides: false,
+    }
+  },
 
   // shortSwipes: false,
   navigation: {
@@ -29981,6 +30243,8 @@ new Swiper(".main-slider-swiper", {
   pagination: {
     el: ".main-slider-pagintaion",
     clickable: true,
+    // dynamicBullets: true,
+    // dynamicMainBullets: 4, 
   },
 });
 

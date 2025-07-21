@@ -2554,7 +2554,7 @@
 }
 
 .card-reviews {
-  margin-bottom: 76px;
+  margin-bottom: 124px;
 
   &-head {
     margin-bottom: 24px;
@@ -2604,7 +2604,7 @@
   }
 
   @media (max-width: 1024.99px) {
-    margin-bottom: 55px;
+    margin-bottom: 90px;
 
     &-btnall {
       display: none;
@@ -2621,6 +2621,8 @@
   }
 
   @media (max-width: 576.99px) {
+    margin-bottom: 64px;
+
     &-title {
       @include fz(22);
     }
@@ -2636,6 +2638,28 @@
 
 .card-related {
   margin-bottom: 15px;
+
+  &.recomend {
+    margin-bottom: 100px;
+
+    @media (max-width: 1024.99px) {
+      margin-bottom: 62px;
+    }
+
+    @media (max-width: 576.99px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &.brand {
+    @media (max-width: 1024.99px) {
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 599.99px) {
+      margin-bottom: 32px;
+    }
+  }
 }
 .swiper-card-related,
 .swiper-card-interest,
@@ -2753,7 +2777,7 @@
   }
 }
 
-.swiper-card-interest, .swiper-card-related {
+.swiper-card-interest, .swiper-card-related, .swiper-recomend {
   @media (max-width: 1024.99px) {
     padding-bottom: 0;
   }
@@ -2770,7 +2794,7 @@
   .swiper-slide {
     max-width: 312px;
 
-    @media (max-width: 1024.99px) {
+    @media (max-width: 599.99px) {
       max-width: 264px;
     }
   }

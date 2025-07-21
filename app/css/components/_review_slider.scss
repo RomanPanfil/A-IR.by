@@ -1,0 +1,66 @@
+.card-review {
+    cursor: pointer;
+
+    &:hover {
+        .card-review-image {            
+            opacity: 0.6;
+            border: 2px solid #D3D3D3;
+
+            &::after {          
+                opacity: 1;
+            }
+        }        
+    }
+    &-image {
+        position: relative;
+        // width: 200px;
+        // height: 282px;
+        aspect-ratio: 200 / 282;
+        border: 2px solid #F5F5F5;
+        border-radius: 24px;
+        margin-bottom: 8px;
+        transition: border .3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 32px;
+            height: 32px;
+            background: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.5054 21.8095C17.7539 23.0913 15.594 23.848 13.2573 23.848C7.40822 23.848 2.66663 19.1064 2.66663 13.2574C2.66663 7.40834 7.40822 2.66675 13.2573 2.66675C19.1063 2.66675 23.8479 7.40834 23.8479 13.2574C23.8479 15.594 23.0912 17.7538 21.8096 19.5052L28.8563 26.552C29.4926 27.1883 29.4926 28.2199 28.8563 28.8562C28.22 29.4925 27.1884 29.4925 26.5521 28.8562L19.5054 21.8095ZM21.1813 13.2574C21.1813 17.6337 17.6336 21.1814 13.2573 21.1814C8.88098 21.1814 5.33329 17.6337 5.33329 13.2574C5.33329 8.8811 8.88098 5.33341 13.2573 5.33341C17.6336 5.33341 21.1813 8.8811 21.1813 13.2574Z" fill="%231D262C"/></svg>');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 32px;
+            opacity: 0;
+            transition: opacity .3s;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+    }
+
+    &-title {       
+        font-weight: 600;
+        line-height: rem(22);
+        margin-bottom: 8px;
+        color: #000;
+    }
+   
+    &-text {       
+        font-size: 14px;
+        line-height: 19px;
+        color: #6A6A6A;
+    }
+}
+
+.card-reviews-prev, .card-reviews-next {
+    @media (max-width: 1024.99px) {
+        display: none;
+    } 
+}

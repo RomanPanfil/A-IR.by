@@ -20,12 +20,19 @@
   margin-bottom: 50px;
 
   &-head {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     @media (max-width: 1024.99px) {
-      margin-bottom: 8px;
+      margin-bottom: 24px;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+
+    @media (max-width: 599.99px) {
+      margin-bottom: 32px;
     }
 
     &.wrap {
@@ -51,6 +58,15 @@
       @media (max-width: 576.99px) {
         padding-right: 0;
       }      
+    }
+    .ui-block-link {
+      align-self: center;
+      white-space: nowrap;
+      font-weight: 600;  
+
+      @media (max-width: 1024.99px) {
+        align-self: flex-start;
+      }
     }
   }
   &-title {
@@ -395,11 +411,28 @@ svg.sprite {
   font-size: 0;
   outline: none;
   user-select: none;
+
+  &__outside {    
+    top: 40%;  
+    
+    @media (max-width:1024px) {
+      display: none;
+    }
+  }
   &-prev {
     left: 15px;
+
+    &__outside {
+      left: 0;
+      transform: translateX(-50%);
+    }
   }
   &-next {
     right: 15px;
+    &__outside {
+      right: 0;
+      transform: translateX(50%);
+    }
   }
   &-icon {
     fill: #000;
@@ -417,10 +450,14 @@ svg.sprite {
   }
   &-disabled,
   &.swiper-button-disabled {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5 !important;
     box-shadow: none;
     cursor: not-allowed;
   }
+}
+
+.ui-slider {
+  position: relative;
 }
 
 .ui-action {
@@ -600,6 +637,52 @@ svg.sprite {
     color: $colorDark;
     box-shadow: inset 0 0 0 2px $colorDark;
     cursor: default;
+  }
+}
+
+.ui-tabs {
+  display: flex;
+  padding: 4px;
+  gap: 4px;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+
+  @media (max-width: 599.99px) {
+    width: 100%;
+  }
+
+  &-item {  
+    font-weight: 600;
+    color: #000000;
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color .3s, color .3s;
+    cursor: pointer;
+
+    @media (max-width: 599.99px) {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+    }
+
+    &.active {   
+      background: #2A4455;
+      color: #ffffff;
+      pointer-events: none;
+    }
+  }
+
+  &-content, &-link {
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 }
 
@@ -1288,7 +1371,8 @@ textarea.ui-input {
   &-bullet {
     display: inline-block;
     vertical-align: middle;
-    width: 24px;
+    // width: 24px;
+    width: 32px;
     height: 2px;
     border-radius: 2px;
     background-color: #c4c4c4;
@@ -1296,7 +1380,9 @@ textarea.ui-input {
     opacity: 1;
 
     &-active {
-      background-color: $secondary;
+      // background-color: $secondary;  
+      background-color: #808080;
+      width: 138px;
     }
   }
 }

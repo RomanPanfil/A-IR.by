@@ -1,0 +1,129 @@
+.swiper-card-services .swiper-slide {
+    width: auto;
+    flex-shrink: 0;
+}
+
+.swiper-card-services {
+    &-inner {
+        position: relative;
+        margin-right: -40px;
+
+        @media (max-width: 1420px) {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 125px;
+                height: 100%;
+                background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+                transform: matrix(-1, 0, 0, 1, 0, 0);
+                z-index: 1;
+                pointer-events: none;
+            }          
+        }
+
+        @media (max-width: 599px) {
+            margin-right: -15px;
+            margin-left: -15px;
+            &::after {
+               display: none;
+            }         
+        }
+    }
+}
+
+.services {
+    position: relative;
+    margin-bottom: 78px;
+    padding-bottom: 40px;
+
+    @media (max-width: 1024.99px) {
+        margin-bottom: 40px;
+    }
+}
+.card-service {  
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    width: 312px;
+    height: 394px;
+    min-height: 362px;
+    aspect-ratio: 312/394;
+    background: #F5F5F5;
+    border-radius: 24px;
+    transition: background-color .3s;
+
+    &:hover {       
+        background-color: #071C28;
+
+        .card-service-title {
+            color: #fff;
+        }
+        .card-service-desc {
+            color: #fff;
+        }
+        .card-service-icon {
+            transform: scale(1.2);           
+        }
+    }
+
+    &-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &-title {      
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: rem(27);
+        color: #000000;
+        margin-bottom: 4px;
+        transition: color .3s;
+    }
+
+    &-desc {
+        color: #000000;
+        transition: color .3s;
+    }
+
+    &-icon {      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.08));
+        border-radius: 5px;
+        background-color: #fff;
+        transition: transform .3s;
+
+        .ui-arrow-icon {
+            width: 14px;
+            height: 14px;
+            fill: #2A4455;            
+        }
+    }
+
+    &-image {
+        display: block;
+        // width: 240px;
+        // height: 240px;
+        aspect-ratio: 1;
+        width: 86%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+    }
+}
+
+.swiper-card-services-pagintaion {
+    display: none;
+
+    @media (max-width: 599.99px) {
+        display: block;                
+    }
+}
