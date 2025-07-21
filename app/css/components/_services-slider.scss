@@ -55,19 +55,21 @@
     border-radius: 24px;
     transition: background-color .3s;
 
-    &:hover {       
-        background-color: #071C28;
-
-        .card-service-title {
-            color: #fff;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {       
+            background-color: #071C28;
+    
+            .card-service-title {
+                color: #fff;
+            }
+            .card-service-desc {
+                color: #fff;
+            }
+            .card-service-icon {
+                transform: scale(1.2);           
+            }
         }
-        .card-service-desc {
-            color: #fff;
-        }
-        .card-service-icon {
-            transform: scale(1.2);           
-        }
-    }
+    }    
 
     &-head {
         display: flex;

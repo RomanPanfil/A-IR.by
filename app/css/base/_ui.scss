@@ -29,7 +29,11 @@
       margin-bottom: 24px;
       flex-direction: column;
       row-gap: 8px;
-    }
+
+      &__tablet-nowrap {
+        flex-direction: row;     
+      }
+    }   
 
     @media (max-width: 599.99px) {
       margin-bottom: 32px;

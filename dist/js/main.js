@@ -29398,6 +29398,7 @@ if (document.querySelector(".making-form")) {
       slidesPerView: 'auto',
       spaceBetween: 16,
       centeredSlides: true,
+      loop: true,
       // shortSwipes: false,
       navigation: {
         nextEl: ".swiper-articles-next",
@@ -29408,16 +29409,19 @@ if (document.querySelector(".making-form")) {
           slidesPerView: 2.4,
           spaceBetween: 16,
           centeredSlides: false,
+          loop: false,
         },      
         1024: {
           slidesPerView: 3,
           spaceBetween: 16,
           centeredSlides: false,
+          loop: false,
         },
         1140: {
           slidesPerView: 3,
           spaceBetween: 24,
           centeredSlides: false,
+          loop: false,
         },
       },
       pagination: {
@@ -29434,6 +29438,7 @@ if (document.querySelector(".making-form")) {
       slidesPerView: 'auto',
       spaceBetween: 16,
       centeredSlides: true,
+      loop: true,
       // shortSwipes: false,
       navigation: {
         nextEl: ".swiper-news-next",
@@ -29444,16 +29449,19 @@ if (document.querySelector(".making-form")) {
           slidesPerView: 2.4,
           spaceBetween: 16,
           centeredSlides: false,
+          loop: false,
         },      
         1024: {
           slidesPerView: 3,
           spaceBetween: 16,
           centeredSlides: false,
+          loop: false,
         },
         1140: {
           slidesPerView: 3,
           spaceBetween: 24,
           centeredSlides: false,
+          loop: false,
         },
       },
       pagination: {
@@ -29470,6 +29478,7 @@ if (document.querySelector(".making-form")) {
       slidesPerView: 'auto',
       spaceBetween: 16,
       centeredSlides: true,
+      loop: true,
       // shortSwipes: false,
       navigation: {
         nextEl: ".swiper-videos-next",
@@ -29480,16 +29489,19 @@ if (document.querySelector(".making-form")) {
           slidesPerView: 2.4,
           spaceBetween: 16,
           centeredSlides: false,
+          loop: false,
         },      
         1024: {
           slidesPerView: 3,
           spaceBetween: 16,
           centeredSlides: false,
+          loop: false,
         },
         1140: {
           slidesPerView: 3,
           spaceBetween: 24,
           centeredSlides: false,
+          loop: false,
         },
       },
       pagination: {
@@ -29504,6 +29516,7 @@ if (document.querySelector(".making-form")) {
   if (document.querySelector(".swiper-card-services")) {
     slider = new Swiper(".swiper-card-services", {
       slidesPerView: 'auto',
+      loop: true,
       spaceBetween: 16,
       centeredSlides: true,
       breakpoints: {       
@@ -30215,6 +30228,7 @@ jQuery(document).ready(function ($) {
 new Swiper(".main-slider-swiper", {
   slidesPerView: 'auto',
   centeredSlides: true,
+  loop: true,
   spaceBetween: 16,
 
   breakpoints: {  
@@ -30222,16 +30236,18 @@ new Swiper(".main-slider-swiper", {
       slidesPerView: 2.3,
       spaceBetween: 16,
       centeredSlides: false,
+      loop: false,
     },
-    800: {
-      slidesPerView: 3.3,
-      spaceBetween: 16,
-      centeredSlides: false,
-    },
+    // 800: {
+    //   slidesPerView: 3.3,
+    //   spaceBetween: 16,
+    //   centeredSlides: false,
+    // },
     1024: {
       slidesPerView: 1,
       spaceBetween: 16,
       centeredSlides: false,
+      loop: false,
     }
   },
 

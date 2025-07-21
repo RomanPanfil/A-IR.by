@@ -3,6 +3,19 @@
     flex-shrink: 0;
 }
 
+.swiper-news .swiper-slide,
+.swiper-articles .swiper-slide,
+.swiper-videos .swiper-slide{
+    width: auto;
+    flex-shrink: 0;
+}
+
+.swiper-videos .video-card {
+    @media (max-width: 599.99px) {
+        max-width: 312px;
+    }
+}
+
 .articles {
     &-list {
         position: relative;
@@ -72,7 +85,7 @@
     }
 }
 
-.swiper-articles-pagintaion, .swiper-news-pagintaion {
+.swiper-articles-pagintaion, .swiper-news-pagintaion, .swiper-videos-pagintaion {
     display: none;
 
     @media (max-width: 599.99px) {
