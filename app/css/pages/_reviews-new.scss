@@ -1,0 +1,94 @@
+.reviews {
+    margin-bottom: 104px;
+
+    @media(max-width: 1024.99px) {
+        margin-bottom: 69px;
+    }
+
+    @media(max-width: 599.99px) {
+        margin-bottom: 64px;
+    }
+
+    .ui-title {
+        margin-bottom: 32px;
+    }
+
+    &-list {
+        margin-bottom: 18px;
+        @media(max-width: 1024.99px) {
+            margin-bottom: 40px;
+        }
+
+        &-item {
+            display: block;      
+            width: calc(50% - 12px);
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;     
+            padding: 24px;
+            background: #F5F5F5;
+            border-radius: 24px;
+            margin-bottom: 24px;
+            border: none;
+
+            @media(max-width: 1024.99px) {
+                width: 100%;
+            }
+            
+            @media(max-width: 599.99px) {
+                flex-direction: column;    
+                padding: 16px 16px 24px 16px;    
+                margin-bottom: 16px;               
+            }
+        }
+
+        &-image {
+            width: 160px;
+            flex: 0 0 160px;
+
+            @media(max-width: 599.99px) {
+                width: 100%;
+                flex: 0 0 100%;   
+                max-width: 298px;            
+            }
+        }
+
+        &-logo {
+            height: 51px;
+            margin-bottom: 8px;
+
+            @media(max-width: 599.99px) {
+                display: none;
+            }
+        }
+
+        &-title {          
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 30px;
+            color: #000000;
+            margin-bottom: 8px;
+
+            @media(max-width: 599.99px) {
+                margin-bottom: 0;
+            }
+        }
+
+        &-text {
+            @media(max-width: 599.99px) {
+                display: none;
+            }
+        }
+
+        &-date {
+            color: #666666;
+            margin-bottom: 4px;
+        }
+
+        .card-review-image {
+            margin-bottom: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    }   
+}

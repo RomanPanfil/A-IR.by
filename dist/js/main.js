@@ -29534,6 +29534,186 @@ if (document.querySelector(".making-form")) {
   }
 })();
 
+(function() {
+  if (document.querySelector(".swiper-card-reasons")) {
+    slider = new Swiper(".swiper-card-reasons", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      loop: true,
+      // shortSwipes: false,
+      navigation: {
+        nextEl: ".card-reasons-next",
+        prevEl: ".card-reasons-prev",
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 1.7,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },   
+        769: {
+          slidesPerView: 2.4,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },   
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },
+        1140: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+          centeredSlides: false,
+          loop: false,
+        },
+      },
+      pagination: {
+        el: ".swiper-card-reasons-pagintaion",
+        clickable: true,
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".story-swiper")) {
+    slider = new Swiper(".story-swiper", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      loop: true,     
+      navigation: {
+        nextEl: ".story-swiper-next",
+        prevEl: ".story-swiper-prev",
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 1.7,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },   
+        768: {
+          slidesPerView: 2.25,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },   
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },
+        1140: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+          centeredSlides: false,
+          loop: false,
+        },
+      },
+      pagination: {
+        el: ".story-swiper-pagintaion",
+        clickable: true,
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".own-swiper")) {
+    slider = new Swiper(".own-swiper", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      loop: true,    
+      breakpoints: {
+        600: {
+          slidesPerView: 1.15,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },         
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+          centeredSlides: false,
+          loop: false,
+        },
+      },
+      pagination: {
+        el: ".own-swiper-pagintaion",
+        clickable: true,
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".social-projects-swiper")) {
+    slider = new Swiper(".social-projects-swiper", {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+      centeredSlides: true,
+      loop: true,
+      navigation: {
+        nextEl: ".social-projects-next",
+        prevEl: ".social-projects-prev",
+      },
+      breakpoints: {
+        600: {
+          slidesPerView: 1.2,
+          spaceBetween: 16,
+          centeredSlides: false,
+          loop: false,
+        },         
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 24,
+          centeredSlides: false,
+          loop: false,
+        },
+      },
+      pagination: {
+        el: ".social-projects-swiper-pagintaion",
+        clickable: true,
+      },
+    });
+  }
+})();
+
+(function() {
+  if (document.querySelector(".swiper-team")) {
+    slider = new Swiper(".swiper-team", {
+      slidesPerView: 'auto',
+      slidesPerGroup: 1,     
+      spaceBetween: 16,
+      centeredSlides: false,
+      initialSlide: 0,
+      breakpoints: {       
+        600: {
+          slidesPerView: 'auto',
+          slidesPerGroup: 1,
+          spaceBetween: 24,
+          centeredSlides: false,
+        },
+        1024: {
+          slidesPerGroup: 2,
+        }
+      },
+      navigation: {
+        nextEl: ".team-nav-next",
+        prevEl: ".team-nav-prev",
+      },   
+    });
+  }
+})();
+
 (function () {
   if (!document.querySelector(".card-reviews-desktop")) return;
   let slider = null,
@@ -30205,6 +30385,46 @@ jQuery(document).ready(function ($) {
               layoutMode: 'masonry',
               masonry: {
                 columnWidth: '.proud-list-item',
+                gutter: gutter
+              }
+            });
+          }
+        } else {
+          // Отключаем Isotope, если он инициализирован
+          if (iso) {
+            iso.destroy();
+            iso = null;
+          }
+        }
+      }
+  
+      setGutter();
+      $(window).resize(setGutter);
+  
+    })();
+
+    // Выстраивание в колонки картичек на странице "Отзывы"
+    (function() {
+      let elem = document.querySelector('.reviews-list');
+      let iso;
+  
+      if (!elem) return   
+  
+      function setGutter() {
+        let gutter = 24;
+        if (window.innerWidth < 1366) {
+          gutter = 16;
+        }      
+  
+        // Проверяем разрешение экрана
+        if (window.innerWidth > 1024) {
+          // Инициализируем Isotope, если он еще не инициализирован
+          if (!iso) {
+            iso = new Isotope(elem, {
+              itemSelector: '.reviews-list-item',
+              layoutMode: 'masonry',
+              masonry: {
+                columnWidth: '.reviews-list-item',
                 gutter: gutter
               }
             });
