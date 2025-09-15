@@ -415,6 +415,7 @@ svg.sprite {
   font-size: 0;
   outline: none;
   user-select: none;
+  transition: opacity .3s;
 
   &__outside {    
     top: 40%;  
@@ -457,6 +458,9 @@ svg.sprite {
     background-color: #f5f5f5 !important;
     box-shadow: none;
     cursor: not-allowed;
+  }
+  &__hide-disabled.swiper-button-disabled {
+    opacity: 0;
   }
 }
 
