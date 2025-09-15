@@ -1003,6 +1003,7 @@
 
     @media (max-width: 1024.99px) {
       margin-right: -25px;
+      margin-left: -25px;
     }
 
     @media (max-width: 599.99px) {
@@ -1012,6 +1013,16 @@
   }
 
   &-swiper {   
+    @media (max-width: 1024.99px) {
+      padding-left: 25px;
+      padding-right: 25px;
+      margin-right: 25px;
+    }
+    @media (max-width: 599.99px) {
+     padding-left: 0;
+     padding-right: 0;
+     margin-right: 0;
+    }
     .swiper-slide {
       height: auto;
       flex-shrink: 0;
